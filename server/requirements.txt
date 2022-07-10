@@ -1,0 +1,4 @@
+starlite
+fastapi-resful
+uvicorn[standard]
+pymongo
