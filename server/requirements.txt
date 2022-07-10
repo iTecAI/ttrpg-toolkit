@@ -1,4 +1,4 @@
 starlite
-fastapi-resful
+fastapi-restful
 uvicorn[standard]
 pymongo
