@@ -1,4 +1,5 @@
 import { LoadingButton } from "@mui/lab";
+import { loc } from "../../util/localization";
 import {
     Button,
     Card,
@@ -32,14 +33,14 @@ function LoginForm(props: formProps) {
     return (
         <Card className="login-form">
             <CardHeader
-                title="Sign In to TTRPG Kit"
-                subheader="Enter account details below"
+                title={loc("login.signin.header")}
+                subheader={loc("login.subheader")}
                 avatar={<MdLogin size={28} className="header-icon" />}
             />
             <CardContent>
                 <Stack spacing={2}>
                     <TextField
-                        label="Email"
+                        label={loc("login.email")}
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="name@example.com"
@@ -53,7 +54,7 @@ function LoginForm(props: formProps) {
                         fullWidth
                     />
                     <TextField
-                        label="Password"
+                        label={loc("login.password")}
                         value={pass}
                         onChange={(e) => setPass(e.target.value)}
                         placeholder="••••••••"
@@ -76,13 +77,13 @@ function LoginForm(props: formProps) {
                             variant="outlined"
                             onClick={() => props.setMode("signup")}
                         >
-                            Create Account
+                            {loc("login.signin.switch")}
                         </Button>
                         <LoadingButton
                             variant="contained"
                             loading={props.status === "working"}
                         >
-                            Login
+                            {loc("login.signin.submit")}
                         </LoadingButton>
                     </Stack>
                 </Stack>
@@ -99,14 +100,14 @@ function CreateAccountForm(props: formProps) {
     return (
         <Card className="login-form">
             <CardHeader
-                title="Create TTRPG Kit Account"
-                subheader="Enter account details below"
+                title={loc("login.signup.header")}
+                subheader={loc("login.subheader")}
                 avatar={<MdAccountCircle size={28} className="header-icon" />}
             />
             <CardContent>
                 <Stack spacing={2}>
                     <TextField
-                        label="Email"
+                        label={loc("login.email")}
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="name@example.com"
@@ -120,7 +121,7 @@ function CreateAccountForm(props: formProps) {
                         fullWidth
                     />
                     <TextField
-                        label="Password"
+                        label={loc("login.password")}
                         value={pass}
                         onChange={(e) => setPass(e.target.value)}
                         placeholder="••••••••"
@@ -135,7 +136,7 @@ function CreateAccountForm(props: formProps) {
                         type="password"
                     />
                     <TextField
-                        label="Confirm Password"
+                        label={loc("login.passwordConfirm")}
                         value={passConfirm}
                         onChange={(e) => setPassConfirm(e.target.value)}
                         placeholder="••••••••"
@@ -158,13 +159,13 @@ function CreateAccountForm(props: formProps) {
                             variant="outlined"
                             onClick={() => props.setMode("login")}
                         >
-                            Use Existing Account
+                            {loc("login.signup.switch")}
                         </Button>
                         <LoadingButton
                             variant="contained"
                             loading={props.status === "working"}
                         >
-                            Create Account
+                            {loc("login.signup.submit")}
                         </LoadingButton>
                     </Stack>
                 </Stack>
@@ -181,7 +182,7 @@ export function Login() {
         <div className="login-wrapper">
             <img
                 className="login-backdrop"
-                alt="Login backdrop"
+                alt={loc("login.bgAlt")}
                 src="assets/login-wallpaper.jpg"
             />
 

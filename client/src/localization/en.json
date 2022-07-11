@@ -1,0 +1,22 @@
+{
+    "login": {
+        "subheader": "Enter account details below",
+        "email": "Email",
+        "password": "Password",
+        "passwordConfirm": "Confirm Password",
+        "bgAlt": "Login backdrop",
+        "signin": {
+            "header": "Sign In to {{appName}}",
+            "submit": "Login",
+            "switch": "Create Account"
+        },
+        "signup": {
+            "header": "Create {{appName}} Account",
+            "submit": "Create Account",
+            "switch": "Use Existing Account"
+        }
+    },
+    "layout": {
+        "title": "{{appName}}"
+    }
+}
