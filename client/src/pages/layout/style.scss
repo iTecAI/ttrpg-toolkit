@@ -12,3 +12,9 @@
 .root-nav {
     z-index: 100;
 }
+
+.noselect {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}

@@ -36,6 +36,7 @@ function LoginForm(props: formProps) {
                 title={loc("login.signin.header")}
                 subheader={loc("login.subheader")}
                 avatar={<MdLogin size={28} className="header-icon" />}
+                className="noselect"
             />
             <CardContent>
                 <Stack spacing={2}>
@@ -103,6 +104,7 @@ function CreateAccountForm(props: formProps) {
                 title={loc("login.signup.header")}
                 subheader={loc("login.subheader")}
                 avatar={<MdAccountCircle size={28} className="header-icon" />}
+                className="noselect"
             />
             <CardContent>
                 <Stack spacing={2}>

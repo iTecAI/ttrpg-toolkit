@@ -12,7 +12,11 @@ export function Layout(props: { showControls?: boolean }) {
                 <Container maxWidth={false}>
                     <Toolbar disableGutters>
                         <MdBubbleChart size="36px" />
-                        <Typography fontSize={"20px"} marginLeft={"10px"}>
+                        <Typography
+                            fontSize={"20px"}
+                            marginLeft={"10px"}
+                            className="noselect"
+                        >
                             {loc("layout.title")}
                         </Typography>
                     </Toolbar>
