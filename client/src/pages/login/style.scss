@@ -1,0 +1,41 @@
+.login-wrapper {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+
+    .login-backdrop {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: inline-block;
+        width: 100vw;
+        height: 100vh;
+        filter: blur(4px) brightness(50%) sepia(50%);
+    }
+
+    .login-form {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: inline-block;
+        height: fit-content;
+
+        @media screen and (min-width: 540px) {
+            width: 500px;
+        }
+
+        @media screen and (max-width: 539px) {
+            width: 92%;
+        }
+
+        .button-panel button {
+            width: 50%;
+        }
+    }
+}

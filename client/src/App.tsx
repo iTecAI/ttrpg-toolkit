@@ -2,6 +2,7 @@ import { Box, ThemeProvider } from "@mui/material";
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Layout } from "./pages/layout/Layout";
+import { Login } from "./pages/login/Login";
 import { themeOptionsDefault } from "./theme/default";
 
 function App() {
@@ -17,8 +18,11 @@ function App() {
             >
                 <BrowserRouter>
                     <Routes>
-                        <Route path="/" element={<Layout />}>
+                        <Route path="/" element={<Layout showControls />}>
                             <Route index element={<></>} />
+                        </Route>
+                        <Route path="/login" element={<Layout />}>
+                            <Route index element={<Login />} />
                         </Route>
                     </Routes>
                 </BrowserRouter>

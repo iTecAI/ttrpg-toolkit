@@ -1,0 +1,14 @@
+.content-area {
+    display: inline-block;
+    height: calc(100% - 64px);
+    width: 100%;
+    position: absolute;
+    top: 64px;
+    left: 0px;
+    z-index: 50;
+    overflow-y: auto;
+}
+
+.root-nav {
+    z-index: 100;
+}
