@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Box, ThemeProvider } from "@mui/material";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Layout } from "./pages/layout/Layout";
+import { themeOptionsDefault } from "./theme/default";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <ThemeProvider theme={themeOptionsDefault}>
+            <Box
+                sx={{
+                    width: "100vw",
+                    height: "100vh",
+                    backgroundColor: "background.default",
+                    display: "inline-block",
+                }}
+            >
+                <BrowserRouter>
+                    <Routes>
+                        <Route path="/" element={<Layout />}>
+                            <Route index element={<></>} />
+                        </Route>
+                    </Routes>
+                </BrowserRouter>
+            </Box>
+        </ThemeProvider>
+    );
 }
 
 export default App;
