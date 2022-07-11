@@ -1,3 +1,4 @@
+import { LoadingButton } from "@mui/lab";
 import {
     Button,
     Card,
@@ -77,7 +78,12 @@ function LoginForm(props: formProps) {
                         >
                             Create Account
                         </Button>
-                        <Button variant="contained">Login</Button>
+                        <LoadingButton
+                            variant="contained"
+                            loading={props.status === "working"}
+                        >
+                            Login
+                        </LoadingButton>
                     </Stack>
                 </Stack>
             </CardContent>
@@ -154,7 +160,12 @@ function CreateAccountForm(props: formProps) {
                         >
                             Use Existing Account
                         </Button>
-                        <Button variant="contained">Create Account</Button>
+                        <LoadingButton
+                            variant="contained"
+                            loading={props.status === "working"}
+                        >
+                            Create Account
+                        </LoadingButton>
                     </Stack>
                 </Stack>
             </CardContent>
