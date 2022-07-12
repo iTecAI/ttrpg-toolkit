@@ -8,15 +8,34 @@
         "signin": {
             "header": "Sign In to {{appName}}",
             "submit": "Login",
-            "switch": "Create Account"
+            "switch": "Create Account",
+            "success": "Signed in!"
         },
         "signup": {
             "header": "Create {{appName}} Account",
             "submit": "Create Account",
-            "switch": "Use Existing Account"
+            "switch": "Use Existing Account",
+            "success": "Created account!"
         }
     },
     "layout": {
         "title": "{{appName}}"
+    },
+    "error": {
+        "generic": "An unknown error occurred",
+        "base": "An unknown server error occurred",
+        "base_network": "An unknown server error occurred",
+        "validation": {
+            "emptyField": "{{fieldName}} is a required field.",
+            "invalidField": "{{value}} is not a valid {{type}}"
+        },
+        "internal": {
+            "resource": "Error attempting to access resource: {{extra}}"
+        },
+        "account": {
+            "user_exists": "A user with that email already exists.",
+            "user_nonexistent": "That user does not exist.",
+            "login_failed": "Incorrect username or password."
+        }
     }
 }

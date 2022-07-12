@@ -16,7 +16,7 @@ function getLocaleValue(
     }
 }
 
-export function loc(key: string): string {
+export function loc(key: string, vars?: { [key: string]: string }): string {
     let locale = window.localStorage.getItem("app-locale");
     if (!locale) {
         locale = "en";
@@ -26,6 +26,12 @@ export function loc(key: string): string {
         locales[locale],
         key.split(".")
     ) as string;
+
+    if (vars) {
+        for (let v of Object.keys(vars)) {
+            value = value.replaceAll("{{" + v + "}}", vars[v]);
+        }
+    }
 
     for (let v of Object.keys(locales.__vars__)) {
         value = value.replaceAll("{{" + v + "}}", locales.__vars__[v]);

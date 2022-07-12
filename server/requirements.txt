@@ -2,3 +2,4 @@ starlite
 fastapi-restful
 uvicorn[standard]
 pymongo
+bcrypt

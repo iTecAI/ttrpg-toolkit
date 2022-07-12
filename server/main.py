@@ -2,6 +2,7 @@ from starlite import Starlite
 from starlite.datastructures import State
 from pymongo.mongo_client import MongoClient
 from util import *
+from controllers import *
 
 
 def setup_state(state: State):
@@ -16,4 +17,4 @@ def setup_state(state: State):
     state.database = mncli[state.config["database"]["database"]]
 
 
-app = Starlite(on_startup=[setup_state], route_handlers=[])
+app = Starlite(on_startup=[setup_state], route_handlers=[AccountController])
