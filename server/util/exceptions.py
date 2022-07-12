@@ -25,7 +25,7 @@ class BaseHTTPException(BaseException, HTTPException):
             "errorType": HTTPStatus(self.status_code).phrase,
             "message": self.message,
             "messageClass": self.message_class,
-            "extra": self.extra,
+            "extra": extra,
         }
 
     def __repr__(self) -> str:
@@ -56,4 +56,11 @@ class UserDoesNotExistError(BaseException):
 class BadLoginError(BaseHTTPException):
     message: str = "Bad login attempt"
     message_class: str = "error.account.login_failed"
+    status_code: int = HTTP_401_UNAUTHORIZED
+
+
+# Authorization errors
+class AuthorizationFailedError(BaseHTTPException):
+    message: str = "Failed to authorize with token"
+    message_class: str = "error.auth.generic"
     status_code: int = HTTP_401_UNAUTHORIZED

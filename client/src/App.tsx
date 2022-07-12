@@ -18,7 +18,10 @@ function App() {
             >
                 <BrowserRouter>
                     <Routes>
-                        <Route path="/" element={<Layout showControls />}>
+                        <Route
+                            path="/"
+                            element={<Layout showControls verifyCredentials />}
+                        >
                             <Route index element={<></>} />
                         </Route>
                         <Route path="/login" element={<Layout />}>

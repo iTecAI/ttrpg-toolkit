@@ -36,9 +36,10 @@ class ORM:
 
     @classmethod
     def load_oid(cls, oid: str, database: Database):
-        return cls.from_dict(
-            database[cls.collection].find_one({"oid": oid}), database=database
-        )
+        data = database[cls.collection].find_one({"oid": oid})
+        if not data:
+            return None
+        return cls.from_dict(data, database=database)
 
     @classmethod
     def load_multiple_from_query(cls, query: dict, database: Database):

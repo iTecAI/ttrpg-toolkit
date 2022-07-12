@@ -17,7 +17,7 @@ class User(ORM):
         username: str = None,
         password_hash: str = None,
         owned: Dict[str, Dict[str, str]] = {},
-        **kwargs,
+        **kwargs
     ):
         super().__init__(oid, database, **kwargs)
         self.username = username
@@ -51,7 +51,7 @@ class Session(ORM):
         database: Database = None,
         uid: str = None,
         expiration: float = 0,
-        **kwargs,
+        **kwargs
     ):
         super().__init__(oid, database, **kwargs)
         self.uid = uid
@@ -59,14 +59,14 @@ class Session(ORM):
 
     @property
     def valid(self) -> bool:
-        return time.time() > self.expiration
+        return time.time() < self.expiration
 
     def refresh(self) -> None:
         self.expiration = time.time() + self.SESSION_EXPIRE
 
     @property
     def user(self) -> User:
-        if not self.uid or not self.database:
+        if not self.uid or self.database == None:
             raise exceptions.ResourceError(
                 "Cannot determine user without specified UID and database"
             )
