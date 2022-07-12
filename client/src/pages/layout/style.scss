@@ -11,6 +11,14 @@
 
 .root-nav {
     z-index: 100;
+    position: relative;
+
+    .user-icon {
+        position: absolute;
+        top: 50%;
+        right: 0px;
+        transform: translate(0, -50%);
+    }
 }
 
 .noselect {

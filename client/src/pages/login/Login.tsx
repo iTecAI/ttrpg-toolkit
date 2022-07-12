@@ -208,7 +208,7 @@ function CreateAccountForm(props: formProps) {
                         type="password"
                     />
                     <TextField
-                        label={loc("login.passwordConfirm")}
+                        label={loc("login.password_confirm")}
                         value={passConfirm}
                         onChange={(e) => setPassConfirm(e.target.value)}
                         placeholder="••••••••"
@@ -324,7 +324,7 @@ export function Login() {
         <div className="login-wrapper">
             <img
                 className="login-backdrop"
-                alt={loc("login.bgAlt")}
+                alt={loc("login.bg_alt")}
                 src="assets/login-wallpaper.jpg"
             />
 

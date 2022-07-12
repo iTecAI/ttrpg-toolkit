@@ -49,3 +49,13 @@ class AccountController(Controller):
         session = Session.login(data.username, data.password, state.database)
         session.save()
         return {"sessionId": session.oid, "userId": session.uid}
+
+    @post(
+        "/logout",
+        guards=[guard_loggedIn],
+        dependencies={"session": Provide(session_dep)},
+    )
+    async def logout(self, state: State, session: Session | None) -> None:
+        if session == None:
+            raise exceptions.AuthorizationFailedError()
+        state.database[Session.collection].delete_many({"oid": session.oid})

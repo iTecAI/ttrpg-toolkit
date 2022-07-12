@@ -3,8 +3,8 @@
         "subheader": "Enter account details below",
         "email": "Email",
         "password": "Password",
-        "passwordConfirm": "Confirm Password",
-        "bgAlt": "Login backdrop",
+        "password_confirm": "Confirm Password",
+        "bg_alt": "Login backdrop",
         "signin": {
             "header": "Sign In to {{appName}}",
             "submit": "Login",
@@ -19,7 +19,12 @@
         }
     },
     "layout": {
-        "title": "{{appName}}"
+        "title": "{{appName}}",
+        "user_icon_alt": "User Icon",
+        "user_menu": {
+            "logout": "Logout",
+            "tooltip": "Account Menu"
+        }
     },
     "error": {
         "generic": "An unknown error occurred",
