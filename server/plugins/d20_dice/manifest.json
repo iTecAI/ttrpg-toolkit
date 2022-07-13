@@ -1,0 +1,15 @@
+{
+    "plugin_data": {
+        "slug": "d20_dice",
+        "display_name": "d20 Dice",
+        "tags": ["dice"],
+        "libraries": ["d20"]
+    },
+    "entrypoints": {
+        "d20": {
+            "file": "d20.py",
+            "controllers": {},
+            "exports": {}
+        }
+    }
+}

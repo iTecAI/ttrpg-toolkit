@@ -4,21 +4,24 @@ import json
 
 dotenv.load_dotenv()
 
+
 class Config:
-    def __init__(self):
-        if os.environ.get("CONFIG_PATH"):
+    def __init__(self, file=None):
+        if file:
+            self.cpath = file
+        elif os.environ.get("CONFIG_PATH"):
             self.cpath = os.environ.get("CONFIG_PATH")
         else:
             self.cpath = "config/root_config.json"
-        
+
         with open(self.cpath, "r") as f:
             self.raw = json.load(f)
-        
+
         self.data = self._parse_dict(self.raw)
-    
+
     def __getitem__(self, key: str):
         return self.data[key]
-        
+
     def _parse_dict(self, data: dict):
         output = {}
         for k, v in data.items():
@@ -30,9 +33,9 @@ class Config:
                 output[k] = self._parse_command(v)
             else:
                 output[k] = v
-        
+
         return output
-    
+
     def _parse_list(self, data: list):
         output = []
         for i in data:
@@ -44,9 +47,9 @@ class Config:
                 output.append(self._parse_command(i))
             else:
                 output.append(i)
-        
+
         return output
-    
+
     def _parse_command(self, data: str):
         parts = data.lstrip("$").split(":")
         command = parts[0]
@@ -57,7 +60,10 @@ class Config:
                 return os.getcwd()
             else:
                 return os.getcwd().rstrip("/\\") + os.sep + args[0].lstrip("/\\")
-        
+
         if command == "env":
             return os.environ.get(args[0])
-            
+
+        if command == "sub":
+            sub_conf = Config(file=args[0])
+            return sub_conf.data

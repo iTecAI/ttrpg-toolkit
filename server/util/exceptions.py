@@ -41,6 +41,26 @@ class ResourceError(BaseException):
         super().__init__(extra=extra)
 
 
+class PluginLibraryError(BaseException):
+    message: str = "Failed to install one or more libraries."
+    message_class: str = "error.internal.library"
+
+
+class PluginDoesNotExistError(BaseException):
+    message: str = "Failed to locate plugin:"
+    message_class: str = "error.internal.plugin_missing"
+
+
+class InvalidPluginError(BaseException):
+    message: str = "Plugin is invalid:"
+    message_class: str = "error.internal.plugin_invalid"
+
+
+class PluginDependencyError(BaseException):
+    message: str = "Plugins are missining required dependencies."
+    message_class: str = "error.internal.plugin_dependency"
+
+
 # Account errors
 class UserExistsError(BaseHTTPException):
     message: str = "User already exists"

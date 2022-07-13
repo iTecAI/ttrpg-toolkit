@@ -15,6 +15,7 @@ def setup_state(state: State):
         tls=state.config["database"]["tls"],
     )
     state.database = mncli[state.config["database"]["database"]]
+    state.plugins = PluginLoader(state.config["plugins"])
 
 
 app = Starlite(on_startup=[setup_state], route_handlers=[AccountController])

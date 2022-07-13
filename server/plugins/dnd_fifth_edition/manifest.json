@@ -1,0 +1,9 @@
+{
+    "plugin_data": {
+        "slug": "dnd_fifth_edition",
+        "display_name": "D&D 5e",
+        "tags": ["npc", "character", "system"],
+        "dependencies": ["d20_dice"]
+    },
+    "entrypoints": {}
+}
