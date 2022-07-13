@@ -7,9 +7,29 @@
     },
     "entrypoints": {
         "d20": {
-            "file": "d20.py",
-            "controllers": {},
-            "exports": {}
+            "file": "controller.py",
+            "controllers": ["D20Controller"]
+        }
+    },
+    "dice": {
+        "types": ["d4", "d6", "d8", "d10", "d12", "d20", "d100"],
+        "roll_implementation": {
+            "type": "integer",
+            "type_map": {
+                "d4": [1,4],
+                "d6": [1,6],
+                "d8": [1,8],
+                "d10": [1,10],
+                "d12": [1,12],
+                "d20": [1,20],
+                "d100": [1,100]
+            }
+        },
+        "implements_object": true,
+        "implements_string": true,
+        "reroll_operations": {
+            "max": "Largest Value",
+            "min": "Smallest Value"
         }
     }
 }

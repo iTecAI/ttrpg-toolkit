@@ -4,9 +4,12 @@ from pymongo.mongo_client import MongoClient
 from util import *
 from controllers import *
 
+CONF = Config()
+PLUG = PluginLoader(CONF["plugins"])
+
 
 def setup_state(state: State):
-    state.config = Config()
+    state.config = CONF
     mncli = MongoClient(
         host=state.config["database"]["host"],
         port=state.config["database"]["port"],
@@ -15,7 +18,13 @@ def setup_state(state: State):
         tls=state.config["database"]["tls"],
     )
     state.database = mncli[state.config["database"]["database"]]
-    state.plugins = PluginLoader(state.config["plugins"])
+    state.plugins = PLUG
 
 
-app = Starlite(on_startup=[setup_state], route_handlers=[AccountController])
+BASE_HANDLERS = [AccountController]
+
+for plugin in PLUG.plugins.values():
+    BASE_HANDLERS.append(plugin.router)
+
+
+app = Starlite(on_startup=[setup_state], route_handlers=BASE_HANDLERS)

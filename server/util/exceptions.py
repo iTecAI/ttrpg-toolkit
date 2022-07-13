@@ -57,8 +57,13 @@ class InvalidPluginError(BaseException):
 
 
 class PluginDependencyError(BaseException):
-    message: str = "Plugins are missining required dependencies."
+    message: str = "Plugins are missing required dependencies."
     message_class: str = "error.internal.plugin_dependency"
+
+
+class PluginEntrypointError(BaseException):
+    message: str = "Failed to load entrypoint:"
+    message_class: str = "error.internal.entrypoint_failure"
 
 
 # Account errors
