@@ -1,8 +1,14 @@
-from typing import Any, List, Tuple
+from typing import Any, Dict, List, Tuple
 from util import plugin_utils
 from starlite import State
 import d20
 import random
+
+
+class D20API:
+    @staticmethod
+    def roll(roll_string: str):
+        return d20.roll(roll_string).total
 
 
 class D20Controller(plugin_utils.BaseDiceController):

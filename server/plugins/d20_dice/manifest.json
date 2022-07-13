@@ -8,7 +8,8 @@
     "entrypoints": {
         "d20": {
             "file": "controller.py",
-            "controllers": ["D20Controller"]
+            "controllers": ["D20Controller"],
+            "exports": ["D20API"]
         }
     },
     "dice": {

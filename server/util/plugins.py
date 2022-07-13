@@ -68,8 +68,9 @@ class Entrypoint:
 
 
 class Plugin:
-    def __init__(self, name: str) -> None:
+    def __init__(self, name: str, loader) -> None:
         self.name = name
+        self.loader = loader
         if not os.path.exists(os.path.join(PLUGIN_LOCATION, name)):
             raise PluginDoesNotExistError(extra=name)
         try:
@@ -104,8 +105,11 @@ class Plugin:
         }
 
         controllers = []
+        self.exports = {}
         for e in self.entrypoints.values():
             controllers.extend(e.controllers)
+            for x in e.exports.keys():
+                self.exports[x] = e.exports[x]
 
         self.router = Router(path=f"/plugins/{self.name}", route_handlers=controllers)
 
@@ -134,13 +138,26 @@ class Plugin:
                 )
         return missing
 
+    def __getattr__(self, attr: str) -> Any:
+        try:
+            return self.exports[attr]
+        except KeyError:
+            raise AttributeError(f"{attr} is not a valid export.")
+
+    @property
+    def dependency_exports(self):
+        exps = {}
+        for p in self.loader.get_dep_refs(self.name):
+            for e in p.exports.keys():
+                exps[e] = p.exports[e]
+
 
 class PluginLoader:
     def __init__(self, active: list[str]) -> None:
         self.plugins: Dict[str, Plugin] = {}
         for p in active:
             try:
-                self.plugins[p] = Plugin(p)
+                self.plugins[p] = Plugin(p, self)
             except:
                 exception(f"Failed to load plugin {p}:\n")
 
@@ -154,3 +171,6 @@ class PluginLoader:
 
     def __getitem__(self, key: str) -> Plugin:
         return self.plugins[key]
+
+    def get_dep_refs(self, plugin: str) -> List[Plugin]:
+        return [self.plugins[p] for p in self.plugins[plugin].dependencies]
