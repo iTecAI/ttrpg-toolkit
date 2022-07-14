@@ -71,6 +71,7 @@ export function Layout(props: {
                                             color: "contrastText.background",
                                         }}
                                         size="large"
+                                        onClick={() => nav("/games")}
                                     >
                                         {loc("layout.buttons.games")}
                                     </Button>

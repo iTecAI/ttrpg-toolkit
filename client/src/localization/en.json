@@ -73,5 +73,15 @@
                 "consectetur eget, fringilla ac sapien. Praesent sed metus justo.",
                 "Sed tellus sapien, viverra ut pharetra sed, dapibus eget ipsum."
         ]
+    },
+    "games": {
+        "main": {
+            "new": "New Game",
+            "dialog": {
+                "title": "New Game",
+                "system": "Select Game System",
+                "system_label": "System"
+            }
+        }
     }
 }

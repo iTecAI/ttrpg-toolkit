@@ -8,6 +8,7 @@ import {
     useNavigate,
 } from "react-router-dom";
 import { UserInfoModel } from "./models/account";
+import { GamesListPage } from "./pages/games/gamesIndex";
 import { Index } from "./pages/index/Index";
 import { Layout } from "./pages/layout/Layout";
 import { Login } from "./pages/login/Login";
@@ -56,6 +57,14 @@ function RouterChild() {
                 }
             >
                 <Route index element={<Index />} />
+                <Route
+                    path="/games"
+                    element={
+                        <GamesListPage
+                            userInfo={userInfo || { userId: "", username: "" }}
+                        />
+                    }
+                />
             </Route>
             <Route
                 path="/login"

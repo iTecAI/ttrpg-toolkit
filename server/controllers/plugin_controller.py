@@ -69,7 +69,9 @@ class PluginController(Controller):
     dependencies: Optional[Dict[str, "Provide"]] = {"session": Provide(session_dep)}
 
     @get("/")
-    async def list_plugins(self, state: State, session: Session) -> List[PluginModel]:
+    async def list_plugins(
+        self, state: State, session: Session, tag: Optional[str] = None
+    ) -> List[PluginModel]:
         loader: PluginLoader = state.plugins
         return [
             PluginModel(
@@ -79,6 +81,7 @@ class PluginController(Controller):
                 dependencies=p.dependencies,
             )
             for p in loader.plugins.values()
+            if tag in p.tags or tag == None
         ]
 
     @get("/{plugin:str}")
