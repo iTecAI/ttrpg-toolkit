@@ -1,8 +1,10 @@
+export type PluginTag = "dice" | "character" | "npc" | "system";
+
 // Minimal plugin model (/api/plugins)
 export type MinimalPluginModel = {
     slug: string;
     displayName: string;
-    tags: string[];
+    tags: PluginTag[];
     dependencies: string[];
 };
 

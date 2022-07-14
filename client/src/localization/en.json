@@ -42,5 +42,13 @@
             "user_nonexistent": "That user does not exist.",
             "login_failed": "Incorrect username or password."
         }
+    },
+    "plugin": {
+        "tags": {
+            "dice": "Dice",
+            "system": "Game System",
+            "character": "Character",
+            "npc": "NPC"
+        }
     }
 }
