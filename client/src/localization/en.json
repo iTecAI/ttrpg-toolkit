@@ -25,7 +25,12 @@
             "logout": "Logout",
             "tooltip": "Account Menu"
         },
-        "login": "Login"
+        "login": "Login",
+        "buttons": {
+            "games": "Games",
+            "collections": "Collections",
+            "compendium": "Compendium"
+        }
     },
     "error": {
         "generic": "An unknown error occurred",
@@ -54,5 +59,19 @@
             "character": "Character",
             "npc": "NPC"
         }
+    },
+    "index": {
+        "title": "{{appName}}",
+        "description": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu",
+                "commodo risus, non efficitur diam. Sed lacinia dui id neque",
+                "lacinia, eget fermentum nibh dapibus. Morbi vitae diam id erat",
+                "varius mollis. Integer ut justo augue. Mauris ornare convallis",
+                "diam nec consequat. Aenean a lacus condimentum, pulvinar urna",
+                "eget, mattis nulla. Nam imperdiet odio facilisis, consequat",
+                "purus vel, congue dolor. Vestibulum dui lorem, gravida vitae",
+                "consectetur eget, fringilla ac sapien. Praesent sed metus justo.",
+                "Sed tellus sapien, viverra ut pharetra sed, dapibus eget ipsum."
+        ]
     }
 }

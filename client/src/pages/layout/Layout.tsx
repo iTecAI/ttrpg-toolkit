@@ -9,9 +9,16 @@ import {
     MenuItem,
     Toolbar,
     Typography,
+    Stack,
 } from "@mui/material";
 import React, { useState } from "react";
-import { MdBubbleChart, MdLogin } from "react-icons/md";
+import {
+    MdBubbleChart,
+    MdFolder,
+    MdGroup,
+    MdLibraryBooks,
+    MdLogin,
+} from "react-icons/md";
 import { Outlet, useNavigate } from "react-router-dom";
 import { UserInfoModel } from "../../models/account";
 import { post } from "../../util/api";
@@ -53,6 +60,39 @@ export function Layout(props: {
                             />
                         ) : props.loggedIn ? (
                             <>
+                                <Stack
+                                    className="nav-buttons"
+                                    direction={"row"}
+                                    spacing={1}
+                                >
+                                    <Button
+                                        startIcon={<MdGroup />}
+                                        sx={{
+                                            color: "contrastText.background",
+                                        }}
+                                        size="large"
+                                    >
+                                        {loc("layout.buttons.games")}
+                                    </Button>
+                                    <Button
+                                        startIcon={<MdFolder />}
+                                        sx={{
+                                            color: "contrastText.background",
+                                        }}
+                                        size="large"
+                                    >
+                                        {loc("layout.buttons.collections")}
+                                    </Button>
+                                    <Button
+                                        startIcon={<MdLibraryBooks />}
+                                        sx={{
+                                            color: "contrastText.background",
+                                        }}
+                                        size="large"
+                                    >
+                                        {loc("layout.buttons.compendium")}
+                                    </Button>
+                                </Stack>
                                 <IconButton
                                     onClick={(
                                         event: React.MouseEvent<HTMLElement>

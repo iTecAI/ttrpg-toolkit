@@ -22,10 +22,17 @@ export function loc(key: string, vars?: { [key: string]: string }): string {
         locale = "en";
     }
 
-    let value: string = getLocaleValue(
+    let rawValue: string | string[] = getLocaleValue(
         locales[locale],
         key.split(".")
-    ) as string;
+    ) as string | string[];
+
+    let value: string;
+    if ((rawValue as string[]).push !== undefined) {
+        value = (rawValue as string[]).join("\n");
+    } else {
+        value = rawValue as string;
+    }
 
     if (vars) {
         for (let v of Object.keys(vars)) {

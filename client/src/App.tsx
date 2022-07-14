@@ -8,6 +8,7 @@ import {
     useNavigate,
 } from "react-router-dom";
 import { UserInfoModel } from "./models/account";
+import { Index } from "./pages/index/Index";
 import { Layout } from "./pages/layout/Layout";
 import { Login } from "./pages/login/Login";
 import { themeOptionsDefault } from "./theme/default";
@@ -54,7 +55,7 @@ function RouterChild() {
                     />
                 }
             >
-                <Route index element={<></>} />
+                <Route index element={<Index />} />
             </Route>
             <Route
                 path="/login"
