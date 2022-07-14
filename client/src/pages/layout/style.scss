@@ -13,11 +13,22 @@
     z-index: 100;
     position: relative;
 
-    .user-icon {
+    .user-icon,
+    .login-btn {
         position: absolute;
         top: 50%;
         right: 0px;
         transform: translate(0, -50%);
+    }
+    .user-info-loading {
+        position: absolute;
+        top: 16px;
+        right: 0px;
+    }
+
+    .title,
+    .title-icon {
+        cursor: pointer;
     }
 }
 

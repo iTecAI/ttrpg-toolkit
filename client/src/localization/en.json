@@ -24,7 +24,8 @@
         "user_menu": {
             "logout": "Logout",
             "tooltip": "Account Menu"
-        }
+        },
+        "login": "Login"
     },
     "error": {
         "generic": "An unknown error occurred",
@@ -41,6 +42,9 @@
             "user_exists": "A user with that email already exists.",
             "user_nonexistent": "That user does not exist.",
             "login_failed": "Incorrect username or password."
+        },
+        "auth": {
+            "generic": "Failed to authorize with token"
         }
     },
     "plugin": {

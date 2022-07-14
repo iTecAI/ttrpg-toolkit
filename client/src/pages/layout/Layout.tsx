@@ -1,6 +1,8 @@
 import {
     AppBar,
     Avatar,
+    Button,
+    CircularProgress,
     Container,
     IconButton,
     Menu,
@@ -8,53 +10,48 @@ import {
     Toolbar,
     Typography,
 } from "@mui/material";
-import React, { useEffect, useState } from "react";
-import { MdBubbleChart } from "react-icons/md";
+import React, { useState } from "react";
+import { MdBubbleChart, MdLogin } from "react-icons/md";
 import { Outlet, useNavigate } from "react-router-dom";
 import { UserInfoModel } from "../../models/account";
-import { get, post } from "../../util/api";
+import { post } from "../../util/api";
 import { calculateGravatar } from "../../util/gravatar";
 import { loc } from "../../util/localization";
 import "./style.scss";
 
 export function Layout(props: {
-    showControls?: boolean;
-    verifyCredentials?: boolean;
+    loggedIn: boolean;
+    userInfo: UserInfoModel | null;
+    loading: boolean;
 }) {
     const nav = useNavigate();
-    const [userInfo, setUserInfo] = useState<UserInfoModel>({
-        userId: "",
-        username: "",
-    });
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const userMenuOpen = Boolean(anchorEl);
-
-    useEffect(() => {
-        if (props.verifyCredentials) {
-            get<UserInfoModel>("/account").then((result) => {
-                if (result.success) {
-                    setUserInfo(result.value);
-                } else {
-                    nav("/login");
-                }
-            });
-        }
-    }, [props.verifyCredentials, nav]);
 
     return (
         <>
             <AppBar position="absolute" className="root-nav">
                 <Container maxWidth={false}>
                     <Toolbar disableGutters>
-                        <MdBubbleChart size="36px" />
+                        <MdBubbleChart
+                            size="36px"
+                            onClick={() => nav("/")}
+                            className="title-icon"
+                        />
                         <Typography
                             fontSize={"20px"}
                             marginLeft={"10px"}
-                            className="noselect"
+                            className="noselect title"
+                            onClick={() => nav("/")}
                         >
                             {loc("layout.title")}
                         </Typography>
-                        {props.showControls ? (
+                        {props.loading ? (
+                            <CircularProgress
+                                className="user-info-loading"
+                                size="32px"
+                            />
+                        ) : props.loggedIn ? (
                             <>
                                 <IconButton
                                     onClick={(
@@ -67,7 +64,10 @@ export function Layout(props: {
                                     <Avatar
                                         alt={loc("layout.user_icon_alt")}
                                         src={calculateGravatar(
-                                            userInfo.username || "noemail"
+                                            props.userInfo &&
+                                                props.userInfo.username
+                                                ? props.userInfo.username
+                                                : "noemail"
                                         )}
                                     />
                                 </IconButton>
@@ -84,7 +84,7 @@ export function Layout(props: {
                                             post<null>("/account/logout").then(
                                                 (result) => {
                                                     if (result.success) {
-                                                        nav("/login");
+                                                        nav("/");
                                                     }
                                                 }
                                             );
@@ -94,6 +94,15 @@ export function Layout(props: {
                                     </MenuItem>
                                 </Menu>
                             </>
+                        ) : window.location.pathname !== "/login" ? (
+                            <Button
+                                variant="outlined"
+                                className="login-btn"
+                                startIcon={<MdLogin />}
+                                onClick={() => nav("/login")}
+                            >
+                                {loc("layout.login")}
+                            </Button>
                         ) : (
                             <></>
                         )}
