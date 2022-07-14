@@ -43,27 +43,27 @@ class ResourceError(BaseException):
 
 class PluginLibraryError(BaseException):
     message: str = "Failed to install one or more libraries."
-    message_class: str = "error.internal.library"
+    message_class: str = "error.plugin.library"
 
 
 class PluginDoesNotExistError(BaseException):
     message: str = "Failed to locate plugin:"
-    message_class: str = "error.internal.plugin_missing"
+    message_class: str = "error.plugin.missing"
 
 
 class InvalidPluginError(BaseException):
     message: str = "Plugin is invalid:"
-    message_class: str = "error.internal.plugin_invalid"
+    message_class: str = "error.plugin.invalid"
 
 
 class PluginDependencyError(BaseException):
     message: str = "Plugins are missing required dependencies."
-    message_class: str = "error.internal.plugin_dependency"
+    message_class: str = "error.plugin.dependency"
 
 
 class PluginEntrypointError(BaseException):
     message: str = "Failed to load entrypoint:"
-    message_class: str = "error.internal.entrypoint_failure"
+    message_class: str = "error.plugin.entrypoint_failure"
 
 
 # Account errors

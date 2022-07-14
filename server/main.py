@@ -21,7 +21,7 @@ def setup_state(state: State):
     state.plugins = PLUG
 
 
-BASE_HANDLERS = [AccountController]
+BASE_HANDLERS = [AccountController, PluginController]
 
 for plugin in PLUG.plugins.values():
     BASE_HANDLERS.append(plugin.router)
