@@ -1,4 +1,5 @@
 import { Box, ThemeProvider } from "@mui/material";
+import { SnackbarProvider } from "notistack";
 import React, { useEffect, useState } from "react";
 import {
     BrowserRouter,
@@ -91,18 +92,20 @@ function RouterChild() {
 function App() {
     return (
         <ThemeProvider theme={themeOptionsDefault}>
-            <Box
-                sx={{
-                    width: "100vw",
-                    height: "100vh",
-                    backgroundColor: "background.default",
-                    display: "inline-block",
-                }}
-            >
-                <BrowserRouter>
-                    <RouterChild />
-                </BrowserRouter>
-            </Box>
+            <SnackbarProvider maxSnack={3}>
+                <Box
+                    sx={{
+                        width: "100vw",
+                        height: "100vh",
+                        backgroundColor: "background.default",
+                        display: "inline-block",
+                    }}
+                >
+                    <BrowserRouter>
+                        <RouterChild />
+                    </BrowserRouter>
+                </Box>
+            </SnackbarProvider>
         </ThemeProvider>
     );
 }

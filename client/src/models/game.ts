@@ -6,4 +6,6 @@ export type MinimalGame = {
     system: string;
     image: string;
     participants: string[];
+    plugins: string[];
+    game_master: string;
 };

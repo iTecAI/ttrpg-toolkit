@@ -12,6 +12,7 @@ import {
     DialogActions,
     Button,
 } from "@mui/material";
+import { useSnackbar } from "notistack";
 import { useEffect, useState } from "react";
 import { MdAccountTree, MdBook, MdCreate, MdExtension } from "react-icons/md";
 import { MinimalPluginModel } from "../../models/plugin";
@@ -32,6 +33,7 @@ export function NewGameDialog(props: {
     const [valueSystem, setValueSystem] = useState<string>("");
     const [valuePlugins, setValuePlugins] = useState<string[]>([]);
 
+    const { enqueueSnackbar } = useSnackbar();
     useEffect(() => {
         get<MinimalPluginModel[]>("/plugins").then(
             (result: ApiResponse<MinimalPluginModel[]>) => {
@@ -209,6 +211,13 @@ export function NewGameDialog(props: {
                             handleClose();
                             if (result.success) {
                                 props.onCreate();
+                                enqueueSnackbar(
+                                    loc("games.main.dialog.success"),
+                                    {
+                                        variant: "success",
+                                        autoHideDuration: 5000,
+                                    }
+                                );
                             }
                         })
                     }

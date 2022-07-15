@@ -21,6 +21,8 @@ class MinimalGameModel(BaseModel):
     system: str
     image: str
     participants: List[str]
+    plugins: List[str]
+    game_master: str
 
 
 class GameController(Controller):
@@ -47,15 +49,18 @@ class GameController(Controller):
     async def list_games(
         self, state: State, session: Session
     ) -> List[MinimalGameModel]:
-        games_raw: List[Game] = Game.load_multiple_from_query(
-            {
-                "$or": [
-                    {"owner_id": session.uid},
-                    {"participants": {"$all": [session.uid]}},
-                ]
-            },
-            state.database,
-        )
+        games_raw: List[Game] = [
+            g.set_loader(state.plugins)
+            for g in Game.load_multiple_from_query(
+                {
+                    "$or": [
+                        {"owner_id": session.uid},
+                        {"participants": {"$all": [session.uid]}},
+                    ]
+                },
+                state.database,
+            )
+        ]
 
         owners_raw: List[User] = User.load_multiple_from_query(
             {"oid": {"$in": [g.owner_id for g in games_raw]}}, state.database
@@ -73,6 +78,8 @@ class GameController(Controller):
                 system=state.plugins[g.system].display_name,
                 image=g.image,
                 participants=g.participants,
+                plugins=[i.display_name for i in g.enumerate_plugins().values()],
+                game_master=g.game_master,
             )
             for g in games_raw
         ]
