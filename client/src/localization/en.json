@@ -83,6 +83,12 @@
                 "name": "Game Name",
                 "plugins": "Additional Plugins",
                 "dependencies": "Dependencies"
+            },
+            "items": {
+                "owner": "Owner: {{owner}}",
+                "img_alt": "Game image for {{game}}",
+                "invite": "Invite Players",
+                "open": "Open Game"
             }
         }
     },

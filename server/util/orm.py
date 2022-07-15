@@ -1,4 +1,5 @@
 import json
+from typing import List, Optional
 from pymongo.collection import Collection
 from pymongo.database import Database
 import uuid
@@ -7,6 +8,7 @@ import uuid
 class ORM:
     object_type: str = "basic"
     collection: str = None
+    exclude: Optional[List[str]] = []
 
     def __init__(self, oid: str = None, database: Database = None, **kwargs):
         self.database = database
@@ -19,6 +21,9 @@ class ORM:
     def dict(self):
         raw = self.__dict__
         del raw["database"]
+        for e in self.exclude:
+            if e in raw.keys():
+                del raw[e]
         return raw
 
     def save(self, database: Database = None):

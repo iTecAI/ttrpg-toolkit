@@ -15,13 +15,14 @@ import {
 import { useEffect, useState } from "react";
 import { MdAccountTree, MdBook, MdCreate, MdExtension } from "react-icons/md";
 import { MinimalPluginModel } from "../../models/plugin";
-import { ApiResponse, get } from "../../util/api";
+import { ApiResponse, get, post } from "../../util/api";
 import { loc } from "../../util/localization";
 import "./styles/index.scss";
 
 export function NewGameDialog(props: {
     open: boolean;
     setOpen: (open: boolean) => void;
+    onCreate: () => void;
 }) {
     const [plugins, setPlugins] = useState<{
         [key: string]: MinimalPluginModel;
@@ -96,9 +97,7 @@ export function NewGameDialog(props: {
                                     <MenuItem value={slug} key={slug}>
                                         {plugins[slug].displayName}
                                     </MenuItem>
-                                ) : (
-                                    <></>
-                                )
+                                ) : null
                             )}
                         </TextField>
                         {valueSystem.length > 0 ? (
@@ -185,9 +184,7 @@ export function NewGameDialog(props: {
                                 <MenuItem value={slug} key={slug}>
                                     {plugins[slug].displayName}
                                 </MenuItem>
-                            ) : (
-                                <></>
-                            )
+                            ) : null
                         )}
                     </TextField>
                 </Stack>
@@ -200,6 +197,20 @@ export function NewGameDialog(props: {
                     variant="contained"
                     disabled={
                         valueName.length === 0 || valueSystem.length === 0
+                    }
+                    onClick={() =>
+                        post<string>("/games", {
+                            body: {
+                                name: valueName,
+                                system: valueSystem,
+                                plugins: valuePlugins,
+                            },
+                        }).then((result) => {
+                            handleClose();
+                            if (result.success) {
+                                props.onCreate();
+                            }
+                        })
                     }
                 >
                     {loc("generic.create")}

@@ -16,13 +16,11 @@ class User(ORM):
         database: Database = None,
         username: str = None,
         password_hash: str = None,
-        owned: Dict[str, Dict[str, str]] = {},
         **kwargs
     ):
         super().__init__(oid, database, **kwargs)
         self.username = username
         self.password_hash = password_hash
-        self.owned = owned
 
     @classmethod
     def new(cls, username: str, password: str, database: Database):
