@@ -78,10 +78,18 @@
         "main": {
             "new": "New Game",
             "dialog": {
-                "title": "New Game",
+                "title": "Create Game",
                 "system": "Select Game System",
-                "system_label": "System"
+                "name": "Game Name",
+                "plugins": "Additional Plugins",
+                "dependencies": "Dependencies"
             }
         }
+    },
+    "generic": {
+        "cancel": "Cancel",
+        "finish": "Finish",
+        "submit": "Submit",
+        "create": "Create"
     }
 }
