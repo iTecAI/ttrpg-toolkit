@@ -23,13 +23,18 @@
         "user_icon_alt": "User Icon",
         "user_menu": {
             "logout": "Logout",
-            "tooltip": "Account Menu"
+            "tooltip": "Account Menu",
+            "settings": "User Settings"
         },
         "login": "Login",
         "buttons": {
             "games": "Games",
             "collections": "Collections",
             "compendium": "Compendium"
+        },
+        "user_settings": {
+            "title": "Account Settings",
+            "name": "Display Name"
         }
     },
     "error": {

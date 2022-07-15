@@ -1,8 +1,10 @@
+from typing import Optional
 from pydantic import BaseModel
 from starlite import Controller, Provide, State, post, get
 from models import Session, User
 from util import guards
 from util import exceptions, guard_loggedIn, session_dep
+from starlette.status import *
 
 
 class AccountModel(BaseModel):
@@ -18,6 +20,11 @@ class SessionModel(BaseModel):
 class AccountInfoModel(BaseModel):
     userId: str
     username: str
+    displayName: str
+
+
+class EditAccountModel(BaseModel):
+    displayName: Optional[str] = None
 
 
 class AccountController(Controller):
@@ -37,7 +44,13 @@ class AccountController(Controller):
     ) -> AccountInfoModel:
         if session == None:
             raise exceptions.AuthorizationFailedError()
-        return {"userId": session.uid, "username": session.user.username}
+        return {
+            "userId": session.uid,
+            "username": session.user.username,
+            "displayName": session.user.display_name
+            if session.user.display_name
+            else session.user.username,
+        }
 
     @post("/create")
     async def create_account(self, data: AccountModel, state: State) -> SessionModel:
@@ -59,3 +72,19 @@ class AccountController(Controller):
         if session == None:
             raise exceptions.AuthorizationFailedError()
         state.database[Session.collection].delete_many({"oid": session.oid})
+
+    @post(
+        "/edit",
+        status_code=HTTP_202_ACCEPTED,
+        guards=[guard_loggedIn],
+        dependencies={"session": Provide(session_dep)},
+    )
+    async def edit_account(
+        self, state: State, session: Session, data: EditAccountModel
+    ) -> None:
+        user = session.user
+        if data.displayName:
+            user.display_name = data.displayName
+
+        user.save()
+        return None

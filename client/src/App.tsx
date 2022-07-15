@@ -61,7 +61,13 @@ function RouterChild() {
                     path="/games"
                     element={
                         <GamesListPage
-                            userInfo={userInfo || { userId: "", username: "" }}
+                            userInfo={
+                                userInfo || {
+                                    userId: "",
+                                    username: "",
+                                    displayName: "",
+                                }
+                            }
                         />
                     }
                 />

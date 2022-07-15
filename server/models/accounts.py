@@ -16,11 +16,13 @@ class User(ORM):
         database: Database = None,
         username: str = None,
         password_hash: str = None,
+        display_name: str = None,
         **kwargs
     ):
         super().__init__(oid, database, **kwargs)
         self.username = username
         self.password_hash = password_hash
+        self.display_name = display_name
 
     @classmethod
     def new(cls, username: str, password: str, database: Database):

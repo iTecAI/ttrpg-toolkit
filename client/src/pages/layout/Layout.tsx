@@ -10,10 +10,17 @@ import {
     Toolbar,
     Typography,
     Stack,
+    Dialog,
+    DialogTitle,
+    DialogContent,
+    TextField,
+    InputAdornment,
+    DialogActions,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
     MdBubbleChart,
+    MdEdit,
     MdFolder,
     MdGroup,
     MdLibraryBooks,
@@ -26,6 +33,59 @@ import { calculateGravatar } from "../../util/gravatar";
 import { loc } from "../../util/localization";
 import "./style.scss";
 
+function UserSettingsDialog(props: {
+    open: boolean;
+    handleClose: () => void;
+    userInfo: UserInfoModel;
+}) {
+    const [displayName, setDisplayName] = useState<string>(
+        props.userInfo.displayName
+    );
+
+    useEffect(() => {
+        if (props.open === true) {
+            setDisplayName(props.userInfo.displayName);
+        }
+    }, [props.open, props.userInfo.displayName]);
+
+    return (
+        <Dialog fullWidth open={props.open} onClose={props.handleClose}>
+            <DialogTitle>{loc("layout.user_settings.title")}</DialogTitle>
+            <DialogContent>
+                <TextField
+                    variant="filled"
+                    value={displayName}
+                    onChange={(e) => setDisplayName(e.target.value)}
+                    fullWidth
+                    InputProps={{
+                        startAdornment: (
+                            <InputAdornment position="start">
+                                <MdEdit size={20} />
+                            </InputAdornment>
+                        ),
+                    }}
+                    label={loc("layout.user_settings.name")}
+                />
+            </DialogContent>
+            <DialogActions>
+                <Button variant="outlined" onClick={props.handleClose}>
+                    {loc("generic.cancel")}
+                </Button>
+                <Button
+                    variant="contained"
+                    onClick={() =>
+                        post<null>("/account/edit", {
+                            body: { displayName: displayName },
+                        }).then(props.handleClose)
+                    }
+                >
+                    {loc("generic.submit")}
+                </Button>
+            </DialogActions>
+        </Dialog>
+    );
+}
+
 export function Layout(props: {
     loggedIn: boolean;
     userInfo: UserInfoModel | null;
@@ -33,6 +93,7 @@ export function Layout(props: {
 }) {
     const nav = useNavigate();
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+    const [userSettingsOpen, setUserSettingsOpen] = useState<boolean>(false);
     const userMenuOpen = Boolean(anchorEl);
 
     return (
@@ -121,6 +182,14 @@ export function Layout(props: {
                                 >
                                     <MenuItem
                                         onClick={() => {
+                                            setUserSettingsOpen(true);
+                                            setAnchorEl(null);
+                                        }}
+                                    >
+                                        {loc("layout.user_menu.settings")}
+                                    </MenuItem>
+                                    <MenuItem
+                                        onClick={() => {
                                             setAnchorEl(null);
                                             post<null>("/account/logout").then(
                                                 (result) => {
@@ -153,6 +222,17 @@ export function Layout(props: {
             <div className="content-area">
                 <Outlet />
             </div>
+            <UserSettingsDialog
+                open={userSettingsOpen}
+                handleClose={() => setUserSettingsOpen(false)}
+                userInfo={
+                    props.userInfo || {
+                        userId: "",
+                        username: "",
+                        displayName: "",
+                    }
+                }
+            />
         </>
     );
 }

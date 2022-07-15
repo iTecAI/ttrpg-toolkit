@@ -67,7 +67,9 @@ class GameController(Controller):
                 id=g.oid,
                 name=g.name,
                 owner_id=g.owner_id,
-                owner_name=owner_mapping[g.owner_id].username,
+                owner_name=owner_mapping[g.owner_id].display_name
+                if owner_mapping[g.owner_id].display_name
+                else owner_mapping[g.owner_id].username,
                 system=state.plugins[g.system].display_name,
                 image=g.image,
                 participants=g.participants,
