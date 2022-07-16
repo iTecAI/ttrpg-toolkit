@@ -1,0 +1,172 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$ref": "#/definitions/PluginManifest",
+    "definitions": {
+        "PluginManifest": {
+            "type": "object",
+            "properties": {
+                "plugin_data": {
+                    "$ref": "#/definitions/PluginDataModel"
+                },
+                "entrypoints": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/EntrypointModel"
+                    }
+                },
+                "dice": {
+                    "$ref": "#/definitions/DiceModel"
+                }
+            },
+            "required": [
+                "plugin_data",
+                "entrypoints"
+            ],
+            "additionalProperties": false
+        },
+        "PluginDataModel": {
+            "type": "object",
+            "properties": {
+                "slug": {
+                    "type": "string"
+                },
+                "display_name": {
+                    "type": "string"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "libraries": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "dependencies": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "slug",
+                "display_name",
+                "tags"
+            ],
+            "additionalProperties": false
+        },
+        "EntrypointModel": {
+            "type": "object",
+            "properties": {
+                "file": {
+                    "type": "string"
+                },
+                "controllers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "exports": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "file"
+            ],
+            "additionalProperties": false
+        },
+        "DiceModel": {
+            "type": "object",
+            "properties": {
+                "types": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "roll_implementation": {
+                    "$ref": "#/definitions/RollImplementationModel"
+                },
+                "implements_object": {
+                    "type": "boolean"
+                },
+                "implements_string": {
+                    "type": "boolean"
+                },
+                "reroll_operations": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "types",
+                "roll_implementation",
+                "reroll_operations"
+            ],
+            "additionalProperties": false
+        },
+        "RollImplementationModel": {
+            "anyOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "const": "integer"
+                        },
+                        "type_map": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "array",
+                                "items": {
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    },
+                    "required": [
+                        "type",
+                        "type_map"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "const": "selection"
+                        },
+                        "type_map": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "array",
+                                "items": {
+                                    "type": [
+                                        "number",
+                                        "string"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "required": [
+                        "type",
+                        "type_map"
+                    ],
+                    "additionalProperties": false
+                }
+            ]
+        }
+    }
+}

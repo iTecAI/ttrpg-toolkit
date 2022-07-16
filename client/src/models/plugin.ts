@@ -1,4 +1,12 @@
-export type PluginTag = "dice" | "character" | "npc" | "system";
+export type PluginTag =
+    | "system"
+    | "dice"
+    | "character_sheet"
+    | "character_loader"
+    | "npc_source"
+    | "npc_builder"
+    | "documents"
+    | "asset_pack";
 
 // Minimal plugin model (/api/plugins)
 export type MinimalPluginModel = {

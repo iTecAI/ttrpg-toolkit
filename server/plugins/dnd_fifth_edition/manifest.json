@@ -2,7 +2,7 @@
     "plugin_data": {
         "slug": "dnd_fifth_edition",
         "display_name": "D&D 5e",
-        "tags": ["npc", "character", "system"],
+        "tags": ["system", "character_sheet", "character_loader", "npc_source", "npc_builder"],
         "dependencies": ["d20_dice"]
     },
     "entrypoints": {}
