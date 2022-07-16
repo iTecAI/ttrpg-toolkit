@@ -3,3 +3,4 @@ fastapi-restful
 uvicorn[standard]
 pymongo
 bcrypt
+ijson

@@ -1,5 +1,6 @@
+import importlib
 import json
-from typing import List, Optional
+from typing import Dict, List, Optional
 from pymongo.collection import Collection
 from pymongo.database import Database
 import uuid
@@ -24,6 +25,13 @@ class ORM:
         for e in self.exclude:
             if e in raw.keys():
                 del raw[e]
+        for k, v in raw.items():
+            if isinstance(v, ORM):
+                raw[k] = {
+                    "$ORMTYPE": v.__name__,
+                    "$ORMMODULE": v.__module__,
+                    "$ORMDATA": v.dict,
+                }
         return raw
 
     def save(self, database: Database = None):
@@ -36,7 +44,20 @@ class ORM:
         collection.replace_one({"oid": self.oid}, self.dict, upsert=True)
 
     @classmethod
-    def from_dict(cls, data: dict, database: Database = None):
+    def from_dict(cls, data: Dict, database: Database = None):
+        for k, v in data.items():
+            if type(v) == dict:
+                if (
+                    "$ORMTYPE" in v.keys()
+                    and "$ORMDATA" in v.keys()
+                    and "$ORMMODULE" in v.keys()
+                ):
+                    try:
+                        _module = importlib.import_module(".", v["$ORMMODULE"])
+                        _obj: ORM = getattr(_module, v["$ORMTYPE"])
+                        data[k] = _obj.from_dict(v["$ORMDATA"], database=Database)
+                    except:
+                        pass
         return cls(**data, database=database)
 
     @classmethod

@@ -6,3 +6,5 @@ from .dice import (
     StaticSegmentModel,
     SummaryModel,
 )
+
+from .character import AbstractCharacter

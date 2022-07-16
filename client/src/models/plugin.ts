@@ -6,7 +6,8 @@ export type PluginTag =
     | "npc_source"
     | "npc_builder"
     | "documents"
-    | "asset_pack";
+    | "asset_pack"
+    | "data_source";
 
 // Minimal plugin model (/api/plugins)
 export type MinimalPluginModel = {
