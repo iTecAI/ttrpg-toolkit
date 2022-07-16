@@ -1,9 +1,16 @@
 from typing import Dict, List, Optional
 from pydantic import BaseModel
-from starlite import Controller, State, get, post, Provide
+from starlite import Controller, State, delete, get, patch, post, Provide
 from starlite.types import Guard
-from util import guard_loggedIn, exceptions, session_dep
-from models import Session, Game, User
+from util import (
+    guard_loggedIn,
+    exceptions,
+    session_dep,
+    guard_isGameOwner,
+    guard_isGameParticipant,
+    game_dep,
+)
+from models import Session, Game, User, Invite
 from starlette.status import *
 
 
@@ -23,6 +30,22 @@ class MinimalGameModel(BaseModel):
     participants: List[str]
     plugins: List[str]
     game_master: str
+
+
+class InviteRequestModel(BaseModel):
+    use_limit: Optional[int] = None  # Number of uses before expiration
+    expire_length: Optional[int] = None  # Number of seconds before expiration
+
+
+class InviteModel(BaseModel):
+    code: str
+    uses_remaining: int | None  # Number of uses remaining, or None for unlimited
+    expiration: int | None  # Unix timestamp (seconds)
+
+
+class InvitePatchModel(BaseModel):
+    uses_remaining: int | None
+    expiration: int | None
 
 
 class GameController(Controller):
@@ -83,3 +106,67 @@ class GameController(Controller):
             )
             for g in games_raw
         ]
+
+
+class GameSpecificController(Controller):
+    path: str = "/games/{game_id:str}"
+    guards: Optional[List[Guard]] = [guard_loggedIn]
+    dependencies: Optional[Dict[str, "Provide"]] = {
+        "session": Provide(session_dep),
+        "game": Provide(game_dep),
+    }
+
+    @post("/invites", guards=[guard_isGameOwner])
+    async def create_invite(
+        self, data: InviteRequestModel, state: State, session: Session, game: Game
+    ) -> InviteModel:
+        invite: Invite = Invite.new(
+            state.database, game.oid, data.use_limit, data.expire_length
+        )
+        invite.save()
+        return InviteModel(
+            code=invite.code,
+            uses_remaining=invite.uses_remaining,
+            expiration=invite.expiration,
+        )
+
+    @delete("/invites/{code:str}", guards=[guard_isGameOwner])
+    async def delete_invite(
+        self, code: str, state: State, session: Session, game: Game
+    ) -> None:
+        invites: List[Invite] = Invite.load_multiple_from_query(
+            {"code": code, "game_id": game.oid}, state.database
+        )
+
+        if len(invites) == 0:
+            raise exceptions.InviteNotFound()
+
+        state.database[Invite.collection].delete_many(
+            {"code": code, "game_id": game.oid}
+        )
+
+    @patch("/invites/{code:str}", guards=[guard_isGameOwner])
+    async def edit_invite(
+        self,
+        code: str,
+        data: InvitePatchModel,
+        state: State,
+        session: Session,
+        game: Game,
+    ) -> InviteModel:
+        invites: List[Invite] = Invite.load_multiple_from_query(
+            {"code": code, "game_id": game.oid}, state.database
+        )
+
+        if len(invites) == 0:
+            raise exceptions.InviteNotFound()
+
+        invite = invites[0]
+        invite.expiration = data.expiration
+        invite.uses_remaining = data.uses_remaining
+        invite.save()
+        return InviteModel(
+            code=invite.code,
+            uses_remaining=invite.uses_remaining,
+            expiration=invite.expiration,
+        )

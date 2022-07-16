@@ -102,13 +102,19 @@
                 "n-participants": "Participants",
                 "n-plugins": "Plugins"
             },
-            "load_failure": "Failed to load games."
+            "load_failure": "Failed to load games.",
+            "invite_dialog": {
+                "title": "New Invite",
+                "expiration": "Expiration Date",
+                "uses": "Maximum Uses"
+            }
         }
     },
     "generic": {
         "cancel": "Cancel",
         "finish": "Finish",
         "submit": "Submit",
-        "create": "Create"
+        "create": "Create",
+        "copied": "Copied to clipboard!"
     }
 }

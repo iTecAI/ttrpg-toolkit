@@ -41,6 +41,12 @@ class ResourceError(BaseException):
         super().__init__(extra=extra)
 
 
+class GenericNetworkError(BaseHTTPException):
+    message: str = "An unexpected network error occurred:"
+    message_class: str = "error.internal.generic_network"
+    status_code: int = HTTP_500_INTERNAL_SERVER_ERROR
+
+
 class PluginLibraryError(BaseException):
     message: str = "Failed to install one or more libraries."
     message_class: str = "error.plugin.library"
@@ -89,3 +95,22 @@ class AuthorizationFailedError(BaseHTTPException):
     message: str = "Failed to authorize with token"
     message_class: str = "error.auth.generic"
     status_code: int = HTTP_401_UNAUTHORIZED
+
+
+# Game Errors
+class GameNotOwned(BaseHTTPException):
+    message: str = "You do not own this game"
+    message_class: str = "error.games.not_owned"
+    status_code: int = HTTP_403_FORBIDDEN
+
+
+class GameNotFound(BaseHTTPException):
+    message: str = "Game not found"
+    message_class: str = "error.games.not_found"
+    status_code: int = HTTP_404_NOT_FOUND
+
+
+class InviteNotFound(BaseHTTPException):
+    message: str = "Invite not found"
+    message_class: str = "error.invites.not_found"
+    status_code: int = HTTP_404_NOT_FOUND

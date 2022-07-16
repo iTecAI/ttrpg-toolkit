@@ -2,6 +2,7 @@ from typing import Dict, List, Optional
 from util.orm import ORM
 from util.plugins import Plugin, PluginLoader
 from pymongo.database import Database
+import hashlib, base64, time, random
 
 
 class Game(ORM):
@@ -73,3 +74,46 @@ class Game(ORM):
             to_check = new_check[:]
             new_check = []
         return plugins
+
+
+class Invite(ORM):
+    object_type: str = "invite"
+    collection: str = "invites"
+
+    def __init__(
+        self,
+        oid: str = None,
+        database: Database = None,
+        game_id: str = None,
+        code: str = None,
+        uses_remaining: int | None = None,
+        expiration: int | None = None,
+        **kwargs
+    ):
+        super().__init__(oid, database, **kwargs)
+        self.game_id = game_id
+        self.code = code
+        self.uses_remaining = uses_remaining
+        self.expiration = expiration
+
+    @classmethod
+    def new(
+        cls,
+        database: Database,
+        game_id: str,
+        max_uses: int | None,
+        expiration_length: int | None,
+    ):
+        code = base64.urlsafe_b64encode(
+            hashlib.sha256(str(random.random() + time.time()).encode("utf-8"))
+            .hexdigest()
+            .encode("utf-8")
+        ).decode("utf-8")[:8]
+        expiration = (time.time() + expiration_length) if expiration_length else None
+        return cls(
+            database=database,
+            game_id=game_id,
+            code=code,
+            uses_remaining=max_uses,
+            expiration=expiration,
+        )

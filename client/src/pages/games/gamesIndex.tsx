@@ -30,8 +30,13 @@ import { NewGameDialog } from "./newGameDialog";
 import { MinimalGame } from "../../models/game";
 import { get } from "../../util/api";
 import { useSnackbar } from "notistack";
+import { InvitePlayerDialog } from "./invitePlayerDialog";
 
-function GameCard(props: { game: MinimalGame; uid: string }) {
+function GameCard(props: {
+    game: MinimalGame;
+    uid: string;
+    invitePlayer: (game: MinimalGame) => void;
+}) {
     const { game, uid } = props;
     return (
         <Card key={game.id} className={"game-item"}>
@@ -99,7 +104,9 @@ function GameCard(props: { game: MinimalGame; uid: string }) {
                         title={loc("games.main.items.invite")}
                         disableInteractive
                     >
-                        <IconButton>
+                        <IconButton
+                            onClick={() => props.invitePlayer(props.game)}
+                        >
                             <MdPersonAdd />
                         </IconButton>
                     </Tooltip>
@@ -122,6 +129,7 @@ export function GamesListPage(props: { userInfo: UserInfoModel }) {
     const [games, setGames] = useState<MinimalGame[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
     const [speedDialOpen, setSpeedDialOpen] = useState<boolean>(false);
+    const [invitingGame, setInvitingGame] = useState<MinimalGame | null>(null);
 
     const { enqueueSnackbar } = useSnackbar();
 
@@ -176,6 +184,9 @@ export function GamesListPage(props: { userInfo: UserInfoModel }) {
                             game={game}
                             uid={props.userInfo.userId}
                             key={game.id}
+                            invitePlayer={(game: MinimalGame) =>
+                                setInvitingGame(game)
+                            }
                         />
                     ))}
                 </div>
@@ -185,6 +196,11 @@ export function GamesListPage(props: { userInfo: UserInfoModel }) {
                 setOpen={setAddDialogOpen}
                 onCreate={loadGames}
             />
+            <InvitePlayerDialog
+                open={invitingGame !== null}
+                handleClose={() => setInvitingGame(null)}
+                game={invitingGame}
+            ></InvitePlayerDialog>
         </>
     );
 }

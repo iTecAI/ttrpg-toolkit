@@ -1,2 +1,2 @@
 from .accounts import User, Session
-from .games import Game
+from .games import Game, Invite

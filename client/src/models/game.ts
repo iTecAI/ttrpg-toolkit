@@ -9,3 +9,9 @@ export type MinimalGame = {
     plugins: string[];
     game_master: string;
 };
+
+export type InviteModel = {
+    code: string;
+    uses_remaining: number | null;
+    expiration: number | null;
+};

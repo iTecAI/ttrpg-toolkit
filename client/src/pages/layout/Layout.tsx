@@ -18,14 +18,7 @@ import {
     DialogActions,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import {
-    MdBubbleChart,
-    MdEdit,
-    MdFolder,
-    MdGroup,
-    MdLibraryBooks,
-    MdLogin,
-} from "react-icons/md";
+import { MdBubbleChart, MdEdit, MdLogin } from "react-icons/md";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { UserInfoModel } from "../../models/account";
 import { post } from "../../util/api";
