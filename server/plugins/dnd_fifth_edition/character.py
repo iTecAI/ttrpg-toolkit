@@ -4,11 +4,12 @@ from pymongo.database import Database
 from util.orm import ORM
 from util.exceptions import BaseHTTPException
 from starlette.status import *
+from .constants import ABILITIES
 
 
 class AbilityScoreException(BaseHTTPException):
     message: str = "Ability score not recognized"
-    message_class: str = "errors.plugin.dnd_fifth_edition.ability_score"
+    message_class: str = "errors.plugin.dnd_fifth_edition.character.ability_score"
     status_code: int = HTTP_404_NOT_FOUND
 
 
@@ -37,14 +38,7 @@ class AbilityScores(ORM):
         self.charisma = charisma
 
     def modifier(self, ability: str):
-        if not ability in [
-            "strength",
-            "dexterity",
-            "constitution",
-            "intelligence",
-            "wisdom",
-            "charisma",
-        ]:
+        if not ability in ABILITIES:
             raise AbilityScoreException
         return math.floor((getattr(self, ability) - 10) / 2)
 

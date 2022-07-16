@@ -72,6 +72,16 @@ class PluginEntrypointError(BaseException):
     message_class: str = "error.plugin.entrypoint_failure"
 
 
+class PluginDataLoaderError(BaseException):
+    message: str = "Failed to load data from data loader:"
+    message_class: str = "error.plugin.data_source"
+
+
+class PluginDataArgumentError(BaseException):
+    message: str = "Incorrect arguments passed to data loader:"
+    message_class: str = "error.plugin.data_args"
+
+
 # Account errors
 class UserExistsError(BaseHTTPException):
     message: str = "User already exists"

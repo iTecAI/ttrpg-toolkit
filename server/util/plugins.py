@@ -84,6 +84,7 @@ class Plugin:
                 extra=f"{name} - manifest.json could not be parsed"
             )
 
+        self.plugin_directory = os.path.exists(os.path.join(PLUGIN_LOCATION, name))
         self.slug = self._manifest("plugin_data.slug")
         self.display_name = self._manifest("plugin_data.display_name")
         self.tags = self._manifest("plugin_data.tags")

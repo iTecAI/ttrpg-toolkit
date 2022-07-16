@@ -65,5 +65,5 @@ class Config:
             return os.environ.get(args[0])
 
         if command == "sub":
-            sub_conf = Config(file=args[0])
+            sub_conf = Config(file=os.path.join(os.path.split(self.cpath)[0], args[0]))
             return sub_conf.data

@@ -19,7 +19,7 @@ class ORM:
             self.oid = uuid.uuid4().hex
 
     @property
-    def dict(self):
+    def dict(self):  # Good for storing on-db
         raw = self.__dict__
         del raw["database"]
         for e in self.exclude:
@@ -32,6 +32,18 @@ class ORM:
                     "$ORMMODULE": v.__module__,
                     "$ORMDATA": v.dict,
                 }
+        return raw
+
+    @property
+    def raw(self):  # Good for sending to client
+        raw = self.__dict__
+        del raw["database"]
+        for e in self.exclude:
+            if e in raw.keys():
+                del raw[e]
+        for k, v in raw.items():
+            if isinstance(v, ORM):
+                raw[k] = v.dict
         return raw
 
     def save(self, database: Database = None):
