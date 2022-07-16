@@ -84,7 +84,7 @@ export function InvitePlayerDialog(props: {
             fullWidth={!loading}
             open={props.open}
             className={"invite-dialog" + (loading ? " loading" : "")}
-            onClose={() => handleClose(false)}
+            onClose={() => handleClose(true)}
         >
             {loading ? (
                 <DialogContent>

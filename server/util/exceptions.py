@@ -114,3 +114,9 @@ class InviteNotFound(BaseHTTPException):
     message: str = "Invite not found"
     message_class: str = "error.invites.not_found"
     status_code: int = HTTP_404_NOT_FOUND
+
+
+class InviteForJoinedGame(BaseHTTPException):
+    message: str = "Specified invite references a game that user is in"
+    message_class: str = "error.invites.in_game"
+    status_code: int = HTTP_405_METHOD_NOT_ALLOWED

@@ -46,7 +46,8 @@
             "invalidField": "{{value}} is not a valid {{type}}"
         },
         "internal": {
-            "resource": "Error attempting to access resource: {{extra}}"
+            "resource": "Error attempting to access resource: {{extra}}",
+            "generic_network": "An unexpected network error occurred: {{extra}}"
         },
         "account": {
             "user_exists": "A user with that email already exists.",
@@ -55,6 +56,14 @@
         },
         "auth": {
             "generic": "Failed to authorize with token"
+        },
+        "games": {
+            "not_owned": "You do not own this game",
+            "not_found": "Game not found"
+        },
+        "invites": {
+            "not_found": "Invite not found",
+            "in_game": "You are already in this game"
         }
     },
     "plugin": {
@@ -107,6 +116,12 @@
                 "title": "New Invite",
                 "expiration": "Expiration Date",
                 "uses": "Maximum Uses"
+            },
+            "join": {
+                "title": "Join Game",
+                "input": "Enter Invite Code",
+                "submit": "Join",
+                "success": "Joined game!"
             }
         }
     },

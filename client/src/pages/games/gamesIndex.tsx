@@ -12,6 +12,13 @@ import {
     LinearProgress,
     SpeedDial,
     SpeedDialAction,
+    Dialog,
+    DialogTitle,
+    DialogContent,
+    TextField,
+    InputAdornment,
+    DialogActions,
+    Button,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import {
@@ -22,13 +29,14 @@ import {
     MdPerson,
     MdPersonAdd,
     MdStar,
+    MdTag,
 } from "react-icons/md";
 import { UserInfoModel } from "../../models/account";
 import { loc } from "../../util/localization";
 import "./styles/index.scss";
 import { NewGameDialog } from "./newGameDialog";
 import { MinimalGame } from "../../models/game";
-import { get } from "../../util/api";
+import { get, post } from "../../util/api";
 import { useSnackbar } from "notistack";
 import { InvitePlayerDialog } from "./invitePlayerDialog";
 
@@ -100,16 +108,18 @@ function GameCard(props: {
                     </Tooltip>
                 </Stack>
                 <Stack className="buttons" spacing={1} direction={"row"}>
-                    <Tooltip
-                        title={loc("games.main.items.invite")}
-                        disableInteractive
-                    >
-                        <IconButton
-                            onClick={() => props.invitePlayer(props.game)}
+                    {uid === game.owner_id ? (
+                        <Tooltip
+                            title={loc("games.main.items.invite")}
+                            disableInteractive
                         >
-                            <MdPersonAdd />
-                        </IconButton>
-                    </Tooltip>
+                            <IconButton
+                                onClick={() => props.invitePlayer(props.game)}
+                            >
+                                <MdPersonAdd />
+                            </IconButton>
+                        </Tooltip>
+                    ) : null}
                     <Tooltip
                         title={loc("games.main.items.open")}
                         disableInteractive
@@ -130,6 +140,8 @@ export function GamesListPage(props: { userInfo: UserInfoModel }) {
     const [loading, setLoading] = useState<boolean>(false);
     const [speedDialOpen, setSpeedDialOpen] = useState<boolean>(false);
     const [invitingGame, setInvitingGame] = useState<MinimalGame | null>(null);
+    const [joiningGame, setJoiningGame] = useState<boolean>(false);
+    const [joinCode, setJoinCode] = useState<string>("");
 
     const { enqueueSnackbar } = useSnackbar();
 
@@ -176,6 +188,10 @@ export function GamesListPage(props: { userInfo: UserInfoModel }) {
                         key={"join"}
                         icon={<MdPersonAdd size={20} />}
                         tooltipTitle={loc("games.main.speed_dial.join")}
+                        onClick={() => {
+                            setJoinCode("");
+                            setJoiningGame(true);
+                        }}
                     />
                 </SpeedDial>
                 <div className="game-list">
@@ -201,6 +217,63 @@ export function GamesListPage(props: { userInfo: UserInfoModel }) {
                 handleClose={() => setInvitingGame(null)}
                 game={invitingGame}
             ></InvitePlayerDialog>
+            <Dialog open={joiningGame} onClose={() => setJoiningGame(false)}>
+                <DialogTitle>{loc("games.main.join.title")}</DialogTitle>
+                <DialogContent>
+                    <TextField
+                        sx={{ marginTop: "10px" }}
+                        value={joinCode}
+                        onChange={(event) => setJoinCode(event.target.value)}
+                        variant="outlined"
+                        label={loc("games.main.join.input")}
+                        InputProps={{
+                            startAdornment: (
+                                <InputAdornment position={"start"}>
+                                    <MdTag size={24} />
+                                </InputAdornment>
+                            ),
+                        }}
+                    />
+                </DialogContent>
+                <DialogActions>
+                    <Button
+                        variant="outlined"
+                        onClick={() => setJoiningGame(false)}
+                    >
+                        {loc("generic.cancel")}
+                    </Button>
+                    <Button
+                        variant="contained"
+                        onClick={() => {
+                            post<null>(
+                                `/games/join/${
+                                    joinCode.length > 0 ? joinCode : "nocode"
+                                }`
+                            ).then((result) => {
+                                setJoiningGame(false);
+                                setJoinCode("");
+                                if (result.success) {
+                                    enqueueSnackbar(
+                                        loc("games.main.join.success"),
+                                        {
+                                            autoHideDuration: 3000,
+                                            variant: "success",
+                                        }
+                                    );
+                                    loadGames();
+                                } else {
+                                    enqueueSnackbar(result.message, {
+                                        autoHideDuration: 3000,
+                                        variant: "error",
+                                    });
+                                }
+                            });
+                        }}
+                    >
+                        {loc("games.main.join.submit")}
+                    </Button>
+                </DialogActions>
+            </Dialog>
         </>
     );
 }

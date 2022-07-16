@@ -1,3 +1,4 @@
+from time import time
 from typing import Dict, List, Optional
 from pydantic import BaseModel
 from starlite import Controller, State, delete, get, patch, post, Provide
@@ -106,6 +107,33 @@ class GameController(Controller):
             )
             for g in games_raw
         ]
+
+    @post("/join/{invite:str}", status_code=HTTP_202_ACCEPTED)
+    async def join_game(self, invite: str, session: Session, state: State) -> None:
+        invites: List[Invite] = Invite.load_multiple_from_query(
+            {"code": invite}, state.database
+        )
+
+        if len(invites) == 0:
+            raise exceptions.InviteNotFound()
+
+        invite: Invite = invites[0]
+        if invite.uses_remaining == 0 or invite.expiration <= time():
+            state.database[Invite.collection].delete_many(
+                {"code": invite, "game_id": invite.game_id}
+            )
+            raise exceptions.InviteNotFound()
+
+        game: Game = Game.load_oid(invite.game_id, state.database)
+        if session.uid == game.owner_id or session.uid in game.participants:
+            raise exceptions.InviteForJoinedGame()
+
+        game.participants.append(session.uid)
+        game.save()
+
+        invite.uses_remaining -= 1
+        invite.save()
+        return None
 
 
 class GameSpecificController(Controller):
