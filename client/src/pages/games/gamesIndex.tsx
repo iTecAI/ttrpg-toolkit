@@ -1,5 +1,4 @@
 import {
-    Fab,
     Box,
     Tooltip,
     Card,
@@ -11,10 +10,13 @@ import {
     IconButton,
     Stack,
     LinearProgress,
+    SpeedDial,
+    SpeedDialAction,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import {
     MdAdd,
+    MdCreate,
     MdExtension,
     MdOpenInNew,
     MdPerson,
@@ -119,6 +121,7 @@ export function GamesListPage(props: { userInfo: UserInfoModel }) {
     const [addDialogOpen, setAddDialogOpen] = useState<boolean>(false);
     const [games, setGames] = useState<MinimalGame[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
+    const [speedDialOpen, setSpeedDialOpen] = useState<boolean>(false);
 
     const { enqueueSnackbar } = useSnackbar();
 
@@ -143,16 +146,30 @@ export function GamesListPage(props: { userInfo: UserInfoModel }) {
         <>
             <Box className="games-container">
                 {loading && <LinearProgress />}
-                <Tooltip title={loc("games.main.new")} placement="top">
-                    <Fab
-                        color="primary"
-                        aria-label="new game"
-                        className="add-game-button"
-                        onClick={() => setAddDialogOpen(true)}
-                    >
-                        <MdAdd size={"24px"} />
-                    </Fab>
-                </Tooltip>
+                <SpeedDial
+                    color="primary"
+                    ariaLabel="new game"
+                    className="add-game-button"
+                    icon={<MdAdd size={24} />}
+                    open={speedDialOpen}
+                    onClose={() => setSpeedDialOpen(false)}
+                    onMouseEnter={() => setSpeedDialOpen(true)}
+                >
+                    <SpeedDialAction
+                        key={"create"}
+                        icon={<MdCreate size={20} />}
+                        tooltipTitle={loc("games.main.speed_dial.create")}
+                        onClick={() => {
+                            setAddDialogOpen(true);
+                            setSpeedDialOpen(false);
+                        }}
+                    />
+                    <SpeedDialAction
+                        key={"join"}
+                        icon={<MdPersonAdd size={20} />}
+                        tooltipTitle={loc("games.main.speed_dial.join")}
+                    />
+                </SpeedDial>
                 <div className="game-list">
                     {games.map((game: MinimalGame) => (
                         <GameCard game={game} uid={props.userInfo.userId} />

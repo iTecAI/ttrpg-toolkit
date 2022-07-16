@@ -81,7 +81,10 @@
     },
     "games": {
         "main": {
-            "new": "New Game",
+            "speed_dial": {
+                "create": "Create Game",
+                "join": "Join Game"
+            },
             "dialog": {
                 "title": "Create Game",
                 "system": "Select Game System",
