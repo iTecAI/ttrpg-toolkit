@@ -172,7 +172,11 @@ export function GamesListPage(props: { userInfo: UserInfoModel }) {
                 </SpeedDial>
                 <div className="game-list">
                     {games.map((game: MinimalGame) => (
-                        <GameCard game={game} uid={props.userInfo.userId} />
+                        <GameCard
+                            game={game}
+                            uid={props.userInfo.userId}
+                            key={game.id}
+                        />
                     ))}
                 </div>
             </Box>

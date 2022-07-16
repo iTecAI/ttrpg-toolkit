@@ -26,7 +26,7 @@ import {
     MdLibraryBooks,
     MdLogin,
 } from "react-icons/md";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { UserInfoModel } from "../../models/account";
 import { post } from "../../util/api";
 import { calculateGravatar } from "../../util/gravatar";
@@ -96,6 +96,8 @@ export function Layout(props: {
     const [userSettingsOpen, setUserSettingsOpen] = useState<boolean>(false);
     const userMenuOpen = Boolean(anchorEl);
 
+    const location = useLocation();
+
     return (
         <>
             <AppBar position="absolute" className="root-nav">
@@ -127,9 +129,20 @@ export function Layout(props: {
                                     spacing={1}
                                 >
                                     <Button
-                                        startIcon={<MdGroup />}
                                         sx={{
-                                            color: "contrastText.background",
+                                            color: location.pathname.includes(
+                                                "/games"
+                                            )
+                                                ? "primary"
+                                                : "contrastText.background",
+                                            borderBottomStyle: "solid",
+                                            borderBottomColor: "primary",
+                                            borderBottomWidth:
+                                                location.pathname.includes(
+                                                    "/games"
+                                                )
+                                                    ? "2px"
+                                                    : "0px",
                                         }}
                                         size="large"
                                         onClick={() => nav("/games")}
@@ -137,18 +150,40 @@ export function Layout(props: {
                                         {loc("layout.buttons.games")}
                                     </Button>
                                     <Button
-                                        startIcon={<MdFolder />}
                                         sx={{
-                                            color: "contrastText.background",
+                                            color: location.pathname.includes(
+                                                "/collections"
+                                            )
+                                                ? "primary"
+                                                : "contrastText.background",
+                                            borderBottomStyle: "solid",
+                                            borderBottomColor: "primary",
+                                            borderBottomWidth:
+                                                location.pathname.includes(
+                                                    "/collections"
+                                                )
+                                                    ? "2px"
+                                                    : "0px",
                                         }}
                                         size="large"
                                     >
                                         {loc("layout.buttons.collections")}
                                     </Button>
                                     <Button
-                                        startIcon={<MdLibraryBooks />}
                                         sx={{
-                                            color: "contrastText.background",
+                                            color: location.pathname.includes(
+                                                "/compendium"
+                                            )
+                                                ? "primary"
+                                                : "contrastText.background",
+                                            borderBottomStyle: "solid",
+                                            borderBottomColor: "primary",
+                                            borderBottomWidth:
+                                                location.pathname.includes(
+                                                    "/compendium"
+                                                )
+                                                    ? "2px"
+                                                    : "0px",
                                         }}
                                         size="large"
                                     >
