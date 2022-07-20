@@ -25,3 +25,8 @@ class AbstractDataSourceLoader:
     ) -> None:
         self.source_map = source_map
         self.plugin: Plugin = plugin
+
+
+class SearchModel(BaseModel):
+    fields: Dict[str, str]
+    require_all: bool

@@ -16,17 +16,15 @@
         "kwargs": {},
         "source_map": "$sub:source_map.json",
         "loader": ["data", "DataLoader5e"],
-        "search_models": ["class"],
-        "load_functions": {
-            "get_class": {
-                "display_name": "Get Class",
-                "input_model": "class"
-            }
-        },
-        "list_functions": {
-            "list_classes": {
-                "display_name": "List Classes",
-                "output_model": "class"
+        "categories": {
+            "class": {
+                "search_model": "class",
+                "display_name": "Classes",
+                "load": "get_class",
+                "search": "search_classes",
+                "search_fields": [
+                    "class"
+                ]
             }
         }
     }

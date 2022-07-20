@@ -13,5 +13,5 @@ def parse_folder(path: str):
 
 
 source_map = parse_folder("data")
-with open("source_map.json", "w") as s:
+with open("../source_map.json", "w") as s:
     s.write(json.dumps(source_map, indent=4))

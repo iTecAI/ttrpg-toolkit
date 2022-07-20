@@ -1,4 +1,5 @@
 import json
+from operator import sub
 import os
 from turtle import back
 from typing import Optional, List
@@ -101,6 +102,142 @@ class Spellcasting5e(AbstractDataSourceItem):
         return SPELLSLOT_MAP[self.progression]
 
 
+class ClassFeature5e(AbstractDataSourceItem):
+    subtype: str = "class_5e.feature"
+    plugin: str = "dnd_fifth_edition"
+
+    def __init__(
+        self,
+        name: str = None,
+        type: str = None,
+        gain_scf: bool = False,
+        source: str = None,
+        level: int = 1,
+        entries: List[str] = [],
+        **kwargs,
+    ):
+        super().__init__(name, **kwargs)
+        self.type = type
+        self.gain_scf = gain_scf
+        self.source = source
+        self.level = level
+        self.entries = entries
+
+    @classmethod
+    def load(
+        cls, source_data: Dict[str, Any], descriptor: str | dict, optional: List[Dict]
+    ):
+        if type(descriptor) == dict:
+            gain_scf = descriptor["gainSubclassFeature"]
+            descriptor = descriptor["classFeature"]
+        else:
+            gain_scf = False
+
+        parts = descriptor.split("|")
+        item = None
+        if len(parts) >= 5:
+            name = parts[0]
+            class_name = parts[1]
+            class_source = parts[2]
+            sc_name = parts[3]
+            source = parts[4]
+            level = int(parts[5])
+
+            for i in source_data["subclassFeature"]:
+                if (
+                    i["name"].lower() == name.lower()
+                    and i["source"] == source.lower()
+                    and i["subclassShortName"].lower() == sc_name.lower()
+                    and i["className"].lower() == class_name.lower()
+                    and i["classSource"].lower() == class_source.lower()
+                    and i["level"] == level
+                ):
+                    item = i
+        else:
+            name = parts[0]
+            class_name = parts[1]
+            source = parts[2]
+            level = int(parts[3])
+
+            for i in source_data["subclassFeature"]:
+                if (
+                    i["name"].lower() == name.lower()
+                    and i["source"] == source.lower()
+                    and i["className"].lower() == class_name.lower()
+                    and i["level"] == level
+                ):
+                    item = i
+
+        if not item:
+            return None
+
+        return cls(
+            name=i["name"],
+            type="subclass" if len(parts) >= 5 else "class",
+            gain_scf=gain_scf,
+            source=i["source"],
+            level=i["level"],
+            entries=parse_5etools_entries(
+                i["entries"],
+                source_data["classFeature"],
+                source_data["subclassFeature"],
+                optional,
+            ),
+        )
+
+
+class Subclass5e(AbstractDataSourceItem):
+    subtype: str = "class_5e.subclass"
+    plugin: str = "dnd_fifth_edition"
+
+    def __init__(
+        self,
+        name: str = None,
+        name_short: str = None,
+        source: str = None,
+        subclass_spells: Dict[int, List[str]] = {},
+        features: List[ClassFeature5e] = [],
+        **kwargs,
+    ):
+        super().__init__(name, **kwargs)
+        self.name_short = name_short
+        self.source = source
+        self.subclass_spells = subclass_spells
+        self.features = features
+
+    @classmethod
+    def load(cls, plugin: Plugin, source_map: Any, superclass: Any, data: Any):
+        sc_spells = {}
+        if "additionalSpells" in data.keys():
+            for s in data["additionalSpells"]:
+                if "prepared" in s.keys():
+                    for k in s["prepared"].keys():
+                        if not k in sc_spells.keys():
+                            sc_spells[k] = []
+                        sc_spells[k].extend(s["prepared"][k])
+
+        opt_file = os.path.join(
+            plugin.plugin_directory,
+            get_nested(source_map, "optionalfeatures"),
+        )
+
+        with open(opt_file, "r") as f:
+            optional_features = json.load(f)
+
+        features = [
+            ClassFeature5e.load(superclass, feat, optional_features)
+            for feat in data["subclassFeatures"]
+        ]
+
+        return Subclass5e(
+            name=data["name"],
+            name_short=data["shortName"],
+            source=data["source"],
+            subclass_spells=sc_spells,
+            features=features,
+        )
+
+
 class Class5e(AbstractDataSourceItem):
     subtype: str = "class_5e"
     plugin: str = "dnd_fifth_edition"
@@ -109,7 +246,6 @@ class Class5e(AbstractDataSourceItem):
         self,
         name: str = None,
         source: str = None,
-        subclass: Any = None,
         hit_dice: str = None,
         save_proficiency: List[str] = [],
         armor_proficiency: List[str] = [],
@@ -123,9 +259,27 @@ class Class5e(AbstractDataSourceItem):
         multiclass_tool_proficiency: List[str] = [],
         multiclass_skill_proficiency: List[SkillChoose5e] = [],
         spellcasting: Spellcasting5e = None,
+        features: List[ClassFeature5e] = [],
+        subclasses: List[Subclass5e] = [],
         **kwargs,
     ):
         super().__init__(name, **kwargs)
+        self.source = source
+        self.hit_dice = hit_dice
+        self.save_proficiency = save_proficiency
+        self.armor_proficiency = armor_proficiency
+        self.weapon_proficiency = weapon_proficiency
+        self.tool_proficiency = tool_proficiency
+        self.skill_proficiency = skill_proficiency
+        self.starting_equipment = starting_equipment
+        self.multiclass_requirements = multiclass_requirements
+        self.multiclass_armor_proficiency = multiclass_armor_proficiency
+        self.multiclass_weapon_proficiency = multiclass_weapon_proficiency
+        self.multiclass_tool_proficiency = multiclass_tool_proficiency
+        self.multiclass_skill_proficiency = multiclass_skill_proficiency
+        self.spellcasting = spellcasting
+        self.features = features
+        self.subclasses = subclasses
 
     @staticmethod
     def verify_class(classes: List, name: str, source: str):
@@ -194,3 +348,86 @@ class Class5e(AbstractDataSourceItem):
             )
         else:
             subclass_raw = None
+
+        opt_file = os.path.join(
+            plugin.plugin_directory,
+            get_nested(source_map, "optionalfeatures"),
+        )
+
+        with open(opt_file, "r") as f:
+            optional_features = json.load(f)
+
+        features = [
+            ClassFeature5e.load(superclass, feat, optional_features)
+            for feat in class_raw["classFeatures"]
+        ]
+
+        if subclass_raw:
+            subclasses = [Subclass5e.load(plugin, source_map, superclass, subclass_raw)]
+        else:
+            subclasses = [
+                Subclass5e.load(plugin, source_map, superclass, s)
+                for s in superclass["subclass"]
+            ]
+
+        return Class5e(
+            name=class_raw["name"],
+            source=class_raw["source"],
+            hit_dice=f"{class_raw['hd']['number']}d{class_raw['hd']['faces']}",
+            save_proficiency=[ABILITY_MAP[p] for p in class_raw["proficiency"]],
+            armor_proficiency=[
+                parse_5etools_string(p)
+                for p in class_raw["startingProficiencies"]["armor"]
+            ]
+            if "armor" in class_raw["startingProficiencies"].keys()
+            else [],
+            weapon_proficiency=[
+                parse_5etools_string(p)
+                for p in class_raw["startingProficiencies"]["weapons"]
+            ]
+            if "weapons" in class_raw["startingProficiencies"].keys()
+            else [],
+            tool_proficiency=[
+                parse_5etools_string(p)
+                for p in class_raw["startingProficiencies"]["tools"]
+            ]
+            if "tools" in class_raw["startingProficiencies"].keys()
+            else [],
+            skill_proficiency=[
+                SkillChoose5e.load(p)
+                for p in class_raw["startingProficiencies"]["skills"]
+            ]
+            if "skills" in class_raw["startingProficiencies"].keys()
+            else None,
+            starting_equipment=StartingEquipment5e.load(class_raw["startingEquipment"]),
+            multiclass_requirements={
+                ABILITY_MAP[k]: v for k, v in class_raw["multiclassing"]["requirements"]
+            },
+            multiclass_armor_proficiency=[
+                parse_5etools_string(p)
+                for p in class_raw["multiclassing"]["proficienciesGained"]["armor"]
+            ]
+            if "armor" in class_raw["multiclassing"]["proficienciesGained"].keys()
+            else [],
+            multiclass_weapon_proficiency=[
+                parse_5etools_string(p)
+                for p in class_raw["multiclassing"]["proficienciesGained"]["weapons"]
+            ]
+            if "weapons" in class_raw["multiclassing"]["proficienciesGained"].keys()
+            else [],
+            multiclass_tool_proficiency=[
+                parse_5etools_string(p)
+                for p in class_raw["multiclassing"]["proficienciesGained"]["tools"]
+            ]
+            if "tools" in class_raw["multiclassing"]["proficienciesGained"].keys()
+            else [],
+            multiclass_skill_proficiency=[
+                SkillChoose5e.load(p)
+                for p in class_raw["multiclassing"]["proficienciesGained"]["skills"]
+            ]
+            if "skills" in class_raw["multiclassing"]["proficienciesGained"].keys()
+            else None,
+            spellcasting=Spellcasting5e.load(class_raw),
+            features=features,
+            subclasses=subclasses,
+        )
