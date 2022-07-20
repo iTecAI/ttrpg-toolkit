@@ -70,6 +70,37 @@ class StartingEquipment5e(AbstractDataSourceItem):
         )
 
 
+class Spellcasting5e(AbstractDataSourceItem):
+    subtype: str = "class_5e.spellcasting"
+    plugin: str = "dnd_fifth_edition"
+
+    def __init__(
+        self,
+        name: str = None,
+        ability: str = None,
+        progression: str = None,
+        cantrip_progression: List[int] = [],
+        **kwargs,
+    ):
+        super().__init__(name, **kwargs)
+        self.ability = ability
+        self.progression = progression
+        self.cantrip_progression = cantrip_progression
+
+    @classmethod
+    def load(cls, data: Any):
+        return cls(
+            name="spellcasting",
+            ability=ABILITY_MAP[data["spellcastingAbility"]],
+            progression=data["casterProgression"],
+            cantrip_progression=data["cantripProgression"],
+        )
+
+    @property
+    def spell_progression(self):
+        return SPELLSLOT_MAP[self.progression]
+
+
 class Class5e(AbstractDataSourceItem):
     subtype: str = "class_5e"
     plugin: str = "dnd_fifth_edition"
@@ -91,6 +122,7 @@ class Class5e(AbstractDataSourceItem):
         multiclass_weapon_proficiency: List[str] = [],
         multiclass_tool_proficiency: List[str] = [],
         multiclass_skill_proficiency: List[SkillChoose5e] = [],
+        spellcasting: Spellcasting5e = None,
         **kwargs,
     ):
         super().__init__(name, **kwargs)
