@@ -1,8 +1,16 @@
-from typing import Dict, List, Optional
+from typing import Any, Dict, List, Optional
 from pydantic import BaseModel
 from starlite import Controller, State, get, post, Provide
 from starlite.types import Guard
-from util import guard_loggedIn, PluginLoader, session_dep, exceptions
+from util import (
+    guard_loggedIn,
+    PluginLoader,
+    session_dep,
+    exceptions,
+    plugin_dep,
+    Plugin,
+)
+from util.plugin_utils import SearchModel
 from models import Session
 from enum import Enum
 from starlette.status import *
@@ -92,3 +100,39 @@ class PluginController(Controller):
             return state.plugins.plugins[plugin].manifest.data
         else:
             raise PluginNotFoundError()
+
+
+class DataLoadModel(BaseModel):
+    items: List[Any]
+
+
+class PluginDataSourceController(Controller):
+    path: str = "/plugins/{plugin:str}/data"
+    guards: Optional[List[Guard]] = []
+    dependencies: Optional[Dict[str, "Provide"]] = {
+        "session": Provide(session_dep),
+        "plugin_object": Provide(plugin_dep),
+    }
+
+    @post("/{category:str}/search", status_code=HTTP_200_OK)
+    async def search_category(
+        self,
+        plugin_object: Plugin,
+        category: str,
+        data: SearchModel,
+    ) -> List[Any]:
+        return plugin_object.search_data(data, category)
+
+    @post("/{category:str}/load", status_code=HTTP_200_OK)
+    async def load_data_from_category(
+        self,
+        plugin_object: Plugin,
+        category: str,
+        data: DataLoadModel,
+    ) -> List[Any]:
+        results = []
+        for d in data.items:
+            item = plugin_object.load_data(d, category)
+            results.append(item.raw)
+
+        return results

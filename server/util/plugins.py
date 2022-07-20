@@ -10,9 +10,18 @@ from .exceptions import (
     PluginDependencyError,
     InvalidPluginError,
     PluginEntrypointError,
+    PluginNoDataSourceError,
+    DataSourceCategoryNotFound,
 )
 from logging import exception, critical
 import importlib
+from pydantic import BaseModel
+from .orm import ORM
+
+
+class SearchModel(BaseModel):
+    fields: Dict[str, str]
+
 
 PLUGIN_LOCATION = os.path.join(".", "plugins")
 
@@ -67,6 +76,13 @@ class Entrypoint:
         return list(self.controller_map.values())
 
 
+class __AbstractDataSourceLoader__:
+    def __init__(
+        self, source_map: Dict[str, Dict[str, Any] | str], plugin: Any, **kwargs
+    ) -> None:
+        pass
+
+
 class Plugin:
     def __init__(self, name: str, loader) -> None:
         self.name = name
@@ -84,7 +100,7 @@ class Plugin:
                 extra=f"{name} - manifest.json could not be parsed"
             )
 
-        self.plugin_directory = os.path.exists(os.path.join(PLUGIN_LOCATION, name))
+        self.plugin_directory = os.path.join(PLUGIN_LOCATION, name)
         self.slug = self._manifest("plugin_data.slug")
         self.display_name = self._manifest("plugin_data.display_name")
         self.tags = self._manifest("plugin_data.tags")
@@ -113,6 +129,17 @@ class Plugin:
                 self.exports[x] = e.exports[x]
 
         self.router = Router(path=f"/plugins/{self.name}", route_handlers=controllers)
+
+        if "data_source" in self.tags:
+            self.data_source: __AbstractDataSourceLoader__ = self.entrypoints[
+                self._manifest("data_source.loader")[0]
+            ].exports[self._manifest("data_source.loader")[1]](
+                self._manifest("data_source.source_map"),
+                self,
+                **self._manifest("data_source.kwargs"),
+            )
+        else:
+            self.data_source = None
 
     def _manifest(self, key: str | list[str], default: Any = "$nodef"):
         try:
@@ -151,6 +178,34 @@ class Plugin:
         for p in self.loader.get_dep_refs(self.name):
             for e in p.exports.keys():
                 exps[e] = p.exports[e]
+
+    @property
+    def is_data_source(self):
+        return "data_source" in self.tags
+
+    def search_data(self, model: SearchModel, category: str) -> List[Any]:
+        if not self.is_data_source:
+            raise PluginNoDataSourceError()
+
+        if not category in self._manifest("data_source.categories").keys():
+            raise DataSourceCategoryNotFound(extra=category)
+
+        return getattr(
+            self.data_source,
+            self._manifest(["data_source", "categories", category, "search"]),
+        )(model)
+
+    def load_data(self, model: Any, category: str) -> ORM:
+        if not self.is_data_source:
+            raise PluginNoDataSourceError()
+
+        if not category in self._manifest("data_source.categories").keys():
+            raise DataSourceCategoryNotFound(extra=category)
+
+        return getattr(
+            self.data_source,
+            self._manifest(["data_source", "categories", category, "load"]),
+        )(model)
 
 
 class PluginLoader:

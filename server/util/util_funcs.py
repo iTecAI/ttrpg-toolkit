@@ -2,6 +2,8 @@ from typing import Any, Dict, List
 
 
 def get_nested(data: Dict[Any, Any], path: List[Any]) -> Any:
+    if type(path) == str:
+        path = path.split(".")
     current = data.copy()
     while len(path) > 0:
         key = path.pop(0)

@@ -21,7 +21,7 @@ class AbstractDataSourceItem(ORM):
 
 class AbstractDataSourceLoader:
     def __init__(
-        self, source_map: Dict[str, Dict[str, Any] | str], plugin: Plugin, *kwargs
+        self, source_map: Dict[str, Dict[str, Any] | str], plugin: Plugin, **kwargs
     ) -> None:
         self.source_map = source_map
         self.plugin: Plugin = plugin
@@ -29,4 +29,3 @@ class AbstractDataSourceLoader:
 
 class SearchModel(BaseModel):
     fields: Dict[str, str]
-    require_all: bool

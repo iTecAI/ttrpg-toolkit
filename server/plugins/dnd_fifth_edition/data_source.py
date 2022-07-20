@@ -7,12 +7,15 @@ import util
 from typing import Dict, Any, List
 import json
 import os
-from .data_item_types.class5e import Class5e, MinimalClassDescriptor
+from plugins.dnd_fifth_edition.data_item_types.class5e import (
+    Class5e,
+    MinimalClassDescriptor,
+)
 
 
 class DataLoader5e(AbstractDataSourceLoader):
     def __init__(
-        self, source_map: Dict[str, Dict[str, Any] | str], plugin: Plugin, *kwargs
+        self, source_map: Dict[str, Dict[str, Any] | str], plugin: Plugin, **kwargs
     ) -> None:
         super().__init__(source_map, plugin, *kwargs)
 
@@ -41,6 +44,7 @@ class DataLoader5e(AbstractDataSourceLoader):
             ]
 
         for cfp in class_file_possibilities:
+            print(self.source_map["class"][cfp], self.plugin.plugin_directory)
             with open(
                 os.path.join(
                     self.plugin.plugin_directory, self.source_map["class"][cfp]

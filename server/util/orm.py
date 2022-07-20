@@ -34,6 +34,34 @@ class ORM:
                 }
         return raw
 
+    @staticmethod
+    def parse_dict_raw(data: Dict):
+        result = {}
+        for k, v in data.items():
+            if isinstance(v, ORM):
+                result[k] = v.raw
+            elif type(v) == dict:
+                result[k] = ORM.parse_dict_raw(v)
+            elif type(v) == list:
+                result[k] = ORM.parse_list_raw(v)
+            else:
+                result[k] = v
+        return result
+
+    @staticmethod
+    def parse_list_raw(data: List):
+        result = []
+        for i in data:
+            if isinstance(i, ORM):
+                result.append(i.raw)
+            elif type(i) == dict:
+                result.append(ORM.parse_dict_raw(i))
+            elif type(i) == list:
+                result.append(ORM.parse_list_raw(i))
+            else:
+                result.append(i)
+        return result
+
     @property
     def raw(self):  # Good for sending to client
         raw = self.__dict__
@@ -41,9 +69,7 @@ class ORM:
         for e in self.exclude:
             if e in raw.keys():
                 del raw[e]
-        for k, v in raw.items():
-            if isinstance(v, ORM):
-                raw[k] = v.dict
+        raw = ORM.parse_dict_raw(raw)
         return raw
 
     def save(self, database: Database = None):

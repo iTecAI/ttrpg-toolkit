@@ -82,6 +82,12 @@ class PluginDataArgumentError(BaseException):
     message_class: str = "error.plugin.data_args"
 
 
+class PluginNoDataSourceError(BaseHTTPException):
+    message: str = "Plugin is not a data source"
+    message_class: str = "error.plugin.not_data_source"
+    status_code: int = HTTP_405_METHOD_NOT_ALLOWED
+
+
 # Account errors
 class UserExistsError(BaseHTTPException):
     message: str = "User already exists"
@@ -130,3 +136,10 @@ class InviteForJoinedGame(BaseHTTPException):
     message: str = "Specified invite references a game that user is in"
     message_class: str = "error.invites.in_game"
     status_code: int = HTTP_405_METHOD_NOT_ALLOWED
+
+
+# Data Source Errors
+class DataSourceCategoryNotFound(BaseHTTPException):
+    message: str = "Category not found:"
+    message_class: str = "error.data_source.category"
+    status_code: int = HTTP_404_NOT_FOUND

@@ -1,3 +1,3 @@
 from .account_controller import AccountController
-from .plugin_controller import PluginController
+from .plugin_controller import PluginController, PluginDataSourceController
 from .game_controller import GameController, GameSpecificController

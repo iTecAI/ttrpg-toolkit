@@ -1,0 +1,17 @@
+{
+  "items": [
+    { "class_name": "Artificer", "source_name": "TCE", "subclass_name": null },
+    { "class_name": "Barbarian", "source_name": "PHB", "subclass_name": null },
+    { "class_name": "Bard", "source_name": "PHB", "subclass_name": null },
+    { "class_name": "Cleric", "source_name": "PHB", "subclass_name": null },
+    { "class_name": "Druid", "source_name": "PHB", "subclass_name": null },
+    { "class_name": "Fighter", "source_name": "PHB", "subclass_name": null },
+    { "class_name": "Monk", "source_name": "PHB", "subclass_name": null },
+    { "class_name": "Paladin", "source_name": "PHB", "subclass_name": null },
+    { "class_name": "Ranger", "source_name": "PHB", "subclass_name": null },
+    { "class_name": "Rogue", "source_name": "PHB", "subclass_name": null },
+    { "class_name": "Sorcerer", "source_name": "PHB", "subclass_name": null },
+    { "class_name": "Warlock", "source_name": "PHB", "subclass_name": null },
+    { "class_name": "Wizard", "source_name": "PHB", "subclass_name": null }
+  ]
+}
