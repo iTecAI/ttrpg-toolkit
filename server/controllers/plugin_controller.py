@@ -114,6 +114,15 @@ class PluginDataSourceController(Controller):
         "plugin_object": Provide(plugin_dep),
     }
 
+    @post("/{category:str}/search/minimal", status_code=HTTP_200_OK)
+    async def search_category_minimal(
+        self,
+        plugin_object: Plugin,
+        category: str,
+        data: SearchModel,
+    ) -> List[Any]:
+        return plugin_object.search_data(data, category)
+
     @post("/{category:str}/search", status_code=HTTP_200_OK)
     async def search_category(
         self,
@@ -121,7 +130,13 @@ class PluginDataSourceController(Controller):
         category: str,
         data: SearchModel,
     ) -> List[Any]:
-        return plugin_object.search_data(data, category)
+        search_results = plugin_object.search_data(data, category)
+        results = []
+        for d in search_results:
+            item = plugin_object.load_data(d, category)
+            results.append(item.raw)
+
+        return results
 
     @post("/{category:str}/load", status_code=HTTP_200_OK)
     async def load_data_from_category(

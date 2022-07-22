@@ -9,6 +9,7 @@ import {
     useNavigate,
 } from "react-router-dom";
 import { UserInfoModel } from "./models/account";
+import { Compendium } from "./pages/compendium/compendium";
 import { GamesListPage } from "./pages/games/gamesIndex";
 import { Index } from "./pages/index/Index";
 import { Layout } from "./pages/layout/Layout";
@@ -72,6 +73,7 @@ function RouterChild() {
                         />
                     }
                 />
+                <Route path="/compendium" element={<Compendium />} />
             </Route>
             <Route
                 path="/login"

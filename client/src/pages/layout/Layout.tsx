@@ -179,6 +179,7 @@ export function Layout(props: {
                                                     : "0px",
                                         }}
                                         size="large"
+                                        onClick={() => nav("/compendium")}
                                     >
                                         {loc("layout.buttons.compendium")}
                                     </Button>

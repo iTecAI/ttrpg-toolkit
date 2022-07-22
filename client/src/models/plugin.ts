@@ -51,9 +51,31 @@ export type DiceModel = {
     reroll_operations: { [key: string]: string };
 };
 
+// Data Source
+export type DataSourceCategory = {
+    search_model: string;
+    display_name: string;
+    display_mode: "itemized" | "hierarchy";
+    load: string;
+    search: string;
+    search_fields: {
+        type: string;
+        display_name: string;
+    }[];
+};
+
+export type DataSource = {
+    kwargs: { [key: string]: any };
+    source_map: { [key: string]: any };
+    loader: string[];
+    default_category: string;
+    categories: { [key: string]: DataSourceCategory };
+};
+
 // Manifest type
 export type PluginManifest = {
     plugin_data: PluginDataModel;
     entrypoints: { [key: string]: EntrypointModel };
     dice?: DiceModel;
+    data_source?: DataSource;
 };
