@@ -49,6 +49,7 @@ function parseVariableItem(
             processedVars[v] = getNested(data, item.options[v]);
         }
 
+        // eslint-disable-next-line
         const func = new Function(
             "options",
             `"use strict";return (${item.function})(options)`

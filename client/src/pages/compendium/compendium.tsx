@@ -1,7 +1,6 @@
 import {
     Box,
     Button,
-    Grid,
     IconButton,
     InputAdornment,
     LinearProgress,
@@ -284,7 +283,14 @@ export function Compendium() {
                             }
                         ).then((result) => {
                             if (result.success) {
-                                setSearchResults(result.value);
+                                let sortedResults = result.value.sort((a, b) =>
+                                    a.name < b.name
+                                        ? -1
+                                        : a.name === b.name
+                                        ? 0
+                                        : 1
+                                );
+                                setSearchResults(sortedResults);
                             } else {
                                 enqueueSnackbar(result.message, {
                                     autoHideDuration: 3000,

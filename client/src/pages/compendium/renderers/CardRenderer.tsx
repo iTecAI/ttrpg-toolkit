@@ -1,4 +1,11 @@
-import { Card, CardContent, CardHeader, CardMedia, Paper } from "@mui/material";
+import {
+    Card,
+    CardActionArea,
+    CardContent,
+    CardHeader,
+    CardMedia,
+    Paper,
+} from "@mui/material";
 import Masonry from "react-masonry-css";
 import {
     CardRendererModel,
@@ -21,6 +28,7 @@ function ContentSegmentItem(props: {
                 props.segment.conditional.options[v]
             );
         }
+        // eslint-disable-next-line
         const func = new Function(
             "options",
             `"use strict";return (${props.segment.conditional.function})(options)`
@@ -54,36 +62,42 @@ export default function CardRenderer(props: {
 }) {
     return (
         <Card className="compendium-card">
-            <CardHeader
-                title={renderText(props.data, props.renderer.title)}
-                subheader={
-                    props.renderer.subtitle
-                        ? renderText(props.data, props.renderer.subtitle)
-                        : undefined
-                }
-            />
-            {props.renderer.image ? (
-                <CardMedia src={renderText(props.data, props.renderer.image)} />
-            ) : null}
-            <CardContent className="content">
-                {props.renderer.content.type === "text" ? (
-                    renderText(props.data, props.renderer.content.text)
-                ) : (
-                    <Masonry
-                        className="content-masonry"
-                        columnClassName="content-column"
-                        breakpointCols={props.renderer.content.count_per_row}
-                    >
-                        {props.renderer.content.segments.map((segment) => (
-                            <ContentSegmentItem
-                                key={renderText(props.data, segment.name)}
-                                segment={segment}
-                                data={props.data}
-                            />
-                        ))}
-                    </Masonry>
-                )}
-            </CardContent>
+            <CardActionArea>
+                <CardHeader
+                    title={renderText(props.data, props.renderer.title)}
+                    subheader={
+                        props.renderer.subtitle
+                            ? renderText(props.data, props.renderer.subtitle)
+                            : undefined
+                    }
+                />
+                {props.renderer.image ? (
+                    <CardMedia
+                        src={renderText(props.data, props.renderer.image)}
+                    />
+                ) : null}
+                <CardContent className="content">
+                    {props.renderer.content.type === "text" ? (
+                        renderText(props.data, props.renderer.content.text)
+                    ) : (
+                        <Masonry
+                            className="content-masonry"
+                            columnClassName="content-column"
+                            breakpointCols={
+                                props.renderer.content.count_per_row
+                            }
+                        >
+                            {props.renderer.content.segments.map((segment) => (
+                                <ContentSegmentItem
+                                    key={renderText(props.data, segment.name)}
+                                    segment={segment}
+                                    data={props.data}
+                                />
+                            ))}
+                        </Masonry>
+                    )}
+                </CardContent>
+            </CardActionArea>
         </Card>
     );
 }
