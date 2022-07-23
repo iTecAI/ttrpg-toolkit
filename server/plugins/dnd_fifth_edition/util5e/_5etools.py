@@ -90,6 +90,18 @@ def parse_5etools_entries(
                             optional_features,
                         )
                     )
+                if line["type"] == "section":
+                    lines.append("")
+                    lines.append(f"# {line['name']}")
+                    lines.append(f"*{line['source']} - {line['page']}*")
+                    lines.extend(
+                        parse_5etools_entries(
+                            line["entries"],
+                            class_features,
+                            subclass_features,
+                            optional_features,
+                        )
+                    )
                 elif line["type"] == "refClassFeature":
                     parts = line["classFeature"].split("|")
                     lines.append("")

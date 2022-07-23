@@ -1,3 +1,5 @@
+import { CompendiumItemRenderer } from "./compendium";
+
 export type PluginTag =
     | "system"
     | "dice"
@@ -62,6 +64,7 @@ export type DataSourceCategory = {
         type: string;
         display_name: string;
     }[];
+    renderer: CompendiumItemRenderer;
 };
 
 export type DataSource = {

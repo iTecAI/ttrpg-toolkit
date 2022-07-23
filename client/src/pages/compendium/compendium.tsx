@@ -1,6 +1,7 @@
 import {
     Box,
     Button,
+    Grid,
     IconButton,
     InputAdornment,
     LinearProgress,
@@ -12,6 +13,7 @@ import {
     Tooltip,
     Typography,
 } from "@mui/material";
+import Masonry from "react-masonry-css";
 import React, { useEffect, useState } from "react";
 import { MdExtension, MdSearch } from "react-icons/md";
 import { loc } from "../../util/localization";
@@ -24,7 +26,8 @@ import {
 import { get, post } from "../../util/api";
 import { useSnackbar } from "notistack";
 import { useHorizontalScroll } from "../../util/hscroll";
-import { DataItem } from "../../models/compendium";
+import { CardRendererModel, DataItem } from "../../models/compendium";
+import CardRenderer from "./renderers/CardRenderer";
 
 function SearchPopup(props: {
     dataSource: DataSource | null;
@@ -116,6 +119,9 @@ export function Compendium() {
     const [loadingPlugin, setLoadingPlugin] = useState<boolean>(true);
     const [category, setCategory] = useState<string | null>(null);
     const hscroll = useHorizontalScroll(0.5);
+
+    const [searchResults, setSearchResults] = useState<DataItem[]>([]);
+    const [loadingResults, setLoadingResults] = useState<boolean>(false);
 
     const { enqueueSnackbar } = useSnackbar();
 
@@ -270,23 +276,59 @@ export function Compendium() {
                 onClose={() => setSearchAnchor(null)}
                 onSubmit={(fields) => {
                     if (plugin && category) {
-                        post<DataItem>(
+                        setLoadingResults(true);
+                        post<DataItem[]>(
                             `/plugins/${plugin}/data/${category}/search`,
                             {
                                 body: { fields: fields },
                             }
                         ).then((result) => {
                             if (result.success) {
-                                console.log(result.value);
+                                setSearchResults(result.value);
                             } else {
                                 enqueueSnackbar(result.message, {
                                     autoHideDuration: 3000,
                                 });
                             }
+                            setLoadingResults(false);
                         });
                     }
                 }}
             />
+            {loadingResults ? (
+                <LinearProgress className="loading-results" />
+            ) : null}
+            {currentPlugin && currentPlugin.data_source && category ? (
+                currentPlugin.data_source.categories[category].renderer
+                    .render_mode === "card" &&
+                currentPlugin.data_source.categories[category].renderer.card ? (
+                    <Masonry
+                        className="item-area card"
+                        breakpointCols={{
+                            800: 2,
+                            1100: 3,
+                            1600: 4,
+                            default: 5,
+                        }}
+                        columnClassName="card-column"
+                    >
+                        {searchResults.map((item) => {
+                            let renderer = (
+                                currentPlugin.data_source as DataSource
+                            ).categories[category].renderer;
+                            return (
+                                <CardRenderer
+                                    key={item.name}
+                                    data={item}
+                                    renderer={
+                                        renderer.card as CardRendererModel
+                                    }
+                                />
+                            );
+                        })}
+                    </Masonry>
+                ) : null
+            ) : null}
         </Box>
     );
 }

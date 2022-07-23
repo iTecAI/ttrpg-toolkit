@@ -35,16 +35,23 @@ class DataLoader5e(AbstractDataSourceLoader):
         if "class" in search.fields.keys():
             class_file_possibilities = util.search(
                 search.fields["class"],
-                [i for i in self.source_map["class"].keys() if i.startswith("class-")],
+                [
+                    i
+                    for i in self.source_map["class"].keys()
+                    if i.startswith("class-")
+                    and not i in ["class-generic", "class-sidekick"]
+                ],
                 getitem=lambda x: x.split("-", maxsplit=1)[1],
             )
         else:
             class_file_possibilities = [
-                i for i in self.source_map["class"].keys() if i.startswith("class-")
+                i
+                for i in self.source_map["class"].keys()
+                if i.startswith("class-")
+                and not i in ["class-generic", "class-sidekick"]
             ]
 
         for cfp in class_file_possibilities:
-            print(self.source_map["class"][cfp], self.plugin.plugin_directory)
             with open(
                 os.path.join(
                     self.plugin.plugin_directory, self.source_map["class"][cfp]
@@ -63,6 +70,7 @@ class DataLoader5e(AbstractDataSourceLoader):
                 results.extend(
                     [
                         MinimalClassDescriptor(
+                            class_file=cfp,
                             class_name=c["name"],
                             source_name=c["source"],
                             subclass_name=None,

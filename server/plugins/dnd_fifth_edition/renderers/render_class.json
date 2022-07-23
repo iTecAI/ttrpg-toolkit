@@ -1,3 +1,64 @@
 {
-  "card": {}
+    "render_mode": "card",
+    "card": {
+        "title": "{{name}}",
+        "subtitle": "Source: {{source}}",
+        "content": {
+            "count_per_row": 1,
+            "segments": [
+                {
+                    "icon": {
+                        "group": "game",
+                        "name": "GiDiceEightFacesEight"
+                    },
+                    "name": "Hit Die",
+                    "content": "{{hit_dice}}"
+                },
+                {
+                    "icon": {
+                        "group": "material",
+                        "name": "MdGroup"
+                    },
+                    "name": "# Subclasses",
+                    "content": {
+                        "text": "{{count}}",
+                        "vars": {
+                            "count": {
+                                "type": "function",
+                                "function": "(opts) => opts.subclasses.length",
+                                "options": {
+                                    "subclasses": "subclasses"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "icon": {
+                        "group": "game",
+                        "name": "GiMagicPalm"
+                    },
+                    "name": "Spellcasting Ability",
+                    "content": {
+                        "text": "{{spellcasting}}",
+                        "vars": {
+                            "spellcasting": {
+                                "type": "function",
+                                "function": "(opts) => opts.sc[0].toUpperCase() + opts.sc.slice(1)",
+                                "options": {
+                                    "sc": "spellcasting.ability"
+                                }
+                            }
+                        }
+                    },
+                    "conditional": {
+                        "function": "(opts) => Boolean(opts.spellcasting)",
+                        "options": {
+                            "spellcasting": "spellcasting"
+                        }
+                    }
+                }
+            ]
+        }
+    }
 }

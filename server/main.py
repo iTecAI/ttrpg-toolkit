@@ -5,6 +5,7 @@ from pymongo.mongo_client import MongoClient
 from util import *
 from controllers import *
 import logging
+import json
 
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from starlette.middleware.errors import ServerErrorMiddleware
@@ -36,20 +37,23 @@ def http_exception_handler(request: Request, exc: Exception) -> StarletteRespons
         if isinstance(exc, StarletteHTTPException)
         else HTTP_500_INTERNAL_SERVER_ERROR
     )
-    logging.exception(f"Encountered an error with code {status_code}:\n")
     if status_code == HTTP_500_INTERNAL_SERVER_ERROR:
         # in debug mode, we just use the serve_middleware to create an HTML formatted response for us
+        logging.exception(f"Encountered an error with code {status_code}:\n")
         server_middleware = ServerErrorMiddleware(app=request.app)
         return server_middleware.debug_response(request=request, exc=exc)
+    """if isinstance(exc, BaseHTTPException):
+        content = exc.detail"""
     if isinstance(exc, HTTPException):
         content = {"detail": exc.detail, "extra": exc.extra}
     elif isinstance(exc, StarletteHTTPException):
         content = {"detail": exc.detail}
     else:
         content = {"detail": repr(exc)}
+
     return Response(
         media_type=MediaType.JSON,
-        content=content,
+        content=json.dumps(content),
         status_code=status_code,
     )
 

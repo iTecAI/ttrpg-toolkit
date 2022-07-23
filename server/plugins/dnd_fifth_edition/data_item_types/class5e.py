@@ -10,6 +10,7 @@ from ..util5e import *
 
 
 class MinimalClassDescriptor(BaseModel):
+    class_file: str
     class_name: str
     source_name: str
     subclass_name: Optional[str] = None
@@ -63,8 +64,12 @@ class StartingEquipment5e(AbstractDataSourceItem):
     def load(cls, data: Any):
         return cls(
             name="startingEquipment",
-            backgroundItems=data["additionalFromBackground"],
-            gold=parse_5etools_string(data["goldAlternative"]),
+            backgroundItems=data["additionalFromBackground"]
+            if "additionalFromBackground"
+            else None,
+            gold=parse_5etools_string(data["goldAlternative"])
+            if "goldAlternative" in data.keys()
+            else None,
             items=[parse_5etools_string(i) for i in data["default"]],
         )
 
@@ -188,8 +193,12 @@ class ClassFeature5e(AbstractDataSourceItem):
             level=item["level"],
             entries=parse_5etools_entries(
                 item["entries"],
-                source_data["classFeature"],
-                source_data["subclassFeature"],
+                source_data["classFeature"]
+                if "classFeature" in source_data.keys()
+                else [],
+                source_data["subclassFeature"]
+                if "subclassFeature" in source_data.keys()
+                else [],
                 optional,
             ),
         )
@@ -274,6 +283,7 @@ class Class5e(AbstractDataSourceItem):
         spellcasting: Spellcasting5e = None,
         features: List[ClassFeature5e] = [],
         subclasses: List[Subclass5e] = [],
+        fluff: List[str] = [],
         **kwargs,
     ):
         super().__init__(name, **kwargs)
@@ -293,6 +303,7 @@ class Class5e(AbstractDataSourceItem):
         self.spellcasting = spellcasting
         self.features = features
         self.subclasses = subclasses
+        self.fluff = fluff
 
     @staticmethod
     def verify_class(classes: List, name: str, source: str):
@@ -346,7 +357,7 @@ class Class5e(AbstractDataSourceItem):
     def load(cls, plugin: Plugin, source_map: Any, data: MinimalClassDescriptor):
         source_file = os.path.join(
             plugin.plugin_directory,
-            get_nested(source_map, f"class.class-{data.class_name.lower()}"),
+            get_nested(source_map, f"class.{data.class_file}"),
         )
 
         with open(source_file, "r") as f:
@@ -378,80 +389,109 @@ class Class5e(AbstractDataSourceItem):
         if subclass_raw:
             subclasses = [Subclass5e.load(plugin, source_map, superclass, subclass_raw)]
         else:
-            subclasses = [
-                Subclass5e.load(plugin, source_map, superclass, s)
-                for s in superclass["subclass"]
-            ]
+            subclasses = (
+                [
+                    Subclass5e.load(plugin, source_map, superclass, s)
+                    for s in superclass["subclass"]
+                ]
+                if "subclass" in superclass.keys()
+                else []
+            )
 
         multiclass_reqs = {}
-        for k, v in class_raw["multiclassing"]["requirements"].items():
-            if k == "or":
-                multiclass_reqs["or"] = [
-                    {ABILITY_MAP[a]: b for a, b in x.items()} for x in v
-                ]
-            else:
-                multiclass_reqs[ABILITY_MAP[k]] = v
+        if "multiclassing" in class_raw.keys():
+            for k, v in class_raw["multiclassing"]["requirements"].items():
+                if k == "or":
+                    multiclass_reqs["or"] = [
+                        {ABILITY_MAP[a]: b for a, b in x.items()} for x in v
+                    ]
+                else:
+                    multiclass_reqs[ABILITY_MAP[k]] = v
 
         return Class5e(
             name=class_raw["name"],
             source=class_raw["source"],
             hit_dice=f"{class_raw['hd']['number']}d{class_raw['hd']['faces']}",
-            save_proficiency=[ABILITY_MAP[p] for p in class_raw["proficiency"]],
+            save_proficiency=[ABILITY_MAP[p] for p in class_raw["proficiency"]]
+            if "proficiency" in class_raw.keys()
+            else [],
             armor_proficiency=[
                 parse_5etools_string(p if type(p) == str else p["proficiency"])
                 for p in class_raw["startingProficiencies"]["armor"]
             ]
-            if "armor" in class_raw["startingProficiencies"].keys()
+            if "startingProficiencies" in class_raw.keys()
+            and "armor" in class_raw["startingProficiencies"].keys()
             else [],
             weapon_proficiency=[
                 parse_5etools_string(p if type(p) == str else p["proficiency"])
                 for p in class_raw["startingProficiencies"]["weapons"]
             ]
-            if "weapons" in class_raw["startingProficiencies"].keys()
+            if "startingProficiencies" in class_raw.keys()
+            and "weapons" in class_raw["startingProficiencies"].keys()
             else [],
             tool_proficiency=[
                 parse_5etools_string(p if type(p) == str else p["proficiency"])
                 for p in class_raw["startingProficiencies"]["tools"]
             ]
-            if "tools" in class_raw["startingProficiencies"].keys()
+            if "startingProficiencies" in class_raw.keys()
+            and "tools" in class_raw["startingProficiencies"].keys()
             else [],
             skill_proficiency=[
                 SkillChoose5e.load(p)
                 for p in class_raw["startingProficiencies"]["skills"]
             ]
-            if "skills" in class_raw["startingProficiencies"].keys()
+            if "startingProficiencies" in class_raw.keys()
+            and "skills" in class_raw["startingProficiencies"].keys()
             else None,
-            starting_equipment=StartingEquipment5e.load(class_raw["startingEquipment"]),
+            starting_equipment=StartingEquipment5e.load(class_raw["startingEquipment"])
+            if "startingEquipment" in class_raw.keys()
+            else None,
             multiclass_requirements=multiclass_reqs,
             multiclass_armor_proficiency=[
                 parse_5etools_string(p if type(p) == str else p["proficiency"])
                 for p in class_raw["multiclassing"]["proficienciesGained"]["armor"]
             ]
-            if "proficienciesGained" in class_raw["multiclassing"].keys()
+            if "multiclassing" in class_raw.keys()
+            and "proficienciesGained" in class_raw["multiclassing"].keys()
             and "armor" in class_raw["multiclassing"]["proficienciesGained"].keys()
             else [],
             multiclass_weapon_proficiency=[
                 parse_5etools_string(p if type(p) == str else p["proficiency"])
                 for p in class_raw["multiclassing"]["proficienciesGained"]["weapons"]
             ]
-            if "proficienciesGained" in class_raw["multiclassing"].keys()
+            if "multiclassing" in class_raw.keys()
+            and "proficienciesGained" in class_raw["multiclassing"].keys()
             and "weapons" in class_raw["multiclassing"]["proficienciesGained"].keys()
             else [],
             multiclass_tool_proficiency=[
                 parse_5etools_string(p if type(p) == str else p["proficiency"])
                 for p in class_raw["multiclassing"]["proficienciesGained"]["tools"]
             ]
-            if "proficienciesGained" in class_raw["multiclassing"].keys()
+            if "multiclassing" in class_raw.keys()
+            and "proficienciesGained" in class_raw["multiclassing"].keys()
             and "tools" in class_raw["multiclassing"]["proficienciesGained"].keys()
             else [],
             multiclass_skill_proficiency=[
                 SkillChoose5e.load(p)
                 for p in class_raw["multiclassing"]["proficienciesGained"]["skills"]
             ]
-            if "proficienciesGained" in class_raw["multiclassing"].keys()
+            if "multiclassing" in class_raw.keys()
+            and "proficienciesGained" in class_raw["multiclassing"].keys()
             and "skills" in class_raw["multiclassing"]["proficienciesGained"].keys()
             else None,
             spellcasting=Spellcasting5e.load(class_raw),
             features=features,
             subclasses=subclasses,
+            fluff=parse_5etools_entries(
+                class_raw["fluff"],
+                superclass["classFeature"]
+                if "classFeature" in superclass.keys()
+                else [],
+                superclass["subclassFeature"]
+                if "subclassFeature" in superclass.keys()
+                else [],
+                optional_features,
+            )
+            if "fluff" in class_raw.keys()
+            else None,
         )
