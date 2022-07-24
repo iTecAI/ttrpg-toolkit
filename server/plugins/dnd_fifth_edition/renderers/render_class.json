@@ -207,6 +207,71 @@
                                 }
                             }
                         }
+                    },
+                    {
+                        "type": "container",
+                        "title": "Proficiencies: Skills",
+                        "variant": "elevation",
+                        "conditional": {
+                            "function": "(opts) => opts.item.length > 0",
+                            "options": {
+                                "item": "skill_proficiency"
+                            }
+                        },
+                        "icon": {
+                            "group": "material",
+                            "name": "MdStar"
+                        },
+                        "items": {
+                            "type": "list",
+                            "source": "skill_proficiency",
+                            "renderer": {
+                                "type": "group",
+                                "items": {
+                                    "type": "switch",
+                                    "function": "(opts) => opts.mode === 'any' ? 'any' : 'choose'",
+                                    "options": {
+                                        "mode": "mode"
+                                    },
+                                    "output_map": {
+                                        "any": [
+                                            {
+                                                "type": "container",
+                                                "title": "Choose any {{count}} skills.",
+                                                "variant": "outlined",
+                                                "items": []
+                                            }
+                                        ],
+                                        "choose": [
+                                            {
+                                                "type": "container",
+                                                "title": "Choose any {{count}} of the following skills.",
+                                                "variant": "outlined",
+                                                "items": {
+                                                    "type": "list",
+                                                    "source": "choose_from",
+                                                    "renderer": {
+                                                        "type": "chip",
+                                                        "text": {
+                                                            "text": "{{item}}",
+                                                            "vars": {
+                                                                "item": {
+                                                                    "type": "function",
+                                                                    "function": "(opts) => opts.i[0].toUpperCase() + opts.i.slice(1)",
+                                                                    "options": {
+                                                                        "i": "this"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
                     }
                 ]
             },

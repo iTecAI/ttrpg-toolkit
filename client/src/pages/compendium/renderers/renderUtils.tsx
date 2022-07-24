@@ -21,6 +21,8 @@ export function parseOptionsDynamicFunction(
         processedVars[v] = getNested(data, options[v]);
     }
 
+    console.log(code, processedVars, data);
+
     return dynamicFunction(code, processedVars);
 }
 

@@ -106,6 +106,12 @@ type ChipItem = {
     conditional?: ConditionalRender;
 };
 
+type GroupItem = {
+    type: "group";
+    conditional?: ConditionalRender;
+    items: ModularRenderItem[] | ItemSource;
+};
+
 export type ModularRenderItem =
     | MarkdownRender
     | Section
@@ -113,7 +119,8 @@ export type ModularRenderItem =
     | Container
     | MasonryColumns
     | DividerItem
-    | ChipItem;
+    | ChipItem
+    | GroupItem;
 
 export default function ModularRenderer(props: {
     data: DataItem;
@@ -174,6 +181,7 @@ export default function ModularRenderer(props: {
                         sourceItem.options,
                         data
                     );
+                    console.log(result, sourceItem.function);
                     if (Object.keys(sourceItem.output_map).includes(result)) {
                         items = (
                             (sourceItem as SwitchItemSource).output_map[
@@ -394,6 +402,10 @@ export default function ModularRenderer(props: {
                     label={renderText(data, item.text)}
                 />
             );
+            break;
+        case "group":
+            internalComponent = <Box>{items}</Box>;
+            break;
     }
 
     return (
