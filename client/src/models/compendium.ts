@@ -1,3 +1,4 @@
+import { ModularRenderItem } from "../pages/compendium/renderers/ModularRenderer";
 import { AbstractIconType } from "../util/AbstractIcon";
 
 export type DataItem = {
@@ -25,11 +26,13 @@ export type TextItem = {
 
 export type RenderText = TextItem | string;
 
+export type IconProps = {
+    group: AbstractIconType;
+    name: string;
+};
+
 export type ContentSegment = {
-    icon?: {
-        group: AbstractIconType;
-        name: string;
-    };
+    icon?: IconProps;
     name: RenderText;
     content: RenderText;
     conditional?: {
@@ -55,7 +58,14 @@ export type CardRendererModel = {
           };
 };
 
+export type CardExpandedModel = {
+    title: RenderText;
+    subtitle?: RenderText;
+    contents: ModularRenderItem[];
+};
+
 export type CompendiumItemRenderer = {
-    render_mode: "card" | "list";
-    card?: CardRendererModel;
+    render_mode: "card";
+    expanded: CardExpandedModel;
+    item: CardRendererModel;
 };

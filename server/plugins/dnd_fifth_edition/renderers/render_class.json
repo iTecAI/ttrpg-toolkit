@@ -1,6 +1,6 @@
 {
     "render_mode": "card",
-    "card": {
+    "item": {
         "title": "{{name}}",
         "subtitle": "Source: {{source}}",
         "content": {

@@ -307,7 +307,7 @@ export function Compendium() {
             {currentPlugin && currentPlugin.data_source && category ? (
                 currentPlugin.data_source.categories[category].renderer
                     .render_mode === "card" &&
-                currentPlugin.data_source.categories[category].renderer.card ? (
+                currentPlugin.data_source.categories[category].renderer.item ? (
                     <Masonry
                         className="item-area card"
                         breakpointCols={{
@@ -327,7 +327,7 @@ export function Compendium() {
                                     key={item.name}
                                     data={item}
                                     renderer={
-                                        renderer.card as CardRendererModel
+                                        renderer.item as CardRendererModel
                                     }
                                 />
                             );

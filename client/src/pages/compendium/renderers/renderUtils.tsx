@@ -58,7 +58,10 @@ function parseVariableItem(
     }
 }
 
-export function renderText(data: DataItem, renderText: RenderText) {
+export function renderText(
+    data: { [key: string]: any },
+    renderText: RenderText
+) {
     if (typeof renderText === "string") {
         return parseVariableString(renderText, data);
     }

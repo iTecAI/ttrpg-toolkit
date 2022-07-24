@@ -1,13 +1,14 @@
 import re
 from typing import Any, Dict, List
+from logging import exception, warning
 
 ab_map = {
-    "str": "strength",
-    "dex": "dexterity",
-    "con": "constitution",
-    "int": "intelligence",
-    "wis": "wisdom",
-    "cha": "charisma",
+    "str": "Strength",
+    "dex": "Dexterity",
+    "con": "Constitution",
+    "int": "Intelligence",
+    "wis": "Wisdom",
+    "cha": "Charisma",
 }
 
 
@@ -67,6 +68,14 @@ def filter_dict_array(array: list[dict], filter: Dict[str, Any]):
             return i
 
 
+def parse_5etools_table_cell(cell: str | Dict):
+    if type(cell) != dict:
+        return str(cell)
+    # print(cell)
+    if "roll" in cell.keys():
+        return str(cell["roll"]["exact"])
+
+
 def parse_5etools_entries(
     entries: List[dict | str],
     class_features: list,
@@ -80,20 +89,33 @@ def parse_5etools_entries(
                 lines.append(parse_5etools_string(line))
             else:
                 if line["type"] == "entries":
-                    lines.append("")
-                    lines.append(f"## {line['name']}")
-                    lines.extend(
-                        parse_5etools_entries(
-                            line["entries"],
-                            class_features,
-                            subclass_features,
-                            optional_features,
+                    if "name" in line.keys():
+                        lines.append("")
+                        lines.append(f"## {line['name']}")
+                        lines.extend(
+                            parse_5etools_entries(
+                                line["entries"],
+                                class_features,
+                                subclass_features,
+                                optional_features,
+                            )
                         )
-                    )
-                if line["type"] == "section":
+                    else:
+                        lines.append("")
+                        lines.extend(
+                            parse_5etools_entries(
+                                line["entries"],
+                                class_features,
+                                subclass_features,
+                                optional_features,
+                            )
+                        )
+                elif line["type"] == "section":
                     lines.append("")
-                    lines.append(f"# {line['name']}")
-                    lines.append(f"*{line['source']} - {line['page']}*")
+                    if "name" in line.keys():
+                        lines.append(f"# {line['name']}")
+                    if "source" in line.keys() and "page" in line.keys():
+                        lines.append(f"*{line['source']} - {line['page']}*")
                     lines.extend(
                         parse_5etools_entries(
                             line["entries"],
@@ -149,7 +171,9 @@ def parse_5etools_entries(
                         lines.append("*No Data*")
                 elif line["type"] == "table":
                     lines.append("")
-                    lines.append(f"### {line['caption']}")
+                    lines.append(
+                        f"### {line['caption'] if 'caption' in line.keys() else 'Table'}"
+                    )
                     lines.append(
                         "| {headers} |".format(headers=" | ".join(line["colLabels"]))
                     )
@@ -167,7 +191,12 @@ def parse_5etools_entries(
                     lines.append(f"| {' | '.join(style_items)} |")
 
                     lines.extend(
-                        ["| " + " | ".join([c for c in r]) + " |" for r in line["rows"]]
+                        [
+                            "| "
+                            + " | ".join([parse_5etools_table_cell(c) for c in r])
+                            + " |"
+                            for r in line["rows"]
+                        ]
                     )
                     lines.append("")
                     if "footnotes" in line.keys():
@@ -182,14 +211,37 @@ def parse_5etools_entries(
                             if type(li) == dict and "type" in li.keys():
                                 if "entries" in li.keys():
                                     lines.append(
-                                        "**"
-                                        + li["name"]
-                                        + "** "
-                                        + li["entries"].join(" ")
+                                        (
+                                            ("**" + li["name"] + "** ")
+                                            if "name" in li.keys()
+                                            else ""
+                                        )
+                                        + " ".join(
+                                            parse_5etools_entries(
+                                                li["entries"],
+                                                class_features,
+                                                subclass_features,
+                                                optional_features,
+                                            )
+                                        )
+                                    )
+                                elif "entry" in li.keys():
+                                    lines.append(
+                                        (
+                                            ("**" + li["name"] + "** ")
+                                            if "name" in li.keys()
+                                            else ""
+                                        )
+                                        + li["entry"]
                                     )
                                 else:
-                                    lines.append(
-                                        "**" + li["name"] + "** " + li["entry"]
+                                    lines.extend(
+                                        parse_5etools_entries(
+                                            [li],
+                                            class_features,
+                                            subclass_features,
+                                            optional_features,
+                                        )
                                     )
                             else:
                                 lines.append(str(li))
@@ -204,7 +256,10 @@ def parse_5etools_entries(
 
                 elif line["type"] == "options":
                     lines.append("")
-                    lines.append(f"Select any {line['count']} of the following:")
+                    if "count" in line.keys():
+                        lines.append(f"Select any {line['count']} of the following:")
+                    else:
+                        pass
                     lines.extend(
                         parse_5etools_entries(
                             line["entries"],
@@ -231,24 +286,45 @@ def parse_5etools_entries(
                     )
                     lines.append("")
 
+                elif line["type"] == "quote":
+                    lines.append("")
+                    lines.extend(
+                        [
+                            "> " + e
+                            for e in parse_5etools_entries(
+                                line["entries"],
+                                class_features,
+                                subclass_features,
+                                optional_features,
+                            )
+                        ]
+                    )
+                    lines.append("")
+
                 elif line["type"] == "refOptionalfeature":
                     result = filter_dict_array(
-                        optional_features, {"name": line["optionalfeature"]}
+                        optional_features["optionalfeature"],
+                        {"name": line["optionalfeature"]},
                     )
                     lines.append("")
                     if result:
                         lines.append(f"**{result['name']} ({result['source']}):**")
                         lines.extend(
                             parse_5etools_entries(
-                                line["entries"],
+                                result["entries"],
                                 class_features,
                                 subclass_features,
                                 optional_features,
                             )
                         )
+                elif line["type"] == "abilityAttackMod":
+                    lines.append(
+                        f"**{line['name']}:** {[ab_map[a] for a in line['attributes']]}"
+                    )
                 else:
+                    # warning(f"Unknown entry type {line['type']} on entry {line}")
                     lines.append(str(line))
         except:
-            pass
+            exception(f"Error parsing {line}:")
 
     return [parse_5etools_string(l) for l in lines]
