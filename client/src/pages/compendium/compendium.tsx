@@ -1,6 +1,9 @@
 import {
     Box,
     Button,
+    Dialog,
+    DialogContent,
+    DialogTitle,
     IconButton,
     InputAdornment,
     LinearProgress,
@@ -25,8 +28,15 @@ import {
 import { get, post } from "../../util/api";
 import { useSnackbar } from "notistack";
 import { useHorizontalScroll } from "../../util/hscroll";
-import { CardRendererModel, DataItem } from "../../models/compendium";
+import {
+    CardExpandedModel,
+    CardRendererModel,
+    DataItem,
+} from "../../models/compendium";
 import CardRenderer from "./renderers/CardRenderer";
+import { renderText } from "./renderers/renderUtils";
+import ModularRenderer from "./renderers/ModularRenderer";
+import { ExpandedCardRenderer } from "./renderers/ExpandedCardRenderer";
 
 function SearchPopup(props: {
     dataSource: DataSource | null;
@@ -121,6 +131,8 @@ export function Compendium() {
 
     const [searchResults, setSearchResults] = useState<DataItem[]>([]);
     const [loadingResults, setLoadingResults] = useState<boolean>(false);
+
+    const [expandedDialog, setExpandedDialog] = useState<DataItem | null>(null);
 
     const { enqueueSnackbar } = useSnackbar();
 
@@ -308,31 +320,48 @@ export function Compendium() {
                 currentPlugin.data_source.categories[category].renderer
                     .render_mode === "card" &&
                 currentPlugin.data_source.categories[category].renderer.item ? (
-                    <Masonry
-                        className="item-area card"
-                        breakpointCols={{
-                            800: 2,
-                            1100: 3,
-                            1600: 4,
-                            default: 5,
-                        }}
-                        columnClassName="card-column"
-                    >
-                        {searchResults.map((item) => {
-                            let renderer = (
-                                currentPlugin.data_source as DataSource
-                            ).categories[category].renderer;
-                            return (
-                                <CardRenderer
-                                    key={item.name}
-                                    data={item}
-                                    renderer={
-                                        renderer.item as CardRendererModel
-                                    }
-                                />
-                            );
-                        })}
-                    </Masonry>
+                    <>
+                        <Masonry
+                            className="item-area card"
+                            breakpointCols={{
+                                800: 2,
+                                1100: 3,
+                                1600: 4,
+                                default: 5,
+                            }}
+                            columnClassName="card-column"
+                        >
+                            {searchResults.map((item) => {
+                                let renderer = (
+                                    currentPlugin.data_source as DataSource
+                                ).categories[category].renderer;
+                                return (
+                                    <CardRenderer
+                                        key={item.name}
+                                        data={item}
+                                        renderer={renderer.item}
+                                        onExpand={() => setExpandedDialog(item)}
+                                    />
+                                );
+                            })}
+                        </Masonry>
+                        {currentPlugin.data_source &&
+                        currentPlugin.data_source.categories[category] &&
+                        currentPlugin.data_source.categories[category].renderer
+                            .render_mode == "card" ? (
+                            <ExpandedCardRenderer
+                                renderer={
+                                    currentPlugin.data_source.categories[
+                                        category
+                                    ].renderer.expanded
+                                }
+                                data={expandedDialog}
+                                onClose={() => setExpandedDialog(null)}
+                            />
+                        ) : (
+                            <></>
+                        )}
+                    </>
                 ) : null
             ) : null}
         </Box>

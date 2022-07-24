@@ -1,0 +1,41 @@
+.expanded-item-dialog {
+    display: inline-block;
+    width: 100%;
+    .MuiDialog-paper {
+        width: 100%;
+    }
+    .modular-box {
+        &.type-markdown {
+            table {
+                width: 100%;
+                padding: 4px;
+                border: 2px solid #ffffff22;
+                * {
+                    padding: 4px;
+                }
+                tr:nth-child(even) {
+                    background-color: #ffffff22;
+                }
+                td {
+                    padding-left: 8px;
+                    padding-right: 8px;
+                }
+            }
+        }
+        &.type-section {
+            .section-header-icon {
+                margin: 4px 8px 0px 4px;
+                font-size: 20px;
+            }
+        }
+        &.type-chip {
+            margin: 4px;
+            display: inline-block;
+        }
+        &.type-container {
+            .container-icon {
+                color: #ffffffdd;
+            }
+        }
+    }
+}

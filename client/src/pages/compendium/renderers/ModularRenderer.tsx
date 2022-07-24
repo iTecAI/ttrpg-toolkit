@@ -9,13 +9,14 @@ import {
     Card,
     CardContent,
     CardHeader,
+    Chip,
     Divider,
     Paper,
     Stack,
     Typography,
 } from "@mui/material";
 import React, { useState } from "react";
-import { renderText } from "./renderUtils";
+import { getNested, renderText } from "./renderUtils";
 import AbstractIcon from "../../../util/AbstractIcon";
 import { MdExpandMore } from "react-icons/md";
 import { Box } from "@mui/system";
@@ -23,9 +24,17 @@ import { Masonry } from "@mui/lab";
 
 type MarkdownRender = {
     type: "markdown";
-    text: RenderText[];
+    text_source: string;
     extra_variables?: { [key: string]: RenderText };
 };
+
+type ListItemSource = {
+    type: "list";
+    source: string;
+    renderer: ModularRenderItem;
+};
+
+type ItemSource = ListItemSource;
 
 type Section = {
     type: "section";
@@ -34,14 +43,14 @@ type Section = {
     title: RenderText;
     subtitle?: RenderText;
     icon?: IconProps;
-    items: ModularRenderItem[];
+    items: ModularRenderItem[] | ItemSource;
     max_height?: number;
 };
 
 type Columns = {
     type: "columns";
     spacing?: number;
-    items: ModularRenderItem[];
+    items: ModularRenderItem[] | ItemSource;
 };
 
 type Container = {
@@ -50,7 +59,7 @@ type Container = {
     title: RenderText;
     subtitle?: RenderText;
     icon?: IconProps;
-    items: ModularRenderItem[];
+    items: ModularRenderItem[] | ItemSource;
     max_height?: number;
 };
 
@@ -58,7 +67,7 @@ type MasonryColumns = {
     type: "masonry";
     spacing?: number;
     columns: number;
-    items: ModularRenderItem[];
+    items: ModularRenderItem[] | ItemSource;
 };
 
 type DividerItem = {
@@ -67,13 +76,20 @@ type DividerItem = {
     text?: RenderText;
 };
 
+type ChipItem = {
+    type: "chip";
+    icon?: IconProps;
+    text: RenderText;
+};
+
 export type ModularRenderItem =
     | MarkdownRender
     | Section
     | Columns
     | Container
     | MasonryColumns
-    | DividerItem;
+    | DividerItem
+    | ChipItem;
 
 export default function ModularRenderer(props: {
     data: DataItem;
@@ -81,6 +97,37 @@ export default function ModularRenderer(props: {
 }) {
     const { data, item } = props;
     let internalComponent: React.ReactNode;
+    const [exp, setExp] = useState<boolean>(
+        item.type === "section" ? item.defaultExpanded ?? false : false
+    );
+
+    let items: React.ReactNode[];
+    if (Object.keys(item).includes("items")) {
+        items = [];
+        if (
+            ((item as Section).items as ModularRenderItem[]).push === undefined
+        ) {
+            let sourceItem: ItemSource = (item as Section).items as ItemSource;
+            if (sourceItem.type === "list") {
+                let sourceList: any[] = getNested(data, sourceItem.source);
+                if (sourceList) {
+                    items = sourceList.map((i) => (
+                        <ModularRenderer
+                            data={typeof i === "object" ? i : { this: i }}
+                            item={sourceItem.renderer}
+                        />
+                    ));
+                }
+            }
+        } else {
+            items = ((item as Section).items as ModularRenderItem[]).map(
+                (i) => <ModularRenderer data={data} item={i} />
+            );
+        }
+    } else {
+        items = [];
+    }
+
     switch (item.type) {
         case "markdown":
             let parsedVars: { [key: string]: string };
@@ -95,10 +142,13 @@ export default function ModularRenderer(props: {
                     );
                 });
             }
+
+            let lines: RenderText[] = getNested(data, item.text_source);
+
             internalComponent = (
                 <Typography variant="body1">
                     <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                        {item.text
+                        {lines
                             .map((value) =>
                                 renderText(
                                     data,
@@ -114,9 +164,6 @@ export default function ModularRenderer(props: {
             break;
 
         case "section":
-            const [exp, setExp] = useState<boolean>(
-                item.defaultExpanded ?? false
-            );
             const sectionHeader = (
                 <AccordionSummary
                     expandIcon={item.canExpand ? <MdExpandMore /> : <></>}
@@ -130,7 +177,7 @@ export default function ModularRenderer(props: {
                     ) : (
                         <></>
                     )}{" "}
-                    <Typography className="section-header-text">
+                    <Typography className="section-header-text" variant="h5">
                         {renderText(data, item.title)}
                     </Typography>
                     {item.subtitle ? (
@@ -155,11 +202,7 @@ export default function ModularRenderer(props: {
                         onClick={() => setExp(!exp)}
                     >
                         {sectionHeader}
-                        <AccordionDetails>
-                            {item.items.map((mod) => (
-                                <ModularRenderer data={data} item={mod} />
-                            ))}
-                        </AccordionDetails>
+                        <AccordionDetails>{items}</AccordionDetails>
                     </Accordion>
                 );
             } else {
@@ -173,11 +216,7 @@ export default function ModularRenderer(props: {
                         }}
                     >
                         {sectionHeader}
-                        <AccordionDetails>
-                            {item.items.map((mod) => (
-                                <ModularRenderer data={data} item={mod} />
-                            ))}
-                        </AccordionDetails>
+                        <AccordionDetails>{items}</AccordionDetails>
                     </Accordion>
                 );
             }
@@ -186,9 +225,7 @@ export default function ModularRenderer(props: {
         case "columns":
             internalComponent = (
                 <Stack direction={"row"} spacing={item.spacing ?? 2}>
-                    {item.items.map((mod) => (
-                        <ModularRenderer data={data} item={mod} />
-                    ))}
+                    {items}
                 </Stack>
             );
             break;
@@ -204,7 +241,11 @@ export default function ModularRenderer(props: {
                     }}
                 >
                     <CardHeader
-                        title={renderText(data, item.title)}
+                        title={
+                            <Typography variant="h6">
+                                {renderText(data, item.title)}
+                            </Typography>
+                        }
                         subheader={
                             item.subtitle
                                 ? renderText(data, item.subtitle)
@@ -222,11 +263,7 @@ export default function ModularRenderer(props: {
                             ) : undefined
                         }
                     />
-                    <CardContent>
-                        {item.items.map((mod) => (
-                            <ModularRenderer data={data} item={mod} />
-                        ))}
-                    </CardContent>
+                    <CardContent>{items}</CardContent>
                 </Card>
             );
             break;
@@ -238,10 +275,8 @@ export default function ModularRenderer(props: {
                     spacing={item.spacing ?? 2}
                     className="modular-masonry"
                 >
-                    {item.items.map((value) => (
-                        <Box className="modular-masonry-item">
-                            <ModularRenderer data={data} item={value} />
-                        </Box>
+                    {items.map((value) => (
+                        <Box className="modular-masonry-item">{value}</Box>
                     ))}
                 </Masonry>
             );
@@ -253,7 +288,29 @@ export default function ModularRenderer(props: {
                     {item.text && renderText(data, item.text)}
                 </Divider>
             );
+            break;
+
+        case "chip":
+            internalComponent = (
+                <Chip
+                    icon={
+                        item.icon && (
+                            <AbstractIcon
+                                type={item.icon.group}
+                                name={item.icon.name}
+                                className="chip-icon"
+                            />
+                        )
+                    }
+                    className="chip"
+                    label={renderText(data, item.text)}
+                />
+            );
     }
 
-    return <Box className="modular-box">{internalComponent}</Box>;
+    return (
+        <Box className={`modular-box type-${item.type}`}>
+            {internalComponent}
+        </Box>
+    );
 }

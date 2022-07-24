@@ -1,9 +1,11 @@
 {
+    "$schema": "../../../../schema/compendium-renderer.json",
     "render_mode": "card",
     "item": {
         "title": "{{name}}",
         "subtitle": "Source: {{source}}",
         "content": {
+            "type": "segments",
             "count_per_row": 1,
             "segments": [
                 {
@@ -60,5 +62,146 @@
                 }
             ]
         }
+    },
+    "expanded": {
+        "title": "{{name}}",
+        "subtitle": "Source: {{source}}",
+        "contents": [
+            {
+                "type": "masonry",
+                "columns": 3,
+                "spacing": 2,
+                "items": [
+                    {
+                        "type": "container",
+                        "title": "Proficiencies: Saving Throws",
+                        "variant": "elevation",
+                        "icon": {
+                            "group": "game",
+                            "name": "GiDiceTwentyFacesTwenty"
+                        },
+                        "items": {
+                            "type": "list",
+                            "source": "save_proficiency",
+                            "renderer": {
+                                "type": "chip",
+                                "text": {
+                                    "text": "{{ability}}",
+                                    "vars": {
+                                        "ability": {
+                                            "type": "function",
+                                            "function": "(opts) => opts.ab[0].toUpperCase() + opts.ab.slice(1)",
+                                            "options": {
+                                                "ab": "this"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "type": "container",
+                        "title": "Proficiencies: Armor",
+                        "variant": "elevation",
+                        "icon": {
+                            "group": "game",
+                            "name": "GiArmorVest"
+                        },
+                        "items": {
+                            "type": "list",
+                            "source": "armor_proficiency",
+                            "renderer": {
+                                "type": "chip",
+                                "text": {
+                                    "text": "{{item}}",
+                                    "vars": {
+                                        "item": {
+                                            "type": "function",
+                                            "function": "(opts) => opts.i[0].toUpperCase() + opts.i.slice(1)",
+                                            "options": {
+                                                "i": "this"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "type": "container",
+                        "title": "Proficiencies: Weapons",
+                        "variant": "elevation",
+                        "icon": {
+                            "group": "game",
+                            "name": "GiBroadsword"
+                        },
+                        "items": {
+                            "type": "list",
+                            "source": "weapon_proficiency",
+                            "renderer": {
+                                "type": "chip",
+                                "text": {
+                                    "text": "{{item}}",
+                                    "vars": {
+                                        "item": {
+                                            "type": "function",
+                                            "function": "(opts) => opts.i[0].toUpperCase() + opts.i.slice(1)",
+                                            "options": {
+                                                "i": "this"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "type": "container",
+                        "title": "Proficiencies: Tools/Vehicles",
+                        "variant": "elevation",
+                        "icon": {
+                            "group": "game",
+                            "name": "GiClawHammer"
+                        },
+                        "items": {
+                            "type": "list",
+                            "source": "tool_proficiency",
+                            "renderer": {
+                                "type": "chip",
+                                "text": {
+                                    "text": "{{item}}",
+                                    "vars": {
+                                        "item": {
+                                            "type": "function",
+                                            "function": "(opts) => opts.i[0].toUpperCase() + opts.i.slice(1)",
+                                            "options": {
+                                                "i": "this"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "section",
+                "canExpand": true,
+                "defaultExpanded": false,
+                "title": "{{name}} - Flavor Text",
+                "icon": {
+                    "group": "material",
+                    "name": "MdBook"
+                },
+                "items": [
+                    {
+                        "type": "markdown",
+                        "text_source": "fluff"
+                    }
+                ]
+            }
+        ]
     }
 }

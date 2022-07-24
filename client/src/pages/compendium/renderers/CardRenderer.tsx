@@ -4,10 +4,12 @@ import {
     CardContent,
     CardHeader,
     CardMedia,
+    Dialog,
     Paper,
 } from "@mui/material";
 import Masonry from "react-masonry-css";
 import {
+    CardExpandedModel,
     CardRendererModel,
     ContentSegment,
     DataItem,
@@ -59,45 +61,56 @@ function ContentSegmentItem(props: {
 export default function CardRenderer(props: {
     data: DataItem;
     renderer: CardRendererModel;
+    onExpand: () => void;
 }) {
     return (
-        <Card className="compendium-card">
-            <CardActionArea>
-                <CardHeader
-                    title={renderText(props.data, props.renderer.title)}
-                    subheader={
-                        props.renderer.subtitle
-                            ? renderText(props.data, props.renderer.subtitle)
-                            : undefined
-                    }
-                />
-                {props.renderer.image ? (
-                    <CardMedia
-                        src={renderText(props.data, props.renderer.image)}
+        <>
+            <Card className="compendium-card">
+                <CardActionArea onClick={() => props.onExpand()}>
+                    <CardHeader
+                        title={renderText(props.data, props.renderer.title)}
+                        subheader={
+                            props.renderer.subtitle
+                                ? renderText(
+                                      props.data,
+                                      props.renderer.subtitle
+                                  )
+                                : undefined
+                        }
                     />
-                ) : null}
-                <CardContent className="content">
-                    {props.renderer.content.type === "text" ? (
-                        renderText(props.data, props.renderer.content.text)
-                    ) : (
-                        <Masonry
-                            className="content-masonry"
-                            columnClassName="content-column"
-                            breakpointCols={
-                                props.renderer.content.count_per_row
-                            }
-                        >
-                            {props.renderer.content.segments.map((segment) => (
-                                <ContentSegmentItem
-                                    key={renderText(props.data, segment.name)}
-                                    segment={segment}
-                                    data={props.data}
-                                />
-                            ))}
-                        </Masonry>
-                    )}
-                </CardContent>
-            </CardActionArea>
-        </Card>
+                    {props.renderer.image ? (
+                        <CardMedia
+                            src={renderText(props.data, props.renderer.image)}
+                        />
+                    ) : null}
+                    <CardContent className="content">
+                        {props.renderer.content.type === "text" ? (
+                            renderText(props.data, props.renderer.content.text)
+                        ) : (
+                            <Masonry
+                                className="content-masonry"
+                                columnClassName="content-column"
+                                breakpointCols={
+                                    props.renderer.content.count_per_row
+                                }
+                            >
+                                {props.renderer.content.segments.map(
+                                    (segment) => (
+                                        <ContentSegmentItem
+                                            key={renderText(
+                                                props.data,
+                                                segment.name
+                                            )}
+                                            segment={segment}
+                                            data={props.data}
+                                        />
+                                    )
+                                )}
+                            </Masonry>
+                        )}
+                    </CardContent>
+                </CardActionArea>
+            </Card>
+        </>
     );
 }

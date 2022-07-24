@@ -33,6 +33,9 @@ def parse_5etools_command(directive: str, arguments: List[str]):
     if directive == "spell":
         return f"*{arguments[0].lower()}*"
 
+    if directive == "creature":
+        return f"{arguments[0]}"
+
     return None
 
 
@@ -116,6 +119,7 @@ def parse_5etools_entries(
                         lines.append(f"# {line['name']}")
                     if "source" in line.keys() and "page" in line.keys():
                         lines.append(f"*{line['source']} - {line['page']}*")
+                    lines.append("")
                     lines.extend(
                         parse_5etools_entries(
                             line["entries"],
