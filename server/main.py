@@ -1,4 +1,5 @@
-from starlite import Starlite, MediaType
+from pydantic import BaseModel
+from starlite import Starlite, MediaType, get
 from starlite.datastructures import State
 from starlette.responses import Response
 from pymongo.mongo_client import MongoClient
@@ -58,12 +59,34 @@ def http_exception_handler(request: Request, exc: Exception) -> StarletteRespons
     )
 
 
+class ConstraintsModel(BaseModel):
+    max_games: int
+    max_characters: int
+
+
+class RootModel(BaseModel):
+    debug: bool
+    plugins: List[str]
+    constraints: ConstraintsModel
+
+
+@get()
+async def get_debug_info(state: State) -> RootModel:
+    return {
+        "debug": state.config["debug"],
+        "plugins": state.config["plugins"],
+        "constraints": state.config["user_constraints"],
+    }
+
+
 BASE_HANDLERS = [
+    get_debug_info,
     AccountController,
     PluginController,
     GameController,
     GameSpecificController,
     PluginDataSourceController,
+    DebugController,
 ]
 
 for plugin in PLUG.plugins.values():

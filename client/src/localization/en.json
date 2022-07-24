@@ -41,6 +41,7 @@
         "generic": "An unknown error occurred",
         "base": "An unknown server error occurred",
         "base_network": "An unknown server error occurred",
+        "connection": "Connection to server not established",
         "validation": {
             "emptyField": "{{fieldName}} is a required field.",
             "invalidField": "{{value}} is not a valid {{type}}"
@@ -64,6 +65,9 @@
         "invites": {
             "not_found": "Invite not found",
             "in_game": "You are already in this game"
+        },
+        "debug": {
+            "not_active": "Debug mode is not active"
         }
     },
     "plugin": {
@@ -141,5 +145,9 @@
         "search": {
             "title": "Search Compendium"
         }
+    },
+    "debug": {
+        "reload_config": "Reload Config",
+        "reload_plugins": "Reload Plugins"
     }
 }

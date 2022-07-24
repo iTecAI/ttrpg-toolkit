@@ -143,3 +143,10 @@ class DataSourceCategoryNotFound(BaseHTTPException):
     message: str = "Category not found:"
     message_class: str = "error.data_source.category"
     status_code: int = HTTP_404_NOT_FOUND
+
+
+# Debug Exceptions
+class DebugNotActiveError(BaseHTTPException):
+    message: str = "Debug mode is not active"
+    message_class: str = "error.debug.not_active"
+    status_code: int = HTTP_405_METHOD_NOT_ALLOWED

@@ -1,5 +1,5 @@
 import { Box, ThemeProvider } from "@mui/material";
-import { SnackbarProvider } from "notistack";
+import { SnackbarProvider, useSnackbar } from "notistack";
 import React, { useEffect, useState } from "react";
 import {
     BrowserRouter,
@@ -9,6 +9,7 @@ import {
     useNavigate,
 } from "react-router-dom";
 import { UserInfoModel } from "./models/account";
+import { RootModel } from "./models/root";
 import { Compendium } from "./pages/compendium/compendium";
 import { GamesListPage } from "./pages/games/gamesIndex";
 import { Index } from "./pages/index/Index";
@@ -16,6 +17,11 @@ import { Layout } from "./pages/layout/Layout";
 import { Login } from "./pages/login/Login";
 import { themeOptionsDefault } from "./theme/default";
 import { get } from "./util/api";
+import { loc } from "./util/localization";
+
+export const RootContext: React.Context<{} | RootModel> = React.createContext(
+    {}
+);
 
 function RouterChild() {
     const [userInfo, setUserInfo] = useState<UserInfoModel | null>(null);
@@ -91,22 +97,46 @@ function RouterChild() {
     );
 }
 
+function RootContextProvider() {
+    const [currentRoot, setCurrentRoot] = useState<{} | RootModel>({});
+
+    const { enqueueSnackbar } = useSnackbar();
+    useEffect(() => {
+        get<RootModel>("/").then((result) => {
+            if (result.success) {
+                setCurrentRoot(result.value);
+            } else {
+                enqueueSnackbar(loc("error.connection"), {
+                    autoHideDuration: 5000,
+                    variant: "error",
+                });
+            }
+        });
+    }, [enqueueSnackbar]);
+
+    return (
+        <RootContext.Provider value={currentRoot}>
+            <Box
+                sx={{
+                    width: "100vw",
+                    height: "100vh",
+                    backgroundColor: "background.default",
+                    display: "inline-block",
+                }}
+            >
+                <BrowserRouter>
+                    <RouterChild />
+                </BrowserRouter>
+            </Box>
+        </RootContext.Provider>
+    );
+}
+
 function App() {
     return (
         <ThemeProvider theme={themeOptionsDefault}>
             <SnackbarProvider maxSnack={3}>
-                <Box
-                    sx={{
-                        width: "100vw",
-                        height: "100vh",
-                        backgroundColor: "background.default",
-                        display: "inline-block",
-                    }}
-                >
-                    <BrowserRouter>
-                        <RouterChild />
-                    </BrowserRouter>
-                </Box>
+                <RootContextProvider />
             </SnackbarProvider>
         </ThemeProvider>
     );

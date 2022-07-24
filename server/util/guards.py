@@ -60,3 +60,8 @@ def guard_isGameParticipant(request: Request[Any], _: BaseRouteHandler) -> None:
 
     if not session.uid in game.participants:
         raise GameNotFound()
+
+
+def guard_debugMode(request: Request[Any], _: BaseRouteHandler) -> None:
+    if not request.app.state.config["debug"]:
+        raise DebugNotActiveError()

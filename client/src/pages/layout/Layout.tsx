@@ -17,10 +17,12 @@ import {
     InputAdornment,
     DialogActions,
 } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { MdBubbleChart, MdEdit, MdLogin } from "react-icons/md";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { RootContext } from "../../App";
 import { UserInfoModel } from "../../models/account";
+import { RootModel } from "../../models/root";
 import { post } from "../../util/api";
 import { calculateGravatar } from "../../util/gravatar";
 import { loc } from "../../util/localization";
@@ -90,6 +92,7 @@ export function Layout(props: {
     const userMenuOpen = Boolean(anchorEl);
 
     const location = useLocation();
+    const rootContext = useContext(RootContext);
 
     return (
         <>
@@ -231,6 +234,38 @@ export function Layout(props: {
                                     >
                                         {loc("layout.user_menu.logout")}
                                     </MenuItem>
+                                    {(rootContext as RootModel).debug
+                                        ? [
+                                              <MenuItem
+                                                  onClick={() => {
+                                                      post<null>(
+                                                          "/debug/reload/config"
+                                                      ).then((result) => {
+                                                          if (result.success) {
+                                                              window.location.reload();
+                                                          }
+                                                      });
+                                                  }}
+                                                  key="rlconf"
+                                              >
+                                                  {loc("debug.reload_config")}
+                                              </MenuItem>,
+                                              <MenuItem
+                                                  onClick={() => {
+                                                      post<null>(
+                                                          "/debug/reload/plugins"
+                                                      ).then((result) => {
+                                                          if (result.success) {
+                                                              window.location.reload();
+                                                          }
+                                                      });
+                                                  }}
+                                                  key="rlplug"
+                                              >
+                                                  {loc("debug.reload_plugins")}
+                                              </MenuItem>,
+                                          ]
+                                        : null}
                                 </Menu>
                             </>
                         ) : window.location.pathname !== "/login" ? (
