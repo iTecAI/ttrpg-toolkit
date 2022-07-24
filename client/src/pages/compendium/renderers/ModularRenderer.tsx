@@ -16,16 +16,27 @@ import {
     Typography,
 } from "@mui/material";
 import React, { useState } from "react";
-import { getNested, renderText } from "./renderUtils";
+import {
+    dynamicFunction,
+    getNested,
+    parseOptionsDynamicFunction,
+    renderText,
+} from "./renderUtils";
 import AbstractIcon from "../../../util/AbstractIcon";
 import { MdExpandMore } from "react-icons/md";
 import { Box } from "@mui/system";
 import { Masonry } from "@mui/lab";
 
+type ConditionalRender = {
+    function: string; // (opts) => boolean
+    options: { [key: string]: string };
+};
+
 type MarkdownRender = {
     type: "markdown";
     text_source: string;
     extra_variables?: { [key: string]: RenderText };
+    conditional?: ConditionalRender;
 };
 
 type ListItemSource = {
@@ -34,7 +45,14 @@ type ListItemSource = {
     renderer: ModularRenderItem;
 };
 
-type ItemSource = ListItemSource;
+type SwitchItemSource = {
+    type: "switch";
+    function: string;
+    options: { [key: string]: string }; // Should be a function that returns a string value based on options.
+    output_map: { [key: string]: ModularRenderItem[] };
+};
+
+type ItemSource = ListItemSource | SwitchItemSource;
 
 type Section = {
     type: "section";
@@ -45,12 +63,14 @@ type Section = {
     icon?: IconProps;
     items: ModularRenderItem[] | ItemSource;
     max_height?: number;
+    conditional?: ConditionalRender;
 };
 
 type Columns = {
     type: "columns";
     spacing?: number;
     items: ModularRenderItem[] | ItemSource;
+    conditional?: ConditionalRender;
 };
 
 type Container = {
@@ -61,6 +81,7 @@ type Container = {
     icon?: IconProps;
     items: ModularRenderItem[] | ItemSource;
     max_height?: number;
+    conditional?: ConditionalRender;
 };
 
 type MasonryColumns = {
@@ -68,18 +89,21 @@ type MasonryColumns = {
     spacing?: number;
     columns: number;
     items: ModularRenderItem[] | ItemSource;
+    conditional?: ConditionalRender;
 };
 
 type DividerItem = {
     type: "divider";
     variant?: "fullWidth" | "middle";
     text?: RenderText;
+    conditional?: ConditionalRender;
 };
 
 type ChipItem = {
     type: "chip";
     icon?: IconProps;
     text: RenderText;
+    conditional?: ConditionalRender;
 };
 
 export type ModularRenderItem =
@@ -108,21 +132,85 @@ export default function ModularRenderer(props: {
             ((item as Section).items as ModularRenderItem[]).push === undefined
         ) {
             let sourceItem: ItemSource = (item as Section).items as ItemSource;
-            if (sourceItem.type === "list") {
-                let sourceList: any[] = getNested(data, sourceItem.source);
-                if (sourceList) {
-                    items = sourceList.map((i) => (
-                        <ModularRenderer
-                            data={typeof i === "object" ? i : { this: i }}
-                            item={sourceItem.renderer}
-                        />
-                    ));
-                }
+            switch (sourceItem.type) {
+                case "list":
+                    let sourceList: any[] = getNested(data, sourceItem.source);
+                    if (sourceList) {
+                        let doRender = (sourceItem as ListItemSource).renderer
+                            .conditional
+                            ? parseOptionsDynamicFunction(
+                                  (
+                                      (sourceItem as ListItemSource).renderer
+                                          .conditional as ConditionalRender
+                                  ).function,
+                                  (
+                                      (sourceItem as ListItemSource).renderer
+                                          .conditional as ConditionalRender
+                                  ).options,
+                                  data
+                              )
+                            : true;
+
+                        items = doRender
+                            ? sourceList.map((i) => (
+                                  <ModularRenderer
+                                      data={
+                                          typeof i === "object"
+                                              ? i
+                                              : { this: i }
+                                      }
+                                      item={
+                                          (sourceItem as ListItemSource)
+                                              .renderer
+                                      }
+                                  />
+                              ))
+                            : [];
+                    }
+                    break;
+                case "switch":
+                    const result: string = parseOptionsDynamicFunction(
+                        sourceItem.function,
+                        sourceItem.options,
+                        data
+                    );
+                    if (Object.keys(sourceItem.output_map).includes(result)) {
+                        items = (
+                            (sourceItem as SwitchItemSource).output_map[
+                                result
+                            ] as ModularRenderItem[]
+                        )
+                            .filter((x) => {
+                                if (x.conditional) {
+                                    return parseOptionsDynamicFunction(
+                                        x.conditional.function,
+                                        x.conditional.options,
+                                        data
+                                    );
+                                } else {
+                                    return true;
+                                }
+                            })
+                            .map((i) => (
+                                <ModularRenderer data={data} item={i} />
+                            ));
+                    }
+                    break;
             }
         } else {
-            items = ((item as Section).items as ModularRenderItem[]).map(
-                (i) => <ModularRenderer data={data} item={i} />
-            );
+            items = ((item as Section).items as ModularRenderItem[])
+                .filter((x) => {
+                    if (x.conditional) {
+                        return parseOptionsDynamicFunction(
+                            x.conditional.function,
+                            x.conditional.options,
+                            data
+                        );
+                    } else {
+                        return true;
+                    }
+                })
+                .map((i) => <ModularRenderer data={data} item={i} />);
         }
     } else {
         items = [];
@@ -143,7 +231,7 @@ export default function ModularRenderer(props: {
                 });
             }
 
-            let lines: RenderText[] = getNested(data, item.text_source);
+            let lines: RenderText[] = getNested(data, item.text_source) ?? [];
 
             internalComponent = (
                 <Typography variant="body1">

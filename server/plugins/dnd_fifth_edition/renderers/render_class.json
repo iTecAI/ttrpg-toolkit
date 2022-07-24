@@ -76,6 +76,12 @@
                         "type": "container",
                         "title": "Proficiencies: Saving Throws",
                         "variant": "elevation",
+                        "conditional": {
+                            "function": "(opts) => opts.item.length > 0",
+                            "options": {
+                                "item": "save_proficiency"
+                            }
+                        },
                         "icon": {
                             "group": "game",
                             "name": "GiDiceTwentyFacesTwenty"
@@ -104,6 +110,12 @@
                         "type": "container",
                         "title": "Proficiencies: Armor",
                         "variant": "elevation",
+                        "conditional": {
+                            "function": "(opts) => opts.item.length > 0",
+                            "options": {
+                                "item": "armor_proficiency"
+                            }
+                        },
                         "icon": {
                             "group": "game",
                             "name": "GiArmorVest"
@@ -132,6 +144,12 @@
                         "type": "container",
                         "title": "Proficiencies: Weapons",
                         "variant": "elevation",
+                        "conditional": {
+                            "function": "(opts) => opts.item.length > 0",
+                            "options": {
+                                "item": "weapon_proficiency"
+                            }
+                        },
                         "icon": {
                             "group": "game",
                             "name": "GiBroadsword"
@@ -160,6 +178,12 @@
                         "type": "container",
                         "title": "Proficiencies: Tools/Vehicles",
                         "variant": "elevation",
+                        "conditional": {
+                            "function": "(opts) => opts.item.length > 0",
+                            "options": {
+                                "item": "tool_proficiency"
+                            }
+                        },
                         "icon": {
                             "group": "game",
                             "name": "GiClawHammer"

@@ -2,6 +2,28 @@ import { DataItem, RenderText, VariableItem } from "../../../models/compendium";
 
 const stringVariableRegex = /{{.*?}}/g;
 
+export function dynamicFunction(code: string, options: { [key: string]: any }) {
+    // eslint-disable-next-line
+    const func = new Function(
+        "options",
+        `"use strict";return (${code})(options)`
+    );
+    return func(options);
+}
+
+export function parseOptionsDynamicFunction(
+    code: string,
+    options: { [key: string]: string },
+    data: { [key: string]: any }
+) {
+    let processedVars: { [key: string]: any } = {};
+    for (let v of Object.keys(options)) {
+        processedVars[v] = getNested(data, options[v]);
+    }
+
+    return dynamicFunction(code, processedVars);
+}
+
 export function getNested(obj: any, key: string | string[]): any {
     if (typeof key === "string") {
         key = key.split(".");
@@ -44,17 +66,7 @@ function parseVariableItem(
     if (item.type === "text") {
         return getNested(data, item.source);
     } else {
-        let processedVars: { [key: string]: any } = {};
-        for (let v of Object.keys(item.options)) {
-            processedVars[v] = getNested(data, item.options[v]);
-        }
-
-        // eslint-disable-next-line
-        const func = new Function(
-            "options",
-            `"use strict";return (${item.function})(options)`
-        );
-        return func(processedVars);
+        return parseOptionsDynamicFunction(item.function, item.options, data);
     }
 }
 

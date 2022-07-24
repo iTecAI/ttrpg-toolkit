@@ -15,7 +15,12 @@ import {
     DataItem,
 } from "../../../models/compendium";
 import AbstractIcon from "../../../util/AbstractIcon";
-import { getNested, renderText } from "./renderUtils";
+import {
+    dynamicFunction,
+    getNested,
+    parseOptionsDynamicFunction,
+    renderText,
+} from "./renderUtils";
 
 function ContentSegmentItem(props: {
     segment: ContentSegment;
@@ -23,19 +28,11 @@ function ContentSegmentItem(props: {
 }) {
     let doRender: boolean;
     if (props.segment.conditional) {
-        let processedVars: { [key: string]: any } = {};
-        for (let v of Object.keys(props.segment.conditional.options)) {
-            processedVars[v] = getNested(
-                props.data,
-                props.segment.conditional.options[v]
-            );
-        }
-        // eslint-disable-next-line
-        const func = new Function(
-            "options",
-            `"use strict";return (${props.segment.conditional.function})(options)`
+        doRender = parseOptionsDynamicFunction(
+            props.segment.conditional.function,
+            props.segment.conditional.options,
+            props.data
         );
-        doRender = func(processedVars) as boolean;
     } else {
         doRender = true;
     }
