@@ -87,7 +87,7 @@
                                 "title": "Proficiencies: Saving Throws",
                                 "variant": "outlined",
                                 "conditional": {
-                                    "function": "(opts) => opts.item.length > 0",
+                                    "function": "(opts) => opts.item && opts.item.length > 0",
                                     "options": {
                                         "item": "save_proficiency"
                                     }
@@ -121,7 +121,7 @@
                                 "title": "Proficiencies: Armor",
                                 "variant": "outlined",
                                 "conditional": {
-                                    "function": "(opts) => opts.item.length > 0",
+                                    "function": "(opts) => opts.item && opts.item.length > 0",
                                     "options": {
                                         "item": "armor_proficiency"
                                     }
@@ -155,7 +155,7 @@
                                 "title": "Proficiencies: Weapons",
                                 "variant": "outlined",
                                 "conditional": {
-                                    "function": "(opts) => opts.item.length > 0",
+                                    "function": "(opts) => opts.item && opts.item.length > 0",
                                     "options": {
                                         "item": "weapon_proficiency"
                                     }
@@ -189,7 +189,7 @@
                                 "title": "Proficiencies: Tools/Vehicles",
                                 "variant": "outlined",
                                 "conditional": {
-                                    "function": "(opts) => opts.item.length > 0",
+                                    "function": "(opts) => opts.item && opts.item.length > 0",
                                     "options": {
                                         "item": "tool_proficiency"
                                     }
@@ -223,7 +223,7 @@
                                 "title": "Proficiencies: Skills",
                                 "variant": "outlined",
                                 "conditional": {
-                                    "function": "(opts) => opts.item.length > 0",
+                                    "function": "(opts) => opts.item && opts.item.length > 0",
                                     "options": {
                                         "item": "skill_proficiency"
                                     }

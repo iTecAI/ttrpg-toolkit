@@ -54,5 +54,21 @@
                 color: #ffffffdd;
             }
         }
+        &.type-error {
+            .error-card {
+                border: 2px solid #bb4444;
+                .render-spec-container {
+                    padding: 8px;
+                    font-family: "Courier New", Courier, monospace;
+                    max-height: 60vh;
+                    overflow-y: auto;
+
+                    .json-tab {
+                        display: inline-block;
+                        width: 24px;
+                    }
+                }
+            }
+        }
     }
 }

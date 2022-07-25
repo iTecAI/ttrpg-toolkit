@@ -1,4 +1,4 @@
-import { Box, ThemeProvider } from "@mui/material";
+import { Box, Button, ThemeProvider } from "@mui/material";
 import { SnackbarProvider, useSnackbar } from "notistack";
 import React, { useEffect, useState } from "react";
 import {
@@ -100,14 +100,21 @@ function RouterChild() {
 function RootContextProvider() {
     const [currentRoot, setCurrentRoot] = useState<{} | RootModel>({});
 
-    const { enqueueSnackbar } = useSnackbar();
+    const { enqueueSnackbar, closeSnackbar } = useSnackbar();
     useEffect(() => {
         get<RootModel>("/").then((result) => {
             if (result.success) {
                 setCurrentRoot(result.value);
             } else {
                 enqueueSnackbar(loc("error.connection"), {
-                    autoHideDuration: 5000,
+                    action: (snackbarId) => (
+                        <Button
+                            variant="text"
+                            onClick={() => closeSnackbar(snackbarId)}
+                        >
+                            {loc("generic.dismiss")}
+                        </Button>
+                    ),
                     variant: "error",
                 });
             }
@@ -135,7 +142,7 @@ function RootContextProvider() {
 function App() {
     return (
         <ThemeProvider theme={themeOptionsDefault}>
-            <SnackbarProvider maxSnack={3}>
+            <SnackbarProvider maxSnack={5}>
                 <RootContextProvider />
             </SnackbarProvider>
         </ThemeProvider>

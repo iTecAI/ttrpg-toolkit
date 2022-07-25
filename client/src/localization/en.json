@@ -135,7 +135,9 @@
         "submit": "Submit",
         "create": "Create",
         "copied": "Copied to clipboard!",
-        "search": "Search"
+        "search": "Search",
+        "close": "Close",
+        "dismiss": "Dismiss"
     },
     "compendium": {
         "nav": {
@@ -144,6 +146,9 @@
         },
         "search": {
             "title": "Search Compendium"
+        },
+        "renderer": {
+            "error_title": "Error rendering {{type}}: {{errorText}}."
         }
     },
     "debug": {
