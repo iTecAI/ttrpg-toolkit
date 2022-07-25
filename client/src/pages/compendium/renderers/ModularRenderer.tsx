@@ -16,6 +16,7 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import {
+    dynamicFunction,
     getNested,
     parseOptionsDynamicFunction,
     renderText,
@@ -50,7 +51,14 @@ type SwitchItemSource = {
     output_map: { [key: string]: ModularRenderItem[] };
 };
 
-type ItemSource = ListItemSource | SwitchItemSource;
+type GeneratorItemSource = {
+    type: "generator";
+    source: string;
+    function: string; // (source: any) -> [{[key: string]: RenderText}]
+    renderer: ModularRenderItem;
+};
+
+type ItemSource = ListItemSource | SwitchItemSource | GeneratorItemSource;
 
 type Section = {
     type: "section";
@@ -66,6 +74,13 @@ type Section = {
 
 type Columns = {
     type: "columns";
+    spacing?: number;
+    items: ModularRenderItem[] | ItemSource;
+    conditional?: ConditionalRender;
+};
+
+type Rows = {
+    type: "rows";
     spacing?: number;
     items: ModularRenderItem[] | ItemSource;
     conditional?: ConditionalRender;
@@ -134,6 +149,7 @@ export type ModularRenderItem =
     | MarkdownRender
     | Section
     | Columns
+    | Rows
     | Container
     | MasonryColumns
     | DividerItem
@@ -142,7 +158,7 @@ export type ModularRenderItem =
     | TextItem;
 
 export default function ModularRenderer(props: {
-    data: DataItem;
+    data: { [key: string]: any };
     item: ModularRenderItem;
 }) {
     const { data, item } = props;
@@ -227,6 +243,23 @@ export default function ModularRenderer(props: {
                             ));
                     }
                     break;
+                case "generator":
+                    const _source = getNested(data, sourceItem.source);
+                    if (!_source) {
+                        items = [];
+                        break;
+                    }
+
+                    const generatorResult: { [key: string]: RenderText }[] =
+                        dynamicFunction(sourceItem.function, _source);
+
+                    items = generatorResult.map((v) => (
+                        <ModularRenderer
+                            data={v}
+                            item={(sourceItem as GeneratorItemSource).renderer}
+                            key={Math.random()}
+                        />
+                    ));
             }
         } else {
             items = ((item as Section).items as ModularRenderItem[])
@@ -373,6 +406,12 @@ export default function ModularRenderer(props: {
                 <Stack direction={"row"} spacing={item.spacing ?? 2}>
                     {items}
                 </Stack>
+            );
+            break;
+
+        case "rows":
+            internalComponent = (
+                <Stack spacing={item.spacing ?? 2}>{items}</Stack>
             );
             break;
 
