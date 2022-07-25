@@ -25,14 +25,13 @@ export function ExpandedCardRenderer(props: {
             maxWidth="xl"
         >
             <DialogTitle>
-                <Typography variant="h4">
+                <span className="expanded-card-title">
                     {renderText(data ?? {}, renderer.title)}
-                </Typography>
-                {renderer.subtitle && (
-                    <Typography variant="subtitle2">
-                        {renderText(data ?? {}, renderer.subtitle)}
-                    </Typography>
-                )}
+                </span>
+                <span className="expanded-card-subtitle">
+                    {renderer.subtitle &&
+                        renderText(data ?? {}, renderer.subtitle)}
+                </span>
             </DialogTitle>
             <DialogContent dividers={true}>
                 <Stack spacing={2}>

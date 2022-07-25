@@ -736,6 +736,54 @@
                     },
                     "required": ["type", "items"],
                     "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "const": "text"
+                        },
+                        "conditional": {
+                            "type": "object",
+                            "properties": {
+                                "function": {
+                                    "type": "string"
+                                },
+                                "options": {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "required": ["function", "options"],
+                            "additionalProperties": false
+                        },
+                        "variant": {
+                            "type": "string",
+                            "enum": [
+                                "h1",
+                                "h2",
+                                "h3",
+                                "h4",
+                                "h5",
+                                "h6",
+                                "subtitle1",
+                                "subtitle2",
+                                "body1",
+                                "body2",
+                                "button",
+                                "caption",
+                                "overline"
+                            ]
+                        },
+                        "text": {
+                            "$ref": "#/definitions/RenderText"
+                        }
+                    },
+                    "required": ["type", "variant", "text"],
+                    "additionalProperties": false
                 }
             ]
         },

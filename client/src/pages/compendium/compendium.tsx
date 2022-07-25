@@ -1,9 +1,6 @@
 import {
     Box,
     Button,
-    Dialog,
-    DialogContent,
-    DialogTitle,
     IconButton,
     InputAdornment,
     LinearProgress,
@@ -28,14 +25,8 @@ import {
 import { get, post } from "../../util/api";
 import { useSnackbar } from "notistack";
 import { useHorizontalScroll } from "../../util/hscroll";
-import {
-    CardExpandedModel,
-    CardRendererModel,
-    DataItem,
-} from "../../models/compendium";
+import { DataItem } from "../../models/compendium";
 import CardRenderer from "./renderers/CardRenderer";
-import { renderText } from "./renderers/renderUtils";
-import ModularRenderer from "./renderers/ModularRenderer";
 import { ExpandedCardRenderer } from "./renderers/ExpandedCardRenderer";
 
 function SearchPopup(props: {
@@ -348,7 +339,7 @@ export function Compendium() {
                         {currentPlugin.data_source &&
                         currentPlugin.data_source.categories[category] &&
                         currentPlugin.data_source.categories[category].renderer
-                            .render_mode == "card" ? (
+                            .render_mode === "card" ? (
                             <ExpandedCardRenderer
                                 renderer={
                                     currentPlugin.data_source.categories[

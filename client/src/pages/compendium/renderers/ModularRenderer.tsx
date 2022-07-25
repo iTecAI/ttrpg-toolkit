@@ -11,13 +11,11 @@ import {
     CardHeader,
     Chip,
     Divider,
-    Paper,
     Stack,
     Typography,
 } from "@mui/material";
 import React, { useState } from "react";
 import {
-    dynamicFunction,
     getNested,
     parseOptionsDynamicFunction,
     renderText,
@@ -112,6 +110,26 @@ type GroupItem = {
     items: ModularRenderItem[] | ItemSource;
 };
 
+type TextItem = {
+    type: "text";
+    conditional?: ConditionalRender;
+    variant:
+        | "h1"
+        | "h2"
+        | "h3"
+        | "h4"
+        | "h5"
+        | "h6"
+        | "subtitle1"
+        | "subtitle2"
+        | "body1"
+        | "body2"
+        | "button"
+        | "caption"
+        | "overline";
+    text: RenderText;
+};
+
 export type ModularRenderItem =
     | MarkdownRender
     | Section
@@ -120,7 +138,8 @@ export type ModularRenderItem =
     | MasonryColumns
     | DividerItem
     | ChipItem
-    | GroupItem;
+    | GroupItem
+    | TextItem;
 
 export default function ModularRenderer(props: {
     data: DataItem;
@@ -170,6 +189,7 @@ export default function ModularRenderer(props: {
                                           (sourceItem as ListItemSource)
                                               .renderer
                                       }
+                                      key={Math.random()}
                                   />
                               ))
                             : [];
@@ -181,7 +201,6 @@ export default function ModularRenderer(props: {
                         sourceItem.options,
                         data
                     );
-                    console.log(result, sourceItem.function);
                     if (Object.keys(sourceItem.output_map).includes(result)) {
                         items = (
                             (sourceItem as SwitchItemSource).output_map[
@@ -200,7 +219,11 @@ export default function ModularRenderer(props: {
                                 }
                             })
                             .map((i) => (
-                                <ModularRenderer data={data} item={i} />
+                                <ModularRenderer
+                                    data={data}
+                                    item={i}
+                                    key={Math.random()}
+                                />
                             ));
                     }
                     break;
@@ -218,10 +241,22 @@ export default function ModularRenderer(props: {
                         return true;
                     }
                 })
-                .map((i) => <ModularRenderer data={data} item={i} />);
+                .map((i) => (
+                    <ModularRenderer data={data} item={i} key={Math.random()} />
+                ));
         }
     } else {
         items = [];
+        if (item.conditional) {
+            const conditionalResult = parseOptionsDynamicFunction(
+                item.conditional.function,
+                item.conditional.options,
+                data
+            );
+            if (!conditionalResult) {
+                return null;
+            }
+        }
     }
 
     switch (item.type) {
@@ -242,27 +277,39 @@ export default function ModularRenderer(props: {
             let lines: RenderText[] = getNested(data, item.text_source) ?? [];
 
             internalComponent = (
-                <Typography variant="body1">
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                        {lines
-                            .map((value) =>
-                                renderText(
-                                    data,
-                                    parsedVars
-                                        ? renderText(parsedVars, value)
-                                        : value
-                                )
+                <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    components={{
+                        p: ({ node, ...props }) => (
+                            <div className="md-paragraph" {...props} />
+                        ),
+                    }}
+                    className="markdown-render"
+                >
+                    {lines
+                        .map((value) =>
+                            renderText(
+                                data,
+                                parsedVars
+                                    ? renderText(parsedVars, value)
+                                    : value
                             )
-                            .join("\n")}
-                    </ReactMarkdown>
-                </Typography>
+                        )
+                        .join("\n")}
+                </ReactMarkdown>
             );
             break;
 
         case "section":
             const sectionHeader = (
                 <AccordionSummary
-                    expandIcon={item.canExpand ? <MdExpandMore /> : <></>}
+                    expandIcon={
+                        item.canExpand ? (
+                            <MdExpandMore fontSize="24px" />
+                        ) : (
+                            <></>
+                        )
+                    }
                 >
                     {item.icon ? (
                         <AbstractIcon
@@ -288,31 +335,34 @@ export default function ModularRenderer(props: {
 
             if (item.canExpand) {
                 internalComponent = (
-                    <Accordion
-                        expanded={exp}
-                        sx={{
-                            maxHeight: item.max_height
-                                ? item.max_height + "px"
-                                : undefined,
-                        }}
-                        onClick={() => setExp(!exp)}
-                    >
+                    <Accordion expanded={exp} onClick={() => setExp(!exp)}>
                         {sectionHeader}
-                        <AccordionDetails>{items}</AccordionDetails>
+                        <AccordionDetails
+                            sx={{
+                                maxHeight: item.max_height
+                                    ? item.max_height + "px"
+                                    : undefined,
+                                overflowY: "auto",
+                            }}
+                        >
+                            {items}
+                        </AccordionDetails>
                     </Accordion>
                 );
             } else {
                 internalComponent = (
-                    <Accordion
-                        expanded={true}
-                        sx={{
-                            maxHeight: item.max_height
-                                ? item.max_height + "px"
-                                : undefined,
-                        }}
-                    >
+                    <Accordion expanded={true}>
                         {sectionHeader}
-                        <AccordionDetails>{items}</AccordionDetails>
+                        <AccordionDetails
+                            sx={{
+                                maxHeight: item.max_height
+                                    ? item.max_height + "px"
+                                    : undefined,
+                                overflowY: "auto",
+                            }}
+                        >
+                            {items}
+                        </AccordionDetails>
                     </Accordion>
                 );
             }
@@ -328,14 +378,7 @@ export default function ModularRenderer(props: {
 
         case "container":
             internalComponent = (
-                <Card
-                    variant={item.variant}
-                    sx={{
-                        maxHeight: item.max_height
-                            ? item.max_height + "px"
-                            : undefined,
-                    }}
-                >
+                <Card variant={item.variant}>
                     <CardHeader
                         title={
                             <Typography variant="h6">
@@ -359,7 +402,16 @@ export default function ModularRenderer(props: {
                             ) : undefined
                         }
                     />
-                    <CardContent>{items}</CardContent>
+                    <CardContent
+                        sx={{
+                            maxHeight: item.max_height
+                                ? item.max_height + "px"
+                                : undefined,
+                            overflowY: "auto",
+                        }}
+                    >
+                        {items}
+                    </CardContent>
                 </Card>
             );
             break;
@@ -372,7 +424,12 @@ export default function ModularRenderer(props: {
                     className="modular-masonry"
                 >
                     {items.map((value) => (
-                        <Box className="modular-masonry-item">{value}</Box>
+                        <Box
+                            className="modular-masonry-item"
+                            key={Math.random()}
+                        >
+                            {value}
+                        </Box>
                     ))}
                 </Masonry>
             );
@@ -406,11 +463,28 @@ export default function ModularRenderer(props: {
         case "group":
             internalComponent = <Box>{items}</Box>;
             break;
+        case "text":
+            internalComponent = (
+                <Typography variant={item.variant}>
+                    {renderText(data, item.text)}
+                </Typography>
+            );
+    }
+
+    let conditionalResult: boolean;
+    if (item.conditional) {
+        conditionalResult = parseOptionsDynamicFunction(
+            item.conditional.function,
+            item.conditional.options,
+            data
+        );
+    } else {
+        conditionalResult = true;
     }
 
     return (
         <Box className={`modular-box type-${item.type}`}>
-            {internalComponent}
+            {conditionalResult ? internalComponent : <></>}
         </Box>
     );
 }

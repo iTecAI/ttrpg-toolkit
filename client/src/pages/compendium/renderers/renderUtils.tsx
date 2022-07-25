@@ -1,4 +1,4 @@
-import { DataItem, RenderText, VariableItem } from "../../../models/compendium";
+import { RenderText, VariableItem } from "../../../models/compendium";
 
 const stringVariableRegex = /{{.*?}}/g;
 
@@ -20,8 +20,6 @@ export function parseOptionsDynamicFunction(
     for (let v of Object.keys(options)) {
         processedVars[v] = getNested(data, options[v]);
     }
-
-    console.log(code, processedVars, data);
 
     return dynamicFunction(code, processedVars);
 }

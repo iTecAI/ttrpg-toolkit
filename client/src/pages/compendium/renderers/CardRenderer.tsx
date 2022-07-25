@@ -4,23 +4,16 @@ import {
     CardContent,
     CardHeader,
     CardMedia,
-    Dialog,
     Paper,
 } from "@mui/material";
 import Masonry from "react-masonry-css";
 import {
-    CardExpandedModel,
     CardRendererModel,
     ContentSegment,
     DataItem,
 } from "../../../models/compendium";
 import AbstractIcon from "../../../util/AbstractIcon";
-import {
-    dynamicFunction,
-    getNested,
-    parseOptionsDynamicFunction,
-    renderText,
-} from "./renderUtils";
+import { parseOptionsDynamicFunction, renderText } from "./renderUtils";
 
 function ContentSegmentItem(props: {
     segment: ContentSegment;
