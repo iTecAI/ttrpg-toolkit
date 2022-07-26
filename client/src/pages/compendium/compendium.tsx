@@ -331,7 +331,9 @@ export function Compendium() {
                                         key={item.name}
                                         data={item}
                                         renderer={renderer.item}
-                                        onExpand={() => setExpandedDialog(item)}
+                                        onExpand={() => {
+                                            setExpandedDialog(item);
+                                        }}
                                     />
                                 );
                             })}
@@ -347,7 +349,9 @@ export function Compendium() {
                                     ].renderer.expanded
                                 }
                                 data={expandedDialog}
-                                onClose={() => setExpandedDialog(null)}
+                                onClose={() => {
+                                    setExpandedDialog(null);
+                                }}
                             />
                         ) : (
                             <></>

@@ -137,7 +137,8 @@
         "copied": "Copied to clipboard!",
         "search": "Search",
         "close": "Close",
-        "dismiss": "Dismiss"
+        "dismiss": "Dismiss",
+        "loading": "Loading..."
     },
     "compendium": {
         "nav": {

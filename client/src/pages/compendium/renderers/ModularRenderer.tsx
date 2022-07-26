@@ -10,6 +10,7 @@ import {
     CardContent,
     CardHeader,
     Chip,
+    CircularProgress,
     Divider,
     Paper,
     Stack,
@@ -183,14 +184,360 @@ export type ModularRenderItem =
     | TextItem
     | TableDataItem;
 
+export type ModularItemProps<T> = {
+    data: { [key: string]: any };
+    item: T;
+    items: React.ReactNode[];
+};
+
+function MarkdownItemRenderer(props: ModularItemProps<MarkdownRender>) {
+    const { data, item } = props;
+
+    let parsedVars: { [key: string]: string };
+    if (item.extra_variables) {
+        parsedVars = {};
+        Object.keys(item.extra_variables).forEach((varName) => {
+            parsedVars[varName] = renderText(
+                data,
+                (
+                    item.extra_variables as {
+                        [key: string]: RenderText;
+                    }
+                )[varName]
+            );
+        });
+    }
+    let lines: RenderText[] = [];
+    if (item.text) {
+        if ((item.text as any).push) {
+            lines = item.text as RenderText[];
+        } else {
+            lines = [item.text as RenderText];
+        }
+    } else if (item.text_source) {
+        lines = getNested(data, item.text_source) ?? [];
+    } else {
+        lines = [];
+    }
+
+    return (
+        <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            components={{
+                p: ({ node, ...props }) => (
+                    <div className="md-paragraph" {...props} />
+                ),
+            }}
+            className="markdown-render"
+        >
+            {lines
+                .map((value) =>
+                    renderText(
+                        data,
+                        parsedVars ? renderText(parsedVars, value) : value
+                    )
+                )
+                .join("\n")}
+        </ReactMarkdown>
+    );
+}
+
+function SectionItemRenderer(props: ModularItemProps<Section>) {
+    const { data, item, items } = props;
+    const [exp, setExp] = useState<boolean>(
+        item.type === "section" ? item.defaultExpanded ?? false : false
+    );
+    const [loading, setLoading] = useState<boolean>(false);
+
+    const sectionHeader = (
+        <AccordionSummary
+            expandIcon={
+                item.canExpand ? <MdExpandMore fontSize="24px" /> : <></>
+            }
+        >
+            {item.icon ? (
+                <AbstractIcon
+                    type={item.icon.group}
+                    name={item.icon.name}
+                    className="section-header-icon"
+                />
+            ) : (
+                <></>
+            )}{" "}
+            <Typography className="section-header-text" variant="h5">
+                {renderText(data, item.title)}
+            </Typography>
+            {item.subtitle ? (
+                <Typography className="section-header-subtitle">
+                    {renderText(data, item.subtitle)}
+                </Typography>
+            ) : (
+                <></>
+            )}
+            {loading && (
+                <CircularProgress size={32} className="load-progress" />
+            )}
+        </AccordionSummary>
+    );
+
+    if (item.canExpand) {
+        return (
+            <Accordion
+                expanded={exp}
+                onClick={() => {
+                    setExp(!exp);
+                }}
+                TransitionProps={{
+                    //unmountOnExit: true,
+                    onEntering(node, isAppearing) {
+                        setLoading(true);
+                    },
+                    onEntered(node, isAppearing) {
+                        setLoading(false);
+                    },
+                    mountOnEnter: true,
+                }}
+            >
+                {sectionHeader}
+                <AccordionDetails
+                    sx={{
+                        maxHeight: item.max_height
+                            ? item.max_height + "px"
+                            : undefined,
+                        overflowY: "auto",
+                    }}
+                >
+                    {items}
+                </AccordionDetails>
+            </Accordion>
+        );
+    } else {
+        setLoading(true);
+        return (
+            <Accordion
+                expanded={true}
+                TransitionProps={{
+                    //unmountOnExit: true,
+                    onEntered(node, isAppearing) {
+                        setLoading(false);
+                    },
+                    mountOnEnter: true,
+                }}
+            >
+                {sectionHeader}
+                <AccordionDetails
+                    sx={{
+                        maxHeight: item.max_height
+                            ? item.max_height + "px"
+                            : undefined,
+                        overflowY: "auto",
+                    }}
+                >
+                    {items}
+                </AccordionDetails>
+            </Accordion>
+        );
+    }
+}
+
+function ColumnsItemRenderer(props: ModularItemProps<Columns>) {
+    const { item, items } = props;
+    return (
+        <Stack direction={"row"} spacing={item.spacing ?? 2}>
+            {items.map((i) => (
+                <div
+                    className="stack-item"
+                    style={{
+                        width: `calc(100% / ${items.length})`,
+                        display: "inline-block",
+                    }}
+                >
+                    {i}
+                </div>
+            ))}
+        </Stack>
+    );
+}
+
+function RowsItemRenderer(props: ModularItemProps<Rows>) {
+    const { item, items } = props;
+    return <Stack spacing={item.spacing ?? 2}>{items}</Stack>;
+}
+
+function ContainerItemRenderer(props: ModularItemProps<Container>) {
+    const { data, item, items } = props;
+    return (
+        <Card variant={item.variant}>
+            <CardHeader
+                title={
+                    <Typography variant="h6">
+                        {renderText(data, item.title)}
+                    </Typography>
+                }
+                subheader={
+                    item.subtitle ? renderText(data, item.subtitle) : undefined
+                }
+                avatar={
+                    item.icon ? (
+                        <Avatar>
+                            <AbstractIcon
+                                className="container-icon"
+                                type={item.icon.group}
+                                name={item.icon.name}
+                            />
+                        </Avatar>
+                    ) : undefined
+                }
+            />
+            <CardContent
+                sx={{
+                    maxHeight: item.max_height
+                        ? item.max_height + "px"
+                        : undefined,
+                    overflowY: "auto",
+                }}
+            >
+                {items}
+            </CardContent>
+        </Card>
+    );
+}
+
+function MasonryColumnsItemRenderer(props: ModularItemProps<MasonryColumns>) {
+    const { item, items } = props;
+    return (
+        <Masonry
+            columns={item.columns}
+            spacing={item.spacing ?? 2}
+            className="modular-masonry"
+        >
+            {items.map((value) => (
+                <Box className="modular-masonry-item" key={Math.random()}>
+                    {value}
+                </Box>
+            ))}
+        </Masonry>
+    );
+}
+
+function DividerItemRenderer(props: ModularItemProps<DividerItem>) {
+    const { data, item } = props;
+    return (
+        <Divider variant={item.variant ?? "middle"}>
+            {item.text && renderText(data, item.text)}
+        </Divider>
+    );
+}
+
+function ChipItemRenderer(props: ModularItemProps<ChipItem>) {
+    const { data, item } = props;
+
+    return (
+        <Chip
+            icon={
+                item.icon && (
+                    <AbstractIcon
+                        type={item.icon.group}
+                        name={item.icon.name}
+                        className="chip-icon"
+                    />
+                )
+            }
+            className="chip"
+            label={renderText(data, item.text)}
+        />
+    );
+}
+
+function GroupItemRenderer(props: ModularItemProps<GroupItem>) {
+    const { items } = props;
+
+    return <Box>{items}</Box>;
+}
+
+function TextItemRenderer(props: ModularItemProps<TextItem>) {
+    const { data, item } = props;
+
+    return (
+        <Typography variant={item.variant}>
+            {renderText(data, item.text)}
+        </Typography>
+    );
+}
+
+function TableDataItemRenderer(props: ModularItemProps<TableDataItem>) {
+    const { data, item } = props;
+
+    let rows: { [key: string]: RenderText }[];
+
+    if ((item.rows as any[]).push) {
+        rows = item.rows as { [key: string]: RenderText }[];
+    } else {
+        rows = parseOptionsDynamicFunction(
+            (item.rows as any).function,
+            (item.rows as any).options,
+            data
+        );
+    }
+
+    return (
+        <TableContainer
+            sx={{
+                maxHeight: item.max_height ? item.max_height + "px" : undefined,
+                overflowY: "auto",
+            }}
+        >
+            <Table size={item.dense ? "small" : "medium"} stickyHeader>
+                <TableHead>
+                    <TableRow>
+                        {item.columnOrder.map((column) => (
+                            <TableCell key={Math.random()}>
+                                {renderText(
+                                    data,
+                                    item.headers[column] ||
+                                        "COLUMN NOT SPECIFIED"
+                                )}
+                            </TableCell>
+                        ))}
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    {rows.map((row) => (
+                        <TableRow key={Math.random()}>
+                            {item.columnOrder.map((column) => (
+                                <TableCell key={Math.random()}>
+                                    {renderText(data, row[column] || " - ")}
+                                </TableCell>
+                            ))}
+                        </TableRow>
+                    ))}
+                </TableBody>
+            </Table>
+        </TableContainer>
+    );
+}
+
+const itemRendererMapping: {
+    [key: string]: (props: ModularItemProps<any>) => JSX.Element;
+} = {
+    markdown: MarkdownItemRenderer,
+    section: SectionItemRenderer,
+    columns: ColumnsItemRenderer,
+    rows: RowsItemRenderer,
+    container: ContainerItemRenderer,
+    masonry: MasonryColumnsItemRenderer,
+    chip: ChipItemRenderer,
+    group: GroupItemRenderer,
+    text: TextItemRenderer,
+    table: TableDataItemRenderer,
+    divider: DividerItemRenderer,
+};
+
 export default function ModularRenderer(props: {
     data: { [key: string]: any };
     item: ModularRenderItem;
 }) {
     const { data, item } = props;
-    const [exp, setExp] = useState<boolean>(
-        item.type === "section" ? item.defaultExpanded ?? false : false
-    );
     try {
         let internalComponent: React.ReactNode;
 
@@ -334,312 +681,10 @@ export default function ModularRenderer(props: {
             }
         }
 
-        switch (item.type) {
-            case "markdown":
-                let parsedVars: { [key: string]: string };
-                if (item.extra_variables) {
-                    parsedVars = {};
-                    Object.keys(item.extra_variables).forEach((varName) => {
-                        parsedVars[varName] = renderText(
-                            data,
-                            (
-                                item.extra_variables as {
-                                    [key: string]: RenderText;
-                                }
-                            )[varName]
-                        );
-                    });
-                }
-                let lines: RenderText[] = [];
-                if (item.text) {
-                    if ((item.text as any).push) {
-                        lines = item.text as RenderText[];
-                    } else {
-                        lines = [item.text as RenderText];
-                    }
-                } else if (item.text_source) {
-                    lines = getNested(data, item.text_source) ?? [];
-                } else {
-                    lines = [];
-                }
-
-                internalComponent = (
-                    <ReactMarkdown
-                        remarkPlugins={[remarkGfm]}
-                        components={{
-                            p: ({ node, ...props }) => (
-                                <div className="md-paragraph" {...props} />
-                            ),
-                        }}
-                        className="markdown-render"
-                    >
-                        {lines
-                            .map((value) =>
-                                renderText(
-                                    data,
-                                    parsedVars
-                                        ? renderText(parsedVars, value)
-                                        : value
-                                )
-                            )
-                            .join("\n")}
-                    </ReactMarkdown>
-                );
-                break;
-
-            case "section":
-                const sectionHeader = (
-                    <AccordionSummary
-                        expandIcon={
-                            item.canExpand ? (
-                                <MdExpandMore fontSize="24px" />
-                            ) : (
-                                <></>
-                            )
-                        }
-                    >
-                        {item.icon ? (
-                            <AbstractIcon
-                                type={item.icon.group}
-                                name={item.icon.name}
-                                className="section-header-icon"
-                            />
-                        ) : (
-                            <></>
-                        )}{" "}
-                        <Typography
-                            className="section-header-text"
-                            variant="h5"
-                        >
-                            {renderText(data, item.title)}
-                        </Typography>
-                        {item.subtitle ? (
-                            <Typography className="section-header-subtitle">
-                                {renderText(data, item.subtitle)}
-                            </Typography>
-                        ) : (
-                            <></>
-                        )}
-                    </AccordionSummary>
-                );
-
-                if (item.canExpand) {
-                    internalComponent = (
-                        <Accordion
-                            expanded={exp}
-                            onClick={() => setExp(!exp)}
-                            TransitionProps={{ unmountOnExit: true }}
-                        >
-                            {sectionHeader}
-                            <AccordionDetails
-                                sx={{
-                                    maxHeight: item.max_height
-                                        ? item.max_height + "px"
-                                        : undefined,
-                                    overflowY: "auto",
-                                }}
-                            >
-                                {items}
-                            </AccordionDetails>
-                        </Accordion>
-                    );
-                } else {
-                    internalComponent = (
-                        <Accordion
-                            expanded={true}
-                            TransitionProps={{ unmountOnExit: true }}
-                        >
-                            {sectionHeader}
-                            <AccordionDetails
-                                sx={{
-                                    maxHeight: item.max_height
-                                        ? item.max_height + "px"
-                                        : undefined,
-                                    overflowY: "auto",
-                                }}
-                            >
-                                {items}
-                            </AccordionDetails>
-                        </Accordion>
-                    );
-                }
-                break;
-
-            case "columns":
-                internalComponent = (
-                    <Stack direction={"row"} spacing={item.spacing ?? 2}>
-                        {items.map((i) => (
-                            <div
-                                className="stack-item"
-                                style={{
-                                    width: `calc(100% / ${items.length})`,
-                                    display: "inline-block",
-                                }}
-                            >
-                                {i}
-                            </div>
-                        ))}
-                    </Stack>
-                );
-                break;
-
-            case "rows":
-                internalComponent = (
-                    <Stack spacing={item.spacing ?? 2}>{items}</Stack>
-                );
-                break;
-
-            case "container":
-                internalComponent = (
-                    <Card variant={item.variant}>
-                        <CardHeader
-                            title={
-                                <Typography variant="h6">
-                                    {renderText(data, item.title)}
-                                </Typography>
-                            }
-                            subheader={
-                                item.subtitle
-                                    ? renderText(data, item.subtitle)
-                                    : undefined
-                            }
-                            avatar={
-                                item.icon ? (
-                                    <Avatar>
-                                        <AbstractIcon
-                                            className="container-icon"
-                                            type={item.icon.group}
-                                            name={item.icon.name}
-                                        />
-                                    </Avatar>
-                                ) : undefined
-                            }
-                        />
-                        <CardContent
-                            sx={{
-                                maxHeight: item.max_height
-                                    ? item.max_height + "px"
-                                    : undefined,
-                                overflowY: "auto",
-                            }}
-                        >
-                            {items}
-                        </CardContent>
-                    </Card>
-                );
-                break;
-
-            case "masonry":
-                internalComponent = (
-                    <Masonry
-                        columns={item.columns}
-                        spacing={item.spacing ?? 2}
-                        className="modular-masonry"
-                    >
-                        {items.map((value) => (
-                            <Box
-                                className="modular-masonry-item"
-                                key={Math.random()}
-                            >
-                                {value}
-                            </Box>
-                        ))}
-                    </Masonry>
-                );
-                break;
-
-            case "divider":
-                internalComponent = (
-                    <Divider variant={item.variant ?? "middle"}>
-                        {item.text && renderText(data, item.text)}
-                    </Divider>
-                );
-                break;
-
-            case "chip":
-                internalComponent = (
-                    <Chip
-                        icon={
-                            item.icon && (
-                                <AbstractIcon
-                                    type={item.icon.group}
-                                    name={item.icon.name}
-                                    className="chip-icon"
-                                />
-                            )
-                        }
-                        className="chip"
-                        label={renderText(data, item.text)}
-                    />
-                );
-                break;
-            case "group":
-                internalComponent = <Box>{items}</Box>;
-                break;
-            case "text":
-                internalComponent = (
-                    <Typography variant={item.variant}>
-                        {renderText(data, item.text)}
-                    </Typography>
-                );
-                break;
-            case "table":
-                let rows: { [key: string]: RenderText }[];
-
-                if ((item.rows as any[]).push) {
-                    rows = item.rows as { [key: string]: RenderText }[];
-                } else {
-                    rows = parseOptionsDynamicFunction(
-                        (item.rows as any).function,
-                        (item.rows as any).options,
-                        data
-                    );
-                }
-
-                internalComponent = (
-                    <TableContainer
-                        sx={{
-                            maxHeight: item.max_height
-                                ? item.max_height + "px"
-                                : undefined,
-                            overflowY: "auto",
-                        }}
-                    >
-                        <Table
-                            size={item.dense ? "small" : "medium"}
-                            stickyHeader
-                        >
-                            <TableHead>
-                                <TableRow>
-                                    {item.columnOrder.map((column) => (
-                                        <TableCell key={Math.random()}>
-                                            {renderText(
-                                                data,
-                                                item.headers[column] ||
-                                                    "COLUMN NOT SPECIFIED"
-                                            )}
-                                        </TableCell>
-                                    ))}
-                                </TableRow>
-                            </TableHead>
-                            <TableBody>
-                                {rows.map((row) => (
-                                    <TableRow key={Math.random()}>
-                                        {item.columnOrder.map((column) => (
-                                            <TableCell key={Math.random()}>
-                                                {renderText(
-                                                    data,
-                                                    row[column] || " - "
-                                                )}
-                                            </TableCell>
-                                        ))}
-                                    </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
-                    </TableContainer>
-                );
-        }
+        let ItemRenderer = itemRendererMapping[item.type];
+        internalComponent = (
+            <ItemRenderer data={data} item={item} items={items} />
+        );
 
         let conditionalResult: boolean;
         if (item.conditional) {

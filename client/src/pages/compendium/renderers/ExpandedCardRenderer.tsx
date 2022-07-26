@@ -2,13 +2,14 @@ import {
     Dialog,
     DialogContent,
     DialogTitle,
+    IconButton,
     Stack,
-    Typography,
 } from "@mui/material";
 import { CardExpandedModel, DataItem } from "../../../models/compendium";
 import ModularRenderer from "./ModularRenderer";
 import { renderText } from "./renderUtils";
 import "../expanded_renderer.scss";
+import { MdClose } from "react-icons/md";
 
 export function ExpandedCardRenderer(props: {
     renderer: CardExpandedModel;
@@ -32,6 +33,9 @@ export function ExpandedCardRenderer(props: {
                     {renderer.subtitle &&
                         renderText(data ?? {}, renderer.subtitle)}
                 </span>
+                <IconButton onClick={onClose} className="close-btn">
+                    <MdClose size={24} />
+                </IconButton>
             </DialogTitle>
             <DialogContent dividers={true}>
                 <Stack spacing={2}>

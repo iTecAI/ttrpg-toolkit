@@ -12,6 +12,12 @@
         opacity: 0.6;
     }
 
+    .close-btn {
+        position: absolute;
+        top: 32px;
+        right: 32px;
+    }
+
     .MuiDialog-paper {
         width: 100%;
     }
@@ -46,6 +52,10 @@
             .section-header-icon {
                 margin: 4px 8px 0px 4px;
                 font-size: 20px;
+            }
+
+            .load-progress {
+                margin-left: 16px;
             }
         }
         &.type-chip {
