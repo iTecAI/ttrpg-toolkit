@@ -1,17 +1,24 @@
 {
     "json.schemas": [
 
+
     {
         "fileMatch": [
-            "*.renderer.json"
+            "*.compendium.json"
         ],
-        "url": "file:/mnt/data1/Programming/ttrpg-toolkit/schema/compendium-renderer.json"
+        "url": "file:/mnt/data1/Programming/ttrpg-toolkit/schema/compendium.schema.json"
     },
     {
         "fileMatch": [
-            "*.module.json"
+            "*.modular.json"
         ],
-        "url": "file:/mnt/data1/Programming/ttrpg-toolkit/schema/modular-renderer.json"
+        "url": "file:/mnt/data1/Programming/ttrpg-toolkit/schema/modular.schema.json"
+    },
+    {
+        "fileMatch": [
+            "manifest.json"
+        ],
+        "url": "file:/mnt/data1/Programming/ttrpg-toolkit/schema/manifest.schema.json"
     }
     ]
 }

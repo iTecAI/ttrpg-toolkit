@@ -18,7 +18,6 @@
             "exports": ["DataLoader5e"]
         }
     },
-    "system": {},
     "data_source": {
         "kwargs": {},
         "source_map": "$sub:source_map.json",
