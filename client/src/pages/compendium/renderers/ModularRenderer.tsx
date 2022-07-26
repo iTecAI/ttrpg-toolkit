@@ -1,4 +1,4 @@
-import { DataItem, IconProps, RenderText } from "../../../models/compendium";
+import { IconProps, RenderText } from "../../../models/compendium";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import {
@@ -13,6 +13,12 @@ import {
     Divider,
     Paper,
     Stack,
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableHead,
+    TableRow,
     Typography,
 } from "@mui/material";
 import React, { useState } from "react";
@@ -29,13 +35,14 @@ import { Masonry } from "@mui/lab";
 import { loc } from "../../../util/localization";
 
 type ConditionalRender = {
-    function: string; // (opts) => boolean
+    function: string | string[]; // (opts) => boolean
     options: { [key: string]: string };
 };
 
 type MarkdownRender = {
     type: "markdown";
-    text_source: string;
+    text?: RenderText | RenderText[];
+    text_source?: string;
     extra_variables?: { [key: string]: RenderText };
     conditional?: ConditionalRender;
 };
@@ -48,7 +55,7 @@ type ListItemSource = {
 
 type SwitchItemSource = {
     type: "switch";
-    function: string;
+    function: string | string[];
     options: { [key: string]: string }; // Should be a function that returns a string value based on options.
     output_map: { [key: string]: ModularRenderItem[] };
 };
@@ -56,11 +63,11 @@ type SwitchItemSource = {
 type GeneratorItemSource = {
     type: "generator";
     source: string;
-    function: string; // (source: any) -> [{[key: string]: RenderText}]
+    function: string | string[]; // (source: any) -> [{[key: string]: RenderText}]
     renderer: ModularRenderItem;
 };
 
-type ItemSource = ListItemSource | SwitchItemSource | GeneratorItemSource;
+type ItemSource = ListItemSource | SwitchItemSource | GeneratorItemSource; // ItemSources are objects that generate ModularRenderItem[] from data
 
 type Section = {
     type: "section";
@@ -147,6 +154,22 @@ type TextItem = {
     text: RenderText;
 };
 
+type TableDataItem = {
+    type: "table";
+    conditional?: ConditionalRender;
+    dense?: boolean;
+    title: RenderText;
+    columnOrder: string[];
+    headers: { [key: string]: RenderText };
+    rows:
+        | { [key: string]: RenderText }[]
+        | {
+              function: string | string[]; // (opts) => {[key: string]: RenderText}[]
+              options: { [key: string]: string };
+          };
+    max_height?: number;
+};
+
 export type ModularRenderItem =
     | MarkdownRender
     | Section
@@ -157,7 +180,8 @@ export type ModularRenderItem =
     | DividerItem
     | ChipItem
     | GroupItem
-    | TextItem;
+    | TextItem
+    | TableDataItem;
 
 export default function ModularRenderer(props: {
     data: { [key: string]: any };
@@ -326,9 +350,18 @@ export default function ModularRenderer(props: {
                         );
                     });
                 }
-
-                let lines: RenderText[] =
-                    getNested(data, item.text_source) ?? [];
+                let lines: RenderText[] = [];
+                if (item.text) {
+                    if ((item.text as any).push) {
+                        lines = item.text as RenderText[];
+                    } else {
+                        lines = [item.text as RenderText];
+                    }
+                } else if (item.text_source) {
+                    lines = getNested(data, item.text_source) ?? [];
+                } else {
+                    lines = [];
+                }
 
                 internalComponent = (
                     <ReactMarkdown
@@ -428,7 +461,17 @@ export default function ModularRenderer(props: {
             case "columns":
                 internalComponent = (
                     <Stack direction={"row"} spacing={item.spacing ?? 2}>
-                        {items}
+                        {items.map((i) => (
+                            <div
+                                className="stack-item"
+                                style={{
+                                    width: `calc(100% / ${items.length})`,
+                                    display: "inline-block",
+                                }}
+                            >
+                                {i}
+                            </div>
+                        ))}
                     </Stack>
                 );
                 break;
@@ -531,6 +574,63 @@ export default function ModularRenderer(props: {
                     <Typography variant={item.variant}>
                         {renderText(data, item.text)}
                     </Typography>
+                );
+                break;
+            case "table":
+                let rows: { [key: string]: RenderText }[];
+
+                if ((item.rows as any[]).push) {
+                    rows = item.rows as { [key: string]: RenderText }[];
+                } else {
+                    rows = parseOptionsDynamicFunction(
+                        (item.rows as any).function,
+                        (item.rows as any).options,
+                        data
+                    );
+                }
+
+                internalComponent = (
+                    <TableContainer
+                        sx={{
+                            maxHeight: item.max_height
+                                ? item.max_height + "px"
+                                : undefined,
+                            overflowY: "auto",
+                        }}
+                    >
+                        <Table
+                            size={item.dense ? "small" : "medium"}
+                            stickyHeader
+                        >
+                            <TableHead>
+                                <TableRow>
+                                    {item.columnOrder.map((column) => (
+                                        <TableCell>
+                                            {renderText(
+                                                data,
+                                                item.headers[column] ||
+                                                    "COLUMN NOT SPECIFIED"
+                                            )}
+                                        </TableCell>
+                                    ))}
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {rows.map((row) => (
+                                    <TableRow>
+                                        {item.columnOrder.map((column) => (
+                                            <TableCell>
+                                                {renderText(
+                                                    data,
+                                                    row[column] || " - "
+                                                )}
+                                            </TableCell>
+                                        ))}
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
                 );
         }
 

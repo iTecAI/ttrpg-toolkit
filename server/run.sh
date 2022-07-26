@@ -1,1 +1,1 @@
-python3 -m uvicorn main:app --reload --reload-include "*.json"
+python3 -m uvicorn main:app --reload --reload-include "*.js*"

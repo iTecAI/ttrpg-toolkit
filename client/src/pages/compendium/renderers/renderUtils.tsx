@@ -2,7 +2,17 @@ import { RenderText, VariableItem } from "../../../models/compendium";
 
 const stringVariableRegex = /{{.*?}}/g;
 
-export function dynamicFunction(code: string, options: { [key: string]: any }) {
+export function dynamicFunction(
+    code: string | string[],
+    options: { [key: string]: any }
+) {
+    if (typeof code !== "string") {
+        code = (code as string[]).join("").replaceAll("\n", "").trim();
+        if (code.endsWith(";")) {
+            code = code.slice(0, -1);
+        }
+    }
+
     // eslint-disable-next-line
     const func = new Function(
         "options",
@@ -12,7 +22,7 @@ export function dynamicFunction(code: string, options: { [key: string]: any }) {
 }
 
 export function parseOptionsDynamicFunction(
-    code: string,
+    code: string | string[],
     options: { [key: string]: string },
     data: { [key: string]: any }
 ) {

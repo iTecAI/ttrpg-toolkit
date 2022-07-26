@@ -10,7 +10,7 @@ export type DataItem = {
 export type VariableItem =
     | {
           type: "function";
-          function: string; // JS function in string format to be evaluated.
+          function: string | string[]; // JS function in string format to be evaluated.
           // Should follow (options: {[key: string]: any}) => string
           options: { [key: string]: string };
       }
@@ -37,7 +37,7 @@ export type ContentSegment = {
     content: RenderText;
     conditional?: {
         // Set a lambda function to determine whether it renders or not
-        function: string; // JS Function (options: {[key: string]: any}) => boolean
+        function: string | string[]; // JS Function (options: {[key: string]: any}) => boolean
         options: { [key: string]: string };
     };
 };

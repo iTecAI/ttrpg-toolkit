@@ -90,6 +90,7 @@ class Spellcasting5e(AbstractDataSourceItem):
         self.ability = ability
         self.progression = progression
         self.cantrip_progression = cantrip_progression
+        self.spell_progression = SPELLSLOT_MAP[self.progression]
 
     @classmethod
     def load(cls, data: Any):
@@ -103,10 +104,6 @@ class Spellcasting5e(AbstractDataSourceItem):
             if "cantripProgression" in data.keys()
             else [],
         )
-
-    @property
-    def spell_progression(self):
-        return SPELLSLOT_MAP[self.progression]
 
 
 class ClassFeature5e(AbstractDataSourceItem):

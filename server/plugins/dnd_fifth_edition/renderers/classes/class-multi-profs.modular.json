@@ -8,7 +8,14 @@
         "name": "MdAccountTree"
     },
     "conditional": {
-        "function": "(opts) => (opts.reqs && Object.keys(opts.reqs).length) || (opts.armor && opts.armor.length) || (opts.weapons && opts.armor.length) || (opts.tools && opts.armor.length) || (opts.skills && opts.armor.length)",
+        "function": [
+            "(opts) => ",
+            "(opts.reqs && Object.keys(opts.reqs).length) || ",
+            "(opts.armor && opts.armor.length) || ",
+            "(opts.weapons && opts.armor.length) || ",
+            "(opts.tools && opts.armor.length) || ",
+            "(opts.skills && opts.armor.length)"
+        ],
         "options": {
             "reqs": "multiclass_requirements",
             "armor": "multiclass_armor_proficiency",
@@ -30,7 +37,7 @@
                     "items": {
                         "type": "generator",
                         "source": "multiclass_requirements",
-                        "function": "(source) => source.or ? Object.keys(source.or[0]).map((i) => {return {ability: i[0].toUpperCase() + i.slice(1), requiredScore: source.or[0][i]}}) : Object.keys(source).map((k) => {return {ability: k[0].toUpperCase() + k.slice(1), requiredScore: source[k]};})",
+                        "function": "$file:functions/parseMulticlassRequirements.js:lines",
                         "renderer": {
                             "type": "chip",
                             "text": "{{ability}}: {{requiredScore}}"

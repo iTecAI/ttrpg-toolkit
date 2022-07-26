@@ -11,6 +11,19 @@
               "type": "string",
               "const": "markdown"
             },
+            "text": {
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/RenderText"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/RenderText"
+                  }
+                }
+              ]
+            },
             "text_source": {
               "type": "string"
             },
@@ -24,7 +37,17 @@
               "type": "object",
               "properties": {
                 "function": {
-                  "type": "string"
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ]
                 },
                 "options": {
                   "type": "object",
@@ -41,8 +64,7 @@
             }
           },
           "required": [
-            "type",
-            "text_source"
+            "type"
           ],
           "additionalProperties": false
         },
@@ -107,7 +129,17 @@
                           "const": "switch"
                         },
                         "function": {
-                          "type": "string"
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          ]
                         },
                         "options": {
                           "type": "object",
@@ -144,7 +176,17 @@
                           "type": "string"
                         },
                         "function": {
-                          "type": "string"
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          ]
                         },
                         "renderer": {
                           "$ref": "#/definitions/ModularRenderItem"
@@ -169,7 +211,17 @@
               "type": "object",
               "properties": {
                 "function": {
-                  "type": "string"
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ]
                 },
                 "options": {
                   "type": "object",
@@ -241,7 +293,17 @@
                           "const": "switch"
                         },
                         "function": {
-                          "type": "string"
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          ]
                         },
                         "options": {
                           "type": "object",
@@ -278,7 +340,17 @@
                           "type": "string"
                         },
                         "function": {
-                          "type": "string"
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          ]
                         },
                         "renderer": {
                           "$ref": "#/definitions/ModularRenderItem"
@@ -300,7 +372,17 @@
               "type": "object",
               "properties": {
                 "function": {
-                  "type": "string"
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ]
                 },
                 "options": {
                   "type": "object",
@@ -371,7 +453,17 @@
                           "const": "switch"
                         },
                         "function": {
-                          "type": "string"
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          ]
                         },
                         "options": {
                           "type": "object",
@@ -408,7 +500,17 @@
                           "type": "string"
                         },
                         "function": {
-                          "type": "string"
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          ]
                         },
                         "renderer": {
                           "$ref": "#/definitions/ModularRenderItem"
@@ -430,7 +532,17 @@
               "type": "object",
               "properties": {
                 "function": {
-                  "type": "string"
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ]
                 },
                 "options": {
                   "type": "object",
@@ -514,7 +626,17 @@
                           "const": "switch"
                         },
                         "function": {
-                          "type": "string"
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          ]
                         },
                         "options": {
                           "type": "object",
@@ -551,7 +673,17 @@
                           "type": "string"
                         },
                         "function": {
-                          "type": "string"
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          ]
                         },
                         "renderer": {
                           "$ref": "#/definitions/ModularRenderItem"
@@ -576,7 +708,17 @@
               "type": "object",
               "properties": {
                 "function": {
-                  "type": "string"
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ]
                 },
                 "options": {
                   "type": "object",
@@ -652,7 +794,17 @@
                           "const": "switch"
                         },
                         "function": {
-                          "type": "string"
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          ]
                         },
                         "options": {
                           "type": "object",
@@ -689,7 +841,17 @@
                           "type": "string"
                         },
                         "function": {
-                          "type": "string"
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          ]
                         },
                         "renderer": {
                           "$ref": "#/definitions/ModularRenderItem"
@@ -711,7 +873,17 @@
               "type": "object",
               "properties": {
                 "function": {
-                  "type": "string"
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ]
                 },
                 "options": {
                   "type": "object",
@@ -755,7 +927,17 @@
               "type": "object",
               "properties": {
                 "function": {
-                  "type": "string"
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ]
                 },
                 "options": {
                   "type": "object",
@@ -793,7 +975,17 @@
               "type": "object",
               "properties": {
                 "function": {
-                  "type": "string"
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ]
                 },
                 "options": {
                   "type": "object",
@@ -826,7 +1018,17 @@
               "type": "object",
               "properties": {
                 "function": {
-                  "type": "string"
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ]
                 },
                 "options": {
                   "type": "object",
@@ -880,7 +1082,17 @@
                           "const": "switch"
                         },
                         "function": {
-                          "type": "string"
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          ]
                         },
                         "options": {
                           "type": "object",
@@ -917,7 +1129,17 @@
                           "type": "string"
                         },
                         "function": {
-                          "type": "string"
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          ]
                         },
                         "renderer": {
                           "$ref": "#/definitions/ModularRenderItem"
@@ -953,7 +1175,17 @@
               "type": "object",
               "properties": {
                 "function": {
-                  "type": "string"
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ]
                 },
                 "options": {
                   "type": "object",
@@ -994,6 +1226,115 @@
             "type",
             "variant",
             "text"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "table"
+            },
+            "conditional": {
+              "type": "object",
+              "properties": {
+                "function": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ]
+                },
+                "options": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "function",
+                "options"
+              ],
+              "additionalProperties": false
+            },
+            "dense": {
+              "type": "boolean"
+            },
+            "title": {
+              "$ref": "#/definitions/RenderText"
+            },
+            "columnOrder": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "headers": {
+              "type": "object",
+              "additionalProperties": {
+                "$ref": "#/definitions/RenderText"
+              }
+            },
+            "rows": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "$ref": "#/definitions/RenderText"
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "function": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      ]
+                    },
+                    "options": {
+                      "type": "object",
+                      "additionalProperties": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "required": [
+                    "function",
+                    "options"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            },
+            "max_height": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "type",
+            "title",
+            "columnOrder",
+            "headers",
+            "rows"
           ],
           "additionalProperties": false
         }
@@ -1045,7 +1386,17 @@
               "const": "function"
             },
             "function": {
-              "type": "string"
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ]
             },
             "options": {
               "type": "object",
