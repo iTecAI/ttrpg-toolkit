@@ -1,0 +1,219 @@
+{
+    "type": "section",
+    "canExpand": true,
+    "defaultExpanded": true,
+    "title": "{{name}} - Proficiencies",
+    "icon": {
+        "group": "material",
+        "name": "MdStar"
+    },
+    "items": [
+        {
+            "type": "masonry",
+            "columns": 3,
+            "spacing": 2,
+            "items": [
+                {
+                    "type": "container",
+                    "title": "Proficiencies: Saving Throws",
+                    "variant": "outlined",
+                    "conditional": {
+                        "function": "(opts) => opts.item && opts.item.length > 0",
+                        "options": {
+                            "item": "save_proficiency"
+                        }
+                    },
+                    "icon": {
+                        "group": "game",
+                        "name": "GiDiceTwentyFacesTwenty"
+                    },
+                    "items": {
+                        "type": "list",
+                        "source": "save_proficiency",
+                        "renderer": {
+                            "type": "chip",
+                            "text": {
+                                "text": "{{ability}}",
+                                "vars": {
+                                    "ability": {
+                                        "type": "function",
+                                        "function": "(opts) => opts.ab[0].toUpperCase() + opts.ab.slice(1)",
+                                        "options": {
+                                            "ab": "this"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "container",
+                    "title": "Proficiencies: Armor",
+                    "variant": "outlined",
+                    "conditional": {
+                        "function": "(opts) => opts.item && opts.item.length > 0",
+                        "options": {
+                            "item": "armor_proficiency"
+                        }
+                    },
+                    "icon": {
+                        "group": "game",
+                        "name": "GiArmorVest"
+                    },
+                    "items": {
+                        "type": "list",
+                        "source": "armor_proficiency",
+                        "renderer": {
+                            "type": "chip",
+                            "text": {
+                                "text": "{{item}}",
+                                "vars": {
+                                    "item": {
+                                        "type": "function",
+                                        "function": "(opts) => opts.i[0].toUpperCase() + opts.i.slice(1)",
+                                        "options": {
+                                            "i": "this"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "container",
+                    "title": "Proficiencies: Weapons",
+                    "variant": "outlined",
+                    "conditional": {
+                        "function": "(opts) => opts.item && opts.item.length > 0",
+                        "options": {
+                            "item": "weapon_proficiency"
+                        }
+                    },
+                    "icon": {
+                        "group": "game",
+                        "name": "GiBroadsword"
+                    },
+                    "items": {
+                        "type": "list",
+                        "source": "weapon_proficiency",
+                        "renderer": {
+                            "type": "chip",
+                            "text": {
+                                "text": "{{item}}",
+                                "vars": {
+                                    "item": {
+                                        "type": "function",
+                                        "function": "(opts) => opts.i[0].toUpperCase() + opts.i.slice(1)",
+                                        "options": {
+                                            "i": "this"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "container",
+                    "title": "Proficiencies: Tools/Vehicles",
+                    "variant": "outlined",
+                    "conditional": {
+                        "function": "(opts) => opts.item && opts.item.length > 0",
+                        "options": {
+                            "item": "tool_proficiency"
+                        }
+                    },
+                    "icon": {
+                        "group": "game",
+                        "name": "GiClawHammer"
+                    },
+                    "items": {
+                        "type": "list",
+                        "source": "tool_proficiency",
+                        "renderer": {
+                            "type": "chip",
+                            "text": {
+                                "text": "{{item}}",
+                                "vars": {
+                                    "item": {
+                                        "type": "function",
+                                        "function": "(opts) => opts.i[0].toUpperCase() + opts.i.slice(1)",
+                                        "options": {
+                                            "i": "this"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "container",
+                    "title": "Proficiencies: Skills",
+                    "variant": "outlined",
+                    "conditional": {
+                        "function": "(opts) => opts.item && opts.item.length > 0",
+                        "options": {
+                            "item": "skill_proficiency"
+                        }
+                    },
+                    "icon": {
+                        "group": "material",
+                        "name": "MdStar"
+                    },
+                    "items": {
+                        "type": "list",
+                        "source": "skill_proficiency",
+                        "renderer": {
+                            "type": "group",
+                            "items": {
+                                "type": "switch",
+                                "function": "(opts) => opts.mode === 'any' ? 'any' : 'choose'",
+                                "options": {
+                                    "mode": "mode"
+                                },
+                                "output_map": {
+                                    "any": [
+                                        {
+                                            "type": "text",
+                                            "variant": "body1",
+                                            "text": "Choose any {{count}} skills."
+                                        }
+                                    ],
+                                    "choose": [
+                                        {
+                                            "type": "container",
+                                            "title": "Choose any {{count}} of the following skills.",
+                                            "variant": "outlined",
+                                            "items": {
+                                                "type": "list",
+                                                "source": "choose_from",
+                                                "renderer": {
+                                                    "type": "chip",
+                                                    "text": {
+                                                        "text": "{{item}}",
+                                                        "vars": {
+                                                            "item": {
+                                                                "type": "function",
+                                                                "function": "(opts) => opts.i[0].toUpperCase() + opts.i.slice(1)",
+                                                                "options": {
+                                                                    "i": "this"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

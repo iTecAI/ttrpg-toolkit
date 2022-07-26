@@ -1,10 +1,17 @@
 {
     "json.schemas": [
+
     {
         "fileMatch": [
             "*.renderer.json"
         ],
         "url": "file:/mnt/data1/Programming/ttrpg-toolkit/schema/compendium-renderer.json"
+    },
+    {
+        "fileMatch": [
+            "*.module.json"
+        ],
+        "url": "file:/mnt/data1/Programming/ttrpg-toolkit/schema/modular-renderer.json"
     }
     ]
 }

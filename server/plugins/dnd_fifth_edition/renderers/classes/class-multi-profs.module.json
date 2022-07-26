@@ -1,0 +1,216 @@
+{
+    "type": "section",
+    "canExpand": true,
+    "defaultExpanded": false,
+    "title": "{{name}} - Multiclassing",
+    "icon": {
+        "group": "material",
+        "name": "MdAccountTree"
+    },
+    "conditional": {
+        "function": "(opts) => (opts.reqs && Object.keys(opts.reqs).length) || (opts.armor && opts.armor.length) || (opts.weapons && opts.armor.length) || (opts.tools && opts.armor.length) || (opts.skills && opts.armor.length)",
+        "options": {
+            "reqs": "multiclass_requirements",
+            "armor": "multiclass_armor_proficiency",
+            "weapons": "multiclass_weapon_proficiency",
+            "tools": "multiclass_tool_proficiency",
+            "skills": "multiclass_skill_proficiency"
+        }
+    },
+    "items": [
+        {
+            "type": "rows",
+            "spacing": 2,
+            "items": [
+                {
+                    "type": "container",
+                    "title": "Ability Requirements",
+                    "subtitle": "One of the following is required.",
+                    "variant": "outlined",
+                    "items": {
+                        "type": "generator",
+                        "source": "multiclass_requirements",
+                        "function": "(source) => source.or ? Object.keys(source.or[0]).map((i) => {return {ability: i[0].toUpperCase() + i.slice(1), requiredScore: source.or[0][i]}}) : Object.keys(source).map((k) => {return {ability: k[0].toUpperCase() + k.slice(1), requiredScore: source[k]};})",
+                        "renderer": {
+                            "type": "chip",
+                            "text": "{{ability}}: {{requiredScore}}"
+                        }
+                    }
+                },
+                {
+                    "type": "masonry",
+                    "columns": 3,
+                    "spacing": 2,
+                    "items": [
+                        {
+                            "type": "container",
+                            "title": "Multiclass Proficiencies: Armor",
+                            "variant": "outlined",
+                            "conditional": {
+                                "function": "(opts) => opts.item && opts.item.length > 0",
+                                "options": {
+                                    "item": "multiclass_armor_proficiency"
+                                }
+                            },
+                            "icon": {
+                                "group": "game",
+                                "name": "GiArmorVest"
+                            },
+                            "items": {
+                                "type": "list",
+                                "source": "multiclass_armor_proficiency",
+                                "renderer": {
+                                    "type": "chip",
+                                    "text": {
+                                        "text": "{{item}}",
+                                        "vars": {
+                                            "item": {
+                                                "type": "function",
+                                                "function": "(opts) => opts.i[0].toUpperCase() + opts.i.slice(1)",
+                                                "options": {
+                                                    "i": "this"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "type": "container",
+                            "title": "Multiclass Proficiencies: Weapons",
+                            "variant": "outlined",
+                            "conditional": {
+                                "function": "(opts) => opts.item && opts.item.length > 0",
+                                "options": {
+                                    "item": "multiclass_weapon_proficiency"
+                                }
+                            },
+                            "icon": {
+                                "group": "game",
+                                "name": "GiBroadsword"
+                            },
+                            "items": {
+                                "type": "list",
+                                "source": "multiclass_weapon_proficiency",
+                                "renderer": {
+                                    "type": "chip",
+                                    "text": {
+                                        "text": "{{item}}",
+                                        "vars": {
+                                            "item": {
+                                                "type": "function",
+                                                "function": "(opts) => opts.i[0].toUpperCase() + opts.i.slice(1)",
+                                                "options": {
+                                                    "i": "this"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "type": "container",
+                            "title": "Multiclass Proficiencies: Tools/Vehicles",
+                            "variant": "outlined",
+                            "conditional": {
+                                "function": "(opts) => opts.item && opts.item.length > 0",
+                                "options": {
+                                    "item": "multiclass_tool_proficiency"
+                                }
+                            },
+                            "icon": {
+                                "group": "game",
+                                "name": "GiClawHammer"
+                            },
+                            "items": {
+                                "type": "list",
+                                "source": "multiclass_tool_proficiency",
+                                "renderer": {
+                                    "type": "chip",
+                                    "text": {
+                                        "text": "{{item}}",
+                                        "vars": {
+                                            "item": {
+                                                "type": "function",
+                                                "function": "(opts) => opts.i[0].toUpperCase() + opts.i.slice(1)",
+                                                "options": {
+                                                    "i": "this"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "type": "container",
+                            "title": "Multiclass Proficiencies: Skills",
+                            "variant": "outlined",
+                            "conditional": {
+                                "function": "(opts) => opts.item && opts.item.length > 0",
+                                "options": {
+                                    "item": "multiclass_skill_proficiency"
+                                }
+                            },
+                            "icon": {
+                                "group": "material",
+                                "name": "MdStar"
+                            },
+                            "items": {
+                                "type": "list",
+                                "source": "multiclass_skill_proficiency",
+                                "renderer": {
+                                    "type": "group",
+                                    "items": {
+                                        "type": "switch",
+                                        "function": "(opts) => opts.mode === 'any' ? 'any' : 'choose'",
+                                        "options": {
+                                            "mode": "mode"
+                                        },
+                                        "output_map": {
+                                            "any": [
+                                                {
+                                                    "type": "text",
+                                                    "variant": "body1",
+                                                    "text": "Choose any {{count}} skills."
+                                                }
+                                            ],
+                                            "choose": [
+                                                {
+                                                    "type": "container",
+                                                    "title": "Choose any {{count}} of the following skills.",
+                                                    "variant": "outlined",
+                                                    "items": {
+                                                        "type": "list",
+                                                        "source": "choose_from",
+                                                        "renderer": {
+                                                            "type": "chip",
+                                                            "text": {
+                                                                "text": "{{item}}",
+                                                                "vars": {
+                                                                    "item": {
+                                                                        "type": "function",
+                                                                        "function": "(opts) => opts.i[0].toUpperCase() + opts.i.slice(1)",
+                                                                        "options": {
+                                                                            "i": "this"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

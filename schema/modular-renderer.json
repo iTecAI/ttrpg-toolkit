@@ -1,0 +1,1021 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$ref": "#/definitions/ModularRenderItem",
+    "definitions": {
+        "ModularRenderItem": {
+            "anyOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "const": "markdown"
+                        },
+                        "text_source": {
+                            "type": "string"
+                        },
+                        "extra_variables": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "$ref": "#/definitions/RenderText"
+                            }
+                        },
+                        "conditional": {
+                            "type": "object",
+                            "properties": {
+                                "function": {
+                                    "type": "string"
+                                },
+                                "options": {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "required": ["function", "options"],
+                            "additionalProperties": false
+                        }
+                    },
+                    "required": ["type", "text_source"],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "const": "section"
+                        },
+                        "canExpand": {
+                            "type": "boolean"
+                        },
+                        "defaultExpanded": {
+                            "type": "boolean"
+                        },
+                        "title": {
+                            "$ref": "#/definitions/RenderText"
+                        },
+                        "subtitle": {
+                            "$ref": "#/definitions/RenderText"
+                        },
+                        "icon": {
+                            "$ref": "#/definitions/IconProps"
+                        },
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ModularRenderItem"
+                                    }
+                                },
+                                {
+                                    "anyOf": [
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string",
+                                                    "const": "list"
+                                                },
+                                                "source": {
+                                                    "type": "string"
+                                                },
+                                                "renderer": {
+                                                    "$ref": "#/definitions/ModularRenderItem"
+                                                }
+                                            },
+                                            "required": [
+                                                "type",
+                                                "source",
+                                                "renderer"
+                                            ],
+                                            "additionalProperties": false
+                                        },
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string",
+                                                    "const": "switch"
+                                                },
+                                                "function": {
+                                                    "type": "string"
+                                                },
+                                                "options": {
+                                                    "type": "object",
+                                                    "additionalProperties": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "output_map": {
+                                                    "type": "object",
+                                                    "additionalProperties": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "$ref": "#/definitions/ModularRenderItem"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "required": [
+                                                "type",
+                                                "function",
+                                                "options",
+                                                "output_map"
+                                            ],
+                                            "additionalProperties": false
+                                        },
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string",
+                                                    "const": "generator"
+                                                },
+                                                "source": {
+                                                    "type": "string"
+                                                },
+                                                "function": {
+                                                    "type": "string"
+                                                },
+                                                "renderer": {
+                                                    "$ref": "#/definitions/ModularRenderItem"
+                                                }
+                                            },
+                                            "required": [
+                                                "type",
+                                                "source",
+                                                "function",
+                                                "renderer"
+                                            ],
+                                            "additionalProperties": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "max_height": {
+                            "type": "number"
+                        },
+                        "conditional": {
+                            "type": "object",
+                            "properties": {
+                                "function": {
+                                    "type": "string"
+                                },
+                                "options": {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "required": ["function", "options"],
+                            "additionalProperties": false
+                        }
+                    },
+                    "required": ["type", "title", "items"],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "const": "columns"
+                        },
+                        "spacing": {
+                            "type": "number"
+                        },
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ModularRenderItem"
+                                    }
+                                },
+                                {
+                                    "anyOf": [
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string",
+                                                    "const": "list"
+                                                },
+                                                "source": {
+                                                    "type": "string"
+                                                },
+                                                "renderer": {
+                                                    "$ref": "#/definitions/ModularRenderItem"
+                                                }
+                                            },
+                                            "required": [
+                                                "type",
+                                                "source",
+                                                "renderer"
+                                            ],
+                                            "additionalProperties": false
+                                        },
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string",
+                                                    "const": "switch"
+                                                },
+                                                "function": {
+                                                    "type": "string"
+                                                },
+                                                "options": {
+                                                    "type": "object",
+                                                    "additionalProperties": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "output_map": {
+                                                    "type": "object",
+                                                    "additionalProperties": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "$ref": "#/definitions/ModularRenderItem"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "required": [
+                                                "type",
+                                                "function",
+                                                "options",
+                                                "output_map"
+                                            ],
+                                            "additionalProperties": false
+                                        },
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string",
+                                                    "const": "generator"
+                                                },
+                                                "source": {
+                                                    "type": "string"
+                                                },
+                                                "function": {
+                                                    "type": "string"
+                                                },
+                                                "renderer": {
+                                                    "$ref": "#/definitions/ModularRenderItem"
+                                                }
+                                            },
+                                            "required": [
+                                                "type",
+                                                "source",
+                                                "function",
+                                                "renderer"
+                                            ],
+                                            "additionalProperties": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "conditional": {
+                            "type": "object",
+                            "properties": {
+                                "function": {
+                                    "type": "string"
+                                },
+                                "options": {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "required": ["function", "options"],
+                            "additionalProperties": false
+                        }
+                    },
+                    "required": ["type", "items"],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "const": "rows"
+                        },
+                        "spacing": {
+                            "type": "number"
+                        },
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ModularRenderItem"
+                                    }
+                                },
+                                {
+                                    "anyOf": [
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string",
+                                                    "const": "list"
+                                                },
+                                                "source": {
+                                                    "type": "string"
+                                                },
+                                                "renderer": {
+                                                    "$ref": "#/definitions/ModularRenderItem"
+                                                }
+                                            },
+                                            "required": [
+                                                "type",
+                                                "source",
+                                                "renderer"
+                                            ],
+                                            "additionalProperties": false
+                                        },
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string",
+                                                    "const": "switch"
+                                                },
+                                                "function": {
+                                                    "type": "string"
+                                                },
+                                                "options": {
+                                                    "type": "object",
+                                                    "additionalProperties": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "output_map": {
+                                                    "type": "object",
+                                                    "additionalProperties": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "$ref": "#/definitions/ModularRenderItem"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "required": [
+                                                "type",
+                                                "function",
+                                                "options",
+                                                "output_map"
+                                            ],
+                                            "additionalProperties": false
+                                        },
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string",
+                                                    "const": "generator"
+                                                },
+                                                "source": {
+                                                    "type": "string"
+                                                },
+                                                "function": {
+                                                    "type": "string"
+                                                },
+                                                "renderer": {
+                                                    "$ref": "#/definitions/ModularRenderItem"
+                                                }
+                                            },
+                                            "required": [
+                                                "type",
+                                                "source",
+                                                "function",
+                                                "renderer"
+                                            ],
+                                            "additionalProperties": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "conditional": {
+                            "type": "object",
+                            "properties": {
+                                "function": {
+                                    "type": "string"
+                                },
+                                "options": {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "required": ["function", "options"],
+                            "additionalProperties": false
+                        }
+                    },
+                    "required": ["type", "items"],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "const": "container"
+                        },
+                        "variant": {
+                            "type": "string",
+                            "enum": ["elevation", "outlined"]
+                        },
+                        "title": {
+                            "$ref": "#/definitions/RenderText"
+                        },
+                        "subtitle": {
+                            "$ref": "#/definitions/RenderText"
+                        },
+                        "icon": {
+                            "$ref": "#/definitions/IconProps"
+                        },
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ModularRenderItem"
+                                    }
+                                },
+                                {
+                                    "anyOf": [
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string",
+                                                    "const": "list"
+                                                },
+                                                "source": {
+                                                    "type": "string"
+                                                },
+                                                "renderer": {
+                                                    "$ref": "#/definitions/ModularRenderItem"
+                                                }
+                                            },
+                                            "required": [
+                                                "type",
+                                                "source",
+                                                "renderer"
+                                            ],
+                                            "additionalProperties": false
+                                        },
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string",
+                                                    "const": "switch"
+                                                },
+                                                "function": {
+                                                    "type": "string"
+                                                },
+                                                "options": {
+                                                    "type": "object",
+                                                    "additionalProperties": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "output_map": {
+                                                    "type": "object",
+                                                    "additionalProperties": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "$ref": "#/definitions/ModularRenderItem"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "required": [
+                                                "type",
+                                                "function",
+                                                "options",
+                                                "output_map"
+                                            ],
+                                            "additionalProperties": false
+                                        },
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string",
+                                                    "const": "generator"
+                                                },
+                                                "source": {
+                                                    "type": "string"
+                                                },
+                                                "function": {
+                                                    "type": "string"
+                                                },
+                                                "renderer": {
+                                                    "$ref": "#/definitions/ModularRenderItem"
+                                                }
+                                            },
+                                            "required": [
+                                                "type",
+                                                "source",
+                                                "function",
+                                                "renderer"
+                                            ],
+                                            "additionalProperties": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "max_height": {
+                            "type": "number"
+                        },
+                        "conditional": {
+                            "type": "object",
+                            "properties": {
+                                "function": {
+                                    "type": "string"
+                                },
+                                "options": {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "required": ["function", "options"],
+                            "additionalProperties": false
+                        }
+                    },
+                    "required": ["type", "variant", "title", "items"],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "const": "masonry"
+                        },
+                        "spacing": {
+                            "type": "number"
+                        },
+                        "columns": {
+                            "type": "number"
+                        },
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ModularRenderItem"
+                                    }
+                                },
+                                {
+                                    "anyOf": [
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string",
+                                                    "const": "list"
+                                                },
+                                                "source": {
+                                                    "type": "string"
+                                                },
+                                                "renderer": {
+                                                    "$ref": "#/definitions/ModularRenderItem"
+                                                }
+                                            },
+                                            "required": [
+                                                "type",
+                                                "source",
+                                                "renderer"
+                                            ],
+                                            "additionalProperties": false
+                                        },
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string",
+                                                    "const": "switch"
+                                                },
+                                                "function": {
+                                                    "type": "string"
+                                                },
+                                                "options": {
+                                                    "type": "object",
+                                                    "additionalProperties": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "output_map": {
+                                                    "type": "object",
+                                                    "additionalProperties": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "$ref": "#/definitions/ModularRenderItem"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "required": [
+                                                "type",
+                                                "function",
+                                                "options",
+                                                "output_map"
+                                            ],
+                                            "additionalProperties": false
+                                        },
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string",
+                                                    "const": "generator"
+                                                },
+                                                "source": {
+                                                    "type": "string"
+                                                },
+                                                "function": {
+                                                    "type": "string"
+                                                },
+                                                "renderer": {
+                                                    "$ref": "#/definitions/ModularRenderItem"
+                                                }
+                                            },
+                                            "required": [
+                                                "type",
+                                                "source",
+                                                "function",
+                                                "renderer"
+                                            ],
+                                            "additionalProperties": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "conditional": {
+                            "type": "object",
+                            "properties": {
+                                "function": {
+                                    "type": "string"
+                                },
+                                "options": {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "required": ["function", "options"],
+                            "additionalProperties": false
+                        }
+                    },
+                    "required": ["type", "columns", "items"],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "const": "divider"
+                        },
+                        "variant": {
+                            "type": "string",
+                            "enum": ["fullWidth", "middle"]
+                        },
+                        "text": {
+                            "$ref": "#/definitions/RenderText"
+                        },
+                        "conditional": {
+                            "type": "object",
+                            "properties": {
+                                "function": {
+                                    "type": "string"
+                                },
+                                "options": {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "required": ["function", "options"],
+                            "additionalProperties": false
+                        }
+                    },
+                    "required": ["type"],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "const": "chip"
+                        },
+                        "icon": {
+                            "$ref": "#/definitions/IconProps"
+                        },
+                        "text": {
+                            "$ref": "#/definitions/RenderText"
+                        },
+                        "conditional": {
+                            "type": "object",
+                            "properties": {
+                                "function": {
+                                    "type": "string"
+                                },
+                                "options": {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "required": ["function", "options"],
+                            "additionalProperties": false
+                        }
+                    },
+                    "required": ["type", "text"],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "const": "group"
+                        },
+                        "conditional": {
+                            "type": "object",
+                            "properties": {
+                                "function": {
+                                    "type": "string"
+                                },
+                                "options": {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "required": ["function", "options"],
+                            "additionalProperties": false
+                        },
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ModularRenderItem"
+                                    }
+                                },
+                                {
+                                    "anyOf": [
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string",
+                                                    "const": "list"
+                                                },
+                                                "source": {
+                                                    "type": "string"
+                                                },
+                                                "renderer": {
+                                                    "$ref": "#/definitions/ModularRenderItem"
+                                                }
+                                            },
+                                            "required": [
+                                                "type",
+                                                "source",
+                                                "renderer"
+                                            ],
+                                            "additionalProperties": false
+                                        },
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string",
+                                                    "const": "switch"
+                                                },
+                                                "function": {
+                                                    "type": "string"
+                                                },
+                                                "options": {
+                                                    "type": "object",
+                                                    "additionalProperties": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "output_map": {
+                                                    "type": "object",
+                                                    "additionalProperties": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "$ref": "#/definitions/ModularRenderItem"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "required": [
+                                                "type",
+                                                "function",
+                                                "options",
+                                                "output_map"
+                                            ],
+                                            "additionalProperties": false
+                                        },
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string",
+                                                    "const": "generator"
+                                                },
+                                                "source": {
+                                                    "type": "string"
+                                                },
+                                                "function": {
+                                                    "type": "string"
+                                                },
+                                                "renderer": {
+                                                    "$ref": "#/definitions/ModularRenderItem"
+                                                }
+                                            },
+                                            "required": [
+                                                "type",
+                                                "source",
+                                                "function",
+                                                "renderer"
+                                            ],
+                                            "additionalProperties": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    "required": ["type", "items"],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "const": "text"
+                        },
+                        "conditional": {
+                            "type": "object",
+                            "properties": {
+                                "function": {
+                                    "type": "string"
+                                },
+                                "options": {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "required": ["function", "options"],
+                            "additionalProperties": false
+                        },
+                        "variant": {
+                            "type": "string",
+                            "enum": [
+                                "h1",
+                                "h2",
+                                "h3",
+                                "h4",
+                                "h5",
+                                "h6",
+                                "subtitle1",
+                                "subtitle2",
+                                "body1",
+                                "body2",
+                                "button",
+                                "caption",
+                                "overline"
+                            ]
+                        },
+                        "text": {
+                            "$ref": "#/definitions/RenderText"
+                        }
+                    },
+                    "required": ["type", "variant", "text"],
+                    "additionalProperties": false
+                }
+            ]
+        },
+        "RenderText": {
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/TextItem"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "TextItem": {
+            "type": "object",
+            "properties": {
+                "text": {
+                    "type": "string"
+                },
+                "vars": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "$ref": "#/definitions/VariableItem"
+                            }
+                        ]
+                    }
+                }
+            },
+            "required": ["text", "vars"],
+            "additionalProperties": false
+        },
+        "VariableItem": {
+            "anyOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "const": "function"
+                        },
+                        "function": {
+                            "type": "string"
+                        },
+                        "options": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": ["type", "function", "options"],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "const": "text"
+                        },
+                        "source": {
+                            "type": "string"
+                        }
+                    },
+                    "required": ["type", "source"],
+                    "additionalProperties": false
+                }
+            ]
+        },
+        "IconProps": {
+            "type": "object",
+            "properties": {
+                "group": {
+                    "$ref": "#/definitions/AbstractIconType"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "required": ["group", "name"],
+            "additionalProperties": false
+        },
+        "AbstractIconType": {
+            "type": "string",
+            "enum": ["material", "game"]
+        }
+    }
+}

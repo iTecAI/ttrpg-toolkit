@@ -1,0 +1,152 @@
+{
+    "render_mode": "card",
+    "item": {
+        "title": "{{name}}",
+        "subtitle": "Source: {{source}}",
+        "content": {
+            "type": "segments",
+            "count_per_row": 1,
+            "segments": [
+                {
+                    "icon": {
+                        "group": "game",
+                        "name": "GiDiceEightFacesEight"
+                    },
+                    "name": "Hit Die",
+                    "content": "{{hit_dice}}"
+                },
+                {
+                    "icon": {
+                        "group": "material",
+                        "name": "MdGroup"
+                    },
+                    "name": "# Subclasses",
+                    "content": {
+                        "text": "{{count}}",
+                        "vars": {
+                            "count": {
+                                "type": "function",
+                                "function": "(opts) => opts.subclasses.length",
+                                "options": {
+                                    "subclasses": "subclasses"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "icon": {
+                        "group": "game",
+                        "name": "GiMagicPalm"
+                    },
+                    "name": "Spellcasting Ability",
+                    "content": {
+                        "text": "{{spellcasting}}",
+                        "vars": {
+                            "spellcasting": {
+                                "type": "function",
+                                "function": "(opts) => opts.sc[0].toUpperCase() + opts.sc.slice(1)",
+                                "options": {
+                                    "sc": "spellcasting.ability"
+                                }
+                            }
+                        }
+                    },
+                    "conditional": {
+                        "function": "(opts) => Boolean(opts.spellcasting)",
+                        "options": {
+                            "spellcasting": "spellcasting"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "expanded": {
+        "title": "{{name}}",
+        "subtitle": "Source: {{source}}",
+        "contents": [
+            "$sub:class-profs.module.json",
+            "$sub:class-multi-profs.module.json",
+            {
+                "type": "section",
+                "canExpand": true,
+                "defaultExpanded": false,
+                "title": "{{name}} - Starting Equipment",
+                "icon": {
+                    "group": "game",
+                    "name": "GiLightBackpack"
+                },
+                "items": [
+                    {
+                        "type": "group",
+                        "items": {
+                            "type": "list",
+                            "source": "starting_equipment.items",
+                            "renderer": {
+                                "type": "chip",
+                                "text": "{{this}}"
+                            }
+                        },
+                        "conditional": {
+                            "function": "(opts) => opts.se && opts.se.items && opts.se.items.length",
+                            "options": {
+                                "se": "starting_equipment"
+                            }
+                        }
+                    },
+                    {
+                        "type": "text",
+                        "variant": "subtitle1",
+                        "text": " - OR - ",
+                        "conditional": {
+                            "function": "(opts) => opts.se && (opts.se.items && opts.se.items.length) && opts.se.gold",
+                            "options": {
+                                "se": "starting_equipment"
+                            }
+                        }
+                    },
+                    {
+                        "type": "chip",
+                        "text": "{{starting_equipment.gold}} GP",
+                        "conditional": {
+                            "function": "(opts) => opts.se && opts.se.gold",
+                            "options": {
+                                "se": "starting_equipment"
+                            }
+                        }
+                    }
+                ],
+                "conditional": {
+                    "function": "(opts) => opts.se !== null ? opts.se.items.length || opts.se.gold : false",
+                    "options": {
+                        "se": "starting_equipment"
+                    }
+                }
+            },
+            {
+                "type": "section",
+                "canExpand": true,
+                "defaultExpanded": false,
+                "title": "{{name}} - Flavor Text",
+                "icon": {
+                    "group": "material",
+                    "name": "MdBook"
+                },
+                "items": [
+                    {
+                        "type": "markdown",
+                        "text_source": "fluff"
+                    }
+                ],
+                "max_height": 350,
+                "conditional": {
+                    "function": "(opts) => opts.fluff ? opts.fluff.length > 0 : false",
+                    "options": {
+                        "fluff": "fluff"
+                    }
+                }
+            }
+        ]
+    }
+}

@@ -37,7 +37,7 @@
                         "display_name": "Class"
                     }
                 ],
-                "renderer": "$sub:renderers/class.renderer.json"
+                "renderer": "$sub:renderers/classes/class.renderer.json"
             }
         }
     }
