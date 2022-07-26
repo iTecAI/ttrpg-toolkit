@@ -1,5 +1,4 @@
 {
-    "$schema": "../../../../schema/compendium-renderer.json",
     "render_mode": "card",
     "item": {
         "title": "{{name}}",
@@ -295,6 +294,16 @@
                     "group": "material",
                     "name": "MdAccountTree"
                 },
+                "conditional": {
+                    "function": "(opts) => (opts.reqs && Object.keys(opts.reqs).length) || (opts.armor && opts.armor.length) || (opts.weapons && opts.armor.length) || (opts.tools && opts.armor.length) || (opts.skills && opts.armor.length)",
+                    "options": {
+                        "reqs": "multiclass_requirements",
+                        "armor": "multiclass_armor_proficiency",
+                        "weapons": "multiclass_weapon_proficiency",
+                        "tools": "multiclass_tool_proficiency",
+                        "skills": "multiclass_skill_proficiency"
+                    }
+                },
                 "items": [
                     {
                         "type": "rows",
@@ -491,6 +500,23 @@
                         ]
                     }
                 ]
+            },
+            {
+                "type": "section",
+                "canExpand": true,
+                "defaultExpanded": false,
+                "title": "{{name}} - Starting Equipment",
+                "icon": {
+                    "group": "game",
+                    "name": "GiLightBackpack"
+                },
+                "items": [],
+                "conditional": {
+                    "function": "(opts) => opts.se ? opts.se.items.length || opts.se.gold : false",
+                    "options": {
+                        "se": "starting_equipment"
+                    }
+                }
             },
             {
                 "type": "section",

@@ -16,6 +16,9 @@
         width: 100%;
     }
     .modular-box {
+        &.hidden {
+            display: none;
+        }
         &.type-markdown {
             table {
                 width: 100%;

@@ -546,7 +546,11 @@ export default function ModularRenderer(props: {
         }
 
         return (
-            <Box className={`modular-box type-${item.type}`}>
+            <Box
+                className={`modular-box type-${item.type}${
+                    conditionalResult ? "" : " hidden"
+                }`}
+            >
                 {conditionalResult ? internalComponent : <></>}
             </Box>
         );
