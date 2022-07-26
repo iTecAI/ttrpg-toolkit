@@ -1,0 +1,51 @@
+{
+    "type": "section",
+    "title": "{{name}} - Subclasses",
+    "canExpand": true,
+    "defaultExpanded": false,
+    "max_height": 500,
+    "icon": {
+        "group": "material",
+        "name": "MdList"
+    },
+    "items": [
+        {
+            "type": "masonry",
+            "spacing": 2,
+            "columns": 2,
+            "items": {
+                "type": "list",
+                "source": "subclasses",
+                "renderer": {
+                    "type": "container",
+                    "title": "{{name}}",
+                    "subtitle": "Source: {{source}}",
+                    "max_height": 300,
+                    "variant": "outlined",
+                    "items": [
+                        {
+                            "type": "rows",
+                            "spacing": 2,
+                            "items": {
+                                "type": "list",
+                                "source": "features",
+                                "renderer": {
+                                    "type": "container",
+                                    "title": "{{level}} - {{name}}",
+                                    "subtitle": "Source: {{source}} | Level {{level}}",
+                                    "items": [
+                                        {
+                                            "type": "markdown",
+                                            "text_source": "entries"
+                                        }
+                                    ],
+                                    "variant": "outlined"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

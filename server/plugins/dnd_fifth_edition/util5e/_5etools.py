@@ -34,9 +34,47 @@ def parse_5etools_command(directive: str, arguments: List[str]):
         return f"*{arguments[0].lower()}*"
 
     if directive == "creature":
-        return f"{arguments[0]}"
+        return f"**{arguments[0]}**"
 
-    return None
+    if directive == "action":
+        return f"**{arguments[0]}**"
+
+    if directive == "condition":
+        return f"*{arguments[0]}*"
+
+    if directive == "sense":
+        return f"*{arguments[0]}*"
+
+    if directive == "background":
+        return f"*{arguments[0].capitalize()}*"
+
+    if directive == "skill":
+        return arguments[0]
+
+    if directive == "damage":
+        return f"**{arguments[0]}**"
+
+    if directive == "5etools":
+        return arguments[0]
+
+    if directive == "language":
+        return arguments[0]
+
+    if directive == "quickref":
+        return arguments[0]
+
+    if directive == "note":
+        return f"> *{arguments[0]}*"
+
+    if directive == "book":
+        try:
+            return f"**{arguments[0].capitalize()} ({arguments[1]}) - Page {arguments[2]}**"
+        except:
+            return f"**{arguments[0].capitalize()}**"
+
+    # print(f"Unknown command {directive} with args [{', '.join(arguments)}]")
+
+    return arguments[0].capitalize() if len(arguments) > 0 else directive.capitalize()
 
 
 def parse_5etools_string(string: str):

@@ -425,7 +425,11 @@ export default function ModularRenderer(props: {
 
                 if (item.canExpand) {
                     internalComponent = (
-                        <Accordion expanded={exp} onClick={() => setExp(!exp)}>
+                        <Accordion
+                            expanded={exp}
+                            onClick={() => setExp(!exp)}
+                            TransitionProps={{ unmountOnExit: true }}
+                        >
                             {sectionHeader}
                             <AccordionDetails
                                 sx={{
@@ -441,7 +445,10 @@ export default function ModularRenderer(props: {
                     );
                 } else {
                     internalComponent = (
-                        <Accordion expanded={true}>
+                        <Accordion
+                            expanded={true}
+                            TransitionProps={{ unmountOnExit: true }}
+                        >
                             {sectionHeader}
                             <AccordionDetails
                                 sx={{
@@ -605,7 +612,7 @@ export default function ModularRenderer(props: {
                             <TableHead>
                                 <TableRow>
                                     {item.columnOrder.map((column) => (
-                                        <TableCell>
+                                        <TableCell key={Math.random()}>
                                             {renderText(
                                                 data,
                                                 item.headers[column] ||
@@ -617,9 +624,9 @@ export default function ModularRenderer(props: {
                             </TableHead>
                             <TableBody>
                                 {rows.map((row) => (
-                                    <TableRow>
+                                    <TableRow key={Math.random()}>
                                         {item.columnOrder.map((column) => (
-                                            <TableCell>
+                                            <TableCell key={Math.random()}>
                                                 {renderText(
                                                     data,
                                                     row[column] || " - "
