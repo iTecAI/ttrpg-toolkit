@@ -1,0 +1,14 @@
+{
+    "render_mode": "card",
+    "expanded": {
+        "title": "{{name}}",
+        "contents": []
+    },
+    "item": {
+        "title": "{{name}}",
+        "content": {
+            "type": "text",
+            "text": "{{name}}"
+        }
+    }
+}

@@ -11,6 +11,7 @@ from plugins.dnd_fifth_edition.data_item_types.class5e import (
     Class5e,
     MinimalClassDescriptor,
 )
+from plugins.dnd_fifth_edition.data_item_types.race5e import Race5e, MinimalRaceModel
 
 
 class DataLoader5e(AbstractDataSourceLoader):
@@ -19,6 +20,7 @@ class DataLoader5e(AbstractDataSourceLoader):
     ) -> None:
         super().__init__(source_map, plugin, *kwargs)
 
+    # Class loaders
     def get_class(self, model: MinimalClassDescriptor | Dict[str, Any]) -> Class5e:
         if type(model) == dict:
             try:
@@ -79,3 +81,19 @@ class DataLoader5e(AbstractDataSourceLoader):
                     ]
                 )
         return results
+
+    def get_race(
+        self, model: MinimalRaceModel | Dict[str, Any]
+    ) -> List[MinimalRaceModel]:
+        if type(model) == dict:
+            try:
+                model = MinimalRaceModel(**model)
+            except:
+                raise PluginDataArgumentError(
+                    extra=f"Model {json.dumps(model)} is invalid."
+                )
+
+        return Race5e.load(self.plugin, self.source_map, model)
+
+    def search_races(self, search: SearchModel) -> List[MinimalRaceModel]:
+        return []

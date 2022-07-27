@@ -37,6 +37,24 @@
                     }
                 ],
                 "renderer": "$sub:renderers/classes/class.compendium.json"
+            },
+            "race": {
+                "search_model": "race",
+                "display_name": "Races",
+                "display_mode": "itemized",
+                "load": "get_race",
+                "search": "search_races",
+                "search_fields": [
+                    {
+                        "type": "race_name",
+                        "display_name": "Name"
+                    },
+                    {
+                        "type": "subrace_name",
+                        "display_name": "Subrace"
+                    }
+                ],
+                "renderer": "$sub:renderers/races/race.compendium.json"
             }
         }
     }
