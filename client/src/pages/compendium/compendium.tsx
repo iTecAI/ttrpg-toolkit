@@ -11,6 +11,7 @@ import {
     TextField,
     Tooltip,
     Typography,
+    useTheme,
 } from "@mui/material";
 import Masonry from "react-masonry-css";
 import React, { useEffect, useState } from "react";
@@ -127,6 +128,8 @@ export function Compendium() {
 
     const { enqueueSnackbar } = useSnackbar();
 
+    const theme = useTheme();
+
     useEffect(() => {
         if (plugin !== "") {
             return;
@@ -235,10 +238,10 @@ export function Compendium() {
                                     variant="text"
                                     className="tab-button"
                                     sx={{
-                                        borderBottom: "2px solid",
-                                        borderColor:
+                                        backgroundColor:
                                             cat === category
-                                                ? "primary"
+                                                ? theme.palette.primary.main +
+                                                  "32"
                                                 : undefined,
                                     }}
                                     onClick={() => setCategory(cat)}

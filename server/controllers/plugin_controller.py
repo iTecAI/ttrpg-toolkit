@@ -134,7 +134,10 @@ class PluginDataSourceController(Controller):
         results = []
         for d in search_results:
             item = plugin_object.load_data(d, category)
-            results.append(item.raw)
+            if type(item) == list:
+                results.extend([i.raw for i in item])
+            else:
+                results.append(item.raw)
 
         return results
 
@@ -148,6 +151,9 @@ class PluginDataSourceController(Controller):
         results = []
         for d in data.items:
             item = plugin_object.load_data(d, category)
-            results.append(item.raw)
+            if type(item) == list:
+                results.extend([i.raw for i in item])
+            else:
+                results.append(item.raw)
 
         return results

@@ -33,6 +33,10 @@ def setup_state(state: State):
 def http_exception_handler(request: Request, exc: Exception) -> StarletteResponse:
     """Default handler for exceptions subclassed from HTTPException"""
 
+    logging.error(
+        f"Failed parsing request: {request.method} {request.url.path} with body {request._body}"
+    )
+
     status_code = (
         exc.status_code
         if isinstance(exc, StarletteHTTPException)

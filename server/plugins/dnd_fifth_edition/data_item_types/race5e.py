@@ -7,7 +7,7 @@ from pydantic import BaseModel
 from ..constants import ABILITY_MAP
 
 
-class AbilityScoreIncreateItem(AbstractDataSourceItem):
+class AbilityScoreIncreaseItem(AbstractDataSourceItem):
     subtype: str = "race_5e.asi"
     plugin: str = "dnd_fifth_edition"
 
@@ -15,23 +15,20 @@ class AbilityScoreIncreateItem(AbstractDataSourceItem):
         self,
         name: str = None,
         set_values: Dict[str, int] = {},
-        choose_count: int = 0,
+        choose_count: Dict[int, int] = {},
         choose_options: List[str] = [],
-        choose_increase: int = 1,
         **kwargs
     ):
         super().__init__(name, **kwargs)
         self.set_values = set_values
         self.choose_count = choose_count
-        self.choose_increase = choose_increase
         self.choose_options = choose_options
 
     @classmethod
     def load(cls, data: Dict[str, Any]):
         set_values = {}
         choose_from = []
-        choose_count = 0
-        choose_increase = 1
+        choose_count = {}
         for item in data.keys():
             if item.lower() in ABILITY_MAP.keys():
                 set_values[ABILITY_MAP[item.lower()]] = data[item]
@@ -45,19 +42,27 @@ class AbilityScoreIncreateItem(AbstractDataSourceItem):
                     if "from" in data["choose"].keys()
                     else []
                 )
-                choose_count = (
-                    data["choose"]["count"] if "count" in data["choose"].keys() else 0
-                )
-                choose_increase = (
-                    data["choose"]["amount"] if "amount" in data["choose"].keys() else 1
-                )
+                if "count" in data["choose"].keys():
+                    if type(data["choose"]["count"]) == dict:
+                        choose_count = data["choose"]["count"]
+                    elif "amount" in data["choose"].keys():
+                        choose_count = {}
+                        choose_count[data["choose"]["amount"]] = data["choose"]["count"]
+                    else:
+                        choose_count = {1: data["choose"]["count"]}
+                else:
+                    choose_count = {}
+                    choose_count[
+                        data["choose"]["amount"]
+                        if "amount" in data["choose"].keys()
+                        else 1
+                    ] = 1
 
-        return AbilityScoreIncreateItem(
+        return AbilityScoreIncreaseItem(
             name="ability-inc",
             set_values=set_values,
             choose_count=choose_count,
             choose_options=choose_from,
-            choose_increase=choose_increase,
         )
 
 
@@ -76,14 +81,44 @@ class Race5e(AbstractDataSourceItem):
         self,
         name: str = None,
         source: str = None,
-        base: bool = False,
-        ability_scores: AbilityScoreIncreateItem = None,
+        ability_scores: List[AbilityScoreIncreaseItem] = None,
         **kwargs
     ):
         super().__init__(name, **kwargs)
         self.source = source
-        self.base = base
         self.ability_scores = ability_scores
+
+    @staticmethod
+    def normalize(race: Dict[str, Any]) -> Dict[str, Any]:
+        if not "ability" in race.keys():
+            if "lineage" in race.keys():
+                if race["lineage"].lower() in ["vrgr", "ua1"]:
+                    race["ability"] = [
+                        {
+                            "choose": {
+                                "from": ["str", "dex", "con", "int", "wis", "cha"],
+                                "count": {1: 1, 2: 1},
+                            }
+                        },
+                        {
+                            "choose": {
+                                "from": ["str", "dex", "con", "int", "wis", "cha"],
+                                "count": {1: 3},
+                            }
+                        },
+                    ]
+                else:
+                    race["ability"] = []
+            else:
+                race["ability"] = []
+
+        race["senses"] = {
+            s: race[s]
+            for s in ["darkvision", "truesight", "blindsight", "tremorsense"]
+            if s in race.keys()
+        }
+
+        return race
 
     @classmethod
     def load(
@@ -100,26 +135,26 @@ class Race5e(AbstractDataSourceItem):
                 r["name"].lower() == data.name.lower()
                 and r["source"].lower() == data.source.lower()
             ):
-                found_race = r
+                found_race = Race5e.normalize(r)
                 break
 
         if not found_race:
             return []
 
-        subraces = [found_race]
+        subraces = []
         for s in race_data["subrace"]:
             if (
                 s["raceName"].lower() == found_race["name"].lower()
-                and s["raceSource"] == found_race["source"].lower()
+                and s["raceSource"].lower() == found_race["source"].lower()
             ):
                 if data.subrace and data.subrace_source:
                     if (
                         data.subrace.lower() == s["name"].lower()
                         and data.subrace_source == s["source"].lower()
                     ):
-                        subraces = [s]
+                        subraces = [Race5e.normalize(s)]
                         break
-                subraces.append(s)
+                subraces.append(Race5e.normalize(s))
 
-        print(subraces)
+        print(json.dumps(subraces, indent=4))
         return []

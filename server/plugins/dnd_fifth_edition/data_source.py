@@ -96,4 +96,18 @@ class DataLoader5e(AbstractDataSourceLoader):
         return Race5e.load(self.plugin, self.source_map, model)
 
     def search_races(self, search: SearchModel) -> List[MinimalRaceModel]:
-        return []
+        with open(
+            os.path.join(self.plugin.plugin_directory, self.source_map["races"]), "r"
+        ) as rf:
+            race_data = json.load(rf)
+
+        results = []
+        if "race_name" in search.fields.keys():
+            races = util.search(
+                search.fields["race_name"],
+                race_data["race"],
+                getitem=lambda r: r["name"],
+            )
+            for r in races:
+                results.append(MinimalRaceModel(name=r["name"], source=r["source"]))
+        return results
