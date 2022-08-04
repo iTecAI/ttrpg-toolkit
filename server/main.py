@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 from starlite import Starlite, MediaType, get
 from starlite.datastructures import State
+from starlite.exceptions.utils import create_exception_response
 from starlette.responses import Response
 from pymongo.mongo_client import MongoClient
 from util import *
@@ -34,7 +35,7 @@ def http_exception_handler(request: Request, exc: Exception) -> StarletteRespons
     """Default handler for exceptions subclassed from HTTPException"""
 
     logging.error(
-        f"Failed parsing request: {request.method} {request.url.path} with body {request._body}"
+        f"Failed parsing request: {request.method} {request.url.path}"
     )
 
     status_code = (
@@ -47,20 +48,18 @@ def http_exception_handler(request: Request, exc: Exception) -> StarletteRespons
         logging.exception(f"Encountered an error with code {status_code}:\n")
         server_middleware = ServerErrorMiddleware(app=request.app)
         return server_middleware.debug_response(request=request, exc=exc)
+    
+    
     """if isinstance(exc, BaseHTTPException):
-        content = exc.detail"""
-    if isinstance(exc, HTTPException):
+        content = exc.detail
+    elif isinstance(exc, HTTPException):
         content = {"detail": exc.detail, "extra": exc.extra}
     elif isinstance(exc, StarletteHTTPException):
         content = {"detail": exc.detail}
     else:
-        content = {"detail": repr(exc)}
+        content = {"detail": repr(exc)}"""
 
-    return Response(
-        media_type=MediaType.JSON,
-        content=json.dumps(content),
-        status_code=status_code,
-    )
+    return create_exception_response(exc)
 
 
 class ConstraintsModel(BaseModel):
@@ -100,5 +99,5 @@ for plugin in PLUG.plugins.values():
 app = Starlite(
     on_startup=[setup_state],
     route_handlers=BASE_HANDLERS,
-    exception_handlers={500: http_exception_handler},
+    #exception_handlers={500: http_exception_handler},
 )

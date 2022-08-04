@@ -1,3 +1,4 @@
+import json
 from starlite.exceptions import HTTPException
 from starlette.status import *
 from http import HTTPStatus
@@ -21,12 +22,12 @@ class BaseHTTPException(BaseException, HTTPException):
         super().__init__(extra)
         if status_code:
             self.status_code = status_code
-        self.detail = {
+        self.detail = json.dumps({
             "errorType": HTTPStatus(self.status_code).phrase,
             "message": self.message,
             "messageClass": self.message_class,
             "extra": extra,
-        }
+        })
 
     def __repr__(self) -> str:
         return f"{self.status_code} - {self.__class__.__name__} - {self.message}"
