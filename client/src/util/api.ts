@@ -100,7 +100,13 @@ export async function post<T>(
         }
     );
 
-    let data: any = await result.json();
+    let data: any;
+    try {
+        data = await result.json();
+    } catch (e) {
+        data = null;
+    }
+
     if (result.status < 400) {
         return {
             success: true,

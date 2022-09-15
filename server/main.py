@@ -34,7 +34,7 @@ def http_exception_handler(request: Request, exc: Exception) -> StarletteRespons
     """Default handler for exceptions subclassed from HTTPException"""
 
     logging.error(
-        f"Failed parsing request: {request.method} {request.url.path} with body {request._body}"
+        f"Failed parsing request: {request.method} {request.url.path}"
     )
 
     status_code = (

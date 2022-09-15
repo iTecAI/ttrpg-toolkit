@@ -5,7 +5,7 @@ from .plugins import Plugin, PluginLoader
 from .exceptions import PluginDoesNotExistError
 
 
-def session_dep(state: State, request: Request[Any]) -> Session | None:
+def session_dep(state: State, request: Any) -> Session | None:
     if not "authorization" in request.headers.keys():
         return
     session = Session.load_oid(request.headers["authorization"], state.database)

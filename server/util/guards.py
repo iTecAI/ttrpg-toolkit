@@ -4,7 +4,7 @@ from .exceptions import *
 from models import *
 
 
-def guard_loggedIn(request: Request[Any], _: BaseRouteHandler) -> None:
+def guard_loggedIn(request: Any, _: BaseRouteHandler) -> None:
     if not "authorization" in request.headers.keys():
         raise AuthorizationFailedError(extra="@ No header")
 
@@ -22,7 +22,7 @@ def guard_loggedIn(request: Request[Any], _: BaseRouteHandler) -> None:
     session.save()
 
 
-def guard_isGameOwner(request: Request[Any], _: BaseRouteHandler) -> None:
+def guard_isGameOwner(request: Any, _: BaseRouteHandler) -> None:
     if not "game_id" in request.path_params.keys():
         raise GenericNetworkError(extra="Game ID not passed to Guard")
 
@@ -42,7 +42,7 @@ def guard_isGameOwner(request: Request[Any], _: BaseRouteHandler) -> None:
         raise GameNotOwned()
 
 
-def guard_isGameParticipant(request: Request[Any], _: BaseRouteHandler) -> None:
+def guard_isGameParticipant(request: Any, _: BaseRouteHandler) -> None:
     if not "game_id" in request.path_params.keys():
         raise GenericNetworkError(extra="Game ID not passed to Guard")
 
@@ -62,6 +62,6 @@ def guard_isGameParticipant(request: Request[Any], _: BaseRouteHandler) -> None:
         raise GameNotFound()
 
 
-def guard_debugMode(request: Request[Any], _: BaseRouteHandler) -> None:
+def guard_debugMode(request: Any, _: BaseRouteHandler) -> None:
     if not request.app.state.config["debug"]:
         raise DebugNotActiveError()
