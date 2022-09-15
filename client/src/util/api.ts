@@ -27,7 +27,13 @@ export async function get<T>(
         }
     );
 
-    let data: any = await result.json();
+    let data: any;
+    try {
+        data = await result.json();
+    } catch {
+        data = null;
+    }
+
     if (result.status < 400) {
         return {
             success: true,
@@ -66,7 +72,12 @@ export async function del<T>(
         }
     );
 
-    let data: any = await result.json();
+    let data: any;
+    try {
+        data = await result.json();
+    } catch {
+        data = null;
+    }
     if (result.status < 400) {
         return {
             success: true,
@@ -152,7 +163,12 @@ export async function patch<T>(
         }
     );
 
-    let data: any = await result.json();
+    let data: any;
+    try {
+        data = await result.json();
+    } catch {
+        data = null;
+    }
     if (result.status < 400) {
         return {
             success: true,
