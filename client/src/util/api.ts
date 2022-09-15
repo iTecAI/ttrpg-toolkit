@@ -34,6 +34,9 @@ export async function get<T>(
             value: data,
         };
     } else {
+        if (typeof data.detail === "string") {
+            data.detail = JSON.parse(data.detail);
+        }
         return {
             success: false,
             message: data.detail.messageClass
@@ -70,6 +73,9 @@ export async function del<T>(
             value: data,
         };
     } else {
+        if (typeof data.detail === "string") {
+            data.detail = JSON.parse(data.detail);
+        }
         return {
             success: false,
             message: data.detail.messageClass
@@ -113,6 +119,9 @@ export async function post<T>(
             value: data,
         };
     } else {
+        if (typeof data.detail === "string") {
+            data.detail = JSON.parse(data.detail);
+        }
         return {
             success: false,
             message: data.detail.messageClass
@@ -150,6 +159,9 @@ export async function patch<T>(
             value: data,
         };
     } else {
+        if (typeof data.detail === "string") {
+            data.detail = JSON.parse(data.detail);
+        }
         return {
             success: false,
             message: data.detail.messageClass

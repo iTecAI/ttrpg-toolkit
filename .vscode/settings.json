@@ -20,5 +20,6 @@
         ],
         "url": "file:/mnt/data1/Programming/ttrpg-toolkit/schema/manifest.schema.json"
     }
-    ]
+    ],
+    "python.formatting.provider": "black"
 }
