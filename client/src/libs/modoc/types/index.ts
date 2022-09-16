@@ -1,3 +1,15 @@
+import {
+    RenderGroupItem,
+    RenderTextItem,
+    RenderDividerItem,
+    RenderChipItem,
+    RenderListItem,
+    RenderStackItem,
+    RenderTableItem,
+    RenderTableRowItem,
+    RenderMarkdownItem,
+} from "./renderTypes";
+
 export type Literal = string | number | boolean | null | undefined;
 
 export type TextItem = {
@@ -74,18 +86,6 @@ export type GeneratorSourceItem<T> = {
     renderer: AllRenderItems;
     conditionalRender?: ParsedFunction;
 };
-
-import {
-    RenderGroupItem,
-    RenderTextItem,
-    RenderDividerItem,
-    RenderChipItem,
-    RenderListItem,
-    RenderStackItem,
-    RenderTableItem,
-    RenderTableRowItem,
-    RenderMarkdownItem
-} from "./renderTypes";
 
 export type AllRenderItems =
     | RenderGroupItem

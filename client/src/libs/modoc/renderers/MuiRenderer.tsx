@@ -7,7 +7,7 @@ import {
     RenderListItem,
     RenderMarkdownItem,
     RenderStackItem,
-    RenderTextItem
+    RenderTextItem,
 } from "../types/renderTypes";
 import { Avatar, Chip, Divider, Stack, Typography } from "@mui/material";
 import { RawData, AllRenderItems, AllSourceItems } from "../types";
@@ -29,12 +29,12 @@ export default class MuiRenderParser<
         chip: this.renderChip,
         stack: this.renderStack,
         list: this.renderList,
-        markdown: this.renderMarkdown
+        markdown: this.renderMarkdown,
     };
 
     private iconMap = {
         md: ReactIconsMd,
-        gi: ReactIconsGi
+        gi: ReactIconsGi,
     };
 
     constructSelf(
@@ -52,7 +52,7 @@ export default class MuiRenderParser<
             )[id];
             return <IconElement className="mui-icon" {...props} />;
         } catch (e) {
-            throw `Failed to load icon ${props.name}`;
+            throw new Error(`Failed to load icon ${props.name}`);
         }
     }
 
@@ -65,11 +65,11 @@ export default class MuiRenderParser<
             fontWeight: object.style.includes("bold") ? 400 : undefined,
             textDecorationLine: [
                 object.style.includes("underline") ? "underline" : "",
-                object.style.includes("strikethrough") ? "line-through" : ""
+                object.style.includes("strikethrough") ? "line-through" : "",
             ]
                 .join(" ")
                 .trim(),
-            fontStyle: object.style.includes("italic") ? "italic" : undefined
+            fontStyle: object.style.includes("italic") ? "italic" : undefined,
         };
         if (object.textType === "raw") {
             return (
@@ -101,7 +101,7 @@ export default class MuiRenderParser<
                     {
                         full: "fullWidth",
                         inset: "inset",
-                        middle: "middle"
+                        middle: "middle",
                     }[object.variant] as any
                 }
             >

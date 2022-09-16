@@ -26,17 +26,17 @@ export function ModularRenderer(props: ModularRendererProps) {
     useEffect(() => {
         parser.setData(props.data);
         setRendered(parser.render());
-    }, [props.data]);
+    }, [props.data, parser]);
 
     useEffect(() => {
         parser.setRenderer(props.renderer);
         setRendered(parser.render());
-    }, [props.renderer]);
+    }, [props.renderer, parser]);
 
     return <div className="modoc_modular-renderer">{rendered}</div>;
 }
 
 (window as any).React2 = require("react");
-console.log((window as any).React1 == (window as any).React2);
+console.log((window as any).React1 === (window as any).React2);
 
 export { MuiRenderParser };

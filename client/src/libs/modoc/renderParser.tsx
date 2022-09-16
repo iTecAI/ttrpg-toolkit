@@ -6,7 +6,7 @@ import {
     RawData,
     ValueItem,
     ValueStringDirective,
-    ValueStringDirectiveNames
+    ValueStringDirectiveNames,
 } from "./types";
 import { parseFunction } from "./util";
 import parseNested from "./util/nestedParser";
@@ -17,6 +17,7 @@ import React from "react";
  * When extending, set public constructSelf function
  * And set public sourceParsers and public renderers as needed.
  */
+// eslint-disable-next-line
 export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
     /**
      * Array of parsed children (all value items parsed, expanded to RenderParsers)
@@ -30,7 +31,7 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
         [key: string]: (item: any) => RenderParser[];
     } = {
         list: this.parseListSourceItem,
-        generator: this.parseGeneratorSourceItem
+        generator: this.parseGeneratorSourceItem,
     };
 
     /**
@@ -101,7 +102,9 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
         if (isArray(data)) {
             return data.map((d) => this.constructSelf(d, item.renderer));
         } else {
-            throw `${JSON.stringify(data)} is not an any[] instance.`;
+            throw new Error(
+                `${JSON.stringify(data)} is not an any[] instance.`
+            );
         }
     }
 
@@ -147,7 +150,9 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
                 if (ValueStringDirectiveNames.includes(directiveRaw)) {
                     directive = directiveRaw as ValueStringDirective;
                 } else {
-                    throw `Directive ${directiveRaw} not recognized.`;
+                    throw new Error(
+                        `Directive ${directiveRaw} not recognized.`
+                    );
                 }
                 const path = item.split(":")[1];
 
@@ -157,7 +162,7 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
                     case "self":
                         return this.data;
                     default:
-                        throw `Unknown directive "${directive}"`;
+                        throw new Error(`Unknown directive "${directive}"`);
                 }
             }
         } else if (isLiteral(item)) {
@@ -200,7 +205,7 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
         if (item.type in this.sourceParsers) {
             return this.sourceParsers[item.type].bind(this)(item);
         }
-        throw `Unknown SourceItem type ${item.type}`;
+        throw new Error(`Unknown SourceItem type ${item.type}`);
     }
 
     /**
@@ -258,7 +263,7 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
                     </span>
                 );
             } else {
-                throw `Unknown renderer type ${this.renderer.type}`;
+                throw new Error(`Unknown renderer type ${this.renderer.type}`);
             }
         } else {
             return (
