@@ -18,7 +18,6 @@ import { Login } from "./pages/login/Login";
 import { themeOptionsDefault } from "./theme/default";
 import { get } from "./util/api";
 import { loc } from "./util/localization";
-
 export const RootContext: React.Context<{} | RootModel> = React.createContext(
     {}
 );
@@ -119,7 +118,7 @@ function RootContextProvider() {
                 });
             }
         });
-    }, [enqueueSnackbar]);
+    }, [enqueueSnackbar, closeSnackbar]);
 
     return (
         <RootContext.Provider value={currentRoot}>
