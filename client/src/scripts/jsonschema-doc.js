@@ -6,23 +6,11 @@ const fs = require("fs");
 /** @type {import('ts-json-schema-generator/dist/src/Config').Config} */
 const configs = [
     {
-        path: "../models/compendium.ts",
+        path: "./src/libs/modoc/types/index.ts",
         tsconfig: "./tsconfig.json",
-        type: "CompendiumItemRenderer", // Or <type-name> if you want to generate schema for that one type only,
-        output: "../schema/compendium.schema.json"
+        type: "AllItems", // Or <type-name> if you want to generate schema for that one type only,
+        output: "../schema/renderer.schema.json",
     },
-    {
-        path: "../models/plugin.ts",
-        tsconfig: "./tsconfig.json",
-        type: "PluginManifest", // Or <type-name> if you want to generate schema for that one type only,
-        output: "../schema/manifest.schema.json"
-    },
-    {
-        path: "../pages/compendium/renderers/ModularRenderer.tsx",
-        tsconfig: "./tsconfig.json",
-        type: "ModularRenderItem", // Or <type-name> if you want to generate schema for that one type only,
-        output: "../schema/modular.schema.json"
-    }
 ];
 
 for (let config of configs) {
@@ -34,4 +22,3 @@ for (let config of configs) {
     });
     console.log(`Wrote schema to ${config.output}`);
 }
-

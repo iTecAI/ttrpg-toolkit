@@ -1,0 +1,1177 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/AllItems",
+  "definitions": {
+    "AllItems": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/AllRenderItems"
+        },
+        {
+          "$ref": "#/definitions/AllSourceItems"
+        }
+      ]
+    },
+    "AllRenderItems": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/RenderGroupItem"
+        },
+        {
+          "$ref": "#/definitions/RenderTextItem"
+        },
+        {
+          "$ref": "#/definitions/RenderDividerItem"
+        },
+        {
+          "$ref": "#/definitions/RenderChipItem"
+        },
+        {
+          "$ref": "#/definitions/RenderListItem"
+        },
+        {
+          "$ref": "#/definitions/RenderStackItem"
+        },
+        {
+          "$ref": "#/definitions/RenderTableItem"
+        },
+        {
+          "$ref": "#/definitions/RenderTableRowItem"
+        },
+        {
+          "$ref": "#/definitions/RenderMarkdownItem"
+        },
+        {
+          "$ref": "#/definitions/RenderAbsoluteContainerItem"
+        },
+        {
+          "$ref": "#/definitions/RenderAbsoluteItem"
+        },
+        {
+          "$ref": "#/definitions/RenderAccordionItem"
+        },
+        {
+          "$ref": "#/definitions/RenderCardItem"
+        }
+      ]
+    },
+    "RenderGroupItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "render"
+        },
+        "type": {
+          "type": "string",
+          "const": "group"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        },
+        "children": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AllRenderItems"
+              }
+            },
+            {
+              "$ref": "#/definitions/AllSourceItems"
+            }
+          ]
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "children"
+      ],
+      "additionalProperties": false
+    },
+    "ParsedFunction": {
+      "type": "object",
+      "properties": {
+        "function": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "opts": {
+          "type": "object",
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/Literal"
+              },
+              {
+                "$ref": "#/definitions/ValueItem"
+              }
+            ]
+          }
+        }
+      },
+      "required": [
+        "function",
+        "opts"
+      ],
+      "additionalProperties": false
+    },
+    "Literal": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        },
+        {
+          "not": {}
+        }
+      ]
+    },
+    "ValueItem": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Literal"
+        },
+        {
+          "$ref": "#/definitions/TextItem"
+        },
+        {
+          "$ref": "#/definitions/FunctionalItem"
+        },
+        {
+          "$ref": "#/definitions/DataItem"
+        }
+      ]
+    },
+    "TextItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "value"
+        },
+        "type": {
+          "type": "string",
+          "const": "text"
+        },
+        "content": {
+          "type": "string"
+        },
+        "substitutions": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/ValueItem"
+          }
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "content",
+        "substitutions"
+      ],
+      "additionalProperties": false
+    },
+    "FunctionalItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "value"
+        },
+        "type": {
+          "type": "string",
+          "const": "function"
+        },
+        "function": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "opts": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/ValueItem"
+          }
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "function",
+        "opts"
+      ],
+      "additionalProperties": false
+    },
+    "DataItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "value"
+        },
+        "type": {
+          "type": "string",
+          "const": "data"
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "source"
+      ],
+      "additionalProperties": false
+    },
+    "AllSourceItems": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ListSourceItem%3Cany%3E"
+        },
+        {
+          "$ref": "#/definitions/GeneratorSourceItem%3Cany%3E"
+        }
+      ]
+    },
+    "ListSourceItem<any>": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "source"
+        },
+        "type": {
+          "type": "string",
+          "const": "list"
+        },
+        "source": {
+          "type": "string",
+          "description": "Dot path to an array value in the data (ie. i.am.a.path.to.an.array)"
+        },
+        "renderer": {},
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "source",
+        "renderer"
+      ],
+      "additionalProperties": false
+    },
+    "GeneratorSourceItem<any>": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "source"
+        },
+        "type": {
+          "type": "string",
+          "const": "generator"
+        },
+        "function": {
+          "$ref": "#/definitions/ParsedFunction",
+          "description": "A function that takes data and outputs an array of {[key: string]: ValueItem | {...}}"
+        },
+        "renderer": {},
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "function",
+        "renderer"
+      ],
+      "additionalProperties": false
+    },
+    "RenderTextItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "render"
+        },
+        "type": {
+          "type": "string",
+          "const": "text"
+        },
+        "text": {
+          "$ref": "#/definitions/ValueItem"
+        },
+        "textType": {
+          "type": "string",
+          "enum": [
+            "body1",
+            "body2",
+            "h1",
+            "h2",
+            "h3",
+            "h4",
+            "h5",
+            "h6",
+            "subtitle1",
+            "subtitle2",
+            "raw"
+          ]
+        },
+        "style": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "italic",
+              "bold",
+              "strikethrough",
+              "underline"
+            ]
+          }
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "text",
+        "textType",
+        "style"
+      ],
+      "additionalProperties": false
+    },
+    "RenderDividerItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "render"
+        },
+        "type": {
+          "type": "string",
+          "const": "divider"
+        },
+        "child": {
+          "$ref": "#/definitions/AllRenderItems"
+        },
+        "variant": {
+          "type": "string",
+          "enum": [
+            "full",
+            "inset",
+            "middle"
+          ]
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "variant"
+      ],
+      "additionalProperties": false
+    },
+    "RenderChipItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "render"
+        },
+        "type": {
+          "type": "string",
+          "const": "chip"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        },
+        "text": {
+          "$ref": "#/definitions/ValueItem"
+        },
+        "filled": {
+          "type": "boolean"
+        },
+        "avatar": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "icon"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type",
+                "name"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "text"
+                },
+                "text": {
+                  "$ref": "#/definitions/ValueItem"
+                }
+              },
+              "required": [
+                "type",
+                "text"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "image"
+                },
+                "source": {
+                  "$ref": "#/definitions/ValueItem"
+                },
+                "alt": {
+                  "$ref": "#/definitions/ValueItem"
+                }
+              },
+              "required": [
+                "type",
+                "source",
+                "alt"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "text",
+        "filled"
+      ],
+      "additionalProperties": false
+    },
+    "RenderListItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "render"
+        },
+        "type": {
+          "type": "string",
+          "const": "list"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        },
+        "itemMarkers": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "ordered": {
+                  "type": "boolean",
+                  "const": true
+                },
+                "style": {
+                  "type": "string",
+                  "enum": [
+                    "armenian",
+                    "cjk-ideographic",
+                    "decimal",
+                    "decimal-leading-zero",
+                    "georgian",
+                    "hebrew",
+                    "hiragana",
+                    "hiragana-iroha",
+                    "katakana",
+                    "katakana-iroha",
+                    "lower-alpha",
+                    "lower-greek",
+                    "lower-latin",
+                    "lower-roman",
+                    "upper-alpha",
+                    "upper-greek",
+                    "upper-latin",
+                    "upper-roman"
+                  ]
+                }
+              },
+              "required": [
+                "ordered",
+                "style"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ordered": {
+                  "type": "boolean",
+                  "const": false
+                },
+                "style": {
+                  "type": "string",
+                  "enum": [
+                    "circle",
+                    "disc",
+                    "square"
+                  ]
+                }
+              },
+              "required": [
+                "ordered",
+                "style"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "children": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AllRenderItems"
+              }
+            },
+            {
+              "$ref": "#/definitions/AllSourceItems"
+            }
+          ]
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "itemMarkers",
+        "children"
+      ],
+      "additionalProperties": false
+    },
+    "RenderStackItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "render"
+        },
+        "type": {
+          "type": "string",
+          "const": "stack"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        },
+        "direction": {
+          "type": "string",
+          "enum": [
+            "horizontal",
+            "vertical"
+          ]
+        },
+        "spacing": {
+          "type": "number"
+        },
+        "children": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AllRenderItems"
+              }
+            },
+            {
+              "$ref": "#/definitions/AllSourceItems"
+            }
+          ]
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "children"
+      ],
+      "additionalProperties": false
+    },
+    "RenderTableItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "render"
+        },
+        "type": {
+          "type": "string",
+          "const": "table"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        },
+        "title": {
+          "$ref": "#/definitions/ValueItem"
+        },
+        "headers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ValueItem"
+          }
+        },
+        "children": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/RenderTableRowItem"
+              }
+            },
+            {
+              "$ref": "#/definitions/AllSourceItems%3CRenderTableRowItem%3E"
+            }
+          ]
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "headers",
+        "children"
+      ],
+      "additionalProperties": false
+    },
+    "RenderTableRowItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "render"
+        },
+        "type": {
+          "type": "string",
+          "const": "tableRow"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        },
+        "children": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AllRenderItems"
+              }
+            },
+            {
+              "$ref": "#/definitions/AllSourceItems"
+            }
+          ]
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "children"
+      ],
+      "additionalProperties": false
+    },
+    "AllSourceItems<RenderTableRowItem>": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ListSourceItem%3CRenderTableRowItem%3E"
+        },
+        {
+          "$ref": "#/definitions/GeneratorSourceItem%3CRenderTableRowItem%3E"
+        }
+      ]
+    },
+    "ListSourceItem<RenderTableRowItem>": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "source"
+        },
+        "type": {
+          "type": "string",
+          "const": "list"
+        },
+        "source": {
+          "type": "string",
+          "description": "Dot path to an array value in the data (ie. i.am.a.path.to.an.array)"
+        },
+        "renderer": {
+          "$ref": "#/definitions/RenderTableRowItem"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "source",
+        "renderer"
+      ],
+      "additionalProperties": false
+    },
+    "GeneratorSourceItem<RenderTableRowItem>": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "source"
+        },
+        "type": {
+          "type": "string",
+          "const": "generator"
+        },
+        "function": {
+          "$ref": "#/definitions/ParsedFunction",
+          "description": "A function that takes data and outputs an array of {[key: string]: ValueItem | {...}}"
+        },
+        "renderer": {
+          "$ref": "#/definitions/RenderTableRowItem"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "function",
+        "renderer"
+      ],
+      "additionalProperties": false
+    },
+    "RenderMarkdownItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "render"
+        },
+        "type": {
+          "type": "string",
+          "const": "markdown"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        },
+        "text": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ValueItem"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ValueItem"
+              }
+            }
+          ]
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "text"
+      ],
+      "additionalProperties": false
+    },
+    "RenderAbsoluteContainerItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "render"
+        },
+        "type": {
+          "type": "string",
+          "const": "absolute-container"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        },
+        "children": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/RenderAbsoluteItem"
+              }
+            },
+            {
+              "$ref": "#/definitions/AllSourceItems%3CRenderAbsoluteItem%3E"
+            }
+          ]
+        },
+        "height": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "children"
+      ],
+      "additionalProperties": false
+    },
+    "RenderAbsoluteItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "render"
+        },
+        "type": {
+          "type": "string",
+          "const": "absolute"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        },
+        "child": {
+          "$ref": "#/definitions/AllRenderItems"
+        },
+        "top": {
+          "type": "number"
+        },
+        "left": {
+          "type": "number"
+        },
+        "width": {
+          "type": "number"
+        },
+        "height": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "child",
+        "top",
+        "left",
+        "width",
+        "height"
+      ],
+      "additionalProperties": false
+    },
+    "AllSourceItems<RenderAbsoluteItem>": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ListSourceItem%3CRenderAbsoluteItem%3E"
+        },
+        {
+          "$ref": "#/definitions/GeneratorSourceItem%3CRenderAbsoluteItem%3E"
+        }
+      ]
+    },
+    "ListSourceItem<RenderAbsoluteItem>": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "source"
+        },
+        "type": {
+          "type": "string",
+          "const": "list"
+        },
+        "source": {
+          "type": "string",
+          "description": "Dot path to an array value in the data (ie. i.am.a.path.to.an.array)"
+        },
+        "renderer": {
+          "$ref": "#/definitions/RenderAbsoluteItem"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "source",
+        "renderer"
+      ],
+      "additionalProperties": false
+    },
+    "GeneratorSourceItem<RenderAbsoluteItem>": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "source"
+        },
+        "type": {
+          "type": "string",
+          "const": "generator"
+        },
+        "function": {
+          "$ref": "#/definitions/ParsedFunction",
+          "description": "A function that takes data and outputs an array of {[key: string]: ValueItem | {...}}"
+        },
+        "renderer": {
+          "$ref": "#/definitions/RenderAbsoluteItem"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "function",
+        "renderer"
+      ],
+      "additionalProperties": false
+    },
+    "RenderAccordionItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "render"
+        },
+        "type": {
+          "type": "string",
+          "const": "accordion"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        },
+        "children": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AllRenderItems"
+              }
+            },
+            {
+              "$ref": "#/definitions/AllSourceItems"
+            }
+          ]
+        },
+        "text": {
+          "$ref": "#/definitions/ValueItem"
+        },
+        "icon": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "icon"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type",
+                "name"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "image"
+                },
+                "source": {
+                  "$ref": "#/definitions/ValueItem"
+                },
+                "alt": {
+                  "$ref": "#/definitions/ValueItem"
+                }
+              },
+              "required": [
+                "type",
+                "source",
+                "alt"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "maxHeight": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "children",
+        "text"
+      ],
+      "additionalProperties": false
+    },
+    "RenderCardItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "render"
+        },
+        "type": {
+          "type": "string",
+          "const": "card"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        },
+        "variant": {
+          "type": "string",
+          "enum": [
+            "elevated",
+            "outlined"
+          ]
+        },
+        "children": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AllRenderItems"
+              }
+            },
+            {
+              "$ref": "#/definitions/AllSourceItems"
+            }
+          ]
+        },
+        "title": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "$ref": "#/definitions/ValueItem"
+            },
+            "subtitle": {
+              "$ref": "#/definitions/ValueItem"
+            },
+            "icon": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "const": "icon"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "name"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "const": "image"
+                    },
+                    "source": {
+                      "$ref": "#/definitions/ValueItem"
+                    },
+                    "alt": {
+                      "$ref": "#/definitions/ValueItem"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "source",
+                    "alt"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            }
+          },
+          "required": [
+            "title"
+          ],
+          "additionalProperties": false
+        },
+        "media": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "$ref": "#/definitions/ValueItem"
+            },
+            "alt": {
+              "$ref": "#/definitions/ValueItem"
+            },
+            "height": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "src",
+            "alt"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "children"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
