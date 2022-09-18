@@ -8,9 +8,34 @@ import {
     RenderMarkdownItem,
     RenderStackItem,
     RenderTextItem,
+    RenderTableItem,
+    RenderTableRowItem,
+    RenderAbsoluteContainerItem,
+    RenderAbsoluteItem,
+    RenderAccordionItem,
+    RenderCardItem,
 } from "../types/renderTypes";
-import { Avatar, Chip, Divider, Stack, Typography } from "@mui/material";
-import { RawData, AllRenderItems, AllSourceItems } from "../types";
+import {
+    Accordion,
+    AccordionDetails,
+    AccordionSummary,
+    Avatar,
+    Box,
+    Card,
+    CardContent,
+    CardHeader,
+    CardMedia,
+    Chip,
+    Divider,
+    Stack,
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableRow,
+    Typography,
+} from "@mui/material";
+import { RawData, AllRenderItems, AllSourceItems, ValueItem } from "../types";
 import * as ReactIconsMd from "react-icons/md";
 import * as ReactIconsGi from "react-icons/gi";
 import { IconType } from "react-icons";
@@ -30,6 +55,12 @@ export default class MuiRenderParser<
         stack: this.renderStack,
         list: this.renderList,
         markdown: this.renderMarkdown,
+        table: this.renderTable,
+        tableRow: this.renderTableRow,
+        accordion: this.renderAccordion,
+        card: this.renderCard,
+        "absolute-container": this.renderAbsoluteContainer,
+        absolute: this.renderAbsoluteItem,
     };
 
     private iconMap = {
@@ -197,6 +228,172 @@ export default class MuiRenderParser<
             <span className="modoc_mui-markdown">
                 <ReactMarkdown children={text} />
             </span>
+        );
+    }
+
+    renderTable(children: JSX.Element[], object: RenderTableItem): JSX.Element {
+        return (
+            <Table className="modoc_mui-table">
+                <TableHead>
+                    <TableRow className="table-header">
+                        {object.headers.map((v: ValueItem) => (
+                            <TableCell
+                                className="table-cell"
+                                key={Math.random()}
+                            >
+                                {this.parseValueItem(v)}
+                            </TableCell>
+                        ))}
+                    </TableRow>
+                </TableHead>
+                <TableBody>{children}</TableBody>
+            </Table>
+        );
+    }
+
+    renderTableRow(
+        children: JSX.Element[],
+        _: RenderTableRowItem
+    ): JSX.Element {
+        return (
+            <TableRow className="table-row">
+                {children.map((cell: JSX.Element) => (
+                    <TableCell className="table-cell" key={Math.random()}>
+                        {cell}
+                    </TableCell>
+                ))}
+            </TableRow>
+        );
+    }
+
+    renderAccordion(
+        children: JSX.Element[],
+        object: RenderAccordionItem
+    ): JSX.Element {
+        let icon: JSX.Element | undefined = undefined;
+        if (object.icon) {
+            switch (object.icon.type) {
+                case "icon":
+                    icon = (
+                        <Avatar>
+                            <this.Icon name={object.icon.name} />
+                        </Avatar>
+                    );
+                    break;
+                case "image":
+                    icon = (
+                        <Avatar
+                            src={this.parseValueItem(object.icon.source)}
+                            alt={this.parseValueItem(object.icon.alt)}
+                        />
+                    );
+                    break;
+            }
+        }
+
+        return (
+            <Accordion className="modoc_mui-accordion">
+                <AccordionSummary expandIcon={<ReactIconsMd.MdExpandMore />}>
+                    {icon ?? null}
+                    <Typography>{this.parseValueItem(object.text)}</Typography>
+                </AccordionSummary>
+                <AccordionDetails
+                    style={{
+                        maxHeight:
+                            object.maxHeight === undefined
+                                ? undefined
+                                : object.maxHeight + "px",
+                        overflowY: "auto",
+                    }}
+                >
+                    {children}
+                </AccordionDetails>
+            </Accordion>
+        );
+    }
+
+    renderCard(children: JSX.Element[], object: RenderCardItem) {
+        let icon: JSX.Element | undefined = undefined;
+        if (object.title && object.title.icon) {
+            switch (object.title.icon.type) {
+                case "icon":
+                    icon = (
+                        <Avatar>
+                            <this.Icon name={object.title.icon.name} />
+                        </Avatar>
+                    );
+                    break;
+                case "image":
+                    icon = (
+                        <Avatar
+                            src={this.parseValueItem(object.title.icon.source)}
+                            alt={this.parseValueItem(object.title.icon.alt)}
+                        />
+                    );
+                    break;
+            }
+        }
+
+        return (
+            <Card className="modoc_mui-card">
+                {object.title && (
+                    <CardHeader
+                        avatar={icon}
+                        title={
+                            object.title.title &&
+                            this.parseValueItem(object.title.title)
+                        }
+                        subheader={
+                            object.title.subtitle &&
+                            this.parseValueItem(object.title.subtitle)
+                        }
+                    />
+                )}
+                {object.media && (
+                    <CardMedia
+                        component="img"
+                        height={object.media.height ?? undefined}
+                        image={this.parseValueItem(object.media.src)}
+                        alt={this.parseValueItem(object.media.alt)}
+                    />
+                )}
+                <CardContent>{children}</CardContent>
+            </Card>
+        );
+    }
+
+    renderAbsoluteContainer(
+        children: JSX.Element[],
+        object: RenderAbsoluteContainerItem
+    ): JSX.Element {
+        return (
+            <Box
+                height={object.height}
+                sx={{ display: "inline-block" }}
+                className="modoc_mui-absolute-container"
+            >
+                {children}
+            </Box>
+        );
+    }
+
+    renderAbsoluteItem(
+        children: JSX.Element[],
+        object: RenderAbsoluteItem
+    ): JSX.Element {
+        return (
+            <Box
+                sx={{
+                    top: `${object.top}%`,
+                    left: `${object.left}%`,
+                    width: `${object.width}%`,
+                    height: `${object.height}%`,
+                    display: "inline-block",
+                }}
+                className="modoc_mui-absolute-item"
+            >
+                {children}
+            </Box>
         );
     }
 }

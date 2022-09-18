@@ -218,7 +218,7 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
             if (isSourceItem(item.children)) {
                 return this.parseSourceItem(item.children); // TODO
             } else {
-                return item.children.map((v) =>
+                return item.children.map((v: any) =>
                     this.constructSelf(this.data, v)
                 );
             }

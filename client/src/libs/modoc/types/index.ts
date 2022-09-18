@@ -8,6 +8,10 @@ import {
     RenderTableItem,
     RenderTableRowItem,
     RenderMarkdownItem,
+    RenderAbsoluteContainerItem,
+    RenderAbsoluteItem,
+    RenderAccordionItem,
+    RenderCardItem,
 } from "./renderTypes";
 
 export type Literal = string | number | boolean | null | undefined;
@@ -63,7 +67,7 @@ export type ParsedFunction = {
     opts: { [key: string]: Literal | ValueItem };
 };
 
-export type ListSourceItem<T> = {
+export type ListSourceItem<T = AllRenderItems> = {
     supertype: "source";
     type: "list";
     /**
@@ -71,11 +75,11 @@ export type ListSourceItem<T> = {
      * @type {string}
      */
     source: string;
-    renderer: AllRenderItems;
+    renderer: T;
     conditionalRender?: ParsedFunction;
 };
 
-export type GeneratorSourceItem<T> = {
+export type GeneratorSourceItem<T = AllRenderItems> = {
     supertype: "source";
     type: "generator";
     /**
@@ -83,7 +87,7 @@ export type GeneratorSourceItem<T> = {
      * @type {string}
      */
     function: ParsedFunction;
-    renderer: AllRenderItems;
+    renderer: T;
     conditionalRender?: ParsedFunction;
 };
 
@@ -96,7 +100,11 @@ export type AllRenderItems =
     | RenderStackItem
     | RenderTableItem
     | RenderTableRowItem
-    | RenderMarkdownItem;
+    | RenderMarkdownItem
+    | RenderAbsoluteContainerItem
+    | RenderAbsoluteItem
+    | RenderAccordionItem
+    | RenderCardItem;
 export type AllSourceItems<T = any> =
     | ListSourceItem<T>
     | GeneratorSourceItem<T>;

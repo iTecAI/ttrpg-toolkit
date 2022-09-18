@@ -36,7 +36,4 @@ export function ModularRenderer(props: ModularRendererProps) {
     return <div className="modoc_modular-renderer">{rendered}</div>;
 }
 
-(window as any).React2 = require("react");
-console.log((window as any).React1 === (window as any).React2);
-
 export { MuiRenderParser };

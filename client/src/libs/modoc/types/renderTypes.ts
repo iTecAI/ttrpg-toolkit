@@ -105,15 +105,15 @@ export type RenderTableItem = {
     type: "table";
     conditionalRender?: ParsedFunction;
     title?: ValueItem;
-    headers: AllRenderItems[] | AllSourceItems;
-    rows: RenderTableRowItem[] | AllSourceItems<RenderTableRowItem>;
+    headers: ValueItem[];
+    children: RenderTableRowItem[] | AllSourceItems<RenderTableRowItem>;
 };
 
 export type RenderTableRowItem = {
     supertype: "render";
     type: "tableRow";
     conditionalRender?: ParsedFunction;
-    cells: AllRenderItems[] | AllSourceItems;
+    children: AllRenderItems[] | AllSourceItems;
 };
 
 export type RenderMarkdownItem = {
@@ -121,4 +121,63 @@ export type RenderMarkdownItem = {
     type: "markdown";
     conditionalRender?: ParsedFunction;
     text: ValueItem | ValueItem[];
+};
+
+export type RenderAccordionItem = {
+    supertype: "render";
+    type: "accordion";
+    conditionalRender?: ParsedFunction;
+    children: AllRenderItems[] | AllSourceItems;
+    text: ValueItem;
+    icon?:
+        | { type: "icon"; name: string }
+        | {
+              type: "image";
+              source: ValueItem;
+              alt: ValueItem;
+          };
+    maxHeight?: number;
+};
+
+export type RenderCardItem = {
+    supertype: "render";
+    type: "card";
+    conditionalRender?: ParsedFunction;
+    variant?: "elevated" | "outlined";
+    children: AllRenderItems[] | AllSourceItems;
+    title?: {
+        title: ValueItem;
+        subtitle?: ValueItem;
+        icon?:
+            | { type: "icon"; name: string }
+            | {
+                  type: "image";
+                  source: ValueItem;
+                  alt: ValueItem;
+              };
+    };
+    media?: {
+        src: ValueItem;
+        alt: ValueItem;
+        height?: number;
+    };
+};
+
+export type RenderAbsoluteItem = {
+    supertype: "render";
+    type: "absolute";
+    conditionalRender?: ParsedFunction;
+    child: AllRenderItems;
+    top: number; // Percent
+    left: number; // Percent
+    width: number; // Percent
+    height: number; // Percent
+};
+
+export type RenderAbsoluteContainerItem = {
+    supertype: "render";
+    type: "absolute-container";
+    conditionalRender?: ParsedFunction;
+    children: RenderAbsoluteItem[] | AllSourceItems<RenderAbsoluteItem>;
+    height?: number; // Pixels
 };
