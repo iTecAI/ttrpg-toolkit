@@ -11,6 +11,18 @@ const configs = [
         type: "AllItems", // Or <type-name> if you want to generate schema for that one type only,
         output: "../schema/renderer.schema.json",
     },
+    {
+        path: "./src/models/plugin.ts",
+        tsconfig: "./tsconfig.json",
+        type: "PluginManifest", // Or <type-name> if you want to generate schema for that one type only,
+        output: "../schema/manifest.schema.json",
+    },
+    {
+        path: "./src/models/compendium.ts",
+        tsconfig: "./tsconfig.json",
+        type: "CompendiumItem", // Or <type-name> if you want to generate schema for that one type only,
+        output: "../schema/compendium.schema.json",
+    },
 ];
 
 for (let config of configs) {

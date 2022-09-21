@@ -1,4 +1,4 @@
-import { CompendiumItemRenderer } from "./compendium";
+import { CompendiumItem } from "./compendium";
 
 export type PluginTag =
     | "system"
@@ -64,7 +64,7 @@ export type DataSourceCategory = {
         type: string;
         display_name: string;
     }[];
-    renderer: CompendiumItemRenderer;
+    renderer: CompendiumItem;
 };
 
 export type DataSource = {

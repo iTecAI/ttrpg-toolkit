@@ -35,12 +35,19 @@ import {
     TableRow,
     Typography,
 } from "@mui/material";
-import { RawData, AllRenderItems, AllSourceItems, ValueItem } from "../types";
+import {
+    RawData,
+    AllRenderItems,
+    AllSourceItems,
+    ValueItem,
+    AvatarType,
+} from "../types";
 import * as ReactIconsMd from "react-icons/md";
 import * as ReactIconsGi from "react-icons/gi";
 import { IconType } from "react-icons";
 import { isArray } from "../types/guards";
 import ReactMarkdown from "react-markdown";
+import { Icon } from "./common";
 
 export default class MuiRenderParser<
     T extends AllRenderItems = AllRenderItems
@@ -75,7 +82,27 @@ export default class MuiRenderParser<
         return new MuiRenderParser(data, renderer);
     }
 
-    Icon(props: { name: string; [key: string]: any }) {
+    private _renderAvatar(item: AvatarType) {
+        switch (item.type) {
+            case "icon":
+                return (
+                    <Avatar>
+                        <Icon icon={item.icon} />
+                    </Avatar>
+                );
+            case "image":
+                return (
+                    <Avatar
+                        src={this.parseValueItem(item.source)}
+                        alt={this.parseValueItem(item.alt)}
+                    />
+                );
+            case "text":
+                return <Avatar>{this.parseValueItem(item.text)}</Avatar>;
+        }
+    }
+
+    public Icon(props: { name: string; [key: string]: any }) {
         const [family, id] = props.name.split(".");
         try {
             const IconElement: IconType = (
@@ -144,30 +171,7 @@ export default class MuiRenderParser<
     renderChip(_: JSX.Element[], object: RenderChipItem): JSX.Element {
         let avatar: JSX.Element | undefined = undefined;
         if (object.avatar) {
-            switch (object.avatar.type) {
-                case "icon":
-                    avatar = (
-                        <Avatar>
-                            <this.Icon name={object.avatar.name} />
-                        </Avatar>
-                    );
-                    break;
-                case "image":
-                    avatar = (
-                        <Avatar
-                            src={this.parseValueItem(object.avatar.source)}
-                            alt={this.parseValueItem(object.avatar.alt)}
-                        />
-                    );
-                    break;
-                case "text":
-                    avatar = (
-                        <Avatar>
-                            {this.parseValueItem(object.avatar.text)}
-                        </Avatar>
-                    );
-                    break;
-            }
+            avatar = this._renderAvatar(object.avatar);
         }
         return (
             <Chip
@@ -272,23 +276,7 @@ export default class MuiRenderParser<
     ): JSX.Element {
         let icon: JSX.Element | undefined = undefined;
         if (object.icon) {
-            switch (object.icon.type) {
-                case "icon":
-                    icon = (
-                        <Avatar>
-                            <this.Icon name={object.icon.name} />
-                        </Avatar>
-                    );
-                    break;
-                case "image":
-                    icon = (
-                        <Avatar
-                            src={this.parseValueItem(object.icon.source)}
-                            alt={this.parseValueItem(object.icon.alt)}
-                        />
-                    );
-                    break;
-            }
+            icon = this._renderAvatar(object.icon);
         }
 
         return (
@@ -315,23 +303,7 @@ export default class MuiRenderParser<
     renderCard(children: JSX.Element[], object: RenderCardItem) {
         let icon: JSX.Element | undefined = undefined;
         if (object.title && object.title.icon) {
-            switch (object.title.icon.type) {
-                case "icon":
-                    icon = (
-                        <Avatar>
-                            <this.Icon name={object.title.icon.name} />
-                        </Avatar>
-                    );
-                    break;
-                case "image":
-                    icon = (
-                        <Avatar
-                            src={this.parseValueItem(object.title.icon.source)}
-                            alt={this.parseValueItem(object.title.icon.alt)}
-                        />
-                    );
-                    break;
-            }
+            icon = this._renderAvatar(object.title.icon);
         }
 
         return (

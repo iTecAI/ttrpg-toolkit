@@ -1,3 +1,4 @@
+import { IconType } from "../renderers/common";
 import {
     RenderGroupItem,
     RenderTextItem,
@@ -90,6 +91,21 @@ export type GeneratorSourceItem<T = AllRenderItems> = {
     renderer: T;
     conditionalRender?: ParsedFunction;
 };
+
+export type AvatarType =
+    | {
+          type: "text";
+          text: ValueItem;
+      }
+    | {
+          type: "icon";
+          icon: IconType;
+      }
+    | {
+          type: "image";
+          source: ValueItem;
+          alt: ValueItem;
+      };
 
 export type AllRenderItems =
     | RenderGroupItem

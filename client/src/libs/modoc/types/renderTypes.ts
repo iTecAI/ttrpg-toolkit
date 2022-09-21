@@ -1,4 +1,10 @@
-import { ParsedFunction, ValueItem, AllSourceItems, AllRenderItems } from ".";
+import {
+    ParsedFunction,
+    ValueItem,
+    AllSourceItems,
+    AllRenderItems,
+    AvatarType,
+} from ".";
 
 export type RenderGroupItem = {
     supertype: "render";
@@ -41,20 +47,7 @@ export type RenderChipItem = {
     conditionalRender?: ParsedFunction;
     text: ValueItem;
     filled: boolean;
-    avatar?:
-        | {
-              type: "icon";
-              name: string;
-          }
-        | {
-              type: "text";
-              text: ValueItem;
-          }
-        | {
-              type: "image";
-              source: ValueItem;
-              alt: ValueItem;
-          };
+    avatar?: AvatarType;
 };
 
 export type RenderStackItem = {
@@ -129,13 +122,7 @@ export type RenderAccordionItem = {
     conditionalRender?: ParsedFunction;
     children: AllRenderItems[] | AllSourceItems;
     text: ValueItem;
-    icon?:
-        | { type: "icon"; name: string }
-        | {
-              type: "image";
-              source: ValueItem;
-              alt: ValueItem;
-          };
+    icon?: AvatarType;
     maxHeight?: number;
 };
 
@@ -148,13 +135,7 @@ export type RenderCardItem = {
     title?: {
         title: ValueItem;
         subtitle?: ValueItem;
-        icon?:
-            | { type: "icon"; name: string }
-            | {
-                  type: "image";
-                  source: ValueItem;
-                  alt: ValueItem;
-              };
+        icon?: AvatarType;
     };
     media?: {
         src: ValueItem;
