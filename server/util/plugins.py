@@ -90,14 +90,23 @@ class Plugin:
         if not os.path.exists(os.path.join(PLUGIN_LOCATION, name)):
             raise PluginDoesNotExistError(extra=name)
         try:
-            self.manifest = Config(
-                file=os.path.join(PLUGIN_LOCATION, name, "manifest.json")
-            )
+            if os.path.exists(os.path.join(PLUGIN_LOCATION, name, "manifest.json")):
+                self.manifest = Config(
+                    file=os.path.join(PLUGIN_LOCATION, name, "manifest.json")
+                )
+            elif os.path.exists(os.path.join(PLUGIN_LOCATION, name, "manifest.json5")):
+                self.manifest = Config(
+                    file=os.path.join(PLUGIN_LOCATION, name, "manifest.json5")
+                )
+            else:
+                raise InvalidPluginError(
+                    extra=f"{name} - manifest.json/5 does not exist"
+                )
         except OSError:
-            raise InvalidPluginError(extra=f"{name} - manifest.json does not exist")
+            raise InvalidPluginError(extra=f"{name} - manifest.json/5 does not exist")
         except:
             raise InvalidPluginError(
-                extra=f"{name} - manifest.json could not be parsed"
+                extra=f"{name} - manifest.json/5 could not be parsed"
             )
 
         self.plugin_directory = os.path.join(PLUGIN_LOCATION, name)

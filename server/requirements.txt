@@ -4,3 +4,4 @@ uvicorn[standard]
 pymongo
 bcrypt
 ijson
+json5
