@@ -310,7 +310,7 @@ export default class MuiRenderParser<
         }
 
         return (
-            <Card className="modoc_mui-card">
+            <Card className="modoc_mui-card" variant={object.variant}>
                 {object.title && (
                     <CardHeader
                         avatar={icon}

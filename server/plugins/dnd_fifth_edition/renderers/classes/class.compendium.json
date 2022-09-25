@@ -48,5 +48,5 @@
             }
         }
     ],
-    "fullContents": {}
+    "fullContents": "$sub:class_expanded.renderer.json"
 }

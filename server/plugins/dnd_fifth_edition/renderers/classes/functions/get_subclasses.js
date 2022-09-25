@@ -7,5 +7,8 @@
         proc.push({ name: raw.length - proc.length + " More" });
         return proc;
     }
+    if (raw.length === 0) {
+        return [{ name: "No Subclasses" }];
+    }
     return raw;
 };

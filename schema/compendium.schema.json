@@ -1138,7 +1138,7 @@
         "variant": {
           "type": "string",
           "enum": [
-            "elevated",
+            "elevation",
             "outlined"
           ]
         },

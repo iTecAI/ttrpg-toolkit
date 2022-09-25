@@ -1,6 +1,9 @@
 import {
     Box,
     Button,
+    Dialog,
+    DialogContent,
+    DialogTitle,
     IconButton,
     InputAdornment,
     LinearProgress,
@@ -11,12 +14,14 @@ import {
     TextField,
     Tooltip,
     Typography,
+    useMediaQuery,
     useTheme,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { MdExtension, MdSearch } from "react-icons/md";
 import { loc } from "../../util/localization";
 import "./style.scss";
+import "./expanded.scss";
 import {
     DataSource,
     MinimalPluginModel,
@@ -29,6 +34,9 @@ import { DataItem, CompendiumItem } from "../../models/compendium";
 import { AvatarType } from "../../libs/modoc/types";
 import { CompendiumItemRenderer } from "./renderers/compendiumItem";
 import { Masonry } from "@mui/lab";
+import { parseValueItem } from "../../libs/modoc/util";
+import { ModularRenderer, MuiRenderParser } from "../../libs/modoc";
+import { AvatarItem } from "./renderers/avatar";
 
 function SearchPopup(props: {
     dataSource: DataSource | null;
@@ -332,6 +340,7 @@ export function Compendium() {
                                 currentPlugin.data_source?.categories[category]
                                     .renderer && (
                                     <CompendiumItemRenderer
+                                        setExpanded={setExpandedDialog}
                                         data={r}
                                         renderer={
                                             currentPlugin.data_source
@@ -346,6 +355,73 @@ export function Compendium() {
             ) : (
                 <></>
             )}
+            <Dialog
+                open={Boolean(expandedDialog)}
+                onClose={() => setExpandedDialog(null)}
+                className="compendium-expanded-item"
+                fullWidth={true}
+                maxWidth={false}
+            >
+                {expandedDialog &&
+                category &&
+                currentPlugin &&
+                currentPlugin.data_source?.categories[category].renderer ? (
+                    <>
+                        <DialogTitle
+                            className={
+                                "title-area" +
+                                (currentPlugin.data_source?.categories[category]
+                                    .renderer.avatar
+                                    ? " avatar"
+                                    : "")
+                            }
+                        >
+                            {currentPlugin.data_source?.categories[category]
+                                .renderer.avatar !== undefined ? (
+                                <AvatarItem
+                                    spec={
+                                        currentPlugin.data_source?.categories[
+                                            category
+                                        ].renderer.avatar
+                                    }
+                                    data={expandedDialog}
+                                />
+                            ) : (
+                                <></>
+                            )}
+                            <div className="title">
+                                {parseValueItem(
+                                    currentPlugin.data_source?.categories[
+                                        category
+                                    ].renderer.displayName,
+                                    expandedDialog
+                                )}
+                            </div>
+                            <div className="subtitle">
+                                {parseValueItem(
+                                    currentPlugin.data_source?.categories[
+                                        category
+                                    ].renderer.source,
+                                    expandedDialog
+                                )}
+                            </div>
+                        </DialogTitle>
+                        <DialogContent dividers>
+                            <ModularRenderer
+                                data={expandedDialog}
+                                parser={MuiRenderParser}
+                                renderer={
+                                    currentPlugin.data_source?.categories[
+                                        category
+                                    ].renderer.fullContents
+                                }
+                            />
+                        </DialogContent>
+                    </>
+                ) : (
+                    <></>
+                )}
+            </Dialog>
         </Box>
     );
 }

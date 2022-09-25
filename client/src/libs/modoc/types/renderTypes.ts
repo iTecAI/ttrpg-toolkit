@@ -130,7 +130,7 @@ export type RenderCardItem = {
     supertype: "render";
     type: "card";
     conditionalRender?: ParsedFunction;
-    variant?: "elevated" | "outlined";
+    variant?: "elevation" | "outlined";
     children: AllRenderItems[] | AllSourceItems;
     title?: {
         title: ValueItem;

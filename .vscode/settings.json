@@ -2,6 +2,7 @@
     "json.schemas": [
 
 
+
     {
         "fileMatch": [
             "*.compendium.json"
@@ -10,9 +11,9 @@
     },
     {
         "fileMatch": [
-            "*.modular.json"
+            "*.renderer.json"
         ],
-        "url": "file:/mnt/data1/Programming/ttrpg-toolkit/schema/modular.schema.json"
+        "url": "file:/mnt/data1/Programming/ttrpg-toolkit/schema/renderer.schema.json"
     },
     {
         "fileMatch": [
