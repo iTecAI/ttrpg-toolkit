@@ -208,7 +208,9 @@ export default class MuiRenderParser<
                     "& > *": {
                         width:
                             object.direction === "horizontal"
-                                ? `calc(100% / ${children.length})`
+                                ? `calc(100% / ${
+                                      children.filter((c) => c !== null).length
+                                  })`
                                 : undefined,
                     },
                 }}

@@ -2,6 +2,15 @@
     "supertype": "render",
     "type": "stack",
     "direction": "vertical",
+    "conditionalRender": {
+        "function": "$file:functions/check_if_multi_profs.js:lines",
+        "opts": {
+            "skill": "$data:multiclass_skill_proficiency",
+            "armor": "$data:multiclass_armor_proficiency",
+            "weapon": "$data:multiclass_weapon_proficiency",
+            "tool": "$data:multiclass_tool_proficiency"
+        }
+    },
     "spacing": 2,
     "children": [
         {
