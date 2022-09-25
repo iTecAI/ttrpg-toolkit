@@ -81,4 +81,5 @@ export type PluginManifest = {
     entrypoints: { [key: string]: EntrypointModel };
     dice?: DiceModel;
     data_source?: DataSource;
+    assets?: { [key: string]: string };
 };

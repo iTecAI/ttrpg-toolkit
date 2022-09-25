@@ -8,7 +8,8 @@
             "character_loader",
             "npc_source",
             "npc_builder",
-            "data_source"
+            "data_source",
+            "assets"
         ],
         "dependencies": ["d20_dice"]
     },
@@ -39,5 +40,20 @@
                 "renderer": "$sub:renderers/classes/class.compendium.json"
             }
         }
+    },
+    "assets": {
+        "artificer": "assets/artificer.jpeg",
+        "barbarian": "assets/barbarian.jpeg",
+        "bard": "assets/bard.jpeg",
+        "cleric": "assets/cleric.jpeg",
+        "druid": "assets/druid.jpeg",
+        "fighter": "assets/fighter.jpeg",
+        "monk": "assets/monk.jpeg",
+        "paladin": "assets/paladin.jpeg",
+        "ranger": "assets/ranger.jpeg",
+        "rogue": "assets/rogue.jpeg",
+        "sorcerer": "assets/sorcerer.jpeg",
+        "warlock": "assets/warlock.jpeg",
+        "wizard": "assets/wizard.jpeg"
     }
 }

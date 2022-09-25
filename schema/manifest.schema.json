@@ -19,6 +19,12 @@
         },
         "data_source": {
           "$ref": "#/definitions/DataSource"
+        },
+        "assets": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
         }
       },
       "required": [

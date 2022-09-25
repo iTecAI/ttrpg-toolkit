@@ -1,3 +1,4 @@
+import os
 from typing import Any, Dict, List, Optional
 from pydantic import BaseModel
 from starlite import Controller, State, get, post, Provide
@@ -14,6 +15,8 @@ from util.plugin_utils import SearchModel
 from models import Session
 from enum import Enum
 from starlette.status import *
+from starlite.datastructures import File
+import mimetypes
 
 
 class PluginModel(BaseModel):
@@ -69,6 +72,64 @@ class PluginNotFoundError(exceptions.BaseHTTPException):
     message: str = "Plugin not found"
     message_class: str = "error.plugin.not_found"
     status_code: int = HTTP_404_NOT_FOUND
+
+
+class AssetNotFoundError(exceptions.BaseHTTPException):
+    message: str = "Asset not found"
+    message_class: str = "error.plugin.asset_not_found"
+    status_code: int = HTTP_404_NOT_FOUND
+
+
+class PluginAssetController(Controller):
+    path = "/plugins/{plugin:str}/assets"
+
+    @get("/")
+    async def list_plugin_assets(self, state: State, plugin: str) -> List[str]:
+        if plugin in state.plugins.plugins.keys():
+            if (
+                "assets"
+                in state.plugins.plugins[plugin].manifest["plugin_data"]["tags"]
+            ):
+                return list(state.plugins.plugins[plugin].manifest["assets"].keys())
+            else:
+                return []
+        else:
+            raise PluginNotFoundError()
+
+    @get("/{asset:str}")
+    async def get_plugin_asset(self, state: State, plugin: str, asset: str) -> File:
+        if plugin in state.plugins.plugins.keys():
+            if (
+                "assets"
+                in state.plugins.plugins[plugin].manifest["plugin_data"]["tags"]
+            ):
+                if asset in state.plugins.plugins[plugin].manifest["assets"].keys():
+                    mime = mimetypes.guess_type(
+                        state.plugins.plugins[plugin].manifest["assets"][asset]
+                    )
+                    if type(mime) == tuple:
+                        mime = "text/plain"
+
+                    return File(
+                        path=os.path.join(
+                            state.plugins.plugins[plugin].plugin_directory,
+                            os.path.join(
+                                *state.plugins.plugins[plugin]
+                                .manifest["assets"][asset]
+                                .split("/")
+                            ),
+                        ),
+                        filename=os.path.split(
+                            state.plugins.plugins[plugin].manifest["assets"][asset]
+                        )[1],
+                        headers={"Content-Type": mime},
+                    )
+                else:
+                    raise AssetNotFoundError()
+            else:
+                raise AssetNotFoundError()
+        else:
+            raise PluginNotFoundError()
 
 
 class PluginController(Controller):

@@ -13,6 +13,18 @@
     "plugin": "dnd_fifth_edition",
     "source": "$data:source",
     "displayName": "$data:name",
+    "avatar": {
+        "type": "image",
+        "source": {
+            "supertype": "value",
+            "type": "function",
+            "function": "$file:functions/get_class_icon.js:lines",
+            "opts": {
+                "name": "$data:name"
+            }
+        },
+        "alt": "$data:name"
+    },
     "briefContents": [],
     "fullContents": {}
 }

@@ -34,9 +34,7 @@ def setup_state(state: State):
 def http_exception_handler(request: Request, exc: Exception) -> StarletteResponse:
     """Default handler for exceptions subclassed from HTTPException"""
 
-    logging.error(
-        f"Failed parsing request: {request.method} {request.url.path}"
-    )
+    logging.error(f"Failed parsing request: {request.method} {request.url.path}")
 
     status_code = (
         exc.status_code
@@ -48,8 +46,7 @@ def http_exception_handler(request: Request, exc: Exception) -> StarletteRespons
         logging.exception(f"Encountered an error with code {status_code}:\n")
         server_middleware = ServerErrorMiddleware(app=request.app)
         return server_middleware.debug_response(request=request, exc=exc)
-    
-    
+
     """if isinstance(exc, BaseHTTPException):
         content = exc.detail
     elif isinstance(exc, HTTPException):
@@ -90,6 +87,7 @@ BASE_HANDLERS = [
     GameSpecificController,
     PluginDataSourceController,
     DebugController,
+    PluginAssetController,
 ]
 
 for plugin in PLUG.plugins.values():
@@ -99,5 +97,5 @@ for plugin in PLUG.plugins.values():
 app = Starlite(
     on_startup=[setup_state],
     route_handlers=BASE_HANDLERS,
-    #exception_handlers={500: http_exception_handler},
+    exception_handlers={500: http_exception_handler},
 )
