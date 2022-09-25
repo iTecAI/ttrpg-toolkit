@@ -1,13 +1,7 @@
-import { isArray, isLiteral, isRenderItem, isSourceItem } from "./types/guards";
+import { isArray, isRenderItem, isSourceItem } from "./types/guards";
 import { AllRenderItems, AllSourceItems } from "./types";
 import { GeneratorSourceItem, ListSourceItem } from "./types";
-import {
-    ParsedFunction,
-    RawData,
-    ValueItem,
-    ValueStringDirective,
-    ValueStringDirectiveNames,
-} from "./types";
+import { ParsedFunction, RawData, ValueItem } from "./types";
 import { parseFunction, parseValueItem } from "./util";
 import parseNested from "./util/nestedParser";
 import React from "react";

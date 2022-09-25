@@ -14,7 +14,6 @@ import {
     TextField,
     Tooltip,
     Typography,
-    useMediaQuery,
     useTheme,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
@@ -30,8 +29,7 @@ import {
 import { get, post } from "../../util/api";
 import { useSnackbar } from "notistack";
 import { useHorizontalScroll } from "../../util/hscroll";
-import { DataItem, CompendiumItem } from "../../models/compendium";
-import { AvatarType } from "../../libs/modoc/types";
+import { DataItem } from "../../models/compendium";
 import { CompendiumItemRenderer } from "./renderers/compendiumItem";
 import { Masonry } from "@mui/lab";
 import { parseValueItem } from "../../libs/modoc/util";

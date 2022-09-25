@@ -16,7 +16,6 @@ export function AvatarItem(props: {
                         <Icon icon={props.spec.icon} />
                     </Avatar>
                 );
-                break;
             case "image":
                 return (
                     <Avatar

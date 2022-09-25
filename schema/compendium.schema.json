@@ -435,7 +435,9 @@
           "type": "string",
           "description": "Dot path to an array value in the data (ie. i.am.a.path.to.an.array)"
         },
-        "renderer": {},
+        "renderer": {
+          "$ref": "#/definitions/AllRenderItems"
+        },
         "conditionalRender": {
           "$ref": "#/definitions/ParsedFunction"
         }
@@ -848,7 +850,7 @@
           "description": "Dot path to an array value in the data (ie. i.am.a.path.to.an.array)"
         },
         "renderer": {
-          "$ref": "#/definitions/RenderTableRowItem"
+          "$ref": "#/definitions/AllRenderItems"
         },
         "conditionalRender": {
           "$ref": "#/definitions/ParsedFunction"
@@ -1032,7 +1034,7 @@
           "description": "Dot path to an array value in the data (ie. i.am.a.path.to.an.array)"
         },
         "renderer": {
-          "$ref": "#/definitions/RenderAbsoluteItem"
+          "$ref": "#/definitions/AllRenderItems"
         },
         "conditionalRender": {
           "$ref": "#/definitions/ParsedFunction"

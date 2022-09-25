@@ -69,6 +69,7 @@ export type ParsedFunction = {
     opts: { [key: string]: Literal | ValueItem };
 };
 
+// eslint-disable-next-line
 export type ListSourceItem<T = AllRenderItems> = {
     supertype: "source";
     type: "list";
@@ -77,10 +78,11 @@ export type ListSourceItem<T = AllRenderItems> = {
      * @type {string}
      */
     source: string;
-    renderer: T;
+    renderer: AllRenderItems;
     conditionalRender?: ParsedFunction;
 };
 
+// eslint-disable-next-line
 export type GeneratorSourceItem<T = AllRenderItems> = {
     supertype: "source";
     type: "generator";

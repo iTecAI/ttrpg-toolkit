@@ -1,5 +1,4 @@
 import {
-    Avatar,
     Card,
     CardActionArea,
     CardContent,
@@ -7,7 +6,6 @@ import {
     CardMedia,
 } from "@mui/material";
 import { MuiRenderParser, ModularRenderer } from "../../../libs/modoc";
-import { Icon } from "../../../libs/modoc/renderers/common";
 import { parseValueItem } from "../../../libs/modoc/util";
 import { CompendiumItem, DataItem } from "../../../models/compendium";
 import { AvatarItem } from "./avatar";
