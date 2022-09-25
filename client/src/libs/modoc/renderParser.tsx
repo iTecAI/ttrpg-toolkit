@@ -96,9 +96,8 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
         if (isArray(data)) {
             return data.map((d) => this.constructSelf(d, item.renderer));
         } else {
-            throw new Error(
-                `${JSON.stringify(data)} is not an any[] instance.`
-            );
+            console.warn(`${JSON.stringify(data)} is not an any[] instance.`);
+            return [];
         }
     }
 

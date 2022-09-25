@@ -51,6 +51,7 @@ export type DataItem = {
     supertype: "value";
     type: "data";
     source: string;
+    default?: ValueItem;
 };
 
 export type ValueItem = Literal | TextItem | FunctionalItem | DataItem;

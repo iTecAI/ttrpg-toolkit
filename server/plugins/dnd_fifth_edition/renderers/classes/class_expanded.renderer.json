@@ -29,6 +29,75 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "supertype": "render",
+                    "type": "accordion",
+                    "maxHeight": 400,
+                    "conditionalRender": {
+                        "function": "(opts) => Boolean(opts.item)",
+                        "opts": {
+                            "item": "$data:starting_equipment"
+                        }
+                    },
+                    "text": "Starting Equipment",
+                    "icon": {
+                        "type": "icon",
+                        "icon": "md.MdBackpack"
+                    },
+                    "alwaysOpen": true,
+                    "children": [
+                        {
+                            "supertype": "render",
+                            "type": "text",
+                            "conditionalRender": {
+                                "function": "(opts) => Boolean(opts.item) && Boolean(opts.item2)",
+                                "opts": {
+                                    "item": "$data:starting_equipment",
+                                    "item2": "$data:starting_equipment.gold"
+                                }
+                            },
+                            "text": {
+                                "supertype": "value",
+                                "type": "text",
+                                "content": "Starting gold: {{amount}} gp",
+                                "substitutions": {
+                                    "amount": "$data:starting_equipment.gold:none"
+                                }
+                            },
+                            "style": [],
+                            "textType": "body1"
+                        },
+                        {
+                            "supertype": "render",
+                            "type": "text",
+                            "conditionalRender": {
+                                "function": "(opts) => Boolean(opts.item) && Boolean(opts.item2)",
+                                "opts": {
+                                    "item": "$data:starting_equipment",
+                                    "item2": "$data:starting_equipment.gold"
+                                }
+                            },
+                            "text": " - OR - ",
+                            "style": ["italic"],
+                            "textType": "body2"
+                        },
+                        {
+                            "supertype": "render",
+                            "type": "group",
+                            "children": {
+                                "supertype": "source",
+                                "type": "list",
+                                "source": "starting_equipment.items",
+                                "renderer": {
+                                    "supertype": "render",
+                                    "type": "chip",
+                                    "text": "$self",
+                                    "filled": true
+                                }
+                            }
+                        }
+                    ]
                 }
             ]
         }

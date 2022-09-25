@@ -26,7 +26,19 @@ export function parseValueItem(item: ValueItem, data: any): any {
 
             switch (directive) {
                 case "data":
-                    return parseNested(data, path);
+                    try {
+                        const out = parseNested(data, path);
+                        if (out === undefined) {
+                            return item.split(":").length > 2
+                                ? parseValueItem(item.split(":")[2], data)
+                                : null;
+                        }
+                        return out;
+                    } catch {
+                        return item.split(":").length > 2
+                            ? parseValueItem(item.split(":")[2], data)
+                            : null;
+                    }
                 case "self":
                     return data;
                 default:
@@ -40,14 +52,26 @@ export function parseValueItem(item: ValueItem, data: any): any {
     } else {
         switch (item.type) {
             case "data":
-                return parseNested(data, item.source);
+                try {
+                    const out = parseNested(data, item.source);
+                    if (out === undefined) {
+                        return item.default
+                            ? parseValueItem(item.default, data)
+                            : null;
+                    }
+                    return out;
+                } catch {
+                    return item.default
+                        ? parseValueItem(item.default, data)
+                        : null;
+                }
             case "text":
                 let subbedText: string = item.content + "";
                 for (let k of Object.keys(item.substitutions)) {
                     let sub = parseValueItem(item.substitutions[k], data);
                     subbedText = subbedText.replaceAll(
                         `{{${k}}}`,
-                        sub.toString()
+                        (sub || "[NO VALUE]").toString()
                     );
                 }
                 return subbedText;
