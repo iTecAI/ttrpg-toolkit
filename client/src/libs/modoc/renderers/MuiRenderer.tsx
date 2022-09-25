@@ -15,6 +15,7 @@ import {
     RenderAccordionItem,
     RenderCardItem,
     RenderSegmentItem,
+    RenderMasonryItem,
 } from "../types/renderTypes";
 import {
     Accordion,
@@ -50,6 +51,7 @@ import { IconType } from "react-icons";
 import { isArray } from "../types/guards";
 import ReactMarkdown from "react-markdown";
 import { Icon } from "./common";
+import { Masonry } from "@mui/lab";
 
 export default class MuiRenderParser<
     T extends AllRenderItems = AllRenderItems
@@ -74,6 +76,7 @@ export default class MuiRenderParser<
         "absolute-container": this.renderAbsoluteContainer,
         absolute: this.renderAbsoluteItem,
         segment: this.renderSegmentItem,
+        masonry: this.renderMasonryItem,
     };
 
     private iconMap = {
@@ -420,6 +423,21 @@ export default class MuiRenderParser<
             <Paper variant={object.variant} className="modoc_mui-segment">
                 {children}
             </Paper>
+        );
+    }
+
+    renderMasonryItem(
+        children: (JSX.Element | null)[],
+        object: RenderMasonryItem
+    ): JSX.Element {
+        return (
+            <Masonry
+                spacing={object.spacing ?? 2}
+                columns={object.columns}
+                className="modoc_mui-masonry"
+            >
+                {children}
+            </Masonry>
         );
     }
 }

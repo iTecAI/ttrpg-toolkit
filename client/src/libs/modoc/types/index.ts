@@ -14,6 +14,7 @@ import {
     RenderAccordionItem,
     RenderCardItem,
     RenderSegmentItem,
+    RenderMasonryItem,
 } from "./renderTypes";
 
 export type Literal = string | number | boolean | null | undefined;
@@ -124,7 +125,8 @@ export type AllRenderItems =
     | RenderAbsoluteItem
     | RenderAccordionItem
     | RenderCardItem
-    | RenderSegmentItem;
+    | RenderSegmentItem
+    | RenderMasonryItem;
 export type AllSourceItems<T = any> =
     | ListSourceItem<T>
     | GeneratorSourceItem<T>;

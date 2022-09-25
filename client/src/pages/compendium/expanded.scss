@@ -27,4 +27,17 @@
     .modoc_mui-chip {
         margin: 2px;
     }
+    .modoc_mui-accordion {
+        .MuiAccordionSummary-content {
+            position: relative;
+
+            .MuiTypography-root {
+                position: absolute;
+                top: 50%;
+                left: 48px;
+                transform: translate(0, -50%);
+                font-size: 20px;
+            }
+        }
+    }
 }

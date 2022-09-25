@@ -171,3 +171,12 @@ export type RenderAbsoluteContainerItem = {
     children: RenderAbsoluteItem[] | AllSourceItems<RenderAbsoluteItem>;
     height?: number; // Pixels
 };
+
+export type RenderMasonryItem = {
+    supertype: "render";
+    type: "masonry";
+    conditionalRender?: ParsedFunction;
+    children: AllRenderItems[] | AllSourceItems;
+    columns: number;
+    spacing?: number;
+};

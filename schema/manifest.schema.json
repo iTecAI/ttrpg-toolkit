@@ -601,6 +601,9 @@
         },
         {
           "$ref": "#/definitions/RenderSegmentItem"
+        },
+        {
+          "$ref": "#/definitions/RenderMasonryItem"
         }
       ]
     },
@@ -1510,6 +1513,48 @@
         "type",
         "children",
         "variant"
+      ],
+      "additionalProperties": false
+    },
+    "RenderMasonryItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "render"
+        },
+        "type": {
+          "type": "string",
+          "const": "masonry"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        },
+        "children": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AllRenderItems"
+              }
+            },
+            {
+              "$ref": "#/definitions/AllSourceItems"
+            }
+          ]
+        },
+        "columns": {
+          "type": "number"
+        },
+        "spacing": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "children",
+        "columns"
       ],
       "additionalProperties": false
     }
