@@ -32,6 +32,8 @@ export function parseValueItem(item: ValueItem, data: any): any {
                 default:
                     throw new Error(`Unknown directive "${directive}"`);
             }
+        } else {
+            return item;
         }
     } else if (isLiteral(item)) {
         return item;

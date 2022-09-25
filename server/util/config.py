@@ -69,10 +69,12 @@ class Config:
             return sub_conf.data
 
         if command == "file":
-            with open(os.path.join(os.path.split(self.cpath)[0], args[0]), "r") as f:
+            with open(os.path.join(os.path.split(self.cpath)[0], os.path.join(*args[0].split("/"))), "r") as f:
                 if len(args) == 1:
                     return f.read()
                 elif args[1] == "lines":
                     return f.read().splitlines()
                 else:
                     return f.read()
+        
+        return data

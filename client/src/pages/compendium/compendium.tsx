@@ -13,7 +13,6 @@ import {
     Typography,
     useTheme,
 } from "@mui/material";
-import Masonry from "react-masonry-css";
 import React, { useEffect, useState } from "react";
 import { MdExtension, MdSearch } from "react-icons/md";
 import { loc } from "../../util/localization";
@@ -28,6 +27,8 @@ import { useSnackbar } from "notistack";
 import { useHorizontalScroll } from "../../util/hscroll";
 import { DataItem, CompendiumItem } from "../../models/compendium";
 import { AvatarType } from "../../libs/modoc/types";
+import { CompendiumItemRenderer } from "./renderers/compendiumItem";
+import { Masonry } from "@mui/lab";
 
 function SearchPopup(props: {
     dataSource: DataSource | null;
@@ -186,6 +187,10 @@ export function Compendium() {
         null
     );
 
+    useEffect(() => {
+        console.log(searchResults, currentPlugin, category);
+    }, [searchResults, currentPlugin, category]);
+
     return (
         <Box className="compendium-root">
             <Paper className="compendium-nav">
@@ -309,6 +314,37 @@ export function Compendium() {
             {loadingResults ? (
                 <LinearProgress className="loading-results" />
             ) : null}
+            {searchResults &&
+            currentPlugin &&
+            currentPlugin.data_source &&
+            category &&
+            Object.keys(currentPlugin.data_source?.categories).includes(
+                category
+            ) ? (
+                <Masonry
+                    columns={4}
+                    spacing={1}
+                    className="compendium-item-container"
+                >
+                    {searchResults.map(
+                        (r) =>
+                            currentPlugin.data_source?.categories[category]
+                                .renderer && (
+                                <CompendiumItemRenderer
+                                    data={r}
+                                    renderer={
+                                        currentPlugin.data_source?.categories[
+                                            category
+                                        ].renderer
+                                    }
+                                    key={Math.random()}
+                                />
+                            )
+                    )}
+                </Masonry>
+            ) : (
+                <></>
+            )}
         </Box>
     );
 }

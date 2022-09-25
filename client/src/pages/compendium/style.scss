@@ -61,79 +61,9 @@
         width: 100%;
     }
 
-    .item-area {
-        display: inline-block;
-        width: 100%;
-        height: calc(100% - 80px);
-        padding: 16px;
-        box-sizing: border-box;
-        overflow: auto;
-
-        &.card {
-            display: flex;
-            width: calc(100% - 16px);
-            scrollbar-width: none;
-            .card-column {
-                display: inline-block;
-                box-sizing: border-box;
-                margin-right: 4px;
-                background-clip: padding-box;
-            }
-
-            .compendium-card {
-                margin: 4px;
-                display: inline-block;
-                height: fit-content;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-                @media screen and (max-width: 800px) {
-                    width: calc(100vw / 2 - 16px);
-                }
-                @media screen and (min-width: 801px) and (max-width: 1100px) {
-                    width: calc(100vw / 3 - 16px);
-                }
-                @media screen and (min-width: 1101px) and (max-width: 1600px) {
-                    width: calc(100vw / 4 - 16px);
-                }
-                @media screen and (min-width: 1601px) {
-                    width: calc(100vw / 5 - 16px);
-                }
-
-                .content {
-                    .content-masonry {
-                        display: flex;
-
-                        .content-column {
-                            display: inline-block;
-                            .content-segment {
-                                padding: 8px;
-                                margin-bottom: 8px;
-
-                                &:last-child {
-                                    margin-bottom: 0px;
-                                }
-
-                                .segment-icon {
-                                    position: relative;
-                                    transform: translate(0, 4px);
-                                    font-size: 20px;
-                                }
-
-                                .segment-title {
-                                    margin-left: 6px;
-                                    font-weight: 600;
-                                }
-
-                                .segment-value {
-                                    display: block;
-                                    padding: 8px;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+    .compendium-item-container {
+        margin: 4px;
+        width: calc(100% - 8px);
     }
 }
 
