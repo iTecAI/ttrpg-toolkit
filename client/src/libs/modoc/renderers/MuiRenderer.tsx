@@ -312,8 +312,17 @@ export default class MuiRenderParser<
         }
 
         return (
-            <Accordion className="modoc_mui-accordion">
-                <AccordionSummary expandIcon={<ReactIconsMd.MdExpandMore />}>
+            <Accordion
+                className="modoc_mui-accordion"
+                expanded={object.alwaysOpen === true ? true : undefined}
+            >
+                <AccordionSummary
+                    expandIcon={
+                        object.alwaysOpen === true ? null : (
+                            <ReactIconsMd.MdExpandMore />
+                        )
+                    }
+                >
                     {icon ?? null}
                     <Typography>{this.parseValueItem(object.text)}</Typography>
                 </AccordionSummary>

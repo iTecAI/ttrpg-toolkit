@@ -7,6 +7,7 @@
         {
             "supertype": "render",
             "type": "card",
+            "variant": "outlined",
             "conditionalRender": {
                 "function": "(opts) => Boolean(opts.item) ? opts.item.length > 0 : false",
                 "opts": {
@@ -60,6 +61,7 @@
                 "renderer": {
                     "supertype": "render",
                     "type": "card",
+                    "variant": "outlined",
                     "title": {
                         "title": "Skill Proficiencies",
                         "icon": {
@@ -85,6 +87,7 @@
         {
             "supertype": "render",
             "type": "card",
+            "variant": "outlined",
             "conditionalRender": {
                 "function": "(opts) => Boolean(opts.item) ? opts.item.length > 0 : false",
                 "opts": {
@@ -120,6 +123,7 @@
         {
             "supertype": "render",
             "type": "card",
+            "variant": "outlined",
             "conditionalRender": {
                 "function": "(opts) => Boolean(opts.item) ? opts.item.length > 0 : false",
                 "opts": {
@@ -155,6 +159,7 @@
         {
             "supertype": "render",
             "type": "card",
+            "variant": "outlined",
             "conditionalRender": {
                 "function": "(opts) => Boolean(opts.item) ? opts.item.length > 0 : false",
                 "opts": {

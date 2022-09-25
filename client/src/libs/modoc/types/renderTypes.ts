@@ -124,6 +124,7 @@ export type RenderAccordionItem = {
     text: ValueItem;
     icon?: AvatarType;
     maxHeight?: number;
+    alwaysOpen?: boolean;
 };
 
 export type RenderCardItem = {

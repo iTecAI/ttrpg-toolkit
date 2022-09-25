@@ -4,12 +4,21 @@
     "children": [
         {
             "supertype": "render",
-            "type": "stack",
-            "direction": "horizontal",
-            "spacing": 2,
+            "type": "accordion",
+            "maxHeight": 400,
+            "text": "Proficiencies",
+            "alwaysOpen": true,
             "children": [
-                "$sub:class_profs.renderer.json",
-                "$sub:class_profs_multi.renderer.json"
+                {
+                    "supertype": "render",
+                    "type": "stack",
+                    "direction": "horizontal",
+                    "spacing": 2,
+                    "children": [
+                        "$sub:class_profs.renderer.json",
+                        "$sub:class_profs_multi.renderer.json"
+                    ]
+                }
             ]
         }
     ]

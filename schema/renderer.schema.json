@@ -1053,6 +1053,9 @@
         },
         "maxHeight": {
           "type": "number"
+        },
+        "alwaysOpen": {
+          "type": "boolean"
         }
       },
       "required": [
