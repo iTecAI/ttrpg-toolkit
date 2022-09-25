@@ -61,9 +61,23 @@
         width: 100%;
     }
 
-    .compendium-item-container {
-        margin: 4px;
-        width: calc(100% - 8px);
+    .compendium-item-scroller {
+        overflow-y: auto;
+        display: inline-block;
+        width: 100%;
+        height: calc(100% - 80px);
+        .compendium-item-container {
+            margin: 4px;
+            width: calc(100% - 8px);
+
+            .modoc_mui-segment {
+                padding: 4px;
+            }
+
+            .modoc_mui-chip {
+                margin: 2px;
+            }
+        }
     }
 }
 

@@ -143,7 +143,7 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
      * @returns The value retrieved/created
      */
     parseValueItem(item: ValueItem): any {
-        parseValueItem(item, this.data);
+        return parseValueItem(item, this.data);
     }
 
     /**

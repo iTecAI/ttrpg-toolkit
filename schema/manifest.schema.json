@@ -598,6 +598,9 @@
         },
         {
           "$ref": "#/definitions/RenderCardItem"
+        },
+        {
+          "$ref": "#/definitions/RenderSegmentItem"
         }
       ]
     },
@@ -725,7 +728,9 @@
           "$ref": "#/definitions/ParsedFunction",
           "description": "A function that takes data and outputs an array of {[key: string]: ValueItem | {...}}"
         },
-        "renderer": {},
+        "renderer": {
+          "$ref": "#/definitions/AllRenderItems"
+        },
         "conditionalRender": {
           "$ref": "#/definitions/ParsedFunction"
         }
@@ -1138,7 +1143,7 @@
           "description": "A function that takes data and outputs an array of {[key: string]: ValueItem | {...}}"
         },
         "renderer": {
-          "$ref": "#/definitions/RenderTableRowItem"
+          "$ref": "#/definitions/AllRenderItems"
         },
         "conditionalRender": {
           "$ref": "#/definitions/ParsedFunction"
@@ -1322,7 +1327,7 @@
           "description": "A function that takes data and outputs an array of {[key: string]: ValueItem | {...}}"
         },
         "renderer": {
-          "$ref": "#/definitions/RenderAbsoluteItem"
+          "$ref": "#/definitions/AllRenderItems"
         },
         "conditionalRender": {
           "$ref": "#/definitions/ParsedFunction"
@@ -1457,6 +1462,49 @@
         "supertype",
         "type",
         "children"
+      ],
+      "additionalProperties": false
+    },
+    "RenderSegmentItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "render"
+        },
+        "type": {
+          "type": "string",
+          "const": "segment"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        },
+        "children": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AllRenderItems"
+              }
+            },
+            {
+              "$ref": "#/definitions/AllSourceItems"
+            }
+          ]
+        },
+        "variant": {
+          "type": "string",
+          "enum": [
+            "elevation",
+            "outlined"
+          ]
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "children",
+        "variant"
       ],
       "additionalProperties": false
     }

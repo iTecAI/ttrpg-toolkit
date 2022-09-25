@@ -14,6 +14,7 @@ import {
     RenderAbsoluteItem,
     RenderAccordionItem,
     RenderCardItem,
+    RenderSegmentItem,
 } from "../types/renderTypes";
 import {
     Accordion,
@@ -27,6 +28,7 @@ import {
     CardMedia,
     Chip,
     Divider,
+    Paper,
     Stack,
     Table,
     TableBody,
@@ -68,6 +70,7 @@ export default class MuiRenderParser<
         card: this.renderCard,
         "absolute-container": this.renderAbsoluteContainer,
         absolute: this.renderAbsoluteItem,
+        segment: this.renderSegmentItem,
     };
 
     private iconMap = {
@@ -366,6 +369,17 @@ export default class MuiRenderParser<
             >
                 {children}
             </Box>
+        );
+    }
+
+    renderSegmentItem(
+        children: JSX.Element[],
+        object: RenderSegmentItem
+    ): JSX.Element {
+        return (
+            <Paper variant={object.variant} className="modoc_mui-segment">
+                {children}
+            </Paper>
         );
     }
 }

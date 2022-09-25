@@ -144,6 +144,14 @@ export type RenderCardItem = {
     };
 };
 
+export type RenderSegmentItem = {
+    supertype: "render";
+    type: "segment";
+    conditionalRender?: ParsedFunction;
+    children: AllRenderItems[] | AllSourceItems;
+    variant: "elevation" | "outlined";
+};
+
 export type RenderAbsoluteItem = {
     supertype: "render";
     type: "absolute";

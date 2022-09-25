@@ -25,6 +25,28 @@
         },
         "alt": "$data:name"
     },
-    "briefContents": [],
+    "briefContents": [
+        {
+            "supertype": "render",
+            "type": "segment",
+            "variant": "outlined",
+            "children": {
+                "supertype": "source",
+                "type": "generator",
+                "function": {
+                    "function": "$file:functions/get_subclasses.js:lines",
+                    "opts": {
+                        "subs": "$data:subclasses"
+                    }
+                },
+                "renderer": {
+                    "supertype": "render",
+                    "type": "chip",
+                    "filled": true,
+                    "text": "$data:name"
+                }
+            }
+        }
+    ],
     "fullContents": {}
 }

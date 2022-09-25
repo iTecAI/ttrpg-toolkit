@@ -13,6 +13,7 @@ import {
     RenderAbsoluteItem,
     RenderAccordionItem,
     RenderCardItem,
+    RenderSegmentItem,
 } from "./renderTypes";
 
 export type Literal = string | number | boolean | null | undefined;
@@ -88,7 +89,7 @@ export type GeneratorSourceItem<T = AllRenderItems> = {
      * @type {string}
      */
     function: ParsedFunction;
-    renderer: T;
+    renderer: AllRenderItems;
     conditionalRender?: ParsedFunction;
 };
 
@@ -120,7 +121,8 @@ export type AllRenderItems =
     | RenderAbsoluteContainerItem
     | RenderAbsoluteItem
     | RenderAccordionItem
-    | RenderCardItem;
+    | RenderCardItem
+    | RenderSegmentItem;
 export type AllSourceItems<T = any> =
     | ListSourceItem<T>
     | GeneratorSourceItem<T>;

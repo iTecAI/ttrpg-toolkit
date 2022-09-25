@@ -321,27 +321,28 @@ export function Compendium() {
             Object.keys(currentPlugin.data_source?.categories).includes(
                 category
             ) ? (
-                <Masonry
-                    columns={4}
-                    spacing={1}
-                    className="compendium-item-container"
-                >
-                    {searchResults.map(
-                        (r) =>
-                            currentPlugin.data_source?.categories[category]
-                                .renderer && (
-                                <CompendiumItemRenderer
-                                    data={r}
-                                    renderer={
-                                        currentPlugin.data_source?.categories[
-                                            category
-                                        ].renderer
-                                    }
-                                    key={Math.random()}
-                                />
-                            )
-                    )}
-                </Masonry>
+                <div className="compendium-item-scroller">
+                    <Masonry
+                        columns={4}
+                        spacing={1}
+                        className="compendium-item-container"
+                    >
+                        {searchResults.map(
+                            (r) =>
+                                currentPlugin.data_source?.categories[category]
+                                    .renderer && (
+                                    <CompendiumItemRenderer
+                                        data={r}
+                                        renderer={
+                                            currentPlugin.data_source
+                                                ?.categories[category].renderer
+                                        }
+                                        key={Math.random()}
+                                    />
+                                )
+                        )}
+                    </Masonry>
+                </div>
             ) : (
                 <></>
             )}
