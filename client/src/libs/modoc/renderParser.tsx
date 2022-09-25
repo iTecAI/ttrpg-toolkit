@@ -195,7 +195,7 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
     render(): JSX.Element {
         if (this.renderer.conditionalRender) {
             if (!this.execParsedFunction(this.renderer.conditionalRender)) {
-                return <span />;
+                return <span key={Math.random()} />;
             }
         }
         if (this.renderer.supertype === "render") {

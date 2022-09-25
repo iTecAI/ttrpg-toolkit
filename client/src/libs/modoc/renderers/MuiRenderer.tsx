@@ -189,9 +189,20 @@ export default class MuiRenderParser<
     renderStack(children: JSX.Element[], object: RenderStackItem): JSX.Element {
         return (
             <Stack
-                className="modoc_mui-stack"
+                className={
+                    "modoc_mui-stack" +
+                    (object.direction === "horizontal" ? " row" : " column")
+                }
                 direction={object.direction === "horizontal" ? "row" : "column"}
                 spacing={object.spacing || 2}
+                sx={{
+                    "& > *": {
+                        width:
+                            object.direction === "horizontal"
+                                ? `calc(100% / ${children.length})`
+                                : undefined,
+                    },
+                }}
             >
                 {children}
             </Stack>
