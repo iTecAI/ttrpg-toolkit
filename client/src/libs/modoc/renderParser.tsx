@@ -33,7 +33,7 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
      */
     public renderers: {
         [key: string]: (
-            children: JSX.Element[],
+            children: (JSX.Element | null)[],
             object: AllRenderItems
         ) => JSX.Element;
     } = {};
@@ -192,10 +192,10 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
      * Renders using current data and renderer
      * @returns JSX Element
      */
-    render(): JSX.Element {
+    render(): JSX.Element | null {
         if (this.renderer.conditionalRender) {
             if (!this.execParsedFunction(this.renderer.conditionalRender)) {
-                return <span key={Math.random()} />;
+                return null;
             }
         }
         if (this.renderer.supertype === "render") {

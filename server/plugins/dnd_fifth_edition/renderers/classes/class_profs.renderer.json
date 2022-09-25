@@ -1,0 +1,191 @@
+{
+    "supertype": "render",
+    "type": "stack",
+    "direction": "vertical",
+    "spacing": 2,
+    "children": [
+        {
+            "supertype": "render",
+            "type": "card",
+            "conditionalRender": {
+                "function": "(opts) => Boolean(opts.item) ? opts.item.length > 0 : false",
+                "opts": {
+                    "item": "$data:save_proficiency"
+                }
+            },
+            "title": {
+                "title": "Save Proficiencies",
+                "icon": {
+                    "type": "icon",
+                    "icon": "md.MdShield"
+                }
+            },
+            "children": {
+                "supertype": "source",
+                "type": "list",
+                "source": "save_proficiency",
+                "renderer": {
+                    "supertype": "render",
+                    "type": "chip",
+                    "filled": true,
+                    "text": {
+                        "supertype": "value",
+                        "type": "function",
+                        "function": "$file:functions/capitalize.js:lines",
+                        "opts": {
+                            "name": "$self"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "supertype": "render",
+            "type": "group",
+            "conditionalRender": {
+                "function": "(opts) => Boolean(opts.item) ? opts.item.length > 0 : false",
+                "opts": {
+                    "item": "$data:skill_proficiency"
+                }
+            },
+            "children": {
+                "supertype": "source",
+                "type": "generator",
+                "function": {
+                    "function": "$file:functions/parse_skill_array.js:lines",
+                    "opts": {
+                        "skills": "$data:skill_proficiency"
+                    }
+                },
+                "renderer": {
+                    "supertype": "render",
+                    "type": "card",
+                    "title": {
+                        "title": "Skill Proficiencies",
+                        "icon": {
+                            "type": "icon",
+                            "icon": "md.MdStar"
+                        },
+                        "subtitle": "$data:sub"
+                    },
+                    "children": {
+                        "supertype": "source",
+                        "type": "list",
+                        "source": "choices",
+                        "renderer": {
+                            "supertype": "render",
+                            "type": "chip",
+                            "filled": true,
+                            "text": "$self"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "supertype": "render",
+            "type": "card",
+            "conditionalRender": {
+                "function": "(opts) => Boolean(opts.item) ? opts.item.length > 0 : false",
+                "opts": {
+                    "item": "$data:weapon_proficiency"
+                }
+            },
+            "title": {
+                "title": "Weapon Proficiencies",
+                "icon": {
+                    "type": "icon",
+                    "icon": "gi.GiBroadsword"
+                }
+            },
+            "children": {
+                "supertype": "source",
+                "type": "list",
+                "source": "weapon_proficiency",
+                "renderer": {
+                    "supertype": "render",
+                    "type": "chip",
+                    "filled": true,
+                    "text": {
+                        "supertype": "value",
+                        "type": "function",
+                        "function": "$file:functions/capitalize.js:lines",
+                        "opts": {
+                            "name": "$self"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "supertype": "render",
+            "type": "card",
+            "conditionalRender": {
+                "function": "(opts) => Boolean(opts.item) ? opts.item.length > 0 : false",
+                "opts": {
+                    "item": "$data:armor_proficiency"
+                }
+            },
+            "title": {
+                "title": "Armor Proficiencies",
+                "icon": {
+                    "type": "icon",
+                    "icon": "gi.GiCapeArmor"
+                }
+            },
+            "children": {
+                "supertype": "source",
+                "type": "list",
+                "source": "armor_proficiency",
+                "renderer": {
+                    "supertype": "render",
+                    "type": "chip",
+                    "filled": true,
+                    "text": {
+                        "supertype": "value",
+                        "type": "function",
+                        "function": "$file:functions/capitalize.js:lines",
+                        "opts": {
+                            "name": "$self"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "supertype": "render",
+            "type": "card",
+            "conditionalRender": {
+                "function": "(opts) => Boolean(opts.item) ? opts.item.length > 0 : false",
+                "opts": {
+                    "item": "$data:tool_proficiency"
+                }
+            },
+            "title": {
+                "title": "Tool Proficiencies",
+                "icon": {
+                    "type": "icon",
+                    "icon": "gi.GiHammerNails"
+                }
+            },
+            "children": {
+                "supertype": "source",
+                "type": "list",
+                "source": "tool_proficiency",
+                "renderer": {
+                    "supertype": "render",
+                    "type": "chip",
+                    "filled": true,
+                    "text": {
+                        "supertype": "value",
+                        "type": "function",
+                        "function": "$file:functions/capitalize.js:lines",
+                        "opts": {
+                            "name": "$self"
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

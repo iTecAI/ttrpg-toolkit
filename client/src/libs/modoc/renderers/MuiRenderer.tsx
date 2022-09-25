@@ -55,7 +55,10 @@ export default class MuiRenderParser<
     T extends AllRenderItems = AllRenderItems
 > extends RenderParser<T> {
     public renderers: {
-        [key: string]: (children: JSX.Element[], object: any) => JSX.Element;
+        [key: string]: (
+            children: (JSX.Element | null)[],
+            object: any
+        ) => JSX.Element;
     } = {
         group: this.renderGroup,
         text: this.renderText,
@@ -117,11 +120,14 @@ export default class MuiRenderParser<
         }
     }
 
-    renderGroup(children: JSX.Element[], _: RenderGroupItem): JSX.Element {
+    renderGroup(
+        children: (JSX.Element | null)[],
+        _: RenderGroupItem
+    ): JSX.Element {
         return <div className="modoc_mui-group">{children}</div>;
     }
 
-    renderText(_: JSX.Element[], object: RenderTextItem): JSX.Element {
+    renderText(_: (JSX.Element | null)[], object: RenderTextItem): JSX.Element {
         const style = {
             fontWeight: object.style.includes("bold") ? 400 : undefined,
             textDecorationLine: [
@@ -152,7 +158,7 @@ export default class MuiRenderParser<
     }
 
     renderDivider(
-        children: JSX.Element[],
+        children: (JSX.Element | null)[],
         object: RenderDividerItem
     ): JSX.Element {
         return (
@@ -171,7 +177,7 @@ export default class MuiRenderParser<
         );
     }
 
-    renderChip(_: JSX.Element[], object: RenderChipItem): JSX.Element {
+    renderChip(_: (JSX.Element | null)[], object: RenderChipItem): JSX.Element {
         let avatar: JSX.Element | undefined = undefined;
         if (object.avatar) {
             avatar = this._renderAvatar(object.avatar);
@@ -186,7 +192,10 @@ export default class MuiRenderParser<
         );
     }
 
-    renderStack(children: JSX.Element[], object: RenderStackItem): JSX.Element {
+    renderStack(
+        children: (JSX.Element | null)[],
+        object: RenderStackItem
+    ): JSX.Element {
         return (
             <Stack
                 className={
@@ -209,7 +218,10 @@ export default class MuiRenderParser<
         );
     }
 
-    renderList(children: JSX.Element[], object: RenderListItem): JSX.Element {
+    renderList(
+        children: (JSX.Element | null)[],
+        object: RenderListItem
+    ): JSX.Element {
         const items: JSX.Element[] = children.map((c) => (
             <li className="modoc_mui-list-item">{c}</li>
         ));
@@ -234,7 +246,10 @@ export default class MuiRenderParser<
         }
     }
 
-    renderMarkdown(_: JSX.Element[], object: RenderMarkdownItem): JSX.Element {
+    renderMarkdown(
+        _: (JSX.Element | null)[],
+        object: RenderMarkdownItem
+    ): JSX.Element {
         let text: string;
         if (isArray(object.text)) {
             text = object.text.map(this.parseValueItem).join("\n");
@@ -249,7 +264,10 @@ export default class MuiRenderParser<
         );
     }
 
-    renderTable(children: JSX.Element[], object: RenderTableItem): JSX.Element {
+    renderTable(
+        children: (JSX.Element | null)[],
+        object: RenderTableItem
+    ): JSX.Element {
         return (
             <Table className="modoc_mui-table">
                 <TableHead>
@@ -270,12 +288,12 @@ export default class MuiRenderParser<
     }
 
     renderTableRow(
-        children: JSX.Element[],
+        children: (JSX.Element | null)[],
         _: RenderTableRowItem
     ): JSX.Element {
         return (
             <TableRow className="table-row">
-                {children.map((cell: JSX.Element) => (
+                {children.map((cell: JSX.Element | null) => (
                     <TableCell className="table-cell" key={Math.random()}>
                         {cell}
                     </TableCell>
@@ -285,7 +303,7 @@ export default class MuiRenderParser<
     }
 
     renderAccordion(
-        children: JSX.Element[],
+        children: (JSX.Element | null)[],
         object: RenderAccordionItem
     ): JSX.Element {
         let icon: JSX.Element | undefined = undefined;
@@ -314,7 +332,7 @@ export default class MuiRenderParser<
         );
     }
 
-    renderCard(children: JSX.Element[], object: RenderCardItem) {
+    renderCard(children: (JSX.Element | null)[], object: RenderCardItem) {
         let icon: JSX.Element | undefined = undefined;
         if (object.title && object.title.icon) {
             icon = this._renderAvatar(object.title.icon);
@@ -349,7 +367,7 @@ export default class MuiRenderParser<
     }
 
     renderAbsoluteContainer(
-        children: JSX.Element[],
+        children: (JSX.Element | null)[],
         object: RenderAbsoluteContainerItem
     ): JSX.Element {
         return (
@@ -364,7 +382,7 @@ export default class MuiRenderParser<
     }
 
     renderAbsoluteItem(
-        children: JSX.Element[],
+        children: (JSX.Element | null)[],
         object: RenderAbsoluteItem
     ): JSX.Element {
         return (
@@ -384,7 +402,7 @@ export default class MuiRenderParser<
     }
 
     renderSegmentItem(
-        children: JSX.Element[],
+        children: (JSX.Element | null)[],
         object: RenderSegmentItem
     ): JSX.Element {
         return (

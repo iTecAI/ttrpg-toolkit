@@ -1,0 +1,156 @@
+{
+    "supertype": "render",
+    "type": "stack",
+    "direction": "vertical",
+    "spacing": 2,
+    "children": [
+        {
+            "supertype": "render",
+            "type": "group",
+            "conditionalRender": {
+                "function": "(opts) => Boolean(opts.item)",
+                "opts": {
+                    "item": "$data:multiclass_skill_proficiency"
+                }
+            },
+            "children": {
+                "supertype": "source",
+                "type": "generator",
+                "function": {
+                    "function": "$file:functions/parse_skill_array.js:lines",
+                    "opts": {
+                        "skills": "$data:multiclass_skill_proficiency"
+                    }
+                },
+                "renderer": {
+                    "supertype": "render",
+                    "type": "card",
+                    "title": {
+                        "title": "Multiclass Skill Proficiencies",
+                        "icon": {
+                            "type": "icon",
+                            "icon": "md.MdStar"
+                        },
+                        "subtitle": "$data:sub"
+                    },
+                    "children": {
+                        "supertype": "source",
+                        "type": "list",
+                        "source": "choices",
+                        "renderer": {
+                            "supertype": "render",
+                            "type": "chip",
+                            "filled": true,
+                            "text": "$self"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "supertype": "render",
+            "type": "card",
+            "conditionalRender": {
+                "function": "(opts) => Boolean(opts.item) ? opts.item.length > 0 : false",
+                "opts": {
+                    "item": "$data:multiclass_weapon_proficiency"
+                }
+            },
+            "title": {
+                "title": "Multiclass Weapon Proficiencies",
+                "icon": {
+                    "type": "icon",
+                    "icon": "gi.GiBroadsword"
+                }
+            },
+            "children": {
+                "supertype": "source",
+                "type": "list",
+                "source": "multiclass_weapon_proficiency",
+                "renderer": {
+                    "supertype": "render",
+                    "type": "chip",
+                    "filled": true,
+                    "text": {
+                        "supertype": "value",
+                        "type": "function",
+                        "function": "$file:functions/capitalize.js:lines",
+                        "opts": {
+                            "name": "$self"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "supertype": "render",
+            "type": "card",
+            "conditionalRender": {
+                "function": "(opts) => Boolean(opts.item) ? opts.item.length > 0 : false",
+                "opts": {
+                    "item": "$data:multiclass_armor_proficiency"
+                }
+            },
+            "title": {
+                "title": "Multiclass Armor Proficiencies",
+                "icon": {
+                    "type": "icon",
+                    "icon": "gi.GiCapeArmor"
+                }
+            },
+            "children": {
+                "supertype": "source",
+                "type": "list",
+                "source": "multiclass_armor_proficiency",
+                "renderer": {
+                    "supertype": "render",
+                    "type": "chip",
+                    "filled": true,
+                    "text": {
+                        "supertype": "value",
+                        "type": "function",
+                        "function": "$file:functions/capitalize.js:lines",
+                        "opts": {
+                            "name": "$self"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "supertype": "render",
+            "type": "card",
+            "conditionalRender": {
+                "function": "(opts) => Boolean(opts.item) ? opts.item.length > 0 : false",
+                "opts": {
+                    "item": "$data:multiclass_tool_proficiency"
+                }
+            },
+            "title": {
+                "title": "Multiclass Tool Proficiencies",
+                "icon": {
+                    "type": "icon",
+                    "icon": "gi.GiHammerNails"
+                }
+            },
+            "children": {
+                "supertype": "source",
+                "type": "list",
+                "source": "multiclass_tool_proficiency",
+                "renderer": {
+                    "supertype": "render",
+                    "type": "chip",
+                    "filled": true,
+                    "text": {
+                        "supertype": "value",
+                        "type": "function",
+                        "function": "$file:functions/capitalize.js:lines",
+                        "opts": {
+                            "name": "$self"
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

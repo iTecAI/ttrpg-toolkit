@@ -21,7 +21,9 @@ export function ModularRenderer(props: ModularRendererProps) {
     const [parser] = useState<RenderParser<any>>(
         new props.parser(props.data, props.renderer)
     );
-    const [rendered, setRendered] = useState<JSX.Element>(parser.render());
+    const [rendered, setRendered] = useState<JSX.Element | null>(
+        parser.render()
+    );
 
     useEffect(() => {
         parser.setData(props.data);
