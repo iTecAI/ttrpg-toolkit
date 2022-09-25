@@ -426,63 +426,7 @@
           "type": "boolean"
         },
         "avatar": {
-          "anyOf": [
-            {
-              "type": "object",
-              "properties": {
-                "type": {
-                  "type": "string",
-                  "const": "icon"
-                },
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "type",
-                "name"
-              ],
-              "additionalProperties": false
-            },
-            {
-              "type": "object",
-              "properties": {
-                "type": {
-                  "type": "string",
-                  "const": "text"
-                },
-                "text": {
-                  "$ref": "#/definitions/ValueItem"
-                }
-              },
-              "required": [
-                "type",
-                "text"
-              ],
-              "additionalProperties": false
-            },
-            {
-              "type": "object",
-              "properties": {
-                "type": {
-                  "type": "string",
-                  "const": "image"
-                },
-                "source": {
-                  "$ref": "#/definitions/ValueItem"
-                },
-                "alt": {
-                  "$ref": "#/definitions/ValueItem"
-                }
-              },
-              "required": [
-                "type",
-                "source",
-                "alt"
-              ],
-              "additionalProperties": false
-            }
-          ]
+          "$ref": "#/definitions/AvatarType"
         }
       },
       "required": [
@@ -492,6 +436,102 @@
         "filled"
       ],
       "additionalProperties": false
+    },
+    "AvatarType": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "text"
+            },
+            "text": {
+              "$ref": "#/definitions/ValueItem"
+            }
+          },
+          "required": [
+            "type",
+            "text"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "icon"
+            },
+            "icon": {
+              "$ref": "#/definitions/IconType"
+            }
+          },
+          "required": [
+            "type",
+            "icon"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "image"
+            },
+            "source": {
+              "$ref": "#/definitions/ValueItem"
+            },
+            "alt": {
+              "$ref": "#/definitions/ValueItem"
+            }
+          },
+          "required": [
+            "type",
+            "source",
+            "alt"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "IconType": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "family": {
+              "$ref": "#/definitions/IconFamily"
+            },
+            "name": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/ValueItem"
+                }
+              ]
+            }
+          },
+          "required": [
+            "family",
+            "name"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "$ref": "#/definitions/ValueItem"
+        }
+      ]
+    },
+    "IconFamily": {
+      "type": "string",
+      "enum": [
+        "md",
+        "gi"
+      ]
     },
     "RenderListItem": {
       "type": "object",
@@ -1002,46 +1042,7 @@
           "$ref": "#/definitions/ValueItem"
         },
         "icon": {
-          "anyOf": [
-            {
-              "type": "object",
-              "properties": {
-                "type": {
-                  "type": "string",
-                  "const": "icon"
-                },
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "type",
-                "name"
-              ],
-              "additionalProperties": false
-            },
-            {
-              "type": "object",
-              "properties": {
-                "type": {
-                  "type": "string",
-                  "const": "image"
-                },
-                "source": {
-                  "$ref": "#/definitions/ValueItem"
-                },
-                "alt": {
-                  "$ref": "#/definitions/ValueItem"
-                }
-              },
-              "required": [
-                "type",
-                "source",
-                "alt"
-              ],
-              "additionalProperties": false
-            }
-          ]
+          "$ref": "#/definitions/AvatarType"
         },
         "maxHeight": {
           "type": "number"
@@ -1099,46 +1100,7 @@
               "$ref": "#/definitions/ValueItem"
             },
             "icon": {
-              "anyOf": [
-                {
-                  "type": "object",
-                  "properties": {
-                    "type": {
-                      "type": "string",
-                      "const": "icon"
-                    },
-                    "name": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "type",
-                    "name"
-                  ],
-                  "additionalProperties": false
-                },
-                {
-                  "type": "object",
-                  "properties": {
-                    "type": {
-                      "type": "string",
-                      "const": "image"
-                    },
-                    "source": {
-                      "$ref": "#/definitions/ValueItem"
-                    },
-                    "alt": {
-                      "$ref": "#/definitions/ValueItem"
-                    }
-                  },
-                  "required": [
-                    "type",
-                    "source",
-                    "alt"
-                  ],
-                  "additionalProperties": false
-                }
-              ]
+              "$ref": "#/definitions/AvatarType"
             }
           },
           "required": [

@@ -6,7 +6,7 @@ import { ValueItem } from "../types";
 import { parseValueItem } from "../util";
 
 export const iconMap = { md: MdReactIcons, gi: GiReactIcons };
-export type IconFamily = keyof typeof iconMap;
+export type IconFamily = "md" | "gi";
 type IconExpanded = {
     family: IconFamily;
     name: string | ValueItem;

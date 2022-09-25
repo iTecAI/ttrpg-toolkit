@@ -18,7 +18,7 @@ export type CompendiumItem = {
         alt: ValueItem;
     };
     briefContents: AllRenderItems[] | AllSourceItems;
-    fullContents: AllRenderItems[] | AllSourceItems;
+    fullContents: AllRenderItems;
 };
 
 export type DataItem = {
