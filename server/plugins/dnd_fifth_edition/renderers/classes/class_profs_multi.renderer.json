@@ -8,11 +8,48 @@
             "skill": "$data:multiclass_skill_proficiency",
             "armor": "$data:multiclass_armor_proficiency",
             "weapon": "$data:multiclass_weapon_proficiency",
-            "tool": "$data:multiclass_tool_proficiency"
+            "tool": "$data:multiclass_tool_proficiency",
+            "requirements": "$data:multiclass_requirements"
         }
     },
     "spacing": 2,
     "children": [
+        {
+            "supertype": "render",
+            "type": "card",
+            "variant": "outlined",
+            "title": {
+                "title": "Multiclassing Requirements",
+                "icon": {
+                    "type": "icon",
+                    "icon": "md.MdInfo"
+                }
+            },
+            "children": {
+                "supertype": "source",
+                "type": "generator",
+                "function": {
+                    "function": "$file:functions/parse_multi_ability_reqs.js:lines",
+                    "opts": {
+                        "reqs": "$data:multiclass_requirements"
+                    }
+                },
+                "renderer": {
+                    "supertype": "render",
+                    "type": "chip",
+                    "filled": true,
+                    "text": {
+                        "supertype": "value",
+                        "type": "text",
+                        "content": "{{name}}: {{amount}}",
+                        "substitutions": {
+                            "name": "$data:name",
+                            "amount": "$data:value"
+                        }
+                    }
+                }
+            }
+        },
         {
             "supertype": "render",
             "type": "group",
