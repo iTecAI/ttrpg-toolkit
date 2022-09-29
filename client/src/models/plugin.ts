@@ -54,23 +54,21 @@ export type DiceModel = {
 };
 
 // Data Source
+export type SearchField = {
+    field: string | string[];
+    type: "string" | "number" | "boolean" | "select";
+    label: string;
+};
+
 export type DataSourceCategory = {
-    search_model: string;
     display_name: string;
-    display_mode: "itemized" | "hierarchy";
-    load: string;
-    search: string;
-    search_fields: {
-        type: string;
-        display_name: string;
-    }[];
+    search_fields: { [key: string]: SearchField };
+    files: string[];
     renderer: CompendiumItem;
 };
 
 export type DataSource = {
     kwargs: { [key: string]: any };
-    source_map: { [key: string]: any };
-    loader: string[];
     default_category: string;
     categories: { [key: string]: DataSourceCategory };
 };

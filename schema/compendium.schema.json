@@ -188,6 +188,9 @@
         },
         "source": {
           "type": "string"
+        },
+        "default": {
+          "$ref": "#/definitions/ValueItem"
         }
       },
       "required": [

@@ -183,15 +183,6 @@
         "kwargs": {
           "type": "object"
         },
-        "source_map": {
-          "type": "object"
-        },
-        "loader": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
         "default_category": {
           "type": "string"
         },
@@ -204,8 +195,6 @@
       },
       "required": [
         "kwargs",
-        "source_map",
-        "loader",
         "default_category",
         "categories"
       ],
@@ -214,42 +203,19 @@
     "DataSourceCategory": {
       "type": "object",
       "properties": {
-        "search_model": {
-          "type": "string"
-        },
         "display_name": {
           "type": "string"
         },
-        "display_mode": {
-          "type": "string",
-          "enum": [
-            "itemized",
-            "hierarchy"
-          ]
-        },
-        "load": {
-          "type": "string"
-        },
-        "search": {
-          "type": "string"
-        },
         "search_fields": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/SearchField"
+          }
+        },
+        "files": {
           "type": "array",
           "items": {
-            "type": "object",
-            "properties": {
-              "type": {
-                "type": "string"
-              },
-              "display_name": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "type",
-              "display_name"
-            ],
-            "additionalProperties": false
+            "type": "string"
           }
         },
         "renderer": {
@@ -257,13 +223,46 @@
         }
       },
       "required": [
-        "search_model",
         "display_name",
-        "display_mode",
-        "load",
-        "search",
         "search_fields",
+        "files",
         "renderer"
+      ],
+      "additionalProperties": false
+    },
+    "SearchField": {
+      "type": "object",
+      "properties": {
+        "field": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "string",
+            "number",
+            "boolean",
+            "select"
+          ]
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "field",
+        "type",
+        "label"
       ],
       "additionalProperties": false
     },
@@ -453,6 +452,9 @@
         },
         "source": {
           "type": "string"
+        },
+        "default": {
+          "$ref": "#/definitions/ValueItem"
         }
       },
       "required": [

@@ -1,0 +1,55 @@
+{
+    "plugin_data": {
+        "slug": "dnd_fifth_edition",
+        "display_name": "D&D 5e",
+        "tags": [
+            "system",
+            "character_sheet",
+            "character_loader",
+            "npc_source",
+            "npc_builder",
+            "data_source",
+            "assets"
+        ],
+        "dependencies": ["d20_dice"]
+    },
+    "entrypoints": {
+        "data": {
+            "file": "data_source.py",
+            "exports": ["DataLoader5e"]
+        }
+    },
+    "data_source": {
+        "kwargs": {},
+        "default_category": "class",
+        "categories": {
+            "class": {
+                "display_name": "Classes",
+                "renderer": "$sub:renderers/classes/class.compendium.json",
+                "files": ["data/classes/*.json5"],
+                "search_fields": {
+                    "name": {
+                        "field": "name",
+                        "label": "Class Name",
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    "assets": {
+        "artificer": "assets/artificer.jpeg",
+        "barbarian": "assets/barbarian.jpeg",
+        "bard": "assets/bard.jpeg",
+        "cleric": "assets/cleric.jpeg",
+        "druid": "assets/druid.jpeg",
+        "fighter": "assets/fighter.jpeg",
+        "monk": "assets/monk.jpeg",
+        "paladin": "assets/paladin.jpeg",
+        "ranger": "assets/ranger.jpeg",
+        "rogue": "assets/rogue.jpeg",
+        "sorcerer": "assets/sorcerer.jpeg",
+        "warlock": "assets/warlock.jpeg",
+        "wizard": "assets/wizard.jpeg"
+    }
+}
