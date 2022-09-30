@@ -11,6 +11,8 @@ def get_nested(data: Dict[Any, Any], path: List[Any]) -> Any:
             current = current[key]
         except KeyError:
             raise KeyError(f"Failed to get nested key {key}")
+        except TypeError:
+            raise KeyError(f"Failed to get nested key {key}")
     return current
 
 

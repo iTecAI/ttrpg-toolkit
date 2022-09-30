@@ -32,6 +32,16 @@
                         "field": "name",
                         "label": "Class Name",
                         "type": "string"
+                    },
+                    "source": {
+                        "field": "source",
+                        "label": "Source",
+                        "type": "select"
+                    },
+                    "spellcasting_ability": {
+                        "field": "spellcasting.ability",
+                        "label": "Spellcasting Ability",
+                        "type": "select"
                     }
                 }
             }

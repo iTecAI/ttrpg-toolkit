@@ -15,18 +15,18 @@ from starlette.responses import Response as StarletteResponse
 from starlette.status import HTTP_500_INTERNAL_SERVER_ERROR
 
 CONF = Config()
-PLUG = PluginLoader(CONF["plugins"])
+mncli = MongoClient(
+    host=CONF["database"]["host"],
+    port=CONF["database"]["port"],
+    username=CONF["database"]["username"],
+    password=CONF["database"]["password"],
+    tls=CONF["database"]["tls"],
+)
+PLUG = PluginLoader(CONF["plugins"], mncli[CONF["database"]["database"]])
 
 
 def setup_state(state: State):
     state.config = CONF
-    mncli = MongoClient(
-        host=state.config["database"]["host"],
-        port=state.config["database"]["port"],
-        username=state.config["database"]["username"],
-        password=state.config["database"]["password"],
-        tls=state.config["database"]["tls"],
-    )
     state.database = mncli[state.config["database"]["database"]]
     state.plugins = PLUG
 
