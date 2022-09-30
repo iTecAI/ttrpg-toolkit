@@ -1,5 +1,5 @@
 {
-    slug: "ranger (spell-less)-uamodifyingclasses",
+    slug: "ranger__spell_less__uamodifyingclasses",
     name: "Ranger (Spell-less)",
     source: "UAModifyingClasses",
     hit_dice: "1d10",

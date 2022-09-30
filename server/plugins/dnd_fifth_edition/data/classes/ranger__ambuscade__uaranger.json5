@@ -1,5 +1,5 @@
 {
-    slug: "ranger (ambuscade)-uaranger",
+    slug: "ranger__ambuscade__uaranger",
     name: "Ranger (Ambuscade)",
     source: "UARanger",
     hit_dice: "2d6",

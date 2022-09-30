@@ -1,8 +1,10 @@
 import os
 from typing import Any, Dict, List, Optional
+from unicodedata import category
 from pydantic import BaseModel
 from starlite import Controller, State, get, post, Provide
 from starlite.types import Guard
+from models import DataSearchModel
 from util import (
     guard_loggedIn,
     PluginLoader,
@@ -10,6 +12,7 @@ from util import (
     exceptions,
     plugin_dep,
     Plugin,
+    guard_isDataSource,
 )
 from util.plugin_utils import SearchModel
 from models import Session
@@ -17,6 +20,7 @@ from enum import Enum
 from starlette.status import *
 from starlite.datastructures import File
 import mimetypes
+from pymongo.collection import Collection
 
 
 class PluginModel(BaseModel):
@@ -77,6 +81,12 @@ class PluginNotFoundError(exceptions.BaseHTTPException):
 class AssetNotFoundError(exceptions.BaseHTTPException):
     message: str = "Asset not found"
     message_class: str = "error.plugin.asset_not_found"
+    status_code: int = HTTP_404_NOT_FOUND
+
+
+class CategoryNotFoundError(exceptions.BaseHTTPException):
+    message: str = "Category not found"
+    message_class: str = "error.plugin.category_not_found"
     status_code: int = HTTP_404_NOT_FOUND
 
 
@@ -164,57 +174,49 @@ class PluginController(Controller):
 
 
 class DataLoadModel(BaseModel):
-    items: List[Any]
+    category: str
+    items: List[str]
 
 
 class PluginDataSourceController(Controller):
     path: str = "/plugins/{plugin:str}/data"
-    guards: Optional[List[Guard]] = []
+    guards: Optional[List[Guard]] = [guard_isDataSource]
     dependencies: Optional[Dict[str, "Provide"]] = {
         "session": Provide(session_dep),
         "plugin_object": Provide(plugin_dep),
     }
 
-    @post("/{category:str}/search/minimal", status_code=HTTP_200_OK)
-    async def search_category_minimal(
+    @post("/search", status_code=HTTP_200_OK)
+    async def search(
         self,
         plugin_object: Plugin,
-        category: str,
-        data: SearchModel,
+        data: DataSearchModel,
     ) -> List[Any]:
-        return plugin_object.search_data(data, category)
+        return plugin_object.data_source.search(data)
 
-    @post("/{category:str}/search", status_code=HTTP_200_OK)
-    async def search_category(
+    @post("/load", status_code=HTTP_200_OK)
+    async def load_data(
         self,
         plugin_object: Plugin,
-        category: str,
-        data: SearchModel,
-    ) -> List[Any]:
-        search_results = plugin_object.search_data(data, category)
-        results = []
-        for d in search_results:
-            item = plugin_object.load_data(d, category)
-            if type(item) == list:
-                results.extend([i.raw for i in item])
-            else:
-                results.append(item.raw)
-
-        return results
-
-    @post("/{category:str}/load", status_code=HTTP_200_OK)
-    async def load_data_from_category(
-        self,
-        plugin_object: Plugin,
-        category: str,
         data: DataLoadModel,
-    ) -> List[Any]:
-        results = []
+    ) -> Dict[str, Any]:
+        results = {}
         for d in data.items:
-            item = plugin_object.load_data(d, category)
-            if type(item) == list:
-                results.extend([i.raw for i in item])
-            else:
-                results.append(item.raw)
-
+            try:
+                results[d] = plugin_object.data_source.get_by_slug(data.category, d)
+            except:
+                results[d] = None
         return results
+
+    @get("/search_params/{category:str}")
+    async def get_search_params(
+        self, plugin_object: Plugin, state: State, category: str
+    ) -> Dict[str, Any]:
+        collection: Collection = state.database["plugin_data_cache"]
+        cache = collection.find_one(
+            {"plugin": plugin_object.slug, "category": category}
+        )
+        if not cache:
+            raise CategoryNotFoundError()
+
+        return cache["searchParams"]

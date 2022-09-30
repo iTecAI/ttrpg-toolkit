@@ -1,5 +1,5 @@
 {
-    slug: "rogue-phb",
+    slug: "rogue_phb",
     name: "Rogue",
     source: "PHB",
     hit_dice: "1d8",

@@ -96,7 +96,13 @@ class DataSourceLoader:
         self.db = db
         self.cache = self.db["plugin_data_cache"]
 
-        threading.Thread(target=self.cache_searches).start()
+        if self.cache.count_documents({"plugin": self.plugin.slug}) != len(
+            self.source["categories"].keys()
+        ):
+            linfo("Mismatch between categories & cached categories. Loading synced.")
+            self.cache_searches()
+        else:
+            threading.Thread(target=self.cache_searches).start()
 
     def cache_searches(self):
         linfo(f"Caching search data for plugin {self.plugin.display_name}")
@@ -106,6 +112,7 @@ class DataSourceLoader:
                 "category": k,
                 "cache": [],
                 "idCache": {},
+                "searchParams": {},
             }
 
             files = []
@@ -133,13 +140,38 @@ class DataSourceLoader:
 
             for r in records:
                 to_add = {}
-                for fv in v["search_fields"].values():
+                for fk, fv in v["search_fields"].items():
                     if type(fv["field"]) == list:
                         fv["field"] = ".".join(fv["field"])
                     try:
-                        to_add[fv["field"]] = get_nested(r["data"], fv["field"])
+                        val = get_nested(r["data"], fv["field"])
                     except KeyError:
-                        to_add[fv["field"]] = None
+                        val = None
+                    to_add[fv["field"]] = val
+
+                    if not fk in cat["searchParams"].keys():
+                        cat["searchParams"][fk] = {}
+
+                    if val != None:
+                        try:
+                            if fv["type"] in ["string", "boolean"]:
+                                pass
+                            elif fv["type"] == "number":
+                                if not "max" in cat["searchParams"][fk].keys() or cat[
+                                    "searchParams"
+                                ][fk]["max"] < int(val):
+                                    cat["searchParams"][fk]["max"] = val
+                                if not "min" in cat["searchParams"][fk].keys() or cat[
+                                    "searchParams"
+                                ][fk]["min"] > int(val):
+                                    cat["searchParams"][fk]["min"] = val
+                            elif fv["type"] == "select":
+                                if not "choices" in cat["searchParams"][fk].keys():
+                                    cat["searchParams"][fk]["choices"] = []
+                                if not val in cat["searchParams"][fk]["choices"]:
+                                    cat["searchParams"][fk]["choices"].append(val)
+                        except:
+                            pass
 
                 to_add["_file"] = r["_file"]
                 to_add["_record"] = r["_record"]
@@ -236,7 +268,24 @@ class DataSourceLoader:
         return parsed_results
 
     def get_by_slug(self, category: str, slug: str) -> Any:
-        pass
+        if not category in self.source["categories"].keys():
+            raise ValueError("Category not found.")
+
+        cached_data = self.cache.find_one(
+            {"plugin": self.plugin.slug, "category": category}
+        )
+        if not cached_data:
+            return []
+
+        if not slug in cached_data["idCache"].keys():
+            raise KeyError(f"Slug {slug} not found in category {category}")
+
+        location = cached_data["idCache"][slug]
+        data = Config(os.path.join(self.plugin.plugin_directory, location[0]))
+        if location[1] == "self":
+            return data.data
+        else:
+            return data.data[location[1]]
 
 
 class Plugin:

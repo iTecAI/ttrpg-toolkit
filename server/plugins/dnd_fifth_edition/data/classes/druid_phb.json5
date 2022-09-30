@@ -1,5 +1,5 @@
 {
-    slug: "druid-phb",
+    slug: "druid_phb",
     name: "Druid",
     source: "PHB",
     hit_dice: "1d8",

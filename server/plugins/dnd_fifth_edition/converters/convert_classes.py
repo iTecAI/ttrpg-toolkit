@@ -146,11 +146,20 @@ def load_subclass(desc, data, optional):
     }
 
 
+def normalize_slug(slug):
+    return "".join(
+        map(
+            (lambda x: x if x in string.ascii_letters or x in string.digits else "_"),
+            slug,
+        )
+    )
+
+
 def load_one_class(
     desc: Dict[str, Any], data: Dict[str, Any], optional: Dict[str, Any]
 ) -> Dict[str, Any]:
     return {
-        "slug": desc["name"].lower() + "-" + desc["source"].lower(),
+        "slug": normalize_slug(desc["name"].lower() + "-" + desc["source"].lower()),
         "name": desc["name"],
         "source": desc["source"],
         "hit_dice": f"{desc['hd']['number']}d{desc['hd']['faces']}",
@@ -256,16 +265,7 @@ def load_classes(data_root: str, output_folder: str) -> None:
 
         for _class in raw["class"]:
             current = load_one_class(_class, raw, optional)
-            key = "".join(
-                map(
-                    (
-                        lambda x: x
-                        if x in string.ascii_letters or x in string.digits
-                        else "_"
-                    ),
-                    str(current["slug"]),
-                )
-            )
+            key = current["slug"]
             print(f"INF: Processed {key}")
             out[key] = current.copy()
 
@@ -275,4 +275,4 @@ def load_classes(data_root: str, output_folder: str) -> None:
 
 
 if __name__ == "__main__":
-    load_classes("../data", "./test_conv_data")
+    load_classes("../_data", "../data/classes")

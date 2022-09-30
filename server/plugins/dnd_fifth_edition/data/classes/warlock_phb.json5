@@ -1,5 +1,5 @@
 {
-    slug: "warlock-phb",
+    slug: "warlock_phb",
     name: "Warlock",
     source: "PHB",
     hit_dice: "1d8",

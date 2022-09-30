@@ -1,5 +1,5 @@
 {
-    slug: "sorcerer-phb",
+    slug: "sorcerer_phb",
     name: "Sorcerer",
     source: "PHB",
     hit_dice: "1d6",

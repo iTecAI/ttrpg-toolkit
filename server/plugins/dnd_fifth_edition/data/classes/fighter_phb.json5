@@ -1,5 +1,5 @@
 {
-    slug: "fighter-phb",
+    slug: "fighter_phb",
     name: "Fighter",
     source: "PHB",
     hit_dice: "1d10",

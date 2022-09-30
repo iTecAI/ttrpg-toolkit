@@ -65,3 +65,7 @@ def guard_isGameParticipant(request: Any, _: BaseRouteHandler) -> None:
 def guard_debugMode(request: Any, _: BaseRouteHandler) -> None:
     if not request.app.state.config["debug"]:
         raise DebugNotActiveError()
+
+
+def guard_isDataSource(request: Any, _: BaseRouteHandler) -> None:
+    print(request.path_params)

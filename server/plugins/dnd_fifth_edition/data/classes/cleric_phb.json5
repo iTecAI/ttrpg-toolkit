@@ -1,5 +1,5 @@
 {
-    slug: "cleric-phb",
+    slug: "cleric_phb",
     name: "Cleric",
     source: "PHB",
     hit_dice: "1d8",

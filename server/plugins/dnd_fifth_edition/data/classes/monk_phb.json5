@@ -1,5 +1,5 @@
 {
-    slug: "monk-phb",
+    slug: "monk_phb",
     name: "Monk",
     source: "PHB",
     hit_dice: "1d8",

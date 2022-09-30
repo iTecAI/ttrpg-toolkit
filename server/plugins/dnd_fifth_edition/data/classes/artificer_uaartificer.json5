@@ -1,5 +1,5 @@
 {
-    slug: "artificer-uaartificer",
+    slug: "artificer_uaartificer",
     name: "Artificer",
     source: "UAArtificer",
     hit_dice: "1d8",

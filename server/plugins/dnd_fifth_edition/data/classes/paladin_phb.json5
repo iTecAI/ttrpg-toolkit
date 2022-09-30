@@ -1,5 +1,5 @@
 {
-    slug: "paladin-phb",
+    slug: "paladin_phb",
     name: "Paladin",
     source: "PHB",
     hit_dice: "1d10",

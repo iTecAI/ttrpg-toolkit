@@ -1,5 +1,5 @@
 {
-    slug: "artificer-tce",
+    slug: "artificer_tce",
     name: "Artificer",
     source: "TCE",
     hit_dice: "1d8",

@@ -1,5 +1,5 @@
 {
-    slug: "mystic-uathemysticclass",
+    slug: "mystic_uathemysticclass",
     name: "Mystic",
     source: "UATheMysticClass",
     hit_dice: "1d8",
