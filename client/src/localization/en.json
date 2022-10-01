@@ -146,7 +146,16 @@
             "search": "Search"
         },
         "search": {
-            "title": "Search Compendium"
+            "title": "Search Compendium",
+            "exact": {
+                "title": "Exact",
+                "true": "Yes",
+                "false": "No"
+            },
+            "comp": {
+                "title": "Operator"
+            },
+            "clear": "Clear Input"
         },
         "renderer": {
             "error_title": "Error rendering {{type}}: {{errorText}}."

@@ -1,18 +1,21 @@
 {
-    slug: "druid_phb",
-    name: "Druid",
-    source: "PHB",
-    hit_dice: "1d8",
-    save_proficiency: [
+    "slug": "druid_phb",
+    "name": "Druid",
+    "source": "PHB",
+    "hit_dice": {
+        "number": 1,
+        "faces": 8
+    },
+    "save_proficiency": [
         "intelligence",
-        "wisdom",
+        "wisdom"
     ],
-    armor_proficiency: [
+    "armor_proficiency": [
         "light",
         "medium",
-        "shields",
+        "shields"
     ],
-    weapon_proficiency: [
+    "weapon_proficiency": [
         "clubs",
         "daggers",
         "darts",
@@ -22,16 +25,16 @@
         "scimitars",
         "sickles",
         "slings",
-        "spears",
+        "spears"
     ],
-    tool_proficiency: [
-        "Herbalism kit",
+    "tool_proficiency": [
+        "Herbalism kit"
     ],
-    skill_proficiency: [
+    "skill_proficiency": [
         {
-            mode: "choose",
-            count: 2,
-            choose_from: [
+            "mode": "choose",
+            "count": 2,
+            "choose_from": [
                 "arcana",
                 "animal handling",
                 "insight",
@@ -39,34 +42,34 @@
                 "nature",
                 "perception",
                 "religion",
-                "survival",
-            ],
-        },
+                "survival"
+            ]
+        }
     ],
-    starting_equipment: {
-        backgroundItems: true,
-        gold: "2d4 * 10",
-        items: [
+    "starting_equipment": {
+        "backgroundItems": true,
+        "gold": "2d4 * 10",
+        "items": [
             "(a) a wooden shield or (b) any simple weapon",
             "(a) a scimitar or (b) any simple melee weapon",
-            "Leather armor, an explorer's pack, and a druidic focus",
-        ],
+            "Leather armor, an explorer's pack, and a druidic focus"
+        ]
     },
-    multiclass_requirements: {
-        wisdom: 13,
+    "multiclass_requirements": {
+        "wisdom": 13
     },
-    multiclass_armor_proficiency: [
+    "multiclass_armor_proficiency": [
         "light",
         "medium",
-        "shields",
+        "shields"
     ],
-    multiclass_weapon_proficiency: [],
-    multiclass_tool_proficiency: [],
-    multiclass_skill_proficiency: null,
-    spellcasting: {
-        ability: "wisdom",
-        progression: "full",
-        cantrip_progression: [
+    "multiclass_weapon_proficiency": [],
+    "multiclass_tool_proficiency": [],
+    "multiclass_skill_proficiency": null,
+    "spellcasting": {
+        "ability": "wisdom",
+        "progression": "full",
+        "cantrip_progression": [
             2,
             2,
             2,
@@ -86,27 +89,27 @@
             4,
             4,
             4,
-            4,
-        ],
+            4
+        ]
     },
-    features: [
+    "features": [
         {
-            name: "Druidic",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 1,
-            entries: [
-                "You know Druidic, the secret language of druids. You can speak the language and use it to leave hidden messages. You and others who know this language automatically spot such a message. Others spot the message's presence with a successful DC 15 Wisdom (Perception) check but can't decipher it without magic.",
-            ],
+            "name": "Druidic",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 1,
+            "entries": [
+                "You know Druidic, the secret language of druids. You can speak the language and use it to leave hidden messages. You and others who know this language automatically spot such a message. Others spot the message's presence with a successful DC 15 Wisdom (Perception) check but can't decipher it without magic."
+            ]
         },
         {
-            name: "Spellcasting",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 1,
-            entries: [
+            "name": "Spellcasting",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 1,
+            "entries": [
                 "Drawing on the divine essence of nature itself, you can cast spells to shape that essence to your will. See **Chapter 10 (PHB) - Page 10** for the general rules of spellcasting and **Chapter 11 (PHB) - Page 11** for the druid spell list.",
                 "",
                 "## Cantrips",
@@ -127,27 +130,27 @@
                 "You can cast a druid spell as a ritual if that spell has the ritual tag and you have the spell prepared.",
                 "",
                 "## Spellcasting Focus",
-                "You can use a druidic focus as a spellcasting focus for your druid spells.",
-            ],
+                "You can use a druidic focus as a spellcasting focus for your druid spells."
+            ]
         },
         {
-            name: "Cantrip Versatility",
-            type: "class",
-            gain_scf: false,
-            source: "UAClassFeatureVariants",
-            level: 1,
-            entries: [
+            "name": "Cantrip Versatility",
+            "type": "class",
+            "gain_scf": false,
+            "source": "UAClassFeatureVariants",
+            "level": 1,
+            "entries": [
                 "*1st-level druid feature (enhances Spellcasting)*",
-                "Whenever you gain a level in this class, you can replace one cantrip you learned from this Spellcasting feature with another cantrip from the druid spell list.",
-            ],
+                "Whenever you gain a level in this class, you can replace one cantrip you learned from this Spellcasting feature with another cantrip from the druid spell list."
+            ]
         },
         {
-            name: "Wild Shape",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 2,
-            entries: [
+            "name": "Wild Shape",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 2,
+            "entries": [
                 "Starting at 2nd level, you can use your action to magically assume the shape of a beast that you have seen before. You can use this feature twice. You regain expended uses when you finish a short or long rest.",
                 "Your druid level determines the beasts you can transform into, as shown in the Beast Shapes table. At 2nd level, for example, you can transform into any beast that has a challenge rating of 1/4 or lower that doesn't have a flying or swimming speed.",
                 "",
@@ -165,257 +168,257 @@
                 "When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you take 10 damage in animal form and have only 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked *unconscious*.",
                 "You can't cast spells, and your ability to speak or take any action that requires hands is limited to the capabilities of your beast form. Transforming doesn't break your concentration on a spell you've already cast, however, or prevent you from taking actions that are part of a spell, such as *call lightning*, that you've already cast.",
                 "You retain the benefit of any features from your class, race, or other source and can use them if the new form is physically capable of doing so. However, you can't use any of your special senses, such as *darkvision*, unless your new form also has that sense.",
-                "You choose whether your equipment falls to the ground in your space, merges into your new form, or is worn by it. Worn equipment functions as normal, but the DM decides whether it is practical for the new form to wear a piece of equipment, based on the creature's shape and size. Your equipment doesn't change size or shape to match the new form, and any equipment that the new form can't wear must either fall to the ground or merge with it. Equipment that merges with the form has no effect until you leave the form.",
-            ],
+                "You choose whether your equipment falls to the ground in your space, merges into your new form, or is worn by it. Worn equipment functions as normal, but the DM decides whether it is practical for the new form to wear a piece of equipment, based on the creature's shape and size. Your equipment doesn't change size or shape to match the new form, and any equipment that the new form can't wear must either fall to the ground or merge with it. Equipment that merges with the form has no effect until you leave the form."
+            ]
         },
         {
-            name: "Wild Companion",
-            type: "class",
-            gain_scf: false,
-            source: "UAClassFeatureVariants",
-            level: 2,
-            entries: [
+            "name": "Wild Companion",
+            "type": "class",
+            "gain_scf": false,
+            "source": "UAClassFeatureVariants",
+            "level": 2,
+            "entries": [
                 "*2nd-level druid feature (enhances Wild Shape)*",
                 "You gain the ability to summon a spirit that assumes an animal form: as an action, you can expend a use of your Wild Shape feature to cast the *find familiar* spell, without material components.",
-                "When you cast the spell in this way, the familiar is a fey instead of a beast, and the familiar disappears after a number of hours equal to half your druid level.",
-            ],
+                "When you cast the spell in this way, the familiar is a fey instead of a beast, and the familiar disappears after a number of hours equal to half your druid level."
+            ]
         },
         {
-            name: "Wild Companion",
-            type: "class",
-            gain_scf: false,
-            source: "TCE",
-            level: 2,
-            entries: [
+            "name": "Wild Companion",
+            "type": "class",
+            "gain_scf": false,
+            "source": "TCE",
+            "level": 2,
+            "entries": [
                 "*2nd-level druid Optional class features*",
                 "You gain the ability to summon a spirit that assumes an animal form: as an action, you can expend a use of your Wild Shape feature to cast the *find familiar* spell, without material components.",
-                "When you cast the spell in this way, the familiar is a fey instead of a beast, and the familiar disappears after a number of hours equal to half your druid level.",
-            ],
+                "When you cast the spell in this way, the familiar is a fey instead of a beast, and the familiar disappears after a number of hours equal to half your druid level."
+            ]
         },
         {
-            name: "Druid Circle",
-            type: "class",
-            gain_scf: true,
-            source: "PHB",
-            level: 2,
-            entries: [
-                "At 2nd level, you choose to identify with a circle of druids from the list of available circles. Your choice grants you features at 2nd level and again at 6th, 10th, and 14th level.",
-            ],
+            "name": "Druid Circle",
+            "type": "class",
+            "gain_scf": true,
+            "source": "PHB",
+            "level": 2,
+            "entries": [
+                "At 2nd level, you choose to identify with a circle of druids from the list of available circles. Your choice grants you features at 2nd level and again at 6th, 10th, and 14th level."
+            ]
         },
         {
-            name: "Wild Shape Improvement",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 4,
-            entries: [
-                "At 4th level, your Wild Shape improves as shown on the Beast Shapes table.",
-            ],
+            "name": "Wild Shape Improvement",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 4,
+            "entries": [
+                "At 4th level, your Wild Shape improves as shown on the Beast Shapes table."
+            ]
         },
         {
-            name: "Ability Score Improvement",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 4,
-            entries: [
+            "name": "Ability Score Improvement",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 4,
+            "entries": [
                 "When you reach 4th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-                "If your DM allows the use of feats, you may instead take a feat.",
-            ],
+                "If your DM allows the use of feats, you may instead take a feat."
+            ]
         },
         {
-            name: "Proficiency Versatility",
-            type: "class",
-            gain_scf: false,
-            source: "UAClassFeatureVariants",
-            level: 4,
-            entries: [
+            "name": "Proficiency Versatility",
+            "type": "class",
+            "gain_scf": false,
+            "source": "UAClassFeatureVariants",
+            "level": 4,
+            "entries": [
                 "*4th-level feature (enhances Ability Score Improvement)*",
                 "When you gain the Ability Score Improvement feature from your class, you can also replace one of your skill proficiencies with a skill proficiency offered by your class at 1st level (the proficiency you replace needn't be from the class).",
-                "This change represents one of your skills atrophying as you focus on a different skill.",
-            ],
+                "This change represents one of your skills atrophying as you focus on a different skill."
+            ]
         },
         {
-            name: "Cantrip Versatility",
-            type: "class",
-            gain_scf: false,
-            source: "TCE",
-            level: 4,
-            entries: [
+            "name": "Cantrip Versatility",
+            "type": "class",
+            "gain_scf": false,
+            "source": "TCE",
+            "level": 4,
+            "entries": [
                 "*4th-level druid Optional class features*",
-                "Whenever you reach a level in this class that grants the Ability Score Improvement feature, you can replace one cantrip you learned from this class's Spellcasting feature with another cantrip from the druid spell list.",
-            ],
+                "Whenever you reach a level in this class that grants the Ability Score Improvement feature, you can replace one cantrip you learned from this class's Spellcasting feature with another cantrip from the druid spell list."
+            ]
         },
         {
-            name: "Druid Circle feature",
-            type: "class",
-            gain_scf: true,
-            source: "PHB",
-            level: 6,
-            entries: [
-                "At 6th level, you gain a feature granted by your Druid Circle.",
-            ],
+            "name": "Druid Circle feature",
+            "type": "class",
+            "gain_scf": true,
+            "source": "PHB",
+            "level": 6,
+            "entries": [
+                "At 6th level, you gain a feature granted by your Druid Circle."
+            ]
         },
         {
-            name: "Wild Shape Improvement",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 8,
-            entries: [
-                "At 8th level, your Wild Shape improves as shown on the Beast Shapes table.",
-            ],
+            "name": "Wild Shape Improvement",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 8,
+            "entries": [
+                "At 8th level, your Wild Shape improves as shown on the Beast Shapes table."
+            ]
         },
         {
-            name: "Ability Score Improvement",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 8,
-            entries: [
+            "name": "Ability Score Improvement",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 8,
+            "entries": [
                 "When you reach 8th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-                "If your DM allows the use of feats, you may instead take a feat.",
-            ],
+                "If your DM allows the use of feats, you may instead take a feat."
+            ]
         },
         {
-            name: "Proficiency Versatility",
-            type: "class",
-            gain_scf: false,
-            source: "UAClassFeatureVariants",
-            level: 8,
-            entries: [
+            "name": "Proficiency Versatility",
+            "type": "class",
+            "gain_scf": false,
+            "source": "UAClassFeatureVariants",
+            "level": 8,
+            "entries": [
                 "*8th-level feature (enhances Ability Score Improvement)*",
                 "When you gain the Ability Score Improvement feature from your class, you can also replace one of your skill proficiencies with a skill proficiency offered by your class at 1st level (the proficiency you replace needn't be from the class).",
-                "This change represents one of your skills atrophying as you focus on a different skill.",
-            ],
+                "This change represents one of your skills atrophying as you focus on a different skill."
+            ]
         },
         {
-            name: "Druid Circle feature",
-            type: "class",
-            gain_scf: true,
-            source: "PHB",
-            level: 10,
-            entries: [
-                "At 10th level, you gain a feature granted by your Druid Circle feature.",
-            ],
+            "name": "Druid Circle feature",
+            "type": "class",
+            "gain_scf": true,
+            "source": "PHB",
+            "level": 10,
+            "entries": [
+                "At 10th level, you gain a feature granted by your Druid Circle feature."
+            ]
         },
         {
-            name: "Ability Score Improvement",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 12,
-            entries: [
+            "name": "Ability Score Improvement",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 12,
+            "entries": [
                 "When you reach 12th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-                "If your DM allows the use of feats, you may instead take a feat.",
-            ],
+                "If your DM allows the use of feats, you may instead take a feat."
+            ]
         },
         {
-            name: "Proficiency Versatility",
-            type: "class",
-            gain_scf: false,
-            source: "UAClassFeatureVariants",
-            level: 12,
-            entries: [
+            "name": "Proficiency Versatility",
+            "type": "class",
+            "gain_scf": false,
+            "source": "UAClassFeatureVariants",
+            "level": 12,
+            "entries": [
                 "*12th-level feature (enhances Ability Score Improvement)*",
                 "When you gain the Ability Score Improvement feature from your class, you can also replace one of your skill proficiencies with a skill proficiency offered by your class at 1st level (the proficiency you replace needn't be from the class).",
-                "This change represents one of your skills atrophying as you focus on a different skill.",
-            ],
+                "This change represents one of your skills atrophying as you focus on a different skill."
+            ]
         },
         {
-            name: "Druid Circle feature",
-            type: "class",
-            gain_scf: true,
-            source: "PHB",
-            level: 14,
-            entries: [
-                "At 14th level, you gain a feature granted by your Druid Circle feature.",
-            ],
+            "name": "Druid Circle feature",
+            "type": "class",
+            "gain_scf": true,
+            "source": "PHB",
+            "level": 14,
+            "entries": [
+                "At 14th level, you gain a feature granted by your Druid Circle feature."
+            ]
         },
         {
-            name: "Ability Score Improvement",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 16,
-            entries: [
+            "name": "Ability Score Improvement",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 16,
+            "entries": [
                 "When you reach 16th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-                "If your DM allows the use of feats, you may instead take a feat.",
-            ],
+                "If your DM allows the use of feats, you may instead take a feat."
+            ]
         },
         {
-            name: "Proficiency Versatility",
-            type: "class",
-            gain_scf: false,
-            source: "UAClassFeatureVariants",
-            level: 16,
-            entries: [
+            "name": "Proficiency Versatility",
+            "type": "class",
+            "gain_scf": false,
+            "source": "UAClassFeatureVariants",
+            "level": 16,
+            "entries": [
                 "*16th-level feature (enhances Ability Score Improvement)*",
                 "When you gain the Ability Score Improvement feature from your class, you can also replace one of your skill proficiencies with a skill proficiency offered by your class at 1st level (the proficiency you replace needn't be from the class).",
-                "This change represents one of your skills atrophying as you focus on a different skill.",
-            ],
+                "This change represents one of your skills atrophying as you focus on a different skill."
+            ]
         },
         {
-            name: "Timeless Body",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 18,
-            entries: [
-                "Starting at 18th level, the primal magic that you wield causes you to age more slowly. For every 10 years that pass, your body ages only 1 year.",
-            ],
+            "name": "Timeless Body",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 18,
+            "entries": [
+                "Starting at 18th level, the primal magic that you wield causes you to age more slowly. For every 10 years that pass, your body ages only 1 year."
+            ]
         },
         {
-            name: "Beast Spells",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 18,
-            entries: [
-                "Beginning at 18th level, you can cast many of your druid spells in any shape you assume using Wild Shape. You can perform the somatic and verbal components of a druid spell while in a beast shape, but you aren't able to provide material components.",
-            ],
+            "name": "Beast Spells",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 18,
+            "entries": [
+                "Beginning at 18th level, you can cast many of your druid spells in any shape you assume using Wild Shape. You can perform the somatic and verbal components of a druid spell while in a beast shape, but you aren't able to provide material components."
+            ]
         },
         {
-            name: "Ability Score Improvement",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 19,
-            entries: [
+            "name": "Ability Score Improvement",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 19,
+            "entries": [
                 "When you reach 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-                "If your DM allows the use of feats, you may instead take a feat.",
-            ],
+                "If your DM allows the use of feats, you may instead take a feat."
+            ]
         },
         {
-            name: "Proficiency Versatility",
-            type: "class",
-            gain_scf: false,
-            source: "UAClassFeatureVariants",
-            level: 19,
-            entries: [
+            "name": "Proficiency Versatility",
+            "type": "class",
+            "gain_scf": false,
+            "source": "UAClassFeatureVariants",
+            "level": 19,
+            "entries": [
                 "*19th-level feature (enhances Ability Score Improvement)*",
                 "When you gain the Ability Score Improvement feature from your class, you can also replace one of your skill proficiencies with a skill proficiency offered by your class at 1st level (the proficiency you replace needn't be from the class).",
-                "This change represents one of your skills atrophying as you focus on a different skill.",
-            ],
+                "This change represents one of your skills atrophying as you focus on a different skill."
+            ]
         },
         {
-            name: "Archdruid",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 20,
-            entries: [
+            "name": "Archdruid",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 20,
+            "entries": [
                 "At 20th level, you can use your Wild Shape an unlimited number of times.",
-                "Additionally, you can ignore the verbal and somatic components of your druid spells, as well as any material components that lack a cost and aren't consumed by a spell. You gain this benefit in both your normal shape and your beast shape from Wild Shape.",
-            ],
-        },
+                "Additionally, you can ignore the verbal and somatic components of your druid spells, as well as any material components that lack a cost and aren't consumed by a spell. You gain this benefit in both your normal shape and your beast shape from Wild Shape."
+            ]
+        }
     ],
-    subclasses: [
+    "subclasses": [
         {
-            name: "Circle of the Land",
-            name_short: "Land",
-            source: "PHB",
-            subclass_spells: {
+            "name": "Circle of the Land",
+            "name_short": "Land",
+            "source": "PHB",
+            "subclass_spells": {
                 "3": [
                     "hold person",
                     "spike growth",
@@ -432,7 +435,7 @@
                     "darkness",
                     "Melf's acid arrow",
                     "spider climb",
-                    "web",
+                    "web"
                 ],
                 "5": [
                     "sleet storm",
@@ -450,7 +453,7 @@
                     "water walk",
                     "stinking cloud",
                     "gaseous form",
-                    "stinking cloud",
+                    "stinking cloud"
                 ],
                 "7": [
                     "freedom of movement",
@@ -468,7 +471,7 @@
                     "freedom of movement",
                     "locate creature",
                     "greater invisibility",
-                    "stone shape",
+                    "stone shape"
                 ],
                 "9": [
                     "commune with nature",
@@ -486,17 +489,17 @@
                     "insect plague",
                     "scrying",
                     "cloudkill",
-                    "insect plague",
-                ],
+                    "insect plague"
+                ]
             },
-            features: [
+            "features": [
                 {
-                    name: "Circle of the Land",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 2,
-                    entries: [
+                    "name": "Circle of the Land",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 2,
+                    "entries": [
                         "The Circle of the Land is made up of mystics and sages who safeguard ancient knowledge and rites through a vast oral tradition. These druids meet within sacred circles of trees or standing stones to whisper primal secrets in Druidic. The circle's wisest members preside as the chief priests of communities that hold to the Old Faith and serve as advisors to the rulers of those folk. As a member of this circle, your magic is influenced by the land where you were initiated into the circle's mysterious rites.",
                         "",
                         "## Bonus Cantrip",
@@ -580,56 +583,56 @@
                         "| 5th | *gaseous form*, *stinking cloud* |",
                         "| 7th | *greater invisibility*, *stone shape* |",
                         "| 9th | *cloudkill*, *insect plague* |",
-                        "",
-                    ],
+                        ""
+                    ]
                 },
                 {
-                    name: "Land's Stride",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 6,
-                    entries: [
+                    "name": "Land's Stride",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 6,
+                    "entries": [
                         "Starting at 6th level, moving through nonmagical difficult terrain costs you no extra movement. You can also pass through nonmagical plants without being slowed by them and without taking damage from them if they have thorns, spines, or a similar hazard.",
-                        "In addition, you have advantage on saving throws against plants that are magically created or manipulated to impede movement, such as those created by the *entangle* spell.",
-                    ],
+                        "In addition, you have advantage on saving throws against plants that are magically created or manipulated to impede movement, such as those created by the *entangle* spell."
+                    ]
                 },
                 {
-                    name: "Nature's Ward",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 10,
-                    entries: [
-                        "When you reach 10th level, you can't be *charmed* or *frightened* by elementals or fey, and you are immune to poison and disease.",
-                    ],
+                    "name": "Nature's Ward",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 10,
+                    "entries": [
+                        "When you reach 10th level, you can't be *charmed* or *frightened* by elementals or fey, and you are immune to poison and disease."
+                    ]
                 },
                 {
-                    name: "Nature's Sanctuary",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 14,
-                    entries: [
+                    "name": "Nature's Sanctuary",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 14,
+                    "entries": [
                         "When you reach 14th level, creatures of the natural world sense your connection to nature and become hesitant to attack you. When a beast or plant creature attacks you, that creature must make a Wisdom saving throw against your druid spell save DC. On a failed save, the creature must choose a different target, or the attack automatically misses. On a successful save, the creature is immune to this effect for 24 hours.",
-                        "The creature is aware of this effect before it makes its attack against you.",
-                    ],
-                },
-            ],
+                        "The creature is aware of this effect before it makes its attack against you."
+                    ]
+                }
+            ]
         },
         {
-            name: "Circle of the Moon",
-            name_short: "Moon",
-            source: "PHB",
-            subclass_spells: {},
-            features: [
+            "name": "Circle of the Moon",
+            "name_short": "Moon",
+            "source": "PHB",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "Circle of the Moon",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 2,
-                    entries: [
+                    "name": "Circle of the Moon",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 2,
+                    "entries": [
                         "Druids of the Circle of the Moon are fierce guardians of the wilds. Their order gathers under the full moon to share news and trade warnings. They haunt the deepest parts of the wilderness, where they might go for weeks on end before crossing paths with another humanoid creature, let alone another druid.",
                         "Changeable as the moon, a druid of this circle might prowl as a great cat one night, soar over the treetops as an eagle the next day, and crash through the undergrowth in bear form to drive off a trespassing monster. The wild is in the druid's blood.",
                         "",
@@ -652,110 +655,110 @@
                         "| 12th | 4 | \u2014 |",
                         "| 15th | 5 | \u2014 |",
                         "| 18th | 6 | \u2014 |",
-                        "",
-                    ],
+                        ""
+                    ]
                 },
                 {
-                    name: "Primal Strike",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 6,
-                    entries: [
-                        "Starting at 6th level, your attacks in beast form count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.",
-                    ],
+                    "name": "Primal Strike",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 6,
+                    "entries": [
+                        "Starting at 6th level, your attacks in beast form count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage."
+                    ]
                 },
                 {
-                    name: "Elemental Wild Shape",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 10,
-                    entries: [
-                        "At 10th level, you can expend two uses of Wild Shape at the same time to transform into an **air elemental**, an **earth elemental**, a **fire elemental**, or a **water elemental**.",
-                    ],
+                    "name": "Elemental Wild Shape",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 10,
+                    "entries": [
+                        "At 10th level, you can expend two uses of Wild Shape at the same time to transform into an **air elemental**, an **earth elemental**, a **fire elemental**, or a **water elemental**."
+                    ]
                 },
                 {
-                    name: "Thousand Forms",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 14,
-                    entries: [
-                        "By 14th level, you have learned to use magic to alter your physical form in more subtle ways. You can cast the *alter self* spell at will.",
-                    ],
-                },
-            ],
+                    "name": "Thousand Forms",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 14,
+                    "entries": [
+                        "By 14th level, you have learned to use magic to alter your physical form in more subtle ways. You can cast the *alter self* spell at will."
+                    ]
+                }
+            ]
         },
         {
-            name: "Circle of Dreams (UA)",
-            name_short: "Dreams (UA)",
-            source: "UADruid",
-            subclass_spells: {},
-            features: [
+            "name": "Circle of Dreams (UA)",
+            "name_short": "Dreams (UA)",
+            "source": "UADruid",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "Circle of Dreams",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UADruid",
-                    level: 2,
-                    entries: [
+                    "name": "Circle of Dreams",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UADruid",
+                    "level": 2,
+                    "entries": [
                         "Druids who are members of the Circle of Dreams hail from regions that have strong ties to the Feywild. The druids' guardianship of the natural world makes for a natural alliance between them and good-aligned fey. These druids seek to fill the world with merriment and light. Their magic mends wounds and brings joy to downcast hearts, and the realms they protect are gleaming, fruitful places.",
                         "",
                         "## Balm of the Summer Court",
                         "At 2nd level, you become imbued with the blessings of the Summer Court. You are a font of energy that lends relief to weary feet and respite from injuries. You have a pool of fey energy represented by a number of d6s equal to your druid level.",
                         "As a bonus action, you can choose an ally you can see within 120 feet of you and spend a number of those dice equal to half your druid level or less. Roll the spent dice and add them together. The target regains a number of hit points equal to the total. The target also gains 1 temporary hit point per die spent, and its speed increases by 5 feet per die spent. The speed increase lasts for 1 minute.",
-                        "You regain the expended dice when you finish a long rest.",
-                    ],
+                        "You regain the expended dice when you finish a long rest."
+                    ]
                 },
                 {
-                    name: "Hearth of Moonlight and Shadow",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UADruid",
-                    level: 6,
-                    entries: [
-                        "At 6th level, home is wherever you set up camp. During a short or long rest, you can invoke the shadowy power of the Gloaming Court to ward your campsite from intruders. At the start of the rest, you create an area with a 30-foot radius. Within this area, you and your allies gain a +5 bonus to Wisdom (Perception) checks to detect creatures, and any light from open flames (campfire, torches, and the like) is not visible outside the area. These effects end when the rest finishes or when you leave the area.",
-                    ],
+                    "name": "Hearth of Moonlight and Shadow",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UADruid",
+                    "level": 6,
+                    "entries": [
+                        "At 6th level, home is wherever you set up camp. During a short or long rest, you can invoke the shadowy power of the Gloaming Court to ward your campsite from intruders. At the start of the rest, you create an area with a 30-foot radius. Within this area, you and your allies gain a +5 bonus to Wisdom (Perception) checks to detect creatures, and any light from open flames (campfire, torches, and the like) is not visible outside the area. These effects end when the rest finishes or when you leave the area."
+                    ]
                 },
                 {
-                    name: "Hidden Paths",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UADruid",
-                    level: 10,
-                    entries: [
+                    "name": "Hidden Paths",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UADruid",
+                    "level": 10,
+                    "entries": [
                         "At 10th level, you can use the hidden, unpredictable magical pathways that some fey use to traverse space in a blink of an eye. On your turn, you can teleport up to 30 feet to a spot you can see. Each foot of this teleportation costs 1 foot of your movement.",
                         "You can also use this feature to teleport someone else. As an action, you can teleport a willing ally you touch up to 30 feet to a point you can see.",
-                        "Once you use either option\u2014teleporting yourself or an ally\u2014you can't use that option again until 1d4 rounds have passed.",
-                    ],
+                        "Once you use either option\u2014teleporting yourself or an ally\u2014you can't use that option again until 1d4 rounds have passed."
+                    ]
                 },
                 {
-                    name: "Purifying Light",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UADruid",
-                    level: 14,
-                    entries: [
+                    "name": "Purifying Light",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UADruid",
+                    "level": 14,
+                    "entries": [
                         "At 14th level, the favor of the Summer Court allows you to end spells that hamper you and your allies. When you cast a spell with a spell slot and it restores hit points to you or an ally this turn, you can simultaneously target the healed creature with dispel magic, using a spell slot with a level equal to the slot used to cast the healing spell.",
-                        "You can use this feature three times, and you regain expended uses of it when you finish a long rest. If the healing spell targets more than one creature, you can use this feature on more than one at the same time, expending one use of it per creature.",
-                    ],
-                },
-            ],
+                        "You can use this feature three times, and you regain expended uses of it when you finish a long rest. If the healing spell targets more than one creature, you can use this feature on more than one at the same time, expending one use of it per creature."
+                    ]
+                }
+            ]
         },
         {
-            name: "Circle of the Shepherd (UA)",
-            name_short: "Shepherd (UA)",
-            source: "UADruid",
-            subclass_spells: {},
-            features: [
+            "name": "Circle of the Shepherd (UA)",
+            "name_short": "Shepherd (UA)",
+            "source": "UADruid",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "Circle of the Shepherd",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UADruid",
-                    level: 2,
-                    entries: [
+                    "name": "Circle of the Shepherd",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UADruid",
+                    "level": 2,
+                    "entries": [
                         "Druids of the Circle of the Shepherd commune with the spirits of beasts. While these druids recognize that all living things play a role in the natural world, they focus on protecting animals. Shepherds, as they are known, see beasts as their charges. They ward off monsters that threaten natural creatures, rebuke hunters who kill more prey than necessary, and prevent civilization from encroaching on habitats and paths needed for animal migrations. Many of these druids are happiest far from cities and towns, content to spend their days in the company of wild animals.",
                         "",
                         "## Spirit Bond",
@@ -777,110 +780,110 @@
                         "",
                         "## Beast Speech",
                         "At 2nd level, you gain the ability to converse with beasts. Beasts can understand your speech, and you gain the ability to decipher their noises and motions into recognizable words and phrases. Most beasts lack the intelligence to convey or understand sophisticated concepts, but a friendly beast could relay what it has seen or heard in the recent past.",
-                        "This ability does not grant you any special friendship with beasts, though you can combine this ability with gifts and other favors to curry favor with them as you would any other nonplayer character.",
-                    ],
+                        "This ability does not grant you any special friendship with beasts, though you can combine this ability with gifts and other favors to curry favor with them as you would any other nonplayer character."
+                    ]
                 },
                 {
-                    name: "Mighty Summoner",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UADruid",
-                    level: 6,
-                    entries: [
-                        "At 6th level, you gain the ability to conjure forth powerful animals. Any beast summoned or created by your spells gains two benefits. Its hit point maximum increases by 2 per Hit Die, and the damage from its natural weapons is considered magical for the purpose of overcoming immunity and resistance to nonmagical attacks and damage.",
-                    ],
+                    "name": "Mighty Summoner",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UADruid",
+                    "level": 6,
+                    "entries": [
+                        "At 6th level, you gain the ability to conjure forth powerful animals. Any beast summoned or created by your spells gains two benefits. Its hit point maximum increases by 2 per Hit Die, and the damage from its natural weapons is considered magical for the purpose of overcoming immunity and resistance to nonmagical attacks and damage."
+                    ]
                 },
                 {
-                    name: "Guardian Spirit",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UADruid",
-                    level: 10,
-                    entries: [
-                        "At 10th level, you gain the services of a spirit that watches over you and protects you from harm. Whenever you finish a long rest, you gain the benefits of a *death ward* spell. The spell's duration is extended to 24 hours.",
-                    ],
+                    "name": "Guardian Spirit",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UADruid",
+                    "level": 10,
+                    "entries": [
+                        "At 10th level, you gain the services of a spirit that watches over you and protects you from harm. Whenever you finish a long rest, you gain the benefits of a *death ward* spell. The spell's duration is extended to 24 hours."
+                    ]
                 },
                 {
-                    name: "Faithful Summons",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UADruid",
-                    level: 14,
-                    entries: [
+                    "name": "Faithful Summons",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UADruid",
+                    "level": 14,
+                    "entries": [
                         "Starting at 14th level, the bestial spirits you commune with protect you when you are vulnerable. If you are reduced to 0 hit points or are *incapacitated* against your will, you can immediately gain the benefits of *conjure animals* as if it was cast with a 9th-level spell slot. It summons four beasts of your choice that are challenge rating 2 or lower. The conjured beasts appear within 20 feet of you. If they receive no commands from you, they protect you from harm and attack your foes. The spell lasts for 1 hour.",
-                        "Once you use this feature, you can't use it again until you finish a long rest.",
-                    ],
-                },
-            ],
+                        "Once you use this feature, you can't use it again until you finish a long rest."
+                    ]
+                }
+            ]
         },
         {
-            name: "Circle of Twilight (UA)",
-            name_short: "Twilight (UA)",
-            source: "UADruid",
-            subclass_spells: {},
-            features: [
+            "name": "Circle of Twilight (UA)",
+            "name_short": "Twilight (UA)",
+            "source": "UADruid",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "Circle of Twilight",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UADruid",
-                    level: 2,
-                    entries: [
+                    "name": "Circle of Twilight",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UADruid",
+                    "level": 2,
+                    "entries": [
                         "The Circle of Twilight seeks to exterminate undead creatures and preserve the natural cycle of life and death that rules over the cosmos. Their magic allows them to manipulate the boundary between life and death, sending their foes to their final rest while keeping their allies from that fate.",
                         "These druids seek out lands that have been tainted by undeath. Such places are grim and foreboding. Once vibrant forests become gloomy, haunted places devoid of animals and filled with plants dying a slow, lingering death. The Circle of Twilight goes to such places to banish undeath and restore life.",
                         "",
                         "## Harvest's Scythe",
                         "Starting at 2nd level, you learn to unravel and harvest the life energy of other creatures. You can augment your spells to drain the life force from creatures. You have a pool of energy represented by a number of d10s equal to your druid level.",
                         "When you roll damage for a spell, you can increase that damage by spending dice from the pool. You can spend a number of dice equal to half your druid level or less. Roll the spent dice and add them to the damage as necrotic damage. If you kill one or more hostile creatures with a spell augmented in this way, you or an ally of your choice that you can see within 30 feet of you regains 2 hit points per die spent to increase the spell's damage, or 5 hit points per die if at least one of the slain creatures was undead.",
-                        "You regain the expended dice when you finish a long rest.",
-                    ],
+                        "You regain the expended dice when you finish a long rest."
+                    ]
                 },
                 {
-                    name: "Speech Beyond the Grave",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UADruid",
-                    level: 6,
-                    entries: [
+                    "name": "Speech Beyond the Grave",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UADruid",
+                    "level": 6,
+                    "entries": [
                         "At 6th level, you gain the ability to reach beyond death's veil in search of knowledge. Using this feature, you can cast *speak with dead* without material components, and you understand what the target of this casting says. It can understand your questions, even if you don't share a language or it is not intelligent enough to speak.",
-                        "Once you use this feature, you can't use it again until you finish a short or long rest.",
-                    ],
+                        "Once you use this feature, you can't use it again until you finish a short or long rest."
+                    ]
                 },
                 {
-                    name: "Watcher at the Threshold",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UADruid",
-                    level: 10,
-                    entries: [
-                        "At 10th level, you gain resistance to necrotic and radiant damage. In addition, while you aren't *incapacitated*, any ally within 30 feet of you has advantage on death saving throws.",
-                    ],
+                    "name": "Watcher at the Threshold",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UADruid",
+                    "level": 10,
+                    "entries": [
+                        "At 10th level, you gain resistance to necrotic and radiant damage. In addition, while you aren't *incapacitated*, any ally within 30 feet of you has advantage on death saving throws."
+                    ]
                 },
                 {
-                    name: "Paths of the Dead",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UADruid",
-                    level: 14,
-                    entries: [
-                        "At 14th level, your mastery of death allows you to tread the paths used by ghosts and other spirits. Using this feature, you can cast *etherealness*. Once the spell ends, you can't cast it with this feature again until you finish a short or long rest.",
-                    ],
-                },
-            ],
+                    "name": "Paths of the Dead",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UADruid",
+                    "level": 14,
+                    "entries": [
+                        "At 14th level, your mastery of death allows you to tread the paths used by ghosts and other spirits. Using this feature, you can cast *etherealness*. Once the spell ends, you can't cast it with this feature again until you finish a short or long rest."
+                    ]
+                }
+            ]
         },
         {
-            name: "Circle of the Shepherd v2 (UA)",
-            name_short: "Shepherd v2 (UA)",
-            source: "UARevisedClassOptions",
-            subclass_spells: {},
-            features: [
+            "name": "Circle of the Shepherd v2 (UA)",
+            "name_short": "Shepherd v2 (UA)",
+            "source": "UARevisedClassOptions",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "Circle of the Shepherd v2",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UARevisedClassOptions",
-                    level: 2,
-                    entries: [
+                    "name": "Circle of the Shepherd v2",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UARevisedClassOptions",
+                    "level": 2,
+                    "entries": [
                         "Druids of the Circle of the Shepherd commune with the spirits of nature, especially the spirits of beasts and the fey, and call to those spirits for aid. These druids recognize that all living things play a role in the natural world, yet they focus on protecting animals and fey creatures that have difficulty defending themselves. Shepherds, as they are known, see such creatures as their charges. They ward off monsters that threaten them, rebuke hunters who kill more prey than necessary, and prevent civilization from encroaching on rare animal habitats and on sites sacred to the fey. Many of these druids are happiest far from cities and towns, content to spend their days in the company of animals and the fey creatures of the wilds.",
                         "Members of this circle become adventurers to oppose forces that threaten their charges or to seek knowledge and power that will help them safeguard their charges better. Wherever these druids go, the spirits of the wilderness are with them.",
                         "",
@@ -904,117 +907,117 @@
                         "",
                         "",
                         "## Unicorn Spirit",
-                        "The unicorn spirit lends its protection to those nearby. You and your allies gain advantage on all ability checks made to detect creatures in the spirit's aura. In addition, if you cast a spell with a spell slot that restores hit points to anyone inside or outside the aura, each creature of your choice in the aura also regains hit points equal to your druid level.",
-                    ],
+                        "The unicorn spirit lends its protection to those nearby. You and your allies gain advantage on all ability checks made to detect creatures in the spirit's aura. In addition, if you cast a spell with a spell slot that restores hit points to anyone inside or outside the aura, each creature of your choice in the aura also regains hit points equal to your druid level."
+                    ]
                 },
                 {
-                    name: "Mighty Summoner",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UARevisedClassOptions",
-                    level: 6,
-                    entries: [
+                    "name": "Mighty Summoner",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UARevisedClassOptions",
+                    "level": 6,
+                    "entries": [
                         "At 6th level, you gain the ability to conjure forth powerful beasts and fey. Any beast or fey summoned or created by your spells gains two benefits:",
                         "",
                         "The creature appears with more hit points than normal: 2 extra hit points per Hit Die it has.",
-                        "The damage from its natural weapons is considered magical for the purpose of overcoming immunity and resistance to nonmagical attacks and damage.",
-                    ],
+                        "The damage from its natural weapons is considered magical for the purpose of overcoming immunity and resistance to nonmagical attacks and damage."
+                    ]
                 },
                 {
-                    name: "Guardian Spirit",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UARevisedClassOptions",
-                    level: 10,
-                    entries: [
-                        "At 10th level, your Spirit Totem safeguards the beasts and fey that you call forth with your magic. When a beast or fey that you summoned or created with a spell ends its turn in your Spirit Totem aura, that creature regains a number of hit points equal to half your druid level.",
-                    ],
+                    "name": "Guardian Spirit",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UARevisedClassOptions",
+                    "level": 10,
+                    "entries": [
+                        "At 10th level, your Spirit Totem safeguards the beasts and fey that you call forth with your magic. When a beast or fey that you summoned or created with a spell ends its turn in your Spirit Totem aura, that creature regains a number of hit points equal to half your druid level."
+                    ]
                 },
                 {
-                    name: "Faithful Summons",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UARevisedClassOptions",
-                    level: 14,
-                    entries: [
+                    "name": "Faithful Summons",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UARevisedClassOptions",
+                    "level": 14,
+                    "entries": [
                         "Starting at 14th level, the nature spirits you commune with protect you when you are the most defenseless. If you are reduced to 0 hit points or are *incapacitated* against your will, you can immediately gain the benefits of *conjure animals* as if it were cast with a 9th-level spell slot. It summons four beasts of your choice that are challenge rating 2 or lower. The conjured beasts appear within 20 feet of you. If they receive no commands from you, they protect you from harm and attack your foes. The spell lasts for 1 hour, requiring no concentration, or until you dismiss it (no action required).",
-                        "Once you use this feature, you can't use it again until you finish a long rest.",
-                    ],
-                },
-            ],
+                        "Once you use this feature, you can't use it again until you finish a long rest."
+                    ]
+                }
+            ]
         },
         {
-            name: "Circle of Dreams",
-            name_short: "Dreams",
-            source: "XGE",
-            subclass_spells: {},
-            features: [
+            "name": "Circle of Dreams",
+            "name_short": "Dreams",
+            "source": "XGE",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "Circle of Dreams",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 2,
-                    entries: [
+                    "name": "Circle of Dreams",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 2,
+                    "entries": [
                         "Druids who are members of the Circle of Dreams hail from regions that have strong ties to the Feywild and its dreamlike realms. The druids' guardianship of the natural world makes for a natural alliance between them and good-aligned fey. These druids seek to fill the world with dreamy wonder. Their magic mends wounds and brings joy to downcast hearts, and the realms they protect are gleaming, fruitful places, where dream and reality blur together and where the weary can find rest.",
                         "",
                         "## Balm of the Summer Court",
                         "At 2nd level, you become imbued with the blessings of the Summer Court. You are a font of energy that offers respite from injuries. You have a pool of fey energy represented by a number of d6s equal to your druid level.",
                         "As a bonus action, you can choose one creature you can see within 120 feet of you and spend a number of those dice equal to half your druid level or less. Roll the spent dice and add them together. The target regains a number of hit points equal to the total. The target also gains 1 temporary hit point per die spent.",
-                        "You regain all expended dice when you finish a long rest.",
-                    ],
+                        "You regain all expended dice when you finish a long rest."
+                    ]
                 },
                 {
-                    name: "Hearth of Moonlight and Shadow",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 6,
-                    entries: [
+                    "name": "Hearth of Moonlight and Shadow",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 6,
+                    "entries": [
                         "At 6th level, home can be wherever you are. During a short or long rest, you can invoke the shadowy power of the Gloaming Court to help guard your respite. At the start of the rest, you touch a point in space, and an invisible, 30-foot-radius sphere of magic appears, centered on that point. Total cover blocks the sphere.",
                         "While within the sphere, you and your allies gain a +5 bonus to Dexterity (Stealth) and Wisdom (Perception) checks, and any light from open flames in the sphere (a campfire, torches, or the like) isn't visible outside it.",
-                        "The sphere vanishes at the end of the rest or when you leave the sphere.",
-                    ],
+                        "The sphere vanishes at the end of the rest or when you leave the sphere."
+                    ]
                 },
                 {
-                    name: "Hidden Paths",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 10,
-                    entries: [
+                    "name": "Hidden Paths",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 10,
+                    "entries": [
                         "Starting at 10th level, you can use the hidden, magical pathways that some fey use to traverse space in the blink of an eye. As a bonus action on your turn, you can teleport up to 60 feet to an unoccupied space you can see. Alternatively, you can use your action to teleport one willing creature you touch up to 30 feet to an unoccupied space you can see.",
-                        "You can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses of it when you finish a long rest.",
-                    ],
+                        "You can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses of it when you finish a long rest."
+                    ]
                 },
                 {
-                    name: "Walker in Dreams",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 14,
-                    entries: [
+                    "name": "Walker in Dreams",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 14,
+                    "entries": [
                         "At 14th level, the magic of the Feywild grants you the ability to travel mentally or physically through dreamlands.",
                         "When you finish a short rest, you can cast one of the following spells, without expending a spell slot or requiring material components: *dream* (with you as the messenger), *scrying*, or *teleportation circle*.",
                         "This use of *teleportation circle* is special. Rather than opening a portal to a permanent *teleportation circle*, it opens a portal to the last location where you finished a long rest on your current plane of existence. If you haven't taken a long rest on your current plane, the spell fails but isn't wasted.",
-                        "Once you use this feature, you can't use it again until you finish a long rest.",
-                    ],
-                },
-            ],
+                        "Once you use this feature, you can't use it again until you finish a long rest."
+                    ]
+                }
+            ]
         },
         {
-            name: "Circle of the Shepherd",
-            name_short: "Shepherd",
-            source: "XGE",
-            subclass_spells: {},
-            features: [
+            "name": "Circle of the Shepherd",
+            "name_short": "Shepherd",
+            "source": "XGE",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "Circle of the Shepherd",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 2,
-                    entries: [
+                    "name": "Circle of the Shepherd",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 2,
+                    "entries": [
                         "Druids of the Circle of the Shepherd commune with the spirits of nature, especially the spirits of beasts and the fey, and call to those spirits for aid. These druids recognize that all living things play a role in the natural world, yet they focus on protecting animals and fey creatures that have difficulty defending themselves. Shepherds, as they are known, see such creatures as their charges. They ward off monsters that threaten them, rebuke hunters who kill more prey than necessary, and prevent civilization from encroaching on rare animal habitats and on sites sacred to the fey. Many of these druids are happiest far from cities and towns, content to spend their days in the company of animals and the fey creatures of the wilds.",
                         "Members of this circle become adventurers to oppose forces that threaten their charges or to seek knowledge and power that will help them safeguard their charges better. Wherever these druids go, the spirits of the wilderness are with them.",
                         "",
@@ -1035,75 +1038,75 @@
                         "The hawk spirit is a consummate hunter, aiding you and your allies with its keen sight. When a creature makes an attack roll against a target in the spirit's aura, you can use your reaction to grant advantage to that attack roll. In addition, you and your allies have advantage on Wisdom (Perception) checks while in the aura.",
                         "",
                         "## Unicorn Spirit",
-                        "The unicorn spirit lends its protection to those nearby. You and your allies gain advantage on all ability checks made to detect creatures in the spirit's aura. In addition, if you cast a spell using a spell slot that restores hit points to any creature inside or outside the aura, each creature of your choice in the aura also regains hit points equal to your druid level.",
-                    ],
+                        "The unicorn spirit lends its protection to those nearby. You and your allies gain advantage on all ability checks made to detect creatures in the spirit's aura. In addition, if you cast a spell using a spell slot that restores hit points to any creature inside or outside the aura, each creature of your choice in the aura also regains hit points equal to your druid level."
+                    ]
                 },
                 {
-                    name: "Mighty Summoner",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 6,
-                    entries: [
+                    "name": "Mighty Summoner",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 6,
+                    "entries": [
                         "Starting at 6th level, beasts and fey that you conjure are more resilient than normal. Any beast or fey summoned or created by a spell that you cast gains the following benefits:",
                         "",
                         "The creature appears with more hit points than normal: 2 extra hit points per Hit Die it has.",
-                        "The damage from its natural weapons is considered magical for the purpose of overcoming immunity and resistance to nonmagical attacks and damage.",
-                    ],
+                        "The damage from its natural weapons is considered magical for the purpose of overcoming immunity and resistance to nonmagical attacks and damage."
+                    ]
                 },
                 {
-                    name: "Guardian Spirit",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 10,
-                    entries: [
-                        "Beginning at 10th level, your Spirit Totem safeguards the beasts and fey that you call forth with your magic. When a beast or fey that you summoned or created with a spell ends its turn in your Spirit Totem aura, that creature regains a number of hit points equal to half your druid level.",
-                    ],
+                    "name": "Guardian Spirit",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 10,
+                    "entries": [
+                        "Beginning at 10th level, your Spirit Totem safeguards the beasts and fey that you call forth with your magic. When a beast or fey that you summoned or created with a spell ends its turn in your Spirit Totem aura, that creature regains a number of hit points equal to half your druid level."
+                    ]
                 },
                 {
-                    name: "Faithful Summons",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 14,
-                    entries: [
+                    "name": "Faithful Summons",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 14,
+                    "entries": [
                         "Starting at 14th level, the nature spirits you commune with protect you when you are the most defenseless. If you are reduced to 0 hit points or are *incapacitated* against your will, you can immediately gain the benefits of *conjure animals* as if it were cast using a 9th-level spell slot. It summons four beasts of your choice that are challenge rating 2 or lower. The conjured beasts appear within 20 feet of you. If they receive no commands from you, they protect you from harm and attack your foes. The spell lasts for 1 hour, requiring no concentration, or until you dismiss it (no action required).",
-                        "Once you use this feature, you can't use it again until you finish a long rest.",
-                    ],
-                },
-            ],
+                        "Once you use this feature, you can't use it again until you finish a long rest."
+                    ]
+                }
+            ]
         },
         {
-            name: "Circle of Spores (UA)",
-            name_short: "Spores (UA)",
-            source: "UAThreeSubclasses",
-            subclass_spells: {
+            "name": "Circle of Spores (UA)",
+            "name_short": "Spores (UA)",
+            "source": "UAThreeSubclasses",
+            "subclass_spells": {
                 "3": [
                     "gentle repose",
-                    "ray of enfeeblement",
+                    "ray of enfeeblement"
                 ],
                 "5": [
                     "animate dead",
-                    "gaseous form",
+                    "gaseous form"
                 ],
                 "7": [
                     "blight",
-                    "confusion",
+                    "confusion"
                 ],
                 "9": [
                     "cloudkill",
-                    "contagion",
-                ],
+                    "contagion"
+                ]
             },
-            features: [
+            "features": [
                 {
-                    name: "Circle of Spores (UA)",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAThreeSubclasses",
-                    level: 2,
-                    entries: [
+                    "name": "Circle of Spores (UA)",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAThreeSubclasses",
+                    "level": 2,
+                    "entries": [
                         "Druids of the Circle of Spores find beauty in decay. They see within mold and other fungi the ability to transform lifeless material into abundant, albeit somewhat strange, life. These druids believe that life and death are portions of a grand cycle, with one leading to the other and then back again. Death is not the end of life, but instead a change of state that sees life shift into a new form. Druids of this circle have a complex relationship with the undead. Unlike most other druids, they see nothing inherently wrong with undeath, which they consider to be a companion to life and death. However, these druids believe that the natural cycle is healthiest when each segment of it is vibrant and changing. Undead that seek to replace all life with undeath, or avoid passing to a final rest, violate the cycle and must be thwarted.",
                         "",
                         "## Circle Spells",
@@ -1124,72 +1127,72 @@
                         "",
                         "## Symbiotic Entity",
                         "At 2nd level, you gain the ability to channel magic into the spores that infuse you.",
-                        "When you use your Wild Shape feature, you can awaken those spores, rather than transforming. When you do so, you gain 3 temporary hit points per level you have in this class, the damage of your Halo of Spores feature doubles, and your melee weapon attacks deal an extra **1d6** poison damage to any target they hit. These benefits last for 10 minutes or until you use your Wild Shape again.",
-                    ],
+                        "When you use your Wild Shape feature, you can awaken those spores, rather than transforming. When you do so, you gain 3 temporary hit points per level you have in this class, the damage of your Halo of Spores feature doubles, and your melee weapon attacks deal an extra **1d6** poison damage to any target they hit. These benefits last for 10 minutes or until you use your Wild Shape again."
+                    ]
                 },
                 {
-                    name: "Fungal Infestation",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAThreeSubclasses",
-                    level: 6,
-                    entries: [
+                    "name": "Fungal Infestation",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAThreeSubclasses",
+                    "level": 6,
+                    "entries": [
                         "At 6th level, your spores gain the ability to infest a humanoid corpse and animate it.",
-                        "If you slay a humanoid with your Halo of Spores damage, the creature rises as a **zombie** at the end of your turn. It has 1 hit point. In combat, its turn is immediately after yours. It obeys your mental commands, and the only action it can take is the **Attack** action, making one melee attack. It remains animate for 1 hour, after which time it collapses and dies.",
-                    ],
+                        "If you slay a humanoid with your Halo of Spores damage, the creature rises as a **zombie** at the end of your turn. It has 1 hit point. In combat, its turn is immediately after yours. It obeys your mental commands, and the only action it can take is the **Attack** action, making one melee attack. It remains animate for 1 hour, after which time it collapses and dies."
+                    ]
                 },
                 {
-                    name: "Spreading Spores",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAThreeSubclasses",
-                    level: 10,
-                    entries: [
-                        "At 10th level, you gain the ability to seed an area with deadly spores. As a bonus action, you hurl fungal spores up to 30 feet away, where they swirl around in a 10-foot cube for 1 minute. While the cube of spores persists, you can't use your Halo of Spores feature, but any creature that starts its turn in the cube takes your Halo of Spores damage. The cube of spores vanishes early if you use this feature again.",
-                    ],
+                    "name": "Spreading Spores",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAThreeSubclasses",
+                    "level": 10,
+                    "entries": [
+                        "At 10th level, you gain the ability to seed an area with deadly spores. As a bonus action, you hurl fungal spores up to 30 feet away, where they swirl around in a 10-foot cube for 1 minute. While the cube of spores persists, you can't use your Halo of Spores feature, but any creature that starts its turn in the cube takes your Halo of Spores damage. The cube of spores vanishes early if you use this feature again."
+                    ]
                 },
                 {
-                    name: "Fungal Body",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAThreeSubclasses",
-                    level: 14,
-                    entries: [
-                        "At 14th level, the fungal spores in your body alter you: you can't be *blinded*, *deafened*, *frightened*, or *poisoned*, and if an attack is a critical hit against you, it doesn't deal its extra damage to you.",
-                    ],
-                },
-            ],
+                    "name": "Fungal Body",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAThreeSubclasses",
+                    "level": 14,
+                    "entries": [
+                        "At 14th level, the fungal spores in your body alter you: you can't be *blinded*, *deafened*, *frightened*, or *poisoned*, and if an attack is a critical hit against you, it doesn't deal its extra damage to you."
+                    ]
+                }
+            ]
         },
         {
-            name: "Circle of Wildfire (UA)",
-            name_short: "Wildfire (UA)",
-            source: "UAClericDruidWizard",
-            subclass_spells: {
+            "name": "Circle of Wildfire (UA)",
+            "name_short": "Wildfire (UA)",
+            "source": "UAClericDruidWizard",
+            "subclass_spells": {
                 "3": [
                     "locate animals or plants",
-                    "scorching ray",
+                    "scorching ray"
                 ],
                 "5": [
                     "fireball",
-                    "plant growth",
+                    "plant growth"
                 ],
                 "7": [
                     "aura of life",
-                    "fire shield",
+                    "fire shield"
                 ],
                 "9": [
                     "flame strike",
-                    "raise dead",
-                ],
+                    "raise dead"
+                ]
             },
-            features: [
+            "features": [
                 {
-                    name: "Circle of Wildfire",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAClericDruidWizard",
-                    level: 2,
-                    entries: [
+                    "name": "Circle of Wildfire",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAClericDruidWizard",
+                    "level": 2,
+                    "entries": [
                         "Druids who are members of the Circle of Wildfire understand the necessity of destruction, such as how a forest fire promotes growth. These druids bond with a primal spirit that harbors destructive tendencies, allowing the druids to use their power to create controlled flames that help flora and fauna reproduce and grow.",
                         "",
                         "## Circle Spells",
@@ -1212,58 +1215,58 @@
                         "The spirit appears in an unoccupied space of your choice you can see within 30 feet of you. Each creature within 10 feet of the spirit (other than you) when it appears must succeed on a Dexterity saving throw against your spell save DC or take **2d10** fire damage.",
                         "The wildfire spirit is friendly to you and your companions and obeys your commands. See this creature's game statistics in the wildfire spirit stat block. You determine the spirit's appearance. Some spirits take the form of a humanoid figure made of gnarled branches covered in flame, while others look like beasts wreathed in fire.",
                         "In combat, the wildfire spirit shares your initiative count, but it takes its turn immediately after yours. The only action it takes on its turn is the **Dodge** action, unless you take a bonus action on your turn to command it to take one of the actions in its stat block or to take the **Dash**, **Disengage**, **Help**, or **Hide** action.",
-                        "The wildfire spirit manifests for 1 hour, until it is reduced to 0 hit points, or until you use your Wild Shape again.",
-                    ],
+                        "The wildfire spirit manifests for 1 hour, until it is reduced to 0 hit points, or until you use your Wild Shape again."
+                    ]
                 },
                 {
-                    name: "Enhanced Bond",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAClericDruidWizard",
-                    level: 6,
-                    entries: [
+                    "name": "Enhanced Bond",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAClericDruidWizard",
+                    "level": 6,
+                    "entries": [
                         "*6th-level Circle of Wildfire feature*",
-                        "The bond with your wildfire spirit enhances your destructive and restorative spells. Whenever you cast a spell that deals fire damage or restores hit points while your wildfire spirit is summoned, roll a d8, and you gain a bonus to one roll of the spell equal to the number rolled. In addition, when you cast a spell with a range other than self, the spell can originate from you or your wildfire spirit.",
-                    ],
+                        "The bond with your wildfire spirit enhances your destructive and restorative spells. Whenever you cast a spell that deals fire damage or restores hit points while your wildfire spirit is summoned, roll a d8, and you gain a bonus to one roll of the spell equal to the number rolled. In addition, when you cast a spell with a range other than self, the spell can originate from you or your wildfire spirit."
+                    ]
                 },
                 {
-                    name: "Flames of Life",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAClericDruidWizard",
-                    level: 10,
-                    entries: [
+                    "name": "Flames of Life",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAClericDruidWizard",
+                    "level": 10,
+                    "entries": [
                         "*10th-level Circle of Wildfire feature*",
-                        "You gain the ability to turn death into flames of vitality. When a Small or larger creature that you can see dies within 30 feet of you or your wildfire spirit, you can use your reaction to cause primal flames to spring from the body. When a creature you can see touches these flames, the creature regains hit points or takes fire damage (your choice) equal to 2d10 + your Wisdom modifier. The flames vanish after a creature has touched them or after 1 minute. You can use this feature a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses when you finish a long rest.",
-                    ],
+                        "You gain the ability to turn death into flames of vitality. When a Small or larger creature that you can see dies within 30 feet of you or your wildfire spirit, you can use your reaction to cause primal flames to spring from the body. When a creature you can see touches these flames, the creature regains hit points or takes fire damage (your choice) equal to 2d10 + your Wisdom modifier. The flames vanish after a creature has touched them or after 1 minute. You can use this feature a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses when you finish a long rest."
+                    ]
                 },
                 {
-                    name: "Blazing Endurance",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAClericDruidWizard",
-                    level: 14,
-                    entries: [
+                    "name": "Blazing Endurance",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAClericDruidWizard",
+                    "level": 14,
+                    "entries": [
                         "*14th-level Circle of Wildfire feature*",
                         "The bond with your wildfire spirit is exceptionally strong, even fatal blows only fuel your defiance. If you drop to 0 hit points and don't die outright, you drop to 1 hit point instead and gain temporary hit points equal to five times your druid level, and each creature of your choice within 30 feet of you that you can see takes fire damage equal to 2d10 + your druid level.",
-                        "Once you use this feature, you can't use it again until you finish a long rest.",
-                    ],
-                },
-            ],
+                        "Once you use this feature, you can't use it again until you finish a long rest."
+                    ]
+                }
+            ]
         },
         {
-            name: "Circle of the Stars (UA)",
-            name_short: "Stars (UA)",
-            source: "UA2020SubclassesPt3",
-            subclass_spells: {},
-            features: [
+            "name": "Circle of the Stars (UA)",
+            "name_short": "Stars (UA)",
+            "source": "UA2020SubclassesPt3",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "Circle of the Stars",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2020SubclassesPt3",
-                    level: 2,
-                    entries: [
+                    "name": "Circle of the Stars",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2020SubclassesPt3",
+                    "level": 2,
+                    "entries": [
                         "An ancient lineage, the Circle of Stars allows druids to draw on the power of starlight. These druids have tracked heavenly patterns since time immemorial, discovering secrets hidden amid the constellations. By revealing and understanding these secrets, the Circle of the Stars seeks to harness the powers of the cosmos.",
                         "Many druids of this circle keep detailed records of the stars and their effects on the world. Some groups document these observations at megalithic sites, which serve as enigmatic libraries of lore. These repositories might take the form of stone circles, pyramids, petroglyphs, and underground temples\u2014any construction durable enough to protect the circle's sacred knowledge even against a great cataclysm.",
                         "",
@@ -1292,79 +1295,79 @@
                         "",
                         "**Chalice** A constellation of a life-giving goblet appears on you. Whenever you cast a spell using a spell slot that restores hit points to a creature, you or another creature within 30 feet of you can regain hit points equal to 1d8 + half your level in this class.",
                         "**Archer** A constellation of an archer appears on you. You gain a bonus action that you can use to make a ranged spell attack, hurling a luminous arrow that targets a creature you can see within 60 feet of you. On a hit, the attack deals radiant damage equal to 1d8 + your Wisdom modifier.",
-                        "**Dragon** A constellation of a wise, ancient dragon appears on you. When you make an Intelligence or a Wisdom check or a Constitution saving throw to maintain concentration on a spell, you can treat a roll of 9 or lower on the d20 as a 10.",
-                    ],
+                        "**Dragon** A constellation of a wise, ancient dragon appears on you. When you make an Intelligence or a Wisdom check or a Constitution saving throw to maintain concentration on a spell, you can treat a roll of 9 or lower on the d20 as a 10."
+                    ]
                 },
                 {
-                    name: "Cosmic Omen",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2020SubclassesPt3",
-                    level: 6,
-                    entries: [
+                    "name": "Cosmic Omen",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2020SubclassesPt3",
+                    "level": 6,
+                    "entries": [
                         "*6th-level Circle of the Stars feature*",
                         "You learn to use your star map to divine the will of the cosmos. Whenever you finish a long rest, you can consult your star map for omens. When you do so, roll a d6. You gain one of the following possible omens based on whether you rolled an even number or an odd number on the d6:",
                         "",
                         "**Weal (even)** Whenever a creature you can see within 30 feet of you makes an attack roll, a saving throw, or an ability check, you can use your reaction to roll a d6 and add the number rolled to the total.",
                         "**Woe (odd)** Whenever a creature you can see within 30 feet of you makes an attack roll, a saving throw, or an ability check, you can use your reaction to roll a d6 and subtract the number rolled from the total.",
-                        "You can use this reaction a number of times equal to your Wisdom modifier, and you regain all expended uses when you finish a long rest.",
-                    ],
+                        "You can use this reaction a number of times equal to your Wisdom modifier, and you regain all expended uses when you finish a long rest."
+                    ]
                 },
                 {
-                    name: "Full of Stars",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2020SubclassesPt3",
-                    level: 10,
-                    entries: [
+                    "name": "Full of Stars",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2020SubclassesPt3",
+                    "level": 10,
+                    "entries": [
                         "*10th-level Circle of the Stars feature*",
-                        "While your Starry Form feature is active, you become partially incorporeal, giving you resistance to bludgeoning, piercing, and slashing damage.",
-                    ],
+                        "While your Starry Form feature is active, you become partially incorporeal, giving you resistance to bludgeoning, piercing, and slashing damage."
+                    ]
                 },
                 {
-                    name: "Star Flare",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2020SubclassesPt3",
-                    level: 14,
-                    entries: [
+                    "name": "Star Flare",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2020SubclassesPt3",
+                    "level": 14,
+                    "entries": [
                         "*14th-level Circle of the Stars feature*",
                         "Your connection to the cosmos allows you to conjure brilliant starlight. As an action, you conjure a burst of light in a 30-foot-radius sphere centered on a point you can see within 120 feet of you. You can immediately teleport each willing creature in the sphere to an unoccupied space within 30 feet of it. Each creature remaining in the sphere must succeed on a Constitution saving throw against your spell save DC or take **4d10** radiant damage and be *blinded* until the end of your next turn.",
-                        "Once you have used this action, you can't use it again until you finish a long rest or until you expend a spell slot of 5th level or higher to use it again.",
-                    ],
-                },
-            ],
+                        "Once you have used this action, you can't use it again until you finish a long rest or until you expend a spell slot of 5th level or higher to use it again."
+                    ]
+                }
+            ]
         },
         {
-            name: "Circle of Spores",
-            name_short: "Spores",
-            source: "TCE",
-            subclass_spells: {
+            "name": "Circle of Spores",
+            "name_short": "Spores",
+            "source": "TCE",
+            "subclass_spells": {
                 "3": [
                     "blindness/deafness",
-                    "gentle repose",
+                    "gentle repose"
                 ],
                 "5": [
                     "animate dead",
-                    "gaseous form",
+                    "gaseous form"
                 ],
                 "7": [
                     "blight",
-                    "confusion",
+                    "confusion"
                 ],
                 "9": [
                     "cloudkill",
-                    "contagion",
-                ],
+                    "contagion"
+                ]
             },
-            features: [
+            "features": [
                 {
-                    name: "Circle of Spores",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 2,
-                    entries: [
+                    "name": "Circle of Spores",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 2,
+                    "entries": [
                         "Druids of the Circle of Spores find beauty in decay. They see within mold and other fungi the ability to transform lifeless material into abundant, albeit somewhat strange, life.",
                         "These druids believe that life and death are parts of a grand cycle, with one leading to the other and then back again. Death isn't the end of life, but instead a change of state that sees life shift into a new form.",
                         "Druids of this circle have a complex relationship with the undead. Unlike most other druids, they see nothing inherently wrong with undeath, which they consider to be a companion to life and death. But these druids believe that the natural cycle is healthiest when each segment of it is vibrant and changing. Undead that seek to replace all life with undeath, or that try to avoid passing to a final rest, violate the cycle and must be thwarted.",
@@ -1390,62 +1393,62 @@
                         "",
                         "When you deal your Halo of Spores damage, roll the damage die a second time and add it to the total.",
                         "Your melee weapon attacks deal an extra **1d6** necrotic damage to any target they hit.",
-                        "These benefits last for 10 minutes, until you lose all these temporary hit points, or until you use your Wild Shape again.",
-                    ],
+                        "These benefits last for 10 minutes, until you lose all these temporary hit points, or until you use your Wild Shape again."
+                    ]
                 },
                 {
-                    name: "Fungal Infestation",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 6,
-                    entries: [
+                    "name": "Fungal Infestation",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 6,
+                    "entries": [
                         "At 6th level, your spores gain the ability to infest a corpse and animate it. If a beast or a humanoid that is Small or Medium dies within 10 feet of you, you can use your reaction to animate it, causing it to stand up immediately with 1 hit point. The creature uses the **zombie** stat block in the **Monster manual**. It remains animate for 1 hour, after which time it collapses and dies.",
                         "In combat, the zombie's turn comes immediately after yours. It obeys your mental commands, and the only action it can take is the **Attack** action, making one melee attack.",
-                        "You can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses of it when you finish a long rest.",
-                    ],
+                        "You can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses of it when you finish a long rest."
+                    ]
                 },
                 {
-                    name: "Spreading Spores",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 10,
-                    entries: [
+                    "name": "Spreading Spores",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 10,
+                    "entries": [
                         "At 10th level, you gain the ability to seed an area with deadly spores. As a bonus action while your Symbiotic Entity feature is active, you can hurl spores up to 30 feet away, where they swirl in a 10-foot cube for 1 minute. The spores disappear early if you use this feature again, if you dismiss them as a bonus action, or if your Symbiotic Entity feature is no longer active.",
                         "Whenever a creature moves into the cube or starts its turn there, that creature takes your Halo of Spores damage, unless the creature succeeds on a Constitution saving throw against your spell save DC. A creature can take this damage no more than once per turn.",
-                        "While the cube of spores persists, you can't use your Halo of Spores reaction.",
-                    ],
+                        "While the cube of spores persists, you can't use your Halo of Spores reaction."
+                    ]
                 },
                 {
-                    name: "Fungal Body",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 14,
-                    entries: [
-                        "At 14th level, the fungal spores in your body alter you: you can't be *blinded*, *deafened*, *frightened*, or *poisoned*, and any critical hit against you counts as a normal hit instead, unless you're *incapacitated*.",
-                    ],
-                },
-            ],
+                    "name": "Fungal Body",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 14,
+                    "entries": [
+                        "At 14th level, the fungal spores in your body alter you: you can't be *blinded*, *deafened*, *frightened*, or *poisoned*, and any critical hit against you counts as a normal hit instead, unless you're *incapacitated*."
+                    ]
+                }
+            ]
         },
         {
-            name: "Circle of Stars",
-            name_short: "Stars",
-            source: "TCE",
-            subclass_spells: {
+            "name": "Circle of Stars",
+            "name_short": "Stars",
+            "source": "TCE",
+            "subclass_spells": {
                 "2": [
-                    "guiding bolt",
-                ],
+                    "guiding bolt"
+                ]
             },
-            features: [
+            "features": [
                 {
-                    name: "Circle of Stars",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 2,
-                    entries: [
+                    "name": "Circle of Stars",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 2,
+                    "entries": [
                         "The Circle of Stars allows druids to draw on the power of starlight. These druids have tracked heavenly patterns since time immemorial, discovering secrets hidden amid the constellations. By revealing and understanding these secrets, the Circle of the Stars seeks to harness the powers of the cosmos.",
                         "Many druids of this circle keep records of the constellations and the stars' effects on the world. Some groups document these observations at megalithic sites, which serve as enigmatic libraries of lore. These repositories might take the form of stone circles, pyramids, petroglyphs, and underground temples-any construction durable enough to protect the circle's sacred knowledge even against a great cataclysm.",
                         "",
@@ -1483,83 +1486,83 @@
                         "A constellation of a life-giving goblet appears on you. Whenever you cast a spell using a spell slot that restores hit points to a creature, you or another creature within 30 feet of you can regain hit points equal to 1d8 + your Wisdom modifier.",
                         "",
                         "## Dragon",
-                        "A constellation of a wise dragon appears on you. When you make an Intelligence or a Wisdom check or a Constitution saving throw to maintain concentration on a spell, you can treat a roll of 9 or lower on the d20 as a 10.",
-                    ],
+                        "A constellation of a wise dragon appears on you. When you make an Intelligence or a Wisdom check or a Constitution saving throw to maintain concentration on a spell, you can treat a roll of 9 or lower on the d20 as a 10."
+                    ]
                 },
                 {
-                    name: "Cosmic Omen",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 6,
-                    entries: [
+                    "name": "Cosmic Omen",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 6,
+                    "entries": [
                         "*6th-level Circle of the Stars feature*",
                         "Whenever you finish a long rest, you can consult your Star Map for omens. When you do so, roll a die. Until you finish your next long rest, you gain access to a special reaction based on whether you rolled an even or an odd number on the die:",
                         "",
                         "**Weal (even)** Whenever a creature you can see within 30 feet of you is about to make an attack roll, a saving throw, or an ability check, you can use your reaction to roll a d6 and add the number rolled to the total.",
                         "**Woe (odd)** Whenever a creature you can see within 30 feet of you is about to make an attack roll, a saving throw, or an ability check, you can use your reaction to roll a d6 and subtract the number rolled from the total.",
-                        "You can use this reaction a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
-                    ],
+                        "You can use this reaction a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+                    ]
                 },
                 {
-                    name: "Twinkling Constellations",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 10,
-                    entries: [
+                    "name": "Twinkling Constellations",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 10,
+                    "entries": [
                         "*10th-level Circle of the Stars feature*",
                         "The constellations of your Starry Form improve. The 1d8 of the Archer and the Chalice becomes 2d8, and while the Dragon is active, you have a flying speed of 20 feet and can hover.",
-                        "Moreover, at the start of each of your turns while in your Starry Form, you can change which constellation glimmers on your body.",
-                    ],
+                        "Moreover, at the start of each of your turns while in your Starry Form, you can change which constellation glimmers on your body."
+                    ]
                 },
                 {
-                    name: "Full of Stars",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 14,
-                    entries: [
+                    "name": "Full of Stars",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 14,
+                    "entries": [
                         "*14th-level Circle of the Stars feature*",
-                        "While in your Starry Form, you become partially incorporeal, giving you resistance to bludgeoning, piercing, and slashing damage.",
-                    ],
-                },
-            ],
+                        "While in your Starry Form, you become partially incorporeal, giving you resistance to bludgeoning, piercing, and slashing damage."
+                    ]
+                }
+            ]
         },
         {
-            name: "Circle of Wildfire",
-            name_short: "Wildfire",
-            source: "TCE",
-            subclass_spells: {
+            "name": "Circle of Wildfire",
+            "name_short": "Wildfire",
+            "source": "TCE",
+            "subclass_spells": {
                 "2": [
                     "burning hands",
-                    "cure wounds",
+                    "cure wounds"
                 ],
                 "3": [
                     "flaming sphere",
-                    "scorching ray",
+                    "scorching ray"
                 ],
                 "5": [
                     "plant growth",
-                    "revivify",
+                    "revivify"
                 ],
                 "7": [
                     "aura of life",
-                    "fire shield",
+                    "fire shield"
                 ],
                 "9": [
                     "flame strike",
-                    "mass cure wounds",
-                ],
+                    "mass cure wounds"
+                ]
             },
-            features: [
+            "features": [
                 {
-                    name: "Circle of Wildfire",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 2,
-                    entries: [
+                    "name": "Circle of Wildfire",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 2,
+                    "entries": [
                         "Druids within the Circle of Wildfire understand that destruction is sometimes the precursor of creation, such as when a forest fire promotes later growth. These druids bond with a primal spirit that harbors both destructive and creative power, allowing the druids to create controlled flames that burn away one thing but give life to another.",
                         "",
                         "## Circle Spells",
@@ -1583,74 +1586,74 @@
                         "The spirit appears in an unoccupied space of your choice that you can see within 30 feet of you. Each creature within 10 feet of the spirit (other than you) when it appears must succeed on a Dexterity saving throw against your spell save DC or take **2d6** fire damage.",
                         "The spirit is friendly to you and your companions and obeys your commands. See this creature's game statistics in the **Wildfire Spirit** stat block, which uses your proficiency bonus (PB) in several places. You determine the spirit's appearance. Some spirits take the form of a humanoid figure made of gnarled branches covered in flame, while others look like beasts wreathed in fire.",
                         "In combat, the spirit shares your initiative count, but it takes its turn immediately after yours. The only action it takes on its turn is the **Dodge** action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are *incapacitated*, the spirit can take any action of its choice, not just **Dodge**.",
-                        "The spirit manifests for 1 hour, until it is reduced to 0 hit points, until you use this feature to summon the spirit again, or until you die.",
-                    ],
+                        "The spirit manifests for 1 hour, until it is reduced to 0 hit points, until you use this feature to summon the spirit again, or until you die."
+                    ]
                 },
                 {
-                    name: "Enhanced Bond",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 6,
-                    entries: [
+                    "name": "Enhanced Bond",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 6,
+                    "entries": [
                         "*6th-level Circle of Wildfire feature*",
                         "The bond with your wildfire spirit enhances your destructive and restorative spells. Whenever you cast a spell that deals fire damage or restores hit points while your wildfire spirit is summoned, roll a d8, and you gain a bonus equal to the number rolled to one damage or healing roll of the spell.",
-                        "In addition, when you cast a spell with a range other than self, the spell can originate from you or your wildfire spirit.",
-                    ],
+                        "In addition, when you cast a spell with a range other than self, the spell can originate from you or your wildfire spirit."
+                    ]
                 },
                 {
-                    name: "Cauterizing Flames",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 10,
-                    entries: [
+                    "name": "Cauterizing Flames",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 10,
+                    "entries": [
                         "*10th-level Circle of Wildfire feature*",
                         "You gain the ability to turn death into magical flames that can heal or incinerate. When a Small or larger creature dies within 30 feet of you or your wildfire spirit, a harmless spectral flame springs forth in the dead creature's space and flickers there for 1 minute. When a creature you can see enters that space, you can use your reaction to extinguish the spectral flame there and either heal the creature or deal fire damage to it. The healing or damage equals 2d10 + your Wisdom modifier.",
-                        "You can use this reaction a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
-                    ],
+                        "You can use this reaction a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+                    ]
                 },
                 {
-                    name: "Blazing Revival",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 14,
-                    entries: [
+                    "name": "Blazing Revival",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 14,
+                    "entries": [
                         "*14th-level Circle of Wildfire feature*",
                         "The bond with your wildfire spirit can save you from death. If the spirit is within 120 feet of you when you are reduced to 0 hit points and thereby fall *unconscious*, you can cause the spirit to drop to 0 hit points. You then regain half your hit points and immediately rise to your feet.",
-                        "Once you use this feature, you can't use it again until you finish a long rest.",
-                    ],
-                },
-            ],
+                        "Once you use this feature, you can't use it again until you finish a long rest."
+                    ]
+                }
+            ]
         },
         {
-            name: "Mage of Prismari (UA)",
-            name_short: "Prismari (UA)",
-            source: "UA2021MagesOfStrixhaven",
-            subclass_spells: {},
-            features: [],
+            "name": "Mage of Prismari (UA)",
+            "name_short": "Prismari (UA)",
+            "source": "UA2021MagesOfStrixhaven",
+            "subclass_spells": {},
+            "features": []
         },
         {
-            name: "Mage of Witherbloom (UA)",
-            name_short: "Witherbloom (UA)",
-            source: "UA2021MagesOfStrixhaven",
-            subclass_spells: {},
-            features: [],
+            "name": "Mage of Witherbloom (UA)",
+            "name_short": "Witherbloom (UA)",
+            "source": "UA2021MagesOfStrixhaven",
+            "subclass_spells": {},
+            "features": []
         },
         {
-            name: " Circle of the Primeval (UA)",
-            name_short: "Primeval (UA)",
-            source: "UA2022GiantOptions",
-            subclass_spells: {},
-            features: [
+            "name": " Circle of the Primeval (UA)",
+            "name_short": "Primeval (UA)",
+            "source": "UA2022GiantOptions",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "Circle of the Primeval",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2022GiantOptions",
-                    level: 2,
-                    entries: [
+                    "name": "Circle of the Primeval",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2022GiantOptions",
+                    "level": 2,
+                    "entries": [
                         "The Circle of the Primeval teaches that, though the land may change over time, it never truly forgets. By tapping into the timeworn memory of the earth, these druids summon and bond with the spirit of a primeval behemoth\u2014a hulking creature that once ruled the ancient world alongside the giants. The most well-known primeval behemoths are the dinosaurs, but spirits bonded with members of the Circle of the Primeval have also taken the form of ancient predecessors to today's common beasts and other fantastical titanic creatures.",
                         "Working alongside their companion spirit, most druids of the Circle of the Primeval spend their lives delving into long-forgotten places and preserving the remnants of bygone eras. As a druid's power grows, so does their companion, the beast starting near equal in size to its druid partner before increasing in stature until it too towers over the land.",
                         "",
@@ -1663,53 +1666,53 @@
                         "Starting when you choose this circle, you can call upon the primeval creature whose spirit is bound to you. As an action, you can expend one use of your Wild Shape feature to summon your primeval companion, rather than assuming a beast form. The companion appears in an unoccupied space of your choice within 30 feet of you.",
                         "The primeval companion is friendly to you and your companions, and it obeys your commands. See this creature's game statistics in the **Primeval Companion** stat block, which uses your proficiency bonus (PB) in several places. You can determine the cosmetic appearance of the companion; for example, your companion may evoke ancient predators like raptors or saber-toothed tigers, or it might be more inclined for defense, appearing as an armored ankylosaurus or a wooly rhino. These choices have no effect on the companion's game statistics.",
                         "In combat, the companion shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the **Dodge** action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are *incapacitated*, the companion can take any action of its choice, not just **Dodge**.",
-                        "The companion remains until it is reduced to 0 hit points or until you die, at which point the companion vanishes. If you use this feature to summon the companion again and you already have a companion present, the first companion immediately vanishes. Anything the companion was wearing or carrying is left behind when the companion vanishes.",
-                    ],
+                        "The companion remains until it is reduced to 0 hit points or until you die, at which point the companion vanishes. If you use this feature to summon the companion again and you already have a companion present, the first companion immediately vanishes. Anything the companion was wearing or carrying is left behind when the companion vanishes."
+                    ]
                 },
                 {
-                    name: "Prehistoric Conduit",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2022GiantOptions",
-                    level: 6,
-                    entries: [
+                    "name": "Prehistoric Conduit",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2022GiantOptions",
+                    "level": 6,
+                    "entries": [
                         "*6th-Level Circle of the Primeval Feature*",
                         "You learn how to channel your magic through your primeval companion. When you cast a spell with a range other than self, the spell can originate from you or your primeval companion.",
-                        "In addition, if the primeval companion is affected by a spell you cast that allows creatures to make a saving throw against its effects, the primeval companion has advantage on its saving throw. If the primeval companion would normally take half damage on a successful save against this spell, the companion instead takes no damage on a successful save and half damage with no additional effects on a failed save.",
-                    ],
+                        "In addition, if the primeval companion is affected by a spell you cast that allows creatures to make a saving throw against its effects, the primeval companion has advantage on its saving throw. If the primeval companion would normally take half damage on a successful save against this spell, the companion instead takes no damage on a successful save and half damage with no additional effects on a failed save."
+                    ]
                 },
                 {
-                    name: "Titanic Bond",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2022GiantOptions",
-                    level: 10,
-                    entries: [
+                    "name": "Titanic Bond",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2022GiantOptions",
+                    "level": 10,
+                    "entries": [
                         "*10th-Level Circle of the Primeval Feature*",
                         "The primeval companion grows to Large size, and when you summon it, you can grant it either a climbing speed or a swimming speed equal to its walking speed.",
-                        "In turn, the primeval companion lends you some of its terrifying might. Once per turn while your primeval companion is summoned, when you hit a creature with an attack or deal damage to a creature you can see with a spell you cast, you can force that creature to make a Wisdom saving throw against your spell save DC; on a failure, the creature is *frightened* of you until the end of your next turn.",
-                    ],
+                        "In turn, the primeval companion lends you some of its terrifying might. Once per turn while your primeval companion is summoned, when you hit a creature with an attack or deal damage to a creature you can see with a spell you cast, you can force that creature to make a Wisdom saving throw against your spell save DC; on a failure, the creature is *frightened* of you until the end of your next turn."
+                    ]
                 },
                 {
-                    name: "Scourge of the Ancients",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2022GiantOptions",
-                    level: 14,
-                    entries: [
+                    "name": "Scourge of the Ancients",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2022GiantOptions",
+                    "level": 14,
+                    "entries": [
                         "*14th-Level Circle of the Primeval Feature*",
                         "You have learned to fully harness the titanic legacy of your companion. As part of the bonus action you use to command your companion, you can expend a spell slot of any level to heighten your primeval companion's might, granting it the following benefits:",
                         "",
                         "**Hulking Behemoth** The companion becomes Huge and gains temporary hit points equal to 10 times the level of the spell slot expended. If there isn't enough room for the companion to become Huge, it attains the maximum possible size in the space available.",
                         "**Mauler** On a hit, the companion's Strike deals additional damage equal to 1d8 plus the level of the spell slot expended.",
                         "**Titanic Stride** The companion's walking speed increases by a number of feet equal to 5 times the level of the spell slot expended.",
-                        "These benefits last for 1 hour, until the companion vanishes, or until you expend a spell slot for this feature again.",
-                    ],
-                },
-            ],
-        },
+                        "These benefits last for 1 hour, until the companion vanishes, or until you expend a spell slot for this feature again."
+                    ]
+                }
+            ]
+        }
     ],
-    fluff: [
+    "fluff": [
         "",
         "# Druid",
         "*PHB - 64*",
@@ -2040,6 +2043,6 @@
         "| 2 | **Plesiosaurus** | Swim |",
         "| 3 | **Killer whale** | Swim |",
         "| 5 | **Giant shark** | Swim |",
-        "",
-    ],
+        ""
+    ]
 }

@@ -1,59 +1,62 @@
 {
-    slug: "warlock_phb",
-    name: "Warlock",
-    source: "PHB",
-    hit_dice: "1d8",
-    save_proficiency: [
+    "slug": "warlock_phb",
+    "name": "Warlock",
+    "source": "PHB",
+    "hit_dice": {
+        "number": 1,
+        "faces": 8
+    },
+    "save_proficiency": [
         "wisdom",
-        "charisma",
+        "charisma"
     ],
-    armor_proficiency: [
-        "light",
+    "armor_proficiency": [
+        "light"
     ],
-    weapon_proficiency: [
-        "simple",
+    "weapon_proficiency": [
+        "simple"
     ],
-    tool_proficiency: [],
-    skill_proficiency: [
+    "tool_proficiency": [],
+    "skill_proficiency": [
         {
-            mode: "choose",
-            count: 2,
-            choose_from: [
+            "mode": "choose",
+            "count": 2,
+            "choose_from": [
                 "arcana",
                 "deception",
                 "history",
                 "intimidation",
                 "investigation",
                 "nature",
-                "religion",
-            ],
-        },
+                "religion"
+            ]
+        }
     ],
-    starting_equipment: {
-        backgroundItems: true,
-        gold: "4d4 * 10",
-        items: [
+    "starting_equipment": {
+        "backgroundItems": true,
+        "gold": "4d4 * 10",
+        "items": [
             "(a) a light crossbow and 20 bolts or (b) any simple weapon",
             "(a) a component pouch or (b) an arcane focus",
             "(a) a scholar's pack or (b) a dungeoneer's pack",
-            "Leather armor, any simple weapon, and two daggers",
-        ],
+            "Leather armor, any simple weapon, and two daggers"
+        ]
     },
-    multiclass_requirements: {
-        charisma: 13,
+    "multiclass_requirements": {
+        "charisma": 13
     },
-    multiclass_armor_proficiency: [
-        "light",
+    "multiclass_armor_proficiency": [
+        "light"
     ],
-    multiclass_weapon_proficiency: [
-        "simple",
+    "multiclass_weapon_proficiency": [
+        "simple"
     ],
-    multiclass_tool_proficiency: [],
-    multiclass_skill_proficiency: null,
-    spellcasting: {
-        ability: "charisma",
-        progression: "pact",
-        cantrip_progression: [
+    "multiclass_tool_proficiency": [],
+    "multiclass_skill_proficiency": null,
+    "spellcasting": {
+        "ability": "charisma",
+        "progression": "pact",
+        "cantrip_progression": [
             2,
             2,
             2,
@@ -73,17 +76,17 @@
             4,
             4,
             4,
-            4,
-        ],
+            4
+        ]
     },
-    features: [
+    "features": [
         {
-            name: "Pact Magic",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 1,
-            entries: [
+            "name": "Pact Magic",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 1,
+            "entries": [
                 "Your arcane research and the magic bestowed on you by your patron have given you facility with spells. See **Chapter 10 (PHB) - Page 10** for the general rules of spellcasting and **Chapter 11 (PHB) - Page 11** for the warlock spell list.",
                 "",
                 "## Cantrips",
@@ -104,50 +107,50 @@
                 "**Spell:** ['Charisma']",
                 "",
                 "## Spellcasting Focus",
-                "You can use an arcane focus as a spellcasting focus for your warlock spells.",
-            ],
+                "You can use an arcane focus as a spellcasting focus for your warlock spells."
+            ]
         },
         {
-            name: "Spell Versatility",
-            type: "class",
-            gain_scf: false,
-            source: "UAClassFeatureVariants",
-            level: 1,
-            entries: [
+            "name": "Spell Versatility",
+            "type": "class",
+            "gain_scf": false,
+            "source": "UAClassFeatureVariants",
+            "level": 1,
+            "entries": [
                 "*1st-level warlock feature (enhances Pact Magic)*",
-                "Whenever you finish a long rest, you can replace one spell you learned from this Pact Magic feature with another spell from the warlock spell list. The new spell must be the same level as the spell you replace.",
-            ],
+                "Whenever you finish a long rest, you can replace one spell you learned from this Pact Magic feature with another spell from the warlock spell list. The new spell must be the same level as the spell you replace."
+            ]
         },
         {
-            name: "Otherworldly Patron",
-            type: "class",
-            gain_scf: true,
-            source: "PHB",
-            level: 1,
-            entries: [
-                "At 1st level, you have struck a bargain with an otherworldly being chosen from the list of available patrons. Your choice grants you features at 1st level and again at 6th, 10th, and 14th level.",
-            ],
+            "name": "Otherworldly Patron",
+            "type": "class",
+            "gain_scf": true,
+            "source": "PHB",
+            "level": 1,
+            "entries": [
+                "At 1st level, you have struck a bargain with an otherworldly being chosen from the list of available patrons. Your choice grants you features at 1st level and again at 6th, 10th, and 14th level."
+            ]
         },
         {
-            name: "Eldritch Invocations",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 2,
-            entries: [
+            "name": "Eldritch Invocations",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 2,
+            "entries": [
                 "In your study of occult lore, you have unearthed eldritch invocations, fragments of forbidden knowledge that imbue you with an abiding magical ability.",
                 "At 2nd level, you gain two eldritch invocations of your choice. A list of the available options can be found on the Optional Features page. When you gain certain warlock levels, you gain additional invocations of your choice, as shown in the Invocations Known column of the Warlock table.",
                 "Additionally, when you gain a level in this class, you can choose one of the invocations you know and replace it with another invocation that you could learn at that level.",
-                "If an eldritch invocation has prerequisites, you must meet them to learn it. You can learn the invocation at the same time that you meet its prerequisites. A level prerequisite refers to your level in this class.",
-            ],
+                "If an eldritch invocation has prerequisites, you must meet them to learn it. You can learn the invocation at the same time that you meet its prerequisites. A level prerequisite refers to your level in this class."
+            ]
         },
         {
-            name: "Pact Boon",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 3,
-            entries: [
+            "name": "Pact Boon",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 3,
+            "entries": [
                 "At 3rd level, your otherworldly patron bestows a gift upon you for your loyal service. You gain one of the following features of your choice.",
                 "",
                 "Select any 1 of the following:",
@@ -166,240 +169,240 @@
                 "Your patron gives you a grimoire called a Book of Shadows. When you gain this feature, choose three cantrips from any class's spell list. The cantrips do not need to be from the same spell list. While the book is on your person, you can cast those cantrips at will. They don't count against your number of cantrips known. Any cantrip you cast with this feature is considered a warlock cantrip for you. If you lose your Book of Shadows, you can perform a 1-hour ceremony to receive a replacement from your patron. This ceremony can be performed during a short or long rest, and it destroys the previous book. The book turns to ash when you die.",
                 "",
                 "",
-                "",
-            ],
+                ""
+            ]
         },
         {
-            name: "Ability Score Improvement",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 4,
-            entries: [
+            "name": "Ability Score Improvement",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 4,
+            "entries": [
                 "When you reach 4th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-                "If your DM allows the use of feats, you may instead take a feat.",
-            ],
+                "If your DM allows the use of feats, you may instead take a feat."
+            ]
         },
         {
-            name: "Proficiency Versatility",
-            type: "class",
-            gain_scf: false,
-            source: "UAClassFeatureVariants",
-            level: 4,
-            entries: [
+            "name": "Proficiency Versatility",
+            "type": "class",
+            "gain_scf": false,
+            "source": "UAClassFeatureVariants",
+            "level": 4,
+            "entries": [
                 "*4th-level feature (enhances Ability Score Improvement)*",
                 "When you gain the Ability Score Improvement feature from your class, you can also replace one of your skill proficiencies with a skill proficiency offered by your class at 1st level (the proficiency you replace needn't be from the class).",
-                "This change represents one of your skills atrophying as you focus on a different skill.",
-            ],
+                "This change represents one of your skills atrophying as you focus on a different skill."
+            ]
         },
         {
-            name: "Eldritch Versatility",
-            type: "class",
-            gain_scf: false,
-            source: "TCE",
-            level: 4,
-            entries: [
+            "name": "Eldritch Versatility",
+            "type": "class",
+            "gain_scf": false,
+            "source": "TCE",
+            "level": 4,
+            "entries": [
                 "*4th-level warlock Optional class features*",
                 "Whenever you reach a level in this class that grants the Ability Score Improvement feature, you can do one of the following, representing a change of focus in your occult studies:",
                 "",
                 "Replace one cantrip you learned from this class's Pact Magic feature with another cantrip from the warlock spell list.",
                 "Replace the option you chose for the Pact Boon feature with one of that feature's other options.",
                 "If you're 12th level or higher, replace one spell from your Mystic Arcanum feature with another warlock spell of the same level.",
-                "If this change makes you ineligible for any of your Eldritch Invocations, you must also replace them now, choosing invocations for which you qualify.",
-            ],
+                "If this change makes you ineligible for any of your Eldritch Invocations, you must also replace them now, choosing invocations for which you qualify."
+            ]
         },
         {
-            name: "Otherworldly Patron feature",
-            type: "class",
-            gain_scf: true,
-            source: "PHB",
-            level: 6,
-            entries: [
-                "At 6th level, you gain a feature granted by your Otherworldly Patron.",
-            ],
+            "name": "Otherworldly Patron feature",
+            "type": "class",
+            "gain_scf": true,
+            "source": "PHB",
+            "level": 6,
+            "entries": [
+                "At 6th level, you gain a feature granted by your Otherworldly Patron."
+            ]
         },
         {
-            name: "Ability Score Improvement",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 8,
-            entries: [
+            "name": "Ability Score Improvement",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 8,
+            "entries": [
                 "When you reach 8th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-                "If your DM allows the use of feats, you may instead take a feat.",
-            ],
+                "If your DM allows the use of feats, you may instead take a feat."
+            ]
         },
         {
-            name: "Proficiency Versatility",
-            type: "class",
-            gain_scf: false,
-            source: "UAClassFeatureVariants",
-            level: 8,
-            entries: [
+            "name": "Proficiency Versatility",
+            "type": "class",
+            "gain_scf": false,
+            "source": "UAClassFeatureVariants",
+            "level": 8,
+            "entries": [
                 "*8th-level feature (enhances Ability Score Improvement)*",
                 "When you gain the Ability Score Improvement feature from your class, you can also replace one of your skill proficiencies with a skill proficiency offered by your class at 1st level (the proficiency you replace needn't be from the class).",
-                "This change represents one of your skills atrophying as you focus on a different skill.",
-            ],
+                "This change represents one of your skills atrophying as you focus on a different skill."
+            ]
         },
         {
-            name: "Otherworldly Patron feature",
-            type: "class",
-            gain_scf: true,
-            source: "PHB",
-            level: 10,
-            entries: [
-                "At 10th level, you gain a feature granted by your Otherworldly Patron.",
-            ],
+            "name": "Otherworldly Patron feature",
+            "type": "class",
+            "gain_scf": true,
+            "source": "PHB",
+            "level": 10,
+            "entries": [
+                "At 10th level, you gain a feature granted by your Otherworldly Patron."
+            ]
         },
         {
-            name: "Mystic Arcanum (6th level)",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 11,
-            entries: [
+            "name": "Mystic Arcanum (6th level)",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 11,
+            "entries": [
                 "At 11th level, your patron bestows upon you a magical secret called an arcanum. Choose one 6th-level spell from the warlock spell list as this arcanum.",
                 "You can cast your arcanum spell once without expending a spell slot. You must finish a long rest before you can do so again.",
-                "At higher levels, you gain more warlock spells of your choice that can be cast in this way: one 7th-level spell at 13th level, one 8th-level spell at 15th level, and one 9th-level spell at 17th level. You regain all uses of your Mystic Arcanum when you finish a long rest.",
-            ],
+                "At higher levels, you gain more warlock spells of your choice that can be cast in this way: one 7th-level spell at 13th level, one 8th-level spell at 15th level, and one 9th-level spell at 17th level. You regain all uses of your Mystic Arcanum when you finish a long rest."
+            ]
         },
         {
-            name: "Ability Score Improvement",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 12,
-            entries: [
+            "name": "Ability Score Improvement",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 12,
+            "entries": [
                 "When you reach 12th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-                "If your DM allows the use of feats, you may instead take a feat.",
-            ],
+                "If your DM allows the use of feats, you may instead take a feat."
+            ]
         },
         {
-            name: "Proficiency Versatility",
-            type: "class",
-            gain_scf: false,
-            source: "UAClassFeatureVariants",
-            level: 12,
-            entries: [
+            "name": "Proficiency Versatility",
+            "type": "class",
+            "gain_scf": false,
+            "source": "UAClassFeatureVariants",
+            "level": 12,
+            "entries": [
                 "*12th-level feature (enhances Ability Score Improvement)*",
                 "When you gain the Ability Score Improvement feature from your class, you can also replace one of your skill proficiencies with a skill proficiency offered by your class at 1st level (the proficiency you replace needn't be from the class).",
-                "This change represents one of your skills atrophying as you focus on a different skill.",
-            ],
+                "This change represents one of your skills atrophying as you focus on a different skill."
+            ]
         },
         {
-            name: "Mystic Arcanum (7th level)",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 13,
-            entries: [
+            "name": "Mystic Arcanum (7th level)",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 13,
+            "entries": [
                 "At 13th level, your patron bestows upon you a magical secret called an arcanum. Choose one 7th-level spell from the warlock spell list as this arcanum.",
-                "You can cast your arcanum spell once without expending a spell slot. You must finish a long rest before you can do so again.",
-            ],
+                "You can cast your arcanum spell once without expending a spell slot. You must finish a long rest before you can do so again."
+            ]
         },
         {
-            name: "Otherworldly Patron feature",
-            type: "class",
-            gain_scf: true,
-            source: "PHB",
-            level: 14,
-            entries: [
-                "At 14th level, you gain a feature granted by your Otherworldly Patron.",
-            ],
+            "name": "Otherworldly Patron feature",
+            "type": "class",
+            "gain_scf": true,
+            "source": "PHB",
+            "level": 14,
+            "entries": [
+                "At 14th level, you gain a feature granted by your Otherworldly Patron."
+            ]
         },
         {
-            name: "Mystic Arcanum (8th level)",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 15,
-            entries: [
+            "name": "Mystic Arcanum (8th level)",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 15,
+            "entries": [
                 "At 15th level, your patron bestows upon you a magical secret called an arcanum. Choose one 8th-level spell from the warlock spell list as this arcanum.",
-                "You can cast your arcanum spell once without expending a spell slot. You must finish a long rest before you can do so again.",
-            ],
+                "You can cast your arcanum spell once without expending a spell slot. You must finish a long rest before you can do so again."
+            ]
         },
         {
-            name: "Ability Score Improvement",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 16,
-            entries: [
+            "name": "Ability Score Improvement",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 16,
+            "entries": [
                 "When you reach 16th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-                "If your DM allows the use of feats, you may instead take a feat.",
-            ],
+                "If your DM allows the use of feats, you may instead take a feat."
+            ]
         },
         {
-            name: "Proficiency Versatility",
-            type: "class",
-            gain_scf: false,
-            source: "UAClassFeatureVariants",
-            level: 16,
-            entries: [
+            "name": "Proficiency Versatility",
+            "type": "class",
+            "gain_scf": false,
+            "source": "UAClassFeatureVariants",
+            "level": 16,
+            "entries": [
                 "*16th-level feature (enhances Ability Score Improvement)*",
                 "When you gain the Ability Score Improvement feature from your class, you can also replace one of your skill proficiencies with a skill proficiency offered by your class at 1st level (the proficiency you replace needn't be from the class).",
-                "This change represents one of your skills atrophying as you focus on a different skill.",
-            ],
+                "This change represents one of your skills atrophying as you focus on a different skill."
+            ]
         },
         {
-            name: "Mystic Arcanum (9th level)",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 17,
-            entries: [
+            "name": "Mystic Arcanum (9th level)",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 17,
+            "entries": [
                 "At 17th level, your patron bestows upon you a magical secret called an arcanum. Choose one 9th-level spell from the warlock spell list as this arcanum.",
-                "You can cast your arcanum spell once without expending a spell slot. You must finish a long rest before you can do so again.",
-            ],
+                "You can cast your arcanum spell once without expending a spell slot. You must finish a long rest before you can do so again."
+            ]
         },
         {
-            name: "Ability Score Improvement",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 19,
-            entries: [
+            "name": "Ability Score Improvement",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 19,
+            "entries": [
                 "When you reach 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-                "If your DM allows the use of feats, you may instead take a feat.",
-            ],
+                "If your DM allows the use of feats, you may instead take a feat."
+            ]
         },
         {
-            name: "Proficiency Versatility",
-            type: "class",
-            gain_scf: false,
-            source: "UAClassFeatureVariants",
-            level: 19,
-            entries: [
+            "name": "Proficiency Versatility",
+            "type": "class",
+            "gain_scf": false,
+            "source": "UAClassFeatureVariants",
+            "level": 19,
+            "entries": [
                 "*19th-level feature (enhances Ability Score Improvement)*",
                 "When you gain the Ability Score Improvement feature from your class, you can also replace one of your skill proficiencies with a skill proficiency offered by your class at 1st level (the proficiency you replace needn't be from the class).",
-                "This change represents one of your skills atrophying as you focus on a different skill.",
-            ],
+                "This change represents one of your skills atrophying as you focus on a different skill."
+            ]
         },
         {
-            name: "Eldritch Master",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 20,
-            entries: [
-                "At 20th level, you can draw on your inner reserve of mystical power while entreating your patron to regain expended spell slots. You can spend 1 minute entreating your patron for aid to regain all your expended spell slots from your Pact Magic feature. Once you regain spell slots with this feature, you must finish a long rest before you can do so again.",
-            ],
-        },
+            "name": "Eldritch Master",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 20,
+            "entries": [
+                "At 20th level, you can draw on your inner reserve of mystical power while entreating your patron to regain expended spell slots. You can spend 1 minute entreating your patron for aid to regain all your expended spell slots from your Pact Magic feature. Once you regain spell slots with this feature, you must finish a long rest before you can do so again."
+            ]
+        }
     ],
-    subclasses: [
+    "subclasses": [
         {
-            name: "The Archfey",
-            name_short: "Archfey",
-            source: "PHB",
-            subclass_spells: {},
-            features: [
+            "name": "The Archfey",
+            "name_short": "Archfey",
+            "source": "PHB",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "The Archfey",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 1,
-                    entries: [
+                    "name": "The Archfey",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 1,
+                    "entries": [
                         "Your patron is a lord or lady of the fey, a creature of legend who holds secrets that were forgotten before the mortal races were born. This being's motivations are often inscrutable, and sometimes whimsical, and might involve a striving for greater magical power or the settling of age-old grudges. Beings of this sort include the Prince of Frost; the Queen of Air and Darkness, ruler of the Gloaming Court; Titania of the Summer Court; her consort Oberon, the Green Lord; Hyrsam, the Prince of Fools; and ancient hags.",
                         "",
                         "## Expanded Spell List",
@@ -417,57 +420,57 @@
                         "",
                         "## Fey Presence",
                         "Starting at 1st level, your patron bestows upon you the ability to project the beguiling and fearsome presence of the fey. As an action, you can cause each creature in a 10-foot cube originating from you to make a Wisdom saving throw against your warlock spell save DC. The creatures that fail their saving throws are all *charmed* or *frightened* by you (your choice) until the end of your next turn.",
-                        "Once you use this feature, you can't use it again until you finish a short or long rest.",
-                    ],
+                        "Once you use this feature, you can't use it again until you finish a short or long rest."
+                    ]
                 },
                 {
-                    name: "Misty Escape",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 6,
-                    entries: [
+                    "name": "Misty Escape",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 6,
+                    "entries": [
                         "Starting at 6th level, you can vanish in a puff of mist in response to harm. When you take damage, you can use your reaction to turn *invisible* and teleport up to 60 feet to an unoccupied space you can see. You remain *invisible* until the start of your next turn or until you attack or cast a spell.",
-                        "Once you use this feature, you can't use it again until you finish a short or long rest.",
-                    ],
+                        "Once you use this feature, you can't use it again until you finish a short or long rest."
+                    ]
                 },
                 {
-                    name: "Beguiling Defenses",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 10,
-                    entries: [
-                        "Beginning at 10th level, your patron teaches you how to turn the mind-affecting magic of your enemies against them. You are immune to being *charmed*, and when another creature attempts to charm you, you can use your reaction to attempt to turn the charm back on that creature. The creature must succeed on a Wisdom saving throw against your warlock spell save DC or be *charmed* by you for 1 minute or until the creature takes any damage.",
-                    ],
+                    "name": "Beguiling Defenses",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 10,
+                    "entries": [
+                        "Beginning at 10th level, your patron teaches you how to turn the mind-affecting magic of your enemies against them. You are immune to being *charmed*, and when another creature attempts to charm you, you can use your reaction to attempt to turn the charm back on that creature. The creature must succeed on a Wisdom saving throw against your warlock spell save DC or be *charmed* by you for 1 minute or until the creature takes any damage."
+                    ]
                 },
                 {
-                    name: "Dark Delirium",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 14,
-                    entries: [
+                    "name": "Dark Delirium",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 14,
+                    "entries": [
                         "Starting at 14th level, you can plunge a creature into an illusory realm. As an action, choose a creature that you can see within 60 feet of you. It must make a Wisdom saving throw against your warlock spell save DC. On a failed save, it is *charmed* or *frightened* by you (your choice) for 1 minute or until your concentration is broken (as if you are concentrating on a spell). This effect ends early if the creature takes any damage.",
                         "Until this illusion ends, the creature thinks it is lost in a misty realm, the appearance of which you choose. The creature can see and hear only itself, you, and the illusion.",
-                        "You must finish a short or long rest before you can use this feature again.",
-                    ],
-                },
-            ],
+                        "You must finish a short or long rest before you can use this feature again."
+                    ]
+                }
+            ]
         },
         {
-            name: "The Fiend",
-            name_short: "Fiend",
-            source: "PHB",
-            subclass_spells: {},
-            features: [
+            "name": "The Fiend",
+            "name_short": "Fiend",
+            "source": "PHB",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "The Fiend",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 1,
-                    entries: [
+                    "name": "The Fiend",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 1,
+                    "entries": [
                         "You have made a pact with a fiend from the lower planes of existence, a being whose aims are evil, even if you strive against those aims. Such beings desire the corruption or destruction of all things, ultimately including you. Fiends powerful enough to forge a pact include demon lords such as Demogorgon, Orcus, Fraz'Urb-luu, and Baphomet; archdevils such as Asmodeus, Dispater, Mephistopheles, and Belial; pit fiends and balors that are especially mighty; and ultroloths and other lords of the yugoloths.",
                         "",
                         "## Expanded Spell List",
@@ -484,57 +487,57 @@
                         "",
                         "",
                         "## Dark One's Blessing",
-                        "Starting at 1st level, when you reduce a hostile creature to 0 hit points, you gain temporary hit points equal to your Charisma modifier + your warlock level (minimum of 1).",
-                    ],
+                        "Starting at 1st level, when you reduce a hostile creature to 0 hit points, you gain temporary hit points equal to your Charisma modifier + your warlock level (minimum of 1)."
+                    ]
                 },
                 {
-                    name: "Dark One's Own Luck",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 6,
-                    entries: [
+                    "name": "Dark One's Own Luck",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 6,
+                    "entries": [
                         "Starting at 6th level, you can call on your patron to alter fate in your favor. When you make an ability check or a saving throw, you can use this feature to add a d10 to your roll. You can do so after seeing the initial roll but before any of the roll's effects occur.",
-                        "Once you use this feature, you can't use it again until you finish a short or long rest.",
-                    ],
+                        "Once you use this feature, you can't use it again until you finish a short or long rest."
+                    ]
                 },
                 {
-                    name: "Fiendish Resilience",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 10,
-                    entries: [
-                        "Starting at 10th level, you can choose one damage type when you finish a short or long rest. You gain resistance to that damage type until you choose a different one with this feature. Damage from magical weapons or silver weapons ignores this resistance.",
-                    ],
+                    "name": "Fiendish Resilience",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 10,
+                    "entries": [
+                        "Starting at 10th level, you can choose one damage type when you finish a short or long rest. You gain resistance to that damage type until you choose a different one with this feature. Damage from magical weapons or silver weapons ignores this resistance."
+                    ]
                 },
                 {
-                    name: "Hurl Through Hell",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 14,
-                    entries: [
+                    "name": "Hurl Through Hell",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 14,
+                    "entries": [
                         "Starting at 14th level, when you hit a creature with an attack, you can use this feature to instantly transport the target through the lower planes. The creature disappears and hurtles through a nightmare landscape.",
                         "At the end of your next turn, the target returns to the space it previously occupied, or the nearest unoccupied space. If the target is not a fiend, it takes **10d10** psychic damage as it reels from its horrific experience.",
-                        "Once you use this feature, you can't use it again until you finish a long rest.",
-                    ],
-                },
-            ],
+                        "Once you use this feature, you can't use it again until you finish a long rest."
+                    ]
+                }
+            ]
         },
         {
-            name: "The Great Old One",
-            name_short: "Great Old One",
-            source: "PHB",
-            subclass_spells: {},
-            features: [
+            "name": "The Great Old One",
+            "name_short": "Great Old One",
+            "source": "PHB",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "The Great Old One",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 1,
-                    entries: [
+                    "name": "The Great Old One",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 1,
+                    "entries": [
                         "Your patron is a mysterious entity whose nature is utterly foreign to the fabric of reality. It might come from the Far Realm, the space beyond reality, or it could be one of the elder gods known only in legends. Its motives are incomprehensible to mortals, and its knowledge so immense and ancient that even the greatest libraries pale in comparison to the vast secrets it holds. The Great Old One might be unaware of your existence or entirely indifferent to you, but the secrets you have learned allow you to draw your magic from it. Entities of this type include Ghaunadar, called That Which Lurks; Tharizdun, the Chained God; Dendar, the Night Serpent; Zargon, the Returner; Great Cthulhu; and other unfathomable beings.",
                         "",
                         "## Expanded Spell List",
@@ -551,56 +554,56 @@
                         "",
                         "",
                         "## Awakened Mind",
-                        "Starting at 1st level, your alien knowledge gives you the ability to touch the minds of other creatures. You can telepathically speak to any creature you can see within 30 feet of you. You don't need to share a language with the creature for it to understand your telepathic utterances, but the creature must be able to understand at least one language.",
-                    ],
+                        "Starting at 1st level, your alien knowledge gives you the ability to touch the minds of other creatures. You can telepathically speak to any creature you can see within 30 feet of you. You don't need to share a language with the creature for it to understand your telepathic utterances, but the creature must be able to understand at least one language."
+                    ]
                 },
                 {
-                    name: "Entropic Ward",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 6,
-                    entries: [
+                    "name": "Entropic Ward",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 6,
+                    "entries": [
                         "At 6th level, you learn to magically ward yourself against attack and to turn an enemy's failed strike into good luck for yourself. When a creature makes an attack roll against you, you can use your reaction to impose disadvantage on that roll. If the attack misses you, your next attack roll against the creature has advantage if you make it before the end of your next turn.",
-                        "Once you use this feature, you can't use it again until you finish a short or long rest.",
-                    ],
+                        "Once you use this feature, you can't use it again until you finish a short or long rest."
+                    ]
                 },
                 {
-                    name: "Thought Shield",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 10,
-                    entries: [
-                        "Starting at 10th level, your thoughts can't be read by telepathy or other means unless you allow it. You also have resistance to psychic damage, and whenever a creature deals psychic damage to you, that creature takes the same amount of damage that you do.",
-                    ],
+                    "name": "Thought Shield",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 10,
+                    "entries": [
+                        "Starting at 10th level, your thoughts can't be read by telepathy or other means unless you allow it. You also have resistance to psychic damage, and whenever a creature deals psychic damage to you, that creature takes the same amount of damage that you do."
+                    ]
                 },
                 {
-                    name: "Create Thrall",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 14,
-                    entries: [
+                    "name": "Create Thrall",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 14,
+                    "entries": [
                         "At 14th level, you gain the ability to infect a humanoid's mind with the alien magic of your patron. You can use your action to touch an *incapacitated* humanoid. That creature is then *charmed* by you until a *remove curse* spell is cast on it, the *charmed* condition is removed from it, or you use this feature again.",
-                        "You can communicate telepathically with the *charmed* creature as long as the two of you are on the same plane of existence.",
-                    ],
-                },
-            ],
+                        "You can communicate telepathically with the *charmed* creature as long as the two of you are on the same plane of existence."
+                    ]
+                }
+            ]
         },
         {
-            name: "Ghost in the Machine (UA)",
-            name_short: "Ghost in the Machine (UA)",
-            source: "UAModernMagic",
-            subclass_spells: {},
-            features: [
+            "name": "Ghost in the Machine (UA)",
+            "name_short": "Ghost in the Machine (UA)",
+            "source": "UAModernMagic",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "Ghost in the Machine",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAModernMagic",
-                    level: 1,
-                    entries: [
+                    "name": "Ghost in the Machine",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAModernMagic",
+                    "level": 1,
+                    "entries": [
                         "You have made a bargain for power granted by an entity that you believe to be completely digital. Whether it is a rogue AI or the spirit of a deceased hacker, the Ghost in the Machine is capable of feats that defy explanation.",
                         "",
                         "## Expanded Spell List",
@@ -622,56 +625,56 @@
                         "",
                         "## Information Surge",
                         "At 1st level, you gain the ability to temporarily render computerized devices inoperable. As an action, you can target a computerized device within 30 feet of you. If the targeted device is held or otherwise actively used by a living creature, that creature must make an Intelligence saving throw against your spell save DC. On a failed save, the targeted device ceases to function until the end of your next turn. If the targeted device is not held or used by a creature, the DM makes a special saving throw for the device with disadvantage and a +0 modifier. Certain shielded devices might negate the disadvantage, at the DM's determination.",
-                        "Once you use this feature, you can't use it again until you finish a short or long rest.",
-                    ],
+                        "Once you use this feature, you can't use it again until you finish a short or long rest."
+                    ]
                 },
                 {
-                    name: "Wire Walk",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAModernMagic",
-                    level: 6,
-                    entries: [
-                        "Starting at 6th level, you gain the ability to travel short distances over electrical wires, data lines, or telephone cables. As a bonus action, you can touch a device or socket connected to a hardwired network and teleport along this network to another device or socket within your line of sight. Once you use this feature, you can't use it again until you finish a short or long rest.",
-                    ],
+                    "name": "Wire Walk",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAModernMagic",
+                    "level": 6,
+                    "entries": [
+                        "Starting at 6th level, you gain the ability to travel short distances over electrical wires, data lines, or telephone cables. As a bonus action, you can touch a device or socket connected to a hardwired network and teleport along this network to another device or socket within your line of sight. Once you use this feature, you can't use it again until you finish a short or long rest."
+                    ]
                 },
                 {
-                    name: "Personal Encryption",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAModernMagic",
-                    level: 10,
-                    entries: [
-                        "Beginning at 10th level, you have learned to apply your innate knowledge of encryption to your thoughts, memories, and presence. You have advantage on saving throws against *scrying*, thought detection, or any other method of magically learning your whereabouts or reading your thoughts. For any such effect that does not grant you a saving throw but which requires the creature targeting you to make an ability check, the check is made with disadvantage.",
-                    ],
+                    "name": "Personal Encryption",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAModernMagic",
+                    "level": 10,
+                    "entries": [
+                        "Beginning at 10th level, you have learned to apply your innate knowledge of encryption to your thoughts, memories, and presence. You have advantage on saving throws against *scrying*, thought detection, or any other method of magically learning your whereabouts or reading your thoughts. For any such effect that does not grant you a saving throw but which requires the creature targeting you to make an ability check, the check is made with disadvantage."
+                    ]
                 },
                 {
-                    name: "Technovirus",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAModernMagic",
-                    level: 14,
-                    entries: [
+                    "name": "Technovirus",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAModernMagic",
+                    "level": 14,
+                    "entries": [
                         "At 14th level, you gain the ability to infect a humanoid's body with living circuitry. You can use an action to make a melee attack against a humanoid creature using your spell attack modifier. The target must make a Constitution saving throw against your spell save DC as a techno-organic virus quickly spreads through its body. On a failed save, the target takes **8d10** psychic damage, or half as much damage on a successful one.",
                         "Additionally, if the target fails the saving throw, you can use an action to issue it a single command, as if you were casting the *command* spell. The target makes its saving throw against your *command* with disadvantage. You can issue this *command* at any time while the target remains infected.",
-                        "Once you use this feature, you can't use it again until you finish a long rest, at which point the target is cured of the technovirus. The infection can also be removed with a *lesser restoration* spell.",
-                    ],
-                },
-            ],
+                        "Once you use this feature, you can't use it again until you finish a long rest, at which point the target is cured of the technovirus. The infection can also be removed with a *lesser restoration* spell."
+                    ]
+                }
+            ]
         },
         {
-            name: "The Undying Light (UA)",
-            name_short: "Undying Light (UA)",
-            source: "UALightDarkUnderdark",
-            subclass_spells: {},
-            features: [
+            "name": "The Undying Light (UA)",
+            "name_short": "Undying Light (UA)",
+            "source": "UALightDarkUnderdark",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "The Undying Light",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UALightDarkUnderdark",
-                    level: 1,
-                    entries: [
+                    "name": "The Undying Light",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UALightDarkUnderdark",
+                    "level": 1,
+                    "entries": [
                         "Your patron is not a specific entity, but the energy that radiates from the Positive Plane. Your pact allows you to experience the barest touch of the raw stuff of life that powers the multiverse. Anything more, and you would be instantly incinerated by its energy.",
                         "Contact with the Positive Plane causes subtle changes to your behavior and beliefs. You are driven to bring light to dark places, to annihilate undead creatures, and to protect all living things. At the same time, you crave the light and find total darkness a suffocating experience akin to drowning.",
                         "As an optional way to add more flavor to your character, you can pick from or roll on the following table of flaws associated with warlocks of the Undying Light.",
@@ -701,56 +704,56 @@
                         "",
                         "",
                         "## Radiant Soul",
-                        "Starting at 1st level, your link to the Positive Plane allows you to serve as a conduit for radiant energy. You have resistance to radiant damage, and when you cast a spell that deals radiant damage or fire damage, you add your Charisma modifier to that damage. Additionally, you know the *sacred flame* and *light* cantrips and can cast them at will. They don't count against your number of cantrips known.",
-                    ],
+                        "Starting at 1st level, your link to the Positive Plane allows you to serve as a conduit for radiant energy. You have resistance to radiant damage, and when you cast a spell that deals radiant damage or fire damage, you add your Charisma modifier to that damage. Additionally, you know the *sacred flame* and *light* cantrips and can cast them at will. They don't count against your number of cantrips known."
+                    ]
                 },
                 {
-                    name: "Searing Vengeance",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UALightDarkUnderdark",
-                    level: 6,
-                    entries: [
+                    "name": "Searing Vengeance",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UALightDarkUnderdark",
+                    "level": 6,
+                    "entries": [
                         "Starting at 6th level, the radiant energy you channel allows you to overcome grievous injuries. When you would make a death saving throw, you can instead spring back to your feet with a burst of radiant energy. You immediately stand up (if you so choose), and you regain hit points equal to half your hit point maximum. All hostile creatures within 30 feet of you take 10 + your Charisma modifier radiant damage and are *blinded* until the end of your turn.",
-                        "Once you use this feature, you can't use it again until you finish a long rest.",
-                    ],
+                        "Once you use this feature, you can't use it again until you finish a long rest."
+                    ]
                 },
                 {
-                    name: "Radiant Resilience",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UALightDarkUnderdark",
-                    level: 10,
-                    entries: [
-                        "Starting at 10th level, you gain temporary hit points whenever you finish a long or short rest. These temporary hit points equal your warlock level + your Charisma modifier. Additionally, choose up to five creatures you can see at the end of your rest. Those creatures gain temporary hit points equal to half your warlock level + your Charisma modifier.",
-                    ],
+                    "name": "Radiant Resilience",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UALightDarkUnderdark",
+                    "level": 10,
+                    "entries": [
+                        "Starting at 10th level, you gain temporary hit points whenever you finish a long or short rest. These temporary hit points equal your warlock level + your Charisma modifier. Additionally, choose up to five creatures you can see at the end of your rest. Those creatures gain temporary hit points equal to half your warlock level + your Charisma modifier."
+                    ]
                 },
                 {
-                    name: "Healing Light",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UALightDarkUnderdark",
-                    level: 14,
-                    entries: [
+                    "name": "Healing Light",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UALightDarkUnderdark",
+                    "level": 14,
+                    "entries": [
                         "At 14th level, you gain the ability to channel the Undying Light to heal yourself and other creatures. As a bonus action, you can touch a creature and heal it. With each touch, a creature regains from 1d6 to 5d6 hit points (your choice). You have a total pool of 15d6 you can expend. Subtract the dice you use with each touch from that total.",
-                        "You regain all expended dice from your pool when you finish a long rest.",
-                    ],
-                },
-            ],
+                        "You regain all expended dice from your pool when you finish a long rest."
+                    ]
+                }
+            ]
         },
         {
-            name: "The Undying",
-            name_short: "Undying",
-            source: "SCAG",
-            subclass_spells: {},
-            features: [
+            "name": "The Undying",
+            "name_short": "Undying",
+            "source": "SCAG",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "The Undying",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "SCAG",
-                    level: 1,
-                    entries: [
+                    "name": "The Undying",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "SCAG",
+                    "level": 1,
+                    "entries": [
                         "Death holds no sway over your patron, who has unlocked the secrets of everlasting life, although such a prize\u2014like all power\u2014comes at a price. Once mortal, the Undying has seen mortal lifetimes pass like the seasons, like the flicker of endless days and nights. It has the secrets of the ages to share, secrets of life and death. Beings of this sort include Vecna, Lord of the Hand and the Eye; the dread Iuz; the lich-queen Vol; the Undying Court of Aerenal; Vlaakith, lich-queen of the githyanki; and the deathless wizard Fistandantalus.",
                         "In the Realms, Undying patrons include Larloch the Shadow King, legendary master of Warlock's Crypt, and Gilgeam, the God-King of Unther.",
                         "",
@@ -769,57 +772,57 @@
                         "",
                         "## Among the Dead",
                         "Starting at 1st level, you learn the *spare the dying* cantrip, which counts as a warlock cantrip for you. You also have advantage on saving throws against any disease.",
-                        "Additionally, undead have difficulty harming you. If an undead targets you directly with an attack or a harmful spell, that creature must make a Wisdom saving throw against your spell save DC (an undead needn't make the save when it includes you in an area effect, such as the explosion of *fireball*). On a failed save, the creature must choose a new target or forfeit targeting someone instead of you, potentially wasting the attack or spell. On a successful save, the creature is immune to this effect for 24 hours. An undead is also immune to this effect for 24 hours if you target it with an attack or a harmful spell.",
-                    ],
+                        "Additionally, undead have difficulty harming you. If an undead targets you directly with an attack or a harmful spell, that creature must make a Wisdom saving throw against your spell save DC (an undead needn't make the save when it includes you in an area effect, such as the explosion of *fireball*). On a failed save, the creature must choose a new target or forfeit targeting someone instead of you, potentially wasting the attack or spell. On a successful save, the creature is immune to this effect for 24 hours. An undead is also immune to this effect for 24 hours if you target it with an attack or a harmful spell."
+                    ]
                 },
                 {
-                    name: "Defy Death",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "SCAG",
-                    level: 6,
-                    entries: [
+                    "name": "Defy Death",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "SCAG",
+                    "level": 6,
+                    "entries": [
                         "Starting at 6th level, you can give yourself vitality when you cheat death or when you help someone else cheat it. You can regain hit points equal to 1d8 + your Constitution modifier (minimum of 1 hit point) when you succeed on a death saving throw or when you stabilize a creature with *spare the dying*.",
-                        "Once you use this feature, you can't use it again until you finish a long rest.",
-                    ],
+                        "Once you use this feature, you can't use it again until you finish a long rest."
+                    ]
                 },
                 {
-                    name: "Undying Nature",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "SCAG",
-                    level: 10,
-                    entries: [
+                    "name": "Undying Nature",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "SCAG",
+                    "level": 10,
+                    "entries": [
                         "Beginning at 10th level, you can hold your breath indefinitely, and you don't require food, water, or sleep, although you still require rest to reduce *exhaustion* and still benefit from finishing short and long rests.",
-                        "In addition, you age at a slower rate. For every 10 years that pass, your body ages only 1 year, and you are immune to being magically aged.",
-                    ],
+                        "In addition, you age at a slower rate. For every 10 years that pass, your body ages only 1 year, and you are immune to being magically aged."
+                    ]
                 },
                 {
-                    name: "Indestructible Life",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "SCAG",
-                    level: 14,
-                    entries: [
+                    "name": "Indestructible Life",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "SCAG",
+                    "level": 14,
+                    "entries": [
                         "When you reach 14th level, you partake some of the true secrets of the Undying. On your turn, you can use a bonus action to regain hit points equal to 1d8 + your warlock level. Additionally, if you put a severed body part of yours back in place when you use this feature, the part reattaches.",
-                        "Once you use this feature, you can't use it again until you finish a short or long rest.",
-                    ],
-                },
-            ],
+                        "Once you use this feature, you can't use it again until you finish a short or long rest."
+                    ]
+                }
+            ]
         },
         {
-            name: "The Seeker (UA)",
-            name_short: "Seeker (UA)",
-            source: "UATheFaithful",
-            subclass_spells: {},
-            features: [
+            "name": "The Seeker (UA)",
+            "name_short": "Seeker (UA)",
+            "source": "UATheFaithful",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "The Seeker",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UATheFaithful",
-                    level: 1,
-                    entries: [
+                    "name": "The Seeker",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UATheFaithful",
+                    "level": 1,
+                    "entries": [
                         "Your patron is an inscrutable being who travels the Astral Plane in search of knowledge and secrets. In return for your patron's gifts, you wander the world seeking lore that you can share with the Seeker.",
                         "Your patron could be any deity or other powerful entity dedicated to knowledge or forgotten lore. Celestian is an ideal patron for a Greyhawk campaign, and was the inspiration for this concept. In the Forgotten Realms, your patron might be Azuth or Oghma. Aureon makes an excellent patron in Eberron, while in Krynn and the Dragonlance campaign setting, Gilean is a good match for the Seeker's role.",
                         "",
@@ -838,57 +841,57 @@
                         "",
                         "## Shielding Aurora",
                         "Starting at 1st level, you can invoke the Seeker's power to protect you from harm. As a bonus action, you create a whirling aurora of brilliant energy that swirls around you. Until the end of your next turn, you gain resistance to all damage, and if a hostile creature ends its turn within 10 feet of you, it takes radiant damage equal to your warlock level + your Charisma modifier.",
-                        "Once you use this feature, you can't use it again until you finish a short or long rest.",
-                    ],
+                        "Once you use this feature, you can't use it again until you finish a short or long rest."
+                    ]
                 },
                 {
-                    name: "Astral Refuge",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UATheFaithful",
-                    level: 6,
-                    entries: [
-                        "At 6th level, you gain the ability to step into an astral refuge. As an action, you disappear from the world for a brief moment and enter the Astral Plane, taking advantage of its timeless nature. While in your astral refuge, you can take two actions to cast spells that target only you. After using those two actions, you return to the space you occupied and your turn ends.",
-                    ],
+                    "name": "Astral Refuge",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UATheFaithful",
+                    "level": 6,
+                    "entries": [
+                        "At 6th level, you gain the ability to step into an astral refuge. As an action, you disappear from the world for a brief moment and enter the Astral Plane, taking advantage of its timeless nature. While in your astral refuge, you can take two actions to cast spells that target only you. After using those two actions, you return to the space you occupied and your turn ends."
+                    ]
                 },
                 {
-                    name: "Far Wanderer",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UATheFaithful",
-                    level: 10,
-                    entries: [
-                        "At 10th level, you no longer need to breathe, and you gain resistance to fire damage and cold damage.",
-                    ],
+                    "name": "Far Wanderer",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UATheFaithful",
+                    "level": 10,
+                    "entries": [
+                        "At 10th level, you no longer need to breathe, and you gain resistance to fire damage and cold damage."
+                    ]
                 },
                 {
-                    name: "Astral Sequestration",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UATheFaithful",
-                    level: 14,
-                    entries: [
+                    "name": "Astral Sequestration",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UATheFaithful",
+                    "level": 14,
+                    "entries": [
                         "Starting at 14th level, you gain the ability to sequester yourself and your allies on the Astral Plane.",
                         "By performing a special ritual over the course of 5 minutes, you shift yourself and up to ten willing creatures you can see to the Astral Plane. You and those creatures gain the benefits of a short rest while sequestered on the Astral Plane. You then return to the spaces you all occupied when you used this ability, with no time having passed in the world.",
                         "During this short rest, you and the creatures you sequester can make use of any options available during a rest that affect only you and the creatures you sequester.",
-                        "Once you use this ability, you cannot use it again until you complete a long rest.",
-                    ],
-                },
-            ],
+                        "Once you use this ability, you cannot use it again until you complete a long rest."
+                    ]
+                }
+            ]
         },
         {
-            name: "The Hexblade (UA)",
-            name_short: "Hexblade (UA)",
-            source: "UAWarlockAndWizard",
-            subclass_spells: {},
-            features: [
+            "name": "The Hexblade (UA)",
+            "name_short": "Hexblade (UA)",
+            "source": "UAWarlockAndWizard",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "The Hexblade",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAWarlockAndWizard",
-                    level: 1,
-                    entries: [
+                    "name": "The Hexblade",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAWarlockAndWizard",
+                    "level": 1,
+                    "entries": [
                         "You have made your pact with a powerful, sentient magic weapon carved from the stuff of the Shadowfell. The mighty sword Blackrazor is the most notable of these weapons, several of which have spread across the multiverse over the ages. These weapons grow stronger as they consume the life essence of their victims. The strongest of them can use their ties to the Shadowfell to offer power to mortals who serve them. The Raven Queen forged the first of these weapons. They, along with the hexblade warlocks, are another tool she can use to manipulate events in the Material Plane to her inscrutable ends.",
                         "",
                         "## Expanded Spell List",
@@ -913,55 +916,55 @@
                         "You gain a bonus to damage rolls against the cursed target. The bonus equals your proficiency bonus.",
                         "Any attack roll you make against the cursed target is a critical hit on a roll of 19 or 20 on the d20.",
                         "If the cursed target dies, you regain hit points equal to your warlock level + your Charisma modifier.",
-                        "You can't use this feature again until you finish a short or long rest.",
-                    ],
+                        "You can't use this feature again until you finish a short or long rest."
+                    ]
                 },
                 {
-                    name: "Shadow Hound",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAWarlockAndWizard",
-                    level: 6,
-                    entries: [
+                    "name": "Shadow Hound",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAWarlockAndWizard",
+                    "level": 6,
+                    "entries": [
                         "Starting at 6th level, your shadow can split from you and transform into a hound of pure darkness. Most of the time, your shadow hound masquerades as your normal shadow. As a bonus action, you can command it to magically slip into the shadow of a creature you can see within 60 feet of you. While the shadow hound is merged in this manner, the target can't gain the benefits of half cover or three-quarters cover against your attack rolls, and you know the distance and direction to the target even if it is hidden. The hound can't be seen by anyone but you and those with *truesight*, and it is unaffected by light. The target has a vague feeling of dread while the hound is present.",
-                        "As a bonus action, you can command your shadow hound to return to you. It also automatically returns to you if you and the target are on different planes of existence, if you're *incapacitated*, or if dispel magic, *remove curse*, or similar magic is used on the target.",
-                    ],
+                        "As a bonus action, you can command your shadow hound to return to you. It also automatically returns to you if you and the target are on different planes of existence, if you're *incapacitated*, or if dispel magic, *remove curse*, or similar magic is used on the target."
+                    ]
                 },
                 {
-                    name: "Armor of Hexes",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAWarlockAndWizard",
-                    level: 10,
-                    entries: [
-                        "At 10th level, your hex grows more powerful. If the target cursed by your Hexblade's Curse hits you with an attack roll, roll a d6. On a 4 or higher, the attack instead misses you.",
-                    ],
+                    "name": "Armor of Hexes",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAWarlockAndWizard",
+                    "level": 10,
+                    "entries": [
+                        "At 10th level, your hex grows more powerful. If the target cursed by your Hexblade's Curse hits you with an attack roll, roll a d6. On a 4 or higher, the attack instead misses you."
+                    ]
                 },
                 {
-                    name: "Master of Hexes",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAWarlockAndWizard",
-                    level: 14,
-                    entries: [
-                        "Starting at 14th level, you can use your Hexblade's Curse again without resting, but when you apply it to a new target, the curse immediately ends on the previous target.",
-                    ],
-                },
-            ],
+                    "name": "Master of Hexes",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAWarlockAndWizard",
+                    "level": 14,
+                    "entries": [
+                        "Starting at 14th level, you can use your Hexblade's Curse again without resting, but when you apply it to a new target, the curse immediately ends on the previous target."
+                    ]
+                }
+            ]
         },
         {
-            name: "The Raven Queen (UA)",
-            name_short: "Raven Queen (UA)",
-            source: "UAWarlockAndWizard",
-            subclass_spells: {},
-            features: [
+            "name": "The Raven Queen (UA)",
+            "name_short": "Raven Queen (UA)",
+            "source": "UAWarlockAndWizard",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "The Raven Queen",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAWarlockAndWizard",
-                    level: 1,
-                    entries: [
+                    "name": "The Raven Queen",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAWarlockAndWizard",
+                    "level": 1,
+                    "entries": [
                         "Your patron is the Raven Queen, a mysterious being who rules the Shadowfell from a palace of ice deep within that dread realm. The Raven Queen watches over the world, anticipating each creature's death and ensuring that it meets its end at the proscribed time and place. As the ruler of the Shadowfell, she dwells in a decayed, dark reflection of the world. Her ability to reach into the world is limited. Thus, she turns to mortal warlocks to serve her will. Warlocks sworn to the Raven Queen receive visions and whispers from her in their dreams, sending them on quests and warning them of impending dangers.",
                         "The Raven Queen's followers are expected to serve her will in the world. She concerns herself with ensuring that those fated to die pass from the world as expected, and bids her agents to defeat those who seek to cheat death through undeath or other imitations of immortality. She hates intelligent undead and expects her followers to strike them down, whereas mindless undead such as skeletons and zombies are little more than stumbling automatons in her eyes.",
                         "",
@@ -983,54 +986,54 @@
                         "While the raven is perched on your shoulder, you gain *darkvision* with a range of 30 feet and a bonus to your passive Wisdom (Perception) score and to Wisdom (Perception) checks. The bonus equals your Charisma modifier. While perched on your shoulder, the raven can't be targeted by any attack or other harmful effect; only you can cast spells on it; it can't take damage; and it is *incapacitated*.",
                         "You can see through the raven's eyes and hear what it hears while it is within 100 feet of you. In combat, you roll initiative for the raven and control how it acts. If it is slain by a creature, you gain advantage on all attack rolls against the killer for the next 24 hours.",
                         "The raven doesn't require sleep. While it is within 100 feet of you, it can awaken you from sleep as a bonus action. The raven vanishes when it dies, if you die, or if the two of you are separated by more than 5 miles.",
-                        "At the end of a short or long rest, you can call the raven back to you\u2014no matter where it is or whether it died\u2014and it reappears within 5 feet of you.",
-                    ],
+                        "At the end of a short or long rest, you can call the raven back to you\u2014no matter where it is or whether it died\u2014and it reappears within 5 feet of you."
+                    ]
                 },
                 {
-                    name: "Soul of the Raven",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAWarlockAndWizard",
-                    level: 6,
-                    entries: [
-                        "At 6th level, you gain the ability to merge with your raven spirit. As a bonus action when your raven is perched on your shoulder, your body merges with your raven's form. While merged, you become Tiny, you replace your speed with the raven's, and you can use your action only to **Dash**, **Disengage**, **Dodge**, **Help**, **Hide**, or **Search**. During this time, you gain the benefits of your raven being perched on your shoulder. As an action, you and the raven return to normal.",
-                    ],
+                    "name": "Soul of the Raven",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAWarlockAndWizard",
+                    "level": 6,
+                    "entries": [
+                        "At 6th level, you gain the ability to merge with your raven spirit. As a bonus action when your raven is perched on your shoulder, your body merges with your raven's form. While merged, you become Tiny, you replace your speed with the raven's, and you can use your action only to **Dash**, **Disengage**, **Dodge**, **Help**, **Hide**, or **Search**. During this time, you gain the benefits of your raven being perched on your shoulder. As an action, you and the raven return to normal."
+                    ]
                 },
                 {
-                    name: "Raven's Shield",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAWarlockAndWizard",
-                    level: 10,
-                    entries: [
-                        "At 10th level, the Raven Queen grants you a protective blessing. You gain advantage on death saving throws, immunity to the *frightened* condition, and resistance to necrotic damage.",
-                    ],
+                    "name": "Raven's Shield",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAWarlockAndWizard",
+                    "level": 10,
+                    "entries": [
+                        "At 10th level, the Raven Queen grants you a protective blessing. You gain advantage on death saving throws, immunity to the *frightened* condition, and resistance to necrotic damage."
+                    ]
                 },
                 {
-                    name: "Queen's Right Hand",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAWarlockAndWizard",
-                    level: 14,
-                    entries: [
-                        "Starting at 14th level, you can channel the Raven Queen's power to slay a creature. You can cast *finger of death*. After you cast the spell with this feature, you can't do so again until you finish a long rest.",
-                    ],
-                },
-            ],
+                    "name": "Queen's Right Hand",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAWarlockAndWizard",
+                    "level": 14,
+                    "entries": [
+                        "Starting at 14th level, you can channel the Raven Queen's power to slay a creature. You can cast *finger of death*. After you cast the spell with this feature, you can't do so again until you finish a long rest."
+                    ]
+                }
+            ]
         },
         {
-            name: "The Celestial (UA)",
-            name_short: "Celestial (UA)",
-            source: "UARevisedClassOptions",
-            subclass_spells: {},
-            features: [
+            "name": "The Celestial (UA)",
+            "name_short": "Celestial (UA)",
+            "source": "UARevisedClassOptions",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "The Celestial",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UARevisedClassOptions",
-                    level: 1,
-                    entries: [
+                    "name": "The Celestial",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UARevisedClassOptions",
+                    "level": 1,
+                    "entries": [
                         "Your patron is a powerful being of the Upper Planes. You have bound yourself to an ancient empyrean, solar, ki-rin, or unicorn or to another entity that resides in the planes of everlasting bliss. Your pact with that being allows you to experience the barest touch of the holy light that illuminates the multiverse.",
                         "Being connected to such power can cause changes in your behavior and beliefs. You might find yourself driven to annihilate the undead, to defeat fiends, and to protect the innocent. At times, your heart might also be filled with a longing for the celestial realm of your patron, a desire to wander that paradise for the rest of your days. But you know that your mission is among mortals for now and that your pact binds you to bring light to the dark places of the world.",
                         "",
@@ -1053,55 +1056,55 @@
                         "## Healing Light",
                         "At 1st level, you gain the ability to channel celestial energy to heal wounds. You have a pool of d6s that you spend to fuel this healing. The number of dice in the pool equals 1 + your warlock level.",
                         "As a bonus action, you can touch a creature and heal it, spending dice from the pool. The maximum number of dice you can spend at once equals your Charisma modifier (minimum of one die). Roll the dice you spend, add them together, and restore a number of hit points equal to the total.",
-                        "Your pool regains all expended dice when you finish a long rest.",
-                    ],
+                        "Your pool regains all expended dice when you finish a long rest."
+                    ]
                 },
                 {
-                    name: "Radiant Soul",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UARevisedClassOptions",
-                    level: 6,
-                    entries: [
-                        "Starting at 6th level, your link to the Celestial allows you to serve as a conduit for radiant energy. You have resistance to radiant damage, and when you cast a spell that deals radiant or fire damage, you add your Charisma modifier to that damage against one target of your choice.",
-                    ],
+                    "name": "Radiant Soul",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UARevisedClassOptions",
+                    "level": 6,
+                    "entries": [
+                        "Starting at 6th level, your link to the Celestial allows you to serve as a conduit for radiant energy. You have resistance to radiant damage, and when you cast a spell that deals radiant or fire damage, you add your Charisma modifier to that damage against one target of your choice."
+                    ]
                 },
                 {
-                    name: "Celestial Resilience",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UARevisedClassOptions",
-                    level: 10,
-                    entries: [
-                        "Starting at 10th level, you gain temporary hit points whenever you finish a short or long rest. These temporary hit points equal your warlock level + your Charisma modifier. Additionally, choose up to five creatures you can see at the end of the rest. Those creatures each gain temporary hit points equal to half your warlock level + your Charisma modifier.",
-                    ],
+                    "name": "Celestial Resilience",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UARevisedClassOptions",
+                    "level": 10,
+                    "entries": [
+                        "Starting at 10th level, you gain temporary hit points whenever you finish a short or long rest. These temporary hit points equal your warlock level + your Charisma modifier. Additionally, choose up to five creatures you can see at the end of the rest. Those creatures each gain temporary hit points equal to half your warlock level + your Charisma modifier."
+                    ]
                 },
                 {
-                    name: "Healing Light",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UARevisedClassOptions",
-                    level: 14,
-                    entries: [
+                    "name": "Healing Light",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UARevisedClassOptions",
+                    "level": 14,
+                    "entries": [
                         "Starting at 14th level, the radiant energy you channel allows you to overcome grievous injuries. When you have to make a death saving throw at the start of your turn, you can instead spring back to your feet with a burst of radiant energy. You regain hit points equal to half your hit point maximum, and then you stand up, if you so choose. Each creature of your choice that is within 30 feet of you takes radiant damage equal to 2d8 + your Charisma modifier, and it is *blinded* until the end of the current turn.",
-                        "Once you use this feature, you can't use it again until you finish a long rest.",
-                    ],
-                },
-            ],
+                        "Once you use this feature, you can't use it again until you finish a long rest."
+                    ]
+                }
+            ]
         },
         {
-            name: "The Celestial",
-            name_short: "Celestial",
-            source: "XGE",
-            subclass_spells: {},
-            features: [
+            "name": "The Celestial",
+            "name_short": "Celestial",
+            "source": "XGE",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "The Celestial",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 1,
-                    entries: [
+                    "name": "The Celestial",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 1,
+                    "entries": [
                         "Your patron is a powerful being of the Upper Planes. You have bound yourself to an ancient empyrean, solar, ki-rin, unicorn, or other entity that resides in the planes of everlasting bliss. Your pact with that being allows you to experience the barest touch of the holy light that illuminates the multiverse.",
                         "Being connected to such power can cause changes in your behavior and beliefs. You might find yourself driven to annihilate the undead, to defeat fiends, and to protect the innocent. At times, your heart might also be filled with a longing for the celestial realm of your patron, and a desire to wander that paradise for the rest of your days. But you know that your mission is among mortals for now, and that your pact binds you to bring light to the dark places of the world.",
                         "",
@@ -1124,55 +1127,55 @@
                         "## Healing Light",
                         "At 1st level, you gain the ability to channel celestial energy to heal wounds. You have a pool of d6s that you spend to fuel this healing. The number of dice in the pool equals 1 + your warlock level.",
                         "As a bonus action, you can heal one creature you can see within 60 feet of you, spending dice from the pool. The maximum number of dice you can spend at once equals your Charisma modifier (minimum of one die). Roll the dice you spend, add them together, and restore a number of hit points equal to the total.",
-                        "Your pool regains all expended dice when you finish a long rest.",
-                    ],
+                        "Your pool regains all expended dice when you finish a long rest."
+                    ]
                 },
                 {
-                    name: "Radiant Soul",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 6,
-                    entries: [
-                        "Starting at 6th level, your link to the Celestial allows you to serve as a conduit for radiant energy. You have resistance to radiant damage, and when you cast a spell that deals radiant or fire damage, you can add your Charisma modifier to one radiant or fire damage roll of that spell against one of its targets.",
-                    ],
+                    "name": "Radiant Soul",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 6,
+                    "entries": [
+                        "Starting at 6th level, your link to the Celestial allows you to serve as a conduit for radiant energy. You have resistance to radiant damage, and when you cast a spell that deals radiant or fire damage, you can add your Charisma modifier to one radiant or fire damage roll of that spell against one of its targets."
+                    ]
                 },
                 {
-                    name: "Celestial Resilience",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 10,
-                    entries: [
-                        "Starting at 10th level, you gain temporary hit points whenever you finish a short or long rest. These temporary hit points equal your warlock level + your Charisma modifier. Additionally, choose up to five creatures you can see at the end of the rest. Those creatures each gain temporary hit points equal to half your warlock level + your Charisma modifier.",
-                    ],
+                    "name": "Celestial Resilience",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 10,
+                    "entries": [
+                        "Starting at 10th level, you gain temporary hit points whenever you finish a short or long rest. These temporary hit points equal your warlock level + your Charisma modifier. Additionally, choose up to five creatures you can see at the end of the rest. Those creatures each gain temporary hit points equal to half your warlock level + your Charisma modifier."
+                    ]
                 },
                 {
-                    name: "Searing Vengeance",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 14,
-                    entries: [
+                    "name": "Searing Vengeance",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 14,
+                    "entries": [
                         "Starting at 14th level, the radiant energy you channel allows you to resist death. When you have to make a death saving throw at the start of your turn, you can instead spring back to your feet with a burst of radiant energy. You regain hit points equal to half your hit point maximum, and then you stand up if you so choose. Each creature of your choice that is within 30 feet of you takes radiant damage equal to 2d8 + your Charisma modifier, and it is *blinded* until the end of the current turn.",
-                        "Once you use this feature, you can't use it again until you finish a long rest.",
-                    ],
-                },
-            ],
+                        "Once you use this feature, you can't use it again until you finish a long rest."
+                    ]
+                }
+            ]
         },
         {
-            name: "The Hexblade",
-            name_short: "Hexblade",
-            source: "XGE",
-            subclass_spells: {},
-            features: [
+            "name": "The Hexblade",
+            "name_short": "Hexblade",
+            "source": "XGE",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "The Hexblade",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 1,
-                    entries: [
+                    "name": "The Hexblade",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 1,
+                    "entries": [
                         "You have made your pact with a mysterious entity from the Shadowfell\u2014a force that manifests in sentient magic weapons carved from the stuff of shadow. The mighty sword Blackrazor is the most notable of these weapons, which have been spread across the multiverse over the ages. The shadowy force behind these weapons can offer power to warlocks who form pacts with it. Many hexblade warlocks create weapons that emulate those formed in the Shadowfell. Others forgo such arms, content to weave the dark magic of that plane into their spellcasting.",
                         "Because the Raven Queen is known to have forged the first of these weapons, many sages speculate that she and the force are one and that the weapons, along with hexblade warlocks, are tools she uses to manipulate events on the Material Plane to her inscrutable ends.",
                         "",
@@ -1199,56 +1202,56 @@
                         "",
                         "## Hex Warrior",
                         "At 1st level, you acquire the training necessary to effectively arm yourself for battle. You gain proficiency with medium armor, shields, and martial weapons.",
-                        "The influence of your patron also allows you to mystically channel your will through a particular weapon. Whenever you finish a long rest, you can touch one weapon that you are proficient with and that lacks the two-handed property. When you attack with that weapon, you can use your Charisma modifier, instead of Strength or Dexterity, for the attack and damage rolls. This benefit lasts until you finish a long rest. If you later gain the Pact of the Blade feature, this benefit extends to every pact weapon you conjure with that feature, no matter the weapon's type.",
-                    ],
+                        "The influence of your patron also allows you to mystically channel your will through a particular weapon. Whenever you finish a long rest, you can touch one weapon that you are proficient with and that lacks the two-handed property. When you attack with that weapon, you can use your Charisma modifier, instead of Strength or Dexterity, for the attack and damage rolls. This benefit lasts until you finish a long rest. If you later gain the Pact of the Blade feature, this benefit extends to every pact weapon you conjure with that feature, no matter the weapon's type."
+                    ]
                 },
                 {
-                    name: "Accursed Specter",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 6,
-                    entries: [
+                    "name": "Accursed Specter",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 6,
+                    "entries": [
                         "Starting at 6th level, you can curse the soul of a person you slay, temporarily binding it to your service. When you slay a humanoid, you can cause its spirit to rise from its corpse as a **specter**, the statistics for which are in the Monster Manual. When the specter appears, it gains temporary hit points equal to half your warlock level. Roll initiative for the specter, which has its own turns. It obeys your verbal commands, and it gains a special bonus to its attack rolls equal to your Charisma modifier (minimum of +0).",
                         "The specter remains in your service until the end of your next long rest, at which point it vanishes to the afterlife.",
-                        "Once you bind a specter with this feature, you can't use the feature again until you finish a long rest.",
-                    ],
+                        "Once you bind a specter with this feature, you can't use the feature again until you finish a long rest."
+                    ]
                 },
                 {
-                    name: "Armor of Hexes",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 10,
-                    entries: [
-                        "At 10th level, your hex grows more powerful. If the target cursed by your Hexblade's Curse hits you with an attack roll, you can use your reaction to roll a d6. On a 4 or higher, the attack instead misses you, regardless of its roll.",
-                    ],
+                    "name": "Armor of Hexes",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 10,
+                    "entries": [
+                        "At 10th level, your hex grows more powerful. If the target cursed by your Hexblade's Curse hits you with an attack roll, you can use your reaction to roll a d6. On a 4 or higher, the attack instead misses you, regardless of its roll."
+                    ]
                 },
                 {
-                    name: "Master of Hexes",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 14,
-                    entries: [
-                        "Starting at 14th level, you can spread your Hexblade's Curse from a slain creature to another creature. When the creature cursed by your Hexblade's Curse dies, you can apply the curse to a different creature you can see within 30 feet of you, provided you aren't *incapacitated*. When you apply the curse in this way, you don't regain hit points from the death of the previously cursed creature.",
-                    ],
-                },
-            ],
+                    "name": "Master of Hexes",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 14,
+                    "entries": [
+                        "Starting at 14th level, you can spread your Hexblade's Curse from a slain creature to another creature. When the creature cursed by your Hexblade's Curse dies, you can apply the curse to a different creature you can see within 30 feet of you, provided you aren't *incapacitated*. When you apply the curse in this way, you don't regain hit points from the death of the previously cursed creature."
+                    ]
+                }
+            ]
         },
         {
-            name: "The Lurker in the Deep (UA)",
-            name_short: "Lurker in the Deep (UA)",
-            source: "UASorcererAndWarlock",
-            subclass_spells: {},
-            features: [
+            "name": "The Lurker in the Deep (UA)",
+            "name_short": "Lurker in the Deep (UA)",
+            "source": "UASorcererAndWarlock",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "The Lurker in the Deep",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UASorcererAndWarlock",
-                    level: 1,
-                    entries: [
+                    "name": "The Lurker in the Deep",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UASorcererAndWarlock",
+                    "level": 1,
+                    "entries": [
                         "You made a pact with an entity that lurks somewhere deep in the ocean, or even on the Elemental Plane of Water, such as a mighty kraken, an ancient primordial, or a monstrous being from creation's earliest days. You serve as this creature's eyes and ears, watching the world beyond its domain and reporting your findings. You may have gained this pact as a member of a cult dedicated to the entity or after your patron saved your life when you nearly drowned at sea.",
                         "",
                         "## The Lurker's Clutches",
@@ -1276,54 +1279,54 @@
                         "",
                         "## Scion of the Deep",
                         "*1st-level Lurker in the Deep feature*",
-                        "At 1st level, your patron accepts you into its inner court of servitors. You can telepathically communicate with any aberration, beast, elemental, or monstrosity that has an innate swimming speed, while it is within 120 feet of you. The creature can understand you and can respond telepathically.",
-                    ],
+                        "At 1st level, your patron accepts you into its inner court of servitors. You can telepathically communicate with any aberration, beast, elemental, or monstrosity that has an innate swimming speed, while it is within 120 feet of you. The creature can understand you and can respond telepathically."
+                    ]
                 },
                 {
-                    name: "Fathomless Soul",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UASorcererAndWarlock",
-                    level: 6,
-                    entries: [
+                    "name": "Fathomless Soul",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UASorcererAndWarlock",
+                    "level": 6,
+                    "entries": [
                         "*6th-level Lurker in the Deep feature*",
                         "At 6th level, your patron grants you greater abilities. You gain the following benefits:",
                         "",
                         "You can breathe both air and water.",
                         "You gain a swimming speed equal to your walking speed.",
-                        "You gain resistance to cold damage.",
-                    ],
+                        "You gain resistance to cold damage."
+                    ]
                 },
                 {
-                    name: "Guardian Grasp",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UASorcererAndWarlock",
-                    level: 6,
-                    entries: [
+                    "name": "Guardian Grasp",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UASorcererAndWarlock",
+                    "level": 6,
+                    "entries": [
                         "*6th-level Lurker in the Deep feature*",
-                        "At 6th level, the tentacle you create with Grasp of the Deep can defend you and others. When you or a creature you can see takes damage while within 10 feet of the tentacle, you can use your reaction to choose one of those creatures and reduce the damage to the chosen creature by half. After doing so, the tentacle vanishes.",
-                    ],
+                        "At 6th level, the tentacle you create with Grasp of the Deep can defend you and others. When you or a creature you can see takes damage while within 10 feet of the tentacle, you can use your reaction to choose one of those creatures and reduce the damage to the chosen creature by half. After doing so, the tentacle vanishes."
+                    ]
                 },
                 {
-                    name: "Devouring Maw",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UASorcererAndWarlock",
-                    level: 10,
-                    entries: [
+                    "name": "Devouring Maw",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UASorcererAndWarlock",
+                    "level": 10,
+                    "entries": [
                         "*10th-level Lurker in the Deep feature*",
                         "Starting at 10th level, you can magically draw forth a manifestation of your patron's insatiable hunger. As an action, choose a point you can see within 60 feet of you. For 1 minute, a translucent maw manifests in a 10-foot radius centered on that point. Each creature in that area when the maw appears must succeed on a Strength saving throw against your spell save DC or be *restrained*. Any creature that starts its turn in the maw's area takes **3d6** cold or lightning damage (your choice when it takes the damage). As an action, a *restrained* creature can repeat the saving throw, ending the restraint on a success. At the start of your turn, if there is a creature in the maw's area, you gain temporary hit points equal to your warlock level.",
-                        "Once you use this feature, you can't do so again until you finish a short or long rest.",
-                    ],
+                        "Once you use this feature, you can't do so again until you finish a short or long rest."
+                    ]
                 },
                 {
-                    name: "Unleash the Depths",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UASorcererAndWarlock",
-                    level: 14,
-                    entries: [
+                    "name": "Unleash the Depths",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UASorcererAndWarlock",
+                    "level": 14,
+                    "entries": [
                         "*14th-level Lurker in the Deep feature*",
                         "Starting at 14th level, you gain the ability to call upon your patron for aid. As an action, you choose a point within 30 feet of you where your patron tears through reality, manifesting a measure of its thalassic grandeur. Choose one of the following effects to issue from this manifestation point. Once you use either effect, you can't use this feature again until you finish a long rest.",
                         "",
@@ -1331,24 +1334,24 @@
                         "You and up to five willing creatures of your choice that you can see within 30 feet of the manifestation point are grasped by spectral tentacles and yanked through your patron's realm. The tentacles teleport you and the chosen creatures to a point of your choice within 100 miles that you have visited within the past 24 hours. The tentacles then vanish.",
                         "",
                         "## Fury",
-                        "You can direct a barrage of spectral tentacles to issue forth and strike up to five creatures you can see within 30 feet of the manifestation point. Each target must make a Dexterity saving throw against your spell save DC. On a failed save, the creature takes **6d10** cold or lightning damage (your choice) and is knocked *prone*. On a successful save, it takes half as much damage and is not knocked *prone*. The tentacles then vanish.",
-                    ],
-                },
-            ],
+                        "You can direct a barrage of spectral tentacles to issue forth and strike up to five creatures you can see within 30 feet of the manifestation point. Each target must make a Dexterity saving throw against your spell save DC. On a failed save, the creature takes **6d10** cold or lightning damage (your choice) and is knocked *prone*. On a successful save, it takes half as much damage and is not knocked *prone*. The tentacles then vanish."
+                    ]
+                }
+            ]
         },
         {
-            name: "The Noble Genie (UA)",
-            name_short: "Noble Genie (UA)",
-            source: "UA2020SubclassesPt1",
-            subclass_spells: {},
-            features: [
+            "name": "The Noble Genie (UA)",
+            "name_short": "Noble Genie (UA)",
+            "source": "UA2020SubclassesPt1",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "The Noble Genie",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2020SubclassesPt1",
-                    level: 1,
-                    entries: [
+                    "name": "The Noble Genie",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2020SubclassesPt1",
+                    "level": 1,
+                    "entries": [
                         "You made a pact with one of the rarest of geniekind, a noble genie. Such entities are rulers of vast fiefs on the Elemental Planes and have great influence over lesser genies and elemental creatures. Noble genies are varied in their motivations but are all arrogant collectors of creatures, knowledge, and treasure. A genie values their collection and will protect that which they claim ownership over. Through your connection to the noble, you can leverage their influence and extend their ownership of things in the multiverse.",
                         "",
                         "## Expanded Spell List",
@@ -1391,75 +1394,75 @@
                         ">",
                         "> When you create a tether with your Collector's Vessel, the tether takes on a form that reflects your patron's type of geniekind: swirling mist and wind for a **djinni**, sand and flecks of rock or gems for a **dao**, smoke and embers for an **efreeti**, and foamy water for a **marid**.",
                         "> When you gain the Pact Boon feature at 3rd level, if you choose a boon that grants you a physical object, your vessel transforms into that object. For example, a warlock whose patron is a noble efreeti and chooses the Pact of the Tome might find their bottle transformed into an elaborate scroll made of a red dragon's wing, with brass and iron rolling rods.",
-                        "",
-                    ],
+                        ""
+                    ]
                 },
                 {
-                    name: "Elemental Resistance",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2020SubclassesPt1",
-                    level: 6,
-                    entries: [
+                    "name": "Elemental Resistance",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2020SubclassesPt1",
+                    "level": 6,
+                    "entries": [
                         "*6th-level Noble Genie feature*",
                         "Your patron grants you protection from an element. Whenever you finish a long rest, you gain resistance to acid, cold, fire, or lightning damage (your choice) until the end of your next long rest.",
-                        "While the tether of your Collector's Vessel is active, the tethered creature gains resistance to the damage type you chose.",
-                    ],
+                        "While the tether of your Collector's Vessel is active, the tethered creature gains resistance to the damage type you chose."
+                    ]
                 },
                 {
-                    name: "Protective Wish",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2020SubclassesPt1",
-                    level: 10,
-                    entries: [
+                    "name": "Protective Wish",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2020SubclassesPt1",
+                    "level": 10,
+                    "entries": [
                         "*10th-level Noble Genie feature*",
-                        "You're now able to use your Collector's Vessel to wish for protection for yourself or your tethered creature. If you or the tethered creature is hit by an attack, you can use your reaction to teleport, swapping places with the creature and switching which one of you is hit by the attack.",
-                    ],
+                        "You're now able to use your Collector's Vessel to wish for protection for yourself or your tethered creature. If you or the tethered creature is hit by an attack, you can use your reaction to teleport, swapping places with the creature and switching which one of you is hit by the attack."
+                    ]
                 },
                 {
-                    name: "Genie's Entertainment",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2020SubclassesPt1",
-                    level: 10,
-                    entries: [
+                    "name": "Genie's Entertainment",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2020SubclassesPt1",
+                    "level": 10,
+                    "entries": [
                         "*10th-level Noble Genie feature*",
                         "As an action, you attempt to send a creature you can see within 90 feet to your patron's court. The target must succeed on a Charisma saving throw against your warlock spell save DC or be magically drawn into your vessel and teleported to your patron's court in the Elemental Planes. While there, the target is *stunned* and your patron marvels at the target with amusement but brings no harm to it. The target can repeat the saving throw at the end of each of its turns, reappearing in the space it left or in the nearest unoccupied space if that space is occupied on a success.",
-                        "Once you use this feature, you can't use it again until you finish a long rest. If the target remains in your patron's court for 1 minute, the genie sends the target back at the end of its turn as if it successfully saved, and you regain the use of this feature.",
-                    ],
+                        "Once you use this feature, you can't use it again until you finish a long rest. If the target remains in your patron's court for 1 minute, the genie sends the target back at the end of its turn as if it successfully saved, and you regain the use of this feature."
+                    ]
                 },
                 {
-                    name: "Collector's Call",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2020SubclassesPt1",
-                    level: 14,
-                    entries: [
+                    "name": "Collector's Call",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2020SubclassesPt1",
+                    "level": 14,
+                    "entries": [
                         "*14th-level Noble Genie feature*",
                         "In exchange for extending your patron's influence over the multiverse, you can call on more of their power. As an action, you can implore your patron for aid by making a Charisma (Persuasion) check against your warlock spell save DC. If the check succeeds, you can choose one of the following effects:",
                         "",
                         "A creature you can see within 60 feet of you regains 8d6 hit points and ends one disease or condition afflicting it: *blinded*, *charmed*, *deafened*, *frightened*, *paralyzed*, or *poisoned*.",
                         "A creature you can see within 60 feet of you has disadvantage on attack rolls and saving throws until the start of your next turn.",
                         "You cast the *legend lore* spell without material components.",
-                        "Whether the check succeeds or fails, you can't use this feature again until you finish a long rest. Alternatively, you can regain the use of this feature by sacrificing nonmagical treasure worth at least 500 gp to your patron. This sacrifice requires the treasure to be within 10 feet of you for at least 1 minute, at the end of which you use an action to teleport the treasure to your patron's realm, provided you have the vessel of your Collector's Vessel in hand.",
-                    ],
-                },
-            ],
+                        "Whether the check succeeds or fails, you can't use this feature again until you finish a long rest. Alternatively, you can regain the use of this feature by sacrificing nonmagical treasure worth at least 500 gp to your patron. This sacrifice requires the treasure to be within 10 feet of you for at least 1 minute, at the end of which you use an action to teleport the treasure to your patron's realm, provided you have the vessel of your Collector's Vessel in hand."
+                    ]
+                }
+            ]
         },
         {
-            name: "The Genie (UA)",
-            name_short: "Genie (UA)",
-            source: "UA2020SubclassesRevisited",
-            subclass_spells: {},
-            features: [
+            "name": "The Genie (UA)",
+            "name_short": "Genie (UA)",
+            "source": "UA2020SubclassesRevisited",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "The Genie",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2020SubclassesRevisited",
-                    level: 1,
-                    entries: [
+                    "name": "The Genie",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2020SubclassesRevisited",
+                    "level": 1,
+                    "entries": [
                         "You have made a pact with one of the rarest kinds of genie, a noble genie. Such entities are rulers of vast fiefs on the Elemental Planes and have great influence over lesser genies and elemental creatures. Noble genies are varied in their motivations but are all arrogant and wield power that rivals that of lesser deities. They delight in turning the table on mortals who so love to bind genies into servitude, readily entering into pacts that expand their reach across the multiverse.",
                         "You choose your patron's kind or determine it randomly, using the Genie Kind table. Each kind of genie is associated with a particular element, as shown in the table.",
                         "",
@@ -1506,61 +1509,61 @@
                         "**Bottled Respite** As an action, you can magically vanish and enter your vessel, which remains in the space you left. The interior of the vessel is an extradimensional space in the shape of a 20-foot-radius cylinder, 20 feet high, and resembles your vessel. The interior is comfortably appointed with cushions and low tables and is a comfortable temperature. While inside, you can hear the area around your vessel as if you were in its space. You can remain inside the vessel up to a number of hours equal to twice your proficiency bonus. You exit the vessel early if you use a bonus action to leave, if you die, or if the vessel is destroyed. When you exit the vessel, you appear in the unoccupied space closest to it. Any objects left in the vessel remain there until carried out, and if the vessel is destroyed, every object stored there harmlessly appears in the unoccupied spaces closest to the vessel's former space. Once you enter the vessel, you can't enter again until you finish a long rest.",
                         "**Genie's Wrath** Once during each of your turns when you hit with an attack roll, you can deal extra damage to the target equal to your proficiency bonus. The type of this damage is determined by your patron: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).",
                         "The vessel's AC equals your spell save DC. Its hit points equal your warlock level plus your proficiency bonus, and it is immune to poison and psychic damage.",
-                        "If the vessel is destroyed or you lose it, you can perform a 1-hour ceremony to receive a replacement from your patron. This ceremony can be performed during a short or long rest, and the previous vessel is destroyed if it still exists. The vessel vanishes in a flare of elemental power when you die.",
-                    ],
+                        "If the vessel is destroyed or you lose it, you can perform a 1-hour ceremony to receive a replacement from your patron. This ceremony can be performed during a short or long rest, and the previous vessel is destroyed if it still exists. The vessel vanishes in a flare of elemental power when you die."
+                    ]
                 },
                 {
-                    name: "Elemental Gift",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2020SubclassesRevisited",
-                    level: 6,
-                    entries: [
+                    "name": "Elemental Gift",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2020SubclassesRevisited",
+                    "level": 6,
+                    "entries": [
                         "*6th-level Genie feature*",
                         "You begin to take on characteristics of your patron's kind. You now have resistance to a damage type determined by your patron's kind: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).",
-                        "In addition, as a bonus action, you can give yourself a flying speed of 30 feet that lasts for 10 minutes, during which you can hover. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
-                    ],
+                        "In addition, as a bonus action, you can give yourself a flying speed of 30 feet that lasts for 10 minutes, during which you can hover. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+                    ]
                 },
                 {
-                    name: "Sanctuary Vessel",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2020SubclassesRevisited",
-                    level: 10,
-                    entries: [
+                    "name": "Sanctuary Vessel",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2020SubclassesRevisited",
+                    "level": 10,
+                    "entries": [
                         "*10th-level Genie feature*",
                         "When you enter your Genie's Vessel via the Bottled Respite feature, you can now choose up to five willing creatures that you can see within 30 feet of you, and the chosen creatures are drawn into the vessel with you.",
                         "As a bonus action, you can eject any number of creatures from the vessel, and everyone is ejected if you leave or the vessel is destroyed.",
-                        "In addition, anyone (including you) who remains within the vessel for at least 10 minutes gains the benefit of finishing a short rest, and anyone can add your proficiency bonus to the number of hit points they regain if they spend any Hit Dice as part of a short rest there.",
-                    ],
+                        "In addition, anyone (including you) who remains within the vessel for at least 10 minutes gains the benefit of finishing a short rest, and anyone can add your proficiency bonus to the number of hit points they regain if they spend any Hit Dice as part of a short rest there."
+                    ]
                 },
                 {
-                    name: "Limited Wish",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2020SubclassesRevisited",
-                    level: 14,
-                    entries: [
+                    "name": "Limited Wish",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2020SubclassesRevisited",
+                    "level": 14,
+                    "entries": [
                         "*14th-level Genie feature*",
                         "You entreat your patron to grant you a small wish. As an action, you can speak your desire to your Genie's Vessel, requesting the effect of one spell that is 6th level or lower and has a casting time of 1 action. The spell can be from any class's spell list, and you don't need to meet the requirements in that spell, including costly components; the spell simply takes effect as part of this action.",
-                        "Once you use this feature, you can't use it again until you finish 1d4 long rests.",
-                    ],
-                },
-            ],
+                        "Once you use this feature, you can't use it again until you finish 1d4 long rests."
+                    ]
+                }
+            ]
         },
         {
-            name: "The Undead (UA)",
-            name_short: "Undead (UA)",
-            source: "UA2020SubclassesPt4",
-            subclass_spells: {},
-            features: [
+            "name": "The Undead (UA)",
+            "name_short": "Undead (UA)",
+            "source": "UA2020SubclassesPt4",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "The Undead",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2020SubclassesPt4",
-                    level: 1,
-                    entries: [
+                    "name": "The Undead",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2020SubclassesPt4",
+                    "level": 1,
+                    "entries": [
                         "The Undead is an entity that resides in the dark corners of the multiverse. Your patron could be Acererak, Azalin, Lord Soth, Strahd, or some other ancient undead being. You may seek to gain knowledge from your patron's countless lifetimes of experience, while it may see you as a piece of a centuries long plan.",
                         "",
                         "## Expanded Spell List",
@@ -1585,40 +1588,40 @@
                         "Once during each of your turns, when you hit a creature with an attack, you can force it to make a Wisdom saving throw, and if the saving throw fails, the target is *frightened* of you until the end of your next turn.",
                         "You are immune to the *frightened* condition.",
                         "You can transform a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
-                        "The appearance of your Form of Dread reflects some aspect of your patron. For example, your form could be a shroud of shadows forming the crown and robes of your lich patron, or your face might transform into bat-like features due to your vampire patron.",
-                    ],
+                        "The appearance of your Form of Dread reflects some aspect of your patron. For example, your form could be a shroud of shadows forming the crown and robes of your lich patron, or your face might transform into bat-like features due to your vampire patron."
+                    ]
                 },
                 {
-                    name: "Grave Touched",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2020SubclassesPt4",
-                    level: 6,
-                    entries: [
+                    "name": "Grave Touched",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2020SubclassesPt4",
+                    "level": 6,
+                    "entries": [
                         "*6th-level Undead feature*",
                         "Your patron's powers have a profound effect on your body and magic. You don't need to eat, drink, or breathe.",
-                        "In addition, when you hit a creature with an attack and roll damage against the creature, you can replace the damage type with necrotic damage. While you are using your Form of Dread, you can roll one additional damage die when determining the necrotic damage the target takes.",
-                    ],
+                        "In addition, when you hit a creature with an attack and roll damage against the creature, you can replace the damage type with necrotic damage. While you are using your Form of Dread, you can roll one additional damage die when determining the necrotic damage the target takes."
+                    ]
                 },
                 {
-                    name: "Mortal Husk",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2020SubclassesPt4",
-                    level: 10,
-                    entries: [
+                    "name": "Mortal Husk",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2020SubclassesPt4",
+                    "level": 10,
+                    "entries": [
                         "*10th-level Undead feature*",
                         "Your connection to undeath and necrotic energy now saturates your body. You have resistance to necrotic damage. If you are transformed using your Form of Dread, you instead become immune to necrotic damage.",
-                        "In addition, when you are reduced to 0 hit points, you can cause your body to explode. Each creature within 30 feet of you takes necrotic damage equal to 2d10 + your warlock level. You then revive with 1 hit point in your previous space, along with your gear, and you gain 1 level of *exhaustion*. Once you revive this way, you can't do so again until you finish 1d4 long rests.",
-                    ],
+                        "In addition, when you are reduced to 0 hit points, you can cause your body to explode. Each creature within 30 feet of you takes necrotic damage equal to 2d10 + your warlock level. You then revive with 1 hit point in your previous space, along with your gear, and you gain 1 level of *exhaustion*. Once you revive this way, you can't do so again until you finish 1d4 long rests."
+                    ]
                 },
                 {
-                    name: "Spirit Projection",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2020SubclassesPt4",
-                    level: 14,
-                    entries: [
+                    "name": "Spirit Projection",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2020SubclassesPt4",
+                    "level": 14,
+                    "entries": [
                         "*14th-level Undead feature*",
                         "Your body is now simply a vessel for your spirit. As an action, you can project your spirit from your body. The body you leave behind is *unconscious* and in a state of suspended animation.",
                         "Your spirit can remain outside your body for up to 1 hour or until your concentration is broken (as if concentrating on a spell). When your projection ends, your spirit returns to your body or your body magically teleports to your spirit's space (your choice).",
@@ -1628,24 +1631,24 @@
                         "When you cast a spell of the conjuration or necromancy school, the spell doesn't require verbal, somatic, or material components that lack a gold cost.",
                         "You have a flying speed equal to your walking speed and can hover. You can move through creatures and objects as if they were difficult terrain, but you take **1d10** force damage if you end your turn inside a creature or an object.",
                         "While you are using your Form of Dread, once during each of your turns when you deal necrotic damage to a creature, you regain hit points equal to half the amount of necrotic damage dealt.",
-                        "Once you use this feature, you can't do so again until you finish a long rest.",
-                    ],
-                },
-            ],
+                        "Once you use this feature, you can't do so again until you finish a long rest."
+                    ]
+                }
+            ]
         },
         {
-            name: "The Fathomless",
-            name_short: "Fathomless",
-            source: "TCE",
-            subclass_spells: {},
-            features: [
+            "name": "The Fathomless",
+            "name_short": "Fathomless",
+            "source": "TCE",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "The Fathomless",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 1,
-                    entries: [
+                    "name": "The Fathomless",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 1,
+                    "entries": [
                         "You have plunged into a pact with the deeps. An entity of the ocean, the Elemental Plane of Water, or another otherworldly sea now allows you to draw on its thalassic power. Is it merely using you to learn about terrestrial realms, or does it want you to open cosmic floodgates and drown the world?",
                         "Perhaps you were born into a generational cult that venerates the Fathomless and its spawn. Or you might have been shipwrecked and on the brink of drowning when your patron's grasp offered you a chance at life. Whatever the reason for your pact, the sea and its unknown depths call to you.",
                         "Entities of the deep that might empower a warlock include krakens, ancient water elementals, godlike hallucinations dreamed into being by kuo-toa, merfolk demigods, and sea hag covens.",
@@ -1673,70 +1676,70 @@
                         "",
                         "## Gift of the Sea",
                         "*1st-level Fathomless feature*",
-                        "You gain a swimming speed of 40 feet, and you can breathe underwater.",
-                    ],
+                        "You gain a swimming speed of 40 feet, and you can breathe underwater."
+                    ]
                 },
                 {
-                    name: "Oceanic Soul",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 6,
-                    entries: [
+                    "name": "Oceanic Soul",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 6,
+                    "entries": [
                         "*6th-level Fathomless feature*",
-                        "You are now even more at home in the depths. You gain resistance to cold damage. In addition, when you are fully submerged, any creature that is also fully submerged can understand your speech, and you can understand theirs.",
-                    ],
+                        "You are now even more at home in the depths. You gain resistance to cold damage. In addition, when you are fully submerged, any creature that is also fully submerged can understand your speech, and you can understand theirs."
+                    ]
                 },
                 {
-                    name: "Guardian Coil",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 6,
-                    entries: [
+                    "name": "Guardian Coil",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 6,
+                    "entries": [
                         "*6th-level Fathomless feature*",
-                        "Your Tentacle of the Deeps can defend you and others, interposing itself between them and harm. When you or a creature you can see takes damage while within 10 feet of the tentacle, you can use your reaction to choose one of those creatures and reduce the damage to that creature by 1d8. When you reach 10th level in this class, the damage reduced by the tentacle increases to 2d8.",
-                    ],
+                        "Your Tentacle of the Deeps can defend you and others, interposing itself between them and harm. When you or a creature you can see takes damage while within 10 feet of the tentacle, you can use your reaction to choose one of those creatures and reduce the damage to that creature by 1d8. When you reach 10th level in this class, the damage reduced by the tentacle increases to 2d8."
+                    ]
                 },
                 {
-                    name: "Grasping Tentacles",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 10,
-                    entries: [
+                    "name": "Grasping Tentacles",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 10,
+                    "entries": [
                         "*10th-level Fathomless feature*",
                         "You learn the spell *evard's black tentacles*. It counts as a warlock spell for you, but it doesn't count against the number of spells you know. You can also cast it once without a spell slot, and you regain the ability to do so when you finish a long rest.",
-                        "Whenever you cast this spell, your patron's magic bolsters you, granting you a number of temporary hit points equal to your warlock level. Moreover, damage can't break your concentration on this spell.",
-                    ],
+                        "Whenever you cast this spell, your patron's magic bolsters you, granting you a number of temporary hit points equal to your warlock level. Moreover, damage can't break your concentration on this spell."
+                    ]
                 },
                 {
-                    name: "Fathomless Plunge",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 14,
-                    entries: [
+                    "name": "Fathomless Plunge",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 14,
+                    "entries": [
                         "*14th-level Fathomless feature*",
                         "You can magically open temporary conduits to watery destinations. As an action, you can teleport yourself and up to five other willing creatures that you can see within 30 feet of you. Amid a whirl of tentacles, you all vanish and then reappear up to 1 mile away in a body of water you've seen (pond size or larger) or within 30 feet of it, each of you appearing in an unoccupied space within 30 feet of the others.",
-                        "Once you use this feature, you can't use it again until you finish a short or long rest.",
-                    ],
-                },
-            ],
+                        "Once you use this feature, you can't use it again until you finish a short or long rest."
+                    ]
+                }
+            ]
         },
         {
-            name: "The Genie",
-            name_short: "Genie",
-            source: "TCE",
-            subclass_spells: {},
-            features: [
+            "name": "The Genie",
+            "name_short": "Genie",
+            "source": "TCE",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "The Genie",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 1,
-                    entries: [
+                    "name": "The Genie",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 1,
+                    "entries": [
                         "You have made a pact with one of the rarest kinds of genie, a noble genie. Such entities rule vast fiefs on the Elemental Planes and have great influence over lesser genies and elemental creatures. Noble genies are varied in their motivations, but most are arrogant and wield power that rivals that of lesser deities. They delight in turning the table on mortals, who often bind genies into servitude, and readily enter into pacts that expand their reach.",
                         "You choose your patron's kind or determine it randomly, using the Genie Kind table.",
                         "",
@@ -1787,61 +1790,61 @@
                         "## Genie's Wrath",
                         "Once during each of your turns when you hit with an attack roll, you can deal extra damage to the target equal to your proficiency bonus. The type of this damage is determined by your patron: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).",
                         "The vessel's AC equals your spell save DC. Its hit points equal your warlock level plus your proficiency bonus, and it is immune to poison and psychic damage.",
-                        "If the vessel is destroyed or you lose it, you can perform a 1-hour ceremony to receive a replacement from your patron. This ceremony can be performed during a short or long rest, and the previous vessel is destroyed if it still exists. The vessel vanishes in a flare of elemental power when you die.",
-                    ],
+                        "If the vessel is destroyed or you lose it, you can perform a 1-hour ceremony to receive a replacement from your patron. This ceremony can be performed during a short or long rest, and the previous vessel is destroyed if it still exists. The vessel vanishes in a flare of elemental power when you die."
+                    ]
                 },
                 {
-                    name: "Elemental Gift",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 6,
-                    entries: [
+                    "name": "Elemental Gift",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 6,
+                    "entries": [
                         "*6th-level Genie feature*",
                         "You begin to take on characteristics of your patron's kind. You now have resistance to a damage type determined by your patron's kind: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).",
-                        "In addition, as a bonus action, you can give yourself a flying speed of 30 feet that lasts for 10 minutes, during which you can hover. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
-                    ],
+                        "In addition, as a bonus action, you can give yourself a flying speed of 30 feet that lasts for 10 minutes, during which you can hover. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+                    ]
                 },
                 {
-                    name: "Sanctuary Vessel",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 10,
-                    entries: [
+                    "name": "Sanctuary Vessel",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 10,
+                    "entries": [
                         "*10th-level Genie feature*",
                         "When you enter your Genie's Vessel via the Bottled Respite feature, you can now choose up to five willing creatures that you can see within 30 feet of you, and the chosen creatures are drawn into the vessel with you.",
                         "As a bonus action, you can eject any number of creatures from the vessel, and everyone is ejected if you leave or die or if the vessel is destroyed.",
-                        "In addition, anyone (including you) who remains within the vessel for at least 10 minutes gains the benefit of finishing a short rest, and anyone can add your proficiency bonus to the number of hit points they regain if they spend any Hit Dice as part of a short rest there.",
-                    ],
+                        "In addition, anyone (including you) who remains within the vessel for at least 10 minutes gains the benefit of finishing a short rest, and anyone can add your proficiency bonus to the number of hit points they regain if they spend any Hit Dice as part of a short rest there."
+                    ]
                 },
                 {
-                    name: "Limited Wish",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 14,
-                    entries: [
+                    "name": "Limited Wish",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 14,
+                    "entries": [
                         "*14th-level Genie feature*",
                         "You entreat your patron to grant you a small wish. As an action, you can speak your desire to your Genie's Vessel, requesting the effect of one spell that is 6th level or lower and has a casting time of 1 action. The spell can be from any class's spell list, and you don't need to meet the requirements in that spell, including costly components; the spell simply takes effect as part of this action.",
-                        "Once you use this feature, you can't use it again until you finish 1d4 long rests.",
-                    ],
-                },
-            ],
+                        "Once you use this feature, you can't use it again until you finish 1d4 long rests."
+                    ]
+                }
+            ]
         },
         {
-            name: "The Undead",
-            name_short: "Undead",
-            source: "VRGR",
-            subclass_spells: {},
-            features: [
+            "name": "The Undead",
+            "name_short": "Undead",
+            "source": "VRGR",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "The Undead",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "VRGR",
-                    level: 1,
-                    entries: [
+                    "name": "The Undead",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "VRGR",
+                    "level": 1,
+                    "entries": [
                         "You've made a pact with a deathless being, a creature that defies the cycle and life and death, forsaking its mortal shell so it might eternally pursue its unfathomable ambitions. For such beings, time and morality are fleeting things, the concerns of those for whom grains of sand still rush through life's hourglass. Having once been mortal themselves, these ancient undead know firsthand the paths of ambition and the routes past the doors of death. They eagerly share this profane knowledge, along with other secrets, with those who work their will among the living.",
                         "Beings of this type include the demilich Acererak, the vampire tyrant Kas the Bloody-Handed, the githyanki lich-queen Vlaakith, the dracolich Dragotha, the undead pharaoh Ankhtepot, and the elusive Darklord, Azalin Rex.",
                         "",
@@ -1867,40 +1870,40 @@
                         "Once during each of your turns, when you hit a creature with an attack roll, you can force it to make a Wisdom saving throw, and if the saving throw fails, the target is *frightened* of you until the end of your next turn.",
                         "You are immune to the *frightened* condition.",
                         "You can transform a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
-                        "The appearance of your Form of Dread reflects some aspect of your patron. For example, your form could be a shroud of shadows forming the crown and robes of your lich patron, or your body might glow with glyphs from ancient funerary rites and be surrounded by desert winds, suggesting your mummy patron.",
-                    ],
+                        "The appearance of your Form of Dread reflects some aspect of your patron. For example, your form could be a shroud of shadows forming the crown and robes of your lich patron, or your body might glow with glyphs from ancient funerary rites and be surrounded by desert winds, suggesting your mummy patron."
+                    ]
                 },
                 {
-                    name: "Grave Touched",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "VRGR",
-                    level: 6,
-                    entries: [
+                    "name": "Grave Touched",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "VRGR",
+                    "level": 6,
+                    "entries": [
                         "*6th-level Undead feature*",
                         "Your patron's powers have a profound effect on your body and magic. You don't need to eat, drink, or breathe.",
-                        "In addition, once during each of your turns, when you hit a creature with an attack roll and roll damage against the creature, you can replace the damage type with necrotic damage. While you are using your Form of Dread, you can roll one additional damage die when determining the necrotic damage the target takes.",
-                    ],
+                        "In addition, once during each of your turns, when you hit a creature with an attack roll and roll damage against the creature, you can replace the damage type with necrotic damage. While you are using your Form of Dread, you can roll one additional damage die when determining the necrotic damage the target takes."
+                    ]
                 },
                 {
-                    name: "Necrotic Husk",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "VRGR",
-                    level: 10,
-                    entries: [
+                    "name": "Necrotic Husk",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "VRGR",
+                    "level": 10,
+                    "entries": [
                         "*10th-level Undead feature*",
                         "Your connection to undeath and necrotic energy now saturates your body. You have resistance to necrotic damage. If you are transformed using your Form of Dread, you instead become immune to necrotic damage.",
-                        "In addition, when you would be reduced to 0 hit points, you can use your reaction to drop to 1 hit point instead and cause your body to erupt with deathly energy. Each creature of your choice that is within 30 feet of you takes necrotic damage equal to **2d10** + your warlock level. You then gain 1 level of *exhaustion*. Once you use this reaction, you can't do so again until you finish 1d4 long rests.",
-                    ],
+                        "In addition, when you would be reduced to 0 hit points, you can use your reaction to drop to 1 hit point instead and cause your body to erupt with deathly energy. Each creature of your choice that is within 30 feet of you takes necrotic damage equal to **2d10** + your warlock level. You then gain 1 level of *exhaustion*. Once you use this reaction, you can't do so again until you finish 1d4 long rests."
+                    ]
                 },
                 {
-                    name: "Spirit Projection",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "VRGR",
-                    level: 14,
-                    entries: [
+                    "name": "Spirit Projection",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "VRGR",
+                    "level": 14,
+                    "entries": [
                         "*14th-level Undead feature*",
                         "Your spirit can become untethered from your physical form. As an action, you can project your spirit from your body. The body you leave behind is *unconscious* and in a state of suspended animation.",
                         "Your spirit resembles your mortal form in almost every way, replicating your game statistics but not your possessions. Any damage or other effects that apply to your spirit or physical body affects the other. Your spirit can remain outside your body for up to 1 hour or until your concentration is broken (as if concentrating on a spell). When your projection ends, your spirit returns to your body or your body magically teleports to your spirit's space (your choice).",
@@ -1910,34 +1913,34 @@
                         "When you cast a spell of the conjuration or necromancy school, the spell doesn't require verbal or somatic components or material components that lack a gold cost.",
                         "You have a flying speed equal to your walking speed and can hover. You can move through creatures and objects as if they were difficult terrain, but you take 1d10 force damage if you end your turn inside a creature or an object.",
                         "While you are using your Form of Dread, once during each of your turns when you deal necrotic damage to a creature, you regain hit points equal to half the amount of necrotic damage dealt.",
-                        "Once you use this feature, you can't do so again until you finish a long rest.",
-                    ],
-                },
-            ],
+                        "Once you use this feature, you can't do so again until you finish a long rest."
+                    ]
+                }
+            ]
         },
         {
-            name: "Mage of Lorehold (UA)",
-            name_short: "Lorehold (UA)",
-            source: "UA2021MagesOfStrixhaven",
-            subclass_spells: {},
-            features: [],
+            "name": "Mage of Lorehold (UA)",
+            "name_short": "Lorehold (UA)",
+            "source": "UA2021MagesOfStrixhaven",
+            "subclass_spells": {},
+            "features": []
         },
         {
-            name: "Mage of Silverquill (UA)",
-            name_short: "Silverquill (UA)",
-            source: "UA2021MagesOfStrixhaven",
-            subclass_spells: {},
-            features: [],
+            "name": "Mage of Silverquill (UA)",
+            "name_short": "Silverquill (UA)",
+            "source": "UA2021MagesOfStrixhaven",
+            "subclass_spells": {},
+            "features": []
         },
         {
-            name: "Mage of Witherbloom (UA)",
-            name_short: "Witherbloom (UA)",
-            source: "UA2021MagesOfStrixhaven",
-            subclass_spells: {},
-            features: [],
-        },
+            "name": "Mage of Witherbloom (UA)",
+            "name_short": "Witherbloom (UA)",
+            "source": "UA2021MagesOfStrixhaven",
+            "subclass_spells": {},
+            "features": []
+        }
     ],
-    fluff: [
+    "fluff": [
         "",
         "# Warlock",
         "*PHB - 105*",
@@ -2017,6 +2020,6 @@
         "| 4 | Your tongue is an unnatural color. |",
         "| 5 | You have a vestigial tail. |",
         "| 6 | Your nose glows in the dark. |",
-        "",
-    ],
+        ""
+    ]
 }

@@ -1,30 +1,33 @@
 {
-    slug: "rogue_phb",
-    name: "Rogue",
-    source: "PHB",
-    hit_dice: "1d8",
-    save_proficiency: [
+    "slug": "rogue_phb",
+    "name": "Rogue",
+    "source": "PHB",
+    "hit_dice": {
+        "number": 1,
+        "faces": 8
+    },
+    "save_proficiency": [
         "dexterity",
-        "intelligence",
+        "intelligence"
     ],
-    armor_proficiency: [
-        "light",
+    "armor_proficiency": [
+        "light"
     ],
-    weapon_proficiency: [
+    "weapon_proficiency": [
         "simple",
         "hand crossbows",
         "longswords",
         "rapiers",
-        "shortswords",
+        "shortswords"
     ],
-    tool_proficiency: [
-        "thieves' tools",
+    "tool_proficiency": [
+        "thieves' tools"
     ],
-    skill_proficiency: [
+    "skill_proficiency": [
         {
-            mode: "choose",
-            count: 4,
-            choose_from: [
+            "mode": "choose",
+            "count": 4,
+            "choose_from": [
                 "acrobatics",
                 "athletics",
                 "deception",
@@ -35,35 +38,35 @@
                 "performance",
                 "persuasion",
                 "sleight of hand",
-                "stealth",
-            ],
-        },
+                "stealth"
+            ]
+        }
     ],
-    starting_equipment: {
-        backgroundItems: true,
-        gold: "4d4 * 10",
-        items: [
+    "starting_equipment": {
+        "backgroundItems": true,
+        "gold": "4d4 * 10",
+        "items": [
             "(a) a rapier or (b) a shortsword",
             "(a) a shortbow and quiver of 20 arrows or (b) a shortsword",
             "(a) a burglar's pack, (b) a dungeoneer's pack, or (c) an explorer's pack",
-            "Leather armor, two daggers, and thieves' tools",
-        ],
+            "Leather armor, two daggers, and thieves' tools"
+        ]
     },
-    multiclass_requirements: {
-        dexterity: 13,
+    "multiclass_requirements": {
+        "dexterity": 13
     },
-    multiclass_armor_proficiency: [
-        "light",
+    "multiclass_armor_proficiency": [
+        "light"
     ],
-    multiclass_weapon_proficiency: [],
-    multiclass_tool_proficiency: [
-        "thieves' tools",
+    "multiclass_weapon_proficiency": [],
+    "multiclass_tool_proficiency": [
+        "thieves' tools"
     ],
-    multiclass_skill_proficiency: [
+    "multiclass_skill_proficiency": [
         {
-            mode: "choose",
-            count: 4,
-            choose_from: [
+            "mode": "choose",
+            "count": 4,
+            "choose_from": [
                 "acrobatics",
                 "athletics",
                 "deception",
@@ -74,352 +77,352 @@
                 "performance",
                 "persuasion",
                 "sleight of hand",
-                "stealth",
-            ],
-        },
+                "stealth"
+            ]
+        }
     ],
-    spellcasting: null,
-    features: [
+    "spellcasting": null,
+    "features": [
         {
-            name: "Expertise",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 1,
-            entries: [
+            "name": "Expertise",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 1,
+            "entries": [
                 "At 1st level, choose two of your skill proficiencies, or one of your skill proficiencies and your proficiency with thieves' tools. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
-                "At 6th level, you can choose two more of your proficiencies (in skills or with thieves' tools) to gain this benefit.",
-            ],
+                "At 6th level, you can choose two more of your proficiencies (in skills or with thieves' tools) to gain this benefit."
+            ]
         },
         {
-            name: "Sneak Attack",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 1,
-            entries: [
+            "name": "Sneak Attack",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 1,
+            "entries": [
                 "Beginning at 1st level, you know how to strike subtly and exploit a foe's distraction. Once per turn, you can deal an extra **1d6** damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon.",
                 "You don't need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't *incapacitated*, and you don't have disadvantage on the attack roll.",
-                "The amount of the extra damage increases as you gain levels in this class, as shown in the Sneak Attack column of the Rogue table.",
-            ],
+                "The amount of the extra damage increases as you gain levels in this class, as shown in the Sneak Attack column of the Rogue table."
+            ]
         },
         {
-            name: "Thieves' Cant",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 1,
-            entries: [
+            "name": "Thieves' Cant",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 1,
+            "entries": [
                 "During your rogue training you learned thieves' cant, a secret mix of dialect, jargon, and code that allows you to hide messages in seemingly normal conversation. Only another creature that knows thieves' cant understands such messages. It takes four times longer to convey such a message than it does to speak the same idea plainly.",
-                "In addition, you understand a set of secret signs and symbols used to convey short, simple messages, such as whether an area is dangerous or the territory of a thieves' guild, whether loot is nearby, or whether the people in an area are easy marks or will provide a safe house for thieves on the run.",
-            ],
+                "In addition, you understand a set of secret signs and symbols used to convey short, simple messages, such as whether an area is dangerous or the territory of a thieves' guild, whether loot is nearby, or whether the people in an area are easy marks or will provide a safe house for thieves on the run."
+            ]
         },
         {
-            name: "Cunning Action",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 2,
-            entries: [
-                "Starting at 2nd level, your quick thinking and agility allow you to move and act quickly. You can take a bonus action on each of your turns in combat. This action can be used only to take the **Dash**, **Disengage**, or **Hide** action.",
-            ],
+            "name": "Cunning Action",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 2,
+            "entries": [
+                "Starting at 2nd level, your quick thinking and agility allow you to move and act quickly. You can take a bonus action on each of your turns in combat. This action can be used only to take the **Dash**, **Disengage**, or **Hide** action."
+            ]
         },
         {
-            name: "Cunning Action: Aim",
-            type: "class",
-            gain_scf: false,
-            source: "UAClassFeatureVariants",
-            level: 2,
-            entries: [
+            "name": "Cunning Action: Aim",
+            "type": "class",
+            "gain_scf": false,
+            "source": "UAClassFeatureVariants",
+            "level": 2,
+            "entries": [
                 "*2nd-level rogue feature (enhances Cunning Action)*",
-                "You gain an additional way to use your Cunning Action: carefully aiming your next attack. As a bonus action, you give yourself advantage on your next attack roll on the current turn. You can use this bonus action only if you haven't moved during this turn, and after you use the bonus action, your speed is 0 until the end of the current turn.",
-            ],
+                "You gain an additional way to use your Cunning Action: carefully aiming your next attack. As a bonus action, you give yourself advantage on your next attack roll on the current turn. You can use this bonus action only if you haven't moved during this turn, and after you use the bonus action, your speed is 0 until the end of the current turn."
+            ]
         },
         {
-            name: "Roguish Archetype",
-            type: "class",
-            gain_scf: true,
-            source: "PHB",
-            level: 3,
-            entries: [
-                "At 3rd level, you choose an archetype that you emulate in the exercise of your rogue abilities from the list of available archetypes. Your archetype choice grants you features at 3rd level and then again at 9th, 13th, and 17th level.",
-            ],
+            "name": "Roguish Archetype",
+            "type": "class",
+            "gain_scf": true,
+            "source": "PHB",
+            "level": 3,
+            "entries": [
+                "At 3rd level, you choose an archetype that you emulate in the exercise of your rogue abilities from the list of available archetypes. Your archetype choice grants you features at 3rd level and then again at 9th, 13th, and 17th level."
+            ]
         },
         {
-            name: "Steady Aim",
-            type: "class",
-            gain_scf: false,
-            source: "TCE",
-            level: 3,
-            entries: [
+            "name": "Steady Aim",
+            "type": "class",
+            "gain_scf": false,
+            "source": "TCE",
+            "level": 3,
+            "entries": [
                 "*3rd-level rogue Optional class features*",
-                "As a bonus action, you give yourself advantage on your next attack roll on the current turn. You can use this bonus action only if you haven't moved during this turn, and after you use the bonus action, your speed is 0 until the end of the current turn.",
-            ],
+                "As a bonus action, you give yourself advantage on your next attack roll on the current turn. You can use this bonus action only if you haven't moved during this turn, and after you use the bonus action, your speed is 0 until the end of the current turn."
+            ]
         },
         {
-            name: "Ability Score Improvement",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 4,
-            entries: [
+            "name": "Ability Score Improvement",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 4,
+            "entries": [
                 "When you reach 4th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-                "If your DM allows the use of feats, you may instead take a feat.",
-            ],
+                "If your DM allows the use of feats, you may instead take a feat."
+            ]
         },
         {
-            name: "Proficiency Versatility",
-            type: "class",
-            gain_scf: false,
-            source: "UAClassFeatureVariants",
-            level: 4,
-            entries: [
+            "name": "Proficiency Versatility",
+            "type": "class",
+            "gain_scf": false,
+            "source": "UAClassFeatureVariants",
+            "level": 4,
+            "entries": [
                 "*4th-level feature (enhances Ability Score Improvement)*",
                 "When you gain the Ability Score Improvement feature from your class, you can also replace one of your skill proficiencies with a skill proficiency offered by your class at 1st level (the proficiency you replace needn't be from the class).",
-                "This change represents one of your skills atrophying as you focus on a different skill.",
-            ],
+                "This change represents one of your skills atrophying as you focus on a different skill."
+            ]
         },
         {
-            name: "Uncanny Dodge",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 5,
-            entries: [
-                "Starting at 5th level, when an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you.",
-            ],
+            "name": "Uncanny Dodge",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 5,
+            "entries": [
+                "Starting at 5th level, when an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you."
+            ]
         },
         {
-            name: "Expertise",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 6,
-            entries: [
-                "At 6th level, you can choose two more of your proficiencies (in skills or with thieves' tools) to gain the benefit of Expertise.",
-            ],
+            "name": "Expertise",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 6,
+            "entries": [
+                "At 6th level, you can choose two more of your proficiencies (in skills or with thieves' tools) to gain the benefit of Expertise."
+            ]
         },
         {
-            name: "Evasion",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 7,
-            entries: [
-                "Beginning at 7th level, you can nimbly dodge out of the way of certain area effects, such as a red dragon's fiery breath or an *ice storm* spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.",
-            ],
+            "name": "Evasion",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 7,
+            "entries": [
+                "Beginning at 7th level, you can nimbly dodge out of the way of certain area effects, such as a red dragon's fiery breath or an *ice storm* spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail."
+            ]
         },
         {
-            name: "Ability Score Improvement",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 8,
-            entries: [
+            "name": "Ability Score Improvement",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 8,
+            "entries": [
                 "When you reach 8th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-                "If your DM allows the use of feats, you may instead take a feat.",
-            ],
+                "If your DM allows the use of feats, you may instead take a feat."
+            ]
         },
         {
-            name: "Proficiency Versatility",
-            type: "class",
-            gain_scf: false,
-            source: "UAClassFeatureVariants",
-            level: 8,
-            entries: [
+            "name": "Proficiency Versatility",
+            "type": "class",
+            "gain_scf": false,
+            "source": "UAClassFeatureVariants",
+            "level": 8,
+            "entries": [
                 "*8th-level feature (enhances Ability Score Improvement)*",
                 "When you gain the Ability Score Improvement feature from your class, you can also replace one of your skill proficiencies with a skill proficiency offered by your class at 1st level (the proficiency you replace needn't be from the class).",
-                "This change represents one of your skills atrophying as you focus on a different skill.",
-            ],
+                "This change represents one of your skills atrophying as you focus on a different skill."
+            ]
         },
         {
-            name: "Roguish Archetype feature",
-            type: "class",
-            gain_scf: true,
-            source: "PHB",
-            level: 9,
-            entries: [
-                "At 9th level, you gain a feature granted by your Roguish Archetype.",
-            ],
+            "name": "Roguish Archetype feature",
+            "type": "class",
+            "gain_scf": true,
+            "source": "PHB",
+            "level": 9,
+            "entries": [
+                "At 9th level, you gain a feature granted by your Roguish Archetype."
+            ]
         },
         {
-            name: "Ability Score Improvement",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 10,
-            entries: [
+            "name": "Ability Score Improvement",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 10,
+            "entries": [
                 "When you reach 10th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-                "If your DM allows the use of feats, you may instead take a feat.",
-            ],
+                "If your DM allows the use of feats, you may instead take a feat."
+            ]
         },
         {
-            name: "Proficiency Versatility",
-            type: "class",
-            gain_scf: false,
-            source: "UAClassFeatureVariants",
-            level: 10,
-            entries: [
+            "name": "Proficiency Versatility",
+            "type": "class",
+            "gain_scf": false,
+            "source": "UAClassFeatureVariants",
+            "level": 10,
+            "entries": [
                 "*10th-level feature (enhances Ability Score Improvement)*",
                 "When you gain the Ability Score Improvement feature from your class, you can also replace one of your skill proficiencies with a skill proficiency offered by your class at 1st level (the proficiency you replace needn't be from the class).",
-                "This change represents one of your skills atrophying as you focus on a different skill.",
-            ],
+                "This change represents one of your skills atrophying as you focus on a different skill."
+            ]
         },
         {
-            name: "Reliable Talent",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 11,
-            entries: [
-                "By 11th level, you have refined your chosen skills until they approach perfection. Whenever you make an ability check that lets you add your proficiency bonus, you can treat a d20 roll of 9 or lower as a 10.",
-            ],
+            "name": "Reliable Talent",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 11,
+            "entries": [
+                "By 11th level, you have refined your chosen skills until they approach perfection. Whenever you make an ability check that lets you add your proficiency bonus, you can treat a d20 roll of 9 or lower as a 10."
+            ]
         },
         {
-            name: "Ability Score Improvement",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 12,
-            entries: [
+            "name": "Ability Score Improvement",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 12,
+            "entries": [
                 "When you reach 12th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-                "If your DM allows the use of feats, you may instead take a feat.",
-            ],
+                "If your DM allows the use of feats, you may instead take a feat."
+            ]
         },
         {
-            name: "Proficiency Versatility",
-            type: "class",
-            gain_scf: false,
-            source: "UAClassFeatureVariants",
-            level: 12,
-            entries: [
+            "name": "Proficiency Versatility",
+            "type": "class",
+            "gain_scf": false,
+            "source": "UAClassFeatureVariants",
+            "level": 12,
+            "entries": [
                 "*12th-level feature (enhances Ability Score Improvement)*",
                 "When you gain the Ability Score Improvement feature from your class, you can also replace one of your skill proficiencies with a skill proficiency offered by your class at 1st level (the proficiency you replace needn't be from the class).",
-                "This change represents one of your skills atrophying as you focus on a different skill.",
-            ],
+                "This change represents one of your skills atrophying as you focus on a different skill."
+            ]
         },
         {
-            name: "Roguish Archetype feature",
-            type: "class",
-            gain_scf: true,
-            source: "PHB",
-            level: 13,
-            entries: [
-                "At 13th level, you gain a feature granted by your Roguish Archetype.",
-            ],
+            "name": "Roguish Archetype feature",
+            "type": "class",
+            "gain_scf": true,
+            "source": "PHB",
+            "level": 13,
+            "entries": [
+                "At 13th level, you gain a feature granted by your Roguish Archetype."
+            ]
         },
         {
-            name: "Blindsense",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 14,
-            entries: [
-                "Starting at 14th level, if you are able to hear, you are aware of the location of any hidden or *invisible* creature within 10 feet of you.",
-            ],
+            "name": "Blindsense",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 14,
+            "entries": [
+                "Starting at 14th level, if you are able to hear, you are aware of the location of any hidden or *invisible* creature within 10 feet of you."
+            ]
         },
         {
-            name: "Slippery Mind",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 15,
-            entries: [
-                "By 15th level, you have acquired greater mental strength. You gain proficiency in Wisdom saving throws.",
-            ],
+            "name": "Slippery Mind",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 15,
+            "entries": [
+                "By 15th level, you have acquired greater mental strength. You gain proficiency in Wisdom saving throws."
+            ]
         },
         {
-            name: "Ability Score Improvement",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 16,
-            entries: [
+            "name": "Ability Score Improvement",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 16,
+            "entries": [
                 "When you reach 16th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-                "If your DM allows the use of feats, you may instead take a feat.",
-            ],
+                "If your DM allows the use of feats, you may instead take a feat."
+            ]
         },
         {
-            name: "Proficiency Versatility",
-            type: "class",
-            gain_scf: false,
-            source: "UAClassFeatureVariants",
-            level: 16,
-            entries: [
+            "name": "Proficiency Versatility",
+            "type": "class",
+            "gain_scf": false,
+            "source": "UAClassFeatureVariants",
+            "level": 16,
+            "entries": [
                 "*16th-level feature (enhances Ability Score Improvement)*",
                 "When you gain the Ability Score Improvement feature from your class, you can also replace one of your skill proficiencies with a skill proficiency offered by your class at 1st level (the proficiency you replace needn't be from the class).",
-                "This change represents one of your skills atrophying as you focus on a different skill.",
-            ],
+                "This change represents one of your skills atrophying as you focus on a different skill."
+            ]
         },
         {
-            name: "Roguish Archetype feature",
-            type: "class",
-            gain_scf: true,
-            source: "PHB",
-            level: 17,
-            entries: [
-                "At 17th level, you gain a feature granted by your Roguish Archetype.",
-            ],
+            "name": "Roguish Archetype feature",
+            "type": "class",
+            "gain_scf": true,
+            "source": "PHB",
+            "level": 17,
+            "entries": [
+                "At 17th level, you gain a feature granted by your Roguish Archetype."
+            ]
         },
         {
-            name: "Elusive",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 18,
-            entries: [
-                "Beginning at 18th level, you are so evasive that attackers rarely gain the upper hand against you. No attack roll has advantage against you while you aren't *incapacitated*.",
-            ],
+            "name": "Elusive",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 18,
+            "entries": [
+                "Beginning at 18th level, you are so evasive that attackers rarely gain the upper hand against you. No attack roll has advantage against you while you aren't *incapacitated*."
+            ]
         },
         {
-            name: "Ability Score Improvement",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 19,
-            entries: [
+            "name": "Ability Score Improvement",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 19,
+            "entries": [
                 "When you reach 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-                "If your DM allows the use of feats, you may instead take a feat.",
-            ],
+                "If your DM allows the use of feats, you may instead take a feat."
+            ]
         },
         {
-            name: "Proficiency Versatility",
-            type: "class",
-            gain_scf: false,
-            source: "UAClassFeatureVariants",
-            level: 19,
-            entries: [
+            "name": "Proficiency Versatility",
+            "type": "class",
+            "gain_scf": false,
+            "source": "UAClassFeatureVariants",
+            "level": 19,
+            "entries": [
                 "*19th-level feature (enhances Ability Score Improvement)*",
                 "When you gain the Ability Score Improvement feature from your class, you can also replace one of your skill proficiencies with a skill proficiency offered by your class at 1st level (the proficiency you replace needn't be from the class).",
-                "This change represents one of your skills atrophying as you focus on a different skill.",
-            ],
+                "This change represents one of your skills atrophying as you focus on a different skill."
+            ]
         },
         {
-            name: "Stroke of Luck",
-            type: "class",
-            gain_scf: false,
-            source: "PHB",
-            level: 20,
-            entries: [
+            "name": "Stroke of Luck",
+            "type": "class",
+            "gain_scf": false,
+            "source": "PHB",
+            "level": 20,
+            "entries": [
                 "At 20th level, you have an uncanny knack for succeeding when you need to. If your attack misses a target within range, you can turn the miss into a hit. Alternatively, if you fail an ability check, you can treat the d20 roll as a 20.",
-                "Once you use this feature, you can't use it again until you finish a short or long rest.",
-            ],
-        },
+                "Once you use this feature, you can't use it again until you finish a short or long rest."
+            ]
+        }
     ],
-    subclasses: [
+    "subclasses": [
         {
-            name: "Arcane Trickster",
-            name_short: "Arcane Trickster",
-            source: "PHB",
-            subclass_spells: {},
-            features: [
+            "name": "Arcane Trickster",
+            "name_short": "Arcane Trickster",
+            "source": "PHB",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "Arcane Trickster",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 3,
-                    entries: [
+                    "name": "Arcane Trickster",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 3,
+                    "entries": [
                         "Some rogues enhance their fine-honed skills of stealth and agility with magic, learning tricks of enchantment and illusion. These rogues include pickpockets and burglars, but also pranksters, mischief-makers, and a significant number of adventurers.",
                         "",
                         "## Spellcasting",
@@ -454,56 +457,56 @@
                         "You can retrieve an object in a container worn or carried by another creature.",
                         "You can use thieves' tools to pick locks and disarm traps at range.",
                         "You can perform one of these tasks without being noticed by a creature if you succeed on a Dexterity (Sleight of Hand) check contested by the creature's Wisdom (Perception) check.",
-                        "In addition, you can use the bonus action granted by your Cunning Action to control the hand.",
-                    ],
+                        "In addition, you can use the bonus action granted by your Cunning Action to control the hand."
+                    ]
                 },
                 {
-                    name: "Magical Ambush",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 9,
-                    entries: [
-                        "Starting at 9th level, if you are hidden from a creature when you cast a spell on it, the creature has disadvantage on any saving throw it makes against the spell this turn.",
-                    ],
+                    "name": "Magical Ambush",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 9,
+                    "entries": [
+                        "Starting at 9th level, if you are hidden from a creature when you cast a spell on it, the creature has disadvantage on any saving throw it makes against the spell this turn."
+                    ]
                 },
                 {
-                    name: "Versatile Trickster",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 13,
-                    entries: [
-                        "At 13th level, you gain the ability to distract targets with your *mage hand*. As a bonus action on your turn, you can designate a creature within 5 feet of the spectral hand created by the spell. Doing so gives you advantage on attack rolls against that creature until the end of the turn.",
-                    ],
+                    "name": "Versatile Trickster",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 13,
+                    "entries": [
+                        "At 13th level, you gain the ability to distract targets with your *mage hand*. As a bonus action on your turn, you can designate a creature within 5 feet of the spectral hand created by the spell. Doing so gives you advantage on attack rolls against that creature until the end of the turn."
+                    ]
                 },
                 {
-                    name: "Spell Thief",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 17,
-                    entries: [
+                    "name": "Spell Thief",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 17,
+                    "entries": [
                         "At 17th level, you gain the ability to magically steal the knowledge of how to cast a spell from another spellcaster.",
                         "Immediately after a creature casts a spell that targets you or includes you in its area of effect, you can use your reaction to force the creature to make a saving throw with its spellcasting ability modifier. The DC equals your spell save DC. On a failed save, you negate the spell's effect against you, and you steal the knowledge of the spell if it is at least 1st level and of a level you can cast (it doesn't need to be a wizard spell). For the next 8 hours, you know the spell and can cast it using your spell slots. The creature can't cast that spell until the 8 hours have passed.",
-                        "Once you use this feature, you can't use it again until you finish a long rest.",
-                    ],
-                },
-            ],
+                        "Once you use this feature, you can't use it again until you finish a long rest."
+                    ]
+                }
+            ]
         },
         {
-            name: "Assassin",
-            name_short: "Assassin",
-            source: "PHB",
-            subclass_spells: {},
-            features: [
+            "name": "Assassin",
+            "name_short": "Assassin",
+            "source": "PHB",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "Assassin",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 3,
-                    entries: [
+                    "name": "Assassin",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 3,
+                    "entries": [
                         "You focus your training on the grim art of death. Those who adhere to this archetype are diverse\u2014hired killers, spies, bounty hunters, and even specially anointed priests trained to exterminate the enemies of their deity. Stealth, poison, and disguise help you eliminate your foes with deadly efficiency.",
                         "Your archetype grants you features at 3rd level and then again at 9th, 13th, and 17th level.",
                         "",
@@ -511,56 +514,56 @@
                         "Starting at 3rd level, you are at your deadliest when you get the drop on your enemies. You have advantage on attack rolls against any creature that hasn't taken a turn in the combat yet. In addition, any hit you score against a creature that is surprised is a critical hit.",
                         "",
                         "## Bonus Proficiencies",
-                        "When you choose this archetype at 3rd level, you gain proficiency with the disguise kit and the poisoner's kit.",
-                    ],
+                        "When you choose this archetype at 3rd level, you gain proficiency with the disguise kit and the poisoner's kit."
+                    ]
                 },
                 {
-                    name: "Infiltration Expertise",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 9,
-                    entries: [
+                    "name": "Infiltration Expertise",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 9,
+                    "entries": [
                         "Starting at 9th level, you can unfailingly create false identities for yourself. You must spend seven days and 25 gp to establish the history, profession, and affiliations for an identity. You can't establish an identity that belongs to someone else. For example, you might acquire appropriate clothing, letters of introduction, and official-looking certification to establish yourself as a member of a trading house from a remote city so you can insinuate yourself into the company of other wealthy merchants.",
-                        "Thereafter, if you adopt the new identity as a disguise, other creatures believe you to be that person until given an obvious reason not to.",
-                    ],
+                        "Thereafter, if you adopt the new identity as a disguise, other creatures believe you to be that person until given an obvious reason not to."
+                    ]
                 },
                 {
-                    name: "Impostor",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 13,
-                    entries: [
+                    "name": "Impostor",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 13,
+                    "entries": [
                         "At 13th level, you gain the ability to unerringly mimic another person's speech, writing, and behavior. You must spend at least three hours studying these three components of the person's behavior, listening to speech, examining handwriting, and observing mannerism.",
-                        "Your ruse is indiscernible to the casual observer. If a wary creature suspects something is amiss, you have advantage on any Charisma (Deception) check you make to avoid detection.",
-                    ],
+                        "Your ruse is indiscernible to the casual observer. If a wary creature suspects something is amiss, you have advantage on any Charisma (Deception) check you make to avoid detection."
+                    ]
                 },
                 {
-                    name: "Death Strike",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 17,
-                    entries: [
-                        "Starting at 17th level, you become a master of instant death. When you attack and hit a creature that is surprised, it must make a Constitution saving throw (DC 8 + your Dexterity modifier + your proficiency bonus). On a failed save, double the damage of your attack against the creature.",
-                    ],
-                },
-            ],
+                    "name": "Death Strike",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 17,
+                    "entries": [
+                        "Starting at 17th level, you become a master of instant death. When you attack and hit a creature that is surprised, it must make a Constitution saving throw (DC 8 + your Dexterity modifier + your proficiency bonus). On a failed save, double the damage of your attack against the creature."
+                    ]
+                }
+            ]
         },
         {
-            name: "Thief",
-            name_short: "Thief",
-            source: "PHB",
-            subclass_spells: {},
-            features: [
+            "name": "Thief",
+            "name_short": "Thief",
+            "source": "PHB",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "Thief",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 3,
-                    entries: [
+                    "name": "Thief",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 3,
+                    "entries": [
                         "You hone your skills in the larcenous arts. Burglars, bandits, cutpurses, and other criminals typically follow this archetype, but so do rogues who prefer to think of themselves as professional treasure seekers, explorers, delvers, and investigators. In addition to improving your agility and stealth, you learn skills useful for delving into ancient ruins, reading unfamiliar languages, and using magic items you normally couldn't employ.",
                         "",
                         "## Fast Hands",
@@ -568,54 +571,54 @@
                         "",
                         "## Second-Story Work",
                         "When you choose this archetype at 3rd level, you gain the ability to climb faster than normal; climbing no longer costs you extra movement.",
-                        "In addition, when you make a running jump, the distance you cover increases by a number of feet equal to your Dexterity modifier.",
-                    ],
+                        "In addition, when you make a running jump, the distance you cover increases by a number of feet equal to your Dexterity modifier."
+                    ]
                 },
                 {
-                    name: "Supreme Sneak",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 9,
-                    entries: [
-                        "Starting at 9th level, you have advantage on a Dexterity (Stealth) check if you move no more than half your speed on the same turn.",
-                    ],
+                    "name": "Supreme Sneak",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 9,
+                    "entries": [
+                        "Starting at 9th level, you have advantage on a Dexterity (Stealth) check if you move no more than half your speed on the same turn."
+                    ]
                 },
                 {
-                    name: "Use Magic Device",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 13,
-                    entries: [
-                        "By 13th level, you have learned enough about the workings of magic that you can improvise the use of items even when they are not intended for you. You ignore all class, race, and level requirements on the use of magic items.",
-                    ],
+                    "name": "Use Magic Device",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 13,
+                    "entries": [
+                        "By 13th level, you have learned enough about the workings of magic that you can improvise the use of items even when they are not intended for you. You ignore all class, race, and level requirements on the use of magic items."
+                    ]
                 },
                 {
-                    name: "Thief's Reflexes",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "PHB",
-                    level: 17,
-                    entries: [
-                        "When you reach 17th level, you have become adept at laying ambushes and quickly escaping danger. You can take two turns during the first round of any combat. You take your first turn at your normal initiative and your second turn at your initiative minus 10. You can't use this feature when you are surprised.",
-                    ],
-                },
-            ],
+                    "name": "Thief's Reflexes",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "PHB",
+                    "level": 17,
+                    "entries": [
+                        "When you reach 17th level, you have become adept at laying ambushes and quickly escaping danger. You can take two turns during the first round of any combat. You take your first turn at your normal initiative and your second turn at your initiative minus 10. You can't use this feature when you are surprised."
+                    ]
+                }
+            ]
         },
         {
-            name: "Inquisitive (UA)",
-            name_short: "Inquisitive (UA)",
-            source: "UAGothicHeroes",
-            subclass_spells: {},
-            features: [
+            "name": "Inquisitive (UA)",
+            "name_short": "Inquisitive (UA)",
+            "source": "UAGothicHeroes",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "Inquisitive",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAGothicHeroes",
-                    level: 3,
-                    entries: [
+                    "name": "Inquisitive",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAGothicHeroes",
+                    "level": 3,
+                    "entries": [
                         "As an archetypal Inquisitive, you excel at rooting out secrets and unraveling mysteries. You rely on your sharp eye for details, but also on your finely honed ability to read the words and deeds of other creatures to determine their true intent. You excel at defeating creatures that hide among and prey upon ordinary folk, and your mastery of lore and your sharp eye make you well equipped to expose and end hidden evils.",
                         "",
                         "## Ear for Deceit",
@@ -626,109 +629,109 @@
                         "",
                         "## Insightful Fighting",
                         "At 3rd level, you gain the ability to decipher an opponent's tactics and develop a counter to them. As an action (or as a bonus action using Eye for Detail), you make a Wisdom (Insight) check against a creature you can see that isn't *incapacitated*, opposed by the target's Charisma (Deception) check. If you succeed, you can use Sneak Attack against that creature even if you do not have advantage against it or if no enemy of the target is within 5 feet of it. You can use Sneak Attack in this way even if you have disadvantage against the target.",
-                        "This benefit lasts for 1 minute or until you successfully use Insightful Fighting against a different target.",
-                    ],
+                        "This benefit lasts for 1 minute or until you successfully use Insightful Fighting against a different target."
+                    ]
                 },
                 {
-                    name: "Steady Eye",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAGothicHeroes",
-                    level: 9,
-                    entries: [
-                        "At 9th level, you gain advantage on any Wisdom (Perception) check made on your turn to find a hidden creature or object if you do not move during that turn. If you use this ability before moving, you cannot move or ready movement during your turn.",
-                    ],
+                    "name": "Steady Eye",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAGothicHeroes",
+                    "level": 9,
+                    "entries": [
+                        "At 9th level, you gain advantage on any Wisdom (Perception) check made on your turn to find a hidden creature or object if you do not move during that turn. If you use this ability before moving, you cannot move or ready movement during your turn."
+                    ]
                 },
                 {
-                    name: "Unerring Eye",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAGothicHeroes",
-                    level: 13,
-                    entries: [
-                        "At 13th level, you gain the ability to detect magical deception. As an action, you sense the presence within 30 feet of you of illusions, shapechanger creatures not in their true form, and other magic designed to deceive the senses. Though you determine that an effect is attempting to trick you, you gain no special insight into what is hidden or its true nature.",
-                    ],
+                    "name": "Unerring Eye",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAGothicHeroes",
+                    "level": 13,
+                    "entries": [
+                        "At 13th level, you gain the ability to detect magical deception. As an action, you sense the presence within 30 feet of you of illusions, shapechanger creatures not in their true form, and other magic designed to deceive the senses. Though you determine that an effect is attempting to trick you, you gain no special insight into what is hidden or its true nature."
+                    ]
                 },
                 {
-                    name: "Eye for Weakness",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAGothicHeroes",
-                    level: 17,
-                    entries: [
-                        "At 17th level, you learn to exploit a creature's weaknesses by carefully studying its tactics and movement. While your Insightful Fighting feature applies to a creature, your Sneak Attack damage against that creature increases by 2d6.",
-                    ],
-                },
-            ],
+                    "name": "Eye for Weakness",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAGothicHeroes",
+                    "level": 17,
+                    "entries": [
+                        "At 17th level, you learn to exploit a creature's weaknesses by carefully studying its tactics and movement. While your Insightful Fighting feature applies to a creature, your Sneak Attack damage against that creature increases by 2d6."
+                    ]
+                }
+            ]
         },
         {
-            name: "Scout (UA)",
-            name_short: "Scout (UA)",
-            source: "UARangerAndRogue",
-            subclass_spells: {},
-            features: [
+            "name": "Scout (UA)",
+            "name_short": "Scout (UA)",
+            "source": "UARangerAndRogue",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "Scout",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UARangerAndRogue",
-                    level: 3,
-                    entries: [
+                    "name": "Scout",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UARangerAndRogue",
+                    "level": 3,
+                    "entries": [
                         "You are skilled in woodcraft and stealth, allowing you to range ahead of your companions during expeditions. Rogues who embrace this archetype are at home in the wilderness and among barbarians and fighters, as they serve as the eyes and ears of war bands across the world. Compared to other rogues, you are skilled at surviving in the wilds.",
                         "",
                         "## Survivalist",
                         "When you choose this archetype at 3rd level, you gain proficiency in the Nature and Survival skills. Your proficiency bonus is doubled for any ability check you make that uses either of those proficiencies.",
                         "",
                         "## Skirmisher",
-                        "Starting at 3rd level, you are difficult to pin down during a fight. You can move up to half your speed as a reaction when an enemy ends its turn within 5 feet of you. This movement doesn't provoke opportunity attacks.",
-                    ],
+                        "Starting at 3rd level, you are difficult to pin down during a fight. You can move up to half your speed as a reaction when an enemy ends its turn within 5 feet of you. This movement doesn't provoke opportunity attacks."
+                    ]
                 },
                 {
-                    name: "Superior Mobility",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UARangerAndRogue",
-                    level: 9,
-                    entries: [
-                        "At 9th level, your walking speed increases by 10 feet. If you have a climbing or swimming speed, this increase applies to that speed as well.",
-                    ],
+                    "name": "Superior Mobility",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UARangerAndRogue",
+                    "level": 9,
+                    "entries": [
+                        "At 9th level, your walking speed increases by 10 feet. If you have a climbing or swimming speed, this increase applies to that speed as well."
+                    ]
                 },
                 {
-                    name: "Ambush Master",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UARangerAndRogue",
-                    level: 13,
-                    entries: [
+                    "name": "Ambush Master",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UARangerAndRogue",
+                    "level": 13,
+                    "entries": [
                         "Starting at 13th level, you excel at leading ambushes. If any of your foes are surprised, you can use a bonus action on your turn in the first round of the combat to grant each ally who can see you a +5 bonus to initiative that lasts until the combat ends. If the initiative bonus would increase an ally's initiative above yours, the ally's initiative instead equals your initiative.",
-                        "Each of the allies also receives a 10-foot increase to speed that lasts until the end of the ally's next turn.",
-                    ],
+                        "Each of the allies also receives a 10-foot increase to speed that lasts until the end of the ally's next turn."
+                    ]
                 },
                 {
-                    name: "Sudden Strike",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UARangerAndRogue",
-                    level: 17,
-                    entries: [
-                        "Starting at 17th level, you can strike with deadly speed. If you take the **Attack** action on your turn, you can make one additional attack as a bonus action. This attack can benefit from your Sneak Attack even if you have already used it this turn, but only if the attack is the only one you make against the target this turn.",
-                    ],
-                },
-            ],
+                    "name": "Sudden Strike",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UARangerAndRogue",
+                    "level": 17,
+                    "entries": [
+                        "Starting at 17th level, you can strike with deadly speed. If you take the **Attack** action on your turn, you can make one additional attack as a bonus action. This attack can benefit from your Sneak Attack even if you have already used it this turn, but only if the attack is the only one you make against the target this turn."
+                    ]
+                }
+            ]
         },
         {
-            name: "Inquisitive",
-            name_short: "Inquisitive",
-            source: "XGE",
-            subclass_spells: {},
-            features: [
+            "name": "Inquisitive",
+            "name_short": "Inquisitive",
+            "source": "XGE",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "Inquisitive",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 3,
-                    entries: [
+                    "name": "Inquisitive",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 3,
+                    "entries": [
                         "As an archetypal Inquisitive, you excel at rooting out secrets and unraveling mysteries. You rely on your sharp eye for detail, but also on your finely honed ability to read the words and deeds of other creatures to determine their true intent. You excel at defeating creatures that hide among and prey upon ordinary folk, and your mastery of lore and your keen deductions make you well equipped to expose and end hidden evils.",
                         "",
                         "## Ear for Deceit",
@@ -739,55 +742,55 @@
                         "",
                         "## Insightful Fighting",
                         "At 3rd level, you gain the ability to decipher an opponent's tactics and develop a counter to them. As a bonus action, you can make a Wisdom (Insight) check against a creature you can see that isn't *incapacitated*, contested by the target's Charisma (Deception) check. If you succeed, you can use your Sneak Attack against that target even if you don't have advantage on the attack roll, but not if you have disadvantage on it.",
-                        "This benefit lasts for 1 minute or until you successfully use this feature against a different target.",
-                    ],
+                        "This benefit lasts for 1 minute or until you successfully use this feature against a different target."
+                    ]
                 },
                 {
-                    name: "Steady Eye",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 9,
-                    entries: [
-                        "Starting at 9th level, you have advantage on any Wisdom (Perception) or Intelligence (Investigation) check if you move no more than half your speed on the same turn.",
-                    ],
+                    "name": "Steady Eye",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 9,
+                    "entries": [
+                        "Starting at 9th level, you have advantage on any Wisdom (Perception) or Intelligence (Investigation) check if you move no more than half your speed on the same turn."
+                    ]
                 },
                 {
-                    name: "Unerring Eye",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 13,
-                    entries: [
+                    "name": "Unerring Eye",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 13,
+                    "entries": [
                         "Beginning at 13th level, your senses are almost impossible to foil. As an action, you sense the presence of illusions, shapechangers not in their original form, and other magic designed to deceive the senses within 30 feet of you, provided you aren't *blinded* or *deafened*. You sense that an effect is attempting to trick you, but you gain no insight into what is hidden or into its true nature.",
-                        "You can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses of it when you finish a long rest.",
-                    ],
+                        "You can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses of it when you finish a long rest."
+                    ]
                 },
                 {
-                    name: "Eye for Weakness",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 17,
-                    entries: [
-                        "At 17th level, you learn to exploit a creature's weaknesses by carefully studying its tactics and movement. While your Insightful Fighting feature applies to a creature, your Sneak Attack damage against that creature increases by 3d6.",
-                    ],
-                },
-            ],
+                    "name": "Eye for Weakness",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 17,
+                    "entries": [
+                        "At 17th level, you learn to exploit a creature's weaknesses by carefully studying its tactics and movement. While your Insightful Fighting feature applies to a creature, your Sneak Attack damage against that creature increases by 3d6."
+                    ]
+                }
+            ]
         },
         {
-            name: "Mastermind",
-            name_short: "Mastermind",
-            source: "XGE",
-            subclass_spells: {},
-            features: [
+            "name": "Mastermind",
+            "name_short": "Mastermind",
+            "source": "XGE",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "Mastermind",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 3,
-                    entries: [
+                    "name": "Mastermind",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 3,
+                    "entries": [
                         "Your focus is on people and on the influence and secrets they have. Many spies, courtiers, and schemers follow this archetype, leading lives of intrigue. Words are your weapons as often as knives or poison, and secrets and favors are some of your favorite treasures.",
                         "",
                         "## Master of Intrigue",
@@ -795,116 +798,116 @@
                         "Additionally, you can unerringly mimic the speech patterns and accent of a creature that you hear speak for at least 1 minute, enabling you to pass yourself off as a native speaker of a particular land, provided that you know the language.",
                         "",
                         "## Master of Tactics",
-                        "Starting at 3rd level, you can use the **Help** action as a bonus action. Additionally, when you use the **Help** action to aid an ally in attacking a creature, the target of that attack can be within 30 feet of you, rather than within 5 feet of you, if the target can see or hear you.",
-                    ],
+                        "Starting at 3rd level, you can use the **Help** action as a bonus action. Additionally, when you use the **Help** action to aid an ally in attacking a creature, the target of that attack can be within 30 feet of you, rather than within 5 feet of you, if the target can see or hear you."
+                    ]
                 },
                 {
-                    name: "Insightful Manipulator",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 9,
-                    entries: [
+                    "name": "Insightful Manipulator",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 9,
+                    "entries": [
                         "Starting at 9th level, if you spend at least 1 minute observing or interacting with another creature outside combat, you can learn certain information about its capabilities compared to your own. The DM tells you if the creature is your equal, superior, or inferior in regard to two of the following characteristics of your choice:",
                         "",
                         "Intelligence score",
                         "Wisdom score",
                         "Charisma score",
                         "Class levels (if any)",
-                        "At the DM's option, you might also realize you know a piece of the creature's history or one of its personality traits, if it has any.",
-                    ],
+                        "At the DM's option, you might also realize you know a piece of the creature's history or one of its personality traits, if it has any."
+                    ]
                 },
                 {
-                    name: "Misdirection",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 13,
-                    entries: [
-                        "Beginning at 13th level, you can sometimes cause another creature to suffer an attack meant for you. When you are targeted by an attack while a creature within 5 feet of you is granting you cover against that attack, you can use your reaction to have the attack target that creature instead of you.",
-                    ],
+                    "name": "Misdirection",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 13,
+                    "entries": [
+                        "Beginning at 13th level, you can sometimes cause another creature to suffer an attack meant for you. When you are targeted by an attack while a creature within 5 feet of you is granting you cover against that attack, you can use your reaction to have the attack target that creature instead of you."
+                    ]
                 },
                 {
-                    name: "Soul of Deceit",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 17,
-                    entries: [
+                    "name": "Soul of Deceit",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 17,
+                    "entries": [
                         "Starting at 17th level, your thoughts can't be read by telepathy or other means, unless you allow it. You can present false thoughts by succeeding on a Charisma (Deception) check contested by the mind reader's Wisdom (Insight) check.",
-                        "Additionally, no matter what you say, magic that would determine if you are telling the truth indicates you are being truthful if you so choose, and you can't be compelled to tell the truth by magic.",
-                    ],
-                },
-            ],
+                        "Additionally, no matter what you say, magic that would determine if you are telling the truth indicates you are being truthful if you so choose, and you can't be compelled to tell the truth by magic."
+                    ]
+                }
+            ]
         },
         {
-            name: "Scout",
-            name_short: "Scout",
-            source: "XGE",
-            subclass_spells: {},
-            features: [
+            "name": "Scout",
+            "name_short": "Scout",
+            "source": "XGE",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "Scout",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 3,
-                    entries: [
+                    "name": "Scout",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 3,
+                    "entries": [
                         "You are skilled in stealth and surviving far from the streets of a city, allowing you to scout ahead of your companions during expeditions. Rogues who embrace this archetype are at home in the wilderness and among barbarians and rangers, and many Scouts serve as the eyes and ears of war bands. Ambusher, spy, bounty hunter\u2014these are just a few of the roles that Scouts assume as they range the world.",
                         "",
                         "## Skirmisher",
                         "Starting at 3rd level, you are difficult to pin down during a fight. You can move up to half your speed as a reaction when an enemy ends its turn within 5 feet of you. This movement doesn't provoke opportunity attacks.",
                         "",
                         "## Survivalist",
-                        "When you choose this archetype at 3rd level, you gain proficiency in the Nature and Survival skills if you don't already have it. Your proficiency bonus is doubled for any ability check you make that uses either of those proficiencies.",
-                    ],
+                        "When you choose this archetype at 3rd level, you gain proficiency in the Nature and Survival skills if you don't already have it. Your proficiency bonus is doubled for any ability check you make that uses either of those proficiencies."
+                    ]
                 },
                 {
-                    name: "Superior Mobility",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 9,
-                    entries: [
-                        "At 9th level, your walking speed increases by 10 feet. If you have a climbing or swimming speed, this increase applies to that speed as well.",
-                    ],
+                    "name": "Superior Mobility",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 9,
+                    "entries": [
+                        "At 9th level, your walking speed increases by 10 feet. If you have a climbing or swimming speed, this increase applies to that speed as well."
+                    ]
                 },
                 {
-                    name: "Ambush Master",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 13,
-                    entries: [
+                    "name": "Ambush Master",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 13,
+                    "entries": [
                         "Starting at 13th level, you excel at leading ambushes and acting first in a fight.",
-                        "You have advantage on initiative rolls. In addition, the first creature you hit during the first round of a combat becomes easier for you and others to strike; attack rolls against that target have advantage until the start of your next turn.",
-                    ],
+                        "You have advantage on initiative rolls. In addition, the first creature you hit during the first round of a combat becomes easier for you and others to strike; attack rolls against that target have advantage until the start of your next turn."
+                    ]
                 },
                 {
-                    name: "Sudden Strike",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 17,
-                    entries: [
-                        "Starting at 17th level, you can strike with deadly speed. If you take the **Attack** action on your turn, you can make one additional attack as a bonus action. This attack can benefit from your Sneak Attack even if you have already used it this turn, but you can't use your Sneak Attack against the same target more than once in a turn.",
-                    ],
-                },
-            ],
+                    "name": "Sudden Strike",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 17,
+                    "entries": [
+                        "Starting at 17th level, you can strike with deadly speed. If you take the **Attack** action on your turn, you can make one additional attack as a bonus action. This attack can benefit from your Sneak Attack even if you have already used it this turn, but you can't use your Sneak Attack against the same target more than once in a turn."
+                    ]
+                }
+            ]
         },
         {
-            name: "Swashbuckler",
-            name_short: "Swashbuckler",
-            source: "XGE",
-            subclass_spells: {},
-            features: [
+            "name": "Swashbuckler",
+            "name_short": "Swashbuckler",
+            "source": "XGE",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "Swashbuckler",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 3,
-                    entries: [
+                    "name": "Swashbuckler",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 3,
+                    "entries": [
                         "You focus your training on the art of the blade, relying on speed, elegance, and charm in equal parts. While some warriors are brutes clad in heavy armor, your method of fighting looks almost like a performance. Duelists and pirates typically belong to this archetype.",
                         "A Swashbuckler excels in single combat, and can fight with two weapons while safely darting away from an opponent.",
                         "",
@@ -913,56 +916,56 @@
                         "",
                         "## Rakish Audacity",
                         "Starting at 3rd level, your confidence propels you into battle. You can give yourself a bonus to your initiative rolls equal to your Charisma modifier.",
-                        "You also gain an additional way to use your Sneak **Attack**; you don't need advantage on your attack roll to use Sneak **Attack** against a creature if you are within 5 feet of it, no other creatures are within 5 feet of you, and you don't have disadvantage on the attack roll. All the other rules for Sneak **Attack** still apply to you.",
-                    ],
+                        "You also gain an additional way to use your Sneak **Attack**; you don't need advantage on your attack roll to use Sneak **Attack** against a creature if you are within 5 feet of it, no other creatures are within 5 feet of you, and you don't have disadvantage on the attack roll. All the other rules for Sneak **Attack** still apply to you."
+                    ]
                 },
                 {
-                    name: "Panache",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 9,
-                    entries: [
+                    "name": "Panache",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 9,
+                    "entries": [
                         "At 9th level, your charm becomes extraordinarily beguiling. As an action, you can make a Charisma (Persuasion) check contested by a creature's Wisdom (Insight) check. The creature must be able to hear you, and the two of you must share a language.",
                         "If you succeed on the check and the creature is hostile to you, it has disadvantage on attack rolls against targets other than you and can't make opportunity attacks against targets other than you. This effect lasts for 1 minute, until one of your companions attacks the target or affects it with a spell, or until you and the target are more than 60 feet apart.",
-                        "If you succeed on the check and the creature isn't hostile to you, it is *charmed* by you for 1 minute. While *charmed*, it regards you as a friendly acquaintance. This effect ends immediately if you or your companions do anything harmful to it.",
-                    ],
+                        "If you succeed on the check and the creature isn't hostile to you, it is *charmed* by you for 1 minute. While *charmed*, it regards you as a friendly acquaintance. This effect ends immediately if you or your companions do anything harmful to it."
+                    ]
                 },
                 {
-                    name: "Elegant Maneuver",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 13,
-                    entries: [
-                        "Starting at 13th level, you can use a bonus action on your turn to gain advantage on the next Dexterity (Acrobatics) or Strength (Athletics) check you make during the same turn.",
-                    ],
+                    "name": "Elegant Maneuver",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 13,
+                    "entries": [
+                        "Starting at 13th level, you can use a bonus action on your turn to gain advantage on the next Dexterity (Acrobatics) or Strength (Athletics) check you make during the same turn."
+                    ]
                 },
                 {
-                    name: "Master Duelist",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "XGE",
-                    level: 17,
-                    entries: [
-                        "Beginning at 17th level, your mastery of the blade lets you turn failure into success in combat. If you miss with an attack roll, you can roll it again with advantage. Once you do so, you can't use this feature again until you finish a short or long rest.",
-                    ],
-                },
-            ],
+                    "name": "Master Duelist",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "XGE",
+                    "level": 17,
+                    "entries": [
+                        "Beginning at 17th level, your mastery of the blade lets you turn failure into success in combat. If you miss with an attack roll, you can roll it again with advantage. Once you do so, you can't use this feature again until you finish a short or long rest."
+                    ]
+                }
+            ]
         },
         {
-            name: "The Revived (UA)",
-            name_short: "Revived (UA)",
-            source: "UAFighterRangerRogue",
-            subclass_spells: {},
-            features: [
+            "name": "The Revived (UA)",
+            "name_short": "Revived (UA)",
+            "source": "UAFighterRangerRogue",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "The Revived",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAFighterRangerRogue",
-                    level: 3,
-                    entries: [
+                    "name": "The Revived",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAFighterRangerRogue",
+                    "level": 3,
+                    "entries": [
                         "You've had a soul-shaking realization: you've been dead before, yet somehow you are alive again. This life isn't your first; it might not even be your second. Your past life, or lives, are unclear to you, but you know that you passed through the gates of death. And the powers of death, or some other influence, wasn't done with you. You might have convinced a deity to let you return to the Material Plane, perhaps you signed a deal with a fiend, or maybe you used an artifact that revived you. Whatever force brought you back, you now know the truth about yourself: that you are one of death's representatives among the living.",
                         "",
                         "## Tokens of Past Lives",
@@ -979,16 +982,16 @@
                         "",
                         "## Bolts from the Grave",
                         "*3rd-level Revived feature*",
-                        "You have learned to unleash bolts of necrotic energy from within your revived body. Immediately after you use your Cunning Action, you can make a ranged spell attack against a creature within 30 feet of you, provided you haven't used your Sneak Attack this turn. You are proficient with it, and you add your Dexterity modifier to its attack and damage rolls. A creature hit by this attack takes necrotic damage equal to your Sneak Attack. This uses your Sneak Attack for the turn.",
-                    ],
+                        "You have learned to unleash bolts of necrotic energy from within your revived body. Immediately after you use your Cunning Action, you can make a ranged spell attack against a creature within 30 feet of you, provided you haven't used your Sneak Attack this turn. You are proficient with it, and you add your Dexterity modifier to its attack and damage rolls. A creature hit by this attack takes necrotic damage equal to your Sneak Attack. This uses your Sneak Attack for the turn."
+                    ]
                 },
                 {
-                    name: "Connect with the Dead",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAFighterRangerRogue",
-                    level: 9,
-                    entries: [
+                    "name": "Connect with the Dead",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAFighterRangerRogue",
+                    "level": 9,
+                    "entries": [
                         "*9th-level Revived feature*",
                         "You can create a link with a spirit through their corpse. When you do so, you cast the *speak with dead* spell, without using a spell slot or material components. Intelligence is your spellcasting ability for this spell.",
                         "Speaking with the dead in this way temporarily gives you a capability from a past life\u2014you're unsure whether it's from your past or the spirit's. When the spell ends, you gain one random benefit from the Revived Capabilities table. The benefit lasts until you finish a short or long rest.",
@@ -1000,47 +1003,47 @@
                         "| 2 | You gain one skill or tool proficiency of your choice. |",
                         "| 3 | You gain proficiency with one saving throw of your choice. |",
                         "",
-                        "After you cast the spell with this feature, you can't do so again until you finish a short or long rest.",
-                    ],
+                        "After you cast the spell with this feature, you can't do so again until you finish a short or long rest."
+                    ]
                 },
                 {
-                    name: "Audience with Death",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAFighterRangerRogue",
-                    level: 13,
-                    entries: [
+                    "name": "Audience with Death",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAFighterRangerRogue",
+                    "level": 13,
+                    "entries": [
                         "*13th-level Revived feature*",
                         "When at death's door, you can converse with the powers of death. You have advantage on death saving throws, and whenever you make a death saving throw, your spirit can ask an entity of death a question that can be answered with \"yes,\" \"no,\" or \"unknown.\" The entity answers truthfully, using the knowledge of all those who have died.",
-                        "In addition, whenever you have 0 hit points and are healed or stabilized, you can change any of your personal characteristics: personality trait, ideal, bond, or flaw.",
-                    ],
+                        "In addition, whenever you have 0 hit points and are healed or stabilized, you can change any of your personal characteristics: personality trait, ideal, bond, or flaw."
+                    ]
                 },
                 {
-                    name: "Ethereal Jaunt",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAFighterRangerRogue",
-                    level: 17,
-                    entries: [
+                    "name": "Ethereal Jaunt",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAFighterRangerRogue",
+                    "level": 17,
+                    "entries": [
                         "*17th-level Revived feature*",
-                        "Like a ghost, you have the ability to slip in and out of the Ethereal Plane. You can now use your Cunning Action to teleport to an unoccupied space within 30 feet of you. You don't need to see that space to teleport to it, but your teleportation fails, wasting your bonus action, if you attempt to teleport through magical force that is Medium or larger, such as a wall of force. If you appear in a space occupied by another creature or filled by an object, you are immediately shunted to the nearest unoccupied space that you can occupy and take force damage equal to twice the number of feet you are shunted.",
-                    ],
-                },
-            ],
+                        "Like a ghost, you have the ability to slip in and out of the Ethereal Plane. You can now use your Cunning Action to teleport to an unoccupied space within 30 feet of you. You don't need to see that space to teleport to it, but your teleportation fails, wasting your bonus action, if you attempt to teleport through magical force that is Medium or larger, such as a wall of force. If you appear in a space occupied by another creature or filled by an object, you are immediately shunted to the nearest unoccupied space that you can occupy and take force damage equal to twice the number of feet you are shunted."
+                    ]
+                }
+            ]
         },
         {
-            name: "Soulknife (UA)",
-            name_short: "Soulknife (UA)",
-            source: "UAFighterRogueWizard",
-            subclass_spells: {},
-            features: [
+            "name": "Soulknife (UA)",
+            "name_short": "Soulknife (UA)",
+            "source": "UAFighterRogueWizard",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "Soulknife",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAFighterRogueWizard",
-                    level: 3,
-                    entries: [
+                    "name": "Soulknife",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAFighterRogueWizard",
+                    "level": 3,
+                    "entries": [
                         "A Soulknife possesses powerful psionic potential. They channel this reservoir of inner magic into tangible blades of psychic energy, striking at their victims' minds. They find easy employment as members of thieves' guilds, being particularly sought after as assassins, since their signature psychic blades leave behind no visible wounds.",
                         "As a Soulknife, your psionic abilities might have haunted you since you were a child, only revealing their potential when your psychic knives first appeared. Or you might have sought out a reclusive order of psionic assassins and spent years learning how to manifest your deadly blades.",
                         "",
@@ -1055,59 +1058,59 @@
                         "",
                         "You can communicate telepathically with any creature you can see within 30 feet of you. If a creature can speak at least one language, it can respond to you telepathically.",
                         "Increase your walking speed by 5 feet.",
-                        "Your hit point maximum and your current hit points increase by an amount equal to your Intelligence modifier plus your rogue level.",
-                    ],
+                        "Your hit point maximum and your current hit points increase by an amount equal to your Intelligence modifier plus your rogue level."
+                    ]
                 },
                 {
-                    name: "Terrifying Blade",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAFighterRogueWizard",
-                    level: 9,
-                    entries: [
+                    "name": "Terrifying Blade",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAFighterRogueWizard",
+                    "level": 9,
+                    "entries": [
                         "*9th-level Soulknife feature*",
-                        "Your psychic blades can now stoke terror within a target: When you damage a creature with your Psychic Blade, you can force the target to make a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Intelligence modifier). On a failed save, the creature is *frightened* of you until the start of your next turn. On a successful save, the creature isn't *frightened* and is immune to your Terrifying Blade for 24 hours.",
-                    ],
+                        "Your psychic blades can now stoke terror within a target: When you damage a creature with your Psychic Blade, you can force the target to make a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Intelligence modifier). On a failed save, the creature is *frightened* of you until the start of your next turn. On a successful save, the creature isn't *frightened* and is immune to your Terrifying Blade for 24 hours."
+                    ]
                 },
                 {
-                    name: "Psychic Veil",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAFighterRogueWizard",
-                    level: 13,
-                    entries: [
+                    "name": "Psychic Veil",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAFighterRogueWizard",
+                    "level": 13,
+                    "entries": [
                         "*13th-level Soulknife feature*",
                         "You can weave a veil of psionic static to mask your physical presence. As an action, you can magically become *invisible*, along with anything you are wearing or carrying, for 10 minutes. This invisibility ends if you make an attack or if you force a creature to make a saving throw.",
-                        "You can use this feature a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses when you finish a long rest.",
-                    ],
+                        "You can use this feature a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses when you finish a long rest."
+                    ]
                 },
                 {
-                    name: "Rend Mind",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UAFighterRogueWizard",
-                    level: 17,
-                    entries: [
+                    "name": "Rend Mind",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UAFighterRogueWizard",
+                    "level": 17,
+                    "entries": [
                         "*17th-level Soulknife feature*",
                         "You can sweep your Psychic Blade directly through a creature's mind. As an action while you have at least one Psychic Blade manifested, you can force a creature you can see within 30 feet of you to make an Intelligence saving throw (DC equal to 10 + your proficiency bonus + your Intelligence modifier). If you are hidden from the target, it has disadvantage on the save. On a failed save, the target takes **12d6** psychic damage, and it is *stunned* until the start of your next turn. On a successful save, the target takes half as much damage and isn't *stunned*. One of your Psychic Blades vanishes after using this feature.",
-                        "You can use this feature a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses when you finish a long rest.",
-                    ],
-                },
-            ],
+                        "You can use this feature a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses when you finish a long rest."
+                    ]
+                }
+            ]
         },
         {
-            name: "Soulknife (UA)",
-            name_short: "Soulknife (UA)",
-            source: "UA2020PsionicOptionsRevisited",
-            subclass_spells: {},
-            features: [
+            "name": "Soulknife (UA)",
+            "name_short": "Soulknife (UA)",
+            "source": "UA2020PsionicOptionsRevisited",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "Soulknife",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2020PsionicOptionsRevisited",
-                    level: 3,
-                    entries: [
+                    "name": "Soulknife",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2020PsionicOptionsRevisited",
+                    "level": 3,
+                    "entries": [
                         "Most assassins strike with physical weapons, and many burglars and spies use thieves' tools to infiltrate secure locations, whereas a Soulknife strikes and infiltrates with the mind, cutting through barriers both physical and psychic. These rogues discover psionic power within themselves and channel it to do their roguish work. They find easy employment as members of thieves' guilds, though they are often mistrusted by rogues who are leery of anyone using strange mind powers to conduct their business, and most governments would be happy to employ a Soulknife as a spy.",
                         "Amid the trees of ancient forests on the Material Plane and in the Feywild, some wood elves walk the path of the Soulknife, serving as silent, lethal guardians of their woods. In the endless war among the gith, a githzerai is encouraged to become a Soulknife when stealth is required against the githyanki foe, and in the world of Athas, a Sorcerer-King often turns to a Soulknife to eliminate an enemy, just as an insurgent Soulknife seeks to undermine that Sorcerer-King's rule.",
                         "As a Soulknife, your psionic abilities might have haunted you since you were a child, only revealing their potential as you experienced the stress of adventure. Or you might have sought out a reclusive order of psionic adepts and spent years learning how to manifest your power.",
@@ -1133,62 +1136,62 @@
                         "## Psychic Blades",
                         "*3rd-level Soulknife feature*",
                         "You can manifest your psionic power as shimmering blades of psychic energy. When you are about to make a melee or ranged weapon attack against a creature, you can manifest a psychic blade from your free hand and make the attack with that blade. This magic blade is a simple melee weapon with the finesse and thrown properties. It has a normal range of 60 feet and no long range, and on a hit, it deals psychic damage equal to 1d6 plus the ability modifier you used for the attack roll. The blade vanishes immediately after it hits or misses its target, and it leaves no mark on its target if it deals damage.",
-                        "After you attack with the blade, you can make a melee or ranged weapon attack with a second psychic blade as a bonus action on the same turn, provided your other hand is free to create it. The damage die of this bonus attack is 1d4, instead of 1d6.",
-                    ],
+                        "After you attack with the blade, you can make a melee or ranged weapon attack with a second psychic blade as a bonus action on the same turn, provided your other hand is free to create it. The damage die of this bonus attack is 1d4, instead of 1d6."
+                    ]
                 },
                 {
-                    name: "Soul Blades",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2020PsionicOptionsRevisited",
-                    level: 9,
-                    entries: [
+                    "name": "Soul Blades",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2020PsionicOptionsRevisited",
+                    "level": 9,
+                    "entries": [
                         "*9th-level Soulknife feature*",
                         "Your Psychic Blades are now an expression of your psi-suffused soul, giving you finer control over them in the following ways:",
                         "",
                         "**Homing Strikes** If you make an attack roll with your Psychic Blades and miss the target, you can roll your Psionic Talent die and add the number rolled to the attack roll. If this causes the attack to hit, your Psionic Talent die decreases by one die size, regardless of the number rolled.",
-                        "**Psychic Teleportation** If your Psionic Talent die is available, you can hurl your Psychic Blades to magically transport yourself to another location. As a bonus action, you manifest one of your Psychic Blades and throw it at an unoccupied space you can see, up to a number of feet away equal to 5 times the highest number on your Psionic Talent die. You then teleport to that space, the blade vanishes, and your Psionic Talent die decreases by one die size.",
-                    ],
+                        "**Psychic Teleportation** If your Psionic Talent die is available, you can hurl your Psychic Blades to magically transport yourself to another location. As a bonus action, you manifest one of your Psychic Blades and throw it at an unoccupied space you can see, up to a number of feet away equal to 5 times the highest number on your Psionic Talent die. You then teleport to that space, the blade vanishes, and your Psionic Talent die decreases by one die size."
+                    ]
                 },
                 {
-                    name: "Psionic Veil",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2020PsionicOptionsRevisited",
-                    level: 13,
-                    entries: [
+                    "name": "Psionic Veil",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2020PsionicOptionsRevisited",
+                    "level": 13,
+                    "entries": [
                         "*13th-level Soulknife feature*",
                         "You can weave a veil of psychic static to mask yourself. As an action, you can magically become *invisible*, along with anything you are wearing or carrying, for 10 minutes or until you dismiss this effect (no action required). This invisibility ends if you deal damage to a creature or if you force a creature to make a saving throw.",
-                        "Once you use this feature, you can't do so again until you finish a long rest, unless you decrease your Psionic Talent die by one die size to use this feature again.",
-                    ],
+                        "Once you use this feature, you can't do so again until you finish a long rest, unless you decrease your Psionic Talent die by one die size to use this feature again."
+                    ]
                 },
                 {
-                    name: "Rend Mind",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2020PsionicOptionsRevisited",
-                    level: 17,
-                    entries: [
+                    "name": "Rend Mind",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2020PsionicOptionsRevisited",
+                    "level": 17,
+                    "entries": [
                         "*17th-level Soulknife feature*",
                         "You can sweep your Psychic Blades directly through a creature's mind. When you use your Psychic Blades to deal Sneak Attack damage to a creature, you can force that target to make a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Dexterity modifier). Unless the save succeeds, the target is *stunned* until the end of your next turn.",
-                        "Once you use this feature, you can't do so again until you finish a long rest, unless you decrease your Psionic Talent die by one die size to use this feature again.",
-                    ],
-                },
-            ],
+                        "Once you use this feature, you can't do so again until you finish a long rest, unless you decrease your Psionic Talent die by one die size to use this feature again."
+                    ]
+                }
+            ]
         },
         {
-            name: "Phantom (UA)",
-            name_short: "Phantom (UA)",
-            source: "UA2020SubclassesRevisited",
-            subclass_spells: {},
-            features: [
+            "name": "Phantom (UA)",
+            "name_short": "Phantom (UA)",
+            "source": "UA2020SubclassesRevisited",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "Phantom",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2020SubclassesRevisited",
-                    level: 3,
-                    entries: [
+                    "name": "Phantom",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2020SubclassesRevisited",
+                    "level": 3,
+                    "entries": [
                         "Many rogues walk a fine line between life and death, risking their own lives and taking the lives of others. While adventuring on that line, some rogues discover a mystical connection to death itself. These rogues take knowledge from the dead and become immersed in negative energy, eventually becoming like ghosts. Thieves' guilds value them as highly effective information gatherers and spies.",
                         "Many shadar-kai of the Shadowfell are masters of these macabre techniques, and some are willing to teach this path. In places like Thay (Forgotten Realms) and Karrnath (Eberron), where many necromancers practice their craft, a Phantom can become a wizard's confidant and right hand. In temples of gods of death, the Phantom works as an agent to track down those who try to cheat death and to recover knowledge that might otherwise be lost to the grave.",
                         "How did you discover this grim power? Did you sleep in a graveyard and awaken to your new abilities? Or did you cultivate them in a temple or thieves' guild dedicated to a god of death?",
@@ -1200,60 +1203,60 @@
                         "## Wails from the Grave",
                         "*3rd-level Phantom feature*",
                         "As you nudge someone closer to the grave, you can cause deathly wails to be heard near them. Immediately after you deal your Sneak Attack damage to a creature on your turn, you can target a second creature that you can see within 30 feet of the first creature. Roll half the number of Sneak Attack dice for your level (round up), and the second creature takes psychic damage equal to the roll's total, as wails of the dead sound around them for a moment.",
-                        "You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
-                    ],
+                        "You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+                    ]
                 },
                 {
-                    name: "Tokens of the Departed",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2020SubclassesRevisited",
-                    level: 9,
-                    entries: [
+                    "name": "Tokens of the Departed",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2020SubclassesRevisited",
+                    "level": 9,
+                    "entries": [
                         "*9th-level Phantom feature*",
                         "When a life ends in your presence, you're able to snatch a token from the departing soul, a sliver of its life essence that takes physical form: as a reaction when a creature you can see dies within 30 feet of you, you open your free hand and a Tiny trinket appears there, a soul trinket. The DM chooses the trinket's form or has you roll on the Trinkets table in the *Player's Handbook* to determine it.",
                         "While the soul trinket is on your person, you have advantage on death saving throws and Constitution saving throws, as your vitality is enhanced by the life essence within the object. You can have a maximum number of soul trinkets equal to your proficiency bonus, and you can't create one while at your maximum.",
-                        "As an action, you can destroy one of your soul trinkets, no matter where it's located. When you do so, you can ask the spirit associated with the trinket one question. The spirit appears to you and answers in a language it knew in life. It's under no obligation to be truthful, and it answers as concisely as possible, eager to be free.",
-                    ],
+                        "As an action, you can destroy one of your soul trinkets, no matter where it's located. When you do so, you can ask the spirit associated with the trinket one question. The spirit appears to you and answers in a language it knew in life. It's under no obligation to be truthful, and it answers as concisely as possible, eager to be free."
+                    ]
                 },
                 {
-                    name: "Ghost Walk",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2020SubclassesRevisited",
-                    level: 13,
-                    entries: [
+                    "name": "Ghost Walk",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2020SubclassesRevisited",
+                    "level": 13,
+                    "entries": [
                         "*13th-level Phantom feature*",
                         "You can now phase partially into the realm of the dead, becoming like a ghost. As a bonus action, you assume a spectral form. While in this form, you have a flying speed of 10 feet, you can hover, and attack rolls have disadvantage against you. You can also move through creatures and objects as if they were difficult terrain, but you take **1d10** force damage if you end your turn inside a creature or an object.",
-                        "You stay in this form for 10 minutes or until you end it as a bonus action. To use this feature again, you must finish a long rest or destroy one of your soul trinkets as part of the bonus action you use to activate Ghost Walk.",
-                    ],
+                        "You stay in this form for 10 minutes or until you end it as a bonus action. To use this feature again, you must finish a long rest or destroy one of your soul trinkets as part of the bonus action you use to activate Ghost Walk."
+                    ]
                 },
                 {
-                    name: "Death Knell",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "UA2020SubclassesRevisited",
-                    level: 17,
-                    entries: [
+                    "name": "Death Knell",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "UA2020SubclassesRevisited",
+                    "level": 17,
+                    "entries": [
                         "*17th-level Phantom feature*",
-                        "When you use your Wails from the Grave feature, you can now deal the psychic damage to both the first and the second creature.",
-                    ],
-                },
-            ],
+                        "When you use your Wails from the Grave feature, you can now deal the psychic damage to both the first and the second creature."
+                    ]
+                }
+            ]
         },
         {
-            name: "Phantom",
-            name_short: "Phantom",
-            source: "TCE",
-            subclass_spells: {},
-            features: [
+            "name": "Phantom",
+            "name_short": "Phantom",
+            "source": "TCE",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "Phantom",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 3,
-                    entries: [
+                    "name": "Phantom",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 3,
+                    "entries": [
                         "Many rogues walk a fine line between life and death, risking their own lives and taking the lives of others. While adventuring on that line, some rogues discover a mystical connection to death itself. These rogues take knowledge from the dead and become immersed in negative energy, eventually becoming like ghosts. Thieves' guilds value them as highly effective information gatherers and spies.",
                         "Many shadar-kai of the Shadowfell are masters of these macabre techniques, and some are willing to teach this path. In places like Thay in the Forgotten Realms and Karrnath in Eberron, where many necromancers practice their craft, a Phantom can become a wizard's confidant and right hand. In temples of gods of death, the Phantom might work as an agent to track down those who try to cheat death and to recover knowledge that might otherwise be lost to the grave.",
                         "How did you discover this grim power? Did you sleep in a graveyard and awaken to your new abilities? Or did you cultivate them in a temple or thieves' guild dedicated to a deity of death?",
@@ -1265,66 +1268,66 @@
                         "## Wails from the Grave",
                         "*3rd-level Phantom feature*",
                         "As you nudge someone closer to the grave, you can channel the power of death to harm someone else as well. Immediately after you deal your Sneak Attack damage to a creature on your turn, you can target a second creature that you can see within 30 feet of the first creature. Roll half the number of Sneak Attack dice for your level (round up), and the second creature takes necrotic damage equal to the roll's total, as wails of the dead sound around them for a moment.",
-                        "You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
-                    ],
+                        "You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+                    ]
                 },
                 {
-                    name: "Tokens of the Departed",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 9,
-                    entries: [
+                    "name": "Tokens of the Departed",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 9,
+                    "entries": [
                         "*9th-level Phantom feature*",
                         "When a life ends in your presence, you're able to snatch a token from the departing soul, a sliver of its life essence that takes physical form: as a reaction when a creature you can see dies within 30 feet of you, you can open your free hand and cause a Tiny trinket to appear there, a soul trinket. The DM determines the trinket's form or has you roll on the Trinkets table in the *Player's Handbook* to generate it. You can have a maximum number of soul trinkets equal to your proficiency bonus, and you can't create one while at your maximum.",
                         "You can use soul trinkets in the following ways:",
                         "",
                         "While a soul trinket is on your person, you have advantage on death saving throws and Constitution saving throws, for your vitality is enhanced by the life essence within the object.",
                         "When you deal Sneak Attack damage on your turn, you can destroy one of your soul trinkets that's on your person and then immediately use Wails from the Grave, without expending a use of that feature.",
-                        "As an action, you can destroy one of your soul trinkets, no matter where it's located. When you do so, you can ask the spirit associated with the trinket one question. The spirit appears to you and answers in a language it knew in life. It's under no obligation to be truthful, and it answers as concisely as possible, eager to be free. The spirit knows only what it knew in life, as determined by the DM.",
-                    ],
+                        "As an action, you can destroy one of your soul trinkets, no matter where it's located. When you do so, you can ask the spirit associated with the trinket one question. The spirit appears to you and answers in a language it knew in life. It's under no obligation to be truthful, and it answers as concisely as possible, eager to be free. The spirit knows only what it knew in life, as determined by the DM."
+                    ]
                 },
                 {
-                    name: "Ghost Walk",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 13,
-                    entries: [
+                    "name": "Ghost Walk",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 13,
+                    "entries": [
                         "*13th-level Phantom feature*",
                         "You can phase partially into the realm of the dead, becoming like a ghost. As a bonus action, you assume a spectral form. While in this form, you have a flying speed of 10 feet, you can hover, and attack rolls have disadvantage against you. You can also move through creatures and objects as if they were difficult terrain, but you take **1d10** force damage if you end your turn inside a creature or an object.",
-                        "You stay in this form for 10 minutes or until you end it as a bonus action. To use this feature again, you must finish a long rest or destroy one of your soul trinkets as part of the bonus action you use to activate Ghost Walk.",
-                    ],
+                        "You stay in this form for 10 minutes or until you end it as a bonus action. To use this feature again, you must finish a long rest or destroy one of your soul trinkets as part of the bonus action you use to activate Ghost Walk."
+                    ]
                 },
                 {
-                    name: "Death's Friend",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 17,
-                    entries: [
+                    "name": "Death's Friend",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 17,
+                    "entries": [
                         "*17th-level Phantom feature*",
                         "Your association with death has become so close that you gain the following benefits:",
                         "",
                         "When you use your Wails from the Grave, you can deal the necrotic damage to both the first and the second creature.",
-                        "At the end of a long rest, a soul trinket appears in your hand if you don't have any soul trinkets, as the spirits of the dead are drawn to you.",
-                    ],
-                },
-            ],
+                        "At the end of a long rest, a soul trinket appears in your hand if you don't have any soul trinkets, as the spirits of the dead are drawn to you."
+                    ]
+                }
+            ]
         },
         {
-            name: "Soulknife",
-            name_short: "Soulknife",
-            source: "TCE",
-            subclass_spells: {},
-            features: [
+            "name": "Soulknife",
+            "name_short": "Soulknife",
+            "source": "TCE",
+            "subclass_spells": {},
+            "features": [
                 {
-                    name: "Soulknife",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 3,
-                    entries: [
+                    "name": "Soulknife",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 3,
+                    "entries": [
                         "Most assassins strike with physical weapons, and many burglars and spies use thieves' tools to infiltrate secure locations. In contrast, a Soulknife strikes and infiltrates with the mind, cutting through barriers both physical and psychic. These rogues discover psionic power within themselves and channel it to do their roguish work. They find easy employment as members of thieves' guilds, though they are often mistrusted by rogues who are leery of anyone using strange mind powers to conduct their business. Most governments would also be happy to employ a Soulknife as a spy.",
                         "Amid the trees of ancient forests on the Material Plane and in the Feywild, some wood elves walk the path of the Soulknife, serving as silent, lethal guardians of their woods. In the endless war among the gith, a githzerai is encouraged to become a Soulknife when stealth is required against the githyanki foe.",
                         "As a Soulknife, your psionic abilities might have haunted you since you were a child, only revealing their full potential as you experienced the stress of adventure. Or you might have sought out a reclusive order of psychic adepts and spent years learning how to manifest your power.",
@@ -1347,16 +1350,16 @@
                         "## Psychic Blades",
                         "*3rd-level Soulknife feature*",
                         "You can manifest your psionic power as shimmering blades of psychic energy. Whenever you take the **Attack** action, you can manifest a psychic blade from your free hand and make the attack with that blade. This magic blade is a simple melee weapon with the finesse and thrown properties. It has a normal range of 60 feet and no long range, and on a hit, it deals psychic damage equal to 1d6 plus the ability modifier you used for the attack roll. The blade vanishes immediately after it hits or misses its target, and it leaves no mark on its target if it deals damage.",
-                        "After you attack with the blade, you can make a melee or ranged weapon attack with a second psychic blade as a bonus action on the same turn, provided your other hand is free to create it. The damage die of this bonus attack is 1d4, instead of 1d6.",
-                    ],
+                        "After you attack with the blade, you can make a melee or ranged weapon attack with a second psychic blade as a bonus action on the same turn, provided your other hand is free to create it. The damage die of this bonus attack is 1d4, instead of 1d6."
+                    ]
                 },
                 {
-                    name: "Soul Blades",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 9,
-                    entries: [
+                    "name": "Soul Blades",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 9,
+                    "entries": [
                         "*9th-level Soulknife feature*",
                         "Your Psychic Blades are now an expression of your psi-suffused soul, giving you these powers that use your Psionic Energy dice:",
                         "",
@@ -1365,37 +1368,37 @@
                         "If you make an attack roll with your Psychic Blades and miss the target, you can roll one Psionic Energy die and add the number rolled to the attack roll. If this causes the attack to hit, you expend the Psionic Energy die.",
                         "",
                         "## Psychic Teleportation",
-                        "As a bonus action, you manifest one of your Psychic Blades, expend one Psionic Energy die and roll it, and throw the blade at an unoccupied space you can see, up to a number of feet away equal to 10 times the number rolled. You then teleport to that space, and the blade vanishes.",
-                    ],
+                        "As a bonus action, you manifest one of your Psychic Blades, expend one Psionic Energy die and roll it, and throw the blade at an unoccupied space you can see, up to a number of feet away equal to 10 times the number rolled. You then teleport to that space, and the blade vanishes."
+                    ]
                 },
                 {
-                    name: "Psychic Veil",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 13,
-                    entries: [
+                    "name": "Psychic Veil",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 13,
+                    "entries": [
                         "*13th-level Soulknife feature*",
                         "You can weave a veil of psychic static to mask yourself. As an action, you can magically become *invisible*, along with anything you are wearing or carrying, for 1 hour or until you dismiss this effect (no action required). This invisibility ends early immediately after you deal damage to a creature or you force a creature to make a saving throw.",
-                        "Once you use this feature, you can't do so again until you finish a long rest, unless you expend a Psionic Energy die to use this feature again.",
-                    ],
+                        "Once you use this feature, you can't do so again until you finish a long rest, unless you expend a Psionic Energy die to use this feature again."
+                    ]
                 },
                 {
-                    name: "Rend Mind",
-                    type: "subclass",
-                    gain_scf: false,
-                    source: "TCE",
-                    level: 17,
-                    entries: [
+                    "name": "Rend Mind",
+                    "type": "subclass",
+                    "gain_scf": false,
+                    "source": "TCE",
+                    "level": 17,
+                    "entries": [
                         "*17th-level Soulknife feature*",
                         "You can sweep your Psychic Blades directly through a creature's mind. When you use your Psychic Blades to deal Sneak Attack damage to a creature, you can force that target to make a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Dexterity modifier). If the save fails, the target is *stunned* for 1 minute. The *stunned* target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
-                        "Once you use this feature, you can't do so again until you finish a long rest, unless you expend three Psionic Energy dice to use it again.",
-                    ],
-                },
-            ],
-        },
+                        "Once you use this feature, you can't do so again until you finish a long rest, unless you expend three Psionic Energy dice to use it again."
+                    ]
+                }
+            ]
+        }
     ],
-    fluff: [
+    "fluff": [
         "",
         "# Rogue",
         "*PHB - 94*",
@@ -1475,6 +1478,6 @@
         "| 4 | Your parents used their savings to bail you out of trouble in your younger days and are now destitute. |",
         "| 5 | A dragon didn't eat you when it had a chance, and in return you promised to set aside choice pieces of treasure for it. |",
         "| 6 | A druid once helped you out of a tight spot; now any random animal you see could be that benefactor, perhaps come to claim a return favor. |",
-        "",
-    ],
+        ""
+    ]
 }

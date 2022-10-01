@@ -26,7 +26,7 @@
             "class": {
                 "display_name": "Classes",
                 "renderer": "$sub:renderers/classes/class.compendium.json",
-                "files": ["data/classes/*.json5"],
+                "files": ["data/classes/*.json"],
                 "search_fields": {
                     "name": {
                         "field": "name",
@@ -37,6 +37,16 @@
                         "field": "source",
                         "label": "Source",
                         "type": "select"
+                    },
+                    "hd_size": {
+                        "field": "hit_dice.faces",
+                        "label": "Hit Dice",
+                        "type": "number"
+                    },
+                    "bg_items": {
+                        "field": "starting_equipment.backgroundItems",
+                        "label": "Background Items",
+                        "type": "boolean"
                     },
                     "spellcasting_ability": {
                         "field": "spellcasting.ability",

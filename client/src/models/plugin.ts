@@ -73,6 +73,26 @@ export type DataSource = {
     categories: { [key: string]: DataSourceCategory };
 };
 
+// Search
+export type DataSearchField = {
+    field_type: "string" | "number" | "boolean" | "select";
+    value: string;
+    comparator?: "<" | "<=" | "=" | ">=" | ">" | "!=";
+    exact?: boolean;
+};
+
+export type DataSearch = {
+    category: string;
+    all_required: boolean;
+    fields: { [key: string]: DataSearchField };
+};
+
+export type SearchParams = {
+    choices?: string[];
+    min?: number;
+    max?: number;
+};
+
 // Manifest type
 export type PluginManifest = {
     plugin_data: PluginDataModel;

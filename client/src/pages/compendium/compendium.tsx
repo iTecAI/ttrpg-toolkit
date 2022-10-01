@@ -4,29 +4,40 @@ import {
     Dialog,
     DialogContent,
     DialogTitle,
+    FormControl,
+    FormControlLabel,
+    FormHelperText,
+    FormLabel,
     IconButton,
     InputAdornment,
+    InputLabel,
     LinearProgress,
     MenuItem,
     Paper,
     Popover,
+    Select,
+    Slider,
     Stack,
+    Switch,
     TextField,
     Tooltip,
     Typography,
     useTheme,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { MdExtension, MdSearch } from "react-icons/md";
+import { MdClear, MdExtension, MdSearch } from "react-icons/md";
 import { loc } from "../../util/localization";
 import "./style.scss";
 import "./expanded.scss";
 import {
+    DataSearchField,
     DataSource,
     MinimalPluginModel,
     PluginManifest,
+    SearchField,
+    SearchParams,
 } from "../../models/plugin";
-import { get, post } from "../../util/api";
+import { ApiResponse, get, post } from "../../util/api";
 import { useSnackbar } from "notistack";
 import { useHorizontalScroll } from "../../util/hscroll";
 import { DataItem } from "../../models/compendium";
@@ -39,23 +50,56 @@ import { AvatarItem } from "./renderers/avatar";
 function SearchPopup(props: {
     dataSource: DataSource | null;
     category: string | null;
+    plugin: string | null;
     anchor: HTMLButtonElement | null;
     onClose: () => void;
-    onSubmit: (fields: { [key: string]: string }) => void;
+    onSubmit: (fields: { [key: string]: DataSearchField }) => void;
 }) {
-    const [fields, setFields] = useState<{ [key: string]: string }>({});
+    const [fields, setFields] = useState<{ [key: string]: DataSearchField }>(
+        {}
+    );
+    const [params, setParams] = useState<{ [key: string]: SearchParams }>({});
 
     useEffect(() => {
-        let newFields: { [key: string]: string } = {};
-        if (props.dataSource && props.category) {
-            props.dataSource.categories[props.category].search_fields.forEach(
-                (v) => {
-                    newFields[v.type] = "";
-                }
-            );
+        if (!props.plugin || !props.category) {
+            return;
         }
-        setFields(newFields);
-    }, [props.dataSource, props.category]);
+        get<{ [key: string]: SearchParams }>(
+            `/plugins/${props.plugin}/data/search_params/${props.category}`
+        ).then((value: ApiResponse<{ [key: string]: SearchParams }>) => {
+            if (value.success) {
+                setParams(value.value);
+                let newFields: { [key: string]: DataSearchField } = {};
+                if (props.dataSource && props.category) {
+                    Object.keys(
+                        props.dataSource.categories[props.category]
+                            .search_fields
+                    ).forEach((value: string) => {
+                        let field: SearchField = (
+                            props.dataSource as DataSource
+                        ).categories[props.category as string].search_fields[
+                            value
+                        ];
+
+                        let dataField: DataSearchField = {
+                            field_type: field.type,
+                            value: "",
+                        };
+
+                        if (field.type === "string") {
+                            dataField.exact = false;
+                        }
+                        if (field.type === "number") {
+                            dataField.comparator = "=";
+                        }
+
+                        newFields[value] = dataField;
+                    });
+                }
+                setFields(newFields);
+            }
+        });
+    }, [props.dataSource, props.category, props.plugin]);
 
     return (
         <Popover
@@ -76,25 +120,249 @@ function SearchPopup(props: {
             <Typography variant="h5" className="title">
                 {loc("compendium.search.title")}
             </Typography>
-            <Stack spacing={1}>
+            <Stack spacing={2}>
                 {props.dataSource && props.category ? (
-                    props.dataSource.categories[
-                        props.category
-                    ].search_fields.map((f) => (
-                        <TextField
-                            variant="standard"
-                            key={f.type}
-                            label={f.display_name}
-                            value={fields[f.type]}
-                            onChange={(event) => {
-                                let pfields = JSON.parse(
-                                    JSON.stringify(fields)
+                    Object.keys(
+                        props.dataSource.categories[props.category]
+                            .search_fields
+                    ).map((f) => {
+                        if (!fields[f]) {
+                            return;
+                        }
+                        let field = (props.dataSource as DataSource).categories[
+                            props.category as string
+                        ].search_fields[f];
+                        let inputLine: JSX.Element = <></>;
+                        switch (field.type) {
+                            case "string":
+                                inputLine = (
+                                    <Stack direction="row">
+                                        <FormControl sx={{ width: "20%" }}>
+                                            <InputLabel>
+                                                {loc(
+                                                    "compendium.search.exact.title"
+                                                )}
+                                            </InputLabel>
+                                            <Select
+                                                variant="standard"
+                                                value={Number(fields[f].exact)}
+                                                onChange={(e) => {
+                                                    let pfields = JSON.parse(
+                                                        JSON.stringify(fields)
+                                                    );
+                                                    pfields[f].exact = Boolean(
+                                                        e.target.value
+                                                    );
+                                                    setFields(pfields);
+                                                }}
+                                            >
+                                                <MenuItem value={0}>
+                                                    {loc(
+                                                        "compendium.search.exact.false"
+                                                    )}
+                                                </MenuItem>
+                                                <MenuItem value={1}>
+                                                    {loc(
+                                                        "compendium.search.exact.true"
+                                                    )}
+                                                </MenuItem>
+                                            </Select>
+                                        </FormControl>
+                                        <TextField
+                                            variant="standard"
+                                            key={f}
+                                            label={field.label}
+                                            value={fields[f].value}
+                                            onChange={(event) => {
+                                                let pfields = JSON.parse(
+                                                    JSON.stringify(fields)
+                                                );
+                                                pfields[f].value =
+                                                    event.target.value;
+                                                setFields(pfields);
+                                            }}
+                                            sx={{
+                                                width: "calc(80% - 4px)",
+                                                marginLeft: "4px",
+                                            }}
+                                        />
+                                    </Stack>
                                 );
-                                pfields[f.type] = event.target.value;
-                                setFields(pfields);
-                            }}
-                        />
-                    ))
+                                break;
+
+                            case "select":
+                                inputLine = (
+                                    <FormControl sx={{ width: "100%" }}>
+                                        <InputLabel>{field.label}</InputLabel>
+                                        <Select
+                                            variant="standard"
+                                            key={f}
+                                            value={fields[f].value}
+                                            onChange={(event) => {
+                                                let pfields = JSON.parse(
+                                                    JSON.stringify(fields)
+                                                );
+                                                pfields[f].value =
+                                                    event.target.value;
+                                                setFields(pfields);
+                                            }}
+                                        >
+                                            <MenuItem value={""}>-</MenuItem>
+                                            {params[f] &&
+                                                params[f].choices &&
+                                                params[f].choices?.map((c) => (
+                                                    <MenuItem value={c}>
+                                                        {c}
+                                                    </MenuItem>
+                                                ))}
+                                        </Select>
+                                    </FormControl>
+                                );
+                                break;
+
+                            case "number":
+                                inputLine = (
+                                    <Stack direction={"row"}>
+                                        <FormControl
+                                            sx={{
+                                                width: "30%",
+                                            }}
+                                        >
+                                            <InputLabel>
+                                                {loc(
+                                                    "compendium.search.comp.title"
+                                                )}
+                                            </InputLabel>
+                                            <Select
+                                                variant="standard"
+                                                key={f}
+                                                value={fields[f].comparator}
+                                                onChange={(event) => {
+                                                    let pfields = JSON.parse(
+                                                        JSON.stringify(fields)
+                                                    );
+                                                    pfields[f].comparator =
+                                                        event.target.value;
+                                                    setFields(pfields);
+                                                }}
+                                            >
+                                                <MenuItem value="<">
+                                                    {"<"}
+                                                </MenuItem>
+                                                <MenuItem value="<=">
+                                                    {"<="}
+                                                </MenuItem>
+                                                <MenuItem value="=">
+                                                    {"="}
+                                                </MenuItem>
+                                                <MenuItem value=">=">
+                                                    {">="}
+                                                </MenuItem>
+                                                <MenuItem value=">">
+                                                    {">"}
+                                                </MenuItem>
+                                                <MenuItem value="!=">
+                                                    {"!="}
+                                                </MenuItem>
+                                            </Select>
+                                        </FormControl>
+                                        <FormControl
+                                            sx={{
+                                                width: "calc(70% - 32px)",
+                                                marginLeft: "16px",
+                                            }}
+                                        >
+                                            <Typography variant="body2">
+                                                {field.label}
+                                            </Typography>
+                                            <Slider
+                                                track={false}
+                                                min={
+                                                    params && params[f]
+                                                        ? params[f].min ?? 0
+                                                        : 0
+                                                }
+                                                max={
+                                                    params && params[f]
+                                                        ? params[f].max ?? 100
+                                                        : 100
+                                                }
+                                                value={Number(fields[f].value)}
+                                                onChange={(_, value) => {
+                                                    let pfields = JSON.parse(
+                                                        JSON.stringify(fields)
+                                                    );
+                                                    pfields[f].value =
+                                                        String(value);
+                                                    setFields(pfields);
+                                                }}
+                                                valueLabelDisplay="auto"
+                                            />
+                                        </FormControl>
+                                    </Stack>
+                                );
+                                break;
+
+                            case "boolean":
+                                inputLine = (
+                                    <FormControlLabel
+                                        labelPlacement="start"
+                                        sx={{
+                                            "& .MuiTypography-root": {
+                                                position: "absolute",
+                                                left: "0px",
+                                            },
+                                            position: "relative",
+                                            width: "100%",
+                                        }}
+                                        control={
+                                            <Switch
+                                                value={Boolean(fields[f].value)}
+                                                onChange={(_, checked) => {
+                                                    let pfields = JSON.parse(
+                                                        JSON.stringify(fields)
+                                                    );
+                                                    pfields[f].value =
+                                                        String(checked);
+                                                    setFields(pfields);
+                                                }}
+                                            />
+                                        }
+                                        label={field.label}
+                                    />
+                                );
+                        }
+                        return (
+                            <Stack direction={"row"} spacing={2}>
+                                <span
+                                    style={{
+                                        width: "calc(100% - 40px)",
+                                        position: "relative",
+                                    }}
+                                >
+                                    {inputLine}
+                                </span>
+                                <Tooltip title={loc("compendium.search.clear")}>
+                                    <IconButton
+                                        sx={{
+                                            width: "32px",
+                                            height: "32px",
+                                            transform: "translate(0, 8px)",
+                                        }}
+                                        onClick={() => {
+                                            let pfields = JSON.parse(
+                                                JSON.stringify(fields)
+                                            );
+                                            pfields[f].value = "";
+                                            setFields(pfields);
+                                        }}
+                                    >
+                                        <MdClear />
+                                    </IconButton>
+                                </Tooltip>
+                            </Stack>
+                        );
+                    })
                 ) : (
                     <></>
                 )}
@@ -281,6 +549,7 @@ export function Compendium() {
                 </Stack>
             </Paper>
             <SearchPopup
+                plugin={currentPlugin?.plugin_data.slug ?? null}
                 dataSource={
                     currentPlugin && currentPlugin.data_source
                         ? currentPlugin.data_source
@@ -290,14 +559,23 @@ export function Compendium() {
                 anchor={searchAnchor}
                 onClose={() => setSearchAnchor(null)}
                 onSubmit={(fields) => {
+                    console.log(fields);
                     if (plugin && category) {
                         setLoadingResults(true);
-                        post<DataItem[]>(
-                            `/plugins/${plugin}/data/${category}/search`,
-                            {
-                                body: { fields: fields },
+                        let filledFields: { [key: string]: DataSearchField } =
+                            {};
+                        Object.keys(fields).forEach((k) => {
+                            if (fields[k].value.length > 0) {
+                                filledFields[k] = fields[k];
                             }
-                        ).then((result) => {
+                        });
+                        post<any[]>(`/plugins/${plugin}/data/search`, {
+                            body: {
+                                category: category,
+                                all_required: true,
+                                fields: filledFields,
+                            },
+                        }).then((result) => {
                             if (result.success) {
                                 let sortedResults = result.value.sort((a, b) =>
                                     a.name < b.name

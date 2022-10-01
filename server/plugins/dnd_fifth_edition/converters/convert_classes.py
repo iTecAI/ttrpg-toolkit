@@ -1,5 +1,5 @@
 from typing import Any, Dict
-import json5 as json
+import json
 import string
 import os
 from conv_util import *
@@ -162,7 +162,7 @@ def load_one_class(
         "slug": normalize_slug(desc["name"].lower() + "-" + desc["source"].lower()),
         "name": desc["name"],
         "source": desc["source"],
-        "hit_dice": f"{desc['hd']['number']}d{desc['hd']['faces']}",
+        "hit_dice": desc["hd"],
         "save_proficiency": [ABILITY_MAP[p] for p in desc["proficiency"]]
         if "proficiency" in desc.keys()
         else [],
@@ -270,7 +270,7 @@ def load_classes(data_root: str, output_folder: str) -> None:
             out[key] = current.copy()
 
     for k in out.keys():
-        with open(os.path.join(output_folder, k + ".json5"), "w") as fp:
+        with open(os.path.join(output_folder, k + ".json"), "w") as fp:
             json.dump(out[k], fp, indent=4)
 
 

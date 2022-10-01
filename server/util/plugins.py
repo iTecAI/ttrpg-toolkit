@@ -26,6 +26,7 @@ from pymongo.database import Database
 import glob
 import threading
 from .util_funcs import get_nested
+import json
 
 from models.plugins import DataSearchModel
 
@@ -256,12 +257,15 @@ class DataSourceLoader:
 
         parsed_results = []
         for r in results:
-            fdata = Config(os.path.join(self.plugin.plugin_directory, r["_file"]))
+            with open(
+                os.path.join(self.plugin.plugin_directory, r["_file"]), "r"
+            ) as fp:
+                fdata = json.load(fp)
             if r["_record"] == "self":
-                parsed_results.append(fdata.data)
+                parsed_results.append(fdata)
             else:
                 try:
-                    parsed_results.append(fdata.data[r["record"]])
+                    parsed_results.append(fdata[r["record"]])
                 except:
                     pass
 
