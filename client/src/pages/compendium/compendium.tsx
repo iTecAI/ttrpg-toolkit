@@ -118,7 +118,7 @@ function SearchPopup(props: {
             <Typography variant="h5" className="title">
                 {loc("compendium.search.title")}
             </Typography>
-            <Stack spacing={2}>
+            <Stack spacing={3}>
                 {props.dataSource && props.category ? (
                     Object.keys(
                         props.dataSource.categories[props.category]
@@ -223,13 +223,11 @@ function SearchPopup(props: {
                                     <Stack direction={"row"}>
                                         <FormControl
                                             sx={{
-                                                width: "30%",
+                                                width: "180px",
                                             }}
                                         >
                                             <InputLabel>
-                                                {loc(
-                                                    "compendium.search.comp.title"
-                                                )}
+                                                {field.label}
                                             </InputLabel>
                                             <Select
                                                 variant="standard"
@@ -245,34 +243,44 @@ function SearchPopup(props: {
                                                 }}
                                             >
                                                 <MenuItem value="<">
-                                                    {"<"}
+                                                    {loc(
+                                                        "compendium.search.comp.lt"
+                                                    )}
                                                 </MenuItem>
                                                 <MenuItem value="<=">
-                                                    {"<="}
+                                                    {loc(
+                                                        "compendium.search.comp.lte"
+                                                    )}
                                                 </MenuItem>
                                                 <MenuItem value="=">
-                                                    {"="}
+                                                    {loc(
+                                                        "compendium.search.comp.eq"
+                                                    )}
                                                 </MenuItem>
                                                 <MenuItem value=">=">
-                                                    {">="}
+                                                    {loc(
+                                                        "compendium.search.comp.gte"
+                                                    )}
                                                 </MenuItem>
                                                 <MenuItem value=">">
-                                                    {">"}
+                                                    {loc(
+                                                        "compendium.search.comp.gt"
+                                                    )}
                                                 </MenuItem>
                                                 <MenuItem value="!=">
-                                                    {"!="}
+                                                    {loc(
+                                                        "compendium.search.comp.ne"
+                                                    )}
                                                 </MenuItem>
                                             </Select>
                                         </FormControl>
                                         <FormControl
                                             sx={{
-                                                width: "calc(70% - 32px)",
+                                                width: "calc(100% - 180px)",
                                                 marginLeft: "16px",
+                                                transform: "translate(0, 16px)",
                                             }}
                                         >
-                                            <Typography variant="body2">
-                                                {field.label}
-                                            </Typography>
                                             <Slider
                                                 track={false}
                                                 min={

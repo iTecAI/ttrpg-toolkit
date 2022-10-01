@@ -238,7 +238,7 @@ class DataSourceLoader:
                     elif field.comparator == ">=":
                         matches += int(current >= target)
                     elif field.comparator == ">":
-                        matches += int(current < target)
+                        matches += int(current > target)
                     elif field.comparator == "!=":
                         matches += int(current != target)
                 elif field.field_type == "boolean":

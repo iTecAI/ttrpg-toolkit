@@ -153,7 +153,13 @@
                 "false": "No"
             },
             "comp": {
-                "title": "Operator"
+                "title": "Comparison",
+                "lt": "Less Than",
+                "lte": "Less Than or Equal",
+                "eq": "Equal",
+                "gte": "Greater Than or Equal",
+                "gt": "Greater Than",
+                "ne": "Not Equal"
             },
             "clear": "Clear Input"
         },
