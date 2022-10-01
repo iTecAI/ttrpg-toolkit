@@ -6,8 +6,6 @@ import {
     DialogTitle,
     FormControl,
     FormControlLabel,
-    FormHelperText,
-    FormLabel,
     IconButton,
     InputAdornment,
     InputLabel,
@@ -127,7 +125,7 @@ function SearchPopup(props: {
                             .search_fields
                     ).map((f) => {
                         if (!fields[f]) {
-                            return;
+                            return null;
                         }
                         let field = (props.dataSource as DataSource).categories[
                             props.category as string
@@ -211,7 +209,7 @@ function SearchPopup(props: {
                                             {params[f] &&
                                                 params[f].choices &&
                                                 params[f].choices?.map((c) => (
-                                                    <MenuItem value={c}>
+                                                    <MenuItem value={c} key={c}>
                                                         {c}
                                                     </MenuItem>
                                                 ))}
@@ -333,7 +331,7 @@ function SearchPopup(props: {
                                 );
                         }
                         return (
-                            <Stack direction={"row"} spacing={2}>
+                            <Stack direction={"row"} spacing={2} key={f}>
                                 <span
                                     style={{
                                         width: "calc(100% - 40px)",
