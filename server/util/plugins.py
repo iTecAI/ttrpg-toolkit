@@ -124,14 +124,15 @@ class DataSourceLoader:
 
             records = []
             for f in files:
-                c = Config(os.path.join(self.plugin.plugin_directory, f))
-                if type(c.data) == dict:
-                    records.append({"_file": f, "_record": "self", "data": c.data})
-                elif type(c.data) == list:
+                with open(os.path.join(self.plugin.plugin_directory, f), "r") as fp:
+                    c = json.load(fp)
+                if type(c) == dict:
+                    records.append({"_file": f, "_record": "self", "data": c})
+                elif type(c) == list:
                     records.extend(
                         [
-                            {"_file": f, "_record": i, "data": c.data[i]}
-                            for i in range(len(c.data))
+                            {"_file": f, "_record": i, "data": c[i]}
+                            for i in range(len(c))
                         ]
                     )
                 else:
@@ -254,7 +255,8 @@ class DataSourceLoader:
                     results.append(record)
             elif matches >= 1:
                 results.append(record)
-
+            elif len(model.fields.keys()) == 0:
+                results.append(record)
         parsed_results = []
         for r in results:
             with open(
@@ -265,7 +267,7 @@ class DataSourceLoader:
                 parsed_results.append(fdata)
             else:
                 try:
-                    parsed_results.append(fdata[r["record"]])
+                    parsed_results.append(fdata[r["_record"]])
                 except:
                     pass
 

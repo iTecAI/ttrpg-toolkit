@@ -1,14 +1,18 @@
 {
-    "render_mode": "card",
-    "expanded": {
-        "title": "{{name}}",
-        "contents": []
-    },
-    "item": {
-        "title": "{{name}}",
-        "content": {
-            "type": "text",
-            "text": "{{name}}"
+    "supertype": "compendium-item",
+    "type": "race",
+    "slug": "$data:slug",
+    "plugin": "dnd_fifth_edition",
+    "source": "$data:source",
+    "displayName": {
+        "supertype": "value",
+        "type": "function",
+        "function": "$file:functions/gen_race_name.js:lines",
+        "opts": {
+            "race": "$data:raceName",
+            "name": "$data:name"
         }
-    }
+    },
+    "briefContents": [],
+    "fullContents": {}
 }

@@ -43,14 +43,26 @@
                         "label": "Hit Dice",
                         "type": "number"
                     },
-                    "bg_items": {
-                        "field": "starting_equipment.backgroundItems",
-                        "label": "Background Items",
-                        "type": "boolean"
-                    },
                     "spellcasting_ability": {
                         "field": "spellcasting.ability",
                         "label": "Spellcasting Ability",
+                        "type": "select"
+                    }
+                }
+            },
+            "race": {
+                "display_name": "Races",
+                "renderer": "$sub:renderers/races/race.compendium.json",
+                "files": ["data/races/*.json"],
+                "search_fields": {
+                    "name": {
+                        "field": "name",
+                        "label": "Race Name",
+                        "type": "string"
+                    },
+                    "source": {
+                        "field": "source",
+                        "label": "Race Source",
                         "type": "select"
                     }
                 }
