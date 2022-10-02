@@ -5,6 +5,7 @@ import { ParsedFunction, RawData, ValueItem } from "./types";
 import { parseFunction, parseValueItem } from "./util";
 import parseNested from "./util/nestedParser";
 import React from "react";
+import { Card } from "@mui/material";
 
 /**
  * Base Render Parser class. Should be extended.
@@ -192,33 +193,43 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
      * @returns JSX Element
      */
     render(): JSX.Element | null {
-        if (this.renderer.conditionalRender) {
-            if (!this.execParsedFunction(this.renderer.conditionalRender)) {
-                return null;
+        try {
+            if (this.renderer.conditionalRender) {
+                if (!this.execParsedFunction(this.renderer.conditionalRender)) {
+                    return null;
+                }
             }
-        }
-        if (this.renderer.supertype === "render") {
-            if (Object.keys(this.renderers).includes(this.renderer.type)) {
+            if (this.renderer.supertype === "render") {
+                if (Object.keys(this.renderers).includes(this.renderer.type)) {
+                    return (
+                        <span key={Math.random()}>
+                            {this.renderers[this.renderer.type].bind(this)(
+                                this.children.map((r) => r.render()),
+                                this.renderer
+                            )}
+                        </span>
+                    );
+                } else {
+                    throw new Error(
+                        `Unknown renderer type ${this.renderer.type}`
+                    );
+                }
+            } else {
                 return (
                     <span key={Math.random()}>
                         {this.renderers[this.renderer.type].bind(this)(
                             this.children.map((r) => r.render()),
-                            this.renderer
+                            this.renderer.renderer
                         )}
                     </span>
                 );
-            } else {
-                throw new Error(`Unknown renderer type ${this.renderer.type}`);
             }
-        } else {
-            return (
-                <span key={Math.random()}>
-                    {this.renderers[this.renderer.type].bind(this)(
-                        this.children.map((r) => r.render()),
-                        this.renderer.renderer
-                    )}
-                </span>
-            );
+        } catch (e: any) {
+            return <span key={Math.random()}>{this.reportError(e)}</span>;
         }
+    }
+
+    reportError(error: Error): JSX.Element {
+        return <></>;
     }
 }

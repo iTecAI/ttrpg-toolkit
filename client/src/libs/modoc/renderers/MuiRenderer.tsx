@@ -440,4 +440,15 @@ export default class MuiRenderParser<
             </Masonry>
         );
     }
+
+    reportError(error: Error): JSX.Element {
+        return (
+            <Paper
+                variant="outlined"
+                sx={{ padding: "8px", fontFamily: "monospace" }}
+            >
+                {JSON.stringify(error)}
+            </Paper>
+        );
+    }
 }

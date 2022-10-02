@@ -175,7 +175,10 @@ export function Compendium() {
                                                   "32"
                                                 : undefined,
                                     }}
-                                    onClick={() => setCategory(cat)}
+                                    onClick={() => {
+                                        setSearchResults([]);
+                                        setCategory(cat);
+                                    }}
                                 >
                                     {
                                         (
