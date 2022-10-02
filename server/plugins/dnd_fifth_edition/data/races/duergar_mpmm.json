@@ -1,0 +1,94 @@
+[
+    {
+        "name": "Duergar",
+        "source": "MPMM",
+        "page": 12,
+        "lineage": "VRGR",
+        "creatureTypes": [
+            "humanoid"
+        ],
+        "creatureTypeTags": [
+            "dwarf"
+        ],
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "age": {
+            "max": 350
+        },
+        "darkvision": 120,
+        "resist": [
+            "poison"
+        ],
+        "additionalSpells": [
+            {
+                "innate": {
+                    "3": {
+                        "daily": {
+                            "1": [
+                                "enlarge/reduce"
+                            ]
+                        }
+                    },
+                    "5": {
+                        "daily": {
+                            "1": [
+                                "invisibility"
+                            ]
+                        }
+                    }
+                },
+                "ability": {
+                    "choose": [
+                        "int",
+                        "wis",
+                        "cha"
+                    ]
+                }
+            }
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Creature Type",
+                "entries": [
+                    "You are a Humanoid. You are also considered a dwarf for any prerequisite or effect that requires you to be a dwarf."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Darkvision",
+                "entries": [
+                    "You can see in dim light within 120 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Duergar Magic",
+                "entries": [
+                    "Starting at 3rd level, you can cast the {@spell enlarge/reduce} spell on yourself with this trait, without requiring a material component. Starting at 5th level, you can also cast the {@spell invisibility} spell on yourself with this trait, without requiring a material component. Once you cast either of these spells with this trait, you can't cast that spell with it again until you finish a long rest. You can also cast these spells using spell slots you have of the appropriate level.",
+                    "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Dwarven Resilience",
+                "entries": [
+                    "You have advantage on saving throws you make to avoid or end the {@condition poisoned} condition on yourself. You also have resistance to poison damage."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Psionic Fortitude",
+                "entries": [
+                    "You have advantage on saving throws you make to avoid or end the {@condition charmed} or {@condition stunned} condition on yourself."
+                ]
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "duergar_mpmm_generic",
+        "type": "generic"
+    }
+]

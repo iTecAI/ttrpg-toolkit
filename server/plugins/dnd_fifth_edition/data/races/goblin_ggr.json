@@ -1,0 +1,54 @@
+[
+    {
+        "name": "Goblin",
+        "source": "GGR",
+        "page": 16,
+        "_copy": {
+            "name": "Goblin",
+            "source": "VGM",
+            "_mod": {
+                "entries": [
+                    {
+                        "mode": "appendArr",
+                        "items": {
+                            "name": "Alignment",
+                            "type": "entries",
+                            "entries": [
+                                "Goblins are typically neutral evil, as they care only for their own needs. A few goblins might tend toward good or neutrality, but only rarely."
+                            ]
+                        }
+                    },
+                    {
+                        "mode": "replaceArr",
+                        "replace": "Age",
+                        "items": {
+                            "name": "Age",
+                            "type": "entries",
+                            "entries": [
+                                "Goblins reach adulthood around age 8. They age noticeably faster than humans, and though few goblins live to old age, the most cautious rarely live longer than 60 years."
+                            ]
+                        }
+                    },
+                    {
+                        "mode": "replaceArr",
+                        "replace": "Languages",
+                        "items": {
+                            "name": "Languages",
+                            "type": "entries",
+                            "entries": [
+                                "You can speak, read, and write Common and Goblin. In Ravnica, Goblin is a simplistic language with a limited vocabulary and fluid rules of grammar, unsuited for any sophisticated conversation."
+                            ]
+                        }
+                    }
+                ]
+            },
+            "_preserve": {
+                "reprintedAs": true
+            }
+        },
+        "traitTags": null,
+        "hasFluff": true,
+        "slug": "goblin_ggr_generic",
+        "type": "generic"
+    }
+]

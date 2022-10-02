@@ -1,0 +1,63 @@
+[
+    {
+        "name": "Warforged",
+        "source": "UAEberron",
+        "page": 3,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
+            {
+                "str": 1,
+                "con": 1
+            }
+        ],
+        "traitTags": [
+            "Improved Resting",
+            "Natural Armor"
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "anyStandard": 1
+            }
+        ],
+        "conditionImmune": [
+            "disease"
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "Warforged are generally broader and heavier than humans. Your size is Medium"
+                ]
+            },
+            {
+                "name": "Composite Plating",
+                "entries": [
+                    "Your construction incorporates wood and metal, granting you a +1 bonus to Armor Class."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Living Construct",
+                "entries": [
+                    "Even though you were constructed, you are a living creature. You are immune to disease. You do not need to eat or breathe, but you can ingest food and drink if you wish.",
+                    "Instead of sleeping, you enter an inactive state for 4 hours each day. You do not dream in this state; you are fully aware of your surroundings and notice approaching enemies and other events as normal."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common and one other language of your choice."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "warforged_uaeberron_generic",
+        "type": "generic"
+    }
+]

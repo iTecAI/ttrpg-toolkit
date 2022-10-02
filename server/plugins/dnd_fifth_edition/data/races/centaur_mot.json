@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Centaur",
+        "source": "MOT",
+        "page": 18,
+        "_copy": {
+            "name": "Centaur",
+            "source": "GGR",
+            "_mod": {
+                "entries": [
+                    {
+                        "mode": "replaceArr",
+                        "replace": "Alignment",
+                        "items": {
+                            "name": "Alignment",
+                            "type": "entries",
+                            "entries": [
+                                "Centaurs are inclined toward neutrality. Lagonna centaurs tend to be more lawful, while Pheres centaurs are more often chaotic."
+                            ]
+                        }
+                    },
+                    {
+                        "mode": "replaceArr",
+                        "replace": "Size",
+                        "items": {
+                            "name": "Size",
+                            "type": "entries",
+                            "entries": [
+                                "Centaurs stand between 6 and 7 feet tall, with their equine bodies reaching about 4 feet at the withers. Pheres centaurs tend to be slightly larger than Lagonna centaurs. Your size is Medium."
+                            ]
+                        }
+                    },
+                    {
+                        "mode": "replaceArr",
+                        "replace": "Languages",
+                        "items": {
+                            "name": "Languages",
+                            "type": "entries",
+                            "entries": [
+                                "You can speak, read, and write Common and Sylvan."
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "centaur_mot_generic",
+        "type": "generic"
+    }
+]

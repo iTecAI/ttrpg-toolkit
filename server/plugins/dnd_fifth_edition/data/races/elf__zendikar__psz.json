@@ -1,0 +1,257 @@
+[
+    {
+        "name": "Elf (Zendikar)",
+        "source": "PSZ",
+        "page": 18,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
+            {
+                "wis": 2
+            }
+        ],
+        "age": {
+            "mature": 100,
+            "max": 750
+        },
+        "darkvision": 60,
+        "skillProficiencies": [
+            {
+                "perception": true
+            }
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "elvish": true
+            }
+        ],
+        "entries": [
+            {
+                "name": "Age",
+                "type": "entries",
+                "entries": [
+                    "Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old."
+                ]
+            },
+            {
+                "name": "Alignment",
+                "type": "entries",
+                "entries": [
+                    "Elves love freedom, variety, and self-expression, so they lean strongly toward the gentler aspects of chaos. They value and protect others' freedom as well as their own, and they are more often good than not."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "Elves range from under 5 to over 6 feet tall and have slender builds. Your size is Medium."
+                ]
+            },
+            {
+                "name": "Darkvision",
+                "entries": [
+                    "Accustomed to twilit forests and the night sky, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Keen Senses",
+                "entries": [
+                    "You have proficiency in the {@skill Perception} skill."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Fey Ancestry",
+                "entries": [
+                    "You have advantage on saving throws against being {@condition charmed}, and magic can't put you to sleep."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common and Elvish. Elvish is fluid, with subtle intonations and intricate grammar. Elven literature is rich and varied, and their songs and poems are famous among other races. Many bards learn their language so they can add Elvish ballads to their repertoires."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "slug": "elf__zendikar__psz_generic",
+        "type": "generic"
+    },
+    {
+        "name": "Joraga Nation",
+        "source": "PSZ",
+        "raceName": "Elf (Zendikar)",
+        "raceSource": "PSZ",
+        "page": 19,
+        "speed": 35,
+        "ability": [
+            {
+                "dex": 1
+            }
+        ],
+        "weaponProficiencies": [
+            {
+                "longsword|phb": true,
+                "shortsword|phb": true,
+                "shortbow|phb": true,
+                "longbow|phb": true
+            }
+        ],
+        "entries": [
+            {
+                "name": "Mask of the Wild",
+                "entries": [
+                    "You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Elf Weapon Training",
+                "entries": [
+                    "You have proficiency with the {@item longsword|phb}, {@item shortsword|phb}, {@item shortbow|phb}, and {@item longbow|phb}."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Fleet of Foot",
+                "entries": [
+                    "Your ground speed increases to 35 feet."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "elf__zendikar__psz_joraga_nation_psz",
+        "type": "subrace"
+    },
+    {
+        "name": "Mul Daya Nation",
+        "source": "PSZ",
+        "raceName": "Elf (Zendikar)",
+        "raceSource": "PSZ",
+        "page": 19,
+        "ability": [
+            {
+                "str": 1
+            }
+        ],
+        "darkvision": 120,
+        "traitTags": [
+            "Sunlight Sensitivity"
+        ],
+        "weaponProficiencies": [
+            {
+                "longsword|phb": true,
+                "shortsword|phb": true,
+                "shortbow|phb": true,
+                "longbow|phb": true
+            }
+        ],
+        "additionalSpells": [
+            {
+                "innate": {
+                    "3": {
+                        "daily": {
+                            "1": [
+                                "hex"
+                            ]
+                        }
+                    },
+                    "5": {
+                        "daily": {
+                            "1": [
+                                "darkness"
+                            ]
+                        }
+                    }
+                },
+                "ability": "wis",
+                "known": {
+                    "1": [
+                        "chill touch#c"
+                    ]
+                }
+            }
+        ],
+        "entries": [
+            {
+                "name": "Mul Daya Magic",
+                "entries": [
+                    "You know the {@spell chill touch} cantrip. When you reach 3rd level, you can cast the {@spell hex} spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the {@spell darkness} spell once with this trait and regain the ability to do so when you finish a long rest. Wisdom is your spellcasting ability for these spells."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Superior Darkvision",
+                "entries": [
+                    "Your Darkvision has a radius of 120 feet."
+                ],
+                "data": {
+                    "overwrite": "Darkvision"
+                },
+                "type": "entries"
+            },
+            {
+                "name": "Sunlight Sensitivity",
+                "entries": [
+                    "You have disadvantage on attack rolls and on Wisdom ({@skill Perception}) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Elf Weapon Training",
+                "entries": [
+                    "You have proficiency with the {@item longsword|phb}, {@item shortsword|phb}, {@item shortbow|phb}, and {@item longbow|phb}."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "elf__zendikar__psz_mul_daya_nation_psz",
+        "type": "subrace"
+    },
+    {
+        "name": "Tajuru Nation",
+        "source": "PSZ",
+        "raceName": "Elf (Zendikar)",
+        "raceSource": "PSZ",
+        "page": 18,
+        "ability": [
+            {
+                "cha": 1
+            }
+        ],
+        "traitTags": [
+            "Skill Proficiency",
+            "Tool Proficiency"
+        ],
+        "skillToolLanguageProficiencies": [
+            {
+                "choose": [
+                    {
+                        "from": [
+                            "anySkill",
+                            "anyTool"
+                        ],
+                        "count": 2
+                    }
+                ]
+            }
+        ],
+        "entries": [
+            {
+                "name": "Skill Versatility",
+                "entries": [
+                    "You have proficiency with any combination of two other skills or {@book tools|phb|5|tools} of your choice."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "elf__zendikar__psz_tajuru_nation_psz",
+        "type": "subrace"
+    }
+]

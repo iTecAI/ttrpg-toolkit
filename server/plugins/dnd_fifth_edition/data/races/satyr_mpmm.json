@@ -1,0 +1,70 @@
+[
+    {
+        "name": "Satyr",
+        "source": "MPMM",
+        "page": 29,
+        "lineage": "VRGR",
+        "creatureTypes": [
+            "fey"
+        ],
+        "size": [
+            "M"
+        ],
+        "speed": 35,
+        "traitTags": [
+            "Magic Resistance"
+        ],
+        "skillProficiencies": [
+            {
+                "performance": true,
+                "persuasion": true
+            }
+        ],
+        "toolProficiencies": [
+            {
+                "musical instrument": true
+            }
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Creature Type",
+                "entries": [
+                    "You are a Fey."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Ram",
+                "entries": [
+                    "You can use your head and horns to make unarmed strikes. When you hit with them, the strike deals {@damage 1d6} + your Strength modifier bludgeoning damage, instead of the bludgeoning damage normal for an unarmed strike."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Magic Resistance",
+                "entries": [
+                    "You have advantage on saving throws against spells."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Mirthful Leaps",
+                "entries": [
+                    "Whenever you make a long jump or a high jump, you can roll a {@dice d8} and add the number rolled to the number of feet you cover, even when making a standing jump. This extra distance costs movement as usual."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Reveler",
+                "entries": [
+                    "As an embodiment of revelry, you have proficiency in the {@skill Performance} and {@skill Persuasion} skills, and you have proficiency with one {@item musical instrument|PHB} of your choice."
+                ]
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "satyr_mpmm_generic",
+        "type": "generic"
+    }
+]

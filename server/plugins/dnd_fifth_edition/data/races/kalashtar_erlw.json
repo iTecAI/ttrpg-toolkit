@@ -1,0 +1,106 @@
+[
+    {
+        "name": "Kalashtar",
+        "source": "ERLW",
+        "page": 29,
+        "otherSources": [
+            {
+                "source": "UAWGE",
+                "page": 62
+            }
+        ],
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
+            {
+                "wis": 2,
+                "cha": 1
+            }
+        ],
+        "heightAndWeight": {
+            "baseHeight": 64,
+            "heightMod": "2d6",
+            "baseWeight": 110,
+            "weightMod": "1d6"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "languageProficiencies": [
+            {
+                "common": true,
+                "other": true,
+                "anyStandard": 1
+            }
+        ],
+        "resist": [
+            "psychic"
+        ],
+        "entries": [
+            {
+                "name": "Age",
+                "entries": [
+                    "Kalashtar mature and age at the same rate as humans."
+                ],
+                "type": "entries"
+            },
+            {
+                "type": "entries",
+                "name": "Alignment",
+                "entries": [
+                    "The noble spirit tied to a kalashtar drives it toward lawful and good behavior. Most kalashtar combine strong self-discipline with compassion for all beings, but some kalashtar resist the virtuous influence of their spirit."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "Your size is Medium."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Dual Mind",
+                "entries": [
+                    "You have advantage on all Wisdom saving throws."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Mental Discipline",
+                "entries": [
+                    "You have resistance to psychic damage."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Mind Link",
+                "entries": [
+                    "You can speak telepathically to any creature you can see, provided the creature is within a number of feet of you equal to 10 times your level. You don't need to share a language with the creature for it to understand your telepathic utterances, but the creature must be able to understand at least one language.",
+                    "When you're using this trait to speak telepathically to a creature, you can use your action to give that creature the ability to speak telepathically with you for 1 hour or until you end this effect as an action. To use this ability, the creature must be able to see you and must be within this trait's range. You can give this ability to only one creature at a time; giving it to a creature takes it away from another creature who has it."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Severed from Dreams",
+                "entries": [
+                    "Kalashtar sleep, but they don't connect to the plane of dreams as other creatures do. Instead, their minds draw from the memories of their otherworldly spirit while they sleep. As such, you are immune to spells and other magical effects that require you to dream, like {@spell dream}, but not to spells and other magical effects that put you to sleep, like {@spell sleep}."
+                ]
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common, Quori, and one other language of your choice."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "kalashtar_erlw_generic",
+        "type": "generic"
+    }
+]

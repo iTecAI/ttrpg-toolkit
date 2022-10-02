@@ -1,0 +1,73 @@
+[
+    {
+        "name": "Vedalken",
+        "source": "PSK",
+        "page": 23,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
+            {
+                "int": 2,
+                "wis": 1
+            }
+        ],
+        "age": {
+            "mature": 40,
+            "max": 500
+        },
+        "languageProficiencies": [
+            {
+                "common": true,
+                "other": true
+            }
+        ],
+        "entries": [
+            {
+                "name": "Age",
+                "type": "entries",
+                "entries": [
+                    "Vedalken mature at the same rate humans do, and most are expected to settle down into an adult life by around age 40. They can live 350 to almost 500 years."
+                ]
+            },
+            {
+                "name": "Alignment",
+                "type": "entries",
+                "entries": [
+                    "Vedalken are most often lawful and rarely evil."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "Vedalken are taller than humans but more slender. They average 6 to 6\u00bd feet tall, but usually weigh less than 200 pounds. Your size is Medium."
+                ]
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common and Vedalken. The Vedalken language is renowned for its technical treatises and its catalogs of knowledge about the natural world and the aether that pervades it."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Vedalken Cunning",
+                "entries": [
+                    "You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Aether Lore",
+                "entries": [
+                    "Whenever you make an Intelligence ({@skill History}) check related to magic items or aether-powered technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "vedalken_psk_generic",
+        "type": "generic"
+    }
+]

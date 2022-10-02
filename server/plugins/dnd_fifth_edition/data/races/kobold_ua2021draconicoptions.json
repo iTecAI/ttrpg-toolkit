@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Kobold",
+        "source": "UA2021DraconicOptions",
+        "page": 3,
+        "lineage": "VRGR",
+        "size": [
+            "S"
+        ],
+        "speed": 30,
+        "darkvision": 60,
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Darkvision",
+                "entries": [
+                    "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Draconic Legacy",
+                "entries": [
+                    "The kobold connection to dragons can manifest in unpredictable ways in an individual kobold. Choose one of the following legacy options when you select this race:",
+                    {
+                        "type": "list",
+                        "items": [
+                            "You have advantage on saving throws to avoid or end the {@condition frightened} condition on yourself.",
+                            "You know one {@filter cantrip of your choice from the sorcerer spell list|spells|level=0|class=Sorcerer}. Intelligence, Wisdom, or Charisma is your spellcasting ability for that cantrip (choose when you select this race).",
+                            "You can make unarmed strikes with your tail. When you hit with it, the strike deals {@dice 1d6} + your Strength modifier bludgeoning damage, instead of the bludgeoning damage normal for an unarmed strike."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Draconic Roar",
+                "entries": [
+                    "As a bonus action, you let out a draconic roar at your enemies within 10 feet of you. Until the end of your next turn, you and your allies have advantage on attack rolls against any of those enemies who could hear the roar. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+                ]
+            }
+        ],
+        "hasFluff": true,
+        "slug": "kobold_ua2021draconicoptions_generic",
+        "type": "generic"
+    }
+]

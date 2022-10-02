@@ -1,0 +1,125 @@
+[
+    {
+        "name": "Yuan-ti Pureblood",
+        "source": "VGM",
+        "page": 120,
+        "reprintedAs": [
+            "Yuan-Ti|MPMM"
+        ],
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
+            {
+                "cha": 2,
+                "int": 1
+            }
+        ],
+        "heightAndWeight": {
+            "baseHeight": 56,
+            "heightMod": "2d10",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "darkvision": 60,
+        "traitTags": [
+            "Magic Resistance",
+            "Monstrous Race"
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "abyssal": true,
+                "draconic": true
+            }
+        ],
+        "immune": [
+            "poison"
+        ],
+        "conditionImmune": [
+            "poisoned"
+        ],
+        "additionalSpells": [
+            {
+                "innate": {
+                    "1": [
+                        "animal friendship"
+                    ],
+                    "3": {
+                        "daily": {
+                            "1": [
+                                "suggestion"
+                            ]
+                        }
+                    }
+                },
+                "ability": "cha",
+                "known": {
+                    "1": [
+                        "poison spray#c"
+                    ]
+                }
+            }
+        ],
+        "entries": [
+            {
+                "name": "Age",
+                "type": "entries",
+                "entries": [
+                    "Purebloods mature at the same rate as humans and have lifespans similar in length to theirs."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "Purebloods match humans in average size and weight. Your size is Medium."
+                ]
+            },
+            {
+                "name": "Darkvision",
+                "entries": [
+                    "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Innate Spellcasting",
+                "entries": [
+                    "You know the {@spell poison spray} cantrip. You can cast {@spell animal friendship} an unlimited number of times with this trait, but you can target only snakes with it. Starting at 3rd level, you can also cast {@spell suggestion} with this trait. Once you cast it, you can't do so again until you finish a long rest. Charisma is your spellcasting ability for these spells."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Magic Resistance",
+                "entries": [
+                    "You have advantage on saving throws against spells and other magical effects."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Poison Immunity",
+                "entries": [
+                    "You are immune to poison damage and the {@condition poisoned} condition."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common, Abyssal, and Draconic."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "yuan_ti_pureblood_vgm_generic",
+        "type": "generic"
+    }
+]

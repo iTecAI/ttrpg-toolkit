@@ -1,0 +1,71 @@
+[
+    {
+        "name": "Tabaxi",
+        "source": "MPMM",
+        "page": 33,
+        "lineage": "VRGR",
+        "size": [
+            "S",
+            "M"
+        ],
+        "speed": {
+            "walk": 30,
+            "climb": true
+        },
+        "darkvision": 60,
+        "skillProficiencies": [
+            {
+                "perception": true,
+                "stealth": true
+            }
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "You are Medium or Small. You choose the size when you select this race."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Speed",
+                "entries": [
+                    "Your walking speed is 30 feet, and you have a climbing speed equal to your walking speed."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Cat's Claws",
+                "entries": [
+                    "You can use your claws to make unarmed strikes. When you hit with them, the strike deals {@damage 1d6} + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Cat's Talent",
+                "entries": [
+                    "You have proficiency in the {@skill Perception} and {@skill Stealth} skills."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Darkvision",
+                "entries": [
+                    "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Feline Agility",
+                "entries": [
+                    "Your reflexes and agility allow you to move with a burst of speed. When you move on your turn in combat, you can double your speed until the end of the turn. Once you use this trait, you can't use it again until you move 0 feet on one of your turns."
+                ]
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "tabaxi_mpmm_generic",
+        "type": "generic"
+    }
+]

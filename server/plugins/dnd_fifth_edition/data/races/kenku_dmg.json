@@ -1,0 +1,55 @@
+[
+    {
+        "name": "Kenku",
+        "source": "DMG",
+        "page": 282,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
+            {
+                "dex": 2
+            }
+        ],
+        "darkvision": 60,
+        "traitTags": [
+            "NPC Race"
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "auran": true
+            }
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/kenku.mp3"
+        },
+        "entries": [
+            {
+                "name": "Ambusher",
+                "entries": [
+                    "In the first round of a combat, you have advantage on attack rolls against any creature who is surprised."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Mimicry",
+                "entries": [
+                    "You can mimic any sounds you have heard, including voices. A creature that hears the sounds can tell they are imitations with a successful DC 14 Wisdom ({@skill Insight}) check."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can read and write Common and Auran, but you can only speak using your Mimicry trait."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "kenku_dmg_generic",
+        "type": "generic"
+    }
+]

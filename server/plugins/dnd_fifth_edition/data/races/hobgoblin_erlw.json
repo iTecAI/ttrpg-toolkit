@@ -1,0 +1,41 @@
+[
+    {
+        "name": "Hobgoblin",
+        "source": "ERLW",
+        "page": 26,
+        "_copy": {
+            "name": "Hobgoblin",
+            "source": "VGM",
+            "_mod": {
+                "entries": [
+                    {
+                        "mode": "appendArr",
+                        "items": {
+                            "name": "Alignment",
+                            "entries": [
+                                "Hobgoblin society in Eberron is shaped by the ideal of a strict code of honor and rigid martial discipline. Most hobgoblins are lawful, tending toward harsh enforcement of their laws."
+                            ],
+                            "type": "entries"
+                        }
+                    },
+                    {
+                        "mode": "replaceArr",
+                        "replace": "Size",
+                        "items": {
+                            "name": "Size",
+                            "entries": [
+                                "Your size is Medium."
+                            ],
+                            "type": "entries"
+                        }
+                    }
+                ]
+            },
+            "_preserve": {
+                "reprintedAs": true
+            }
+        },
+        "slug": "hobgoblin_erlw_generic",
+        "type": "generic"
+    }
+]

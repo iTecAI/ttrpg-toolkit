@@ -1,0 +1,60 @@
+[
+    {
+        "name": "Changeling",
+        "source": "UAEberron",
+        "page": 1,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
+            {
+                "dex": 1,
+                "cha": 1
+            }
+        ],
+        "skillProficiencies": [
+            {
+                "deception": true
+            }
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "anyStandard": 2
+            }
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "Changelings are built much like humans, but a little leaner. Your size is Medium"
+                ]
+            },
+            {
+                "name": "Duplicity",
+                "entries": [
+                    "You gain proficiency in the {@skill Deception} skill."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Shapechanger",
+                "entries": [
+                    "As an action, you can polymorph into any humanoid of your size that you have seen, or back into your true form. However, your equipment does not change with you. If you die, you revert to your natural appearance."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common and two other languages of your choice."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "changeling_uaeberron_generic",
+        "type": "generic"
+    }
+]

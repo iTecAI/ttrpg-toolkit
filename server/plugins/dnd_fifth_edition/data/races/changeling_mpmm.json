@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Changeling",
+        "source": "MPMM",
+        "page": 10,
+        "lineage": "VRGR",
+        "creatureTypes": [
+            "fey"
+        ],
+        "size": [
+            "S",
+            "M"
+        ],
+        "speed": 30,
+        "skillProficiencies": [
+            {
+                "choose": {
+                    "from": [
+                        "deception",
+                        "insight",
+                        "intimidation",
+                        "performance",
+                        "persuasion"
+                    ],
+                    "count": 2
+                }
+            }
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Creature Type",
+                "entries": [
+                    "You are a Fey."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "You are Medium or Small. You choose the size when you select this race."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Changeling Instincts",
+                "entries": [
+                    "Thanks to your connection to the fey realm, you gain proficiency with two of the following skills of your choice: {@skill Deception}, {@skill Insight}, {@skill Intimidation}, {@skill Performance}, or {@skill Persuasion}."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Shapechanger",
+                "entries": [
+                    "As an action, you change your appearance and your voice. You determine the specifics of the changes, including your coloration, hair length, and sex. You can also adjust your height between Medium and Small. You can make yourself appear as a member of another race, though none of your game statistics change. You can't duplicate the appearance of an individual you've never seen, and you must adopt a form that has the same basic arrangement of limbs that you have. Your clothing and equipment aren't changed by this trait.",
+                    "You stay in the new form until you use an action to revert to your true form or until you die."
+                ]
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "changeling_mpmm_generic",
+        "type": "generic"
+    }
+]

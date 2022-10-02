@@ -1,0 +1,1280 @@
+[
+    {
+        "name": "Elf",
+        "source": "PHB",
+        "page": 21,
+        "srd": true,
+        "basicRules": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
+            {
+                "dex": 2
+            }
+        ],
+        "age": {
+            "mature": 100,
+            "max": 750
+        },
+        "darkvision": 60,
+        "traitTags": [
+            "Improved Resting"
+        ],
+        "skillProficiencies": [
+            {
+                "perception": true
+            }
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "elvish": true
+            }
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/elf.mp3"
+        },
+        "entries": [
+            {
+                "name": "Age",
+                "type": "entries",
+                "entries": [
+                    "Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "Elves range from under 5 to over 6 feet tall and have slender builds. Your size is Medium."
+                ]
+            },
+            {
+                "name": "Darkvision",
+                "entries": [
+                    "Accustomed to twilit forests and the night sky, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Keen Senses",
+                "entries": [
+                    "You have proficiency in the {@skill Perception} skill."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Fey Ancestry",
+                "entries": [
+                    "You have advantage on saving throws against being {@condition charmed}, and magic can't put you to sleep."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Trance",
+                "entries": [
+                    "Elves don't need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The Common word for such meditation is \"trance.\") While meditating, you can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep.",
+                    "{@note If you meditate during a long rest, you finish the rest after only 4 hours. You otherwise obey all the rules for a long rest; only the duration is changed.}"
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common and Elvish. Elvish is fluid, with subtle intonations and intricate grammar. Elven literature is rich and varied, and their songs and poems are famous among other races. Many bards learn their language so they can add Elvish ballads to their repertoires."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "elf_phb_generic",
+        "type": "generic"
+    },
+    {
+        "name": "Avariel",
+        "source": "UAElfSubraces",
+        "raceName": "Elf",
+        "raceSource": "PHB",
+        "page": 1,
+        "speed": {
+            "walk": 30,
+            "fly": 30
+        },
+        "languageProficiencies": [
+            {
+                "auran": true
+            }
+        ],
+        "entries": [
+            {
+                "name": "Extra Language",
+                "entries": [
+                    "You can speak, read, and write Auran."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Flight",
+                "entries": [
+                    "You have a flying speed of 30 feet. To use this speed, you can't be wearing medium or heavy armor."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "elf_phb_avariel_uaelfsubraces",
+        "type": "subrace"
+    },
+    {
+        "name": "Drow",
+        "alias": [
+            "Dark"
+        ],
+        "source": "PHB",
+        "raceName": "Elf",
+        "raceSource": "PHB",
+        "page": 24,
+        "ability": [
+            {
+                "cha": 1
+            }
+        ],
+        "heightAndWeight": {
+            "baseHeight": 53,
+            "heightMod": "2d6",
+            "baseWeight": 75,
+            "weightMod": "1d6"
+        },
+        "darkvision": 120,
+        "traitTags": [
+            "Sunlight Sensitivity"
+        ],
+        "weaponProficiencies": [
+            {
+                "rapier|phb": true,
+                "shortsword|phb": true,
+                "hand crossbow|phb": true
+            }
+        ],
+        "additionalSpells": [
+            {
+                "innate": {
+                    "3": {
+                        "daily": {
+                            "1": [
+                                "faerie fire"
+                            ]
+                        }
+                    },
+                    "5": {
+                        "daily": {
+                            "1": [
+                                "darkness"
+                            ]
+                        }
+                    }
+                },
+                "ability": "cha",
+                "known": {
+                    "1": [
+                        "dancing lights#c"
+                    ]
+                }
+            }
+        ],
+        "entries": [
+            {
+                "name": "Superior Darkvision",
+                "entries": [
+                    "Accustomed to the depths of the Underdark, you have superior vision in dark and dim conditions. You can see in dim light within 120 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+                ],
+                "data": {
+                    "overwrite": "Darkvision"
+                },
+                "type": "entries"
+            },
+            {
+                "name": "Sunlight Sensitivity",
+                "entries": [
+                    "You have disadvantage on attack rolls and on Wisdom ({@skill Perception}) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Drow Magic",
+                "entries": [
+                    "You know the {@spell dancing lights} cantrip. When you reach 3rd level, you can cast the {@spell faerie fire} spell once with this trait; you regain the ability to cast it when you finish a long rest. When you reach 5th level, you can also cast the {@spell darkness} spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Drow Weapon Training",
+                "entries": [
+                    "You have proficiency with {@item rapier|phb|rapiers}, {@item shortsword|phb|shortswords}, and {@item hand crossbow|phb|hand crossbows}."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "slug": "elf_phb_drow_phb",
+        "type": "subrace"
+    },
+    {
+        "name": "Eladrin",
+        "source": "DMG",
+        "raceName": "Elf",
+        "raceSource": "PHB",
+        "page": 286,
+        "ability": [
+            {
+                "int": 1
+            }
+        ],
+        "weaponProficiencies": [
+            {
+                "longsword|phb": true,
+                "shortsword|phb": true,
+                "shortbow|phb": true,
+                "longbow|phb": true
+            }
+        ],
+        "additionalSpells": [
+            {
+                "ability": "cha",
+                "known": {
+                    "1": {
+                        "rest": {
+                            "1": [
+                                "misty step"
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "entries": [
+            {
+                "name": "Elf Weapon Training",
+                "entries": [
+                    "You have proficiency with the {@item longsword|phb}, {@item shortsword|phb}, {@item shortbow|phb}, and {@item longbow|phb}."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Fey Step",
+                "entries": [
+                    "You can cast the {@spell misty step} spell once using this trait. You regain the ability to do so when you finish a short or long rest."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "elf_phb_eladrin_dmg",
+        "type": "subrace"
+    },
+    {
+        "name": "Eladrin",
+        "source": "MTF",
+        "raceName": "Elf",
+        "raceSource": "PHB",
+        "page": 61,
+        "reprintedAs": [
+            "Eladrin|MPMM"
+        ],
+        "ability": [
+            {
+                "cha": 1
+            }
+        ],
+        "heightAndWeight": {
+            "baseHeight": 54,
+            "heightMod": "2d12",
+            "baseWeight": 90,
+            "weightMod": "1d4"
+        },
+        "entries": [
+            "{@i Choose your eladrin's season: autumn, winter, spring, or summer. When finishing a long rest, you can change your season. See the \"Info\" tab for more information.}",
+            {
+                "name": "Fey Step",
+                "entries": [
+                    "As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. Once you use this trait, you can't do so again until you finish a short or long rest.",
+                    "When you reach 3rd level, your Fey Step gains an additional effect based on your season; if the effect requires a saving throw, the DC equals 8 + your proficiency bonus + your Charisma modifier:",
+                    {
+                        "type": "list",
+                        "style": "list-hang-notitle",
+                        "items": [
+                            {
+                                "type": "item",
+                                "name": "Autumn",
+                                "entry": "Immediately after you use your Fey Step, up to two creatures of your choice that you can see within 10 feet of you must succeed on a Wisdom saving throw or be {@condition charmed} by you for 1 minute, or until you or your companions deal any damage to it."
+                            },
+                            {
+                                "type": "item",
+                                "name": "Winter",
+                                "entry": "When you use your Fey Step, one creature of your choice that you can see within 5 feet of you before you teleport must succeed on a Wisdom saving throw or be {@condition frightened} of you until the end of your next turn."
+                            },
+                            {
+                                "type": "item",
+                                "name": "Spring",
+                                "entry": "When you use your Fey Step, you can touch one willing creature within 5 feet of you. That creature then teleports instead of you, appearing in an unoccupied space of your choice that you can see within 30 feet of you."
+                            },
+                            {
+                                "type": "item",
+                                "name": "Summer",
+                                "entry": "Immediately after you use your Fey Step, each creature of your choice that you can see within 5 feet of you takes fire damage equal to your Charisma modifier (minimum of 1 damage)."
+                            }
+                        ]
+                    }
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "elf_phb_eladrin_mtf",
+        "type": "subrace"
+    },
+    {
+        "name": "Eladrin",
+        "source": "UAEladrinAndGith",
+        "raceName": "Elf",
+        "raceSource": "PHB",
+        "page": 1,
+        "ability": [
+            {
+                "choose": {
+                    "from": [
+                        "int",
+                        "cha"
+                    ],
+                    "count": 1
+                }
+            }
+        ],
+        "additionalSpells": [
+            {
+                "known": {
+                    "1": [
+                        "friends#c",
+                        "chill touch#c",
+                        "minor illusion#c",
+                        "fire bolt#c"
+                    ]
+                }
+            }
+        ],
+        "entries": [
+            {
+                "name": "Fey Step",
+                "entries": [
+                    "As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. Once you use this trait, you can't do so again until you finish a short or long rest."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Shifting Seasons",
+                "entries": [
+                    "At the end of each short or long rest, you can align yourself with the magic of one season, regardless of the season that is dominating your personality. Doing so allows you to cast a certain cantrip, as shown in the Shifting Seasons Cantrips table. When you align yourself with a season's magic, you lose the cantrip associated with the previous season and gain the cantrip associated with the new season.",
+                    "Your spellcasting ability for these cantrips is Intelligence or Charisma, whichever is higher.",
+                    {
+                        "type": "table",
+                        "caption": "Shifting Seasons Cantrips",
+                        "colLabels": [
+                            "Season",
+                            "Cantrip"
+                        ],
+                        "colStyles": [
+                            "col-6 text-center",
+                            "col-6 text-center"
+                        ],
+                        "rows": [
+                            [
+                                "Autumn",
+                                "{@spell Friends}"
+                            ],
+                            [
+                                "Winter",
+                                "{@spell Chill touch}"
+                            ],
+                            [
+                                "Spring",
+                                "{@spell Minor illusion}"
+                            ],
+                            [
+                                "Summer",
+                                "{@spell Fire bolt}"
+                            ]
+                        ]
+                    }
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "elf_phb_eladrin_uaeladrinandgith",
+        "type": "subrace"
+    },
+    {
+        "name": "Grugach",
+        "source": "UAElfSubraces",
+        "raceName": "Elf",
+        "raceSource": "PHB",
+        "page": 1,
+        "ability": [
+            {
+                "str": 1
+            }
+        ],
+        "languageProficiencies": [
+            {
+                "sylvan": true,
+                "elvish": true,
+                "anyStandard": 1
+            }
+        ],
+        "weaponProficiencies": [
+            {
+                "spear|phb": true,
+                "shortbow|phb": true,
+                "longbow|phb": true,
+                "net|phb": true
+            }
+        ],
+        "additionalSpells": [
+            {
+                "ability": "wis",
+                "known": {
+                    "1": {
+                        "_": [
+                            {
+                                "choose": "level=0|class=Druid"
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "entries": [
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Sylvan, Elvish, and one extra language of your choice. Elvish is fluid, with subtle intonations and intricate grammar. Elven literature is rich and varied, and their songs and poems are famous among other races. Many bards learn their language so they can add Elvish ballads to their repertoires."
+                ],
+                "data": {
+                    "overwrite": "Languages"
+                },
+                "type": "entries"
+            },
+            {
+                "name": "Grugach Weapon Training",
+                "entries": [
+                    "You have proficiency with the {@item spear|phb}, {@item shortbow|phb}, {@item longbow|phb}, and {@item net|phb}."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Cantrip",
+                "entries": [
+                    "You know one cantrip of your choice from the {@filter druid spell list|spells|class=druid|level=0}. Wisdom is your spellcasting ability for it."
+                ],
+                "type": "entries"
+            }
+        ],
+        "overwrite": {
+            "languageProficiencies": true
+        },
+        "slug": "elf_phb_grugach_uaelfsubraces",
+        "type": "subrace"
+    },
+    {
+        "name": "High",
+        "source": "PHB",
+        "raceName": "Elf",
+        "raceSource": "PHB",
+        "page": 23,
+        "srd": true,
+        "basicRules": true,
+        "speed": 30,
+        "ability": [
+            {
+                "int": 1
+            }
+        ],
+        "heightAndWeight": {
+            "baseHeight": 54,
+            "heightMod": "2d10",
+            "baseWeight": 90,
+            "weightMod": "1d4"
+        },
+        "weaponProficiencies": [
+            {
+                "longsword|phb": true,
+                "shortsword|phb": true,
+                "shortbow|phb": true,
+                "longbow|phb": true
+            }
+        ],
+        "additionalSpells": [
+            {
+                "ability": "int",
+                "known": {
+                    "1": {
+                        "_": [
+                            {
+                                "choose": "level=0|class=Wizard"
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "entries": [
+            {
+                "name": "Elf Weapon Training",
+                "entries": [
+                    "You have proficiency with the {@item longsword|phb}, {@item shortsword|phb}, {@item shortbow|phb}, and {@item longbow|phb}."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Cantrip",
+                "entries": [
+                    "You know one {@filter cantrip of your choice from the wizard spell list|spells|level=0|class=Wizard}. Intelligence is your spellcasting ability for it."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Extra Language",
+                "entries": [
+                    "You can speak, read, and write one extra language of your choosing."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "elf_phb_high_phb",
+        "type": "subrace"
+    },
+    {
+        "name": "High; Aereni",
+        "source": "UAWGE",
+        "raceName": "Elf",
+        "raceSource": "PHB",
+        "page": 73,
+        "speed": 30,
+        "ability": [
+            {
+                "int": 1
+            }
+        ],
+        "traitTags": [
+            "Skill Proficiency",
+            "Tool Proficiency"
+        ],
+        "skillToolLanguageProficiencies": [
+            {
+                "choose": [
+                    {
+                        "from": [
+                            "anySkill",
+                            "anyTool"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "additionalSpells": [
+            {
+                "ability": "int",
+                "known": {
+                    "1": {
+                        "_": [
+                            {
+                                "choose": "level=0|class=Wizard"
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "entries": [
+            {
+                "name": "Aereni Training",
+                "entries": [
+                    "Choose one skill or {@book tool|phb|5|tools} proficiency. Your proficiency bonus is doubled for any ability check you make that uses this chosen proficiency."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Cantrip",
+                "entries": [
+                    "You know one {@filter cantrip of your choice from the wizard spell list|spells|level=0|class=Wizard}. Intelligence is your spellcasting ability for it."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Extra Language",
+                "entries": [
+                    "You can speak, read, and write one extra language of your choosing."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "elf_phb_high__aereni_uawge",
+        "type": "subrace"
+    },
+    {
+        "name": "High; Valenar",
+        "source": "UAWGE",
+        "raceName": "Elf",
+        "raceSource": "PHB",
+        "page": 73,
+        "speed": 30,
+        "ability": [
+            {
+                "int": 1
+            }
+        ],
+        "weaponProficiencies": [
+            {
+                "scimitar|phb": true,
+                "double-bladed scimitar|erlw": true,
+                "longbow|phb": true,
+                "shortbow|phb": true
+            }
+        ],
+        "additionalSpells": [
+            {
+                "ability": "int",
+                "known": {
+                    "1": {
+                        "_": [
+                            {
+                                "choose": "level=0|class=Wizard"
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "entries": [
+            {
+                "name": "Valenar Weapon Training",
+                "entries": [
+                    "A Valenar elf gains proficiency with the {@item scimitar|phb}, {@item Double-Bladed Scimitar|erlw|double scimitar}, {@item longbow|phb}, and {@item shortbow|phb}."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Cantrip",
+                "entries": [
+                    "You know one {@filter cantrip of your choice from the wizard spell list|spells|level=0|class=Wizard}. Intelligence is your spellcasting ability for it."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Extra Language",
+                "entries": [
+                    "You can speak, read, and write one extra language of your choosing."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "elf_phb_high__valenar_uawge",
+        "type": "subrace"
+    },
+    {
+        "name": "Mark of Shadow",
+        "source": "ERLW",
+        "raceName": "Elf",
+        "raceSource": "PHB",
+        "page": 49,
+        "otherSources": [
+            {
+                "source": "UAWGE",
+                "page": 105
+            }
+        ],
+        "ability": [
+            {
+                "cha": 1
+            }
+        ],
+        "traitTags": [
+            "Dragonmark",
+            "Skill Bonus Dice"
+        ],
+        "additionalSpells": [
+            {
+                "innate": {
+                    "3": {
+                        "daily": {
+                            "1": [
+                                "invisibility"
+                            ]
+                        }
+                    }
+                },
+                "expanded": {
+                    "s1": [
+                        "disguise self",
+                        "silent image"
+                    ],
+                    "s2": [
+                        "darkness",
+                        "pass without trace"
+                    ],
+                    "s3": [
+                        "clairvoyance",
+                        "major image"
+                    ],
+                    "s4": [
+                        "greater invisibility",
+                        "hallucinatory terrain"
+                    ],
+                    "s5": [
+                        "mislead"
+                    ]
+                },
+                "ability": "cha",
+                "known": {
+                    "1": [
+                        "minor illusion#c"
+                    ]
+                }
+            }
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Cunning Intuition",
+                "entries": [
+                    "When you make a Charisma ({@skill Performance}) or Dexterity ({@skill Stealth}) check, you can roll a {@dice d4} and add the number rolled to the ability check."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Shape Shadows",
+                "entries": [
+                    "You know the {@spell minor illusion} cantrip. Starting at 3rd level, you can cast the {@spell invisibility} spell once with this trait, and you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Spells of the Mark",
+                "entries": [
+                    "If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Shadow Spells table are added to the spell list of your spellcasting class.",
+                    {
+                        "type": "table",
+                        "caption": "Mark of Shadow Spells",
+                        "colLabels": [
+                            "Spell Level",
+                            "Spells"
+                        ],
+                        "colStyles": [
+                            "col-2 text-center",
+                            "col-10"
+                        ],
+                        "rows": [
+                            [
+                                "1st",
+                                "{@spell disguise self}, {@spell silent image}"
+                            ],
+                            [
+                                "2nd",
+                                "{@spell darkness}, {@spell pass without trace}"
+                            ],
+                            [
+                                "3rd",
+                                "{@spell clairvoyance}, {@spell major image}"
+                            ],
+                            [
+                                "4th",
+                                "{@spell greater invisibility}, {@spell hallucinatory terrain}"
+                            ],
+                            [
+                                "5th",
+                                "{@spell mislead}"
+                            ]
+                        ]
+                    }
+                ]
+            }
+        ],
+        "slug": "elf_phb_mark_of_shadow_erlw",
+        "type": "subrace"
+    },
+    {
+        "name": "Pallid",
+        "source": "EGW",
+        "raceName": "Elf",
+        "raceSource": "PHB",
+        "page": 21,
+        "ability": [
+            {
+                "wis": 1
+            }
+        ],
+        "heightAndWeight": {
+            "baseHeight": 54,
+            "heightMod": "2d10",
+            "baseWeight": 90,
+            "weightMod": "1d4"
+        },
+        "additionalSpells": [
+            {
+                "innate": {
+                    "3": {
+                        "daily": {
+                            "1": [
+                                "sleep"
+                            ]
+                        }
+                    },
+                    "5": {
+                        "daily": {
+                            "1": [
+                                "invisibility"
+                            ]
+                        }
+                    }
+                },
+                "ability": "wis",
+                "known": {
+                    "1": [
+                        "light#c"
+                    ]
+                }
+            }
+        ],
+        "entries": [
+            {
+                "name": "Incisive Sense",
+                "entries": [
+                    "You have advantage on Intelligence ({@skill Investigation}) and Wisdom ({@skill Insight}) checks."
+                ],
+                "type": "entries"
+            },
+            {
+                "type": "entries",
+                "name": "Blessing of the Moon Weaver",
+                "entries": [
+                    "You know the {@spell light} cantrip. When you reach 3rd level, you can cast the {@spell sleep} spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the {@spell invisibility} spell (targeting yourself only) once with this trait and regain the ability to do so when you finish a long rest. Casting these spells with this trait doesn't require material components. Wisdom is your spellcasting ability for these spells."
+                ]
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "elf_phb_pallid_egw",
+        "type": "subrace"
+    },
+    {
+        "name": "Sea",
+        "source": "MTF",
+        "raceName": "Elf",
+        "raceSource": "PHB",
+        "page": 62,
+        "otherSources": [
+            {
+                "source": "EGW",
+                "page": 163
+            }
+        ],
+        "reprintedAs": [
+            "Sea Elf|MPMM"
+        ],
+        "speed": {
+            "walk": 30,
+            "swim": 30
+        },
+        "ability": [
+            {
+                "con": 1
+            }
+        ],
+        "heightAndWeight": {
+            "baseHeight": 54,
+            "heightMod": "2d8",
+            "baseWeight": 90,
+            "weightMod": "1d4"
+        },
+        "traitTags": [
+            "Amphibious"
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "elvish": true,
+                "aquan": true
+            }
+        ],
+        "weaponProficiencies": [
+            {
+                "spear|phb": true,
+                "trident|phb": true,
+                "light crossbow|phb": true,
+                "net|phb": true
+            }
+        ],
+        "entries": [
+            {
+                "name": "Sea Elf Training",
+                "entries": [
+                    "You have proficiency with the {@item spear|phb}, {@item trident|phb}, {@item light crossbow|phb}, and {@item net|phb}."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Child of the Sea",
+                "entries": [
+                    "You have a swimming speed of 30 feet, and you can breathe air and water."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Friend of the Sea",
+                "entries": [
+                    "Using gestures and sounds, you can communicate simple ideas with any beast that has an innate swimming speed."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Extra Language",
+                "entries": [
+                    "You can speak, read, and write Aquan."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "slug": "elf_phb_sea_mtf",
+        "type": "subrace"
+    },
+    {
+        "name": "Sea",
+        "source": "UAElfSubraces",
+        "raceName": "Elf",
+        "raceSource": "PHB",
+        "page": 1,
+        "speed": {
+            "walk": 30,
+            "swim": 30
+        },
+        "ability": [
+            {
+                "con": 1
+            }
+        ],
+        "traitTags": [
+            "Amphibious"
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "elvish": true,
+                "aquan": true
+            }
+        ],
+        "weaponProficiencies": [
+            {
+                "spear|phb": true,
+                "trident|phb": true,
+                "light crossbow|phb": true,
+                "net|phb": true
+            }
+        ],
+        "entries": [
+            {
+                "name": "Extra Language",
+                "entries": [
+                    "You can speak, read, and write Aquan."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Sea Elf Weapon Training",
+                "entries": [
+                    "You have proficiency with the {@item spear|phb}, {@item trident|phb}, {@item light crossbow|phb}, and {@item net|phb}."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Child of the Sea",
+                "entries": [
+                    "You have a swimming speed of 30 feet, and you can breathe air and water."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Friend of the Sea",
+                "entries": [
+                    "Using gestures and sounds, you can communicate simple ideas with Small or smaller beasts that have an inborn swimming speed."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "elf_phb_sea_uaelfsubraces",
+        "type": "subrace"
+    },
+    {
+        "name": "Shadar-kai",
+        "source": "MTF",
+        "raceName": "Elf",
+        "raceSource": "PHB",
+        "page": 62,
+        "reprintedAs": [
+            "Shadar-Kai|MPMM"
+        ],
+        "ability": [
+            {
+                "con": 1
+            }
+        ],
+        "heightAndWeight": {
+            "baseHeight": 56,
+            "heightMod": "2d8",
+            "baseWeight": 90,
+            "weightMod": "1d4"
+        },
+        "resist": [
+            "necrotic"
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Necrotic Resistance",
+                "entries": [
+                    "You have resistance to necrotic damage."
+                ]
+            },
+            {
+                "name": "Blessing of the Raven Queen",
+                "entries": [
+                    "As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. Once you use this trait, you can't do so again until you finish a long rest.",
+                    "Starting at 3rd level, you also gain resistance to all damage when you teleport using this trait. The resistance lasts until the start of your next turn. During that time, you appear ghostly and translucent."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "slug": "elf_phb_shadar_kai_mtf",
+        "type": "subrace"
+    },
+    {
+        "name": "Shadar-kai",
+        "source": "UAElfSubraces",
+        "raceName": "Elf",
+        "raceSource": "PHB",
+        "page": 2,
+        "ability": [
+            {
+                "cha": 1
+            }
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "elvish": true,
+                "anyStandard": 1
+            }
+        ],
+        "additionalSpells": [
+            {
+                "ability": "cha",
+                "known": {
+                    "1": [
+                        "chill touch#c"
+                    ]
+                }
+            },
+            {
+                "ability": "cha",
+                "known": {
+                    "1": [
+                        "spare the dying#c"
+                    ]
+                }
+            },
+            {
+                "ability": "cha",
+                "known": {
+                    "1": [
+                        "thaumaturgy#c"
+                    ]
+                }
+            }
+        ],
+        "entries": [
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common, Elvish, and one extra language of your choice. Elvish is fluid, with subtle intonations and intricate grammar. Elven literature is rich and varied, and their songs and poems are famous among other races. Many bards learn their language so they can add Elvish ballads to their repertoires."
+                ],
+                "data": {
+                    "overwrite": "Languages"
+                },
+                "type": "entries"
+            },
+            {
+                "name": "Cantrip",
+                "entries": [
+                    "You know one of the following cantrips of your choice: {@spell chill touch}, {@spell spare the dying}, or {@spell thaumaturgy}. Charisma is your spellcasting ability for it."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Blessing of the Raven Queen",
+                "entries": [
+                    "As a bonus action, you can magically teleport up to 15 feet to an unoccupied space you can see, and you gain resistance to all damage until the start of your next turn. During that time, you appear ghostly and translucent. Once you use this ability, you can't use it again until you finish a short or long rest."
+                ],
+                "type": "entries"
+            }
+        ],
+        "overwrite": {
+            "languageProficiencies": true
+        },
+        "slug": "elf_phb_shadar_kai_uaelfsubraces",
+        "type": "subrace"
+    },
+    {
+        "name": "Wood",
+        "source": "PHB",
+        "raceName": "Elf",
+        "raceSource": "PHB",
+        "page": 24,
+        "basicRules": true,
+        "speed": 35,
+        "ability": [
+            {
+                "wis": 1
+            }
+        ],
+        "heightAndWeight": {
+            "baseHeight": 54,
+            "heightMod": "2d10",
+            "baseWeight": 100,
+            "weightMod": "1d4"
+        },
+        "weaponProficiencies": [
+            {
+                "longsword|phb": true,
+                "shortsword|phb": true,
+                "shortbow|phb": true,
+                "longbow|phb": true
+            }
+        ],
+        "entries": [
+            {
+                "name": "Elf Weapon Training",
+                "entries": [
+                    "You have proficiency with the {@item longsword|phb}, {@item shortsword|phb}, {@item shortbow|phb}, and {@item longbow|phb}."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Fleet of Foot",
+                "entries": [
+                    "Your base walking speed increases to 35 feet."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Mask of the Wild",
+                "entries": [
+                    "You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "elf_phb_wood_phb",
+        "type": "subrace"
+    },
+    {
+        "name": "Wood; Aereni",
+        "source": "UAWGE",
+        "raceName": "Elf",
+        "raceSource": "PHB",
+        "page": 73,
+        "speed": 35,
+        "ability": [
+            {
+                "wis": 1
+            }
+        ],
+        "entries": [
+            {
+                "name": "Aereni Training",
+                "entries": [
+                    "Choose one skill or {@book tool|phb|5|tools} proficiency. Your proficiency bonus is doubled for any ability check you make that uses this chosen proficiency."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Fleet of Foot",
+                "entries": [
+                    "Your base walking speed increases to 35 feet."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Mask of the Wild",
+                "entries": [
+                    "You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "elf_phb_wood__aereni_uawge",
+        "type": "subrace"
+    },
+    {
+        "name": "Wood; Valenar",
+        "source": "UAWGE",
+        "raceName": "Elf",
+        "raceSource": "PHB",
+        "page": 73,
+        "speed": 35,
+        "ability": [
+            {
+                "wis": 1
+            }
+        ],
+        "weaponProficiencies": [
+            {
+                "scimitar|phb": true,
+                "double-bladed scimitar|erlw": true,
+                "longbow|phb": true,
+                "shortbow|phb": true
+            }
+        ],
+        "entries": [
+            {
+                "name": "Valenar Weapon Training",
+                "entries": [
+                    "A Valenar elf gains proficiency with the {@item scimitar|phb}, {@item Double-Bladed Scimitar|erlw|double scimitar}, {@item longbow|phb}, and {@item shortbow|phb}."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Fleet of Foot",
+                "entries": [
+                    "Your base walking speed increases to 35 feet."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Mask of the Wild",
+                "entries": [
+                    "You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "elf_phb_wood__valenar_uawge",
+        "type": "subrace"
+    }
+]

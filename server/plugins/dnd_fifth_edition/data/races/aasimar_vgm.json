@@ -1,0 +1,196 @@
+[
+    {
+        "name": "Aasimar",
+        "source": "VGM",
+        "page": 104,
+        "otherSources": [
+            {
+                "source": "EGW",
+                "page": 166
+            }
+        ],
+        "reprintedAs": [
+            "Aasimar|MPMM"
+        ],
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
+            {
+                "cha": 2
+            }
+        ],
+        "heightAndWeight": {
+            "baseHeight": 56,
+            "heightMod": "2d10",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 160
+        },
+        "darkvision": 60,
+        "languageProficiencies": [
+            {
+                "common": true,
+                "celestial": true
+            }
+        ],
+        "resist": [
+            "necrotic",
+            "radiant"
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/aasimar.mp3"
+        },
+        "additionalSpells": [
+            {
+                "ability": "cha",
+                "known": {
+                    "1": [
+                        "light#c"
+                    ]
+                }
+            }
+        ],
+        "entries": [
+            {
+                "name": "Age",
+                "type": "entries",
+                "entries": [
+                    "Aasimar mature at the same rate as humans, but they can live up to 160 years."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "Aasimar have the same range of height and weight as humans."
+                ]
+            },
+            {
+                "name": "Darkvision",
+                "entries": [
+                    "Blessed with a radiant soul, your vision can easily cut through darkness. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Celestial Resistance",
+                "entries": [
+                    "You have resistance to necrotic damage and radiant damage."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Healing Hands",
+                "entries": [
+                    "As an action, you can touch a creature and cause it to regain a number of hit points equal to your level. Once you use this trait, you can't use it again until you finish a long rest."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Light Bearer",
+                "entries": [
+                    "You know the {@spell light} cantrip. Charisma is your spellcasting ability for it."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common and Celestial."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "aasimar_vgm_generic",
+        "type": "generic"
+    },
+    {
+        "name": "Fallen",
+        "source": "VGM",
+        "raceName": "Aasimar",
+        "raceSource": "VGM",
+        "page": 105,
+        "ability": [
+            {
+                "str": 1
+            }
+        ],
+        "entries": [
+            {
+                "name": "Necrotic Shroud",
+                "entries": [
+                    "Starting at 3rd level, you can use your action to unleash the divine energy within yourself, causing your eyes to turn into pools of darkness and two skeletal, ghostly, flightless wings to sprout from your back. The instant you transform, other creatures within 10 feet of you that can see you must succeed on a Charisma saving throw (DC 8 + your proficiency bonus + your Charisma modifier) or become {@condition frightened} of you until the end of your next turn.",
+                    "Your transformation lasts for 1 minute or until you end it as a bonus action. During it, once on each of your turns, you can deal extra necrotic damage to one target when you deal damage to it with an attack or a spell. The extra necrotic damage equals your level.",
+                    "Once you use this trait, you can't use it again until you finish a long rest."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "aasimar_vgm_fallen_vgm",
+        "type": "subrace"
+    },
+    {
+        "name": "Protector",
+        "source": "VGM",
+        "raceName": "Aasimar",
+        "raceSource": "VGM",
+        "page": 105,
+        "ability": [
+            {
+                "wis": 1
+            }
+        ],
+        "entries": [
+            {
+                "name": "Radiant Soul",
+                "entries": [
+                    "Starting at 3rd level, you can use your action to unleash the divine energy within yourself, causing your eyes to glimmer and two luminous, incorporeal wings to sprout from your back.",
+                    "Your transformation lasts for 1 minute or until you end it as a bonus action. During it, you have a flying speed of 30 feet, and once on each of your turns, you can deal extra radiant damage to one target when you deal damage to it with an attack or a spell. The extra radiant damage equals your level.",
+                    "Once you use this trait, you can't use it again until you finish a long rest."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "aasimar_vgm_protector_vgm",
+        "type": "subrace"
+    },
+    {
+        "name": "Scourge",
+        "source": "VGM",
+        "raceName": "Aasimar",
+        "raceSource": "VGM",
+        "page": 105,
+        "ability": [
+            {
+                "con": 1
+            }
+        ],
+        "entries": [
+            {
+                "name": "Radiant Consumption",
+                "entries": [
+                    "Starting at 3rd level, you can use your action to unleash the divine energy within yourself, causing a searing light to radiate from you, pour out of your eyes and mouth, and threaten to char you.",
+                    "Your transformation lasts for 1 minute or until you end it as a bonus action. During it, you shed bright light in a 10-foot radius and dim light for an additional 10 feet, and at the end of each of your turns, you and each creature within 10 feet of you take radiant damage equal to half your level (rounded up). In addition, once on each of your turns, you can deal extra radiant damage to one target when you deal damage to it with an attack or a spell. The extra radiant damage equals your level.",
+                    "Once you use this trait, you can't use it again until you finish a long rest."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "aasimar_vgm_scourge_vgm",
+        "type": "subrace"
+    }
+]

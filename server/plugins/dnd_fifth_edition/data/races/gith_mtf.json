@@ -1,0 +1,239 @@
+[
+    {
+        "name": "Gith",
+        "source": "MTF",
+        "page": 96,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
+            {
+                "int": 1
+            }
+        ],
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "languageProficiencies": [
+            {
+                "common": true,
+                "other": true
+            }
+        ],
+        "entries": [
+            {
+                "name": "Age",
+                "type": "entries",
+                "entries": [
+                    "Gith reach adulthood in their late teens and live for about a century."
+                ]
+            },
+            {
+                "name": "Size",
+                "type": "entries",
+                "entries": [
+                    "Gith are taller and leaner than humans, with most a slender 6 feet in height."
+                ]
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common and Gith."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "slug": "gith_mtf_generic",
+        "type": "generic"
+    },
+    {
+        "name": "Githyanki",
+        "source": "MTF",
+        "raceName": "Gith",
+        "raceSource": "MTF",
+        "page": 96,
+        "reprintedAs": [
+            "Githyanki|MPMM"
+        ],
+        "ability": [
+            {
+                "str": 2
+            }
+        ],
+        "heightAndWeight": {
+            "baseHeight": 60,
+            "heightMod": "2d12",
+            "baseWeight": 100,
+            "weightMod": "2d4"
+        },
+        "traitTags": [
+            "Skill Proficiency",
+            "Tool Proficiency"
+        ],
+        "weaponProficiencies": [
+            {
+                "shortsword|phb": true,
+                "longsword|phb": true,
+                "greatsword|phb": true
+            }
+        ],
+        "armorProficiencies": [
+            {
+                "light": true,
+                "medium": true
+            }
+        ],
+        "skillToolLanguageProficiencies": [
+            {
+                "choose": [
+                    {
+                        "from": [
+                            "anySkill",
+                            "anyTool"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "additionalSpells": [
+            {
+                "innate": {
+                    "3": {
+                        "daily": {
+                            "1": [
+                                "jump"
+                            ]
+                        }
+                    },
+                    "5": {
+                        "daily": {
+                            "1": [
+                                "misty step"
+                            ]
+                        }
+                    }
+                },
+                "ability": "int",
+                "known": {
+                    "1": [
+                        "mage hand#c"
+                    ]
+                }
+            }
+        ],
+        "entries": [
+            {
+                "name": "Alignment",
+                "type": "entries",
+                "entries": [
+                    "Githyanki tend toward lawful evil. They are aggressive and arrogant, and they remain the faithful servants of their lich-queen, Vlaakith. Renegade githyanki tend toward chaos."
+                ]
+            },
+            {
+                "name": "Decadent Mastery",
+                "entries": [
+                    "You learn one language of your choice, and you are proficient with one skill or {@book tool|phb|5|tools} of your choice. In the timeless city of Tu'narath, githyanki have bountiful time to master odd bits of knowledge."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Martial Prodigy",
+                "entries": [
+                    "You are proficient with light and medium armor and with {@item shortsword|phb|shortswords}, {@item longsword|phb|longswords}, and {@item greatsword|phb|greatswords}."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Githyanki Psionics",
+                "entries": [
+                    "You know the {@spell mage hand} cantrip, and the hand is {@condition invisible} when you cast the cantrip with this trait.",
+                    "When you reach 3rd level, you can cast {@spell jump} once with this trait, and you regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the {@spell misty step} spell once with this trait, and you regain the ability to do so when you finish a long rest.",
+                    "Intelligence is your spellcasting ability for these spells. When you cast them with this trait, they don't require components."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "gith_mtf_githyanki_mtf",
+        "type": "subrace"
+    },
+    {
+        "name": "Githzerai",
+        "source": "MTF",
+        "raceName": "Gith",
+        "raceSource": "MTF",
+        "page": 96,
+        "reprintedAs": [
+            "Githzerai|MPMM"
+        ],
+        "ability": [
+            {
+                "wis": 2
+            }
+        ],
+        "heightAndWeight": {
+            "baseHeight": 59,
+            "heightMod": "2d12",
+            "baseWeight": 90,
+            "weightMod": "1d4"
+        },
+        "additionalSpells": [
+            {
+                "innate": {
+                    "3": {
+                        "daily": {
+                            "1": [
+                                "shield"
+                            ]
+                        }
+                    },
+                    "5": {
+                        "daily": {
+                            "1": [
+                                "detect thoughts"
+                            ]
+                        }
+                    }
+                },
+                "ability": "wis",
+                "known": {
+                    "1": [
+                        "mage hand#c"
+                    ]
+                }
+            }
+        ],
+        "entries": [
+            {
+                "name": "Alignment",
+                "type": "entries",
+                "entries": [
+                    "Githzerai tend toward lawful neutral. Their rigorous training in psychic abilities requires an implacable mental discipline."
+                ]
+            },
+            {
+                "name": "Mental Discipline",
+                "entries": [
+                    "You have advantage on saving throws against the {@condition charmed} and {@condition frightened} conditions. Under the tutelage of monastic masters, githzerai learn to govern their own minds."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Githzerai Psionics",
+                "entries": [
+                    "You know the {@spell mage hand} cantrip, and the hand is {@condition invisible} when you cast the cantrip with this trait.",
+                    "When you reach 3rd level, you can cast {@spell shield} once with this trait, and you regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the {@spell detect thoughts} spell once with this trait, and you regain the ability to do so when you finish a long rest.",
+                    "Wisdom is your spellcasting ability for these spells. When you cast them with this trait, they don't require components."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "slug": "gith_mtf_githzerai_mtf",
+        "type": "subrace"
+    }
+]

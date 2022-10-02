@@ -1,0 +1,253 @@
+[
+    {
+        "name": "Warforged",
+        "source": "UARacesOfEberron",
+        "page": 7,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
+            {
+                "con": 1
+            }
+        ],
+        "age": {
+            "mature": 2,
+            "max": 30
+        },
+        "traitTags": [
+            "Improved Resting",
+            "Natural Armor"
+        ],
+        "languageProficiencies": [
+            {
+                "common": true
+            }
+        ],
+        "resist": [
+            "poison"
+        ],
+        "conditionImmune": [
+            "disease"
+        ],
+        "entries": [
+            {
+                "name": "Age",
+                "entries": [
+                    "A typical warforged is between two and thirty years old. The maximum lifespan of the warforged remains a mystery; so far, warforged have shown no signs of deterioration due to age."
+                ],
+                "type": "entries"
+            },
+            {
+                "type": "entries",
+                "name": "Alignment",
+                "entries": [
+                    "Most warforged take comfort in order and discipline, tending toward law and neutrality, but some have absorbed the morality\u2014or lack thereof\u2014of the beings they served with."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "Your size is Medium. Most warforged stand between 5 and 6\u00bd feet tall. Build is affected by your subrace."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Warforged Resilience",
+                "entries": [
+                    "You were created to have remarkable fortitude, represented by the following benefits:",
+                    {
+                        "type": "list",
+                        "items": [
+                            "You have advantage on saving throws against being {@condition poisoned}, and you have resistance to poison damage.",
+                            "You are immune to disease.",
+                            "You don't need to eat, drink, or breathe.",
+                            "You don't need to sleep and don't suffer the effects of {@condition exhaustion} due to lack of rest, and magic can't put you to sleep."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Sentry's Rest",
+                "entries": [
+                    "When you take a long rest, you must spend at least six hours of it in an inactive, motionless state, rather than sleeping. In this state, you appear inert, but it doesn't render you {@condition unconscious}, and you can see and hear as normal."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Integrated Protection",
+                "entries": [
+                    "Your body has built-in protective layers, which determine your Armor Class. You gain no benefit from wearing armor, but if you are using a shield, you apply its bonus as normal.",
+                    "You can alter your body to enter different defensive modes; each time you finish a long rest, choose one mode to adopt from the Integrated Protection table, provided you meet the mode's prerequisite.",
+                    {
+                        "type": "table",
+                        "caption": "Integrated protection",
+                        "colLabels": [
+                            "Mode",
+                            "Prerequisite",
+                            "Armor Class"
+                        ],
+                        "colStyles": [
+                            "col-4",
+                            "col-4",
+                            "col-4"
+                        ],
+                        "rows": [
+                            [
+                                "Darkwood core (unarmored)",
+                                "None",
+                                "11 + your Dexterity modifier (add proficiency bonus if proficient with light armor)"
+                            ],
+                            [
+                                "Composite plating (armor)",
+                                "Medium armor proficiency",
+                                "13 + your Dexterity modifier (maximum of 2) + your proficiency bonus"
+                            ],
+                            [
+                                "Heavy plating (armor)",
+                                "Heavy armor proficiency",
+                                "16 + your proficiency bonus; disadvantage on Dexterity ({@skill Stealth}) checks"
+                            ]
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "warforged_uaracesofeberron_generic",
+        "type": "generic"
+    },
+    {
+        "name": "Envoy",
+        "source": "UARacesOfEberron",
+        "raceName": "Warforged",
+        "raceSource": "UARacesOfEberron",
+        "page": 69,
+        "ability": [
+            {
+                "choose": {
+                    "from": [
+                        "str",
+                        "dex",
+                        "con",
+                        "int",
+                        "wis",
+                        "cha"
+                    ],
+                    "count": 2
+                }
+            }
+        ],
+        "traitTags": [
+            "Tool Proficiency"
+        ],
+        "skillProficiencies": [
+            {
+                "any": 1
+            }
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Specialized Design",
+                "entries": [
+                    "You gain one skill proficiency of your choice, one {@book tool|phb|5|tools} proficiency of your choice, and fluency in one language of your choice."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Integrated Tool",
+                "entries": [
+                    "Choose one tool you're proficient with. This tool is integrated into your body, and you double your proficiency bonus for any ability checks you make with it. You must have your hands free to use this integrated tool."
+                ]
+            },
+            {
+                "type": "inset",
+                "name": "Envoys: Specialized Design",
+                "entries": [
+                    "As the name implies, most warforged were built to fight in the Last War. The vast majority of warforged are juggernauts or skirmishers\u2014soldiers and scouts who fought under the banner of one of the Five Nations. Warforged envoys, however, were designed to perform other functions. As an envoy, you have a skill, a tool proficiency, and a tool that's part of your body. When you make an envoy character, consider the following questions: What is your purpose? How does your skill and your tool reflect that purpose? What form does your integrated tool take? If you have embedded thieves' tools, for instance, are your fingers actually lockpicks, or can you produce keys from various parts of your body? The following characters are examples of warforged with integrated tools.",
+                    "{@b Lute} is a bard with the entertainer background; his namesake instrument folds out of his left arm.",
+                    "{@b Compass Rose} is a wizard with the outlander background. A keen explorer, she uses her built-in {@item cartographer's tools|phb} to record the paths she travels.",
+                    "{@b Masque} is an infiltrator. A rogue with the charlatan background and an integrated {@item disguise kit|phb}, she was built to blend in and assassinate. Cannith built six warforged of her design, and Masque has vowed to hunt down and destroy the other five.",
+                    "In developing your integrated tool, remember that you must have your hands free to use it. Masque, the infiltrator mentioned above, doesn't shapeshift like a changeling; she has to manually adjust her appearance."
+                ]
+            }
+        ],
+        "slug": "warforged_uaracesofeberron_envoy_uaracesofeberron",
+        "type": "subrace"
+    },
+    {
+        "name": "Juggernaut",
+        "source": "UARacesOfEberron",
+        "raceName": "Warforged",
+        "raceSource": "UARacesOfEberron",
+        "page": 70,
+        "ability": [
+            {
+                "str": 2
+            }
+        ],
+        "traitTags": [
+            "Natural Weapon",
+            "Powerful Build"
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Iron Fists",
+                "entries": [
+                    "When you hit with an unarmed strike, you can deal {@dice 1d4} + your Strength modifier bludgeoning damage, instead of the normal damage for an unarmed strike."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Powerful Build",
+                "entries": [
+                    "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+                ]
+            }
+        ],
+        "slug": "warforged_uaracesofeberron_juggernaut_uaracesofeberron",
+        "type": "subrace"
+    },
+    {
+        "name": "Skirmisher",
+        "source": "UARacesOfEberron",
+        "raceName": "Warforged",
+        "raceSource": "UARacesOfEberron",
+        "page": 70,
+        "speed": 35,
+        "ability": [
+            {
+                "dex": 2
+            }
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Swift",
+                "entries": [
+                    "Your walking speed increases by 5 feet."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Light Step",
+                "entries": [
+                    "When you are traveling alone for an extended period of time (one hour or more), you can move stealthily at a normal pace. (See {@book chapter 8|PHB|8|Travel Pace} of the Player's Handbook for information about travel pace.)"
+                ]
+            }
+        ],
+        "slug": "warforged_uaracesofeberron_skirmisher_uaracesofeberron",
+        "type": "subrace"
+    }
+]

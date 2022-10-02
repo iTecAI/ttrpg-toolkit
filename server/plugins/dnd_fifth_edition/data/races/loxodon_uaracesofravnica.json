@@ -1,0 +1,112 @@
+[
+    {
+        "name": "Loxodon",
+        "source": "UARacesOfRavnica",
+        "page": 1,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
+            {
+                "con": 2,
+                "wis": 1
+            }
+        ],
+        "age": {
+            "mature": 20,
+            "max": 450
+        },
+        "traitTags": [
+            "Natural Armor",
+            "Powerful Build"
+        ],
+        "languageProficiencies": [
+            {
+                "common": true
+            }
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Age",
+                "entries": [
+                    "Loxodons physically mature at the same rate as humans, but they live about 450 years. They highly value the weight of wisdom and experience and are considered young until they reach the age of 60."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Alignment",
+                "entries": [
+                    "Most loxodons are lawful, believing in the value of a peaceful, ordered life. They also tend toward good."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "Loxodons stand between 7 and 8 feet tall. Their massive bodies weigh between 300 and 400 pounds. Your size is Medium."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Powerful Build",
+                "entries": [
+                    "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Loxodon Bravery",
+                "entries": [
+                    "You have advantage on saving throws against being {@condition frightened}."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Natural Armor",
+                "entries": [
+                    "You have thick, leathery skin. When you aren't wearing armor, your AC is 13 + your Dexterity modifier. You can use your natural armor to determine your AC if the armor you wear would leave you with a lower AC. A shield's benefits apply as normal while you use your natural armor.",
+                    {
+                        "type": "inset",
+                        "name": "Tip: AC Calculations Don't Stack",
+                        "entries": [
+                            "When the game gives you more than one way to calculate your Armor Class, you can use only one of them. You choose the one to use. For example, if you have the loxodon's Natural Armor trait and the monk's Unarmored Defense feature, you don't mix them together. Instead, you choose which one determines your AC."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Mason's Proficiency",
+                "entries": [
+                    "You gain proficiency with {@item mason's tools|phb}."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Stonecunning",
+                "entries": [
+                    "Whenever you make an Intelligence ({@skill History}) check related to the origin of stonework, you are considered proficient in the {@skill History} skill and add double your normal proficiency bonus to the check, instead of your normal proficiency bonus."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Keen Smell",
+                "entries": [
+                    "Thanks to your sensitive trunk, you have advantage on Wisdom ({@skill Perception}) and Intelligence ({@skill Investigation}) checks that rely on smell."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common."
+                ]
+            }
+        ],
+        "hasFluff": true,
+        "slug": "loxodon_uaracesofravnica_generic",
+        "type": "generic"
+    }
+]

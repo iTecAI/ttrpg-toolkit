@@ -1,0 +1,73 @@
+[
+    {
+        "name": "Siren",
+        "source": "PSX",
+        "page": 17,
+        "size": [
+            "M"
+        ],
+        "speed": {
+            "walk": 25,
+            "fly": 30
+        },
+        "ability": [
+            {
+                "cha": 2
+            }
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "other": true
+            }
+        ],
+        "additionalSpells": [
+            {
+                "known": {
+                    "1": [
+                        "friends#c"
+                    ]
+                }
+            }
+        ],
+        "entries": [
+            {
+                "name": "Alignment",
+                "type": "entries",
+                "entries": [
+                    "Most sirens lean toward chaotic alignment, cherishing the freedom and independence that comes from joining a pirate crew."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "Sirens stand about 5 to 6 feet tall, but their bodies are slender and their bones partially hollow to facilitate their flight. Your size is Medium."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Siren's Song",
+                "entries": [
+                    "You know the {@spell friends} cantrip and can cast it without material components."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Flight",
+                "entries": [
+                    "You have a flying speed of 30 feet. You can't use your flying speed while you wear medium or heavy armor. (If your campaign uses the variant rule for encumbrance, you can't use your flying speed if you are encumbered.)"
+                ]
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common (if it exists in your campaign) and Siren."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "siren_psx_generic",
+        "type": "generic"
+    }
+]

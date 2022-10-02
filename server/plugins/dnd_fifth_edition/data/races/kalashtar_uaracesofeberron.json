@@ -1,0 +1,110 @@
+[
+    {
+        "name": "Kalashtar",
+        "source": "UARacesOfEberron",
+        "page": 3,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
+            {
+                "cha": 1,
+                "wis": 1,
+                "choose": {
+                    "from": [
+                        "str",
+                        "dex",
+                        "con",
+                        "int",
+                        "wis",
+                        "cha"
+                    ],
+                    "count": 1
+                }
+            }
+        ],
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "languageProficiencies": [
+            {
+                "common": true,
+                "other": true,
+                "anyStandard": 1
+            }
+        ],
+        "resist": [
+            "psychic"
+        ],
+        "entries": [
+            {
+                "name": "Age",
+                "entries": [
+                    "Kalashtar develop physically at the same rate as humans do and have similar lifespans."
+                ],
+                "type": "entries"
+            },
+            {
+                "type": "entries",
+                "name": "Alignment",
+                "entries": [
+                    "The noble spirit tied to a kalashtar drives it toward lawful and good behavior. Most kalashtar combine self-discipline with compassion for all sentient beings, but some kalashtar resist the virtuous influence of their spirit."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "Kalashtar are similar in build to humans, though they are typically a few inches taller. Your size is Medium."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Dual Mind",
+                "entries": [
+                    "When you make a Wisdom saving throw, you can use your reaction to gain advantage on the roll. You can use this trait immediately before or after you roll, but before any of the roll's effects occur."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Mental Discipline",
+                "entries": [
+                    "You have resistance to psychic damage."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Mind Link",
+                "entries": [
+                    "You can speak telepathically to any creature you can see within 60 feet of you. You don't need to share a language with the creature for it to understand your telepathic messages, but the creature must be able to understand at least one language or be telepathic itself.",
+                    "As a bonus action when you're speaking telepathically to a creature, you can give that creature the ability to speak telepathically to you until the start of your next turn. To use this ability, the creature must be within 60 feet of you and able to see you."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Psychic Glamour",
+                "entries": [
+                    "Choose one of the following skills: {@skill Insight}, {@skill Intimidation}, {@skill Performance}, or {@skill Persuasion}. You have advantage on all ability checks you make with that skill."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Severed from Dreams",
+                "entries": [
+                    "Kalashtar sleep, but they don't connect to the plane of dreams as other creatures do. Instead, their minds draw from the memories of their otherworldly spirit while they sleep. As such, you are immune to spells and other magical effects that require you to dream, like the dream spell, but not to spells and effects that put you to sleep, like the sleep spell."
+                ]
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common, Quori, and one other language of your choice."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "kalashtar_uaracesofeberron_generic",
+        "type": "generic"
+    }
+]

@@ -1,0 +1,80 @@
+[
+    {
+        "name": "Reborn",
+        "source": "UA2021GothicLineages",
+        "page": 4,
+        "lineage": "UA1",
+        "creatureTypes": [
+            "humanoid",
+            {
+                "choose": [
+                    "construct",
+                    "undead"
+                ]
+            }
+        ],
+        "size": [
+            "S",
+            "M"
+        ],
+        "speed": 30,
+        "darkvision": 60,
+        "traitTags": [
+            "Improved Resting"
+        ],
+        "resist": [
+            "poison"
+        ],
+        "entries": [
+            {
+                "type": "list",
+                "style": "list-hang-notitle",
+                "items": [
+                    {
+                        "type": "item",
+                        "name": "Type:",
+                        "entry": "Humanoid, as well as Construct or Undead (choose when you gain this lineage)"
+                    },
+                    {
+                        "type": "item",
+                        "name": "Size:",
+                        "entry": "Medium or Small (choose when you gain this lineage)"
+                    }
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Darkvision",
+                "entries": [
+                    "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Deathless Nature",
+                "entries": [
+                    "You have escaped death, a fact represented by the following benefits:",
+                    {
+                        "type": "list",
+                        "items": [
+                            "You have advantage on saving throws against disease and being {@condition poisoned}, and you have resistance to poison damage.",
+                            "You have advantage on death saving throws.",
+                            "You don't need to eat, drink, or breathe.",
+                            "You don't need to sleep, and magic can't put you to sleep. You can finish a long rest in 4 hours if you spend those hours in an inactive, motionless state, during which you retain consciousness."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Knowledge from a Past Life",
+                "entries": [
+                    "You temporarily remember sporadic glimpses of the past, perhaps faded memories from ages ago or a previous life. When you make an ability check that uses a skill, you can roll a {@dice d6} and add the number rolled to the check. You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+                ]
+            }
+        ],
+        "hasFluff": true,
+        "slug": "reborn_ua2021gothiclineages_generic",
+        "type": "generic"
+    }
+]

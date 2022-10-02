@@ -1,0 +1,111 @@
+[
+    {
+        "name": "Minotaur (Krynn)",
+        "source": "UAWaterborneAdventures",
+        "page": 1,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
+            {
+                "str": 1,
+                "choose": {
+                    "from": [
+                        "str",
+                        "int",
+                        "wis"
+                    ],
+                    "count": 1
+                }
+            }
+        ],
+        "age": {
+            "mature": 17,
+            "max": 150
+        },
+        "traitTags": [
+            "Natural Weapon",
+            "Tool Proficiency"
+        ],
+        "languageProficiencies": [
+            {
+                "common": true
+            }
+        ],
+        "entries": [
+            {
+                "name": "Age",
+                "type": "entries",
+                "entries": [
+                    "Minotaurs enter adulthood at around the age of 17 and can live up to 150 years."
+                ]
+            },
+            {
+                "name": "Alignment",
+                "type": "entries",
+                "entries": [
+                    "Minotaurs believe in a strict code of honor, and thus tend toward law. They are loyal to the death and make implacable enemies, even as their brutal culture and disdain for weakness push them toward evil."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "Minotaurs typically stand well over 6 feet tall and weigh an average of 300 pounds. Your size is Medium."
+                ]
+            },
+            {
+                "name": "Conqueror's Virtue",
+                "entries": [
+                    "From a young age, you focused on one of the three virtues of strength, cunning, or intellect. Your choice of your Strength, Intelligence, or Wisdom score increases by 1."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Horns",
+                "entries": [
+                    "You are never unarmed. You are proficient with your horns, which are a melee weapon that deals {@dice 1d10} piercing damage. Your horns grant you advantage on all checks made to shove a creature, but not to avoid being shoved yourself."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Goring Rush",
+                "entries": [
+                    "When you use the {@action Dash} action during your turn, you can make a melee attack with your horns as a bonus action."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Hammering Horns",
+                "entries": [
+                    "When you use the {@action Attack} action during your turn to make a melee attack, you can attempt to shove a creature with your horns as a bonus action. You cannot use this shove attempt to knock a creature {@condition prone}."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Labyrinthine Recall",
+                "entries": [
+                    "You can perfectly recall any path you have traveled."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Sea Reaver",
+                "entries": [
+                    "You gain proficiency with {@item navigator's tools|phb} and {@filter vehicles (water)|items|source=phb;dmg|miscellaneous=mundane|type=vehicle (water)}."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "minotaur__krynn__uawaterborneadventures_generic",
+        "type": "generic"
+    }
+]

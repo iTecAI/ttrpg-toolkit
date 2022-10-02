@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Giff",
+        "source": "UA2021TravelersOfTheMultiverse",
+        "page": 2,
+        "lineage": "VRGR",
+        "size": [
+            "M"
+        ],
+        "speed": {
+            "walk": 30,
+            "swim": true
+        },
+        "traitTags": [
+            "Powerful Build"
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Damage Dealer",
+                "entries": [
+                    "Like a hippopotamus in a crystalware shop, you are naturally adept at damaging things. When you roll a 1 on a damage die for a melee attack, you can reroll the die and use the new roll. You can do so no more than once per turn."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Hippo Build",
+                "entries": [
+                    "You have advantage on Strength-based ability checks and Strength saving throws. In addition, you count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+                ]
+            }
+        ],
+        "hasFluff": true,
+        "slug": "giff_ua2021travelersofthemultiverse_generic",
+        "type": "generic"
+    }
+]

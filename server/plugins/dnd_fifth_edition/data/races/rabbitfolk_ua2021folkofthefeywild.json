@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Rabbitfolk",
+        "source": "UA2021FolkOfTheFeywild",
+        "page": 3,
+        "lineage": "VRGR",
+        "size": [
+            "S",
+            "M"
+        ],
+        "speed": 30,
+        "skillProficiencies": [
+            {
+                "perception": true
+            }
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "You are Medium or Small. You choose the size when you gain this race."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Hare-Trigger",
+                "entries": [
+                    "You add your proficiency bonus to your initiative rolls."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Leporine Senses",
+                "entries": [
+                    "You have proficiency in the {@skill Perception} skill."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Lucky Footwork",
+                "entries": [
+                    "When you fail a Dexterity saving throw, you can use your reaction to roll a {@dice d4} and add it to the result, potentially turning the failure into a success."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Rabbit Hop",
+                "entries": [
+                    "Once during each of your turns when you walk at least 5 feet, you can hop, rolling a {@dice d12} and moving that many feet in a direction of your choice. This extra distance doesn't cost movement, but you can hop only if your speed isn't 0."
+                ]
+            }
+        ],
+        "hasFluff": true,
+        "slug": "rabbitfolk_ua2021folkofthefeywild_generic",
+        "type": "generic"
+    }
+]

@@ -1,0 +1,97 @@
+[
+    {
+        "name": "Minotaur (Amonkhet)",
+        "source": "PSA",
+        "page": 19,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
+            {
+                "str": 2,
+                "con": 1
+            }
+        ],
+        "age": {
+            "mature": 20,
+            "max": 40
+        },
+        "traitTags": [
+            "Natural Weapon"
+        ],
+        "skillProficiencies": [
+            {
+                "intimidation": true
+            }
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "other": true
+            }
+        ],
+        "entries": [
+            {
+                "name": "Age",
+                "type": "entries",
+                "entries": [
+                    "Minotaurs develop more slowly than humans, reaching full maturity around the age of 20. They typically become acolytes at around 8 or 9 years old, making them among the older members of their crops. Once they reach maturity, though, minotaurs age quickly, rushing headlong through the trials (as they do all aspects of life) to complete them before they pass their peak. A minotaur allowed to die of old age would rarely live beyond 40."
+                ]
+            },
+            {
+                "name": "Alignment",
+                "type": "entries",
+                "entries": [
+                    "Most minotaurs lean toward chaotic alignments, and they have a slight inclination toward evil."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "Minotaurs average over 6 feet in height, and they have strong, stocky builds. Your size is Medium."
+                ]
+            },
+            {
+                "name": "Natural Weapon",
+                "entries": [
+                    "You can use your horns as a natural weapon to make unarmed strikes. If you hit with your horns, you deal bludgeoning damage equal to {@dice 1d6} + your Strength modifier."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Menacing",
+                "entries": [
+                    "You gain proficiency in the {@skill Intimidation} skill."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Relentless Endurance",
+                "entries": [
+                    "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Savage Attacks",
+                "entries": [
+                    "When you score a critical hit with a melee weapon attack, you can roll one of the weapon's damage dice one additional time and add it to the extra damage of the critical hit."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common and Minotaur."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "minotaur__amonkhet__psa_generic",
+        "type": "generic"
+    }
+]

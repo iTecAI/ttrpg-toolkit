@@ -1,0 +1,209 @@
+[
+    {
+        "name": "Human (Innistrad)",
+        "source": "PSI",
+        "page": 8,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "languageProficiencies": [
+            {
+                "common": true,
+                "anyStandard": 1
+            }
+        ],
+        "entries": [
+            {
+                "name": "Age",
+                "type": "entries",
+                "entries": [
+                    "Humans reach adulthood in their late teens and live less than a century."
+                ]
+            },
+            {
+                "name": "Alignment",
+                "type": "entries",
+                "entries": [
+                    "Humans tend toward no particular alignment."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium."
+                ]
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common and one extra language of your choice."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "human__innistrad__psi_generic",
+        "type": "generic"
+    },
+    {
+        "name": "Gavony",
+        "source": "PSI",
+        "raceName": "Human (Innistrad)",
+        "raceSource": "PSI",
+        "page": 8,
+        "ability": [
+            {
+                "str": 1,
+                "dex": 1,
+                "con": 1,
+                "int": 1,
+                "wis": 1,
+                "cha": 1
+            }
+        ],
+        "entries": [
+            {
+                "name": "Ability Score Increase",
+                "entries": [
+                    "Your ability scores each increase by 1."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "human__innistrad__psi_gavony_psi",
+        "type": "subrace"
+    },
+    {
+        "name": "Kessig",
+        "source": "PSI",
+        "raceName": "Human (Innistrad)",
+        "raceSource": "PSI",
+        "page": 8,
+        "speed": 40,
+        "ability": [
+            {
+                "dex": 1,
+                "wis": 1
+            }
+        ],
+        "skillProficiencies": [
+            {
+                "survival": true
+            }
+        ],
+        "entries": [
+            {
+                "name": "Forest Folk",
+                "entries": [
+                    "You have proficiency in the {@skill Survival} skill."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Fleet of Foot",
+                "entries": [
+                    "Your base walking speed is 40 feet."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Sure-footed",
+                "entries": [
+                    "When you use the {@action Dash} action, {@quickref difficult terrain||3} doesn't cost you extra movement on that turn."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Spring Attack",
+                "entries": [
+                    "When you make a melee attack against a creature, you don't provoke opportunity attacks from that creature for the rest of your turn, whether you hit or not."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "human__innistrad__psi_kessig_psi",
+        "type": "subrace"
+    },
+    {
+        "name": "Nephalia",
+        "source": "PSI",
+        "raceName": "Human (Innistrad)",
+        "raceSource": "PSI",
+        "page": 8,
+        "ability": [
+            {
+                "int": 1,
+                "cha": 1
+            }
+        ],
+        "traitTags": [
+            "Skill Proficiency",
+            "Tool Proficiency"
+        ],
+        "skillToolLanguageProficiencies": [
+            {
+                "choose": [
+                    {
+                        "from": [
+                            "anySkill",
+                            "anyTool"
+                        ],
+                        "count": 4
+                    }
+                ]
+            }
+        ],
+        "entries": [
+            {
+                "name": "Breadth of Knowledge",
+                "entries": [
+                    "You gain proficiency in any combination of four skills or with four {@book tools|phb|5|tools} of your choice."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "human__innistrad__psi_nephalia_psi",
+        "type": "subrace"
+    },
+    {
+        "name": "Stensia",
+        "source": "PSI",
+        "raceName": "Human (Innistrad)",
+        "raceSource": "PSI",
+        "page": 8,
+        "ability": [
+            {
+                "str": 1,
+                "con": 1
+            }
+        ],
+        "skillProficiencies": [
+            {
+                "intimidation": true
+            }
+        ],
+        "entries": [
+            {
+                "name": "Daunting",
+                "entries": [
+                    "You have proficiency in the {@skill Intimidation} skill."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Tough",
+                "entries": [
+                    "Your hit point maximum increases by 2, and it increases by 2 every time you gain a level."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "human__innistrad__psi_stensia_psi",
+        "type": "subrace"
+    }
+]

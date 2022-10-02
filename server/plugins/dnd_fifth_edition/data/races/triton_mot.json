@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Triton",
+        "source": "MOT",
+        "page": 26,
+        "_copy": {
+            "name": "Triton",
+            "source": "VGM",
+            "_mod": {
+                "entries": [
+                    {
+                        "mode": "appendArr",
+                        "items": {
+                            "name": "Alignment",
+                            "type": "entries",
+                            "entries": [
+                                "Tritons tend toward neutrality. Their culture encourages them to be mindful of life's currents, knowing when to harness fate's tides and when to flow along with them."
+                            ]
+                        }
+                    }
+                ]
+            },
+            "_preserve": {
+                "reprintedAs": true
+            }
+        },
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "triton_mot_generic",
+        "type": "generic"
+    }
+]

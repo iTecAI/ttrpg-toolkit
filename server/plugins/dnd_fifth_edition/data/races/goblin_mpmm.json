@@ -1,0 +1,61 @@
+[
+    {
+        "name": "Goblin",
+        "source": "MPMM",
+        "page": 20,
+        "lineage": "VRGR",
+        "creatureTypes": [
+            "humanoid"
+        ],
+        "creatureTypeTags": [
+            "goblinoid"
+        ],
+        "size": [
+            "S"
+        ],
+        "speed": 30,
+        "darkvision": 60,
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Creature Type",
+                "entries": [
+                    "You are a Humanoid. You are also considered a goblinoid for any prerequisite or effect that requires you to be a goblinoid."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Darkvision",
+                "entries": [
+                    "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were in dim light. You discern colors in that darkness only as shades of gray."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Fey Ancestry",
+                "entries": [
+                    "You have advantage on saving throws you make to avoid or end the {@condition charmed} condition on yourself."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Fury of the Small",
+                "entries": [
+                    "When you damage a creature with an attack or a spell and the creature's size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your proficiency bonus.",
+                    "You can use this trait a number of times equal to your proficiency bonus, regaining all expended uses when you finish a long rest, and you can use it no more than once per turn."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Nimble Escape",
+                "entries": [
+                    "You can take the {@action Disengage} or {@action Hide} action as a bonus action on each of your turns."
+                ]
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "goblin_mpmm_generic",
+        "type": "generic"
+    }
+]

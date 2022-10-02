@@ -1,0 +1,93 @@
+[
+    {
+        "name": "Goblin",
+        "source": "VGM",
+        "page": 119,
+        "otherSources": [
+            {
+                "source": "EGW",
+                "page": 174
+            }
+        ],
+        "reprintedAs": [
+            "Goblin|MPMM"
+        ],
+        "size": [
+            "S"
+        ],
+        "speed": 30,
+        "ability": [
+            {
+                "dex": 2,
+                "con": 1
+            }
+        ],
+        "heightAndWeight": {
+            "baseHeight": 41,
+            "heightMod": "2d4",
+            "baseWeight": 35
+        },
+        "age": {
+            "mature": 8,
+            "max": 60
+        },
+        "darkvision": 60,
+        "traitTags": [
+            "Monstrous Race"
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "goblin": true
+            }
+        ],
+        "entries": [
+            {
+                "name": "Age",
+                "type": "entries",
+                "entries": [
+                    "Goblins reach adulthood at age 8 and live up to 60 years."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "Goblins are between 3 and 4 feet tall and weigh between 40 and 80 pounds. Your size is Small."
+                ]
+            },
+            {
+                "name": "Darkvision",
+                "entries": [
+                    "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Fury of the Small",
+                "entries": [
+                    "When you damage a creature with an attack or a spell and the creature's size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your level. Once you use this trait, you can't use it again until you finish a short or long rest."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Nimble Escape",
+                "entries": [
+                    "You can take the {@action Disengage} or {@action Hide} action as a bonus action on each of your turns."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common and Goblin."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "goblin_vgm_generic",
+        "type": "generic"
+    }
+]

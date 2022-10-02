@@ -1,0 +1,173 @@
+[
+    {
+        "name": "Merfolk (Ixalan)",
+        "source": "PSX",
+        "page": 12,
+        "size": [
+            "M"
+        ],
+        "speed": {
+            "walk": 30,
+            "swim": 30
+        },
+        "ability": [
+            {
+                "cha": 1
+            }
+        ],
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "traitTags": [
+            "Amphibious"
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "other": true,
+                "anyStandard": 1
+            }
+        ],
+        "entries": [
+            {
+                "name": "Age",
+                "type": "entries",
+                "entries": [
+                    "Merfolk mature at the same rate humans do and reach adulthood around the age of 20. They live considerably longer than humans, though, often reaching well over 100 years."
+                ]
+            },
+            {
+                "name": "Alignment",
+                "type": "entries",
+                "entries": [
+                    "Most merfolk are neutral, living in close harmony with nature."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "Merfolk are significantly taller than most humans, standing between seven and eight feet tall and averaging about 300 pounds. Your size is Medium."
+                ]
+            },
+            {
+                "name": "Amphibious",
+                "entries": [
+                    "You can breathe air and water."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Swimming",
+                "entries": [
+                    "You have a swimming speed of 30 feet."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common (if it exists in your campaign), Merfolk, and one additional language of your choice."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "merfolk__ixalan__psx_generic",
+        "type": "generic"
+    },
+    {
+        "name": "Blue",
+        "source": "PSX",
+        "raceName": "Merfolk (Ixalan)",
+        "raceSource": "PSX",
+        "page": 12,
+        "ability": [
+            {
+                "int": 2
+            }
+        ],
+        "skillProficiencies": [
+            {
+                "history": true,
+                "nature": true
+            }
+        ],
+        "additionalSpells": [
+            {
+                "ability": "wis",
+                "known": {
+                    "1": {
+                        "_": [
+                            {
+                                "choose": "level=0|class=Wizard"
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "entries": [
+            {
+                "name": "Cantrip",
+                "entries": [
+                    "You know one cantrip of your choice from the {@filter wizard spell list|spells|class=wizard|level=0}. Intelligence is your spellcasting ability for it."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Lore of the Waters",
+                "entries": [
+                    "You gain proficiency in the {@skill History} and {@skill Nature} skills."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "merfolk__ixalan__psx_blue_psx",
+        "type": "subrace"
+    },
+    {
+        "name": "Green",
+        "source": "PSX",
+        "raceName": "Merfolk (Ixalan)",
+        "raceSource": "PSX",
+        "page": 12,
+        "ability": [
+            {
+                "wis": 2
+            }
+        ],
+        "additionalSpells": [
+            {
+                "ability": "wis",
+                "known": {
+                    "1": {
+                        "_": [
+                            {
+                                "choose": "level=0|class=Druid"
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "entries": [
+            {
+                "name": "Cantrip",
+                "entries": [
+                    "You know one cantrip of your choice from the {@filter druid spell list|spells|class=Druid|level=0}. Wisdom is your spellcasting ability for it."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Mask of the Wild",
+                "entries": [
+                    "You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "merfolk__ixalan__psx_green_psx",
+        "type": "subrace"
+    }
+]

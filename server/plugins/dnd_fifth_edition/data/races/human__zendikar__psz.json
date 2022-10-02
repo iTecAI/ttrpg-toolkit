@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Human (Zendikar)",
+        "source": "PSZ",
+        "page": 9,
+        "_copy": {
+            "name": "Human",
+            "source": "PHB",
+            "_mod": {
+                "entries": {
+                    "mode": "replaceArr",
+                    "replace": "Languages",
+                    "items": {
+                        "name": "Languages",
+                        "entries": [
+                            "You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words borrowed from other tongues: vampire curses, Elvish musical expressions, merfolk scholarly jargon, and so on."
+                        ],
+                        "type": "entries"
+                    }
+                }
+            }
+        },
+        "ability": [
+            {
+                "str": 1,
+                "dex": 1,
+                "con": 1,
+                "int": 1,
+                "wis": 1,
+                "cha": 1
+            }
+        ],
+        "hasFluff": true,
+        "slug": "human__zendikar__psz_generic",
+        "type": "generic"
+    }
+]

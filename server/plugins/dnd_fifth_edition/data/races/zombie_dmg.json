@@ -1,0 +1,63 @@
+[
+    {
+        "name": "Zombie",
+        "source": "DMG",
+        "page": 282,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
+            {
+                "str": 1,
+                "con": 2,
+                "int": -6,
+                "wis": -4,
+                "cha": -4
+            }
+        ],
+        "darkvision": 60,
+        "traitTags": [
+            "Improved Resting",
+            "NPC Race"
+        ],
+        "immune": [
+            "poison"
+        ],
+        "conditionImmune": [
+            "poisoned"
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Undead Fortitude",
+                "entries": [
+                    "If damage reduces you to 0 hit points, you must make a Constitution saving throw with a DC of 5+the damage taken, unless the damage is radiant or from a critical hit. On a success, you drop to 1 hit point instead."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Undead Nature",
+                "entries": [
+                    "You are immune to poison damage, and you can't be {@condition poisoned}. You don't require air, food, drink, or sleep."
+                ]
+            },
+            {
+                "name": "Darkvision",
+                "entries": [
+                    "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can't speak, but you can understand the languages you knew in life."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "zombie_dmg_generic",
+        "type": "generic"
+    }
+]

@@ -1,0 +1,119 @@
+[
+    {
+        "name": "Astral Elf",
+        "source": "UA2021TravelersOfTheMultiverse",
+        "page": 1,
+        "lineage": "VRGR",
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "darkvision": 60,
+        "traitTags": [
+            "Improved Resting"
+        ],
+        "skillProficiencies": [
+            {
+                "perception": true
+            }
+        ],
+        "additionalSpells": [
+            {
+                "known": {
+                    "1": [
+                        "dancing lights#c"
+                    ]
+                },
+                "ability": {
+                    "choose": [
+                        "int",
+                        "wis",
+                        "cha"
+                    ]
+                }
+            },
+            {
+                "known": {
+                    "1": [
+                        "light#c"
+                    ]
+                },
+                "ability": {
+                    "choose": [
+                        "int",
+                        "wis",
+                        "cha"
+                    ]
+                }
+            },
+            {
+                "known": {
+                    "1": [
+                        "sacred flame#c"
+                    ]
+                },
+                "ability": {
+                    "choose": [
+                        "int",
+                        "wis",
+                        "cha"
+                    ]
+                }
+            }
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Astral Fire",
+                "entries": [
+                    "You know one of the following cantrips of your choice: {@spell dancing lights}, {@spell light}, or {@spell sacred flame}. Intelligence, Wisdom, or Charisma is your spellcasting ability for it (choose when you select this race)."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Darkvision",
+                "entries": [
+                    "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Fey Ancestry",
+                "entries": [
+                    "You have advantage on saving throws you make to avoid or end the {@condition charmed} condition on yourself."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Keen Senses",
+                "entries": [
+                    "You have proficiency in the {@skill Perception} skill."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Radiant Soul",
+                "entries": [
+                    "When you succeed on a death save, you can regain a number of hit points equal to your proficiency bonus + your Intelligence, Wisdom, or Charisma modifier (choose when you select this race). You can't use this trait again until you finish a long rest."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Trance",
+                "entries": [
+                    "You don't need to sleep, and magic can't put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trance-like meditation, during which you remain conscious."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Trance Proficiencies",
+                "entries": [
+                    "Whenever you finish a long rest using your Trance trait, you gain two proficiencies, each one with a weapon or a tool of your choice (selected from the \"{@book Equipment|PHB|5}\" chapter of the Player's Handbook). You mystically acquire these proficiencies by drawing them from shared elven memory, and you retain them until you finish your next long rest."
+                ]
+            }
+        ],
+        "hasFluff": true,
+        "slug": "astral_elf_ua2021travelersofthemultiverse_generic",
+        "type": "generic"
+    }
+]

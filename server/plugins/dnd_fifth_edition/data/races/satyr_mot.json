@@ -1,0 +1,123 @@
+[
+    {
+        "name": "Satyr",
+        "source": "MOT",
+        "page": 24,
+        "reprintedAs": [
+            "Satyr|MPMM"
+        ],
+        "creatureTypes": [
+            "fey"
+        ],
+        "size": [
+            "M"
+        ],
+        "speed": 35,
+        "ability": [
+            {
+                "cha": 2,
+                "dex": 1
+            }
+        ],
+        "heightAndWeight": {
+            "baseHeight": 56,
+            "heightMod": "2d8",
+            "baseWeight": 100,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "traitTags": [
+            "Magic Resistance",
+            "Natural Weapon"
+        ],
+        "skillProficiencies": [
+            {
+                "performance": true,
+                "persuasion": true
+            }
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "sylvan": true
+            }
+        ],
+        "toolProficiencies": [
+            {
+                "musical instrument": true
+            }
+        ],
+        "entries": [
+            {
+                "name": "Age",
+                "type": "entries",
+                "entries": [
+                    "Satyrs mature and age at about the same rate as humans."
+                ]
+            },
+            {
+                "name": "Alignment",
+                "type": "entries",
+                "entries": [
+                    "Satyrs delight in living a life free of the mantle of law. They gravitate toward being good, but some have devious streaks and enjoy causing dismay."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "Satyrs range from just under 5 feet to about 6 feet in height, with generally slender builds. Your size is Medium."
+                ]
+            },
+            {
+                "name": "Fey",
+                "entries": [
+                    "Your creature type is fey, rather than humanoid."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Ram",
+                "entries": [
+                    "You can use your head and horns to make unarmed strikes. If you hit with them, you deal bludgeoning damage equal to {@damage 1d4} + your Strength modifier."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Magic Resistance",
+                "entries": [
+                    "You have advantage on saving throws against spells and other magical effects."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Mirthful Leaps",
+                "entries": [
+                    "Whenever you make a long or high jump, you can roll a {@dice d8} and add the number rolled to the number of feet you cover, even when making a standing jump. This extra distance costs movement as normal."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Reveler",
+                "entries": [
+                    "You have proficiency in the {@skill Performance} and {@skill Persuasion} skills, and you have proficiency with one musical instrument of your choice."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common and Sylvan."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "satyr_mot_generic",
+        "type": "generic"
+    }
+]

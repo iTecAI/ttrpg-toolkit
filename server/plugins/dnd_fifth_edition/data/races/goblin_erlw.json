@@ -1,0 +1,45 @@
+[
+    {
+        "name": "Goblin",
+        "source": "ERLW",
+        "page": 26,
+        "_copy": {
+            "name": "Goblin",
+            "source": "VGM",
+            "_mod": {
+                "entries": [
+                    {
+                        "mode": "appendArr",
+                        "items": {
+                            "name": "Alignment",
+                            "type": "entries",
+                            "entries": [
+                                "In Eberron, goblins are usually neutral. They tend to look out for themselves, preferably without drawing unwanted attention from any larger, more powerful people."
+                            ]
+                        }
+                    },
+                    {
+                        "mode": "replaceArr",
+                        "replace": "Size",
+                        "items": {
+                            "name": "Size",
+                            "type": "entries",
+                            "entries": [
+                                "Your size is Small."
+                            ]
+                        }
+                    }
+                ]
+            },
+            "_preserve": {
+                "reprintedAs": true
+            }
+        },
+        "size": [
+            "S"
+        ],
+        "traitTags": null,
+        "slug": "goblin_erlw_generic",
+        "type": "generic"
+    }
+]

@@ -1,0 +1,94 @@
+[
+    {
+        "name": "Deep Gnome",
+        "source": "MPMM",
+        "page": 11,
+        "lineage": "VRGR",
+        "creatureTypes": [
+            "humanoid"
+        ],
+        "creatureTypeTags": [
+            "gnome"
+        ],
+        "size": [
+            "S"
+        ],
+        "speed": 30,
+        "age": {
+            "max": 500
+        },
+        "darkvision": 120,
+        "traitTags": [
+            "Magic Resistance"
+        ],
+        "additionalSpells": [
+            {
+                "innate": {
+                    "3": {
+                        "daily": {
+                            "1": [
+                                "disguise self"
+                            ]
+                        }
+                    },
+                    "5": {
+                        "daily": {
+                            "1": [
+                                "nondetection"
+                            ]
+                        }
+                    }
+                },
+                "ability": {
+                    "choose": [
+                        "int",
+                        "wis",
+                        "cha"
+                    ]
+                }
+            }
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Creature Type",
+                "entries": [
+                    "You are a Humanoid. You are also considered a gnome for any prerequisite or effect that requires you to be a gnome."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Darkvision",
+                "entries": [
+                    "You can see in dim light within 120 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Gift of the Svirfneblin",
+                "entries": [
+                    "Starting at 3rd level, you can cast the {@spell disguise self} spell with this trait. Starting at 5th level, you can also cast the {@spell nondetection} spell with it, without requiring a material component. Once you cast either of these spells with this trait, you can't cast that spell with it again until you finish a long rest. You can also cast these using spell slots you have of the appropriate level.",
+                    "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Gnomish Magic Resistance",
+                "entries": [
+                    "You have advantage on Intelligence, Wisdom, and Charisma saving throws against spells."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Svirfneblin Camouflage",
+                "entries": [
+                    "When you make a Dexterity ({@skill Stealth}) check, you can make the check with advantage. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+                ]
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "deep_gnome_mpmm_generic",
+        "type": "generic"
+    }
+]

@@ -1,0 +1,318 @@
+[
+    {
+        "name": "Genasi",
+        "source": "EEPC",
+        "page": 9,
+        "additionalSources": [
+            {
+                "source": "EGW",
+                "page": 170
+            }
+        ],
+        "otherSources": [
+            {
+                "source": "EGW",
+                "page": 170
+            }
+        ],
+        "reprintedAs": [
+            "Genasi|MPMM"
+        ],
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
+            {
+                "con": 2
+            }
+        ],
+        "heightAndWeight": {
+            "baseHeight": 56,
+            "heightMod": "2d10",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 120
+        },
+        "languageProficiencies": [
+            {
+                "common": true,
+                "primordial": true
+            }
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/genasi.mp3"
+        },
+        "entries": [
+            {
+                "name": "Age",
+                "type": "entries",
+                "entries": [
+                    "Genasi mature at about the same rate as humans and reach adulthood in their late teens. They live somewhat longer than humans do, up to 120 years."
+                ]
+            },
+            {
+                "name": "Alignment",
+                "type": "entries",
+                "entries": [
+                    "Independent and self-reliant, genasi tend toward a neutral alignment."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "Genasi are as varied as their mortal parents but are generally built like humans, standing anywhere from 5 feet to over 6 feet tall. Your size is Medium."
+                ]
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common and Primordial. Primordial is a guttural language, filled with harsh syllables and hard consonants."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "genasi_eepc_generic",
+        "type": "generic"
+    },
+    {
+        "name": "Air",
+        "source": "EEPC",
+        "raceName": "Genasi",
+        "raceSource": "EEPC",
+        "page": 9,
+        "reprintedAs": [
+            "Genasi (Air)|MPMM"
+        ],
+        "ability": [
+            {
+                "dex": 1
+            }
+        ],
+        "additionalSpells": [
+            {
+                "ability": "con",
+                "known": {
+                    "1": [
+                        "levitate"
+                    ]
+                }
+            }
+        ],
+        "entries": [
+            {
+                "name": "Unending Breath",
+                "entries": [
+                    "You can hold your breath indefinitely while you're not {@condition incapacitated}."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Mingle with the Wind",
+                "entries": [
+                    "You can cast the {@spell levitate} spell once with this trait, requiring no material components, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for this spell."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "genasi_eepc_air_eepc",
+        "type": "subrace"
+    },
+    {
+        "name": "Earth",
+        "source": "EEPC",
+        "raceName": "Genasi",
+        "raceSource": "EEPC",
+        "page": 9,
+        "reprintedAs": [
+            "Genasi (Earth)|MPMM"
+        ],
+        "ability": [
+            {
+                "str": 1
+            }
+        ],
+        "additionalSpells": [
+            {
+                "ability": "con",
+                "known": {
+                    "1": [
+                        "pass without trace"
+                    ]
+                }
+            }
+        ],
+        "entries": [
+            {
+                "name": "Earth Walk",
+                "entries": [
+                    "You can move across {@quickref difficult terrain||3} made of earth or stone without expending extra movement."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Merge with Stone",
+                "entries": [
+                    "You can cast the {@spell pass without trace} spell once with this trait, requiring no material components, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for this spell."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "genasi_eepc_earth_eepc",
+        "type": "subrace"
+    },
+    {
+        "name": "Fire",
+        "source": "EEPC",
+        "raceName": "Genasi",
+        "raceSource": "EEPC",
+        "page": 9,
+        "reprintedAs": [
+            "Genasi (Fire)|MPMM"
+        ],
+        "ability": [
+            {
+                "int": 1
+            }
+        ],
+        "darkvision": 60,
+        "resist": [
+            "fire"
+        ],
+        "additionalSpells": [
+            {
+                "innate": {
+                    "3": {
+                        "daily": {
+                            "1": [
+                                "burning hands"
+                            ]
+                        }
+                    }
+                },
+                "ability": "con",
+                "known": {
+                    "1": [
+                        "produce flame#c"
+                    ]
+                }
+            }
+        ],
+        "entries": [
+            {
+                "name": "Darkvision",
+                "entries": [
+                    "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. Your ties to the Elemental Plane of Fire make your darkvision unusual: everything you see in darkness is in a shade of red."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Fire Resistance",
+                "entries": [
+                    "You have resistance to fire damage."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Reach to the Blaze",
+                "entries": [
+                    "You know the {@spell produce flame} cantrip. Once you reach 3rd level, you can cast the {@spell burning hands} spell once with this trait as a 1st-level spell, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for these spells."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "genasi_eepc_fire_eepc",
+        "type": "subrace"
+    },
+    {
+        "name": "Water",
+        "source": "EEPC",
+        "raceName": "Genasi",
+        "raceSource": "EEPC",
+        "page": 10,
+        "reprintedAs": [
+            "Genasi (Water)|MPMM"
+        ],
+        "speed": {
+            "walk": 30,
+            "swim": 30
+        },
+        "ability": [
+            {
+                "wis": 1
+            }
+        ],
+        "traitTags": [
+            "Amphibious"
+        ],
+        "resist": [
+            "acid"
+        ],
+        "additionalSpells": [
+            {
+                "innate": {
+                    "3": {
+                        "daily": {
+                            "1": [
+                                "create or destroy water#2"
+                            ]
+                        }
+                    }
+                },
+                "ability": "con",
+                "known": {
+                    "1": [
+                        "shape water|xge#c"
+                    ]
+                }
+            }
+        ],
+        "entries": [
+            {
+                "name": "Acid Resistance",
+                "entries": [
+                    "You have resistance to acid damage."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Amphibious",
+                "entries": [
+                    "You can breathe air and water."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Swim",
+                "entries": [
+                    "You have a swimming speed of 30 feet."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Call to the Wave",
+                "entries": [
+                    "You know the {@spell shape water|xge} cantrip. When you reach 3rd level, you can cast the {@spell create or destroy water} spell as a 2nd-level spell once with this trait, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for these spells."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "genasi_eepc_water_eepc",
+        "type": "subrace"
+    }
+]

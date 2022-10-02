@@ -1,0 +1,868 @@
+[
+    {
+        "name": "Human",
+        "source": "PHB",
+        "page": 29,
+        "srd": true,
+        "basicRules": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "heightAndWeight": {
+            "baseHeight": 56,
+            "heightMod": "2d10",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "languageProficiencies": [
+            {
+                "common": true,
+                "anyStandard": 1
+            }
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/human.mp3"
+        },
+        "entries": [
+            {
+                "name": "Age",
+                "type": "entries",
+                "entries": [
+                    "Humans reach adulthood in their late teens and live less than a century."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium."
+                ]
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "human_phb_generic",
+        "type": "generic"
+    },
+    {
+        "name": "Keldon",
+        "source": "PSD",
+        "raceName": "Human",
+        "raceSource": "PHB",
+        "page": 19,
+        "ability": [
+            {
+                "str": 2,
+                "con": 1
+            }
+        ],
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "skillProficiencies": [
+            {
+                "athletics": true
+            }
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "other": true
+            }
+        ],
+        "entries": [
+            {
+                "name": "Age",
+                "type": "entries",
+                "entries": [
+                    "Keldons reach adulthood in their late teens and live less than a century."
+                ],
+                "data": {
+                    "overwrite": "Age"
+                }
+            },
+            {
+                "name": "Alignment",
+                "type": "entries",
+                "entries": [
+                    "Keldons tend toward chaotic alignments, and many walk a fine line between good and evil."
+                ],
+                "data": {
+                    "overwrite": "Alignment"
+                }
+            },
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "Keldons are taller and heavier than the human norms of other cultures, standing almost universally above 6 feet tall and reaching heights above 7 feet. Your size is Medium."
+                ],
+                "data": {
+                    "overwrite": "Size"
+                }
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common and Keldon."
+                ],
+                "type": "entries",
+                "data": {
+                    "overwrite": "Languages"
+                }
+            },
+            {
+                "type": "entries",
+                "name": "Natural Athlete",
+                "entries": [
+                    "You have proficiency in the {@skill Athletics} skill."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Keldon Resilience",
+                "entries": [
+                    "You have proficiency in Strength saving throws."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Icehaven Born",
+                "entries": [
+                    "You are naturally adapted to cold climates, as described in chapter 5 of the {@i Dungeon Master's Guide}."
+                ]
+            }
+        ],
+        "overwrite": {
+            "languageProficiencies": true
+        },
+        "slug": "human_phb_keldon_psd",
+        "type": "subrace"
+    },
+    {
+        "name": "Mark of Finding",
+        "source": "ERLW",
+        "raceName": "Human",
+        "raceSource": "PHB",
+        "page": 41,
+        "ability": [
+            {
+                "con": 1,
+                "wis": 2
+            }
+        ],
+        "darkvision": 60,
+        "traitTags": [
+            "Dragonmark",
+            "Skill Bonus Dice"
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "goblin": true
+            }
+        ],
+        "additionalSpells": [
+            {
+                "innate": {
+                    "1": [
+                        "hunter's mark"
+                    ],
+                    "3": {
+                        "daily": {
+                            "1": [
+                                "locate object"
+                            ]
+                        }
+                    }
+                },
+                "expanded": {
+                    "s1": [
+                        "faerie fire",
+                        "longstrider"
+                    ],
+                    "s2": [
+                        "locate animals or plants",
+                        "locate object"
+                    ],
+                    "s3": [
+                        "clairvoyance",
+                        "speak with plants"
+                    ],
+                    "s4": [
+                        "divination",
+                        "locate creature"
+                    ],
+                    "s5": [
+                        "commune with nature"
+                    ]
+                },
+                "ability": "wis"
+            }
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Darkvision",
+                "entries": [
+                    "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Hunter's Intuition",
+                "entries": [
+                    "When you make a Wisdom ({@skill Perception}) or Wisdom ({@skill Survival}) check, you can roll a {@dice d4} and add the number rolled to the ability check."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Finder's Magic",
+                "entries": [
+                    "You can cast the {@spell hunter's mark} spell with this trait. Starting at 3rd level, you can also cast the {@spell locate object} spell with it. Once you cast either spell with this trait, you can't cast that spell with it again until you finish a long rest. Wisdom is your spellcasting ability for these spells."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common and Goblin."
+                ],
+                "data": {
+                    "overwrite": "Languages"
+                }
+            },
+            {
+                "type": "entries",
+                "name": "Spells of the Mark",
+                "entries": [
+                    "If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Finding Spells table are added to the spell list of your spellcasting class.",
+                    {
+                        "type": "table",
+                        "caption": "Mark of Finding Spells",
+                        "colLabels": [
+                            "Spell Level",
+                            "Spells"
+                        ],
+                        "colStyles": [
+                            "col-2 text-center",
+                            "col-10"
+                        ],
+                        "rows": [
+                            [
+                                "1st",
+                                "{@spell faerie fire}, {@spell longstrider}"
+                            ],
+                            [
+                                "2nd",
+                                "{@spell locate animals or plants}, {@spell locate object}"
+                            ],
+                            [
+                                "3rd",
+                                "{@spell clairvoyance}, {@spell speak with plants}"
+                            ],
+                            [
+                                "4th",
+                                "{@spell divination}, {@spell locate creature}"
+                            ],
+                            [
+                                "5th",
+                                "{@spell commune with nature}"
+                            ]
+                        ]
+                    }
+                ]
+            }
+        ],
+        "overwrite": {
+            "traitTags": true,
+            "languageProficiencies": true
+        },
+        "slug": "human_phb_mark_of_finding_erlw",
+        "type": "subrace"
+    },
+    {
+        "name": "Mark of Handling",
+        "source": "ERLW",
+        "raceName": "Human",
+        "raceSource": "PHB",
+        "page": 42,
+        "otherSources": [
+            {
+                "source": "UAWGE",
+                "page": 98
+            }
+        ],
+        "ability": [
+            {
+                "wis": 2,
+                "choose": {
+                    "from": [
+                        "str",
+                        "dex",
+                        "con",
+                        "int",
+                        "cha"
+                    ],
+                    "count": 1
+                }
+            }
+        ],
+        "traitTags": [
+            "Dragonmark",
+            "Skill Bonus Dice"
+        ],
+        "additionalSpells": [
+            {
+                "expanded": {
+                    "s1": [
+                        "animal friendship",
+                        "speak with animals"
+                    ],
+                    "s2": [
+                        "beast sense",
+                        "calm emotions"
+                    ],
+                    "s3": [
+                        "beacon of hope",
+                        "conjure animals"
+                    ],
+                    "s4": [
+                        "aura of life",
+                        "dominate beast"
+                    ],
+                    "s5": [
+                        "awaken"
+                    ]
+                },
+                "ability": "wis",
+                "known": {
+                    "1": {
+                        "rest": {
+                            "1": [
+                                "animal friendship",
+                                "speak with animals"
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Wild Intuition",
+                "entries": [
+                    "When you make a Wisdom ({@skill Animal Handling}) or Intelligence ({@skill Nature}) check, you can roll a {@dice d4} and add the number rolled to the ability check."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Primal Connection",
+                "entries": [
+                    "You can cast the {@spell animal friendship} and {@spell speak with animals} spells with this trait, requiring no material component. Once you cast either spell with this trait, you can't cast that spell with it again until you finish a short or long rest. Wisdom is your spellcasting ability for these spells."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "The Bigger They Are",
+                "entries": [
+                    "Starting at 3rd level, you can target a beast or monstrosity when you cast {@spell animal friendship} or {@spell speak with animals}, provided the creature's Intelligence score is 3 or lower."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Spells of the Mark",
+                "entries": [
+                    "If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Handling Spells table are added to the spell list of your spellcasting class.",
+                    {
+                        "type": "table",
+                        "caption": "Mark of Handling Spells",
+                        "colLabels": [
+                            "Spell Level",
+                            "Spells"
+                        ],
+                        "colStyles": [
+                            "col-2 text-center",
+                            "col-10"
+                        ],
+                        "rows": [
+                            [
+                                "1st",
+                                "{@spell animal friendship}, {@spell speak with animals}"
+                            ],
+                            [
+                                "2nd",
+                                "{@spell beast sense}, {@spell calm emotions}"
+                            ],
+                            [
+                                "3rd",
+                                "{@spell beacon of hope}, {@spell conjure animals}"
+                            ],
+                            [
+                                "4th",
+                                "{@spell aura of life}, {@spell dominate beast}"
+                            ],
+                            [
+                                "5th",
+                                "{@spell awaken}"
+                            ]
+                        ]
+                    }
+                ]
+            }
+        ],
+        "slug": "human_phb_mark_of_handling_erlw",
+        "type": "subrace"
+    },
+    {
+        "name": "Mark of Making",
+        "source": "ERLW",
+        "raceName": "Human",
+        "raceSource": "PHB",
+        "page": 45,
+        "otherSources": [
+            {
+                "source": "UAWGE",
+                "page": 101
+            }
+        ],
+        "ability": [
+            {
+                "int": 2,
+                "choose": {
+                    "from": [
+                        "str",
+                        "dex",
+                        "con",
+                        "wis",
+                        "cha"
+                    ],
+                    "count": 1
+                }
+            }
+        ],
+        "traitTags": [
+            "Dragonmark",
+            "Skill Bonus Dice",
+            "Tool Bonus Dice"
+        ],
+        "toolProficiencies": [
+            {
+                "anyArtisans": 1
+            }
+        ],
+        "additionalSpells": [
+            {
+                "expanded": {
+                    "s1": [
+                        "identify",
+                        "tenser's floating disk"
+                    ],
+                    "s2": [
+                        "continual flame",
+                        "magic weapon"
+                    ],
+                    "s3": [
+                        "conjure barrage",
+                        "elemental weapon"
+                    ],
+                    "s4": [
+                        "fabricate",
+                        "stone shape"
+                    ],
+                    "s5": [
+                        "creation"
+                    ]
+                },
+                "ability": "int",
+                "known": {
+                    "1": [
+                        "mending#c",
+                        "magic weapon"
+                    ]
+                }
+            }
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Artisan's Intuition",
+                "entries": [
+                    "When you make an {@skill Arcana} check or an ability check involving {@filter artisan's tools|items|source=phb|miscellaneous=mundane|type=artisan's tools}, you can roll a {@dice d4} and add the number rolled to the ability check."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Maker's Gift",
+                "entries": [
+                    "You gain proficiency with one type of artisan's tools of your choice."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Spellsmith",
+                "entries": [
+                    "You know the {@spell mending} cantrip. You can also cast the {@spell magic weapon} spell with this trait. When you do so, the spell lasts for 1 hour and doesn't require concentration. Once you cast the spell with this trait, you can't do so again until you finish a long rest. Intelligence is your spellcasting ability for these spells."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Spells of the Mark",
+                "entries": [
+                    "If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Making Spells table are added to the spell list of your spellcasting class.",
+                    {
+                        "type": "table",
+                        "caption": "Mark of Making Spells",
+                        "colLabels": [
+                            "Spell Level",
+                            "Spells"
+                        ],
+                        "colStyles": [
+                            "col-2 text-center",
+                            "col-10"
+                        ],
+                        "rows": [
+                            [
+                                "1st",
+                                "{@spell identify}, {@spell Tenser's floating disk}"
+                            ],
+                            [
+                                "2nd",
+                                "{@spell continual flame}, {@spell magic weapon}"
+                            ],
+                            [
+                                "3rd",
+                                "{@spell conjure barrage}, {@spell elemental weapon}"
+                            ],
+                            [
+                                "4th",
+                                "{@spell fabricate}, {@spell stone shape}"
+                            ],
+                            [
+                                "5th",
+                                "{@spell creation}"
+                            ]
+                        ]
+                    }
+                ]
+            }
+        ],
+        "slug": "human_phb_mark_of_making_erlw",
+        "type": "subrace"
+    },
+    {
+        "name": "Mark of Passage",
+        "source": "ERLW",
+        "raceName": "Human",
+        "raceSource": "PHB",
+        "page": 46,
+        "otherSources": [
+            {
+                "source": "UAWGE",
+                "page": 102
+            }
+        ],
+        "speed": 35,
+        "ability": [
+            {
+                "dex": 2,
+                "choose": {
+                    "from": [
+                        "str",
+                        "con",
+                        "int",
+                        "wis",
+                        "cha"
+                    ],
+                    "count": 1
+                }
+            }
+        ],
+        "traitTags": [
+            "Dragonmark"
+        ],
+        "additionalSpells": [
+            {
+                "expanded": {
+                    "s1": [
+                        "expeditious retreat",
+                        "jump"
+                    ],
+                    "s2": [
+                        "misty step",
+                        "pass without trace"
+                    ],
+                    "s3": [
+                        "blink",
+                        "phantom steed"
+                    ],
+                    "s4": [
+                        "dimension door",
+                        "freedom of movement"
+                    ],
+                    "s5": [
+                        "teleportation circle"
+                    ]
+                },
+                "ability": "dex",
+                "known": {
+                    "1": [
+                        "misty step"
+                    ]
+                }
+            }
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Courier's Speed",
+                "entries": [
+                    "Your base walking speed increases to 35 feet."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Intuitive Motion",
+                "entries": [
+                    "When you make a Dexterity ({@skill Acrobatics}) check or any ability check to operate or maintain a {@filter land vehicle|items|source=phb;dmg|miscellaneous=mundane|type=vehicle (land)}, you can roll a {@dice d4} and add the number rolled to the ability check."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Magical Passage",
+                "entries": [
+                    "You can cast the {@spell misty step} spell once with this trait, and you regain the ability to cast it when you finish a long rest. Dexterity is your spellcasting ability for this spell."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Spells of the Mark",
+                "entries": [
+                    "If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Passage Spells table are added to the spell list of your spellcasting class.",
+                    {
+                        "type": "table",
+                        "caption": "Mark of Passage Spells",
+                        "colLabels": [
+                            "Spell Level",
+                            "Spells"
+                        ],
+                        "colStyles": [
+                            "col-2 text-center",
+                            "col-10"
+                        ],
+                        "rows": [
+                            [
+                                "1st",
+                                "{@spell expeditious retreat}, {@spell jump}"
+                            ],
+                            [
+                                "2nd",
+                                "{@spell misty step}, {@spell pass without trace}"
+                            ],
+                            [
+                                "3rd",
+                                "{@spell blink}, {@spell phantom steed}"
+                            ],
+                            [
+                                "4th",
+                                "{@spell dimension door}, {@spell freedom of movement}"
+                            ],
+                            [
+                                "5th",
+                                "{@spell teleportation circle}"
+                            ]
+                        ]
+                    }
+                ]
+            }
+        ],
+        "slug": "human_phb_mark_of_passage_erlw",
+        "type": "subrace"
+    },
+    {
+        "name": "Mark of Sentinel",
+        "source": "ERLW",
+        "raceName": "Human",
+        "raceSource": "PHB",
+        "page": 48,
+        "otherSources": [
+            {
+                "source": "UAWGE",
+                "page": 104
+            }
+        ],
+        "ability": [
+            {
+                "con": 2,
+                "wis": 1
+            }
+        ],
+        "traitTags": [
+            "Dragonmark",
+            "Skill Bonus Dice"
+        ],
+        "additionalSpells": [
+            {
+                "expanded": {
+                    "s1": [
+                        "compelled duel",
+                        "shield of faith"
+                    ],
+                    "s2": [
+                        "warding bond",
+                        "zone of truth"
+                    ],
+                    "s3": [
+                        "counterspell",
+                        "protection from energy"
+                    ],
+                    "s4": [
+                        "death ward",
+                        "guardian of faith"
+                    ],
+                    "s5": [
+                        "bigby's hand"
+                    ]
+                },
+                "ability": "wis",
+                "known": {
+                    "1": [
+                        "shield"
+                    ]
+                }
+            }
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Sentinel's Intuition",
+                "entries": [
+                    "When you make a Wisdom ({@skill Insight}) or Wisdom ({@skill Perception}) check, you can roll a {@dice d4} and add the number rolled to the ability check."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Guardian's Shield",
+                "entries": [
+                    "You can cast the {@spell shield} spell once with this trait, and you regain the ability to cast it after you finish a long rest. Wisdom is your spellcasting ability for this spell."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Vigilant Guardian",
+                "entries": [
+                    "When a creature you can see within 5 feet of you is hit by an attack roll, you can use your reaction to swap places with that creature, and you are hit by the attack instead. Once you use this trait, you can't do so again until you finish a long rest."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Spells of the Mark",
+                "entries": [
+                    "If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Sentinel Spells table are added to the spell list of your spellcasting class.",
+                    {
+                        "type": "table",
+                        "caption": "Mark of Sentinel Spells",
+                        "colLabels": [
+                            "Spell Level",
+                            "Spells"
+                        ],
+                        "colStyles": [
+                            "col-2 text-center",
+                            "col-10"
+                        ],
+                        "rows": [
+                            [
+                                "1st",
+                                "{@spell compelled duel}, {@spell shield of faith}"
+                            ],
+                            [
+                                "2nd",
+                                "{@spell warding bond}, {@spell zone of truth}"
+                            ],
+                            [
+                                "3rd",
+                                "{@spell counterspell}, {@spell protection from energy}"
+                            ],
+                            [
+                                "4th",
+                                "{@spell death ward}, {@spell guardian of faith}"
+                            ],
+                            [
+                                "5th",
+                                "{@spell Bigby's hand}"
+                            ]
+                        ]
+                    }
+                ]
+            }
+        ],
+        "slug": "human_phb_mark_of_sentinel_erlw",
+        "type": "subrace"
+    },
+    {
+        "name": "Variant",
+        "source": "PHB",
+        "raceName": "Human",
+        "raceSource": "PHB",
+        "page": 31,
+        "basicRules": true,
+        "ability": [
+            {
+                "choose": {
+                    "from": [
+                        "str",
+                        "dex",
+                        "con",
+                        "int",
+                        "wis",
+                        "cha"
+                    ],
+                    "count": 2
+                }
+            }
+        ],
+        "feats": [
+            {
+                "any": 1
+            }
+        ],
+        "skillProficiencies": [
+            {
+                "any": 1
+            }
+        ],
+        "entries": [
+            {
+                "name": "Skills",
+                "entries": [
+                    "You gain proficiency in one skill of your choice."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Feat",
+                "entries": [
+                    "You gain one {@5etools feat|feats.html} of your choice."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "human_phb_variant_phb",
+        "type": "subrace"
+    }
+]

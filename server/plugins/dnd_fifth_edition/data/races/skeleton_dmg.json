@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Skeleton",
+        "source": "DMG",
+        "page": 282,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
+            {
+                "dex": 2,
+                "int": -4,
+                "cha": -4
+            }
+        ],
+        "darkvision": 60,
+        "traitTags": [
+            "Improved Resting",
+            "NPC Race"
+        ],
+        "immune": [
+            "poison"
+        ],
+        "vulnerable": [
+            "bludgeoning"
+        ],
+        "conditionImmune": [
+            "exhaustion",
+            "poisoned"
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Brittle Bones",
+                "entries": [
+                    "You are vulnerable to bludgeoning damage."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Undead Nature",
+                "entries": [
+                    "You are immune to poison damage and {@condition exhaustion}, and you can't be {@condition poisoned}. You don't require air, food, drink, or sleep."
+                ]
+            },
+            {
+                "name": "Darkvision",
+                "entries": [
+                    "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can't speak, but you can understand the languages you knew in life."
+                ],
+                "type": "entries"
+            }
+        ],
+        "slug": "skeleton_dmg_generic",
+        "type": "generic"
+    }
+]

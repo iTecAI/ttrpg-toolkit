@@ -1,0 +1,459 @@
+[
+    {
+        "name": "Halfling",
+        "source": "PHB",
+        "page": 26,
+        "srd": true,
+        "basicRules": true,
+        "size": [
+            "S"
+        ],
+        "speed": 25,
+        "ability": [
+            {
+                "dex": 2
+            }
+        ],
+        "heightAndWeight": {
+            "baseHeight": 31,
+            "heightMod": "2d4",
+            "baseWeight": 35
+        },
+        "age": {
+            "mature": 20,
+            "max": 250
+        },
+        "languageProficiencies": [
+            {
+                "common": true,
+                "halfling": true
+            }
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/halfling.mp3"
+        },
+        "entries": [
+            {
+                "name": "Age",
+                "type": "entries",
+                "entries": [
+                    "A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "Halflings average about 3 feet tall and weigh about 40 pounds. Your size is Small."
+                ]
+            },
+            {
+                "name": "Lucky",
+                "entries": [
+                    "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Brave",
+                "entries": [
+                    "You have advantage on saving throws against being {@condition frightened}."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Halfling Nimbleness",
+                "entries": [
+                    "You can move through the space of any creature that is of a size larger than yours."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common and Halfling. The Halfling language isn't secret, but halflings are loath to share it with others. They write very little, so they don't have a rich body of literature. Their oral tradition, however, is very strong. Almost all halflings speak Common to converse with the people in whose lands they dwell or through which they are traveling."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "halfling_phb_generic",
+        "type": "generic"
+    },
+    {
+        "name": "Ghostwise",
+        "source": "SCAG",
+        "raceName": "Halfling",
+        "raceSource": "PHB",
+        "page": 110,
+        "ability": [
+            {
+                "wis": 1
+            }
+        ],
+        "entries": [
+            {
+                "name": "Silent Speech",
+                "entries": [
+                    "You can speak telepathically to any creature within 30 feet of you. The creature understands you only if the two of you share a language. You can speak telepathically in this way to one creature at a time."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "halfling_phb_ghostwise_scag",
+        "type": "subrace"
+    },
+    {
+        "name": "Lightfoot",
+        "source": "PHB",
+        "raceName": "Halfling",
+        "raceSource": "PHB",
+        "page": 28,
+        "srd": true,
+        "basicRules": true,
+        "ability": [
+            {
+                "cha": 1
+            }
+        ],
+        "entries": [
+            {
+                "name": "Naturally Stealthy",
+                "entries": [
+                    "You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "halfling_phb_lightfoot_phb",
+        "type": "subrace"
+    },
+    {
+        "name": "Lotusden",
+        "source": "EGW",
+        "raceName": "Halfling",
+        "raceSource": "PHB",
+        "page": 164,
+        "ability": [
+            {
+                "wis": 1
+            }
+        ],
+        "additionalSpells": [
+            {
+                "innate": {
+                    "3": {
+                        "daily": {
+                            "1": [
+                                "entangle"
+                            ]
+                        }
+                    },
+                    "5": {
+                        "daily": {
+                            "1": [
+                                "spike growth"
+                            ]
+                        }
+                    }
+                },
+                "ability": "wis",
+                "known": {
+                    "1": [
+                        "druidcraft#c"
+                    ]
+                }
+            }
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Child of the Wood",
+                "entries": [
+                    "You know the {@spell druidcraft} cantrip. When you reach 3rd level, you can cast the {@spell entangle} spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the {@spell spike growth} spell once with this trait and regain the ability to do so when you finish a long rest. Casting these spells with this trait doesn't require material components. Wisdom is your spellcasting ability for these spells."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Timberwalk",
+                "entries": [
+                    "Ability checks made to track you have disadvantage, and you can move across {@quickref difficult terrain||3} made of nonmagical plants and undergrowth without expending extra movement."
+                ]
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "halfling_phb_lotusden_egw",
+        "type": "subrace"
+    },
+    {
+        "name": "Mark of Healing",
+        "source": "ERLW",
+        "raceName": "Halfling",
+        "raceSource": "PHB",
+        "page": 43,
+        "otherSources": [
+            {
+                "source": "UAWGE",
+                "page": 99
+            }
+        ],
+        "ability": [
+            {
+                "wis": 1
+            }
+        ],
+        "traitTags": [
+            "Dragonmark",
+            "Skill Bonus Dice",
+            "Tool Bonus Dice"
+        ],
+        "additionalSpells": [
+            {
+                "innate": {
+                    "1": [
+                        "cure wounds"
+                    ],
+                    "3": {
+                        "daily": {
+                            "1": [
+                                "lesser restoration"
+                            ]
+                        }
+                    }
+                },
+                "expanded": {
+                    "s1": [
+                        "cure wounds",
+                        "healing word"
+                    ],
+                    "s2": [
+                        "lesser restoration",
+                        "prayer of healing"
+                    ],
+                    "s3": [
+                        "aura of vitality",
+                        "mass healing word"
+                    ],
+                    "s4": [
+                        "aura of purity",
+                        "aura of life"
+                    ],
+                    "s5": [
+                        "greater restoration"
+                    ]
+                },
+                "ability": "wis"
+            }
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Medical Intuition",
+                "entries": [
+                    "When you make a Wisdom ({@skill Medicine}) check or an ability check using an {@item herbalism kit|phb}, you can roll a {@dice d4} and add the number rolled to the ability check."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Healing Touch",
+                "entries": [
+                    "You can cast the {@spell cure wounds} spell with this trait. Starting at 3rd level, you can also cast {@spell lesser restoration} with it. Once you cast either spell with this trait, you can't cast that spell with it again until you finish a long rest. Wisdom is your spellcasting ability for these spells."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Spells of the Mark",
+                "entries": [
+                    "If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Healing Spells table are added to the spell list of your spellcasting class.",
+                    {
+                        "type": "table",
+                        "caption": "Mark of Healing Spells",
+                        "colLabels": [
+                            "Spell Level",
+                            "Spells"
+                        ],
+                        "colStyles": [
+                            "col-2 text-center",
+                            "col-10"
+                        ],
+                        "rows": [
+                            [
+                                "1st",
+                                "{@spell cure wounds}, {@spell healing word}"
+                            ],
+                            [
+                                "2nd",
+                                "{@spell lesser restoration}, {@spell prayer of healing}"
+                            ],
+                            [
+                                "3rd",
+                                "{@spell aura of vitality}, {@spell mass healing word}"
+                            ],
+                            [
+                                "4th",
+                                "{@spell aura of purity}, {@spell aura of life}"
+                            ],
+                            [
+                                "5th",
+                                "{@spell greater restoration}"
+                            ]
+                        ]
+                    }
+                ]
+            }
+        ],
+        "slug": "halfling_phb_mark_of_healing_erlw",
+        "type": "subrace"
+    },
+    {
+        "name": "Mark of Hospitality",
+        "source": "ERLW",
+        "raceName": "Halfling",
+        "raceSource": "PHB",
+        "page": 44,
+        "otherSources": [
+            {
+                "source": "UAWGE",
+                "page": 100
+            }
+        ],
+        "ability": [
+            {
+                "cha": 1
+            }
+        ],
+        "traitTags": [
+            "Dragonmark",
+            "Skill Bonus Dice",
+            "Tool Bonus Dice"
+        ],
+        "additionalSpells": [
+            {
+                "expanded": {
+                    "s1": [
+                        "goodberry",
+                        "sleep"
+                    ],
+                    "s2": [
+                        "aid",
+                        "calm emotions"
+                    ],
+                    "s3": [
+                        "create food and water",
+                        "leomund's tiny hut"
+                    ],
+                    "s4": [
+                        "aura of purity",
+                        "mordenkainen's private sanctum"
+                    ],
+                    "s5": [
+                        "hallow"
+                    ]
+                },
+                "ability": "cha",
+                "known": {
+                    "1": [
+                        "prestidigitation#c",
+                        "purify food and drink",
+                        "unseen servant"
+                    ]
+                }
+            }
+        ],
+        "entries": [
+            {
+                "type": "entries",
+                "name": "Ever Hospitable",
+                "entries": [
+                    "When you make a Charisma ({@skill Persuasion}) check or an ability check involving {@item brewer's supplies|PHB} or {@item cook's utensils|PHB}, you can roll a {@dice d4} and add the number rolled to the ability check."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Innkeeper's Magic",
+                "entries": [
+                    "You know the {@spell prestidigitation} cantrip. You can also cast the {@spell purify food and drink} and {@spell unseen servant} spells with this trait. Once you cast either spell with this trait, you can't cast that spell with it again until you finish long rest. Charisma is your spellcasting ability for these spells."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Spells of the Mark",
+                "entries": [
+                    "If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Hospitality Spells table are added to the spell list of your spellcasting class.",
+                    {
+                        "type": "table",
+                        "caption": "Mark of Hospitality Spells",
+                        "colLabels": [
+                            "Spell Level",
+                            "Spells"
+                        ],
+                        "colStyles": [
+                            "col-2 text-center",
+                            "col-10"
+                        ],
+                        "rows": [
+                            [
+                                "1st",
+                                "{@spell goodberry}, {@spell sleep}"
+                            ],
+                            [
+                                "2nd",
+                                "{@spell aid}, {@spell calm emotions}"
+                            ],
+                            [
+                                "3rd",
+                                "{@spell create food and water}, {@spell Leomund's tiny hut}"
+                            ],
+                            [
+                                "4th",
+                                "{@spell aura of purity}, {@spell Mordenkainen's private sanctum}"
+                            ],
+                            [
+                                "5th",
+                                "{@spell hallow}"
+                            ]
+                        ]
+                    }
+                ]
+            }
+        ],
+        "slug": "halfling_phb_mark_of_hospitality_erlw",
+        "type": "subrace"
+    },
+    {
+        "name": "Stout",
+        "source": "PHB",
+        "raceName": "Halfling",
+        "raceSource": "PHB",
+        "page": 28,
+        "basicRules": true,
+        "ability": [
+            {
+                "con": 1
+            }
+        ],
+        "resist": [
+            "poison"
+        ],
+        "entries": [
+            {
+                "name": "Stout Resilience",
+                "entries": [
+                    "You have advantage on saving throws against poison, and you have resistance against poison damage."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "halfling_phb_stout_phb",
+        "type": "subrace"
+    }
+]

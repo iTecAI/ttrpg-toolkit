@@ -1,0 +1,114 @@
+[
+    {
+        "name": "Bugbear",
+        "source": "VGM",
+        "page": 119,
+        "otherSources": [
+            {
+                "source": "EGW",
+                "page": 174
+            }
+        ],
+        "reprintedAs": [
+            "Bugbear|MPMM"
+        ],
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
+            {
+                "str": 2,
+                "dex": 1
+            }
+        ],
+        "heightAndWeight": {
+            "baseHeight": 72,
+            "heightMod": "2d12",
+            "baseWeight": 200,
+            "weightMod": "2d6"
+        },
+        "age": {
+            "mature": 16,
+            "max": 80
+        },
+        "darkvision": 60,
+        "traitTags": [
+            "Monstrous Race",
+            "Powerful Build"
+        ],
+        "skillProficiencies": [
+            {
+                "stealth": true
+            }
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "goblin": true
+            }
+        ],
+        "entries": [
+            {
+                "name": "Age",
+                "type": "entries",
+                "entries": [
+                    "Bugbears reach adulthood at age 16 and live up to 80 years."
+                ]
+            },
+            {
+                "type": "entries",
+                "name": "Size",
+                "entries": [
+                    "Bugbears are between 6 and 8 feet tall and weigh between 250 and 350 pounds. Your size is Medium."
+                ]
+            },
+            {
+                "name": "Darkvision",
+                "entries": [
+                    "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Long-Limbed",
+                "entries": [
+                    "When you make a melee attack on your turn, your reach for it is 5 feet greater than normal."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Powerful Build",
+                "entries": [
+                    "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Sneaky",
+                "entries": [
+                    "You are proficient in the {@skill Stealth} skill."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Surprise Attack",
+                "entries": [
+                    "If you surprise a creature and hit it with an attack on your first turn in combat, the attack deals an extra {@dice 2d6} damage to it. You can use this trait only once per combat."
+                ],
+                "type": "entries"
+            },
+            {
+                "name": "Languages",
+                "entries": [
+                    "You can speak, read, and write Common and Goblin."
+                ],
+                "type": "entries"
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
+        "slug": "bugbear_vgm_generic",
+        "type": "generic"
+    }
+]
