@@ -18,6 +18,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "hobgoblin_mpmm_generic",
+        "display_name": "Hobgoblin",
         "type": "generic",
         "fluff": [
             "**Creature Type:** You are a Humanoid.You are also considered a goblinoid for any prerequisite or effect that requires you to be a goblinoid.",

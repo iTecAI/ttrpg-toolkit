@@ -35,6 +35,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "sea_elf_mpmm_generic",
+        "display_name": "Sea Elf",
         "type": "generic",
         "fluff": [
             "**Creature Type:** You are a Humanoid. You are also considered an elf for any prerequisite or effect that requires you to be an elf.",

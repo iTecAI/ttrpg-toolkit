@@ -63,6 +63,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "goliath_vgm_generic",
+        "display_name": "Goliath",
         "type": "generic",
         "fluff": [
             "**Age:** Goliaths have lifespans comparable to humans. They enter adulthood in their late teens and usually live less than a century.",

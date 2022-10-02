@@ -59,6 +59,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "aasimar_vgm_generic",
+        "display_name": "Aasimar",
         "type": "generic",
         "fluff": [
             "**Age:** Aasimar mature at the same rate as humans, but they can live up to 160 years.",
@@ -139,6 +140,7 @@
             }
         ],
         "slug": "aasimar_vgm_fallen_vgm",
+        "display_name": "Fallen Aasimar",
         "type": "subrace",
         "fluff": [
             "**Age:** Aasimar mature at the same rate as humans, but they can live up to 160 years.",
@@ -223,6 +225,7 @@
             }
         ],
         "slug": "aasimar_vgm_protector_vgm",
+        "display_name": "Protector Aasimar",
         "type": "subrace",
         "fluff": [
             "**Age:** Aasimar mature at the same rate as humans, but they can live up to 160 years.",
@@ -307,6 +310,7 @@
             }
         ],
         "slug": "aasimar_vgm_scourge_vgm",
+        "display_name": "Scourge Aasimar",
         "type": "subrace",
         "fluff": [
             "**Age:** Aasimar mature at the same rate as humans, but they can live up to 160 years.",

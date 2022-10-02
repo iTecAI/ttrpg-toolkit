@@ -23,6 +23,7 @@
         ],
         "hasFluff": true,
         "slug": "dragonborn__gem__ua2021draconicoptions_generic",
+        "display_name": "Dragonborn (Gem)",
         "type": "generic",
         "fluff": [
             "**Gem Ancestry:** You trace your ancestry to a gem dragon, granting you a special magical affinity. Choose one type of dragon from the Gem Ancestry table. This determines the damage type for your other traits as shown in the table.",

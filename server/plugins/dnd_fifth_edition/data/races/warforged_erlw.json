@@ -67,6 +67,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "warforged_erlw_generic",
+        "display_name": "Warforged",
         "type": "generic",
         "fluff": [
             "**Age:** A typical warforged is between two and thirty years old. The maximum warforged lifespan remains a mystery; so far, warforged have shown no signs of deterioration due to age. You are immune to magical aging effects.",

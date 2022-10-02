@@ -53,6 +53,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "dragonborn_phb_generic",
+        "display_name": "Dragonborn",
         "type": "generic",
         "fluff": [
             "**Age:** Young dragonborn grow quickly. They walk hours after hatching, attain the size and development of a 10-year-old human child by the age of 3, and reach adulthood by 15. They live to be around 80.",

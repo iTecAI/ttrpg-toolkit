@@ -38,6 +38,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "hexblood_vrgr_generic",
+        "display_name": "Hexblood",
         "type": "generic",
         "fluff": [
             "**Creature Type:** You are a Fey.",

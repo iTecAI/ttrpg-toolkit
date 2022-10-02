@@ -26,6 +26,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "bugbear_mpmm_generic",
+        "display_name": "Bugbear",
         "type": "generic",
         "fluff": [
             "**Creature Type:** You are a Humanoid. You are also considered a goblinoid for any prerequisite or effect that requires you to be a goblinoid.",

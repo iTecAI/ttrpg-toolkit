@@ -49,6 +49,7 @@ def convert_subrace(race: dict, subrace: dict, parser: Parser5e):
             {"name": data["raceName"], "source": data["raceSource"]},
             suffix="_" + slug(subrace, suffix=""),
         )
+        data["display_name"] = subrace["name"] + " " + race["name"]
         data["type"] = "subrace"
         if "entries" in race.keys() and "entries" in subrace.keys():
             data["entries"] = resolve_entries(race["entries"], subrace["entries"])
@@ -71,6 +72,7 @@ def convert_one_race(race: dict, subraces: list[dict], parser: Parser5e):
     results = []
     base = race.copy()
     base["slug"] = slug(race)
+    base["display_name"] = race["name"]
     base["type"] = "generic"
     base["fluff"] = parser.parse(base["entries"] if "entries" in base.keys() else [])
     if "entries" in base.keys():

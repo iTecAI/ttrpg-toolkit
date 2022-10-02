@@ -28,6 +28,7 @@
             }
         ],
         "slug": "shifter_uaracesofeberron_generic",
+        "display_name": "Shifter",
         "type": "generic",
         "fluff": [
             "**Age:** Shifters are quick to mature both physically and emotionally, reaching young adulthood at age 10. They rarely live to be more than 70 years old.",
@@ -81,6 +82,7 @@
             }
         ],
         "slug": "shifter_uaracesofeberron_beasthide_uaracesofeberron",
+        "display_name": "Beasthide Shifter",
         "type": "subrace",
         "fluff": [
             "**Age:** Shifters are quick to mature both physically and emotionally, reaching young adulthood at age 10. They rarely live to be more than 70 years old.",
@@ -138,6 +140,7 @@
             }
         ],
         "slug": "shifter_uaracesofeberron_longtooth_uaracesofeberron",
+        "display_name": "Longtooth Shifter",
         "type": "subrace",
         "fluff": [
             "**Age:** Shifters are quick to mature both physically and emotionally, reaching young adulthood at age 10. They rarely live to be more than 70 years old.",
@@ -193,6 +196,7 @@
             }
         ],
         "slug": "shifter_uaracesofeberron_swiftstride_uaracesofeberron",
+        "display_name": "Swiftstride Shifter",
         "type": "subrace",
         "fluff": [
             "**Age:** Shifters are quick to mature both physically and emotionally, reaching young adulthood at age 10. They rarely live to be more than 70 years old.",
@@ -249,6 +253,7 @@
             }
         ],
         "slug": "shifter_uaracesofeberron_wildhunt_uaracesofeberron",
+        "display_name": "Wildhunt Shifter",
         "type": "subrace",
         "fluff": [
             "**Age:** Shifters are quick to mature both physically and emotionally, reaching young adulthood at age 10. They rarely live to be more than 70 years old.",

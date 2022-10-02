@@ -42,6 +42,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "kalashtar_erlw_generic",
+        "display_name": "Kalashtar",
         "type": "generic",
         "fluff": [
             "**Age:** Kalashtar mature and age at the same rate as humans.",

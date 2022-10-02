@@ -24,6 +24,7 @@
             }
         ],
         "slug": "orc_dmg_generic",
+        "display_name": "Orc",
         "type": "generic",
         "fluff": [
             "**Aggressive:** As a bonus action, you can move up to your speed toward a hostile creature that you can see.",

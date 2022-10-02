@@ -75,6 +75,7 @@
             }
         ],
         "slug": "orc_egw_generic",
+        "display_name": "Orc",
         "type": "generic",
         "fluff": []
     }

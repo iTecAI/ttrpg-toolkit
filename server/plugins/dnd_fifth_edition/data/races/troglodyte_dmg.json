@@ -27,6 +27,7 @@
             }
         ],
         "slug": "troglodyte_dmg_generic",
+        "display_name": "Troglodyte",
         "type": "generic",
         "fluff": [
             "**Chameleon Skin:** You have advantage on Dexterity (Stealth) checks made to hide.",

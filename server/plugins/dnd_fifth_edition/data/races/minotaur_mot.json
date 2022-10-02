@@ -36,6 +36,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "minotaur_mot_generic",
+        "display_name": "Minotaur",
         "type": "generic",
         "fluff": []
     }

@@ -58,6 +58,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "hobgoblin_vgm_generic",
+        "display_name": "Hobgoblin",
         "type": "generic",
         "fluff": [
             "**Age:** Hobgoblins mature at the same rate as humans and have lifespans similar in length to theirs.",

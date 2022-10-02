@@ -15,6 +15,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "orc_mpmm_generic",
+        "display_name": "Orc",
         "type": "generic",
         "fluff": [
             "**Adrenaline Rush:** You can take the **Dash** action as a bonus action. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",

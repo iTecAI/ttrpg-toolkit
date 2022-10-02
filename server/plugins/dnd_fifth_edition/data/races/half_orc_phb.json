@@ -46,6 +46,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "half_orc_phb_generic",
+        "display_name": "Half-Orc",
         "type": "generic",
         "fluff": [
             "**Age:** Half-orcs mature a little faster than humans, reaching adulthood around age 14. They age noticeably faster and rarely live longer than 75 years.",

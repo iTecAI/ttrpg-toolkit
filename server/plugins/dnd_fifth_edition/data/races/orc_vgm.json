@@ -56,6 +56,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "orc_vgm_generic",
+        "display_name": "Orc",
         "type": "generic",
         "fluff": [
             "**Age:** Orcs reach adulthood at age 12 and live up to 50 years.",

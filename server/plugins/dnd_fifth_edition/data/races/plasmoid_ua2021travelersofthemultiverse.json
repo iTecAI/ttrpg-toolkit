@@ -19,6 +19,7 @@
         ],
         "hasFluff": true,
         "slug": "plasmoid_ua2021travelersofthemultiverse_generic",
+        "display_name": "Plasmoid",
         "type": "generic",
         "fluff": [
             "**Creature Type:** You are an Ooze.",

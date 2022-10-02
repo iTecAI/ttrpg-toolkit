@@ -43,6 +43,7 @@
             }
         ],
         "slug": "bugbear_erlw_generic",
+        "display_name": "Bugbear",
         "type": "generic",
         "fluff": [
             "**Age:** Bugbears reach adulthood at age 16 and live up to 80 years.",

@@ -46,6 +46,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "aarakocra_eepc_generic",
+        "display_name": "Aarakocra",
         "type": "generic",
         "fluff": [
             "**Age:** Aarakocra reach maturity by age 3. Compared to humans, aarakocra don't usually live longer than 30 years.",

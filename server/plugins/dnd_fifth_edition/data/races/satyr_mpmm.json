@@ -28,6 +28,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "satyr_mpmm_generic",
+        "display_name": "Satyr",
         "type": "generic",
         "fluff": [
             "**Creature Type:** You are a Fey.",

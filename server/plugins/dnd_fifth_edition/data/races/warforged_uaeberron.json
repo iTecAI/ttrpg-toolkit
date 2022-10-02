@@ -27,6 +27,7 @@
             "disease"
         ],
         "slug": "warforged_uaeberron_generic",
+        "display_name": "Warforged",
         "type": "generic",
         "fluff": [
             "**Size:** Warforged are generally broader and heavier than humans. Your size is Medium",

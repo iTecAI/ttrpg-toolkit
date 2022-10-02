@@ -44,6 +44,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "tortle_ttp_generic",
+        "display_name": "Tortle",
         "type": "generic",
         "fluff": [
             "> *The Tortle Package is considered part of Xanathar's Guide to Everything for Adventurers League character creation.*",

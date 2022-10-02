@@ -64,6 +64,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "firbolg_vgm_generic",
+        "display_name": "Firbolg",
         "type": "generic",
         "fluff": [
             "**Age:** As humanoids related to the fey, firbolg have long lifespans. A firbolg reaches adulthood around 30, and the oldest of them can live for 500 years.",

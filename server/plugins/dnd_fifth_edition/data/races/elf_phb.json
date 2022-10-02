@@ -40,6 +40,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "elf_phb_generic",
+        "display_name": "Elf",
         "type": "generic",
         "fluff": [
             "**Age:** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",
@@ -104,6 +105,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "elf_phb_avariel_uaelfsubraces",
+        "display_name": "Avariel Elf",
         "type": "subrace",
         "fluff": [
             "**Age:** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",
@@ -212,6 +214,7 @@
         },
         "hasFluffImages": true,
         "slug": "elf_phb_drow_phb",
+        "display_name": "Drow Elf",
         "type": "subrace",
         "fluff": [
             "**Age:** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",
@@ -304,6 +307,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "elf_phb_eladrin_dmg",
+        "display_name": "Eladrin Elf",
         "type": "subrace",
         "fluff": [
             "**Age:** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",
@@ -388,6 +392,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "elf_phb_eladrin_uaeladrinandgith",
+        "display_name": "Eladrin Elf",
         "type": "subrace",
         "fluff": [
             "**Age:** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",
@@ -486,6 +491,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "elf_phb_grugach_uaelfsubraces",
+        "display_name": "Grugach Elf",
         "type": "subrace",
         "fluff": [
             "**Age:** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",
@@ -582,6 +588,7 @@
             "path": "races/elf.mp3"
         },
         "slug": "elf_phb_high_phb",
+        "display_name": "High Elf",
         "type": "subrace",
         "fluff": [
             "**Age:** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",
@@ -677,6 +684,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "elf_phb_high__aereni_uawge",
+        "display_name": "High; Aereni Elf",
         "type": "subrace",
         "fluff": [
             "**Age:** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",
@@ -767,6 +775,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "elf_phb_high__valenar_uawge",
+        "display_name": "High; Valenar Elf",
         "type": "subrace",
         "fluff": [
             "**Age:** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",
@@ -882,6 +891,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "elf_phb_mark_of_shadow_erlw",
+        "display_name": "Mark of Shadow Elf",
         "type": "subrace",
         "fluff": [
             "**Age:** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",
@@ -991,6 +1001,7 @@
             "path": "races/elf.mp3"
         },
         "slug": "elf_phb_pallid_egw",
+        "display_name": "Pallid Elf",
         "type": "subrace",
         "fluff": [
             "**Age:** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",
@@ -1084,6 +1095,7 @@
         },
         "hasFluffImages": true,
         "slug": "elf_phb_sea_mtf",
+        "display_name": "Sea Elf",
         "type": "subrace",
         "fluff": [
             "**Age:** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",
@@ -1166,6 +1178,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "elf_phb_sea_uaelfsubraces",
+        "display_name": "Sea Elf",
         "type": "subrace",
         "fluff": [
             "**Age:** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",
@@ -1248,6 +1261,7 @@
         },
         "hasFluffImages": true,
         "slug": "elf_phb_shadar_kai_mtf",
+        "display_name": "Shadar-kai Elf",
         "type": "subrace",
         "fluff": [
             "**Age:** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",
@@ -1342,6 +1356,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "elf_phb_shadar_kai_uaelfsubraces",
+        "display_name": "Shadar-kai Elf",
         "type": "subrace",
         "fluff": [
             "**Age:** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",
@@ -1424,6 +1439,7 @@
             "path": "races/elf.mp3"
         },
         "slug": "elf_phb_wood_phb",
+        "display_name": "Wood Elf",
         "type": "subrace",
         "fluff": [
             "**Age:** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",
@@ -1492,6 +1508,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "elf_phb_wood__aereni_uawge",
+        "display_name": "Wood; Aereni Elf",
         "type": "subrace",
         "fluff": [
             "**Age:** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",
@@ -1568,6 +1585,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "elf_phb_wood__valenar_uawge",
+        "display_name": "Wood; Valenar Elf",
         "type": "subrace",
         "fluff": [
             "**Age:** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",

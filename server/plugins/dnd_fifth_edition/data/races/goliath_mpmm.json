@@ -22,6 +22,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "goliath_mpmm_generic",
+        "display_name": "Goliath",
         "type": "generic",
         "fluff": [
             "**Little Giant:** You have proficiency in the Athletics skill, and you count as one size larger when determining your carrying weight and the weight you can push, drag, or lift.",

@@ -38,6 +38,7 @@
             }
         ],
         "slug": "gnome__deep__dmg_generic",
+        "display_name": "Gnome (Deep)",
         "type": "generic",
         "fluff": [
             "**Innate Spellcasting:** You have an innate ability to cast the following spells, requiring no material components:",

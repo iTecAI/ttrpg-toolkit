@@ -23,6 +23,7 @@
             }
         ],
         "slug": "grimlock_dmg_generic",
+        "display_name": "Grimlock",
         "type": "generic",
         "fluff": [
             "**Blindsight:** You have no eyes, and cannot be *blinded*. You can perceive your surroundings within 30 ft., or 10 ft. while *deafened*. You are considered blind beyond this radius.",

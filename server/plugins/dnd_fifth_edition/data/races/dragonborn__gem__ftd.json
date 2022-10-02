@@ -110,6 +110,7 @@
             }
         ],
         "slug": "dragonborn__gem__ftd_generic",
+        "display_name": "Dragonborn (Gem)",
         "type": "generic",
         "fluff": [
             "**Gem Ancestry:** You have a gem dragon ancestor, granting you a special magical affinity. Choose one kind of dragon from the Gem Ancestry table. This determines the damage type for your other traits, as shown in the table.",

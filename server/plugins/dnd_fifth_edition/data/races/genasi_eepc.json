@@ -50,6 +50,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "genasi_eepc_generic",
+        "display_name": "Genasi",
         "type": "generic",
         "fluff": [
             "**Age:** Genasi mature at about the same rate as humans and reach adulthood in their late teens. They live somewhat longer than humans do, up to 120 years.",
@@ -125,6 +126,7 @@
             "path": "races/genasi.mp3"
         },
         "slug": "genasi_eepc_air_eepc",
+        "display_name": "Air Genasi",
         "type": "subrace",
         "fluff": [
             "**Age:** Genasi mature at about the same rate as humans and reach adulthood in their late teens. They live somewhat longer than humans do, up to 120 years.",
@@ -204,6 +206,7 @@
             "path": "races/genasi.mp3"
         },
         "slug": "genasi_eepc_earth_eepc",
+        "display_name": "Earth Genasi",
         "type": "subrace",
         "fluff": [
             "**Age:** Genasi mature at about the same rate as humans and reach adulthood in their late teens. They live somewhat longer than humans do, up to 120 years.",
@@ -296,6 +299,7 @@
             "path": "races/genasi.mp3"
         },
         "slug": "genasi_eepc_fire_eepc",
+        "display_name": "Fire Genasi",
         "type": "subrace",
         "fluff": [
             "**Age:** Genasi mature at about the same rate as humans and reach adulthood in their late teens. They live somewhat longer than humans do, up to 120 years.",
@@ -395,6 +399,7 @@
             "path": "races/genasi.mp3"
         },
         "slug": "genasi_eepc_water_eepc",
+        "display_name": "Water Genasi",
         "type": "subrace",
         "fluff": [
             "**Age:** Genasi mature at about the same rate as humans and reach adulthood in their late teens. They live somewhat longer than humans do, up to 120 years.",

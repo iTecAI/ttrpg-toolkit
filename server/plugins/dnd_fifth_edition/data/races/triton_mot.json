@@ -27,6 +27,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "triton_mot_generic",
+        "display_name": "Triton",
         "type": "generic",
         "fluff": []
     }

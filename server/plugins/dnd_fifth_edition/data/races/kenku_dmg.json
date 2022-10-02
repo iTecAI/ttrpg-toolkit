@@ -27,6 +27,7 @@
             "path": "races/kenku.mp3"
         },
         "slug": "kenku_dmg_generic",
+        "display_name": "Kenku",
         "type": "generic",
         "fluff": [
             "**Ambusher:** In the first round of a combat, you have advantage on attack rolls against any creature who is surprised.",

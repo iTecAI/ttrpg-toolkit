@@ -36,6 +36,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "halfling_phb_generic",
+        "display_name": "Halfling",
         "type": "generic",
         "fluff": [
             "**Age:** A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century.",
@@ -91,6 +92,7 @@
             "path": "races/halfling.mp3"
         },
         "slug": "halfling_phb_ghostwise_scag",
+        "display_name": "Ghostwise Halfling",
         "type": "subrace",
         "fluff": [
             "**Age:** A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century.",
@@ -148,6 +150,7 @@
             "path": "races/halfling.mp3"
         },
         "slug": "halfling_phb_lightfoot_phb",
+        "display_name": "Lightfoot Halfling",
         "type": "subrace",
         "fluff": [
             "**Age:** A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century.",
@@ -231,6 +234,7 @@
             "path": "races/halfling.mp3"
         },
         "slug": "halfling_phb_lotusden_egw",
+        "display_name": "Lotusden Halfling",
         "type": "subrace",
         "fluff": [
             "**Age:** A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century.",
@@ -339,6 +343,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "halfling_phb_mark_of_healing_erlw",
+        "display_name": "Mark of Healing Halfling",
         "type": "subrace",
         "fluff": [
             "**Age:** A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century.",
@@ -453,6 +458,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "halfling_phb_mark_of_hospitality_erlw",
+        "display_name": "Mark of Hospitality Halfling",
         "type": "subrace",
         "fluff": [
             "**Age:** A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century.",
@@ -526,6 +532,7 @@
             "path": "races/halfling.mp3"
         },
         "slug": "halfling_phb_stout_phb",
+        "display_name": "Stout Halfling",
         "type": "subrace",
         "fluff": [
             "**Age:** A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century.",

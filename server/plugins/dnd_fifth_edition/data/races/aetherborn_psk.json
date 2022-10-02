@@ -42,6 +42,7 @@
             "necrotic"
         ],
         "slug": "aetherborn_psk_generic",
+        "display_name": "Aetherborn",
         "type": "generic",
         "fluff": [
             "**Age:** Aetherborn come into being as adults and live no more than a few years.",

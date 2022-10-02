@@ -56,6 +56,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "half_elf_phb_generic",
+        "display_name": "Half-Elf",
         "type": "generic",
         "fluff": [
             "**Age:** Half-elves mature at the same rate humans do and reach adulthood around the age of 20. They live much longer than humans, however, often exceeding 180 years.",
@@ -172,6 +173,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "half_elf_phb_variant__aquatic_elf_descent_scag",
+        "display_name": "Variant; Aquatic Elf Descent Half-Elf",
         "type": "subrace",
         "fluff": [
             "**Age:** Half-elves mature at the same rate humans do and reach adulthood around the age of 20. They live much longer than humans, however, often exceeding 180 years.",
@@ -317,6 +319,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "half_elf_phb_variant__drow_descent_scag",
+        "display_name": "Variant; Drow Descent Half-Elf",
         "type": "subrace",
         "fluff": [
             "**Age:** Half-elves mature at the same rate humans do and reach adulthood around the age of 20. They live much longer than humans, however, often exceeding 180 years.",
@@ -444,6 +447,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "half_elf_phb_variant__mark_of_detection_erlw",
+        "display_name": "Variant; Mark of Detection Half-Elf",
         "type": "subrace",
         "fluff": [
             "**Age:** Half-elves mature at the same rate humans do and reach adulthood around the age of 20. They live much longer than humans, however, often exceeding 180 years.",
@@ -567,6 +571,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "half_elf_phb_variant__mark_of_storm_erlw",
+        "display_name": "Variant; Mark of Storm Half-Elf",
         "type": "subrace",
         "fluff": [
             "**Age:** Half-elves mature at the same rate humans do and reach adulthood around the age of 20. They live much longer than humans, however, often exceeding 180 years.",
@@ -740,6 +745,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "half_elf_phb_variant__moon_elf_or_sun_elf_descent_scag",
+        "display_name": "Variant; Moon Elf or Sun Elf Descent Half-Elf",
         "type": "subrace",
         "fluff": [
             "**Age:** Half-elves mature at the same rate humans do and reach adulthood around the age of 20. They live much longer than humans, however, often exceeding 180 years.",
@@ -910,6 +916,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "half_elf_phb_variant__wood_elf_descent_scag",
+        "display_name": "Variant; Wood Elf Descent Half-Elf",
         "type": "subrace",
         "fluff": [
             "**Age:** Half-elves mature at the same rate humans do and reach adulthood around the age of 20. They live much longer than humans, however, often exceeding 180 years.",

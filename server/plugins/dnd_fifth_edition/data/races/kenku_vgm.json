@@ -58,6 +58,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "kenku_vgm_generic",
+        "display_name": "Kenku",
         "type": "generic",
         "fluff": [
             "**Age:** Kenku have shorter lifespans than humans. They reach maturity at about 12 years old and can live to 60.",

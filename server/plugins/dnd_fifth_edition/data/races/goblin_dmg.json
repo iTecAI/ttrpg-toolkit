@@ -24,6 +24,7 @@
             }
         ],
         "slug": "goblin_dmg_generic",
+        "display_name": "Goblin",
         "type": "generic",
         "fluff": [
             "**Nimble Escape:** You can take the **Disengage** or **Hide** action as a bonus action on each of your turns.",

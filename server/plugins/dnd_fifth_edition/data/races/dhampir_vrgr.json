@@ -19,6 +19,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "dhampir_vrgr_generic",
+        "display_name": "Dhampir",
         "type": "generic",
         "fluff": [
             "**Size:** You are Medium or Small. You choose the size when you gain this lineage.",

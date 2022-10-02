@@ -26,6 +26,7 @@
             }
         ],
         "slug": "bullywug_dmg_generic",
+        "display_name": "Bullywug",
         "type": "generic",
         "fluff": [
             "**Amphibious:** You can breathe air and water.",

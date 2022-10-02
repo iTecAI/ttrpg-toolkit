@@ -58,6 +58,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "tabaxi_vgm_generic",
+        "display_name": "Tabaxi",
         "type": "generic",
         "fluff": [
             "**Age:** Tabaxi have lifespans equivalent to humans.",

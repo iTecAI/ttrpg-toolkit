@@ -45,6 +45,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "simic_hybrid_ggr_generic",
+        "display_name": "Simic Hybrid",
         "type": "generic",
         "fluff": [
             "**Age:** Hybrids begin their lives as adult humans, elves, or vedalken. They age at a slightly accelerated rate, so their maximum life spans are probably reduced somewhat. The Guardian Project has not been operating long enough to observe the full effect of this phenomenon.",

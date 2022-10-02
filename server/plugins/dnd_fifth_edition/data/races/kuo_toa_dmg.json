@@ -22,6 +22,7 @@
             }
         ],
         "slug": "kuo_toa_dmg_generic",
+        "display_name": "Kuo-Toa",
         "type": "generic",
         "fluff": [
             "**Amphibious:** You can breathe air and water.",

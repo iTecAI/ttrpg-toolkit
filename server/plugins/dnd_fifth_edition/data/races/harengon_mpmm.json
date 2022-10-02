@@ -17,6 +17,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "harengon_mpmm_generic",
+        "display_name": "Harengon",
         "type": "generic",
         "fluff": [
             "**Size:** You are Medium or Small. You choose the size when you select this race.",

@@ -21,6 +21,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "owlin_scc_generic",
+        "display_name": "Owlin",
         "type": "generic",
         "fluff": [
             "**Size:** You are Medium or Small. You choose the size when you select this race.",

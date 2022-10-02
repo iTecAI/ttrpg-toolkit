@@ -25,6 +25,7 @@
             }
         ],
         "slug": "kobold_dmg_generic",
+        "display_name": "Kobold",
         "type": "generic",
         "fluff": [
             "**Pack Tactics:** You have advantage on an attack roll against a creature if at least one of your allies is within 5 feet of the creature and the ally isn't *incapacitated*.",

@@ -55,6 +55,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "triton_mpmm_generic",
+        "display_name": "Triton",
         "type": "generic",
         "fluff": [
             "**Speed:** Your walking speed is 30 feet, and you have a swimming speed equal to your walking speed.",

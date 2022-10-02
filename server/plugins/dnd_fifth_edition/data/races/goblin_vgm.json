@@ -44,6 +44,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "goblin_vgm_generic",
+        "display_name": "Goblin",
         "type": "generic",
         "fluff": [
             "**Age:** Goblins reach adulthood at age 8 and live up to 60 years.",

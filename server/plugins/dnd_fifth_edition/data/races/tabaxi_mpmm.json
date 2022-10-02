@@ -22,6 +22,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "tabaxi_mpmm_generic",
+        "display_name": "Tabaxi",
         "type": "generic",
         "fluff": [
             "**Size:** You are Medium or Small. You choose the size when you select this race.",

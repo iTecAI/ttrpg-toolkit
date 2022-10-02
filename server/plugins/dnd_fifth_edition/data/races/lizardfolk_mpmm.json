@@ -33,6 +33,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "lizardfolk_mpmm_generic",
+        "display_name": "Lizardfolk",
         "type": "generic",
         "fluff": [
             "**Speed:** Your walking speed is 30 feet, and you have a swimming speed equal to your walking speed.",

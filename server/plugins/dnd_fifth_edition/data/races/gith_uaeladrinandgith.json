@@ -23,6 +23,7 @@
             }
         ],
         "slug": "gith_uaeladrinandgith_generic",
+        "display_name": "Gith",
         "type": "generic",
         "fluff": [
             "**Age:** Gith reach adulthood in their late teens and live for about a century.",
@@ -107,6 +108,7 @@
             }
         ],
         "slug": "gith_uaeladrinandgith_githyanki_uaeladrinandgith",
+        "display_name": "Githyanki Gith",
         "type": "subrace",
         "fluff": [
             "**Age:** Gith reach adulthood in their late teens and live for about a century.",
@@ -181,6 +183,7 @@
             }
         ],
         "slug": "gith_uaeladrinandgith_githzerai_uaeladrinandgith",
+        "display_name": "Githzerai Gith",
         "type": "subrace",
         "fluff": [
             "**Age:** Gith reach adulthood in their late teens and live for about a century.",

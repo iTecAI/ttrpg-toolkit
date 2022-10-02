@@ -41,6 +41,7 @@
             }
         ],
         "slug": "elf__kaladesh__psk_generic",
+        "display_name": "Elf (Kaladesh)",
         "type": "generic",
         "fluff": [
             "**Age:** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",
@@ -108,6 +109,7 @@
             }
         ],
         "slug": "elf__kaladesh__psk_bishatar_and_tirahar_psk",
+        "display_name": "Bishatar and Tirahar Elf (Kaladesh)",
         "type": "subrace",
         "fluff": [
             "**Age:** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",
@@ -193,6 +195,7 @@
             }
         ],
         "slug": "elf__kaladesh__psk_vadahar_psk",
+        "display_name": "Vadahar Elf (Kaladesh)",
         "type": "subrace",
         "fluff": [
             "**Age:** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",

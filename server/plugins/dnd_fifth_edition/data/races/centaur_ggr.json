@@ -54,6 +54,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "centaur_ggr_generic",
+        "display_name": "Centaur",
         "type": "generic",
         "fluff": [
             "**Age:** Centaurs mature and age at about the same rate as humans.",

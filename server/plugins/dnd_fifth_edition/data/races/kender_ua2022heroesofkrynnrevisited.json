@@ -23,6 +23,7 @@
         ],
         "hasFluff": true,
         "slug": "kender_ua2022heroesofkrynnrevisited_generic",
+        "display_name": "Kender",
         "type": "generic",
         "fluff": [
             "**Fearless:** You are immune to the *frightened* condition.",

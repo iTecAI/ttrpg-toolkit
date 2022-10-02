@@ -70,6 +70,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "tiefling_phb_generic",
+        "display_name": "Tiefling",
         "type": "generic",
         "fluff": [
             "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
@@ -171,6 +172,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "tiefling_phb_abyssal_uathatoldblackmagic",
+        "display_name": "Abyssal Tiefling",
         "type": "subrace",
         "fluff": [
             "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
@@ -278,6 +280,7 @@
             }
         ],
         "slug": "tiefling_phb_asmodeus_mtf",
+        "display_name": "Asmodeus Tiefling",
         "type": "subrace",
         "fluff": [
             "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
@@ -367,6 +370,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "tiefling_phb_asmodeus_uafiendishoptions",
+        "display_name": "Asmodeus Tiefling",
         "type": "subrace",
         "fluff": [
             "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
@@ -456,6 +460,7 @@
             "path": "races/tiefling.mp3"
         },
         "slug": "tiefling_phb_baalzebul_mtf",
+        "display_name": "Baalzebul Tiefling",
         "type": "subrace",
         "fluff": [
             "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
@@ -547,6 +552,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "tiefling_phb_baalzebul_uafiendishoptions",
+        "display_name": "Baalzebul Tiefling",
         "type": "subrace",
         "fluff": [
             "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
@@ -638,6 +644,7 @@
             "path": "races/tiefling.mp3"
         },
         "slug": "tiefling_phb_dispater_mtf",
+        "display_name": "Dispater Tiefling",
         "type": "subrace",
         "fluff": [
             "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
@@ -729,6 +736,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "tiefling_phb_dispater_uafiendishoptions",
+        "display_name": "Dispater Tiefling",
         "type": "subrace",
         "fluff": [
             "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
@@ -820,6 +828,7 @@
             "path": "races/tiefling.mp3"
         },
         "slug": "tiefling_phb_fierna_mtf",
+        "display_name": "Fierna Tiefling",
         "type": "subrace",
         "fluff": [
             "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
@@ -911,6 +920,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "tiefling_phb_fierna_uafiendishoptions",
+        "display_name": "Fierna Tiefling",
         "type": "subrace",
         "fluff": [
             "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
@@ -1002,6 +1012,7 @@
             "path": "races/tiefling.mp3"
         },
         "slug": "tiefling_phb_glasya_mtf",
+        "display_name": "Glasya Tiefling",
         "type": "subrace",
         "fluff": [
             "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
@@ -1093,6 +1104,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "tiefling_phb_glasya_uafiendishoptions",
+        "display_name": "Glasya Tiefling",
         "type": "subrace",
         "fluff": [
             "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
@@ -1184,6 +1196,7 @@
             "path": "races/tiefling.mp3"
         },
         "slug": "tiefling_phb_levistus_mtf",
+        "display_name": "Levistus Tiefling",
         "type": "subrace",
         "fluff": [
             "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
@@ -1275,6 +1288,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "tiefling_phb_levistus_uafiendishoptions",
+        "display_name": "Levistus Tiefling",
         "type": "subrace",
         "fluff": [
             "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
@@ -1366,6 +1380,7 @@
             "path": "races/tiefling.mp3"
         },
         "slug": "tiefling_phb_mammon_mtf",
+        "display_name": "Mammon Tiefling",
         "type": "subrace",
         "fluff": [
             "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
@@ -1457,6 +1472,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "tiefling_phb_mammon_uafiendishoptions",
+        "display_name": "Mammon Tiefling",
         "type": "subrace",
         "fluff": [
             "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
@@ -1548,6 +1564,7 @@
             "path": "races/tiefling.mp3"
         },
         "slug": "tiefling_phb_mephistopheles_mtf",
+        "display_name": "Mephistopheles Tiefling",
         "type": "subrace",
         "fluff": [
             "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
@@ -1639,6 +1656,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "tiefling_phb_mephistopheles_uafiendishoptions",
+        "display_name": "Mephistopheles Tiefling",
         "type": "subrace",
         "fluff": [
             "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
@@ -1737,6 +1755,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "tiefling_phb_variant__devil_s_tongue_scag",
+        "display_name": "Variant; Devil's Tongue Tiefling",
         "type": "subrace",
         "fluff": [
             "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
@@ -1837,6 +1856,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "tiefling_phb_variant__hellfire_scag",
+        "display_name": "Variant; Hellfire Tiefling",
         "type": "subrace",
         "fluff": [
             "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
@@ -1937,6 +1957,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "tiefling_phb_variant__infernal_legacy_scag",
+        "display_name": "Variant; Infernal Legacy Tiefling",
         "type": "subrace",
         "fluff": [
             "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
@@ -2013,6 +2034,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "tiefling_phb_variant__winged_scag",
+        "display_name": "Variant; Winged Tiefling",
         "type": "subrace",
         "fluff": [
             "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
@@ -2106,6 +2128,7 @@
             "path": "races/tiefling.mp3"
         },
         "slug": "tiefling_phb_zariel_mtf",
+        "display_name": "Zariel Tiefling",
         "type": "subrace",
         "fluff": [
             "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
@@ -2197,6 +2220,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "tiefling_phb_zariel_uafiendishoptions",
+        "display_name": "Zariel Tiefling",
         "type": "subrace",
         "fluff": [
             "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",

@@ -74,6 +74,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "triton_vgm_generic",
+        "display_name": "Triton",
         "type": "generic",
         "fluff": [
             "**Age:** Tritons reach maturity around age 15 and can live up to 200 years.",

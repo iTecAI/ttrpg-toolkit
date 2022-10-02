@@ -39,6 +39,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "gnome_phb_generic",
+        "display_name": "Gnome",
         "type": "generic",
         "fluff": [
             "**Age:** Gnomes mature at the same rate humans do, and most are expected to settle down into an adult life by around age 40. They can live 350 to almost 500 years.",
@@ -99,6 +100,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "gnome_phb_deep_mtf",
+        "display_name": "Deep Gnome",
         "type": "subrace",
         "fluff": [
             "**Age:** Gnomes mature at the same rate humans do, and most are expected to settle down into an adult life by around age 40. They can live 350 to almost 500 years.",
@@ -177,6 +179,7 @@
         },
         "hasFluffImages": true,
         "slug": "gnome_phb_deep_svirfneblin_scag",
+        "display_name": "Deep/Svirfneblin Gnome",
         "type": "subrace",
         "fluff": [
             "**Age:** Gnomes mature at the same rate humans do, and most are expected to settle down into an adult life by around age 40. They can live 350 to almost 500 years.",
@@ -255,6 +258,7 @@
             "path": "races/gnome.mp3"
         },
         "slug": "gnome_phb_forest_phb",
+        "display_name": "Forest Gnome",
         "type": "subrace",
         "fluff": [
             "**Age:** Gnomes mature at the same rate humans do, and most are expected to settle down into an adult life by around age 40. They can live 350 to almost 500 years.",
@@ -370,6 +374,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "gnome_phb_mark_of_scribing_erlw",
+        "display_name": "Mark of Scribing Gnome",
         "type": "subrace",
         "fluff": [
             "**Age:** Gnomes mature at the same rate humans do, and most are expected to settle down into an adult life by around age 40. They can live 350 to almost 500 years.",
@@ -441,6 +446,7 @@
             "path": "races/gnome.mp3"
         },
         "slug": "gnome_phb_rock_phb",
+        "display_name": "Rock Gnome",
         "type": "subrace",
         "fluff": [
             "**Age:** Gnomes mature at the same rate humans do, and most are expected to settle down into an adult life by around age 40. They can live 350 to almost 500 years.",

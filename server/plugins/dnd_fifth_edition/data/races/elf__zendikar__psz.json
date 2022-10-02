@@ -30,6 +30,7 @@
         ],
         "hasFluff": true,
         "slug": "elf__zendikar__psz_generic",
+        "display_name": "Elf (Zendikar)",
         "type": "generic",
         "fluff": [
             "**Age:** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",
@@ -89,6 +90,7 @@
         ],
         "hasFluff": true,
         "slug": "elf__zendikar__psz_joraga_nation_psz",
+        "display_name": "Joraga Nation Elf (Zendikar)",
         "type": "subrace",
         "fluff": [
             "**Age:** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",
@@ -183,6 +185,7 @@
         ],
         "hasFluff": true,
         "slug": "elf__zendikar__psz_mul_daya_nation_psz",
+        "display_name": "Mul Daya Nation Elf (Zendikar)",
         "type": "subrace",
         "fluff": [
             "**Age:** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",
@@ -259,6 +262,7 @@
         ],
         "hasFluff": true,
         "slug": "elf__zendikar__psz_tajuru_nation_psz",
+        "display_name": "Tajuru Nation Elf (Zendikar)",
         "type": "subrace",
         "fluff": [
             "**Age:** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",

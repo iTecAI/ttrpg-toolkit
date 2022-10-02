@@ -48,6 +48,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "minotaur_ggr_generic",
+        "display_name": "Minotaur",
         "type": "generic",
         "fluff": [
             "> *These traits are also suitable for minotaurs in other D&D worlds where these people have avoided the demonic influence of Baphomet.*",

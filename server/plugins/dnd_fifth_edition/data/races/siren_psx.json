@@ -31,6 +31,7 @@
             }
         ],
         "slug": "siren_psx_generic",
+        "display_name": "Siren",
         "type": "generic",
         "fluff": [
             "**Alignment:** Most sirens lean toward chaotic alignment, cherishing the freedom and independence that comes from joining a pirate crew.",

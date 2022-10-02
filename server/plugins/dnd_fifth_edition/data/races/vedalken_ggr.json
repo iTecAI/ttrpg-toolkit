@@ -56,6 +56,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "vedalken_ggr_generic",
+        "display_name": "Vedalken",
         "type": "generic",
         "fluff": [
             "**Age:** Vedalken mature slower than humans do, reaching maturity around age 40. Their life span is typically 350 years, with some living to the age of 500.",

@@ -47,6 +47,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "yuan_ti_mpmm_generic",
+        "display_name": "Yuan-Ti",
         "type": "generic",
         "fluff": [
             "**Size:** You are Medium or Small. You choose the size when you select this race.",

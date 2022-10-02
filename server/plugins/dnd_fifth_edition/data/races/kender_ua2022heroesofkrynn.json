@@ -15,6 +15,7 @@
         ],
         "hasFluff": true,
         "slug": "kender_ua2022heroesofkrynn_generic",
+        "display_name": "Kender",
         "type": "generic",
         "fluff": [
             "**Brave:** You have advantage on saving throws you make to avoid or end the *frightened* condition on yourself.",

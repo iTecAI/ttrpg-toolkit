@@ -47,6 +47,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "centaur_mot_generic",
+        "display_name": "Centaur",
         "type": "generic",
         "fluff": []
     }

@@ -34,6 +34,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "firbolg_mpmm_generic",
+        "display_name": "Firbolg",
         "type": "generic",
         "fluff": [
             "**Firbolg Magic:** You can cast *detect magic* and *disguise self* spells with this trait. When you use this version of *disguise self*, you can seem up to 3 feet shorter or taller. Once you cast either of these spells with this trait, you can't cast that spell with it again until you finish a long rest. You can also cast these spells using any spell slots you have.",

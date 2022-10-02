@@ -25,6 +25,7 @@
             }
         ],
         "slug": "changeling_uaeberron_generic",
+        "display_name": "Changeling",
         "type": "generic",
         "fluff": [
             "**Size:** Changelings are built much like humans, but a little leaner. Your size is Medium",

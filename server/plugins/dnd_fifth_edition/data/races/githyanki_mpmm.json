@@ -59,6 +59,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "githyanki_mpmm_generic",
+        "display_name": "Githyanki",
         "type": "generic",
         "fluff": [
             "**Astral Knowledge:** You can mystically access a reservoir of experiences of entities connected to the Astral Plane. Whenever you finish a long rest, you gain proficiency in one skill of your choice and with one weapon or tool of your choice, selected from the Player's Handbook, as you momentarily project your consciousness into the Astral Plane. These proficiencies last until the end of your next long rest.",

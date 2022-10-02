@@ -49,6 +49,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "fairy_mpmm_generic",
+        "display_name": "Fairy",
         "type": "generic",
         "fluff": [
             "**Creature Type:** You are a Fey.",

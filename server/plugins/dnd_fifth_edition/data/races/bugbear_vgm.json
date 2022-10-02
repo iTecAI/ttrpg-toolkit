@@ -51,6 +51,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "bugbear_vgm_generic",
+        "display_name": "Bugbear",
         "type": "generic",
         "fluff": [
             "**Age:** Bugbears reach adulthood at age 16 and live up to 80 years.",

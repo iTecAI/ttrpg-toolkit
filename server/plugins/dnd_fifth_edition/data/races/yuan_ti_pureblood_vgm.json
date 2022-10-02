@@ -69,6 +69,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "yuan_ti_pureblood_vgm_generic",
+        "display_name": "Yuan-ti Pureblood",
         "type": "generic",
         "fluff": [
             "**Age:** Purebloods mature at the same rate as humans and have lifespans similar in length to theirs.",

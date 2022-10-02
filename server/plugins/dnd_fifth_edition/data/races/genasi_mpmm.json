@@ -19,6 +19,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "genasi_mpmm_generic",
+        "display_name": "Genasi",
         "type": "generic",
         "fluff": [
             "**Size:** You are Medium or Small. You choose the size when you select this race.",
@@ -81,6 +82,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "genasi_mpmm_air_mpmm",
+        "display_name": "Air Genasi",
         "type": "subrace",
         "fluff": [
             "**Size:** You are Medium or Small. You choose the size when you select this race.",
@@ -139,6 +141,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "genasi_mpmm_earth_mpmm",
+        "display_name": "Earth Genasi",
         "type": "subrace",
         "fluff": [
             "**Size:** You are Medium or Small. You choose the size when you select this race.",
@@ -207,6 +210,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "genasi_mpmm_fire_mpmm",
+        "display_name": "Fire Genasi",
         "type": "subrace",
         "fluff": [
             "**Size:** You are Medium or Small. You choose the size when you select this race.",
@@ -280,6 +284,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "genasi_mpmm_water_mpmm",
+        "display_name": "Water Genasi",
         "type": "subrace",
         "fluff": [
             "**Size:** You are Medium or Small. You choose the size when you select this race.",

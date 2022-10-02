@@ -17,6 +17,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "kenku_mpmm_generic",
+        "display_name": "Kenku",
         "type": "generic",
         "fluff": [
             "**Size:** Your size is Medium or Small. You choose the size when you select this race.",

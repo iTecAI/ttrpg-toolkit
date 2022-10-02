@@ -30,6 +30,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "centaur_mpmm_generic",
+        "display_name": "Centaur",
         "type": "generic",
         "fluff": [
             "**Creature Type:** You are a Fey.",

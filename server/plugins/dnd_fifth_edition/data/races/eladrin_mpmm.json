@@ -26,6 +26,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "eladrin_mpmm_generic",
+        "display_name": "Eladrin",
         "type": "generic",
         "fluff": [
             "*Choose your eladrin's season: autumn, winter, spring, or summer. When finishing a long rest, you can change your season. See the \"Info\" tab for more information.*",

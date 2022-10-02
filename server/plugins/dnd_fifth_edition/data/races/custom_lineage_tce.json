@@ -80,6 +80,7 @@
             }
         ],
         "slug": "custom_lineage_tce_generic",
+        "display_name": "Custom Lineage",
         "type": "generic",
         "fluff": [
             "Instead of choosing one of the game's races for your character at 1st level, you can use the following traits to represent your character's lineage, giving you full control over how your character's origin shaped them:",

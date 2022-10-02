@@ -56,7 +56,7 @@
                 "files": ["data/races/*.json"],
                 "search_fields": {
                     "name": {
-                        "field": "name",
+                        "field": "display_name",
                         "label": "Race Name",
                         "type": "string"
                     },

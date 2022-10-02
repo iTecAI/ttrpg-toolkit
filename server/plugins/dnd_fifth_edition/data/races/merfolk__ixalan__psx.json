@@ -30,6 +30,7 @@
             }
         ],
         "slug": "merfolk__ixalan__psx_generic",
+        "display_name": "Merfolk (Ixalan)",
         "type": "generic",
         "fluff": [
             "**Age:** Merfolk mature at the same rate humans do and reach adulthood around the age of 20. They live considerably longer than humans, though, often reaching well over 100 years.",
@@ -99,6 +100,7 @@
             }
         ],
         "slug": "merfolk__ixalan__psx_blue_psx",
+        "display_name": "Blue Merfolk (Ixalan)",
         "type": "subrace",
         "fluff": [
             "**Age:** Merfolk mature at the same rate humans do and reach adulthood around the age of 20. They live considerably longer than humans, though, often reaching well over 100 years.",
@@ -166,6 +168,7 @@
             }
         ],
         "slug": "merfolk__ixalan__psx_green_psx",
+        "display_name": "Green Merfolk (Ixalan)",
         "type": "subrace",
         "fluff": [
             "**Age:** Merfolk mature at the same rate humans do and reach adulthood around the age of 20. They live considerably longer than humans, though, often reaching well over 100 years.",

@@ -48,6 +48,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "leonin_mot_generic",
+        "display_name": "Leonin",
         "type": "generic",
         "fluff": [
             "**Age:** Leonin mature and age at about the same rate as humans.",

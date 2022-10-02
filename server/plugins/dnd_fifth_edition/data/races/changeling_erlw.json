@@ -63,6 +63,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "changeling_erlw_generic",
+        "display_name": "Changeling",
         "type": "generic",
         "fluff": [
             "**Age:** Changelings mature slightly faster than humans but share a similar lifespan\u2014typically a century or less. While a changeling can transform to conceal their age, the effects of aging affect them similarly to humans.",

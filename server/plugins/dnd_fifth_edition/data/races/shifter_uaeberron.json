@@ -20,6 +20,7 @@
             }
         ],
         "slug": "shifter_uaeberron_generic",
+        "display_name": "Shifter",
         "type": "generic",
         "fluff": [
             "**Size:** Shifters are about the same size as humans. Your size is Medium",
@@ -60,6 +61,7 @@
             }
         ],
         "slug": "shifter_uaeberron_beasthide_uaeberron",
+        "display_name": "Beasthide Shifter",
         "type": "subrace",
         "fluff": [
             "**Size:** Shifters are about the same size as humans. Your size is Medium",
@@ -99,6 +101,7 @@
             }
         ],
         "slug": "shifter_uaeberron_cliffwalk_uaeberron",
+        "display_name": "Cliffwalk Shifter",
         "type": "subrace",
         "fluff": [
             "**Size:** Shifters are about the same size as humans. Your size is Medium",
@@ -138,6 +141,7 @@
             }
         ],
         "slug": "shifter_uaeberron_longstride_uaeberron",
+        "display_name": "Longstride Shifter",
         "type": "subrace",
         "fluff": [
             "**Size:** Shifters are about the same size as humans. Your size is Medium",
@@ -177,6 +181,7 @@
             }
         ],
         "slug": "shifter_uaeberron_longtooth_uaeberron",
+        "display_name": "Longtooth Shifter",
         "type": "subrace",
         "fluff": [
             "**Size:** Shifters are about the same size as humans. Your size is Medium",
@@ -219,6 +224,7 @@
             }
         ],
         "slug": "shifter_uaeberron_razorclaw_uaeberron",
+        "display_name": "Razorclaw Shifter",
         "type": "subrace",
         "fluff": [
             "**Size:** Shifters are about the same size as humans. Your size is Medium",
@@ -258,6 +264,7 @@
             }
         ],
         "slug": "shifter_uaeberron_wildhunt_uaeberron",
+        "display_name": "Wildhunt Shifter",
         "type": "subrace",
         "fluff": [
             "**Size:** Shifters are about the same size as humans. Your size is Medium",

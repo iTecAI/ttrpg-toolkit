@@ -38,6 +38,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "kobold_vgm_generic",
+        "display_name": "Kobold",
         "type": "generic",
         "fluff": [
             "**Age:** Kobolds reach adulthood at age 6 and can live up to 120 years but rarely do so.",

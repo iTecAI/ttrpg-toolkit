@@ -33,6 +33,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "aarakocra_mpmm_generic",
+        "display_name": "Aarakocra",
         "type": "generic",
         "fluff": [
             "**Flight:** Because of your wings, you have a flying speed equal to your walking speed. You can't use this flying speed if you're wearing medium or heavy armor.",

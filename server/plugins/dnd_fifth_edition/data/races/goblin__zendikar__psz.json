@@ -32,6 +32,7 @@
         ],
         "hasFluff": true,
         "slug": "goblin__zendikar__psz_generic",
+        "display_name": "Goblin (Zendikar)",
         "type": "generic",
         "fluff": [
             "**Age:** Goblins mature faster than humans, reaching adulthood at around age 12. They also age noticeably faster than humans, and even the most cautious goblins rarely live longer than 50 years.",
@@ -88,6 +89,7 @@
         ],
         "hasFluff": true,
         "slug": "goblin__zendikar__psz_grotag_tribe_psz",
+        "display_name": "Grotag Tribe Goblin (Zendikar)",
         "type": "subrace",
         "fluff": [
             "**Age:** Goblins mature faster than humans, reaching adulthood at around age 12. They also age noticeably faster than humans, and even the most cautious goblins rarely live longer than 50 years.",
@@ -141,6 +143,7 @@
         ],
         "hasFluff": true,
         "slug": "goblin__zendikar__psz_lavastep_tribe_psz",
+        "display_name": "Lavastep Tribe Goblin (Zendikar)",
         "type": "subrace",
         "fluff": [
             "**Age:** Goblins mature faster than humans, reaching adulthood at around age 12. They also age noticeably faster than humans, and even the most cautious goblins rarely live longer than 50 years.",
@@ -194,6 +197,7 @@
         ],
         "hasFluff": true,
         "slug": "goblin__zendikar__psz_tuktuk_tribe_psz",
+        "display_name": "Tuktuk Tribe Goblin (Zendikar)",
         "type": "subrace",
         "fluff": [
             "**Age:** Goblins mature faster than humans, reaching adulthood at around age 12. They also age noticeably faster than humans, and even the most cautious goblins rarely live longer than 50 years.",

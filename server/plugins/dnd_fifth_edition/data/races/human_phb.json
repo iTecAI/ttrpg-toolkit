@@ -32,6 +32,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "human_phb_generic",
+        "display_name": "Human",
         "type": "generic",
         "fluff": [
             "**Age:** Humans reach adulthood in their late teens and live less than a century.",
@@ -88,6 +89,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "human_phb_keldon_psd",
+        "display_name": "Keldon Human",
         "type": "subrace",
         "fluff": [
             "**Age:** Humans reach adulthood in their late teens and live less than a century.",
@@ -196,6 +198,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "human_phb_mark_of_finding_erlw",
+        "display_name": "Mark of Finding Human",
         "type": "subrace",
         "fluff": [
             "**Age:** Humans reach adulthood in their late teens and live less than a century.",
@@ -321,6 +324,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "human_phb_mark_of_handling_erlw",
+        "display_name": "Mark of Handling Human",
         "type": "subrace",
         "fluff": [
             "**Age:** Humans reach adulthood in their late teens and live less than a century.",
@@ -446,6 +450,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "human_phb_mark_of_making_erlw",
+        "display_name": "Mark of Making Human",
         "type": "subrace",
         "fluff": [
             "**Age:** Humans reach adulthood in their late teens and live less than a century.",
@@ -563,6 +568,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "human_phb_mark_of_passage_erlw",
+        "display_name": "Mark of Passage Human",
         "type": "subrace",
         "fluff": [
             "**Age:** Humans reach adulthood in their late teens and live less than a century.",
@@ -672,6 +678,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "human_phb_mark_of_sentinel_erlw",
+        "display_name": "Mark of Sentinel Human",
         "type": "subrace",
         "fluff": [
             "**Age:** Humans reach adulthood in their late teens and live less than a century.",
@@ -759,6 +766,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "human_phb_variant_phb",
+        "display_name": "Variant Human",
         "type": "subrace",
         "fluff": [
             "**Age:** Humans reach adulthood in their late teens and live less than a century.",

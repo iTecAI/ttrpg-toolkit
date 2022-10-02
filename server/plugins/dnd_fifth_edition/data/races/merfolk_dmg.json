@@ -21,6 +21,7 @@
             }
         ],
         "slug": "merfolk_dmg_generic",
+        "display_name": "Merfolk",
         "type": "generic",
         "fluff": [
             "**Amphibious:** You can breathe air and water.",

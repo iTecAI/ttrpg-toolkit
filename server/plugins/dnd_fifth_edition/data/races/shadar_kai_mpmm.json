@@ -29,6 +29,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "shadar_kai_mpmm_generic",
+        "display_name": "Shadar-Kai",
         "type": "generic",
         "fluff": [
             "**Creature Type:** You are a Humanoid. You are also considered an elf for any prerequisite or effect that requires you to be an elf.",

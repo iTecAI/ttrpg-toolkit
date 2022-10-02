@@ -31,6 +31,7 @@
         ],
         "hasFluff": true,
         "slug": "merfolk__zendikar__psz_generic",
+        "display_name": "Merfolk (Zendikar)",
         "type": "generic",
         "fluff": [
             "**Age:** Merfolk mature at the same rate humans do and reach adulthood around the age of 20. They live considerably longer than humans, though, often reaching well over 100 years.",
@@ -102,6 +103,7 @@
         ],
         "hasFluff": true,
         "slug": "merfolk__zendikar__psz_cosi_creed_psz",
+        "display_name": "Cosi Creed Merfolk (Zendikar)",
         "type": "subrace",
         "fluff": [
             "**Age:** Merfolk mature at the same rate humans do and reach adulthood around the age of 20. They live considerably longer than humans, though, often reaching well over 100 years.",
@@ -176,6 +178,7 @@
         ],
         "hasFluff": true,
         "slug": "merfolk__zendikar__psz_emeria_creed_psz",
+        "display_name": "Emeria Creed Merfolk (Zendikar)",
         "type": "subrace",
         "fluff": [
             "**Age:** Merfolk mature at the same rate humans do and reach adulthood around the age of 20. They live considerably longer than humans, though, often reaching well over 100 years.",
@@ -249,6 +252,7 @@
         ],
         "hasFluff": true,
         "slug": "merfolk__zendikar__psz_ula_creed_psz",
+        "display_name": "Ula Creed Merfolk (Zendikar)",
         "type": "subrace",
         "fluff": [
             "**Age:** Merfolk mature at the same rate humans do and reach adulthood around the age of 20. They live considerably longer than humans, though, often reaching well over 100 years.",

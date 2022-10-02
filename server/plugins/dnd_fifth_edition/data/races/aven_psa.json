@@ -28,6 +28,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "aven_psa_generic",
+        "display_name": "Aven",
         "type": "generic",
         "fluff": [
             "**Age:** Like humans, aven reach adulthood in their late teens and can theoretically live into their 80s. Of course, most find a glorious (or inglorious) death long before that point.",
@@ -78,6 +79,7 @@
             }
         ],
         "slug": "aven_psa_hawk_headed_psa",
+        "display_name": "Hawk-Headed Aven",
         "type": "subrace",
         "fluff": [
             "**Age:** Like humans, aven reach adulthood in their late teens and can theoretically live into their 80s. Of course, most find a glorious (or inglorious) death long before that point.",
@@ -125,6 +127,7 @@
             }
         ],
         "slug": "aven_psa_ibis_headed_psa",
+        "display_name": "Ibis-Headed Aven",
         "type": "subrace",
         "fluff": [
             "**Age:** Like humans, aven reach adulthood in their late teens and can theoretically live into their 80s. Of course, most find a glorious (or inglorious) death long before that point.",

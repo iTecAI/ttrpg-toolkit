@@ -46,6 +46,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "githzerai_mpmm_generic",
+        "display_name": "Githzerai",
         "type": "generic",
         "fluff": [
             "**Githzerai Psionics:** You know the *mage hand* cantrip, and the hand is *invisible* when you cast the cantrip with this trait.",

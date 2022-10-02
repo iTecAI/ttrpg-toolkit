@@ -98,6 +98,7 @@
             }
         ],
         "slug": "shifter_mpmm_generic",
+        "display_name": "Shifter",
         "type": "generic",
         "fluff": [
             "**Bestial Instincts:** Channeling the beast within, you have proficiency in one of the following skills of your choice: Acrobatics, Athletics, Intimidation, or Survival.",

@@ -30,6 +30,7 @@
             "poisoned"
         ],
         "slug": "skeleton_dmg_generic",
+        "display_name": "Skeleton",
         "type": "generic",
         "fluff": [
             "**Brittle Bones:** You are vulnerable to bludgeoning damage.",

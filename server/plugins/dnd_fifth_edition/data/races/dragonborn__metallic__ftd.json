@@ -109,6 +109,7 @@
             }
         ],
         "slug": "dragonborn__metallic__ftd_generic",
+        "display_name": "Dragonborn (Metallic)",
         "type": "generic",
         "fluff": [
             "**Metallic Ancestry:** You have a metallic dragon ancestor, granting you a special magical affinity. Choose one kind of dragon from the Metallic Ancestry table. This determines the damage type for your other traits, as shown in the table.",

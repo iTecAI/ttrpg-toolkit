@@ -29,6 +29,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "changeling_mpmm_generic",
+        "display_name": "Changeling",
         "type": "generic",
         "fluff": [
             "**Creature Type:** You are a Fey.",

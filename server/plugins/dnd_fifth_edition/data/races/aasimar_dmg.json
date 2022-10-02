@@ -59,6 +59,7 @@
             }
         ],
         "slug": "aasimar_dmg_generic",
+        "display_name": "Aasimar",
         "type": "generic",
         "fluff": [
             "**Age:** Aasimar mature at the same rate as humans but live a few years longer.",

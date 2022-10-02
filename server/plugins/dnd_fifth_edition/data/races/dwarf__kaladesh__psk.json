@@ -31,6 +31,7 @@
             "poison"
         ],
         "slug": "dwarf__kaladesh__psk_generic",
+        "display_name": "Dwarf (Kaladesh)",
         "type": "generic",
         "fluff": [
             "**Age:** Dwarves mature at the same rate as humans, but they're considered young until they reach the age of 50. On average, they live about 350 years.",

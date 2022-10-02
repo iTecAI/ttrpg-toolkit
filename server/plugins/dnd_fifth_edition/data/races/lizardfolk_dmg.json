@@ -26,6 +26,7 @@
             }
         ],
         "slug": "lizardfolk_dmg_generic",
+        "display_name": "Lizardfolk",
         "type": "generic",
         "fluff": [
             "**Hold Breath:** You can hold your breath for up to 15 minutes at a time.",

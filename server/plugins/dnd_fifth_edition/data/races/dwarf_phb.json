@@ -46,6 +46,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "dwarf_phb_generic",
+        "display_name": "Dwarf",
         "type": "generic",
         "fluff": [
             "**Age:** Dwarves mature at the same rate as humans, but they're considered young until they reach the age of 50. On average, they live about 350 years.",
@@ -148,6 +149,7 @@
         },
         "hasFluffImages": true,
         "slug": "dwarf_phb_duergar_mtf",
+        "display_name": "Duergar Dwarf",
         "type": "subrace",
         "fluff": [
             "**Age:** Dwarves mature at the same rate as humans, but they're considered young until they reach the age of 50. On average, they live about 350 years.",
@@ -235,6 +237,7 @@
             "path": "races/dwarf.mp3"
         },
         "slug": "dwarf_phb_hill_phb",
+        "display_name": "Hill Dwarf",
         "type": "subrace",
         "fluff": [
             "**Age:** Dwarves mature at the same rate as humans, but they're considered young until they reach the age of 50. On average, they live about 350 years.",
@@ -348,6 +351,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "dwarf_phb_mark_of_warding_erlw",
+        "display_name": "Mark of Warding Dwarf",
         "type": "subrace",
         "fluff": [
             "**Age:** Dwarves mature at the same rate as humans, but they're considered young until they reach the age of 50. On average, they live about 350 years.",
@@ -446,6 +450,7 @@
             "path": "races/dwarf.mp3"
         },
         "slug": "dwarf_phb_mountain_phb",
+        "display_name": "Mountain Dwarf",
         "type": "subrace",
         "fluff": [
             "**Age:** Dwarves mature at the same rate as humans, but they're considered young until they reach the age of 50. On average, they live about 350 years.",

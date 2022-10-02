@@ -32,6 +32,7 @@
             "disease"
         ],
         "slug": "warforged_uaracesofeberron_generic",
+        "display_name": "Warforged",
         "type": "generic",
         "fluff": [
             "**Age:** A typical warforged is between two and thirty years old. The maximum lifespan of the warforged remains a mystery; so far, warforged have shown no signs of deterioration due to age.",
@@ -112,6 +113,7 @@
             "disease"
         ],
         "slug": "warforged_uaracesofeberron_envoy_uaracesofeberron",
+        "display_name": "Envoy Warforged",
         "type": "subrace",
         "fluff": [
             "**Age:** A typical warforged is between two and thirty years old. The maximum lifespan of the warforged remains a mystery; so far, warforged have shown no signs of deterioration due to age.",
@@ -189,6 +191,7 @@
             "disease"
         ],
         "slug": "warforged_uaracesofeberron_juggernaut_uaracesofeberron",
+        "display_name": "Juggernaut Warforged",
         "type": "subrace",
         "fluff": [
             "**Age:** A typical warforged is between two and thirty years old. The maximum lifespan of the warforged remains a mystery; so far, warforged have shown no signs of deterioration due to age.",
@@ -259,6 +262,7 @@
             "disease"
         ],
         "slug": "warforged_uaracesofeberron_skirmisher_uaracesofeberron",
+        "display_name": "Skirmisher Warforged",
         "type": "subrace",
         "fluff": [
             "**Age:** A typical warforged is between two and thirty years old. The maximum lifespan of the warforged remains a mystery; so far, warforged have shown no signs of deterioration due to age.",

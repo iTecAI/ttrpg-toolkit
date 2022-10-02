@@ -53,6 +53,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "satyr_mot_generic",
+        "display_name": "Satyr",
         "type": "generic",
         "fluff": [
             "**Age:** Satyrs mature and age at about the same rate as humans.",
