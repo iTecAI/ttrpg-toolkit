@@ -13,9 +13,10 @@ import {
     Tooltip,
     IconButton,
     Button,
+    Paper,
 } from "@mui/material";
 import { useState, useEffect } from "react";
-import { MdSearch, MdClear } from "react-icons/md";
+import { MdSearch, MdFormatClear } from "react-icons/md";
 import {
     DataSource,
     DataSearchField,
@@ -98,7 +99,7 @@ export function SearchPopup(props: {
             <Typography variant="h5" className="title">
                 {loc("compendium.search.title")}
             </Typography>
-            <Stack spacing={3}>
+            <Stack spacing={1}>
                 {props.dataSource && props.category ? (
                     Object.keys(
                         props.dataSource.categories[props.category]
@@ -116,11 +117,9 @@ export function SearchPopup(props: {
                                 inputLine = (
                                     <Stack direction="row">
                                         <FormControl sx={{ width: "20%" }}>
-                                            <InputLabel>
-                                                {loc(
-                                                    "compendium.search.exact.title"
-                                                )}
-                                            </InputLabel>
+                                            <InputLabel
+                                                shrink={true}
+                                            ></InputLabel>
                                             <Select
                                                 variant="standard"
                                                 value={Number(fields[f].exact)}
@@ -150,6 +149,7 @@ export function SearchPopup(props: {
                                             variant="standard"
                                             key={f}
                                             label={field.label}
+                                            InputLabelProps={{ shrink: true }}
                                             value={fields[f].value}
                                             onChange={(event) => {
                                                 let pfields = JSON.parse(
@@ -171,7 +171,9 @@ export function SearchPopup(props: {
                             case "select":
                                 inputLine = (
                                     <FormControl sx={{ width: "100%" }}>
-                                        <InputLabel>{field.label}</InputLabel>
+                                        <InputLabel shrink={true}>
+                                            {field.label}
+                                        </InputLabel>
                                         <Select
                                             variant="standard"
                                             key={f}
@@ -206,7 +208,7 @@ export function SearchPopup(props: {
                                                 width: "180px",
                                             }}
                                         >
-                                            <InputLabel>
+                                            <InputLabel shrink={true}>
                                                 {field.label}
                                             </InputLabel>
                                             <Select
@@ -319,34 +321,53 @@ export function SearchPopup(props: {
                                 );
                         }
                         return (
-                            <Stack direction={"row"} spacing={2} key={f}>
-                                <span
-                                    style={{
-                                        width: "calc(100% - 40px)",
-                                        position: "relative",
-                                    }}
-                                >
-                                    {inputLine}
-                                </span>
-                                <Tooltip title={loc("compendium.search.clear")}>
-                                    <IconButton
-                                        sx={{
-                                            width: "32px",
-                                            height: "32px",
-                                            transform: "translate(0, 8px)",
-                                        }}
-                                        onClick={() => {
-                                            let pfields = JSON.parse(
-                                                JSON.stringify(fields)
-                                            );
-                                            pfields[f].value = "";
-                                            setFields(pfields);
+                            <Paper
+                                sx={{
+                                    padding: "8px",
+                                    position: "relative",
+                                    paddingTop: "16px",
+                                    border:
+                                        fields[f].value.length > 0
+                                            ? "1px solid #388e3c"
+                                            : "1px solid #388e3c00",
+                                    boxSizing: "border-box",
+                                }}
+                                elevation={fields[f].value.length > 0 ? 1 : 2}
+                            >
+                                <Stack direction={"row"} spacing={2} key={f}>
+                                    <span
+                                        style={{
+                                            width: "calc(100% - 40px)",
+                                            position: "relative",
                                         }}
                                     >
-                                        <MdClear />
-                                    </IconButton>
-                                </Tooltip>
-                            </Stack>
+                                        {inputLine}
+                                    </span>
+                                    <Tooltip
+                                        title={loc("compendium.search.clear")}
+                                    >
+                                        <IconButton
+                                            sx={{
+                                                width: "32px",
+                                                height: "32px",
+                                                position: "absolute",
+                                                top: "50%",
+                                                right: "8px",
+                                                transform: "translate(0, -50%)",
+                                            }}
+                                            onClick={() => {
+                                                let pfields = JSON.parse(
+                                                    JSON.stringify(fields)
+                                                );
+                                                pfields[f].value = "";
+                                                setFields(pfields);
+                                            }}
+                                        >
+                                            <MdFormatClear />
+                                        </IconButton>
+                                    </Tooltip>
+                                </Stack>
+                            </Paper>
                         );
                     })
                 ) : (

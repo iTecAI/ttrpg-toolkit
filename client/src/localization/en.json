@@ -148,9 +148,8 @@
         "search": {
             "title": "Search Compendium",
             "exact": {
-                "title": "Exact",
-                "true": "Yes",
-                "false": "No"
+                "true": "Exact",
+                "false": "Fuzzy"
             },
             "comp": {
                 "title": "Comparison",
