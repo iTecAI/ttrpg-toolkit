@@ -5,6 +5,75 @@
     "plugin": "dnd_fifth_edition",
     "source": "$data:source",
     "displayName": "$data:display_name",
-    "briefContents": [],
-    "fullContents": {}
+    "briefContents": [
+        {
+            "supertype": "render",
+            "type": "masonry",
+            "columns": 2,
+            "spacing": 2,
+            "children": [
+                {
+                    "supertype": "render",
+                    "type": "card",
+                    "title": {
+                        "title": "Speed",
+                        "subtitle": "In Ft./Round"
+                    },
+                    "variant": "outlined",
+                    "children": {
+                        "supertype": "source",
+                        "type": "generator",
+                        "function": {
+                            "function": "$file:functions/gen_speeds.js:files",
+                            "opts": {
+                                "speed": "$data:speed"
+                            }
+                        },
+                        "renderer": {
+                            "supertype": "render",
+                            "type": "chip",
+                            "text": {
+                                "supertype": "value",
+                                "type": "text",
+                                "content": "{{name}}: {{speed}} ft.",
+                                "substitutions": {
+                                    "name": "$data:name",
+                                    "speed": "$data:speed"
+                                }
+                            },
+                            "filled": false
+                        }
+                    }
+                },
+                {
+                    "supertype": "render",
+                    "type": "card",
+                    "title": {
+                        "title": "Size",
+                        "subtitle": "Any of:"
+                    },
+                    "variant": "outlined",
+                    "children": {
+                        "supertype": "source",
+                        "type": "list",
+                        "source": "size",
+                        "renderer": {
+                            "supertype": "render",
+                            "type": "chip",
+                            "text": {
+                                "supertype": "value",
+                                "type": "function",
+                                "function": "$file:functions/translate_size.js:lines",
+                                "opts": {
+                                    "size": "$self"
+                                }
+                            },
+                            "filled": false
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "fullContents": "$sub:race_expanded.renderer.json"
 }
