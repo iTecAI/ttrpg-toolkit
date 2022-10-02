@@ -44,6 +44,7 @@
         "heightAndWeight": null,
         "hasFluff": true,
         "slug": "goblin__dankwood__awm_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": []
     }
 ]

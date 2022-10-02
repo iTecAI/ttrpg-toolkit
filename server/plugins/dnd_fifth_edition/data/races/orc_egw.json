@@ -75,6 +75,7 @@
             }
         ],
         "slug": "orc_egw_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": []
     }
 ]

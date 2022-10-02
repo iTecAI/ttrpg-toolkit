@@ -39,38 +39,18 @@
                 }
             }
         ],
-        "entries": [
-            {
-                "type": "entries",
-                "name": "Creature Type",
-                "entries": [
-                    "You are a Fey."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Fairy Flight",
-                "entries": [
-                    "You have a flying speed equal to your walking speed and can hover. This flight is magical and does not require the use of your wings (if you have them)."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Fairy Magic",
-                "entries": [
-                    "You know the {@spell druidcraft} and {@spell faerie fire} spells. You can cast faerie fire without expending a spell slot, and you must finish a long rest before you can cast it this way again. You can also cast this spell using any spell slots you have. Your spellcasting ability for these spells is your choice of Intelligence, Wisdom, or Charisma."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Fey Passage",
-                "entries": [
-                    "You can squeeze through a space as narrow as 1 inch wide."
-                ]
-            }
-        ],
         "hasFluff": true,
         "slug": "fairy_ua2021folkofthefeywild_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Creature Type:** You are a Fey.",
+            "",
+            "**Fairy Flight:** You have a flying speed equal to your walking speed and can hover. This flight is magical and does not require the use of your wings (if you have them).",
+            "",
+            "**Fairy Magic:** You know the *druidcraft* and *faerie fire* spells. You can cast faerie fire without expending a spell slot, and you must finish a long rest before you can cast it this way again. You can also cast this spell using any spell slots you have. Your spellcasting ability for these spells is your choice of Intelligence, Wisdom, or Charisma.",
+            "",
+            "**Fey Passage:** You can squeeze through a space as narrow as 1 inch wide.",
+            ""
+        ]
     }
 ]

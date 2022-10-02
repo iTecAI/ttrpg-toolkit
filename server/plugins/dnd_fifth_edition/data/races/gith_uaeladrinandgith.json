@@ -22,31 +22,16 @@
                 "other": true
             }
         ],
-        "entries": [
-            {
-                "name": "Age",
-                "type": "entries",
-                "entries": [
-                    "Gith reach adulthood in their late teens and live for about a century."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Size",
-                "entries": [
-                    "Gith are taller and leaner than humans, with most a slender 6 feet in height."
-                ]
-            },
-            {
-                "name": "Languages",
-                "entries": [
-                    "You can speak, read, and write Common and Gith."
-                ],
-                "type": "entries"
-            }
-        ],
         "slug": "gith_uaeladrinandgith_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Age:** Gith reach adulthood in their late teens and live for about a century.",
+            "",
+            "**Size:** Gith are taller and leaner than humans, with most a slender 6 feet in height.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Gith.",
+            ""
+        ]
     },
     {
         "name": "Githyanki",
@@ -107,39 +92,39 @@
                 }
             }
         ],
-        "entries": [
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "languageProficiencies": [
             {
-                "name": "Alignment",
-                "type": "entries",
-                "entries": [
-                    "Githyanki tend toward lawful evil. They are self-centered, violent, and arrogant, yet they remain the faithful servants of their lich-queen, Vlaakith. Renegade githyanki tend toward chaos as they have forsaken her will."
-                ]
-            },
-            {
-                "name": "Decadent Mastery",
-                "entries": [
-                    "You learn one language of your choice, and you are proficient with one skill or {@book tool|phb|5|tools} of your choice. In the timeless city of Tu'narath, githyanki have bountiful time to master odd bits of knowledge."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Martial Prodigy",
-                "entries": [
-                    "You are proficient with light and medium armor. Your people are ever ready for war."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Githyanki Psionics",
-                "entries": [
-                    "You know the {@spell mage hand} cantrip. When you reach 3rd level, you can cast {@spell jump} once with this trait, and you regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the {@spell misty step} spell once with this trait, and you regain the ability to do so when you finish a long rest.",
-                    "Intelligence is your spellcasting ability for these spells. You can cast all of them without components."
-                ],
-                "type": "entries"
+                "common": true,
+                "other": true
             }
         ],
         "slug": "gith_uaeladrinandgith_githyanki_uaeladrinandgith",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Gith reach adulthood in their late teens and live for about a century.",
+            "",
+            "**Size:** Gith are taller and leaner than humans, with most a slender 6 feet in height.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Gith.",
+            "",
+            "**Alignment:** Githyanki tend toward lawful evil. They are self-centered, violent, and arrogant, yet they remain the faithful servants of their lich-queen, Vlaakith. Renegade githyanki tend toward chaos as they have forsaken her will.",
+            "",
+            "**Decadent Mastery:** You learn one language of your choice, and you are proficient with one skill or **Tool (phb) - Page 5** of your choice. In the timeless city of Tu'narath, githyanki have bountiful time to master odd bits of knowledge.",
+            "",
+            "**Martial Prodigy:** You are proficient with light and medium armor. Your people are ever ready for war.",
+            "",
+            "**Githyanki Psionics:** You know the *mage hand* cantrip. When you reach 3rd level, you can cast *jump* once with this trait, and you regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the *misty step* spell once with this trait, and you regain the ability to do so when you finish a long rest.",
+            "Intelligence is your spellcasting ability for these spells. You can cast all of them without components.",
+            ""
+        ]
     },
     {
         "name": "Githzerai",
@@ -181,31 +166,36 @@
                 }
             }
         ],
-        "entries": [
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "languageProficiencies": [
             {
-                "name": "Alignment",
-                "type": "entries",
-                "entries": [
-                    "Githzerai tend toward lawful neutral. Their rigorous training in psychic abilities requires an implacable mental discipline."
-                ]
-            },
-            {
-                "name": "Monastic Training",
-                "entries": [
-                    "You gain a +1 bonus to AC while you aren't wearing medium or heavy armor and aren't using a shield. All githzerai receive basic training from monks, and the monks among them are unmatched in their defensive abilities."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Githzerai Psionics",
-                "entries": [
-                    "You know the {@spell mage hand} cantrip. When you reach 3rd level, you can cast {@spell shield} once with this trait, and you regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the {@spell detect thoughts} spell once with this trait, and you regain the ability to do so when you finish a long rest.",
-                    "Wisdom is your spellcasting ability for these spells. You can cast all of them without components."
-                ],
-                "type": "entries"
+                "common": true,
+                "other": true
             }
         ],
         "slug": "gith_uaeladrinandgith_githzerai_uaeladrinandgith",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Gith reach adulthood in their late teens and live for about a century.",
+            "",
+            "**Size:** Gith are taller and leaner than humans, with most a slender 6 feet in height.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Gith.",
+            "",
+            "**Alignment:** Githzerai tend toward lawful neutral. Their rigorous training in psychic abilities requires an implacable mental discipline.",
+            "",
+            "**Monastic Training:** You gain a +1 bonus to AC while you aren't wearing medium or heavy armor and aren't using a shield. All githzerai receive basic training from monks, and the monks among them are unmatched in their defensive abilities.",
+            "",
+            "**Githzerai Psionics:** You know the *mage hand* cantrip. When you reach 3rd level, you can cast *shield* once with this trait, and you regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the *detect thoughts* spell once with this trait, and you regain the ability to do so when you finish a long rest.",
+            "Wisdom is your spellcasting ability for these spells. You can cast all of them without components.",
+            ""
+        ]
     }
 ]

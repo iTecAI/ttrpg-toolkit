@@ -47,40 +47,20 @@
             "type": "internal",
             "path": "races/genasi.mp3"
         },
-        "entries": [
-            {
-                "name": "Age",
-                "type": "entries",
-                "entries": [
-                    "Genasi mature at about the same rate as humans and reach adulthood in their late teens. They live somewhat longer than humans do, up to 120 years."
-                ]
-            },
-            {
-                "name": "Alignment",
-                "type": "entries",
-                "entries": [
-                    "Independent and self-reliant, genasi tend toward a neutral alignment."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Size",
-                "entries": [
-                    "Genasi are as varied as their mortal parents but are generally built like humans, standing anywhere from 5 feet to over 6 feet tall. Your size is Medium."
-                ]
-            },
-            {
-                "name": "Languages",
-                "entries": [
-                    "You can speak, read, and write Common and Primordial. Primordial is a guttural language, filled with harsh syllables and hard consonants."
-                ],
-                "type": "entries"
-            }
-        ],
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "genasi_eepc_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Age:** Genasi mature at about the same rate as humans and reach adulthood in their late teens. They live somewhat longer than humans do, up to 120 years.",
+            "",
+            "**Alignment:** Independent and self-reliant, genasi tend toward a neutral alignment.",
+            "",
+            "**Size:** Genasi are as varied as their mortal parents but are generally built like humans, standing anywhere from 5 feet to over 6 feet tall. Your size is Medium.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Primordial. Primordial is a guttural language, filled with harsh syllables and hard consonants.",
+            ""
+        ]
     },
     {
         "name": "Air",
@@ -106,26 +86,60 @@
                 }
             }
         ],
-        "entries": [
-            {
-                "name": "Unending Breath",
-                "entries": [
-                    "You can hold your breath indefinitely while you're not {@condition incapacitated}."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Mingle with the Wind",
-                "entries": [
-                    "You can cast the {@spell levitate} spell once with this trait, requiring no material components, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for this spell."
-                ],
-                "type": "entries"
-            }
-        ],
         "hasFluff": true,
         "hasFluffImages": true,
+        "additionalSources": [
+            {
+                "source": "EGW",
+                "page": 170
+            }
+        ],
+        "otherSources": [
+            {
+                "source": "EGW",
+                "page": 170
+            }
+        ],
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "heightAndWeight": {
+            "baseHeight": 56,
+            "heightMod": "2d10",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 120
+        },
+        "languageProficiencies": [
+            {
+                "common": true,
+                "primordial": true
+            }
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/genasi.mp3"
+        },
         "slug": "genasi_eepc_air_eepc",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Genasi mature at about the same rate as humans and reach adulthood in their late teens. They live somewhat longer than humans do, up to 120 years.",
+            "",
+            "**Alignment:** Independent and self-reliant, genasi tend toward a neutral alignment.",
+            "",
+            "**Size:** Genasi are as varied as their mortal parents but are generally built like humans, standing anywhere from 5 feet to over 6 feet tall. Your size is Medium.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Primordial. Primordial is a guttural language, filled with harsh syllables and hard consonants.",
+            "",
+            "**Unending Breath:** You can hold your breath indefinitely while you're not *incapacitated*.",
+            "",
+            "**Mingle with the Wind:** You can cast the *levitate* spell once with this trait, requiring no material components, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for this spell.",
+            ""
+        ]
     },
     {
         "name": "Earth",
@@ -151,26 +165,60 @@
                 }
             }
         ],
-        "entries": [
-            {
-                "name": "Earth Walk",
-                "entries": [
-                    "You can move across {@quickref difficult terrain||3} made of earth or stone without expending extra movement."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Merge with Stone",
-                "entries": [
-                    "You can cast the {@spell pass without trace} spell once with this trait, requiring no material components, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for this spell."
-                ],
-                "type": "entries"
-            }
-        ],
         "hasFluff": true,
         "hasFluffImages": true,
+        "additionalSources": [
+            {
+                "source": "EGW",
+                "page": 170
+            }
+        ],
+        "otherSources": [
+            {
+                "source": "EGW",
+                "page": 170
+            }
+        ],
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "heightAndWeight": {
+            "baseHeight": 56,
+            "heightMod": "2d10",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 120
+        },
+        "languageProficiencies": [
+            {
+                "common": true,
+                "primordial": true
+            }
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/genasi.mp3"
+        },
         "slug": "genasi_eepc_earth_eepc",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Genasi mature at about the same rate as humans and reach adulthood in their late teens. They live somewhat longer than humans do, up to 120 years.",
+            "",
+            "**Alignment:** Independent and self-reliant, genasi tend toward a neutral alignment.",
+            "",
+            "**Size:** Genasi are as varied as their mortal parents but are generally built like humans, standing anywhere from 5 feet to over 6 feet tall. Your size is Medium.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Primordial. Primordial is a guttural language, filled with harsh syllables and hard consonants.",
+            "",
+            "**Earth Walk:** You can move across difficult terrain made of earth or stone without expending extra movement.",
+            "",
+            "**Merge with Stone:** You can cast the *pass without trace* spell once with this trait, requiring no material components, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for this spell.",
+            ""
+        ]
     },
     {
         "name": "Fire",
@@ -209,33 +257,62 @@
                 }
             }
         ],
-        "entries": [
-            {
-                "name": "Darkvision",
-                "entries": [
-                    "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. Your ties to the Elemental Plane of Fire make your darkvision unusual: everything you see in darkness is in a shade of red."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Fire Resistance",
-                "entries": [
-                    "You have resistance to fire damage."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Reach to the Blaze",
-                "entries": [
-                    "You know the {@spell produce flame} cantrip. Once you reach 3rd level, you can cast the {@spell burning hands} spell once with this trait as a 1st-level spell, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for these spells."
-                ],
-                "type": "entries"
-            }
-        ],
         "hasFluff": true,
         "hasFluffImages": true,
+        "additionalSources": [
+            {
+                "source": "EGW",
+                "page": 170
+            }
+        ],
+        "otherSources": [
+            {
+                "source": "EGW",
+                "page": 170
+            }
+        ],
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "heightAndWeight": {
+            "baseHeight": 56,
+            "heightMod": "2d10",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 120
+        },
+        "languageProficiencies": [
+            {
+                "common": true,
+                "primordial": true
+            }
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/genasi.mp3"
+        },
         "slug": "genasi_eepc_fire_eepc",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Genasi mature at about the same rate as humans and reach adulthood in their late teens. They live somewhat longer than humans do, up to 120 years.",
+            "",
+            "**Alignment:** Independent and self-reliant, genasi tend toward a neutral alignment.",
+            "",
+            "**Size:** Genasi are as varied as their mortal parents but are generally built like humans, standing anywhere from 5 feet to over 6 feet tall. Your size is Medium.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Primordial. Primordial is a guttural language, filled with harsh syllables and hard consonants.",
+            "",
+            "**Darkvision:** You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. Your ties to the Elemental Plane of Fire make your darkvision unusual: everything you see in darkness is in a shade of red.",
+            "",
+            "**Fire Resistance:** You have resistance to fire damage.",
+            "",
+            "**Reach to the Blaze:** You know the *produce flame* cantrip. Once you reach 3rd level, you can cast the *burning hands* spell once with this trait as a 1st-level spell, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for these spells.",
+            ""
+        ]
     },
     {
         "name": "Water",
@@ -280,39 +357,62 @@
                 }
             }
         ],
-        "entries": [
-            {
-                "name": "Acid Resistance",
-                "entries": [
-                    "You have resistance to acid damage."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Amphibious",
-                "entries": [
-                    "You can breathe air and water."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Swim",
-                "entries": [
-                    "You have a swimming speed of 30 feet."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Call to the Wave",
-                "entries": [
-                    "You know the {@spell shape water|xge} cantrip. When you reach 3rd level, you can cast the {@spell create or destroy water} spell as a 2nd-level spell once with this trait, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for these spells."
-                ],
-                "type": "entries"
-            }
-        ],
         "hasFluff": true,
         "hasFluffImages": true,
+        "additionalSources": [
+            {
+                "source": "EGW",
+                "page": 170
+            }
+        ],
+        "otherSources": [
+            {
+                "source": "EGW",
+                "page": 170
+            }
+        ],
+        "size": [
+            "M"
+        ],
+        "heightAndWeight": {
+            "baseHeight": 56,
+            "heightMod": "2d10",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 120
+        },
+        "languageProficiencies": [
+            {
+                "common": true,
+                "primordial": true
+            }
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/genasi.mp3"
+        },
         "slug": "genasi_eepc_water_eepc",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Genasi mature at about the same rate as humans and reach adulthood in their late teens. They live somewhat longer than humans do, up to 120 years.",
+            "",
+            "**Alignment:** Independent and self-reliant, genasi tend toward a neutral alignment.",
+            "",
+            "**Size:** Genasi are as varied as their mortal parents but are generally built like humans, standing anywhere from 5 feet to over 6 feet tall. Your size is Medium.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Primordial. Primordial is a guttural language, filled with harsh syllables and hard consonants.",
+            "",
+            "**Acid Resistance:** You have resistance to acid damage.",
+            "",
+            "**Amphibious:** You can breathe air and water.",
+            "",
+            "**Swim:** You have a swimming speed of 30 feet.",
+            "",
+            "**Call to the Wave:** You know the *shape water* cantrip. When you reach 3rd level, you can cast the *create or destroy water* spell as a 2nd-level spell once with this trait, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for these spells.",
+            ""
+        ]
     }
 ]

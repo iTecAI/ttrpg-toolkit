@@ -17,60 +17,25 @@
             "acid",
             "poison"
         ],
-        "entries": [
-            {
-                "type": "entries",
-                "name": "Creature Type",
-                "entries": [
-                    "You are an Ooze."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Size",
-                "entries": [
-                    "You are Medium or Small. You choose the size when you gain this race."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Amorphous",
-                "entries": [
-                    "You can squeeze through a space as narrow as 1 inch wide, provided you are wearing and carrying nothing. You also have advantage on ability checks you make to initiate or escape a grapple."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Darkvision",
-                "entries": [
-                    "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Hold Breath",
-                "entries": [
-                    "You can hold your breath for 1 hour."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Natural Resilience",
-                "entries": [
-                    "You have resistance to acid and poison damage, and you have advantage on saving throws against being {@condition poisoned}."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Shape Self",
-                "entries": [
-                    "If you are not {@condition incapacitated}, you can reshape your body to give yourself a head, one or two arms, one or two legs, and makeshift hands and feet, or you can revert to a limbless blob (no action required).",
-                    "As a bonus action, you can extrude a pseudopod that is up to 6 inches wide and 10 feet long or reabsorb it into your body. You can use this pseudopod to manipulate an object, open an unlocked door or container, stow or retrieve an item from an open container, or pour out the contents of a container. The pseudopod can't attack, activate magic items, or carry more than 10 pounds."
-                ]
-            }
-        ],
         "hasFluff": true,
         "slug": "plasmoid_ua2021travelersofthemultiverse_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Creature Type:** You are an Ooze.",
+            "",
+            "**Size:** You are Medium or Small. You choose the size when you gain this race.",
+            "",
+            "**Amorphous:** You can squeeze through a space as narrow as 1 inch wide, provided you are wearing and carrying nothing. You also have advantage on ability checks you make to initiate or escape a grapple.",
+            "",
+            "**Darkvision:** You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.",
+            "",
+            "**Hold Breath:** You can hold your breath for 1 hour.",
+            "",
+            "**Natural Resilience:** You have resistance to acid and poison damage, and you have advantage on saving throws against being *poisoned*.",
+            "",
+            "**Shape Self:** If you are not *incapacitated*, you can reshape your body to give yourself a head, one or two arms, one or two legs, and makeshift hands and feet, or you can revert to a limbless blob (no action required).",
+            "As a bonus action, you can extrude a pseudopod that is up to 6 inches wide and 10 feet long or reabsorb it into your body. You can use this pseudopod to manipulate an object, open an unlocked door or container, stow or retrieve an item from an open container, or pour out the contents of a container. The pseudopod can't attack, activate magic items, or carry more than 10 pounds.",
+            ""
+        ]
     }
 ]

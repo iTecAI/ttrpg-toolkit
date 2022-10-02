@@ -29,52 +29,22 @@
                 "anyStandard": 1
             }
         ],
-        "entries": [
-            {
-                "name": "Age",
-                "type": "entries",
-                "entries": [
-                    "Merfolk mature at the same rate humans do and reach adulthood around the age of 20. They live considerably longer than humans, though, often reaching well over 100 years."
-                ]
-            },
-            {
-                "name": "Alignment",
-                "type": "entries",
-                "entries": [
-                    "Most merfolk are neutral, living in close harmony with nature."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Size",
-                "entries": [
-                    "Merfolk are significantly taller than most humans, standing between seven and eight feet tall and averaging about 300 pounds. Your size is Medium."
-                ]
-            },
-            {
-                "name": "Amphibious",
-                "entries": [
-                    "You can breathe air and water."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Swimming",
-                "entries": [
-                    "You have a swimming speed of 30 feet."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Languages",
-                "entries": [
-                    "You can speak, read, and write Common (if it exists in your campaign), Merfolk, and one additional language of your choice."
-                ],
-                "type": "entries"
-            }
-        ],
         "slug": "merfolk__ixalan__psx_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Age:** Merfolk mature at the same rate humans do and reach adulthood around the age of 20. They live considerably longer than humans, though, often reaching well over 100 years.",
+            "",
+            "**Alignment:** Most merfolk are neutral, living in close harmony with nature.",
+            "",
+            "**Size:** Merfolk are significantly taller than most humans, standing between seven and eight feet tall and averaging about 300 pounds. Your size is Medium.",
+            "",
+            "**Amphibious:** You can breathe air and water.",
+            "",
+            "**Swimming:** You have a swimming speed of 30 feet.",
+            "",
+            "**Languages:** You can speak, read, and write Common (if it exists in your campaign), Merfolk, and one additional language of your choice.",
+            ""
+        ]
     },
     {
         "name": "Blue",
@@ -107,24 +77,47 @@
                 }
             }
         ],
-        "entries": [
+        "size": [
+            "M"
+        ],
+        "speed": {
+            "walk": 30,
+            "swim": 30
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "traitTags": [
+            "Amphibious"
+        ],
+        "languageProficiencies": [
             {
-                "name": "Cantrip",
-                "entries": [
-                    "You know one cantrip of your choice from the {@filter wizard spell list|spells|class=wizard|level=0}. Intelligence is your spellcasting ability for it."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Lore of the Waters",
-                "entries": [
-                    "You gain proficiency in the {@skill History} and {@skill Nature} skills."
-                ],
-                "type": "entries"
+                "common": true,
+                "other": true,
+                "anyStandard": 1
             }
         ],
         "slug": "merfolk__ixalan__psx_blue_psx",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Merfolk mature at the same rate humans do and reach adulthood around the age of 20. They live considerably longer than humans, though, often reaching well over 100 years.",
+            "",
+            "**Alignment:** Most merfolk are neutral, living in close harmony with nature.",
+            "",
+            "**Size:** Merfolk are significantly taller than most humans, standing between seven and eight feet tall and averaging about 300 pounds. Your size is Medium.",
+            "",
+            "**Amphibious:** You can breathe air and water.",
+            "",
+            "**Swimming:** You have a swimming speed of 30 feet.",
+            "",
+            "**Languages:** You can speak, read, and write Common (if it exists in your campaign), Merfolk, and one additional language of your choice.",
+            "",
+            "**Cantrip:** You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it.",
+            "",
+            "**Lore of the Waters:** You gain proficiency in the History and Nature skills.",
+            ""
+        ]
     },
     {
         "name": "Green",
@@ -151,23 +144,46 @@
                 }
             }
         ],
-        "entries": [
+        "size": [
+            "M"
+        ],
+        "speed": {
+            "walk": 30,
+            "swim": 30
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "traitTags": [
+            "Amphibious"
+        ],
+        "languageProficiencies": [
             {
-                "name": "Cantrip",
-                "entries": [
-                    "You know one cantrip of your choice from the {@filter druid spell list|spells|class=Druid|level=0}. Wisdom is your spellcasting ability for it."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Mask of the Wild",
-                "entries": [
-                    "You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena."
-                ],
-                "type": "entries"
+                "common": true,
+                "other": true,
+                "anyStandard": 1
             }
         ],
         "slug": "merfolk__ixalan__psx_green_psx",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Merfolk mature at the same rate humans do and reach adulthood around the age of 20. They live considerably longer than humans, though, often reaching well over 100 years.",
+            "",
+            "**Alignment:** Most merfolk are neutral, living in close harmony with nature.",
+            "",
+            "**Size:** Merfolk are significantly taller than most humans, standing between seven and eight feet tall and averaging about 300 pounds. Your size is Medium.",
+            "",
+            "**Amphibious:** You can breathe air and water.",
+            "",
+            "**Swimming:** You have a swimming speed of 30 feet.",
+            "",
+            "**Languages:** You can speak, read, and write Common (if it exists in your campaign), Merfolk, and one additional language of your choice.",
+            "",
+            "**Cantrip:** You know one cantrip of your choice from the druid spell list. Wisdom is your spellcasting ability for it.",
+            "",
+            "**Mask of the Wild:** You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena.",
+            ""
+        ]
     }
 ]

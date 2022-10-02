@@ -12,38 +12,19 @@
             "walk": 30,
             "climb": true
         },
-        "entries": [
-            {
-                "type": "entries",
-                "name": "Size",
-                "entries": [
-                    "You are Medium or Small. You choose the size when you gain this lineage."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Dexterous Feet",
-                "entries": [
-                    "You can take the {@action Use an Object} action as a bonus action."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Glide",
-                "entries": [
-                    "If you are not {@condition incapacitated} or wearing heavy armor, you can extend your skin membranes and glide. When you do so, you can perform the following aerial maneuvers:",
-                    {
-                        "type": "list",
-                        "items": [
-                            "When you fall, you can move up to 5 feet horizontally for every 1 foot you descend.",
-                            "When you would take damage from a fall, you can use your reaction to reduce the fall's damage to 0."
-                        ]
-                    }
-                ]
-            }
-        ],
         "hasFluff": true,
         "slug": "hadozee_ua2021travelersofthemultiverse_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Size:** You are Medium or Small. You choose the size when you gain this lineage.",
+            "",
+            "**Dexterous Feet:** You can take the **Use an Object** action as a bonus action.",
+            "",
+            "**Glide:** If you are not *incapacitated* or wearing heavy armor, you can extend your skin membranes and glide. When you do so, you can perform the following aerial maneuvers:",
+            " - When you fall, you can move up to 5 feet horizontally for every 1 foot you descend.",
+            " - When you would take damage from a fall, you can use your reaction to reduce the fall's damage to 0.",
+            "",
+            ""
+        ]
     }
 ]

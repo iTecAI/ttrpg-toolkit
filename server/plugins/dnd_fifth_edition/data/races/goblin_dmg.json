@@ -23,30 +23,15 @@
                 "goblin": true
             }
         ],
-        "entries": [
-            {
-                "name": "Nimble Escape",
-                "entries": [
-                    "You can take the {@action Disengage} or {@action Hide} action as a bonus action on each of your turns."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Darkvision",
-                "entries": [
-                    "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Languages",
-                "entries": [
-                    "You can speak, read, and write Common and Goblin."
-                ],
-                "type": "entries"
-            }
-        ],
         "slug": "goblin_dmg_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Nimble Escape:** You can take the **Disengage** or **Hide** action as a bonus action on each of your turns.",
+            "",
+            "**Darkvision:** Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Goblin.",
+            ""
+        ]
     }
 ]

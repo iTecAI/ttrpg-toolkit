@@ -25,30 +25,15 @@
                 "draconic": true
             }
         ],
-        "entries": [
-            {
-                "name": "Hold Breath",
-                "entries": [
-                    "You can hold your breath for up to 15 minutes at a time."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Natural Armor",
-                "entries": [
-                    "Your scales function as natural armor, granting you a +3 bonus to Armor Class."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Languages",
-                "entries": [
-                    "You can speak, read, and write Draconic."
-                ],
-                "type": "entries"
-            }
-        ],
         "slug": "lizardfolk_dmg_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Hold Breath:** You can hold your breath for up to 15 minutes at a time.",
+            "",
+            "**Natural Armor:** Your scales function as natural armor, granting you a +3 bonus to Armor Class.",
+            "",
+            "**Languages:** You can speak, read, and write Draconic.",
+            ""
+        ]
     }
 ]

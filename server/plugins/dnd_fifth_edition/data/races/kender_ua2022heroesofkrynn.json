@@ -13,70 +13,27 @@
                 "stealth": true
             }
         ],
-        "entries": [
-            {
-                "type": "entries",
-                "name": "Brave",
-                "entries": [
-                    "You have advantage on saving throws you make to avoid or end the {@condition frightened} condition on yourself."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Kender Ace",
-                "entries": [
-                    "Starting at 3rd level, you possess a magical ability to pull an item out of a bag or another container; as a bonus action, you can reach into a container you're carrying and roll on the Kender Aces table to determine what item you pull out. The object glimmers softly and disappears after 1 hour. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
-                    {
-                        "type": "table",
-                        "caption": "Kender Aces",
-                        "colLabels": [
-                            "d6",
-                            "Item"
-                        ],
-                        "colStyles": [
-                            "col-1 text-center",
-                            "col-11"
-                        ],
-                        "rows": [
-                            [
-                                "1",
-                                "{@dice 5d6} gold pieces"
-                            ],
-                            [
-                                "2",
-                                "1 {@filter simple weapon|items|source=phb|category=basic|type=simple weapon|property=light} of your choice that has the light property"
-                            ],
-                            [
-                                "3",
-                                "1 item of your choice from the {@table Adventuring Gear|PHB} table in the Player's Handbook. The item must cost no more than 1 gp and weigh no more than 1 lb."
-                            ],
-                            [
-                                "4",
-                                "1 random item from the {@item Trinket|PHB|Trinkets} table in the Player's Handbook."
-                            ],
-                            [
-                                "5",
-                                "Your choice of a {@item crowbar|PHB} or a {@item grappling hook|PHB}"
-                            ],
-                            [
-                                "6",
-                                "1 item of your choice from the {@table Tools|PHB} table in the Player's Handbook. The item must cost no more than 10 gp."
-                            ]
-                        ]
-                    }
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Taunt",
-                "entries": [
-                    "You have a supernatural ability to home in on a creature's emotional raw nerves and craft a taunt that flusters that creature. As a bonus action, you can unleash a barrage of insults at a creature within 60 feet of you that can hear and understand you. The target must succeed on a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Charisma modifier), or it has disadvantage on attack rolls until the start of your next turn.",
-                    "You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
-                ]
-            }
-        ],
         "hasFluff": true,
         "slug": "kender_ua2022heroesofkrynn_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Brave:** You have advantage on saving throws you make to avoid or end the *frightened* condition on yourself.",
+            "",
+            "**Kender Ace:** Starting at 3rd level, you possess a magical ability to pull an item out of a bag or another container; as a bonus action, you can reach into a container you're carrying and roll on the Kender Aces table to determine what item you pull out. The object glimmers softly and disappears after 1 hour. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
+            "| d6 | Item |",
+            "| :---: | --- |",
+            "| 1 | 5d6 gold pieces |",
+            "| 2 | 1 simple weapon of your choice that has the light property |",
+            "| 3 | 1 item of your choice from the Adventuring gear table in the Player's Handbook. The item must cost no more than 1 gp and weigh no more than 1 lb. |",
+            "| 4 | 1 random item from the Trinkets table in the Player's Handbook. |",
+            "| 5 | Your choice of a crowbar or a grappling hook |",
+            "| 6 | 1 item of your choice from the Tools table in the Player's Handbook. The item must cost no more than 10 gp. |",
+            "*Kender Aces*",
+            "",
+            "",
+            "**Taunt:** You have a supernatural ability to home in on a creature's emotional raw nerves and craft a taunt that flusters that creature. As a bonus action, you can unleash a barrage of insults at a creature within 60 feet of you that can hear and understand you. The target must succeed on a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Charisma modifier), or it has disadvantage on attack rolls until the start of your next turn.",
+            "You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
+            ""
+        ]
     }
 ]

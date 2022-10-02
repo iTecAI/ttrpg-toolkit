@@ -37,57 +37,23 @@
                 }
             }
         ],
-        "entries": [
-            {
-                "name": "Innate Spellcasting",
-                "entries": [
-                    "You have an innate ability to cast the following spells, requiring no material components:",
-                    {
-                        "type": "list",
-                        "style": "list-hang-notitle",
-                        "items": [
-                            {
-                                "type": "itemSpell",
-                                "name": "At will:",
-                                "entry": "{@spell nondetection} (self only)"
-                            },
-                            {
-                                "type": "itemSpell",
-                                "name": "1/day each:",
-                                "entry": "{@spell blindness/deafness}, {@spell blur}, {@spell disguise self}"
-                            }
-                        ]
-                    },
-                    "Intelligence is your spellcasting ability for these spells."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Gnome Cunning",
-                "entries": [
-                    "You have advantage on Intelligence, Wisdom, and Charisma saving throws against magic."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Superior Darkvision",
-                "entries": [
-                    "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 120 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
-                ],
-                "data": {
-                    "overwrite": "Darkvision"
-                },
-                "type": "entries"
-            },
-            {
-                "name": "Languages",
-                "entries": [
-                    "You can speak, read, and write Gnomish, Terran, and Undercommon."
-                ],
-                "type": "entries"
-            }
-        ],
         "slug": "gnome__deep__dmg_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Innate Spellcasting:** You have an innate ability to cast the following spells, requiring no material components:",
+            " - **At will::** *nondetection* (self only)",
+            " - ",
+            " - **1/day each::** *blindness/deafness*, *blur*, *disguise self*",
+            " - ",
+            "",
+            "Intelligence is your spellcasting ability for these spells.",
+            "",
+            "**Gnome Cunning:** You have advantage on Intelligence, Wisdom, and Charisma saving throws against magic.",
+            "",
+            "**Superior Darkvision:** Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 120 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Languages:** You can speak, read, and write Gnomish, Terran, and Undercommon.",
+            ""
+        ]
     }
 ]

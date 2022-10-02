@@ -42,72 +42,27 @@
                 "goblin": true
             }
         ],
-        "entries": [
-            {
-                "name": "Age",
-                "type": "entries",
-                "entries": [
-                    "Bugbears reach adulthood at age 16 and live up to 80 years."
-                ]
-            },
-            {
-                "name": "Alignment",
-                "type": "entries",
-                "entries": [
-                    "Bugbears live on the fringes of society even in Darguun, where they value self-sufficiency and violence. They are generally chaotic, organizing in loose tribes under charismatic and powerful leaders."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Size",
-                "entries": [
-                    "Your size is Medium."
-                ]
-            },
-            {
-                "name": "Darkvision",
-                "entries": [
-                    "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Long-Limbed",
-                "entries": [
-                    "When you make a melee attack on your turn, your reach for it is 5 feet greater than normal."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Powerful Build",
-                "entries": [
-                    "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Sneaky",
-                "entries": [
-                    "You are proficient in the {@skill Stealth} skill."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Surprise Attack",
-                "entries": [
-                    "If you surprise a creature and hit it with an attack on your first turn in combat, the attack deals an extra {@dice 2d6} damage to it. You can use this trait only once per combat."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Languages",
-                "entries": [
-                    "You can speak, read, and write Common and Goblin."
-                ],
-                "type": "entries"
-            }
-        ],
         "slug": "bugbear_erlw_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Age:** Bugbears reach adulthood at age 16 and live up to 80 years.",
+            "",
+            "**Alignment:** Bugbears live on the fringes of society even in Darguun, where they value self-sufficiency and violence. They are generally chaotic, organizing in loose tribes under charismatic and powerful leaders.",
+            "",
+            "**Size:** Your size is Medium.",
+            "",
+            "**Darkvision:** You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Long-Limbed:** When you make a melee attack on your turn, your reach for it is 5 feet greater than normal.",
+            "",
+            "**Powerful Build:** You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.",
+            "",
+            "**Sneaky:** You are proficient in the Stealth skill.",
+            "",
+            "**Surprise Attack:** If you surprise a creature and hit it with an attack on your first turn in combat, the attack deals an extra 2d6 damage to it. You can use this trait only once per combat.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Goblin.",
+            ""
+        ]
     }
 ]

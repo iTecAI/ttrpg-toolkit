@@ -36,59 +36,24 @@
                 "draconic": true
             }
         ],
-        "entries": [
-            {
-                "type": "entries",
-                "name": "Age",
-                "entries": [
-                    "Viashino mature quickly, reaching adulthood in their early teens. They live violent lives and rarely die of old age, but they would rarely live past 60 anyway."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Alignment",
-                "entries": [
-                    "Viashino strongly tend toward chaotic alignments. They have no particular inclination toward good or evil."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Size",
-                "entries": [
-                    "Viashino are about as tall as humans, but they have lithe, wiry frames. Your size is Medium."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Bite",
-                "entries": [
-                    "Your fanged maw is a natural weapon, which you can use to make unarmed strikes. If you hit with it, you deal piercing damage equal to {@damage 1d4} + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Lashing Tail",
-                "entries": [
-                    "Your semi-prehensile tail is tipped with a bony blade. Immediately after a creature within 5 feet of you deals damage to you with a melee attack, you can use your reaction to make an unarmed strike against that creature with your tail. If you hit, you deal slashing damage equal to {@damage 1d4} + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Wiry Frame",
-                "entries": [
-                    "You gain proficiency in the {@skill Acrobatics} or the {@skill Stealth} skill (your choice)."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Languages",
-                "entries": [
-                    "You can speak, read, and write Common and Draconic."
-                ]
-            }
-        ],
         "hasFluff": true,
         "slug": "viashino_uaracesofravnica_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Age:** Viashino mature quickly, reaching adulthood in their early teens. They live violent lives and rarely die of old age, but they would rarely live past 60 anyway.",
+            "",
+            "**Alignment:** Viashino strongly tend toward chaotic alignments. They have no particular inclination toward good or evil.",
+            "",
+            "**Size:** Viashino are about as tall as humans, but they have lithe, wiry frames. Your size is Medium.",
+            "",
+            "**Bite:** Your fanged maw is a natural weapon, which you can use to make unarmed strikes. If you hit with it, you deal piercing damage equal to **1d4** + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike.",
+            "",
+            "**Lashing Tail:** Your semi-prehensile tail is tipped with a bony blade. Immediately after a creature within 5 feet of you deals damage to you with a melee attack, you can use your reaction to make an unarmed strike against that creature with your tail. If you hit, you deal slashing damage equal to **1d4** + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike.",
+            "",
+            "**Wiry Frame:** You gain proficiency in the Acrobatics or the Stealth skill (your choice).",
+            "",
+            "**Languages:** You can speak, read, and write Common and Draconic.",
+            ""
+        ]
     }
 ]

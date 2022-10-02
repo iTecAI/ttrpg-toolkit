@@ -36,6 +36,7 @@
             }
         },
         "slug": "hobgoblin_erlw_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": []
     }
 ]

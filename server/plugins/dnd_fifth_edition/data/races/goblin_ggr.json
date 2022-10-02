@@ -49,6 +49,7 @@
         "traitTags": null,
         "hasFluff": true,
         "slug": "goblin_ggr_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": []
     }
 ]

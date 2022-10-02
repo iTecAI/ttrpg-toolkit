@@ -32,6 +32,7 @@
         ],
         "hasFluff": true,
         "slug": "human__zendikar__psz_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": []
     }
 ]

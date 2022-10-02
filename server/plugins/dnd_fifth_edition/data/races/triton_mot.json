@@ -27,6 +27,7 @@
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "triton_mot_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": []
     }
 ]

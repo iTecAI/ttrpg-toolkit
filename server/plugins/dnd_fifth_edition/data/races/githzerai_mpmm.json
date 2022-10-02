@@ -43,34 +43,19 @@
                 }
             }
         ],
-        "entries": [
-            {
-                "type": "entries",
-                "name": "Githzerai Psionics",
-                "entries": [
-                    "You know the {@spell mage hand} cantrip, and the hand is {@condition invisible} when you cast the cantrip with this trait.",
-                    "Starting at 3rd level, you can cast the {@spell shield} spell with this trait. Starting at 5th level, you can also cast the {@spell detect thoughts} spell with it. Once you cast {@spell shield} or {@spell detect thoughts} spell with this trait, you can't cast that spell with it again until you finish a long rest. You can also cast either of those spells using any spell slots you have of the appropriate level.",
-                    "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). None of these spells require spell components when you cast them with this trait."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Mental Discipline",
-                "entries": [
-                    "Your innate psychic defenses grant you advantage on saving throws you make to avoid or end the {@condition charmed} and {@condition frightened} conditions on yourself."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Psychic Resilience",
-                "entries": [
-                    "You have resistance to psychic damage."
-                ]
-            }
-        ],
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "githzerai_mpmm_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Githzerai Psionics:** You know the *mage hand* cantrip, and the hand is *invisible* when you cast the cantrip with this trait.",
+            "Starting at 3rd level, you can cast the *shield* spell with this trait. Starting at 5th level, you can also cast the *detect thoughts* spell with it. Once you cast *shield* or *detect thoughts* spell with this trait, you can't cast that spell with it again until you finish a long rest. You can also cast either of those spells using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). None of these spells require spell components when you cast them with this trait.",
+            "",
+            "**Mental Discipline:** Your innate psychic defenses grant you advantage on saving throws you make to avoid or end the *charmed* and *frightened* conditions on yourself.",
+            "",
+            "**Psychic Resilience:** You have resistance to psychic damage.",
+            ""
+        ]
     }
 ]

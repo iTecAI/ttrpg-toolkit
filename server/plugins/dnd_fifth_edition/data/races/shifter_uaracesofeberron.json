@@ -27,60 +27,25 @@
                 "common": true
             }
         ],
-        "entries": [
-            {
-                "name": "Age",
-                "entries": [
-                    "Shifters are quick to mature both physically and emotionally, reaching young adulthood at age 10. They rarely live to be more than 70 years old."
-                ],
-                "type": "entries"
-            },
-            {
-                "type": "entries",
-                "name": "Alignment",
-                "entries": [
-                    "Shifters tend toward neutrality, being more focused on survival than concepts of good and evil. A love of personal freedom can drive shifters toward chaotic alignments."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Size",
-                "entries": [
-                    "Shifters range from 5 to almost 7 feet tall, depending on their subrace. Your size is Medium."
-                ]
-            },
-            {
-                "name": "Darkvision",
-                "entries": [
-                    "You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
-                ],
-                "type": "entries"
-            },
-            {
-                "type": "entries",
-                "name": "Keen Senses",
-                "entries": [
-                    "You have proficiency with the {@skill Perception} skill."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Shifting",
-                "entries": [
-                    "As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to your level + your Constitution modifier (minimum of 1 temporary hit point). You also gain additional benefits that depend on your shifter subrace, described below.",
-                    "Once you shift, you can't do so again until you finish a short or long rest."
-                ]
-            },
-            {
-                "name": "Languages",
-                "entries": [
-                    "You can speak, read, and write Common."
-                ],
-                "type": "entries"
-            }
-        ],
         "slug": "shifter_uaracesofeberron_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Age:** Shifters are quick to mature both physically and emotionally, reaching young adulthood at age 10. They rarely live to be more than 70 years old.",
+            "",
+            "**Alignment:** Shifters tend toward neutrality, being more focused on survival than concepts of good and evil. A love of personal freedom can drive shifters toward chaotic alignments.",
+            "",
+            "**Size:** Shifters range from 5 to almost 7 feet tall, depending on their subrace. Your size is Medium.",
+            "",
+            "**Darkvision:** You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Keen Senses:** You have proficiency with the Perception skill.",
+            "",
+            "**Shifting:** As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to your level + your Constitution modifier (minimum of 1 temporary hit point). You also gain additional benefits that depend on your shifter subrace, described below.",
+            "Once you shift, you can't do so again until you finish a short or long rest.",
+            "",
+            "**Languages:** You can speak, read, and write Common.",
+            ""
+        ]
     },
     {
         "name": "Beasthide",
@@ -101,24 +66,43 @@
                 "athletics": true
             }
         ],
-        "entries": [
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "age": {
+            "mature": 10,
+            "max": 70
+        },
+        "darkvision": 60,
+        "languageProficiencies": [
             {
-                "type": "entries",
-                "name": "Tough",
-                "entries": [
-                    "You have proficiency with the {@skill Athletics} skill."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Shifting Feature",
-                "entries": [
-                    "Whenever you shift, you gain {@dice 1d6} additional temporary hit points, and while shifted, you have a +1 bonus to your AC."
-                ]
+                "common": true
             }
         ],
         "slug": "shifter_uaracesofeberron_beasthide_uaracesofeberron",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Shifters are quick to mature both physically and emotionally, reaching young adulthood at age 10. They rarely live to be more than 70 years old.",
+            "",
+            "**Alignment:** Shifters tend toward neutrality, being more focused on survival than concepts of good and evil. A love of personal freedom can drive shifters toward chaotic alignments.",
+            "",
+            "**Size:** Shifters range from 5 to almost 7 feet tall, depending on their subrace. Your size is Medium.",
+            "",
+            "**Darkvision:** You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Keen Senses:** You have proficiency with the Perception skill.",
+            "",
+            "**Shifting:** As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to your level + your Constitution modifier (minimum of 1 temporary hit point). You also gain additional benefits that depend on your shifter subrace, described below.",
+            "Once you shift, you can't do so again until you finish a short or long rest.",
+            "",
+            "**Languages:** You can speak, read, and write Common.",
+            "",
+            "**Tough:** You have proficiency with the Athletics skill.",
+            "",
+            "**Shifting Feature:** Whenever you shift, you gain 1d6 additional temporary hit points, and while shifted, you have a +1 bonus to your AC.",
+            ""
+        ]
     },
     {
         "name": "Longtooth",
@@ -139,24 +123,43 @@
                 "intimidation": true
             }
         ],
-        "entries": [
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "age": {
+            "mature": 10,
+            "max": 70
+        },
+        "darkvision": 60,
+        "languageProficiencies": [
             {
-                "type": "entries",
-                "name": "Fierce",
-                "entries": [
-                    "You have proficiency with the {@skill Intimidation} skill."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Shifting Feature",
-                "entries": [
-                    "While shifted, you can use your elongated fangs to make an unarmed strike as a bonus action. If you hit with your fangs, you can deal piercing damage equal to {@dice 1d6} + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike."
-                ]
+                "common": true
             }
         ],
         "slug": "shifter_uaracesofeberron_longtooth_uaracesofeberron",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Shifters are quick to mature both physically and emotionally, reaching young adulthood at age 10. They rarely live to be more than 70 years old.",
+            "",
+            "**Alignment:** Shifters tend toward neutrality, being more focused on survival than concepts of good and evil. A love of personal freedom can drive shifters toward chaotic alignments.",
+            "",
+            "**Size:** Shifters range from 5 to almost 7 feet tall, depending on their subrace. Your size is Medium.",
+            "",
+            "**Darkvision:** You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Keen Senses:** You have proficiency with the Perception skill.",
+            "",
+            "**Shifting:** As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to your level + your Constitution modifier (minimum of 1 temporary hit point). You also gain additional benefits that depend on your shifter subrace, described below.",
+            "Once you shift, you can't do so again until you finish a short or long rest.",
+            "",
+            "**Languages:** You can speak, read, and write Common.",
+            "",
+            "**Fierce:** You have proficiency with the Intimidation skill.",
+            "",
+            "**Shifting Feature:** While shifted, you can use your elongated fangs to make an unarmed strike as a bonus action. If you hit with your fangs, you can deal piercing damage equal to 1d6 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike.",
+            ""
+        ]
     },
     {
         "name": "Swiftstride",
@@ -176,31 +179,44 @@
                 "acrobatics": true
             }
         ],
-        "entries": [
+        "size": [
+            "M"
+        ],
+        "age": {
+            "mature": 10,
+            "max": 70
+        },
+        "darkvision": 60,
+        "languageProficiencies": [
             {
-                "type": "entries",
-                "name": "Graceful",
-                "entries": [
-                    "You have proficiency with the {@skill Acrobatics} skill."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Swift Stride",
-                "entries": [
-                    "Your walking speed increases by 5 feet."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Shifting Feature",
-                "entries": [
-                    "While shifted, your walking speed increases by 5 feet. Additionally, you can move up to 10 feet as a reaction when an enemy ends its turn within 5 feet of you. This movement doesn't provoke opportunity attacks."
-                ]
+                "common": true
             }
         ],
         "slug": "shifter_uaracesofeberron_swiftstride_uaracesofeberron",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Shifters are quick to mature both physically and emotionally, reaching young adulthood at age 10. They rarely live to be more than 70 years old.",
+            "",
+            "**Alignment:** Shifters tend toward neutrality, being more focused on survival than concepts of good and evil. A love of personal freedom can drive shifters toward chaotic alignments.",
+            "",
+            "**Size:** Shifters range from 5 to almost 7 feet tall, depending on their subrace. Your size is Medium.",
+            "",
+            "**Darkvision:** You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Keen Senses:** You have proficiency with the Perception skill.",
+            "",
+            "**Shifting:** As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to your level + your Constitution modifier (minimum of 1 temporary hit point). You also gain additional benefits that depend on your shifter subrace, described below.",
+            "Once you shift, you can't do so again until you finish a short or long rest.",
+            "",
+            "**Languages:** You can speak, read, and write Common.",
+            "",
+            "**Graceful:** You have proficiency with the Acrobatics skill.",
+            "",
+            "**Swift Stride:** Your walking speed increases by 5 feet.",
+            "",
+            "**Shifting Feature:** While shifted, your walking speed increases by 5 feet. Additionally, you can move up to 10 feet as a reaction when an enemy ends its turn within 5 feet of you. This movement doesn't provoke opportunity attacks.",
+            ""
+        ]
     },
     {
         "name": "Wildhunt",
@@ -218,30 +234,44 @@
                 "survival": true
             }
         ],
-        "entries": [
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "age": {
+            "mature": 10,
+            "max": 70
+        },
+        "darkvision": 60,
+        "languageProficiencies": [
             {
-                "type": "entries",
-                "name": "Natural Tracker",
-                "entries": [
-                    "You have proficiency with the {@skill Survival} skill."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Mark the Scent",
-                "entries": [
-                    "As a bonus action, you can mark one creature you can see within 10 feet of you. Until the end of your next long rest, your proficiency bonus is doubled for any ability check you make to find the marked creature, and you always know the location of that creature if it is within 60 feet of you. You can't use this trait again until you finish a short or long rest."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Shifting Feature",
-                "entries": [
-                    "While shifted, you have advantage on Wisdom checks."
-                ]
+                "common": true
             }
         ],
         "slug": "shifter_uaracesofeberron_wildhunt_uaracesofeberron",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Shifters are quick to mature both physically and emotionally, reaching young adulthood at age 10. They rarely live to be more than 70 years old.",
+            "",
+            "**Alignment:** Shifters tend toward neutrality, being more focused on survival than concepts of good and evil. A love of personal freedom can drive shifters toward chaotic alignments.",
+            "",
+            "**Size:** Shifters range from 5 to almost 7 feet tall, depending on their subrace. Your size is Medium.",
+            "",
+            "**Darkvision:** You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Keen Senses:** You have proficiency with the Perception skill.",
+            "",
+            "**Shifting:** As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to your level + your Constitution modifier (minimum of 1 temporary hit point). You also gain additional benefits that depend on your shifter subrace, described below.",
+            "Once you shift, you can't do so again until you finish a short or long rest.",
+            "",
+            "**Languages:** You can speak, read, and write Common.",
+            "",
+            "**Natural Tracker:** You have proficiency with the Survival skill.",
+            "",
+            "**Mark the Scent:** As a bonus action, you can mark one creature you can see within 10 feet of you. Until the end of your next long rest, your proficiency bonus is doubled for any ability check you make to find the marked creature, and you always know the location of that creature if it is within 60 feet of you. You can't use this trait again until you finish a short or long rest.",
+            "",
+            "**Shifting Feature:** While shifted, you have advantage on Wisdom checks.",
+            ""
+        ]
     }
 ]

@@ -30,53 +30,23 @@
                 }
             }
         ],
-        "entries": [
-            {
-                "type": "entries",
-                "name": "Speed",
-                "entries": [
-                    "Your walking speed is 30 feet, and you have a swimming speed equal to your walking speed."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Bite",
-                "entries": [
-                    "You have a fanged maw that you can use to make unarmed strikes. When you hit with it, the strike deals {@damage 1d6} + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Hold Breath",
-                "entries": [
-                    "You can hold your breath for up to 15 minutes at a time."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Hungry Jaws",
-                "entries": [
-                    "You can throw yourself into a feeding frenzy. As a bonus action, you can make a special attack with your Bite. If the attack hits, it deals its normal damage, and you gain temporary hit points equal to your proficiency bonus. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Natural Armor",
-                "entries": [
-                    "You have tough, scaly skin. When you aren't wearing armor, your base AC is 13 + Dexterity modifier. You can use your natural armor to determine your AC if the armor you wear would leave you with a lower AC. A shield's benefits apply as normal while you use your natural armor."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Nature's Intuition",
-                "entries": [
-                    "Thanks to your mystical connection to nature, you gain proficiency with two of the following skills of your choice: {@skill Animal Handling}, {@skill Medicine}, {@skill Nature}, {@skill Perception}, {@skill Stealth}, or {@skill Survival}."
-                ]
-            }
-        ],
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "lizardfolk_mpmm_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Speed:** Your walking speed is 30 feet, and you have a swimming speed equal to your walking speed.",
+            "",
+            "**Bite:** You have a fanged maw that you can use to make unarmed strikes. When you hit with it, the strike deals **1d6** + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike.",
+            "",
+            "**Hold Breath:** You can hold your breath for up to 15 minutes at a time.",
+            "",
+            "**Hungry Jaws:** You can throw yourself into a feeding frenzy. As a bonus action, you can make a special attack with your Bite. If the attack hits, it deals its normal damage, and you gain temporary hit points equal to your proficiency bonus. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
+            "",
+            "**Natural Armor:** You have tough, scaly skin. When you aren't wearing armor, your base AC is 13 + Dexterity modifier. You can use your natural armor to determine your AC if the armor you wear would leave you with a lower AC. A shield's benefits apply as normal while you use your natural armor.",
+            "",
+            "**Nature's Intuition:** Thanks to your mystical connection to nature, you gain proficiency with two of the following skills of your choice: Animal Handling, Medicine, Nature, Perception, Stealth, or Survival.",
+            ""
+        ]
     }
 ]

@@ -39,80 +39,30 @@
         "conditionImmune": [
             "poisoned"
         ],
-        "entries": [
-            {
-                "name": "Age",
-                "type": "entries",
-                "entries": [
-                    "Grungs mature to adulthood in a single year, but have been known to live up to 50 years."
-                ]
-            },
-            {
-                "name": "Alignment",
-                "type": "entries",
-                "entries": [
-                    "Most grungs are lawful, having been raised in a strict caste system. They tend toward evil as well, coming from a culture where social advancement occurs rarely, and most often because another member of your army has died and there is no one else of that caste to fill the vacancy."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Size",
-                "entries": [
-                    "Grungs stand between 2\u00bd and 3\u00bd feet tall and average about 30 pounds. Your size is Small."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Arboreal Alertness",
-                "entries": [
-                    "You have proficiency in the {@skill Perception} skill."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Amphibious",
-                "entries": [
-                    "You can breathe air and water."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Poison Immunity",
-                "entries": [
-                    "You're immune to poison damage and the {@condition poisoned} condition."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Poisonous Skin",
-                "entries": [
-                    "Any creature that grapples you or otherwise comes into direct contact with your skin must succeed on a DC 12 Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with you can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
-                    "You can also apply this poison to any piercing weapon as part of an attack with that weapon, though when you hit the poison reacts differently. The target must succeed on a DC 12 Constitution saving throw or take {@dice 2d4} poison damage."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Standing Leap",
-                "entries": [
-                    "Your long jump is up to 25 feet and your high jump is up to 15 feet, with or without a running start."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Water Dependency",
-                "entries": [
-                    "If you fail to immerse yourself in water for at least 1 hour during a day, you suffer one level of {@condition exhaustion} at the end of that day. You can only recover from this {@condition exhaustion} through magic or by immersing yourself in water for at least 1 hour."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Languages",
-                "entries": [
-                    "You can speak, read, and write Grung."
-                ]
-            }
-        ],
         "slug": "grung_oga_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Age:** Grungs mature to adulthood in a single year, but have been known to live up to 50 years.",
+            "",
+            "**Alignment:** Most grungs are lawful, having been raised in a strict caste system. They tend toward evil as well, coming from a culture where social advancement occurs rarely, and most often because another member of your army has died and there is no one else of that caste to fill the vacancy.",
+            "",
+            "**Size:** Grungs stand between 2\u00bd and 3\u00bd feet tall and average about 30 pounds. Your size is Small.",
+            "",
+            "**Arboreal Alertness:** You have proficiency in the Perception skill.",
+            "",
+            "**Amphibious:** You can breathe air and water.",
+            "",
+            "**Poison Immunity:** You're immune to poison damage and the *poisoned* condition.",
+            "",
+            "**Poisonous Skin:** Any creature that grapples you or otherwise comes into direct contact with your skin must succeed on a DC 12 Constitution saving throw or become *poisoned* for 1 minute. A *poisoned* creature no longer in direct contact with you can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+            "You can also apply this poison to any piercing weapon as part of an attack with that weapon, though when you hit the poison reacts differently. The target must succeed on a DC 12 Constitution saving throw or take 2d4 poison damage.",
+            "",
+            "**Standing Leap:** Your long jump is up to 25 feet and your high jump is up to 15 feet, with or without a running start.",
+            "",
+            "**Water Dependency:** If you fail to immerse yourself in water for at least 1 hour during a day, you suffer one level of *exhaustion* at the end of that day. You can only recover from this *exhaustion* through magic or by immersing yourself in water for at least 1 hour.",
+            "",
+            "**Languages:** You can speak, read, and write Grung.",
+            ""
+        ]
     }
 ]

@@ -19,40 +19,20 @@
                 "sylvan": true
             }
         ],
-        "entries": [
-            {
-                "type": "entries",
-                "name": "Size",
-                "entries": [
-                    "Shifters are about the same size as humans. Your size is Medium"
-                ]
-            },
-            {
-                "name": "Darkvision",
-                "entries": [
-                    "Your lycanthropic heritage grants you the ability to see in dark conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Shifting",
-                "entries": [
-                    "On your turn, you can shift as a bonus action. Shifting lasts for 1 minute or until you end it on your turn as a bonus action.",
-                    "While shifting, you gain temporary hit points equal to your level + your Constitution bonus (minimum of 1). You also gain a feature that depends on your shifter subrace, described below.",
-                    "You must finish a short or long rest before you can shift again."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Languages",
-                "entries": [
-                    "You can speak, read, and write Common and Sylvan."
-                ],
-                "type": "entries"
-            }
-        ],
         "slug": "shifter_uaeberron_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Size:** Shifters are about the same size as humans. Your size is Medium",
+            "",
+            "**Darkvision:** Your lycanthropic heritage grants you the ability to see in dark conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Shifting:** On your turn, you can shift as a bonus action. Shifting lasts for 1 minute or until you end it on your turn as a bonus action.",
+            "While shifting, you gain temporary hit points equal to your level + your Constitution bonus (minimum of 1). You also gain a feature that depends on your shifter subrace, described below.",
+            "You must finish a short or long rest before you can shift again.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Sylvan.",
+            ""
+        ]
     },
     {
         "name": "Beasthide",
@@ -68,17 +48,33 @@
         "traitTags": [
             "Natural Armor"
         ],
-        "entries": [
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "darkvision": 60,
+        "languageProficiencies": [
             {
-                "name": "Shifting Feature",
-                "entries": [
-                    "While shifting, you gain a +1 bonus to AC."
-                ],
-                "type": "entries"
+                "common": true,
+                "sylvan": true
             }
         ],
         "slug": "shifter_uaeberron_beasthide_uaeberron",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Size:** Shifters are about the same size as humans. Your size is Medium",
+            "",
+            "**Darkvision:** Your lycanthropic heritage grants you the ability to see in dark conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Shifting:** On your turn, you can shift as a bonus action. Shifting lasts for 1 minute or until you end it on your turn as a bonus action.",
+            "While shifting, you gain temporary hit points equal to your level + your Constitution bonus (minimum of 1). You also gain a feature that depends on your shifter subrace, described below.",
+            "You must finish a short or long rest before you can shift again.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Sylvan.",
+            "",
+            "**Shifting Feature:** While shifting, you gain a +1 bonus to AC.",
+            ""
+        ]
     },
     {
         "name": "Cliffwalk",
@@ -91,17 +87,33 @@
                 "dex": 2
             }
         ],
-        "entries": [
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "darkvision": 60,
+        "languageProficiencies": [
             {
-                "name": "Shifting Feature",
-                "entries": [
-                    "While shifting, you gain a climb speed of 30 feet."
-                ],
-                "type": "entries"
+                "common": true,
+                "sylvan": true
             }
         ],
         "slug": "shifter_uaeberron_cliffwalk_uaeberron",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Size:** Shifters are about the same size as humans. Your size is Medium",
+            "",
+            "**Darkvision:** Your lycanthropic heritage grants you the ability to see in dark conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Shifting:** On your turn, you can shift as a bonus action. Shifting lasts for 1 minute or until you end it on your turn as a bonus action.",
+            "While shifting, you gain temporary hit points equal to your level + your Constitution bonus (minimum of 1). You also gain a feature that depends on your shifter subrace, described below.",
+            "You must finish a short or long rest before you can shift again.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Sylvan.",
+            "",
+            "**Shifting Feature:** While shifting, you gain a climb speed of 30 feet.",
+            ""
+        ]
     },
     {
         "name": "Longstride",
@@ -114,17 +126,33 @@
                 "dex": 2
             }
         ],
-        "entries": [
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "darkvision": 60,
+        "languageProficiencies": [
             {
-                "name": "Shifting Feature",
-                "entries": [
-                    "While shifting, you can use the {@action Dash} action as a bonus action."
-                ],
-                "type": "entries"
+                "common": true,
+                "sylvan": true
             }
         ],
         "slug": "shifter_uaeberron_longstride_uaeberron",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Size:** Shifters are about the same size as humans. Your size is Medium",
+            "",
+            "**Darkvision:** Your lycanthropic heritage grants you the ability to see in dark conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Shifting:** On your turn, you can shift as a bonus action. Shifting lasts for 1 minute or until you end it on your turn as a bonus action.",
+            "While shifting, you gain temporary hit points equal to your level + your Constitution bonus (minimum of 1). You also gain a feature that depends on your shifter subrace, described below.",
+            "You must finish a short or long rest before you can shift again.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Sylvan.",
+            "",
+            "**Shifting Feature:** While shifting, you can use the **Dash** action as a bonus action.",
+            ""
+        ]
     },
     {
         "name": "Longtooth",
@@ -137,17 +165,33 @@
                 "str": 1
             }
         ],
-        "entries": [
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "darkvision": 60,
+        "languageProficiencies": [
             {
-                "name": "Shifting Feature",
-                "entries": [
-                    "While shifting, you can make a bite attack as an action. This is a melee weapon attack that uses Strength for its attack roll and damage bonus and deals {@dice 1d6} piercing damage. If this attack hits a target that is your size or smaller, the target is also {@condition grappled}."
-                ],
-                "type": "entries"
+                "common": true,
+                "sylvan": true
             }
         ],
         "slug": "shifter_uaeberron_longtooth_uaeberron",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Size:** Shifters are about the same size as humans. Your size is Medium",
+            "",
+            "**Darkvision:** Your lycanthropic heritage grants you the ability to see in dark conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Shifting:** On your turn, you can shift as a bonus action. Shifting lasts for 1 minute or until you end it on your turn as a bonus action.",
+            "While shifting, you gain temporary hit points equal to your level + your Constitution bonus (minimum of 1). You also gain a feature that depends on your shifter subrace, described below.",
+            "You must finish a short or long rest before you can shift again.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Sylvan.",
+            "",
+            "**Shifting Feature:** While shifting, you can make a bite attack as an action. This is a melee weapon attack that uses Strength for its attack roll and damage bonus and deals 1d6 piercing damage. If this attack hits a target that is your size or smaller, the target is also *grappled*.",
+            ""
+        ]
     },
     {
         "name": "Razorclaw",
@@ -163,17 +207,33 @@
         "traitTags": [
             "Natural Weapon"
         ],
-        "entries": [
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "darkvision": 60,
+        "languageProficiencies": [
             {
-                "name": "Shifting Feature",
-                "entries": [
-                    "While shifting, you can make an unarmed strike as a bonus action. You can use your Dexterity for its attack roll and damage bonus, and this attack deals slashing damage."
-                ],
-                "type": "entries"
+                "common": true,
+                "sylvan": true
             }
         ],
         "slug": "shifter_uaeberron_razorclaw_uaeberron",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Size:** Shifters are about the same size as humans. Your size is Medium",
+            "",
+            "**Darkvision:** Your lycanthropic heritage grants you the ability to see in dark conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Shifting:** On your turn, you can shift as a bonus action. Shifting lasts for 1 minute or until you end it on your turn as a bonus action.",
+            "While shifting, you gain temporary hit points equal to your level + your Constitution bonus (minimum of 1). You also gain a feature that depends on your shifter subrace, described below.",
+            "You must finish a short or long rest before you can shift again.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Sylvan.",
+            "",
+            "**Shifting Feature:** While shifting, you can make an unarmed strike as a bonus action. You can use your Dexterity for its attack roll and damage bonus, and this attack deals slashing damage.",
+            ""
+        ]
     },
     {
         "name": "Wildhunt",
@@ -186,16 +246,32 @@
                 "wis": 1
             }
         ],
-        "entries": [
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "darkvision": 60,
+        "languageProficiencies": [
             {
-                "name": "Shifting Feature",
-                "entries": [
-                    "While shifting, you gain advantage on all Wisdom-based checks and saving throws."
-                ],
-                "type": "entries"
+                "common": true,
+                "sylvan": true
             }
         ],
         "slug": "shifter_uaeberron_wildhunt_uaeberron",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Size:** Shifters are about the same size as humans. Your size is Medium",
+            "",
+            "**Darkvision:** Your lycanthropic heritage grants you the ability to see in dark conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Shifting:** On your turn, you can shift as a bonus action. Shifting lasts for 1 minute or until you end it on your turn as a bonus action.",
+            "While shifting, you gain temporary hit points equal to your level + your Constitution bonus (minimum of 1). You also gain a feature that depends on your shifter subrace, described below.",
+            "You must finish a short or long rest before you can shift again.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Sylvan.",
+            "",
+            "**Shifting Feature:** While shifting, you gain advantage on all Wisdom-based checks and saving throws.",
+            ""
+        ]
     }
 ]

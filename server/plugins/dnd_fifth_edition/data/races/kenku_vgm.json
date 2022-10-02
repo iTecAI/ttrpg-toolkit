@@ -55,53 +55,23 @@
             "type": "internal",
             "path": "races/kenku.mp3"
         },
-        "entries": [
-            {
-                "name": "Age",
-                "type": "entries",
-                "entries": [
-                    "Kenku have shorter lifespans than humans. They reach maturity at about 12 years old and can live to 60."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Size",
-                "entries": [
-                    "Kenku are around 5 feet tall and weigh between 90 and 120 pounds. Your size is Medium."
-                ]
-            },
-            {
-                "name": "Expert Forgery",
-                "entries": [
-                    "You can duplicate other creatures' handwriting and craftwork. You have advantage on all checks made to produce forgeries or duplicates of existing objects."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Kenku Training",
-                "entries": [
-                    "You are proficient in your choice of two of the following skills: {@skill Acrobatics}, {@skill Deception}, {@skill Stealth}, and {@skill Sleight of Hand}."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Mimicry",
-                "entries": [
-                    "You can mimic sounds you have heard, including voices. A creature that hears the sounds can tell they are imitations with a successful Wisdom ({@skill Insight}) check opposed by your Charisma ({@skill Deception}) check."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Languages",
-                "entries": [
-                    "You can read and write Common and Auran, but you can only speak using your Mimicry trait."
-                ],
-                "type": "entries"
-            }
-        ],
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "kenku_vgm_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Age:** Kenku have shorter lifespans than humans. They reach maturity at about 12 years old and can live to 60.",
+            "",
+            "**Size:** Kenku are around 5 feet tall and weigh between 90 and 120 pounds. Your size is Medium.",
+            "",
+            "**Expert Forgery:** You can duplicate other creatures' handwriting and craftwork. You have advantage on all checks made to produce forgeries or duplicates of existing objects.",
+            "",
+            "**Kenku Training:** You are proficient in your choice of two of the following skills: Acrobatics, Deception, Stealth, and Sleight of Hand.",
+            "",
+            "**Mimicry:** You can mimic sounds you have heard, including voices. A creature that hears the sounds can tell they are imitations with a successful Wisdom (Insight) check opposed by your Charisma (Deception) check.",
+            "",
+            "**Languages:** You can read and write Common and Auran, but you can only speak using your Mimicry trait.",
+            ""
+        ]
     }
 ]

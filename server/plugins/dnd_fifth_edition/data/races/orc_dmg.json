@@ -23,30 +23,15 @@
                 "orc": true
             }
         ],
-        "entries": [
-            {
-                "name": "Aggressive",
-                "entries": [
-                    "As a bonus action, you can move up to your speed toward a hostile creature that you can see."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Darkvision",
-                "entries": [
-                    "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Languages",
-                "entries": [
-                    "You can speak, read, and write Common and Orc."
-                ],
-                "type": "entries"
-            }
-        ],
         "slug": "orc_dmg_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Aggressive:** As a bonus action, you can move up to your speed toward a hostile creature that you can see.",
+            "",
+            "**Darkvision:** Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Orc.",
+            ""
+        ]
     }
 ]

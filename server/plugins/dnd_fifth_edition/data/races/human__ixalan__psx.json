@@ -32,37 +32,17 @@
                 "anyStandard": 1
             }
         ],
-        "entries": [
-            {
-                "name": "Age",
-                "type": "entries",
-                "entries": [
-                    "Humans reach adulthood in their late teens and live less than a century."
-                ]
-            },
-            {
-                "name": "Alignment",
-                "type": "entries",
-                "entries": [
-                    "Humans tend toward no particular alignment. The best and the worst are found among them."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Size",
-                "entries": [
-                    "Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium."
-                ]
-            },
-            {
-                "name": "Languages",
-                "entries": [
-                    "You can speak, read, and write Common and one extra language of your choice. Or, if your campaign uses the optional rules for languages found in the previous section, your national origin determines your native language: Itzocan for the Sun Empire, Coalition pidgin for the Brazen Coalition, or Vampire for the Legion of Dusk. You still speak one additional language of your choice, and Common if it exists in your campaign."
-                ],
-                "type": "entries"
-            }
-        ],
         "slug": "human__ixalan__psx_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Age:** Humans reach adulthood in their late teens and live less than a century.",
+            "",
+            "**Alignment:** Humans tend toward no particular alignment. The best and the worst are found among them.",
+            "",
+            "**Size:** Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+            "",
+            "**Languages:** You can speak, read, and write Common and one extra language of your choice. Or, if your campaign uses the optional rules for languages found in the previous section, your national origin determines your native language: Itzocan for the Sun Empire, Coalition pidgin for the Brazen Coalition, or Vampire for the Legion of Dusk. You still speak one additional language of your choice, and Common if it exists in your campaign.",
+            ""
+        ]
     }
 ]

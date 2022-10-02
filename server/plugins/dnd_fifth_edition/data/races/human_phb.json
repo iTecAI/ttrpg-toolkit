@@ -29,33 +29,18 @@
             "type": "internal",
             "path": "races/human.mp3"
         },
-        "entries": [
-            {
-                "name": "Age",
-                "type": "entries",
-                "entries": [
-                    "Humans reach adulthood in their late teens and live less than a century."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Size",
-                "entries": [
-                    "Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium."
-                ]
-            },
-            {
-                "name": "Languages",
-                "entries": [
-                    "You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on."
-                ],
-                "type": "entries"
-            }
-        ],
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "human_phb_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Age:** Humans reach adulthood in their late teens and live less than a century.",
+            "",
+            "**Size:** Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+            "",
+            "**Languages:** You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on.",
+            ""
+        ]
     },
     {
         "name": "Keldon",
@@ -84,74 +69,48 @@
                 "other": true
             }
         ],
-        "entries": [
-            {
-                "name": "Age",
-                "type": "entries",
-                "entries": [
-                    "Keldons reach adulthood in their late teens and live less than a century."
-                ],
-                "data": {
-                    "overwrite": "Age"
-                }
-            },
-            {
-                "name": "Alignment",
-                "type": "entries",
-                "entries": [
-                    "Keldons tend toward chaotic alignments, and many walk a fine line between good and evil."
-                ],
-                "data": {
-                    "overwrite": "Alignment"
-                }
-            },
-            {
-                "type": "entries",
-                "name": "Size",
-                "entries": [
-                    "Keldons are taller and heavier than the human norms of other cultures, standing almost universally above 6 feet tall and reaching heights above 7 feet. Your size is Medium."
-                ],
-                "data": {
-                    "overwrite": "Size"
-                }
-            },
-            {
-                "name": "Languages",
-                "entries": [
-                    "You can speak, read, and write Common and Keldon."
-                ],
-                "type": "entries",
-                "data": {
-                    "overwrite": "Languages"
-                }
-            },
-            {
-                "type": "entries",
-                "name": "Natural Athlete",
-                "entries": [
-                    "You have proficiency in the {@skill Athletics} skill."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Keldon Resilience",
-                "entries": [
-                    "You have proficiency in Strength saving throws."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Icehaven Born",
-                "entries": [
-                    "You are naturally adapted to cold climates, as described in chapter 5 of the {@i Dungeon Master's Guide}."
-                ]
-            }
+        "srd": true,
+        "basicRules": true,
+        "size": [
+            "M"
         ],
-        "overwrite": {
-            "languageProficiencies": true
+        "speed": 30,
+        "heightAndWeight": {
+            "baseHeight": 56,
+            "heightMod": "2d10",
+            "baseWeight": 110,
+            "weightMod": "2d4"
         },
+        "soundClip": {
+            "type": "internal",
+            "path": "races/human.mp3"
+        },
+        "hasFluff": true,
+        "hasFluffImages": true,
         "slug": "human_phb_keldon_psd",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Humans reach adulthood in their late teens and live less than a century.",
+            "",
+            "**Size:** Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+            "",
+            "**Languages:** You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on.",
+            "",
+            "**Age:** Keldons reach adulthood in their late teens and live less than a century.",
+            "",
+            "**Alignment:** Keldons tend toward chaotic alignments, and many walk a fine line between good and evil.",
+            "",
+            "**Size:** Keldons are taller and heavier than the human norms of other cultures, standing almost universally above 6 feet tall and reaching heights above 7 feet. Your size is Medium.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Keldon.",
+            "",
+            "**Natural Athlete:** You have proficiency in the Athletics skill.",
+            "",
+            "**Keldon Resilience:** You have proficiency in Strength saving throws.",
+            "",
+            "**Icehaven Born:** You are naturally adapted to cold climates, as described in chapter 5 of the *Dungeon Master's Guide*.",
+            ""
+        ]
     },
     {
         "name": "Mark of Finding",
@@ -214,86 +173,57 @@
                 "ability": "wis"
             }
         ],
-        "entries": [
-            {
-                "type": "entries",
-                "name": "Darkvision",
-                "entries": [
-                    "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Hunter's Intuition",
-                "entries": [
-                    "When you make a Wisdom ({@skill Perception}) or Wisdom ({@skill Survival}) check, you can roll a {@dice d4} and add the number rolled to the ability check."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Finder's Magic",
-                "entries": [
-                    "You can cast the {@spell hunter's mark} spell with this trait. Starting at 3rd level, you can also cast the {@spell locate object} spell with it. Once you cast either spell with this trait, you can't cast that spell with it again until you finish a long rest. Wisdom is your spellcasting ability for these spells."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Languages",
-                "entries": [
-                    "You can speak, read, and write Common and Goblin."
-                ],
-                "data": {
-                    "overwrite": "Languages"
-                }
-            },
-            {
-                "type": "entries",
-                "name": "Spells of the Mark",
-                "entries": [
-                    "If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Finding Spells table are added to the spell list of your spellcasting class.",
-                    {
-                        "type": "table",
-                        "caption": "Mark of Finding Spells",
-                        "colLabels": [
-                            "Spell Level",
-                            "Spells"
-                        ],
-                        "colStyles": [
-                            "col-2 text-center",
-                            "col-10"
-                        ],
-                        "rows": [
-                            [
-                                "1st",
-                                "{@spell faerie fire}, {@spell longstrider}"
-                            ],
-                            [
-                                "2nd",
-                                "{@spell locate animals or plants}, {@spell locate object}"
-                            ],
-                            [
-                                "3rd",
-                                "{@spell clairvoyance}, {@spell speak with plants}"
-                            ],
-                            [
-                                "4th",
-                                "{@spell divination}, {@spell locate creature}"
-                            ],
-                            [
-                                "5th",
-                                "{@spell commune with nature}"
-                            ]
-                        ]
-                    }
-                ]
-            }
+        "srd": true,
+        "basicRules": true,
+        "size": [
+            "M"
         ],
-        "overwrite": {
-            "traitTags": true,
-            "languageProficiencies": true
+        "speed": 30,
+        "heightAndWeight": {
+            "baseHeight": 56,
+            "heightMod": "2d10",
+            "baseWeight": 110,
+            "weightMod": "2d4"
         },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "soundClip": {
+            "type": "internal",
+            "path": "races/human.mp3"
+        },
+        "hasFluff": true,
+        "hasFluffImages": true,
         "slug": "human_phb_mark_of_finding_erlw",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Humans reach adulthood in their late teens and live less than a century.",
+            "",
+            "**Size:** Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+            "",
+            "**Languages:** You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on.",
+            "",
+            "**Darkvision:** You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hunter's Intuition:** When you make a Wisdom (Perception) or Wisdom (Survival) check, you can roll a d4 and add the number rolled to the ability check.",
+            "",
+            "**Finder's Magic:** You can cast the *hunter's mark* spell with this trait. Starting at 3rd level, you can also cast the *locate object* spell with it. Once you cast either spell with this trait, you can't cast that spell with it again until you finish a long rest. Wisdom is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Goblin.",
+            "",
+            "**Spells of the Mark:** If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Finding Spells table are added to the spell list of your spellcasting class.",
+            "| Spell Level | Spells |",
+            "| :---: | --- |",
+            "| 1st | *faerie fire*, *longstrider* |",
+            "| 2nd | *locate animals or plants*, *locate object* |",
+            "| 3rd | *clairvoyance*, *speak with plants* |",
+            "| 4th | *divination*, *locate creature* |",
+            "| 5th | *commune with nature* |",
+            "*Mark of Finding Spells*",
+            "",
+            ""
+        ]
     },
     {
         "name": "Mark of Handling",
@@ -362,72 +292,61 @@
                 }
             }
         ],
-        "entries": [
+        "srd": true,
+        "basicRules": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "heightAndWeight": {
+            "baseHeight": 56,
+            "heightMod": "2d10",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "languageProficiencies": [
             {
-                "type": "entries",
-                "name": "Wild Intuition",
-                "entries": [
-                    "When you make a Wisdom ({@skill Animal Handling}) or Intelligence ({@skill Nature}) check, you can roll a {@dice d4} and add the number rolled to the ability check."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Primal Connection",
-                "entries": [
-                    "You can cast the {@spell animal friendship} and {@spell speak with animals} spells with this trait, requiring no material component. Once you cast either spell with this trait, you can't cast that spell with it again until you finish a short or long rest. Wisdom is your spellcasting ability for these spells."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "The Bigger They Are",
-                "entries": [
-                    "Starting at 3rd level, you can target a beast or monstrosity when you cast {@spell animal friendship} or {@spell speak with animals}, provided the creature's Intelligence score is 3 or lower."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Spells of the Mark",
-                "entries": [
-                    "If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Handling Spells table are added to the spell list of your spellcasting class.",
-                    {
-                        "type": "table",
-                        "caption": "Mark of Handling Spells",
-                        "colLabels": [
-                            "Spell Level",
-                            "Spells"
-                        ],
-                        "colStyles": [
-                            "col-2 text-center",
-                            "col-10"
-                        ],
-                        "rows": [
-                            [
-                                "1st",
-                                "{@spell animal friendship}, {@spell speak with animals}"
-                            ],
-                            [
-                                "2nd",
-                                "{@spell beast sense}, {@spell calm emotions}"
-                            ],
-                            [
-                                "3rd",
-                                "{@spell beacon of hope}, {@spell conjure animals}"
-                            ],
-                            [
-                                "4th",
-                                "{@spell aura of life}, {@spell dominate beast}"
-                            ],
-                            [
-                                "5th",
-                                "{@spell awaken}"
-                            ]
-                        ]
-                    }
-                ]
+                "common": true,
+                "anyStandard": 1
             }
         ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/human.mp3"
+        },
+        "hasFluff": true,
+        "hasFluffImages": true,
         "slug": "human_phb_mark_of_handling_erlw",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Humans reach adulthood in their late teens and live less than a century.",
+            "",
+            "**Size:** Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+            "",
+            "**Languages:** You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on.",
+            "",
+            "**Wild Intuition:** When you make a Wisdom (Animal Handling) or Intelligence (Nature) check, you can roll a d4 and add the number rolled to the ability check.",
+            "",
+            "**Primal Connection:** You can cast the *animal friendship* and *speak with animals* spells with this trait, requiring no material component. Once you cast either spell with this trait, you can't cast that spell with it again until you finish a short or long rest. Wisdom is your spellcasting ability for these spells.",
+            "",
+            "**The Bigger They Are:** Starting at 3rd level, you can target a beast or monstrosity when you cast *animal friendship* or *speak with animals*, provided the creature's Intelligence score is 3 or lower.",
+            "",
+            "**Spells of the Mark:** If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Handling Spells table are added to the spell list of your spellcasting class.",
+            "| Spell Level | Spells |",
+            "| :---: | --- |",
+            "| 1st | *animal friendship*, *speak with animals* |",
+            "| 2nd | *beast sense*, *calm emotions* |",
+            "| 3rd | *beacon of hope*, *conjure animals* |",
+            "| 4th | *aura of life*, *dominate beast* |",
+            "| 5th | *awaken* |",
+            "*Mark of Handling Spells*",
+            "",
+            ""
+        ]
     },
     {
         "name": "Mark of Making",
@@ -498,72 +417,61 @@
                 }
             }
         ],
-        "entries": [
+        "srd": true,
+        "basicRules": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "heightAndWeight": {
+            "baseHeight": 56,
+            "heightMod": "2d10",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "languageProficiencies": [
             {
-                "type": "entries",
-                "name": "Artisan's Intuition",
-                "entries": [
-                    "When you make an {@skill Arcana} check or an ability check involving {@filter artisan's tools|items|source=phb|miscellaneous=mundane|type=artisan's tools}, you can roll a {@dice d4} and add the number rolled to the ability check."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Maker's Gift",
-                "entries": [
-                    "You gain proficiency with one type of artisan's tools of your choice."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Spellsmith",
-                "entries": [
-                    "You know the {@spell mending} cantrip. You can also cast the {@spell magic weapon} spell with this trait. When you do so, the spell lasts for 1 hour and doesn't require concentration. Once you cast the spell with this trait, you can't do so again until you finish a long rest. Intelligence is your spellcasting ability for these spells."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Spells of the Mark",
-                "entries": [
-                    "If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Making Spells table are added to the spell list of your spellcasting class.",
-                    {
-                        "type": "table",
-                        "caption": "Mark of Making Spells",
-                        "colLabels": [
-                            "Spell Level",
-                            "Spells"
-                        ],
-                        "colStyles": [
-                            "col-2 text-center",
-                            "col-10"
-                        ],
-                        "rows": [
-                            [
-                                "1st",
-                                "{@spell identify}, {@spell Tenser's floating disk}"
-                            ],
-                            [
-                                "2nd",
-                                "{@spell continual flame}, {@spell magic weapon}"
-                            ],
-                            [
-                                "3rd",
-                                "{@spell conjure barrage}, {@spell elemental weapon}"
-                            ],
-                            [
-                                "4th",
-                                "{@spell fabricate}, {@spell stone shape}"
-                            ],
-                            [
-                                "5th",
-                                "{@spell creation}"
-                            ]
-                        ]
-                    }
-                ]
+                "common": true,
+                "anyStandard": 1
             }
         ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/human.mp3"
+        },
+        "hasFluff": true,
+        "hasFluffImages": true,
         "slug": "human_phb_mark_of_making_erlw",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Humans reach adulthood in their late teens and live less than a century.",
+            "",
+            "**Size:** Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+            "",
+            "**Languages:** You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on.",
+            "",
+            "**Artisan's Intuition:** When you make an Arcana check or an ability check involving artisan's tools, you can roll a d4 and add the number rolled to the ability check.",
+            "",
+            "**Maker's Gift:** You gain proficiency with one type of artisan's tools of your choice.",
+            "",
+            "**Spellsmith:** You know the *mending* cantrip. You can also cast the *magic weapon* spell with this trait. When you do so, the spell lasts for 1 hour and doesn't require concentration. Once you cast the spell with this trait, you can't do so again until you finish a long rest. Intelligence is your spellcasting ability for these spells.",
+            "",
+            "**Spells of the Mark:** If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Making Spells table are added to the spell list of your spellcasting class.",
+            "| Spell Level | Spells |",
+            "| :---: | --- |",
+            "| 1st | *identify*, *tenser's floating disk* |",
+            "| 2nd | *continual flame*, *magic weapon* |",
+            "| 3rd | *conjure barrage*, *elemental weapon* |",
+            "| 4th | *fabricate*, *stone shape* |",
+            "| 5th | *creation* |",
+            "*Mark of Making Spells*",
+            "",
+            ""
+        ]
     },
     {
         "name": "Mark of Passage",
@@ -627,72 +535,60 @@
                 }
             }
         ],
-        "entries": [
+        "srd": true,
+        "basicRules": true,
+        "size": [
+            "M"
+        ],
+        "heightAndWeight": {
+            "baseHeight": 56,
+            "heightMod": "2d10",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "languageProficiencies": [
             {
-                "type": "entries",
-                "name": "Courier's Speed",
-                "entries": [
-                    "Your base walking speed increases to 35 feet."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Intuitive Motion",
-                "entries": [
-                    "When you make a Dexterity ({@skill Acrobatics}) check or any ability check to operate or maintain a {@filter land vehicle|items|source=phb;dmg|miscellaneous=mundane|type=vehicle (land)}, you can roll a {@dice d4} and add the number rolled to the ability check."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Magical Passage",
-                "entries": [
-                    "You can cast the {@spell misty step} spell once with this trait, and you regain the ability to cast it when you finish a long rest. Dexterity is your spellcasting ability for this spell."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Spells of the Mark",
-                "entries": [
-                    "If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Passage Spells table are added to the spell list of your spellcasting class.",
-                    {
-                        "type": "table",
-                        "caption": "Mark of Passage Spells",
-                        "colLabels": [
-                            "Spell Level",
-                            "Spells"
-                        ],
-                        "colStyles": [
-                            "col-2 text-center",
-                            "col-10"
-                        ],
-                        "rows": [
-                            [
-                                "1st",
-                                "{@spell expeditious retreat}, {@spell jump}"
-                            ],
-                            [
-                                "2nd",
-                                "{@spell misty step}, {@spell pass without trace}"
-                            ],
-                            [
-                                "3rd",
-                                "{@spell blink}, {@spell phantom steed}"
-                            ],
-                            [
-                                "4th",
-                                "{@spell dimension door}, {@spell freedom of movement}"
-                            ],
-                            [
-                                "5th",
-                                "{@spell teleportation circle}"
-                            ]
-                        ]
-                    }
-                ]
+                "common": true,
+                "anyStandard": 1
             }
         ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/human.mp3"
+        },
+        "hasFluff": true,
+        "hasFluffImages": true,
         "slug": "human_phb_mark_of_passage_erlw",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Humans reach adulthood in their late teens and live less than a century.",
+            "",
+            "**Size:** Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+            "",
+            "**Languages:** You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on.",
+            "",
+            "**Courier's Speed:** Your base walking speed increases to 35 feet.",
+            "",
+            "**Intuitive Motion:** When you make a Dexterity (Acrobatics) check or any ability check to operate or maintain a land vehicle, you can roll a d4 and add the number rolled to the ability check.",
+            "",
+            "**Magical Passage:** You can cast the *misty step* spell once with this trait, and you regain the ability to cast it when you finish a long rest. Dexterity is your spellcasting ability for this spell.",
+            "",
+            "**Spells of the Mark:** If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Passage Spells table are added to the spell list of your spellcasting class.",
+            "| Spell Level | Spells |",
+            "| :---: | --- |",
+            "| 1st | *expeditious retreat*, *jump* |",
+            "| 2nd | *misty step*, *pass without trace* |",
+            "| 3rd | *blink*, *phantom steed* |",
+            "| 4th | *dimension door*, *freedom of movement* |",
+            "| 5th | *teleportation circle* |",
+            "*Mark of Passage Spells*",
+            "",
+            ""
+        ]
     },
     {
         "name": "Mark of Sentinel",
@@ -747,72 +643,61 @@
                 }
             }
         ],
-        "entries": [
+        "srd": true,
+        "basicRules": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "heightAndWeight": {
+            "baseHeight": 56,
+            "heightMod": "2d10",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "languageProficiencies": [
             {
-                "type": "entries",
-                "name": "Sentinel's Intuition",
-                "entries": [
-                    "When you make a Wisdom ({@skill Insight}) or Wisdom ({@skill Perception}) check, you can roll a {@dice d4} and add the number rolled to the ability check."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Guardian's Shield",
-                "entries": [
-                    "You can cast the {@spell shield} spell once with this trait, and you regain the ability to cast it after you finish a long rest. Wisdom is your spellcasting ability for this spell."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Vigilant Guardian",
-                "entries": [
-                    "When a creature you can see within 5 feet of you is hit by an attack roll, you can use your reaction to swap places with that creature, and you are hit by the attack instead. Once you use this trait, you can't do so again until you finish a long rest."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Spells of the Mark",
-                "entries": [
-                    "If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Sentinel Spells table are added to the spell list of your spellcasting class.",
-                    {
-                        "type": "table",
-                        "caption": "Mark of Sentinel Spells",
-                        "colLabels": [
-                            "Spell Level",
-                            "Spells"
-                        ],
-                        "colStyles": [
-                            "col-2 text-center",
-                            "col-10"
-                        ],
-                        "rows": [
-                            [
-                                "1st",
-                                "{@spell compelled duel}, {@spell shield of faith}"
-                            ],
-                            [
-                                "2nd",
-                                "{@spell warding bond}, {@spell zone of truth}"
-                            ],
-                            [
-                                "3rd",
-                                "{@spell counterspell}, {@spell protection from energy}"
-                            ],
-                            [
-                                "4th",
-                                "{@spell death ward}, {@spell guardian of faith}"
-                            ],
-                            [
-                                "5th",
-                                "{@spell Bigby's hand}"
-                            ]
-                        ]
-                    }
-                ]
+                "common": true,
+                "anyStandard": 1
             }
         ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/human.mp3"
+        },
+        "hasFluff": true,
+        "hasFluffImages": true,
         "slug": "human_phb_mark_of_sentinel_erlw",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Humans reach adulthood in their late teens and live less than a century.",
+            "",
+            "**Size:** Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+            "",
+            "**Languages:** You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on.",
+            "",
+            "**Sentinel's Intuition:** When you make a Wisdom (Insight) or Wisdom (Perception) check, you can roll a d4 and add the number rolled to the ability check.",
+            "",
+            "**Guardian's Shield:** You can cast the *shield* spell once with this trait, and you regain the ability to cast it after you finish a long rest. Wisdom is your spellcasting ability for this spell.",
+            "",
+            "**Vigilant Guardian:** When a creature you can see within 5 feet of you is hit by an attack roll, you can use your reaction to swap places with that creature, and you are hit by the attack instead. Once you use this trait, you can't do so again until you finish a long rest.",
+            "",
+            "**Spells of the Mark:** If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Sentinel Spells table are added to the spell list of your spellcasting class.",
+            "| Spell Level | Spells |",
+            "| :---: | --- |",
+            "| 1st | *compelled duel*, *shield of faith* |",
+            "| 2nd | *warding bond*, *zone of truth* |",
+            "| 3rd | *counterspell*, *protection from energy* |",
+            "| 4th | *death ward*, *guardian of faith* |",
+            "| 5th | *bigby's hand* |",
+            "*Mark of Sentinel Spells*",
+            "",
+            ""
+        ]
     },
     {
         "name": "Variant",
@@ -846,23 +731,46 @@
                 "any": 1
             }
         ],
-        "entries": [
+        "srd": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "heightAndWeight": {
+            "baseHeight": 56,
+            "heightMod": "2d10",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "languageProficiencies": [
             {
-                "name": "Skills",
-                "entries": [
-                    "You gain proficiency in one skill of your choice."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Feat",
-                "entries": [
-                    "You gain one {@5etools feat|feats.html} of your choice."
-                ],
-                "type": "entries"
+                "common": true,
+                "anyStandard": 1
             }
         ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/human.mp3"
+        },
+        "hasFluff": true,
+        "hasFluffImages": true,
         "slug": "human_phb_variant_phb",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Humans reach adulthood in their late teens and live less than a century.",
+            "",
+            "**Size:** Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+            "",
+            "**Languages:** You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on.",
+            "",
+            "**Skills:** You gain proficiency in one skill of your choice.",
+            "",
+            "**Feat:** You gain one feat of your choice.",
+            ""
+        ]
     }
 ]

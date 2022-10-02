@@ -17,38 +17,18 @@
                 "anyStandard": 1
             }
         ],
-        "entries": [
-            {
-                "name": "Age",
-                "type": "entries",
-                "entries": [
-                    "Humans reach adulthood in their late teens and live less than a century."
-                ]
-            },
-            {
-                "name": "Alignment",
-                "type": "entries",
-                "entries": [
-                    "Humans tend toward no particular alignment."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Size",
-                "entries": [
-                    "Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium."
-                ]
-            },
-            {
-                "name": "Languages",
-                "entries": [
-                    "You can speak, read, and write Common and one extra language of your choice."
-                ],
-                "type": "entries"
-            }
-        ],
         "slug": "human__innistrad__psi_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Age:** Humans reach adulthood in their late teens and live less than a century.",
+            "",
+            "**Alignment:** Humans tend toward no particular alignment.",
+            "",
+            "**Size:** Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+            "",
+            "**Languages:** You can speak, read, and write Common and one extra language of your choice.",
+            ""
+        ]
     },
     {
         "name": "Gavony",
@@ -66,17 +46,34 @@
                 "cha": 1
             }
         ],
-        "entries": [
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "languageProficiencies": [
             {
-                "name": "Ability Score Increase",
-                "entries": [
-                    "Your ability scores each increase by 1."
-                ],
-                "type": "entries"
+                "common": true,
+                "anyStandard": 1
             }
         ],
         "slug": "human__innistrad__psi_gavony_psi",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Humans reach adulthood in their late teens and live less than a century.",
+            "",
+            "**Alignment:** Humans tend toward no particular alignment.",
+            "",
+            "**Size:** Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+            "",
+            "**Languages:** You can speak, read, and write Common and one extra language of your choice.",
+            "",
+            "**Ability Score Increase:** Your ability scores each increase by 1.",
+            ""
+        ]
     },
     {
         "name": "Kessig",
@@ -96,38 +93,39 @@
                 "survival": true
             }
         ],
-        "entries": [
+        "size": [
+            "M"
+        ],
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "languageProficiencies": [
             {
-                "name": "Forest Folk",
-                "entries": [
-                    "You have proficiency in the {@skill Survival} skill."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Fleet of Foot",
-                "entries": [
-                    "Your base walking speed is 40 feet."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Sure-footed",
-                "entries": [
-                    "When you use the {@action Dash} action, {@quickref difficult terrain||3} doesn't cost you extra movement on that turn."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Spring Attack",
-                "entries": [
-                    "When you make a melee attack against a creature, you don't provoke opportunity attacks from that creature for the rest of your turn, whether you hit or not."
-                ],
-                "type": "entries"
+                "common": true,
+                "anyStandard": 1
             }
         ],
         "slug": "human__innistrad__psi_kessig_psi",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Humans reach adulthood in their late teens and live less than a century.",
+            "",
+            "**Alignment:** Humans tend toward no particular alignment.",
+            "",
+            "**Size:** Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+            "",
+            "**Languages:** You can speak, read, and write Common and one extra language of your choice.",
+            "",
+            "**Forest Folk:** You have proficiency in the Survival skill.",
+            "",
+            "**Fleet of Foot:** Your base walking speed is 40 feet.",
+            "",
+            "**Sure-footed:** When you use the **Dash** action, difficult terrain doesn't cost you extra movement on that turn.",
+            "",
+            "**Spring Attack:** When you make a melee attack against a creature, you don't provoke opportunity attacks from that creature for the rest of your turn, whether you hit or not.",
+            ""
+        ]
     },
     {
         "name": "Nephalia",
@@ -158,17 +156,34 @@
                 ]
             }
         ],
-        "entries": [
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "languageProficiencies": [
             {
-                "name": "Breadth of Knowledge",
-                "entries": [
-                    "You gain proficiency in any combination of four skills or with four {@book tools|phb|5|tools} of your choice."
-                ],
-                "type": "entries"
+                "common": true,
+                "anyStandard": 1
             }
         ],
         "slug": "human__innistrad__psi_nephalia_psi",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Humans reach adulthood in their late teens and live less than a century.",
+            "",
+            "**Alignment:** Humans tend toward no particular alignment.",
+            "",
+            "**Size:** Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+            "",
+            "**Languages:** You can speak, read, and write Common and one extra language of your choice.",
+            "",
+            "**Breadth of Knowledge:** You gain proficiency in any combination of four skills or with four **Tools (phb) - Page 5** of your choice.",
+            ""
+        ]
     },
     {
         "name": "Stensia",
@@ -187,23 +202,35 @@
                 "intimidation": true
             }
         ],
-        "entries": [
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "languageProficiencies": [
             {
-                "name": "Daunting",
-                "entries": [
-                    "You have proficiency in the {@skill Intimidation} skill."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Tough",
-                "entries": [
-                    "Your hit point maximum increases by 2, and it increases by 2 every time you gain a level."
-                ],
-                "type": "entries"
+                "common": true,
+                "anyStandard": 1
             }
         ],
         "slug": "human__innistrad__psi_stensia_psi",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Humans reach adulthood in their late teens and live less than a century.",
+            "",
+            "**Alignment:** Humans tend toward no particular alignment.",
+            "",
+            "**Size:** Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+            "",
+            "**Languages:** You can speak, read, and write Common and one extra language of your choice.",
+            "",
+            "**Daunting:** You have proficiency in the Intimidation skill.",
+            "",
+            "**Tough:** Your hit point maximum increases by 2, and it increases by 2 every time you gain a level.",
+            ""
+        ]
     }
 ]

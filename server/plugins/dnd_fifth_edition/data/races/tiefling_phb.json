@@ -67,54 +67,24 @@
                 }
             }
         ],
-        "entries": [
-            {
-                "name": "Age",
-                "type": "entries",
-                "entries": [
-                    "Tieflings mature at the same rate as humans but live a few years longer."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Size",
-                "entries": [
-                    "Tieflings are about the same size and build as humans. Your size is Medium."
-                ]
-            },
-            {
-                "name": "Darkvision",
-                "entries": [
-                    "Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Hellish Resistance",
-                "entries": [
-                    "You have resistance to fire damage."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Infernal Legacy",
-                "entries": [
-                    "You know the {@spell thaumaturgy} cantrip. Once you reach 3rd level, you can cast the {@spell hellish rebuke} spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the {@spell darkness} spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Languages",
-                "entries": [
-                    "You can speak, read, and write Common and Infernal."
-                ],
-                "type": "entries"
-            }
-        ],
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "tiefling_phb_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
+            "",
+            "**Size:** Tieflings are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Darkvision:** Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hellish Resistance:** You have resistance to fire damage.",
+            "",
+            "**Infernal Legacy:** You know the *thaumaturgy* cantrip. Once you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the *darkness* spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Infernal.",
+            ""
+        ]
     },
     {
         "name": "Abyssal",
@@ -178,101 +148,62 @@
                 }
             }
         ],
-        "entries": [
-            {
-                "name": "Abyssal Arcana",
-                "entries": [
-                    "Each time you finish a long rest, you gain the ability to cast cantrips and spells randomly determined from a short list. At 1st level, you can cast a cantrip. When you reach 3rd level, you can also cast a 1st-level spell. At 5th level, you can cast a 2nd-level spell.",
-                    "You can cast a spell gained from this trait only once until you complete your next long rest. You can cast a cantrip gained from this trait at will, as normal. For 1st-level spells whose effect changes if cast using a spell slot of 2nd level or higher, you cast the spell as if using a 2nd-level slot. Spells of 2nd level are cast as if using a 2nd-level slot",
-                    "At the end of each long rest, you lose the cantrips and spells previously granted by this feature, even if you did not cast them. You replace those cantrips and spells by rolling for new ones on the Abyssal Arcana Spells table. Roll separately for each cantrip and spell. If you roll the same spell or cantrip you gained at the end of your previous long rest, roll again until you get a different result.",
-                    {
-                        "type": "table",
-                        "caption": "Abyssal Arcana Spells",
-                        "colLabels": [
-                            "d6",
-                            "1st Level",
-                            "3rd Level",
-                            "5th Level"
-                        ],
-                        "colStyles": [
-                            "col-1 text-center",
-                            "col-3-67",
-                            "col-3-67",
-                            "col-3-67"
-                        ],
-                        "rows": [
-                            [
-                                "1",
-                                "{@spell Dancing lights}",
-                                "{@spell Burning hands}",
-                                "{@spell Alter self}"
-                            ],
-                            [
-                                "2",
-                                "{@spell True strike}",
-                                "{@spell Charm person}",
-                                "{@spell Darkness}"
-                            ],
-                            [
-                                "3",
-                                "{@spell Light}",
-                                "{@spell Magic missile}",
-                                "{@spell Invisibility}"
-                            ],
-                            [
-                                "4",
-                                "{@spell Message}",
-                                "{@spell Cure wounds}",
-                                "{@spell Levitate}"
-                            ],
-                            [
-                                "5",
-                                "{@spell Spare the dying}",
-                                "{@spell Tasha's hideous laughter}",
-                                "{@spell Mirror Image}"
-                            ],
-                            [
-                                "6",
-                                "{@spell Prestidigitation}",
-                                "{@spell Thunderwave}",
-                                "{@spell Spider climb}"
-                            ]
-                        ]
-                    }
-                ],
-                "type": "entries",
-                "data": {
-                    "overwrite": "Infernal Legacy"
-                }
-            },
-            {
-                "name": "Abyssal Fortitude",
-                "entries": [
-                    "Your hit point maximum increases by half your level (minimum 1)."
-                ],
-                "data": {
-                    "overwrite": "Hellish Resistance"
-                },
-                "type": "entries"
-            },
-            {
-                "name": "Languages",
-                "entries": [
-                    "You can speak, read, and write Common and Abyssal."
-                ],
-                "data": {
-                    "overwrite": "Languages"
-                },
-                "type": "entries"
-            }
+        "srd": true,
+        "size": [
+            "M"
         ],
-        "overwrite": {
-            "languageProficiencies": true,
-            "ability": true,
-            "traitTags": true
+        "speed": 30,
+        "heightAndWeight": {
+            "baseHeight": 57,
+            "heightMod": "2d8",
+            "baseWeight": 110,
+            "weightMod": "2d4"
         },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "darkvision": 60,
+        "soundClip": {
+            "type": "internal",
+            "path": "races/tiefling.mp3"
+        },
+        "hasFluff": true,
+        "hasFluffImages": true,
         "slug": "tiefling_phb_abyssal_uathatoldblackmagic",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
+            "",
+            "**Size:** Tieflings are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Darkvision:** Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hellish Resistance:** You have resistance to fire damage.",
+            "",
+            "**Infernal Legacy:** You know the *thaumaturgy* cantrip. Once you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the *darkness* spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Infernal.",
+            "",
+            "**Abyssal Arcana:** Each time you finish a long rest, you gain the ability to cast cantrips and spells randomly determined from a short list. At 1st level, you can cast a cantrip. When you reach 3rd level, you can also cast a 1st-level spell. At 5th level, you can cast a 2nd-level spell.",
+            "You can cast a spell gained from this trait only once until you complete your next long rest. You can cast a cantrip gained from this trait at will, as normal. For 1st-level spells whose effect changes if cast using a spell slot of 2nd level or higher, you cast the spell as if using a 2nd-level slot. Spells of 2nd level are cast as if using a 2nd-level slot",
+            "At the end of each long rest, you lose the cantrips and spells previously granted by this feature, even if you did not cast them. You replace those cantrips and spells by rolling for new ones on the Abyssal Arcana Spells table. Roll separately for each cantrip and spell. If you roll the same spell or cantrip you gained at the end of your previous long rest, roll again until you get a different result.",
+            "| d6 | 1st Level | 3rd Level | 5th Level |",
+            "| :---: | --- | --- | --- |",
+            "| 1 | *dancing lights* | *burning hands* | *alter self* |",
+            "| 2 | *true strike* | *charm person* | *darkness* |",
+            "| 3 | *light* | *magic missile* | *invisibility* |",
+            "| 4 | *message* | *cure wounds* | *levitate* |",
+            "| 5 | *spare the dying* | *tasha's hideous laughter* | *mirror image* |",
+            "| 6 | *prestidigitation* | *thunderwave* | *spider climb* |",
+            "*Abyssal Arcana Spells*",
+            "",
+            "",
+            "**Abyssal Fortitude:** Your hit point maximum increases by half your level (minimum 1).",
+            "",
+            "**Languages:** You can speak, read, and write Common and Abyssal.",
+            ""
+        ]
     },
     {
         "name": "Asmodeus",
@@ -282,8 +213,86 @@
         "page": 21,
         "hasFluff": true,
         "hasFluffImages": true,
+        "srd": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
+            {
+                "cha": 2,
+                "int": 1
+            }
+        ],
+        "heightAndWeight": {
+            "baseHeight": 57,
+            "heightMod": "2d8",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "darkvision": 60,
+        "traitTags": [
+            "Uncommon Race"
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "infernal": true
+            }
+        ],
+        "resist": [
+            "fire"
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/tiefling.mp3"
+        },
+        "additionalSpells": [
+            {
+                "innate": {
+                    "3": {
+                        "daily": {
+                            "1": [
+                                "hellish rebuke#2"
+                            ]
+                        }
+                    },
+                    "5": {
+                        "daily": {
+                            "1": [
+                                "darkness"
+                            ]
+                        }
+                    }
+                },
+                "ability": "cha",
+                "known": {
+                    "1": [
+                        "thaumaturgy#c"
+                    ]
+                }
+            }
+        ],
         "slug": "tiefling_phb_asmodeus_mtf",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
+            "",
+            "**Size:** Tieflings are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Darkvision:** Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hellish Resistance:** You have resistance to fire damage.",
+            "",
+            "**Infernal Legacy:** You know the *thaumaturgy* cantrip. Once you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the *darkness* spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Infernal.",
+            ""
+        ]
     },
     {
         "name": "Asmodeus",
@@ -292,8 +301,87 @@
         "raceSource": "PHB",
         "page": 1,
         "srd": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
+            {
+                "cha": 2,
+                "int": 1
+            }
+        ],
+        "heightAndWeight": {
+            "baseHeight": 57,
+            "heightMod": "2d8",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "darkvision": 60,
+        "traitTags": [
+            "Uncommon Race"
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "infernal": true
+            }
+        ],
+        "resist": [
+            "fire"
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/tiefling.mp3"
+        },
+        "additionalSpells": [
+            {
+                "innate": {
+                    "3": {
+                        "daily": {
+                            "1": [
+                                "hellish rebuke#2"
+                            ]
+                        }
+                    },
+                    "5": {
+                        "daily": {
+                            "1": [
+                                "darkness"
+                            ]
+                        }
+                    }
+                },
+                "ability": "cha",
+                "known": {
+                    "1": [
+                        "thaumaturgy#c"
+                    ]
+                }
+            }
+        ],
+        "hasFluff": true,
+        "hasFluffImages": true,
         "slug": "tiefling_phb_asmodeus_uafiendishoptions",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
+            "",
+            "**Size:** Tieflings are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Darkvision:** Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hellish Resistance:** You have resistance to fire damage.",
+            "",
+            "**Infernal Legacy:** You know the *thaumaturgy* cantrip. Once you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the *darkness* spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Infernal.",
+            ""
+        ]
     },
     {
         "name": "Baalzebul",
@@ -327,22 +415,64 @@
                 }
             }
         ],
-        "entries": [
-            {
-                "name": "Legacy of Maladomini",
-                "entries": [
-                    "You know the {@spell thaumaturgy} cantrip. When you reach 3rd level, you can cast the {@spell ray of sickness} spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the {@spell crown of madness} spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
-                ],
-                "type": "entries",
-                "data": {
-                    "overwrite": "Infernal Legacy"
-                }
-            }
-        ],
         "hasFluff": true,
         "hasFluffImages": true,
+        "srd": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
+            {
+                "cha": 2,
+                "int": 1
+            }
+        ],
+        "heightAndWeight": {
+            "baseHeight": 57,
+            "heightMod": "2d8",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "darkvision": 60,
+        "traitTags": [
+            "Uncommon Race"
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "infernal": true
+            }
+        ],
+        "resist": [
+            "fire"
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/tiefling.mp3"
+        },
         "slug": "tiefling_phb_baalzebul_mtf",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
+            "",
+            "**Size:** Tieflings are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Darkvision:** Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hellish Resistance:** You have resistance to fire damage.",
+            "",
+            "**Infernal Legacy:** You know the *thaumaturgy* cantrip. Once you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the *darkness* spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Infernal.",
+            "",
+            "**Legacy of Maladomini:** You know the *thaumaturgy* cantrip. When you reach 3rd level, you can cast the *ray of sickness* spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the *crown of madness* spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            ""
+        ]
     },
     {
         "name": "Baalzebul",
@@ -376,20 +506,64 @@
                 }
             }
         ],
-        "entries": [
+        "srd": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
             {
-                "name": "Legacy of Maladomini",
-                "entries": [
-                    "You know the {@spell thaumaturgy} cantrip. When you reach 3rd level, you can cast the {@spell ray of sickness} spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the {@spell crown of madness} spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
-                ],
-                "type": "entries",
-                "data": {
-                    "overwrite": "Infernal Legacy"
-                }
+                "cha": 2,
+                "int": 1
             }
         ],
+        "heightAndWeight": {
+            "baseHeight": 57,
+            "heightMod": "2d8",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "darkvision": 60,
+        "traitTags": [
+            "Uncommon Race"
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "infernal": true
+            }
+        ],
+        "resist": [
+            "fire"
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/tiefling.mp3"
+        },
+        "hasFluff": true,
+        "hasFluffImages": true,
         "slug": "tiefling_phb_baalzebul_uafiendishoptions",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
+            "",
+            "**Size:** Tieflings are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Darkvision:** Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hellish Resistance:** You have resistance to fire damage.",
+            "",
+            "**Infernal Legacy:** You know the *thaumaturgy* cantrip. Once you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the *darkness* spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Infernal.",
+            "",
+            "**Legacy of Maladomini:** You know the *thaumaturgy* cantrip. When you reach 3rd level, you can cast the *ray of sickness* spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the *crown of madness* spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            ""
+        ]
     },
     {
         "name": "Dispater",
@@ -429,25 +603,58 @@
                 }
             }
         ],
-        "entries": [
-            {
-                "name": "Legacy of Dis",
-                "entries": [
-                    "You know the {@spell thaumaturgy} cantrip. When you reach 3rd level, you can cast the {@spell disguise self} spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the {@spell detect thoughts} spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
-                ],
-                "type": "entries",
-                "data": {
-                    "overwrite": "Infernal Legacy"
-                }
-            }
-        ],
-        "overwrite": {
-            "ability": true
-        },
         "hasFluff": true,
         "hasFluffImages": true,
+        "srd": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "heightAndWeight": {
+            "baseHeight": 57,
+            "heightMod": "2d8",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "darkvision": 60,
+        "traitTags": [
+            "Uncommon Race"
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "infernal": true
+            }
+        ],
+        "resist": [
+            "fire"
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/tiefling.mp3"
+        },
         "slug": "tiefling_phb_dispater_mtf",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
+            "",
+            "**Size:** Tieflings are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Darkvision:** Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hellish Resistance:** You have resistance to fire damage.",
+            "",
+            "**Infernal Legacy:** You know the *thaumaturgy* cantrip. Once you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the *darkness* spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Infernal.",
+            "",
+            "**Legacy of Dis:** You know the *thaumaturgy* cantrip. When you reach 3rd level, you can cast the *disguise self* spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the *detect thoughts* spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            ""
+        ]
     },
     {
         "name": "Dispater",
@@ -487,23 +694,58 @@
                 }
             }
         ],
-        "entries": [
+        "srd": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "heightAndWeight": {
+            "baseHeight": 57,
+            "heightMod": "2d8",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "darkvision": 60,
+        "traitTags": [
+            "Uncommon Race"
+        ],
+        "languageProficiencies": [
             {
-                "name": "Legacy of Dis",
-                "entries": [
-                    "You know the {@spell thaumaturgy} cantrip. When you reach 3rd level, you can cast the {@spell disguise self} spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the {@spell invisibility} spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
-                ],
-                "type": "entries",
-                "data": {
-                    "overwrite": "Infernal Legacy"
-                }
+                "common": true,
+                "infernal": true
             }
         ],
-        "overwrite": {
-            "ability": true
+        "resist": [
+            "fire"
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/tiefling.mp3"
         },
+        "hasFluff": true,
+        "hasFluffImages": true,
         "slug": "tiefling_phb_dispater_uafiendishoptions",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
+            "",
+            "**Size:** Tieflings are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Darkvision:** Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hellish Resistance:** You have resistance to fire damage.",
+            "",
+            "**Infernal Legacy:** You know the *thaumaturgy* cantrip. Once you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the *darkness* spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Infernal.",
+            "",
+            "**Legacy of Dis:** You know the *thaumaturgy* cantrip. When you reach 3rd level, you can cast the *disguise self* spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the *invisibility* spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            ""
+        ]
     },
     {
         "name": "Fierna",
@@ -543,25 +785,58 @@
                 }
             }
         ],
-        "entries": [
-            {
-                "name": "Legacy of Phlegethos",
-                "entries": [
-                    "You know the {@spell friends} cantrip. When you reach 3rd level, you can cast the {@spell charm person} spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the {@spell suggestion} spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
-                ],
-                "type": "entries",
-                "data": {
-                    "overwrite": "Infernal Legacy"
-                }
-            }
-        ],
-        "overwrite": {
-            "ability": true
-        },
         "hasFluff": true,
         "hasFluffImages": true,
+        "srd": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "heightAndWeight": {
+            "baseHeight": 57,
+            "heightMod": "2d8",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "darkvision": 60,
+        "traitTags": [
+            "Uncommon Race"
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "infernal": true
+            }
+        ],
+        "resist": [
+            "fire"
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/tiefling.mp3"
+        },
         "slug": "tiefling_phb_fierna_mtf",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
+            "",
+            "**Size:** Tieflings are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Darkvision:** Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hellish Resistance:** You have resistance to fire damage.",
+            "",
+            "**Infernal Legacy:** You know the *thaumaturgy* cantrip. Once you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the *darkness* spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Infernal.",
+            "",
+            "**Legacy of Phlegethos:** You know the *friends* cantrip. When you reach 3rd level, you can cast the *charm person* spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the *suggestion* spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            ""
+        ]
     },
     {
         "name": "Fierna",
@@ -601,23 +876,58 @@
                 }
             }
         ],
-        "entries": [
+        "srd": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "heightAndWeight": {
+            "baseHeight": 57,
+            "heightMod": "2d8",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "darkvision": 60,
+        "traitTags": [
+            "Uncommon Race"
+        ],
+        "languageProficiencies": [
             {
-                "name": "Legacy of Phlegethos",
-                "entries": [
-                    "You know the {@spell friends} cantrip. When you reach 3rd level, you can cast the {@spell charm person} spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the {@spell suggestion} spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
-                ],
-                "type": "entries",
-                "data": {
-                    "overwrite": "Infernal Legacy"
-                }
+                "common": true,
+                "infernal": true
             }
         ],
-        "overwrite": {
-            "ability": true
+        "resist": [
+            "fire"
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/tiefling.mp3"
         },
+        "hasFluff": true,
+        "hasFluffImages": true,
         "slug": "tiefling_phb_fierna_uafiendishoptions",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
+            "",
+            "**Size:** Tieflings are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Darkvision:** Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hellish Resistance:** You have resistance to fire damage.",
+            "",
+            "**Infernal Legacy:** You know the *thaumaturgy* cantrip. Once you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the *darkness* spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Infernal.",
+            "",
+            "**Legacy of Phlegethos:** You know the *friends* cantrip. When you reach 3rd level, you can cast the *charm person* spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the *suggestion* spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            ""
+        ]
     },
     {
         "name": "Glasya",
@@ -657,25 +967,58 @@
                 }
             }
         ],
-        "entries": [
-            {
-                "name": "Legacy of Malbolge",
-                "entries": [
-                    "You know the {@spell minor illusion} cantrip. When you reach 3rd level, you can cast the {@spell disguise self} spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the {@spell invisibility} spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
-                ],
-                "type": "entries",
-                "data": {
-                    "overwrite": "Infernal Legacy"
-                }
-            }
-        ],
-        "overwrite": {
-            "ability": true
-        },
         "hasFluff": true,
         "hasFluffImages": true,
+        "srd": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "heightAndWeight": {
+            "baseHeight": 57,
+            "heightMod": "2d8",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "darkvision": 60,
+        "traitTags": [
+            "Uncommon Race"
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "infernal": true
+            }
+        ],
+        "resist": [
+            "fire"
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/tiefling.mp3"
+        },
         "slug": "tiefling_phb_glasya_mtf",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
+            "",
+            "**Size:** Tieflings are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Darkvision:** Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hellish Resistance:** You have resistance to fire damage.",
+            "",
+            "**Infernal Legacy:** You know the *thaumaturgy* cantrip. Once you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the *darkness* spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Infernal.",
+            "",
+            "**Legacy of Malbolge:** You know the *minor illusion* cantrip. When you reach 3rd level, you can cast the *disguise self* spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the *invisibility* spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            ""
+        ]
     },
     {
         "name": "Glasya",
@@ -715,23 +1058,58 @@
                 }
             }
         ],
-        "entries": [
+        "srd": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "heightAndWeight": {
+            "baseHeight": 57,
+            "heightMod": "2d8",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "darkvision": 60,
+        "traitTags": [
+            "Uncommon Race"
+        ],
+        "languageProficiencies": [
             {
-                "name": "Legacy of Malbolge",
-                "entries": [
-                    "You know the {@spell minor illusion} cantrip. When you reach 3rd level, you can cast the {@spell disguise self} spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the {@spell invisibility} spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
-                ],
-                "type": "entries",
-                "data": {
-                    "overwrite": "Infernal Legacy"
-                }
+                "common": true,
+                "infernal": true
             }
         ],
-        "overwrite": {
-            "ability": true
+        "resist": [
+            "fire"
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/tiefling.mp3"
         },
+        "hasFluff": true,
+        "hasFluffImages": true,
         "slug": "tiefling_phb_glasya_uafiendishoptions",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
+            "",
+            "**Size:** Tieflings are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Darkvision:** Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hellish Resistance:** You have resistance to fire damage.",
+            "",
+            "**Infernal Legacy:** You know the *thaumaturgy* cantrip. Once you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the *darkness* spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Infernal.",
+            "",
+            "**Legacy of Malbolge:** You know the *minor illusion* cantrip. When you reach 3rd level, you can cast the *disguise self* spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the *invisibility* spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            ""
+        ]
     },
     {
         "name": "Levistus",
@@ -771,25 +1149,58 @@
                 }
             }
         ],
-        "entries": [
-            {
-                "name": "Legacy of Stygia",
-                "entries": [
-                    "You know the {@spell ray of frost} cantrip. When you reach 3rd level, you can cast the {@spell armor of Agathys} spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the {@spell darkness} spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
-                ],
-                "type": "entries",
-                "data": {
-                    "overwrite": "Infernal Legacy"
-                }
-            }
-        ],
-        "overwrite": {
-            "ability": true
-        },
         "hasFluff": true,
         "hasFluffImages": true,
+        "srd": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "heightAndWeight": {
+            "baseHeight": 57,
+            "heightMod": "2d8",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "darkvision": 60,
+        "traitTags": [
+            "Uncommon Race"
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "infernal": true
+            }
+        ],
+        "resist": [
+            "fire"
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/tiefling.mp3"
+        },
         "slug": "tiefling_phb_levistus_mtf",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
+            "",
+            "**Size:** Tieflings are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Darkvision:** Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hellish Resistance:** You have resistance to fire damage.",
+            "",
+            "**Infernal Legacy:** You know the *thaumaturgy* cantrip. Once you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the *darkness* spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Infernal.",
+            "",
+            "**Legacy of Stygia:** You know the *ray of frost* cantrip. When you reach 3rd level, you can cast the *armor of agathys* spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the *darkness* spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            ""
+        ]
     },
     {
         "name": "Levistus",
@@ -829,23 +1240,58 @@
                 }
             }
         ],
-        "entries": [
+        "srd": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "heightAndWeight": {
+            "baseHeight": 57,
+            "heightMod": "2d8",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "darkvision": 60,
+        "traitTags": [
+            "Uncommon Race"
+        ],
+        "languageProficiencies": [
             {
-                "name": "Legacy of Stygia",
-                "entries": [
-                    "You know the {@spell ray of frost} cantrip. When you reach 3rd level, you can cast the {@spell armor of Agathys} spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the {@spell darkness} spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
-                ],
-                "type": "entries",
-                "data": {
-                    "overwrite": "Infernal Legacy"
-                }
+                "common": true,
+                "infernal": true
             }
         ],
-        "overwrite": {
-            "ability": true
+        "resist": [
+            "fire"
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/tiefling.mp3"
         },
+        "hasFluff": true,
+        "hasFluffImages": true,
         "slug": "tiefling_phb_levistus_uafiendishoptions",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
+            "",
+            "**Size:** Tieflings are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Darkvision:** Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hellish Resistance:** You have resistance to fire damage.",
+            "",
+            "**Infernal Legacy:** You know the *thaumaturgy* cantrip. Once you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the *darkness* spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Infernal.",
+            "",
+            "**Legacy of Stygia:** You know the *ray of frost* cantrip. When you reach 3rd level, you can cast the *armor of agathys* spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the *darkness* spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            ""
+        ]
     },
     {
         "name": "Mammon",
@@ -879,22 +1325,64 @@
                 }
             }
         ],
-        "entries": [
-            {
-                "name": "Legacy of Minauros",
-                "entries": [
-                    "You know the {@spell mage hand} cantrip. When you reach 3rd level, you can cast the {@spell Tenser's floating disk} spell once with this trait and regain the ability to do so when you finish a short or long rest. When you reach 5th level, you can cast the {@spell arcane lock} spell once with this trait, requiring no material component, and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
-                ],
-                "type": "entries",
-                "data": {
-                    "overwrite": "Infernal Legacy"
-                }
-            }
-        ],
         "hasFluff": true,
         "hasFluffImages": true,
+        "srd": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
+            {
+                "cha": 2,
+                "int": 1
+            }
+        ],
+        "heightAndWeight": {
+            "baseHeight": 57,
+            "heightMod": "2d8",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "darkvision": 60,
+        "traitTags": [
+            "Uncommon Race"
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "infernal": true
+            }
+        ],
+        "resist": [
+            "fire"
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/tiefling.mp3"
+        },
         "slug": "tiefling_phb_mammon_mtf",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
+            "",
+            "**Size:** Tieflings are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Darkvision:** Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hellish Resistance:** You have resistance to fire damage.",
+            "",
+            "**Infernal Legacy:** You know the *thaumaturgy* cantrip. Once you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the *darkness* spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Infernal.",
+            "",
+            "**Legacy of Minauros:** You know the *mage hand* cantrip. When you reach 3rd level, you can cast the *tenser's floating disk* spell once with this trait and regain the ability to do so when you finish a short or long rest. When you reach 5th level, you can cast the *arcane lock* spell once with this trait, requiring no material component, and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            ""
+        ]
     },
     {
         "name": "Mammon",
@@ -928,20 +1416,64 @@
                 }
             }
         ],
-        "entries": [
+        "srd": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
             {
-                "name": "Legacy of Minauros",
-                "entries": [
-                    "You know the {@spell mage hand} cantrip. When you reach 3rd level, you can cast the {@spell Tenser's floating disk} spell once with this trait and regain the ability to do so when you finish a short or long rest. When you reach 5th level, you can cast the {@spell arcane lock} spell once with this trait, requiring no material component, and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
-                ],
-                "type": "entries",
-                "data": {
-                    "overwrite": "Infernal Legacy"
-                }
+                "cha": 2,
+                "int": 1
             }
         ],
+        "heightAndWeight": {
+            "baseHeight": 57,
+            "heightMod": "2d8",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "darkvision": 60,
+        "traitTags": [
+            "Uncommon Race"
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "infernal": true
+            }
+        ],
+        "resist": [
+            "fire"
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/tiefling.mp3"
+        },
+        "hasFluff": true,
+        "hasFluffImages": true,
         "slug": "tiefling_phb_mammon_uafiendishoptions",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
+            "",
+            "**Size:** Tieflings are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Darkvision:** Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hellish Resistance:** You have resistance to fire damage.",
+            "",
+            "**Infernal Legacy:** You know the *thaumaturgy* cantrip. Once you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the *darkness* spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Infernal.",
+            "",
+            "**Legacy of Minauros:** You know the *mage hand* cantrip. When you reach 3rd level, you can cast the *tenser's floating disk* spell once with this trait and regain the ability to do so when you finish a short or long rest. When you reach 5th level, you can cast the *arcane lock* spell once with this trait, requiring no material component, and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            ""
+        ]
     },
     {
         "name": "Mephistopheles",
@@ -975,22 +1507,64 @@
                 }
             }
         ],
-        "entries": [
-            {
-                "name": "Legacy of Cania",
-                "entries": [
-                    "You know the {@spell mage hand} cantrip. When you reach 3rd level, you can cast the {@spell burning hands} spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the {@spell flame blade} spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
-                ],
-                "type": "entries",
-                "data": {
-                    "overwrite": "Infernal Legacy"
-                }
-            }
-        ],
         "hasFluff": true,
         "hasFluffImages": true,
+        "srd": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
+            {
+                "cha": 2,
+                "int": 1
+            }
+        ],
+        "heightAndWeight": {
+            "baseHeight": 57,
+            "heightMod": "2d8",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "darkvision": 60,
+        "traitTags": [
+            "Uncommon Race"
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "infernal": true
+            }
+        ],
+        "resist": [
+            "fire"
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/tiefling.mp3"
+        },
         "slug": "tiefling_phb_mephistopheles_mtf",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
+            "",
+            "**Size:** Tieflings are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Darkvision:** Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hellish Resistance:** You have resistance to fire damage.",
+            "",
+            "**Infernal Legacy:** You know the *thaumaturgy* cantrip. Once you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the *darkness* spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Infernal.",
+            "",
+            "**Legacy of Cania:** You know the *mage hand* cantrip. When you reach 3rd level, you can cast the *burning hands* spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the *flame blade* spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            ""
+        ]
     },
     {
         "name": "Mephistopheles",
@@ -1024,20 +1598,64 @@
                 }
             }
         ],
-        "entries": [
+        "srd": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "ability": [
             {
-                "name": "Legacy of Cania",
-                "entries": [
-                    "You know the {@spell mage hand} cantrip. When you reach 3rd level, you can cast the {@spell magic missile} spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the {@spell web} spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
-                ],
-                "type": "entries",
-                "data": {
-                    "overwrite": "Infernal Legacy"
-                }
+                "cha": 2,
+                "int": 1
             }
         ],
+        "heightAndWeight": {
+            "baseHeight": 57,
+            "heightMod": "2d8",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "darkvision": 60,
+        "traitTags": [
+            "Uncommon Race"
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "infernal": true
+            }
+        ],
+        "resist": [
+            "fire"
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/tiefling.mp3"
+        },
+        "hasFluff": true,
+        "hasFluffImages": true,
         "slug": "tiefling_phb_mephistopheles_uafiendishoptions",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
+            "",
+            "**Size:** Tieflings are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Darkvision:** Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hellish Resistance:** You have resistance to fire damage.",
+            "",
+            "**Infernal Legacy:** You know the *thaumaturgy* cantrip. Once you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the *darkness* spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Infernal.",
+            "",
+            "**Legacy of Cania:** You know the *mage hand* cantrip. When you reach 3rd level, you can cast the *magic missile* spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the *web* spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            ""
+        ]
     },
     {
         "name": "Variant; Devil's Tongue",
@@ -1084,30 +1702,60 @@
                 }
             }
         ],
-        "entries": [
+        "srd": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "heightAndWeight": {
+            "baseHeight": 57,
+            "heightMod": "2d8",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "darkvision": 60,
+        "traitTags": [
+            "Uncommon Race"
+        ],
+        "languageProficiencies": [
             {
-                "name": "Appearance",
-                "entries": [
-                    "Your tiefling might not look like other tieflings. Rather than having the physical characteristics described in the Player's Handbook, choose {@dice 1d4+1} of the following features: small horns; fangs or sharp teeth; a forked tongue; catlike eyes; six fingers on each hand; goatlike legs; cloven hoofs; a forked tail; leathery or scaly skin; red or dark blue skin; cast no shadow or reflection; exude a smell of brimstone."
-                ],
-                "type": "entries"
-            },
-            {
-                "type": "entries",
-                "name": "Devil's Tongue",
-                "entries": [
-                    "You know the {@spell vicious mockery} cantrip. When you reach 3rd level, you can cast the {@spell charm person} spell as a 2nd-level spell once with this trait. When you reach 5th level, you can cast the {@spell enthrall} spell once with this trait. You must finish a long rest to cast these spells once again with this trait. Charisma is your spellcasting ability for them. This trait replaces the Infernal Legacy trait."
-                ],
-                "data": {
-                    "overwrite": "Infernal Legacy"
-                }
+                "common": true,
+                "infernal": true
             }
         ],
-        "overwrite": {
-            "ability": true
+        "resist": [
+            "fire"
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/tiefling.mp3"
         },
+        "hasFluff": true,
+        "hasFluffImages": true,
         "slug": "tiefling_phb_variant__devil_s_tongue_scag",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
+            "",
+            "**Size:** Tieflings are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Darkvision:** Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hellish Resistance:** You have resistance to fire damage.",
+            "",
+            "**Infernal Legacy:** You know the *thaumaturgy* cantrip. Once you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the *darkness* spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Infernal.",
+            "",
+            "**Appearance:** Your tiefling might not look like other tieflings. Rather than having the physical characteristics described in the Player's Handbook, choose 1d4+1 of the following features: small horns; fangs or sharp teeth; a forked tongue; catlike eyes; six fingers on each hand; goatlike legs; cloven hoofs; a forked tail; leathery or scaly skin; red or dark blue skin; cast no shadow or reflection; exude a smell of brimstone.",
+            "",
+            "**Devil's Tongue:** You know the *vicious mockery* cantrip. When you reach 3rd level, you can cast the *charm person* spell as a 2nd-level spell once with this trait. When you reach 5th level, you can cast the *enthrall* spell once with this trait. You must finish a long rest to cast these spells once again with this trait. Charisma is your spellcasting ability for them. This trait replaces the Infernal Legacy trait.",
+            ""
+        ]
     },
     {
         "name": "Variant; Hellfire",
@@ -1154,30 +1802,60 @@
                 }
             }
         ],
-        "entries": [
+        "srd": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "heightAndWeight": {
+            "baseHeight": 57,
+            "heightMod": "2d8",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "darkvision": 60,
+        "traitTags": [
+            "Uncommon Race"
+        ],
+        "languageProficiencies": [
             {
-                "name": "Appearance",
-                "entries": [
-                    "Your tiefling might not look like other tieflings. Rather than having the physical characteristics described in the Player's Handbook, choose {@dice 1d4+1} of the following features: small horns; fangs or sharp teeth; a forked tongue; catlike eyes; six fingers on each hand; goatlike legs; cloven hoofs; a forked tail; leathery or scaly skin; red or dark blue skin; cast no shadow or reflection; exude a smell of brimstone."
-                ],
-                "type": "entries"
-            },
-            {
-                "type": "entries",
-                "name": "Hellfire",
-                "entries": [
-                    "You know the {@spell thaumaturgy} cantrip. Once you reach 3rd level, you can cast the {@spell burning hands} spell once per day as a 2nd-level spell; you must finish a long rest in order to cast the spell again using this trait. Once you reach 5th level, you can also cast the {@spell darkness} spell; you must finish a long rest in order to cast the spell again using this trait. Charisma is your spellcasting ability for these spells."
-                ],
-                "data": {
-                    "overwrite": "Infernal Legacy"
-                }
+                "common": true,
+                "infernal": true
             }
         ],
-        "overwrite": {
-            "ability": true
+        "resist": [
+            "fire"
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/tiefling.mp3"
         },
+        "hasFluff": true,
+        "hasFluffImages": true,
         "slug": "tiefling_phb_variant__hellfire_scag",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
+            "",
+            "**Size:** Tieflings are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Darkvision:** Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hellish Resistance:** You have resistance to fire damage.",
+            "",
+            "**Infernal Legacy:** You know the *thaumaturgy* cantrip. Once you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the *darkness* spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Infernal.",
+            "",
+            "**Appearance:** Your tiefling might not look like other tieflings. Rather than having the physical characteristics described in the Player's Handbook, choose 1d4+1 of the following features: small horns; fangs or sharp teeth; a forked tongue; catlike eyes; six fingers on each hand; goatlike legs; cloven hoofs; a forked tail; leathery or scaly skin; red or dark blue skin; cast no shadow or reflection; exude a smell of brimstone.",
+            "",
+            "**Hellfire:** You know the *thaumaturgy* cantrip. Once you reach 3rd level, you can cast the *burning hands* spell once per day as a 2nd-level spell; you must finish a long rest in order to cast the spell again using this trait. Once you reach 5th level, you can also cast the *darkness* spell; you must finish a long rest in order to cast the spell again using this trait. Charisma is your spellcasting ability for these spells.",
+            ""
+        ]
     },
     {
         "name": "Variant; Infernal Legacy",
@@ -1224,20 +1902,58 @@
                 }
             }
         ],
-        "entries": [
+        "srd": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "heightAndWeight": {
+            "baseHeight": 57,
+            "heightMod": "2d8",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "darkvision": 60,
+        "traitTags": [
+            "Uncommon Race"
+        ],
+        "languageProficiencies": [
             {
-                "name": "Appearance",
-                "entries": [
-                    "Your tiefling might not look like other tieflings. Rather than having the physical characteristics described in the Player's Handbook, choose {@dice 1d4+1} of the following features: small horns; fangs or sharp teeth; a forked tongue; catlike eyes; six fingers on each hand; goatlike legs; cloven hoofs; a forked tail; leathery or scaly skin; red or dark blue skin; cast no shadow or reflection; exude a smell of brimstone."
-                ],
-                "type": "entries"
+                "common": true,
+                "infernal": true
             }
         ],
-        "overwrite": {
-            "ability": true
+        "resist": [
+            "fire"
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/tiefling.mp3"
         },
+        "hasFluff": true,
+        "hasFluffImages": true,
         "slug": "tiefling_phb_variant__infernal_legacy_scag",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
+            "",
+            "**Size:** Tieflings are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Darkvision:** Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hellish Resistance:** You have resistance to fire damage.",
+            "",
+            "**Infernal Legacy:** You know the *thaumaturgy* cantrip. Once you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the *darkness* spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Infernal.",
+            "",
+            "**Appearance:** Your tiefling might not look like other tieflings. Rather than having the physical characteristics described in the Player's Handbook, choose 1d4+1 of the following features: small horns; fangs or sharp teeth; a forked tongue; catlike eyes; six fingers on each hand; goatlike legs; cloven hoofs; a forked tail; leathery or scaly skin; red or dark blue skin; cast no shadow or reflection; exude a smell of brimstone.",
+            ""
+        ]
     },
     {
         "name": "Variant; Winged",
@@ -1266,31 +1982,56 @@
             "Uncommon Race"
         ],
         "additionalSpells": null,
-        "entries": [
+        "srd": true,
+        "size": [
+            "M"
+        ],
+        "heightAndWeight": {
+            "baseHeight": 57,
+            "heightMod": "2d8",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "darkvision": 60,
+        "languageProficiencies": [
             {
-                "name": "Appearance",
-                "entries": [
-                    "Your tiefling might not look like other tieflings. Rather than having the physical characteristics described in the Player's Handbook, choose {@dice 1d4+1} of the following features: small horns; fangs or sharp teeth; a forked tongue; catlike eyes; six fingers on each hand; goatlike legs; cloven hoofs; a forked tail; leathery or scaly skin; red or dark blue skin; cast no shadow or reflection; exude a smell of brimstone."
-                ],
-                "type": "entries"
-            },
-            {
-                "type": "entries",
-                "name": "Winged",
-                "entries": [
-                    "You have bat-like wings sprouting from your shoulder blades. You have a flying speed of 30 feet while you aren't wearing heavy armor."
-                ],
-                "data": {
-                    "overwrite": "Infernal Legacy"
-                }
+                "common": true,
+                "infernal": true
             }
         ],
-        "overwrite": {
-            "ability": true,
-            "traitTags": true
+        "resist": [
+            "fire"
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/tiefling.mp3"
         },
+        "hasFluff": true,
+        "hasFluffImages": true,
         "slug": "tiefling_phb_variant__winged_scag",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
+            "",
+            "**Size:** Tieflings are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Darkvision:** Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hellish Resistance:** You have resistance to fire damage.",
+            "",
+            "**Infernal Legacy:** You know the *thaumaturgy* cantrip. Once you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the *darkness* spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Infernal.",
+            "",
+            "**Appearance:** Your tiefling might not look like other tieflings. Rather than having the physical characteristics described in the Player's Handbook, choose 1d4+1 of the following features: small horns; fangs or sharp teeth; a forked tongue; catlike eyes; six fingers on each hand; goatlike legs; cloven hoofs; a forked tail; leathery or scaly skin; red or dark blue skin; cast no shadow or reflection; exude a smell of brimstone.",
+            "",
+            "**Winged:** You have bat-like wings sprouting from your shoulder blades. You have a flying speed of 30 feet while you aren't wearing heavy armor.",
+            ""
+        ]
     },
     {
         "name": "Zariel",
@@ -1330,25 +2071,58 @@
                 }
             }
         ],
-        "entries": [
-            {
-                "name": "Legacy of Avernus",
-                "entries": [
-                    "You know the {@spell thaumaturgy} cantrip. When you reach 3rd level, you can cast the {@spell searing smite} spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the {@spell branding smite} spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
-                ],
-                "type": "entries",
-                "data": {
-                    "overwrite": "Infernal Legacy"
-                }
-            }
-        ],
-        "overwrite": {
-            "ability": true
-        },
         "hasFluff": true,
         "hasFluffImages": true,
+        "srd": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "heightAndWeight": {
+            "baseHeight": 57,
+            "heightMod": "2d8",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "darkvision": 60,
+        "traitTags": [
+            "Uncommon Race"
+        ],
+        "languageProficiencies": [
+            {
+                "common": true,
+                "infernal": true
+            }
+        ],
+        "resist": [
+            "fire"
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/tiefling.mp3"
+        },
         "slug": "tiefling_phb_zariel_mtf",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
+            "",
+            "**Size:** Tieflings are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Darkvision:** Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hellish Resistance:** You have resistance to fire damage.",
+            "",
+            "**Infernal Legacy:** You know the *thaumaturgy* cantrip. Once you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the *darkness* spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Infernal.",
+            "",
+            "**Legacy of Avernus:** You know the *thaumaturgy* cantrip. When you reach 3rd level, you can cast the *searing smite* spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the *branding smite* spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            ""
+        ]
     },
     {
         "name": "Zariel",
@@ -1388,22 +2162,57 @@
                 }
             }
         ],
-        "entries": [
+        "srd": true,
+        "size": [
+            "M"
+        ],
+        "speed": 30,
+        "heightAndWeight": {
+            "baseHeight": 57,
+            "heightMod": "2d8",
+            "baseWeight": 110,
+            "weightMod": "2d4"
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "darkvision": 60,
+        "traitTags": [
+            "Uncommon Race"
+        ],
+        "languageProficiencies": [
             {
-                "name": "Legacy of Avernus",
-                "entries": [
-                    "You know the {@spell thaumaturgy} cantrip. When you reach 3rd level, you can cast the {@spell searing smite} spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the {@spell branding smite} spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
-                ],
-                "type": "entries",
-                "data": {
-                    "overwrite": "Infernal Legacy"
-                }
+                "common": true,
+                "infernal": true
             }
         ],
-        "overwrite": {
-            "ability": true
+        "resist": [
+            "fire"
+        ],
+        "soundClip": {
+            "type": "internal",
+            "path": "races/tiefling.mp3"
         },
+        "hasFluff": true,
+        "hasFluffImages": true,
         "slug": "tiefling_phb_zariel_uafiendishoptions",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Tieflings mature at the same rate as humans but live a few years longer.",
+            "",
+            "**Size:** Tieflings are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Darkvision:** Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hellish Resistance:** You have resistance to fire damage.",
+            "",
+            "**Infernal Legacy:** You know the *thaumaturgy* cantrip. Once you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the *darkness* spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Infernal.",
+            "",
+            "**Legacy of Avernus:** You know the *thaumaturgy* cantrip. When you reach 3rd level, you can cast the *searing smite* spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the *branding smite* spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+            ""
+        ]
     }
 ]

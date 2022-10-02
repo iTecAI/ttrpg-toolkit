@@ -29,53 +29,23 @@
                 "anyStandard": 1
             }
         ],
-        "entries": [
-            {
-                "type": "entries",
-                "name": "Age",
-                "entries": [
-                    "Merfolk mature at the same rate humans do and reach adulthood around the age of 20. They live considerably longer than humans, though, often reaching well over 100 years."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Alignment",
-                "entries": [
-                    "Most merfolk are neutral, though merfolk of the Emeria and Cosi creeds have chaotic leanings."
-                ]
-            },
-            {
-                "name": "Amphibious",
-                "entries": [
-                    "You can breathe air and water."
-                ],
-                "type": "entries"
-            },
-            {
-                "type": "entries",
-                "name": "Size",
-                "entries": [
-                    "Merfolk are about the same size and build as humans. Your size is Medium."
-                ]
-            },
-            {
-                "name": "Swimming",
-                "entries": [
-                    "You have a swimming speed of 30 feet."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Languages",
-                "entries": [
-                    "You can speak, read, and write Common, Merfolk, and one extra language of your choice."
-                ],
-                "type": "entries"
-            }
-        ],
         "hasFluff": true,
         "slug": "merfolk__zendikar__psz_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Age:** Merfolk mature at the same rate humans do and reach adulthood around the age of 20. They live considerably longer than humans, though, often reaching well over 100 years.",
+            "",
+            "**Alignment:** Most merfolk are neutral, though merfolk of the Emeria and Cosi creeds have chaotic leanings.",
+            "",
+            "**Amphibious:** You can breathe air and water.",
+            "",
+            "**Size:** Merfolk are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Swimming:** You have a swimming speed of 30 feet.",
+            "",
+            "**Languages:** You can speak, read, and write Common, Merfolk, and one extra language of your choice.",
+            ""
+        ]
     },
     {
         "name": "Cosi Creed",
@@ -109,24 +79,48 @@
                 }
             }
         ],
-        "entries": [
+        "size": [
+            "M"
+        ],
+        "speed": {
+            "walk": 30,
+            "swim": 30
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "traitTags": [
+            "Amphibious"
+        ],
+        "languageProficiencies": [
             {
-                "name": "Cantrip",
-                "entries": [
-                    "You know one cantrip of your choice from the {@filter bard spell list|spells|class=bard|level=0}. Charisma is your spellcasting ability for it."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Creed of the Trickster",
-                "entries": [
-                    "You have proficiency in the {@skill Sleight of Hand} and {@skill Stealth} skills."
-                ],
-                "type": "entries"
+                "common": true,
+                "other": true,
+                "anyStandard": 1
             }
         ],
+        "hasFluff": true,
         "slug": "merfolk__zendikar__psz_cosi_creed_psz",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Merfolk mature at the same rate humans do and reach adulthood around the age of 20. They live considerably longer than humans, though, often reaching well over 100 years.",
+            "",
+            "**Alignment:** Most merfolk are neutral, though merfolk of the Emeria and Cosi creeds have chaotic leanings.",
+            "",
+            "**Amphibious:** You can breathe air and water.",
+            "",
+            "**Size:** Merfolk are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Swimming:** You have a swimming speed of 30 feet.",
+            "",
+            "**Languages:** You can speak, read, and write Common, Merfolk, and one extra language of your choice.",
+            "",
+            "**Cantrip:** You know one cantrip of your choice from the bard spell list. Charisma is your spellcasting ability for it.",
+            "",
+            "**Creed of the Trickster:** You have proficiency in the Sleight of Hand and Stealth skills.",
+            ""
+        ]
     },
     {
         "name": "Emeria Creed",
@@ -159,24 +153,48 @@
                 }
             }
         ],
-        "entries": [
+        "size": [
+            "M"
+        ],
+        "speed": {
+            "walk": 30,
+            "swim": 30
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "traitTags": [
+            "Amphibious"
+        ],
+        "languageProficiencies": [
             {
-                "name": "Cantrip",
-                "entries": [
-                    "You know one cantrip of your choice from the {@filter druid spell list|spells|class=druid|level=0}. Wisdom is your spellcasting ability for it."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Wind Creed Manipulation",
-                "entries": [
-                    "You have proficiency in the {@skill Deception} and {@skill Persuasion} skills."
-                ],
-                "type": "entries"
+                "common": true,
+                "other": true,
+                "anyStandard": 1
             }
         ],
+        "hasFluff": true,
         "slug": "merfolk__zendikar__psz_emeria_creed_psz",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Merfolk mature at the same rate humans do and reach adulthood around the age of 20. They live considerably longer than humans, though, often reaching well over 100 years.",
+            "",
+            "**Alignment:** Most merfolk are neutral, though merfolk of the Emeria and Cosi creeds have chaotic leanings.",
+            "",
+            "**Amphibious:** You can breathe air and water.",
+            "",
+            "**Size:** Merfolk are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Swimming:** You have a swimming speed of 30 feet.",
+            "",
+            "**Languages:** You can speak, read, and write Common, Merfolk, and one extra language of your choice.",
+            "",
+            "**Cantrip:** You know one cantrip of your choice from the druid spell list. Wisdom is your spellcasting ability for it.",
+            "",
+            "**Wind Creed Manipulation:** You have proficiency in the Deception and Persuasion skills.",
+            ""
+        ]
     },
     {
         "name": "Ula Creed",
@@ -211,23 +229,44 @@
                 }
             }
         ],
-        "entries": [
+        "size": [
+            "M"
+        ],
+        "speed": {
+            "walk": 30,
+            "swim": 30
+        },
+        "age": {
+            "mature": 20,
+            "max": 100
+        },
+        "languageProficiencies": [
             {
-                "name": "Cantrip",
-                "entries": [
-                    "You know one cantrip of your choice from the {@filter wizard spell list|spells|class=wizard|level=0}. Intelligence is your spellcasting ability for it."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Water Creed Navigation",
-                "entries": [
-                    "You have proficiency with {@item navigator's tools|phb} and in the {@skill Survival} skill."
-                ],
-                "type": "entries"
+                "common": true,
+                "other": true,
+                "anyStandard": 1
             }
         ],
+        "hasFluff": true,
         "slug": "merfolk__zendikar__psz_ula_creed_psz",
-        "type": "subrace"
+        "type": "subrace",
+        "fluff": [
+            "**Age:** Merfolk mature at the same rate humans do and reach adulthood around the age of 20. They live considerably longer than humans, though, often reaching well over 100 years.",
+            "",
+            "**Alignment:** Most merfolk are neutral, though merfolk of the Emeria and Cosi creeds have chaotic leanings.",
+            "",
+            "**Amphibious:** You can breathe air and water.",
+            "",
+            "**Size:** Merfolk are about the same size and build as humans. Your size is Medium.",
+            "",
+            "**Swimming:** You have a swimming speed of 30 feet.",
+            "",
+            "**Languages:** You can speak, read, and write Common, Merfolk, and one extra language of your choice.",
+            "",
+            "**Cantrip:** You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it.",
+            "",
+            "**Water Creed Navigation:** You have proficiency with navigator's tools and in the Survival skill.",
+            ""
+        ]
     }
 ]

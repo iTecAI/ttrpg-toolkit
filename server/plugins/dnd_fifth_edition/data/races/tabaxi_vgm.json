@@ -55,60 +55,25 @@
             "type": "internal",
             "path": "races/tabaxi.mp3"
         },
-        "entries": [
-            {
-                "name": "Age",
-                "type": "entries",
-                "entries": [
-                    "Tabaxi have lifespans equivalent to humans."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Size",
-                "entries": [
-                    "Tabaxi are taller on average than humans and relatively slender. Your size is Medium."
-                ]
-            },
-            {
-                "name": "Darkvision",
-                "entries": [
-                    "You have a cat's keen senses, especially in the dark. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Feline Agility",
-                "entries": [
-                    "Your reflexes and agility allow you to move with a burst of speed. When you move on your turn in combat, you can double your speed until the end of the turn. Once you use this trait, you can't use it again until you move 0 feet on one of your turns."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Cat's Claws",
-                "entries": [
-                    "Because of your claws, you have a climbing speed of 20 feet. In addition, your claws are natural weapons, which you can use to make unarmed strikes. If you hit with them, you deal slashing damage equal to {@damage 1d4} + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Cat's Talents",
-                "entries": [
-                    "You have proficiency in the {@skill Perception} and {@skill Stealth} skills."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Languages",
-                "entries": [
-                    "You can speak, read, and write Common and one other language of your choice."
-                ],
-                "type": "entries"
-            }
-        ],
         "hasFluff": true,
         "hasFluffImages": true,
         "slug": "tabaxi_vgm_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Age:** Tabaxi have lifespans equivalent to humans.",
+            "",
+            "**Size:** Tabaxi are taller on average than humans and relatively slender. Your size is Medium.",
+            "",
+            "**Darkvision:** You have a cat's keen senses, especially in the dark. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Feline Agility:** Your reflexes and agility allow you to move with a burst of speed. When you move on your turn in combat, you can double your speed until the end of the turn. Once you use this trait, you can't use it again until you move 0 feet on one of your turns.",
+            "",
+            "**Cat's Claws:** Because of your claws, you have a climbing speed of 20 feet. In addition, your claws are natural weapons, which you can use to make unarmed strikes. If you hit with them, you deal slashing damage equal to **1d4** + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike.",
+            "",
+            "**Cat's Talents:** You have proficiency in the Perception and Stealth skills.",
+            "",
+            "**Languages:** You can speak, read, and write Common and one other language of your choice.",
+            ""
+        ]
     }
 ]

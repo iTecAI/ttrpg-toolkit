@@ -82,99 +82,34 @@
                 "ability": "wis"
             }
         ],
-        "entries": [
-            {
-                "name": "Age",
-                "type": "entries",
-                "entries": [
-                    "Half-orcs mature a little faster than humans, reaching adulthood around age 14. They age noticeably faster and rarely live longer than 75 years."
-                ]
-            },
-            {
-                "name": "Alignment",
-                "type": "entries",
-                "entries": [
-                    "Half-orcs inherit a tendency toward chaos from their orc parents and are not strongly inclined toward good. Half-orcs raised among orcs and willing to live out their lives among them are usually evil."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Size",
-                "entries": [
-                    "Half-orcs are somewhat larger and bulkier than humans, and they range from 5 to well over 6 feet tall. Your size is Medium."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Darkvision",
-                "entries": [
-                    "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Hunter's Intuition",
-                "entries": [
-                    "When you make a Wisdom ({@skill Perception}) or Wisdom ({@skill Survival}) check, you can roll a {@dice d4} and add the number rolled to the ability check."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Finder's Magic",
-                "entries": [
-                    "You can cast the {@spell hunter's mark} spell with this trait. Starting at 3rd level, you can also cast the {@spell locate object} spell with it. Once you cast either spell with this trait, you can't cast that spell with it again until you finish a long rest. Wisdom is your spellcasting ability for these spells."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Languages",
-                "entries": [
-                    "You can speak, read, and write Common and Goblin."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Spells of the Mark",
-                "entries": [
-                    "If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Finding Spells table are added to the spell list of your spellcasting class.",
-                    {
-                        "type": "table",
-                        "caption": "Mark of Finding Spells",
-                        "colLabels": [
-                            "Spell Level",
-                            "Spells"
-                        ],
-                        "colStyles": [
-                            "col-2 text-center",
-                            "col-10"
-                        ],
-                        "rows": [
-                            [
-                                "1st",
-                                "{@spell faerie fire}, {@spell longstrider}"
-                            ],
-                            [
-                                "2nd",
-                                "{@spell locate animals or plants}, {@spell locate object}"
-                            ],
-                            [
-                                "3rd",
-                                "{@spell clairvoyance}, {@spell speak with plants}"
-                            ],
-                            [
-                                "4th",
-                                "{@spell divination}, {@spell locate creature}"
-                            ],
-                            [
-                                "5th",
-                                "{@spell commune with nature}"
-                            ]
-                        ]
-                    }
-                ]
-            }
-        ],
         "slug": "half_orc__mark_of_finding__erlw_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Age:** Half-orcs mature a little faster than humans, reaching adulthood around age 14. They age noticeably faster and rarely live longer than 75 years.",
+            "",
+            "**Alignment:** Half-orcs inherit a tendency toward chaos from their orc parents and are not strongly inclined toward good. Half-orcs raised among orcs and willing to live out their lives among them are usually evil.",
+            "",
+            "**Size:** Half-orcs are somewhat larger and bulkier than humans, and they range from 5 to well over 6 feet tall. Your size is Medium.",
+            "",
+            "**Darkvision:** You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "",
+            "**Hunter's Intuition:** When you make a Wisdom (Perception) or Wisdom (Survival) check, you can roll a d4 and add the number rolled to the ability check.",
+            "",
+            "**Finder's Magic:** You can cast the *hunter's mark* spell with this trait. Starting at 3rd level, you can also cast the *locate object* spell with it. Once you cast either spell with this trait, you can't cast that spell with it again until you finish a long rest. Wisdom is your spellcasting ability for these spells.",
+            "",
+            "**Languages:** You can speak, read, and write Common and Goblin.",
+            "",
+            "**Spells of the Mark:** If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Finding Spells table are added to the spell list of your spellcasting class.",
+            "| Spell Level | Spells |",
+            "| :---: | --- |",
+            "| 1st | *faerie fire*, *longstrider* |",
+            "| 2nd | *locate animals or plants*, *locate object* |",
+            "| 3rd | *clairvoyance*, *speak with plants* |",
+            "| 4th | *divination*, *locate creature* |",
+            "| 5th | *commune with nature* |",
+            "*Mark of Finding Spells*",
+            "",
+            ""
+        ]
     }
 ]

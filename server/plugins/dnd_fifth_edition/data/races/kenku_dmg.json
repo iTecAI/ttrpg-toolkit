@@ -26,30 +26,15 @@
             "type": "internal",
             "path": "races/kenku.mp3"
         },
-        "entries": [
-            {
-                "name": "Ambusher",
-                "entries": [
-                    "In the first round of a combat, you have advantage on attack rolls against any creature who is surprised."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Mimicry",
-                "entries": [
-                    "You can mimic any sounds you have heard, including voices. A creature that hears the sounds can tell they are imitations with a successful DC 14 Wisdom ({@skill Insight}) check."
-                ],
-                "type": "entries"
-            },
-            {
-                "name": "Languages",
-                "entries": [
-                    "You can read and write Common and Auran, but you can only speak using your Mimicry trait."
-                ],
-                "type": "entries"
-            }
-        ],
         "slug": "kenku_dmg_generic",
-        "type": "generic"
+        "type": "generic",
+        "fluff": [
+            "**Ambusher:** In the first round of a combat, you have advantage on attack rolls against any creature who is surprised.",
+            "",
+            "**Mimicry:** You can mimic any sounds you have heard, including voices. A creature that hears the sounds can tell they are imitations with a successful DC 14 Wisdom (Insight) check.",
+            "",
+            "**Languages:** You can read and write Common and Auran, but you can only speak using your Mimicry trait.",
+            ""
+        ]
     }
 ]
