@@ -2,4 +2,4 @@
 # This is to boost my ego and nothing more
 # Probably remove this in prod idk
 
-git ls-files | grep -E '\.ts|\.tsx|\.py|\.scss|\.modular.json|\manifest.json|\.compendium.json' | xargs wc -l
+git ls-files | grep -E '\.ts|\.tsx|\.py|\.scss|\.modular.json|\manifest.json|\.compendium.json|\.renderer.json' | xargs wc -l
