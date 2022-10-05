@@ -15,6 +15,11 @@ import {
     RenderCardItem,
     RenderSegmentItem,
     RenderMasonryItem,
+    RenderFormFieldItem,
+    RenderFormGroupItem,
+    RenderFormSelectItem,
+    RenderFormSelectOptionItem,
+    RenderFormSwitchItem,
 } from "./renderTypes";
 
 export type Literal = string | number | boolean | null | undefined;
@@ -127,7 +132,12 @@ export type AllRenderItems =
     | RenderAccordionItem
     | RenderCardItem
     | RenderSegmentItem
-    | RenderMasonryItem;
+    | RenderMasonryItem
+    | RenderFormFieldItem
+    | RenderFormGroupItem
+    | RenderFormSelectItem
+    | RenderFormSelectOptionItem
+    | RenderFormSwitchItem;
 export type AllSourceItems<T = any> =
     | ListSourceItem<T>
     | GeneratorSourceItem<T>;
