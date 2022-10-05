@@ -70,7 +70,33 @@ export function parseValueItem(
                     OUTPUT.result = data;
                     break;
                 case "form":
-                    break;
+                    try {
+                        const out = parseNested(formData, path);
+                        if (out === undefined) {
+                            OUTPUT.result =
+                                item.split(":").length > 2
+                                    ? parseValueItem(
+                                          item.split(":")[2],
+                                          data,
+                                          formData
+                                      ).result
+                                    : null;
+                            break;
+                        }
+                        OUTPUT.result = out;
+                        OUTPUT.form_dependencies.push(path);
+                        break;
+                    } catch {
+                        OUTPUT.result =
+                            item.split(":").length > 2
+                                ? parseValueItem(
+                                      item.split(":")[2],
+                                      data,
+                                      formData
+                                  ).result
+                                : null;
+                        break;
+                    }
                 default:
                     throw new Error(`Unknown directive "${directive}"`);
             }
@@ -128,7 +154,30 @@ export function parseValueItem(
 
                 OUTPUT.result = executor(parsedOptions);
                 break;
+            case "form-data":
+                try {
+                    const out = parseNested(data, item.path);
+                    if (out === undefined) {
+                        OUTPUT.result = item.default
+                            ? parseValueItem(item.default, data, formData)
+                                  .result
+                            : null;
+                        break;
+                    }
+                    OUTPUT.result = out;
+                    OUTPUT.form_dependencies.push(item.path);
+                    break;
+                } catch {
+                    OUTPUT.result = item.default
+                        ? parseValueItem(item.default, data, formData).result
+                        : null;
+                    break;
+                }
         }
     }
     return OUTPUT;
+}
+
+export function parseValueItemNoForm(item: ValueItem, data: any): any {
+    return parseValueItem(item, data, {}).result;
 }

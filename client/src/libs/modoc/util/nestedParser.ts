@@ -1,4 +1,8 @@
-export default function parseNested(obj: any, keys: string | string[]): any {
+export default function parseNested(
+    obj: any,
+    keys: string | string[],
+    new_val?: any
+): any {
     if (typeof keys === "string") {
         keys = keys.split(".");
     }
@@ -8,9 +12,12 @@ export default function parseNested(obj: any, keys: string | string[]): any {
     try {
         if (Object.keys(obj).includes(key)) {
             if (keys.length === 0) {
+                if (new_val !== undefined) {
+                    obj[key] = new_val;
+                }
                 return obj[key];
             }
-            return parseNested(obj[key], keys);
+            return parseNested(obj[key], keys, new_val);
         } else {
             console.warn(
                 `Attempt to access key ${key} of ${JSON.stringify(obj)} failed.`

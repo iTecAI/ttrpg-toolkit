@@ -31,10 +31,10 @@ import { useHorizontalScroll } from "../../util/hscroll";
 import { DataItem } from "../../models/compendium";
 import { CompendiumItemRenderer } from "./renderers/compendiumItem";
 import { Masonry } from "@mui/lab";
-import { parseValueItem } from "../../libs/modoc/util";
 import { ModularRenderer, MuiRenderParser } from "../../libs/modoc";
 import { AvatarItem } from "./renderers/avatar";
 import { SearchPopup } from "./searchPopup";
+import { parseValueItemNoForm } from "../../libs/modoc/util/valueItemParser";
 
 export function Compendium() {
     const [plugin, setPlugin] = useState<string>("");
@@ -322,26 +322,20 @@ export function Compendium() {
                                 <></>
                             )}
                             <div className="title">
-                                {
-                                    parseValueItem(
-                                        currentPlugin.data_source?.categories[
-                                            category
-                                        ].renderer.displayName,
-                                        expandedDialog,
-                                        {}
-                                    ).result
-                                }
+                                {parseValueItemNoForm(
+                                    currentPlugin.data_source?.categories[
+                                        category
+                                    ].renderer.displayName,
+                                    expandedDialog
+                                )}
                             </div>
                             <div className="subtitle">
-                                {
-                                    parseValueItem(
-                                        currentPlugin.data_source?.categories[
-                                            category
-                                        ].renderer.source,
-                                        expandedDialog,
-                                        {}
-                                    ).result
-                                }
+                                {parseValueItemNoForm(
+                                    currentPlugin.data_source?.categories[
+                                        category
+                                    ].renderer.source,
+                                    expandedDialog
+                                )}
                             </div>
                         </DialogTitle>
                         <DialogContent dividers>

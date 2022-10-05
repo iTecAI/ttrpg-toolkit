@@ -47,7 +47,13 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
     constructor(
         protected data: RawData,
         protected renderer: AllRenderItems | AllSourceItems,
-        protected formData: FormSpec
+        protected formData: FormSpec,
+        protected updateData: (path: string, value: any) => void,
+        protected updateFuncs: { [key: string]: ((data: FormSpec) => void)[] },
+        protected addUpdateFunc: (
+            key: string,
+            func: (data: FormSpec) => void
+        ) => void
     ) {
         this.children = [];
         if (isRenderItem(this.renderer)) {
@@ -98,7 +104,14 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
         const data = parseNested(this.data, item.source);
         if (isArray(data)) {
             return data.map((d) =>
-                this.constructSelf(d, item.renderer, this.formData)
+                this.constructSelf(
+                    d,
+                    item.renderer,
+                    this.formData,
+                    this.updateData,
+                    this.updateFuncs,
+                    this.addUpdateFunc
+                )
             );
         } else {
             console.warn(`${JSON.stringify(data)} is not an any[] instance.`);
@@ -116,7 +129,14 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
     ): RenderParser<T>[] {
         const rawResults: RawData[] = this.execParsedFunction(item.function);
         return rawResults.map((result) =>
-            this.constructSelf(result, item.renderer, this.formData)
+            this.constructSelf(
+                result,
+                item.renderer,
+                this.formData,
+                this.updateData,
+                this.updateFuncs,
+                this.addUpdateFunc
+            )
         );
     }
 
@@ -141,7 +161,8 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
      * @returns The value retrieved/created
      */
     parseValueItem(item: ValueItem): any {
-        return parseValueItem(item, this.data, this.formData).result;
+        const out = parseValueItem(item, this.data, this.formData);
+        return out.result;
     }
 
     /**
@@ -169,11 +190,27 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
                 return this.parseSourceItem(item.children); // TODO
             } else {
                 return item.children.map((v: any) =>
-                    this.constructSelf(this.data, v, this.formData)
+                    this.constructSelf(
+                        this.data,
+                        v,
+                        this.formData,
+                        this.updateData,
+                        this.updateFuncs,
+                        this.addUpdateFunc
+                    )
                 );
             }
         } else if ("child" in item && item.child) {
-            return [this.constructSelf(this.data, item.child, this.formData)];
+            return [
+                this.constructSelf(
+                    this.data,
+                    item.child,
+                    this.formData,
+                    this.updateData,
+                    this.updateFuncs,
+                    this.addUpdateFunc
+                ),
+            ];
         } else {
             return [];
         }
@@ -188,9 +225,19 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
     constructSelf<T extends AllRenderItems = AllRenderItems>(
         data: RawData,
         renderer: AllRenderItems | AllSourceItems,
-        formData: FormSpec
+        formData: FormSpec,
+        updateData: (path: string, value: any) => void,
+        updateFuncs: { [key: string]: ((data: FormSpec) => void)[] },
+        addUpdateFunc: (key: string, func: (data: FormSpec) => void) => void
     ): RenderParser {
-        return new RenderParser<T>(data, renderer, formData);
+        return new RenderParser<T>(
+            data,
+            renderer,
+            formData,
+            updateData,
+            updateFuncs,
+            addUpdateFunc
+        );
     }
 
     /**

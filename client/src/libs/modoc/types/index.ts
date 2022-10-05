@@ -61,7 +61,19 @@ export type DataItem = {
     default?: ValueItem;
 };
 
-export type ValueItem = Literal | TextItem | FunctionalItem | DataItem;
+export type FormDataItem = {
+    supertype: "value";
+    type: "form-data";
+    path: string;
+    default?: ValueItem;
+};
+
+export type ValueItem =
+    | Literal
+    | TextItem
+    | FunctionalItem
+    | DataItem
+    | FormDataItem;
 export type ValueStringDirective = "data" | "self" | "form";
 export const ValueStringDirectiveNames = ["data", "self", "form"];
 

@@ -88,9 +88,19 @@ export default class MuiRenderParser<
     constructSelf(
         data: RawData,
         renderer: AllRenderItems | AllSourceItems,
-        formData: FormSpec
+        formData: FormSpec,
+        updateData: (path: string, value: any) => void,
+        updateFuncs: { [key: string]: ((data: FormSpec) => void)[] },
+        addUpdateFunc: (key: string, func: (data: FormSpec) => void) => void
     ): MuiRenderParser {
-        return new MuiRenderParser(data, renderer, formData);
+        return new MuiRenderParser(
+            data,
+            renderer,
+            formData,
+            updateData,
+            updateFuncs,
+            addUpdateFunc
+        );
     }
 
     private _renderAvatar(item: AvatarType) {

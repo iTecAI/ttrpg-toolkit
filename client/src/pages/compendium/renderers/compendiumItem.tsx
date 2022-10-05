@@ -6,7 +6,7 @@ import {
     CardMedia,
 } from "@mui/material";
 import { MuiRenderParser, ModularRenderer } from "../../../libs/modoc";
-import { parseValueItem } from "../../../libs/modoc/util";
+import { parseValueItemNoForm } from "../../../libs/modoc/util/valueItemParser";
 import { CompendiumItem, DataItem } from "../../../models/compendium";
 import { AvatarItem } from "./avatar";
 
@@ -18,7 +18,7 @@ export function CompendiumItemRenderer(props: {
     return (
         <Card
             className="compendium-item"
-            id={parseValueItem(props.renderer.slug, props.data, {}).result}
+            id={parseValueItemNoForm(props.renderer.slug, props.data)}
         >
             <CardActionArea onClick={() => props.setExpanded(props.data)}>
                 <CardHeader
@@ -30,35 +30,26 @@ export function CompendiumItemRenderer(props: {
                             />
                         )
                     }
-                    title={
-                        parseValueItem(
-                            props.renderer.displayName,
-                            props.data,
-                            {}
-                        ).result
-                    }
-                    subheader={
-                        parseValueItem(props.renderer.source, props.data, {})
-                            .result
-                    }
+                    title={parseValueItemNoForm(
+                        props.renderer.displayName,
+                        props.data
+                    )}
+                    subheader={parseValueItemNoForm(
+                        props.renderer.source,
+                        props.data
+                    )}
                 />
                 {props.renderer.media && (
                     <CardMedia
                         component="img"
-                        image={
-                            parseValueItem(
-                                props.renderer.media.source,
-                                props.data,
-                                {}
-                            ).result
-                        }
-                        alt={
-                            parseValueItem(
-                                props.renderer.media.alt,
-                                props.data,
-                                {}
-                            ).result
-                        }
+                        image={parseValueItemNoForm(
+                            props.renderer.media.source,
+                            props.data
+                        )}
+                        alt={parseValueItemNoForm(
+                            props.renderer.media.alt,
+                            props.data
+                        )}
                     />
                 )}
                 <CardContent>
