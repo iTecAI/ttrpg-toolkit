@@ -1,4 +1,5 @@
 import {
+    FormSpec,
     ValueItem,
     ValueStringDirective,
     ValueStringDirectiveNames,
@@ -7,12 +8,25 @@ import { isLiteral } from "../types/guards";
 import parseFunction from "./functionParser";
 import parseNested from "./nestedParser";
 
+type ValueItemOutput = {
+    result: any;
+    form_dependencies: string[];
+};
+
 /**
  * Parse a ValueItem. Likely will be the most useful in render functions.
  * @param item ValueItem to parse. Can be a literal, a "$directive:data" string, or a Text/Functional/DataItem
  * @returns The value retrieved/created
  */
-export function parseValueItem(item: ValueItem, data: any): any {
+export function parseValueItem(
+    item: ValueItem,
+    data: any,
+    formData: FormSpec
+): ValueItemOutput {
+    const OUTPUT: ValueItemOutput = {
+        result: null,
+        form_dependencies: [],
+    };
     if (typeof item === "string") {
         if (item.startsWith("$")) {
             const directiveRaw: string = item.split(":")[0].split("$")[1];
@@ -29,61 +43,92 @@ export function parseValueItem(item: ValueItem, data: any): any {
                     try {
                         const out = parseNested(data, path);
                         if (out === undefined) {
-                            return item.split(":").length > 2
-                                ? parseValueItem(item.split(":")[2], data)
-                                : null;
+                            OUTPUT.result =
+                                item.split(":").length > 2
+                                    ? parseValueItem(
+                                          item.split(":")[2],
+                                          data,
+                                          formData
+                                      ).result
+                                    : null;
+                            break;
                         }
-                        return out;
+                        OUTPUT.result = out;
+                        break;
                     } catch {
-                        return item.split(":").length > 2
-                            ? parseValueItem(item.split(":")[2], data)
-                            : null;
+                        OUTPUT.result =
+                            item.split(":").length > 2
+                                ? parseValueItem(
+                                      item.split(":")[2],
+                                      data,
+                                      formData
+                                  ).result
+                                : null;
+                        break;
                     }
                 case "self":
-                    return data;
+                    OUTPUT.result = data;
+                    break;
+                case "form":
+                    break;
                 default:
                     throw new Error(`Unknown directive "${directive}"`);
             }
         } else {
-            return item;
+            OUTPUT.result = item;
         }
     } else if (isLiteral(item)) {
-        return item;
+        OUTPUT.result = item;
     } else {
         switch (item.type) {
             case "data":
                 try {
                     const out = parseNested(data, item.source);
                     if (out === undefined) {
-                        return item.default
-                            ? parseValueItem(item.default, data)
+                        OUTPUT.result = item.default
+                            ? parseValueItem(item.default, data, formData)
+                                  .result
                             : null;
+                        break;
                     }
-                    return out;
+                    OUTPUT.result = out;
+                    break;
                 } catch {
-                    return item.default
-                        ? parseValueItem(item.default, data)
+                    OUTPUT.result = item.default
+                        ? parseValueItem(item.default, data, formData).result
                         : null;
+                    break;
                 }
             case "text":
                 let subbedText: string = item.content + "";
                 for (let k of Object.keys(item.substitutions)) {
-                    let sub = parseValueItem(item.substitutions[k], data);
+                    let sub = parseValueItem(
+                        item.substitutions[k],
+                        data,
+                        formData
+                    ).result;
                     subbedText = subbedText.replaceAll(
                         `{{${k}}}`,
                         (sub || "[NO VALUE]").toString()
                     );
                 }
-                return subbedText;
+                OUTPUT.result = subbedText;
+                break;
             case "function":
                 const executor = parseFunction(item.function);
 
                 const parsedOptions: { [key: string]: any } = {};
                 for (let k of Object.keys(item.opts)) {
-                    parsedOptions[k] = parseValueItem(item.opts[k], data);
+                    parsedOptions[k] = parseValueItem(
+                        item.opts[k],
+                        data,
+                        formData
+                    ).result;
                 }
 
-                return executor(parsedOptions);
+                OUTPUT.result = executor(parsedOptions);
+                break;
         }
     }
+    return OUTPUT;
 }

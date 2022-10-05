@@ -31,8 +31,9 @@ export function Icon(props: {
     if (!isExpandedIcon(props.icon)) {
         let icon: string | IconExpanded = parseValueItem(
             props.icon,
-            props.data ?? {}
-        );
+            props.data ?? {},
+            {}
+        ).result;
         if (!isExpandedIcon(icon)) {
             if (icon.includes(".")) {
                 iconDescriptor = {
@@ -51,7 +52,11 @@ export function Icon(props: {
         iconDescriptor = props.icon;
     }
 
-    iconDescriptor.name = parseValueItem(iconDescriptor.name, props.data ?? {});
+    iconDescriptor.name = parseValueItem(
+        iconDescriptor.name,
+        props.data ?? {},
+        {}
+    ).result;
 
     if (!Object.keys(iconMap).includes(iconDescriptor.family)) {
         throw new Error(

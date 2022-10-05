@@ -322,20 +322,26 @@ export function Compendium() {
                                 <></>
                             )}
                             <div className="title">
-                                {parseValueItem(
-                                    currentPlugin.data_source?.categories[
-                                        category
-                                    ].renderer.displayName,
-                                    expandedDialog
-                                )}
+                                {
+                                    parseValueItem(
+                                        currentPlugin.data_source?.categories[
+                                            category
+                                        ].renderer.displayName,
+                                        expandedDialog,
+                                        {}
+                                    ).result
+                                }
                             </div>
                             <div className="subtitle">
-                                {parseValueItem(
-                                    currentPlugin.data_source?.categories[
-                                        category
-                                    ].renderer.source,
-                                    expandedDialog
-                                )}
+                                {
+                                    parseValueItem(
+                                        currentPlugin.data_source?.categories[
+                                            category
+                                        ].renderer.source,
+                                        expandedDialog,
+                                        {}
+                                    ).result
+                                }
                             </div>
                         </DialogTitle>
                         <DialogContent dividers>

@@ -19,14 +19,20 @@ export function AvatarItem(props: {
             case "image":
                 return (
                     <Avatar
-                        src={parseValueItem(props.spec.source, props.data)}
-                        alt={parseValueItem(props.spec.alt, props.data)}
+                        src={
+                            parseValueItem(props.spec.source, props.data, {})
+                                .result
+                        }
+                        alt={
+                            parseValueItem(props.spec.alt, props.data, {})
+                                .result
+                        }
                     />
                 );
             case "text":
                 return (
                     <Avatar>
-                        {parseValueItem(props.spec.text, props.data)}
+                        {parseValueItem(props.spec.text, props.data, {}).result}
                     </Avatar>
                 );
         }

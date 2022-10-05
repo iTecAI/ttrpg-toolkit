@@ -1491,6 +1491,9 @@
             }
           ]
         },
+        "multiple": {
+          "type": "boolean"
+        },
         "children": {
           "anyOf": [
             {

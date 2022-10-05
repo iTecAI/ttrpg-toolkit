@@ -239,6 +239,7 @@ export type RenderFormSelectItem = {
     fullWidth?: boolean;
     variant?: "outlined" | "filled" | "standard";
     icon?: AvatarType | ValueItem;
+    multiple?: boolean;
     children:
         | RenderFormSelectOptionItem[]
         | AllSourceItems<RenderFormSelectItem>;

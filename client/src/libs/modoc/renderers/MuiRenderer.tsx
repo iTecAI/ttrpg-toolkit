@@ -44,6 +44,7 @@ import {
     AllSourceItems,
     ValueItem,
     AvatarType,
+    FormSpec,
 } from "../types";
 import * as ReactIconsMd from "react-icons/md";
 import * as ReactIconsGi from "react-icons/gi";
@@ -86,9 +87,10 @@ export default class MuiRenderParser<
 
     constructSelf(
         data: RawData,
-        renderer: AllRenderItems | AllSourceItems
+        renderer: AllRenderItems | AllSourceItems,
+        formData: FormSpec
     ): MuiRenderParser {
-        return new MuiRenderParser(data, renderer);
+        return new MuiRenderParser(data, renderer, formData);
     }
 
     private _renderAvatar(item: AvatarType) {

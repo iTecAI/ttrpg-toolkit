@@ -18,7 +18,7 @@ export function CompendiumItemRenderer(props: {
     return (
         <Card
             className="compendium-item"
-            id={parseValueItem(props.renderer.slug, props.data)}
+            id={parseValueItem(props.renderer.slug, props.data, {}).result}
         >
             <CardActionArea onClick={() => props.setExpanded(props.data)}>
                 <CardHeader
@@ -30,26 +30,35 @@ export function CompendiumItemRenderer(props: {
                             />
                         )
                     }
-                    title={parseValueItem(
-                        props.renderer.displayName,
-                        props.data
-                    )}
-                    subheader={parseValueItem(
-                        props.renderer.source,
-                        props.data
-                    )}
+                    title={
+                        parseValueItem(
+                            props.renderer.displayName,
+                            props.data,
+                            {}
+                        ).result
+                    }
+                    subheader={
+                        parseValueItem(props.renderer.source, props.data, {})
+                            .result
+                    }
                 />
                 {props.renderer.media && (
                     <CardMedia
                         component="img"
-                        image={parseValueItem(
-                            props.renderer.media.source,
-                            props.data
-                        )}
-                        alt={parseValueItem(
-                            props.renderer.media.alt,
-                            props.data
-                        )}
+                        image={
+                            parseValueItem(
+                                props.renderer.media.source,
+                                props.data,
+                                {}
+                            ).result
+                        }
+                        alt={
+                            parseValueItem(
+                                props.renderer.media.alt,
+                                props.data,
+                                {}
+                            ).result
+                        }
                     />
                 )}
                 <CardContent>

@@ -1,11 +1,10 @@
 import { isArray, isRenderItem, isSourceItem } from "./types/guards";
-import { AllRenderItems, AllSourceItems } from "./types";
+import { AllRenderItems, AllSourceItems, FormSpec } from "./types";
 import { GeneratorSourceItem, ListSourceItem } from "./types";
 import { ParsedFunction, RawData, ValueItem } from "./types";
 import { parseFunction, parseValueItem } from "./util";
 import parseNested from "./util/nestedParser";
 import React from "react";
-import { Card } from "@mui/material";
 
 /**
  * Base Render Parser class. Should be extended.
@@ -47,7 +46,8 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
      */
     constructor(
         protected data: RawData,
-        protected renderer: AllRenderItems | AllSourceItems
+        protected renderer: AllRenderItems | AllSourceItems,
+        protected formData: FormSpec
     ) {
         this.children = [];
         if (isRenderItem(this.renderer)) {
@@ -85,6 +85,8 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
         }
     }
 
+    setFormData(data: FormSpec) {}
+
     /**
      * Parser for ListSourceItems
      * @param item ListSourceItem
@@ -95,7 +97,9 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
     ): RenderParser<T>[] {
         const data = parseNested(this.data, item.source);
         if (isArray(data)) {
-            return data.map((d) => this.constructSelf(d, item.renderer));
+            return data.map((d) =>
+                this.constructSelf(d, item.renderer, this.formData)
+            );
         } else {
             console.warn(`${JSON.stringify(data)} is not an any[] instance.`);
             return [];
@@ -112,7 +116,7 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
     ): RenderParser<T>[] {
         const rawResults: RawData[] = this.execParsedFunction(item.function);
         return rawResults.map((result) =>
-            this.constructSelf(result, item.renderer)
+            this.constructSelf(result, item.renderer, this.formData)
         );
     }
 
@@ -137,7 +141,7 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
      * @returns The value retrieved/created
      */
     parseValueItem(item: ValueItem): any {
-        return parseValueItem(item, this.data);
+        return parseValueItem(item, this.data, this.formData).result;
     }
 
     /**
@@ -165,11 +169,11 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
                 return this.parseSourceItem(item.children); // TODO
             } else {
                 return item.children.map((v: any) =>
-                    this.constructSelf(this.data, v)
+                    this.constructSelf(this.data, v, this.formData)
                 );
             }
         } else if ("child" in item && item.child) {
-            return [this.constructSelf(this.data, item.child)];
+            return [this.constructSelf(this.data, item.child, this.formData)];
         } else {
             return [];
         }
@@ -183,9 +187,10 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
      */
     constructSelf<T extends AllRenderItems = AllRenderItems>(
         data: RawData,
-        renderer: AllRenderItems | AllSourceItems
+        renderer: AllRenderItems | AllSourceItems,
+        formData: FormSpec
     ): RenderParser {
-        return new RenderParser<T>(data, renderer);
+        return new RenderParser<T>(data, renderer, formData);
     }
 
     /**

@@ -24,6 +24,8 @@ import {
 
 export type Literal = string | number | boolean | null | undefined;
 
+export type FormSpec = { [key: string]: FormSpec | Literal | Literal[] };
+
 export type TextItem = {
     supertype: "value";
     type: "text";
@@ -60,8 +62,8 @@ export type DataItem = {
 };
 
 export type ValueItem = Literal | TextItem | FunctionalItem | DataItem;
-export type ValueStringDirective = "data" | "self";
-export const ValueStringDirectiveNames = ["data", "self"];
+export type ValueStringDirective = "data" | "self" | "form";
+export const ValueStringDirectiveNames = ["data", "self", "form"];
 
 export type RawDataValue = ValueItem | RawData | any[];
 export type RawData = { [key: string]: RawDataValue };
