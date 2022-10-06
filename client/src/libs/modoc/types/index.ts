@@ -16,7 +16,6 @@ import {
     RenderSegmentItem,
     RenderMasonryItem,
     RenderFormFieldItem,
-    RenderFormGroupItem,
     RenderFormSelectItem,
     RenderFormSelectOptionItem,
     RenderFormSwitchItem,
@@ -24,7 +23,7 @@ import {
 
 export type Literal = string | number | boolean | null | undefined;
 
-export type FormSpec = { [key: string]: FormSpec | Literal | Literal[] };
+export type FormSpec = { [key: string]: any };
 
 export type TextItem = {
     supertype: "value";
@@ -148,7 +147,6 @@ export type AllRenderItems =
     | RenderSegmentItem
     | RenderMasonryItem
     | RenderFormFieldItem
-    | RenderFormGroupItem
     | RenderFormSelectItem
     | RenderFormSelectOptionItem
     | RenderFormSwitchItem;

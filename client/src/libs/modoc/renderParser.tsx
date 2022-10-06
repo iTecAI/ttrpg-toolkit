@@ -17,6 +17,7 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
      * Array of parsed children (all value items parsed, expanded to RenderParsers)
      */
     private children: RenderParser[];
+    private pathedFuncs: string[];
 
     /**
      * Add additional sourceParsers here when extending
@@ -56,6 +57,7 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
         ) => void
     ) {
         this.children = [];
+        this.pathedFuncs = [];
         if (isRenderItem(this.renderer)) {
             this.children = this.expandRenderItems(this.renderer);
         } else {
@@ -91,7 +93,15 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
         }
     }
 
-    setFormData(data: FormSpec) {}
+    setFormData(data: FormSpec) {
+        this.formData = data;
+
+        if (isRenderItem(this.renderer)) {
+            this.children = this.expandRenderItems(this.renderer);
+        } else {
+            this.children = this.parseSourceItem(this.renderer);
+        }
+    }
 
     /**
      * Parser for ListSourceItems
@@ -162,6 +172,11 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
      */
     parseValueItem(item: ValueItem): any {
         const out = parseValueItem(item, this.data, this.formData);
+        for (let d of out.form_dependencies) {
+            if (!this.pathedFuncs.includes(d)) {
+                this.addUpdateFunc(d, this.setFormData);
+            }
+        }
         return out.result;
     }
 
@@ -253,6 +268,18 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
             }
             if (this.renderer.supertype === "render") {
                 if (Object.keys(this.renderers).includes(this.renderer.type)) {
+                    if (
+                        this.renderer.type === "form-field" ||
+                        this.renderer.type === "form-select" ||
+                        this.renderer.type === "form-switch"
+                    ) {
+                        if (!this.pathedFuncs.includes(this.renderer.key)) {
+                            this.addUpdateFunc(
+                                this.renderer.key,
+                                this.setFormData
+                            );
+                        }
+                    }
                     return (
                         <span key={Math.random()}>
                             {this.renderers[this.renderer.type].bind(this)(

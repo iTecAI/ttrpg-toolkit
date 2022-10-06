@@ -257,12 +257,3 @@ export type RenderFormSwitchItem = {
     icon?: AvatarType | ValueItem;
     variant?: "switch" | "checkbox";
 };
-
-export type RenderFormGroupItem = {
-    supertype: "render";
-    type: "form-group";
-    conditionalRender?: ParsedFunction;
-    key: string;
-    validator?: ParsedFunction; // Along with selected data, metadata and values of the group will be passed automatically in opts.__data
-    children: AllRenderItems[] | AllSourceItems;
-};

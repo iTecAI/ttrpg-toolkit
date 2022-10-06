@@ -24,6 +24,7 @@ export function ModularRenderer(props: ModularRendererProps) {
     const [updateFuncs, setUpdateFuncs] = useState<{
         [key: string]: ((data: FormSpec) => void)[];
     }>({});
+    const [form, setForm] = useState<FormSpec>(props.formSpec || {});
     const [parser] = useState<RenderParser<any>>(
         new props.parser(
             props.data,
@@ -33,12 +34,20 @@ export function ModularRenderer(props: ModularRendererProps) {
                 let data: any = JSON.parse(
                     JSON.stringify(props.formSpec ?? {})
                 );
-                const res: any = parseNested(data, path, value);
-                if (res === null) {
-                    console.warn(
-                        `Attempted to update nonexistent form key ${path}. This is likely due to some edge case.`
-                    );
+                data[path] = value;
+                const updated = [];
+                for (let k of Object.keys(data)) {
+                    if (data[k] !== form[k]) {
+                        updated.push(k);
+                    }
                 }
+                for (let u of updated) {
+                    if (Object.keys(updateFuncs).includes(u)) {
+                        updateFuncs[u].forEach((f) => f(data));
+                    }
+                }
+                setForm(data);
+                props.onChange && props.onChange(data);
             },
             updateFuncs,
             (key: string, func: (data: FormSpec) => void) => {
@@ -57,13 +66,30 @@ export function ModularRenderer(props: ModularRendererProps) {
 
     useEffect(() => {
         parser.setData(props.data);
+        setUpdateFuncs({});
         setRendered(parser.render());
     }, [props.data, parser]);
 
     useEffect(() => {
         parser.setRenderer(props.renderer);
+        setUpdateFuncs({});
         setRendered(parser.render());
     }, [props.renderer, parser]);
+
+    useEffect(() => {
+        const updated = [];
+        for (let k of Object.keys(props.formSpec ?? {})) {
+            if ((props.formSpec ?? {})[k] !== form[k]) {
+                updated.push(k);
+            }
+        }
+        setForm(props.formSpec ?? {});
+        for (let u of updated) {
+            if (Object.keys(updateFuncs).includes(u)) {
+                updateFuncs[u].forEach((f) => f(props.formSpec ?? {}));
+            }
+        }
+    }, [props.formSpec, parser, form, updateFuncs]);
 
     return <div className="modoc_modular-renderer">{rendered}</div>;
 }

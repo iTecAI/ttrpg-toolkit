@@ -19,12 +19,20 @@ export default function parseNested(
             }
             return parseNested(obj[key], keys, new_val);
         } else {
+            if (new_val !== undefined) {
+                obj[key] = {};
+                return parseNested(obj[key], keys, new_val);
+            }
             console.warn(
                 `Attempt to access key ${key} of ${JSON.stringify(obj)} failed.`
             );
             return null;
         }
     } catch {
+        if (new_val !== undefined) {
+            obj[key] = {};
+            return parseNested(obj[key], keys, new_val);
+        }
         console.warn(
             `Attempt to access key ${key} of ${JSON.stringify(obj)} failed.`
         );
