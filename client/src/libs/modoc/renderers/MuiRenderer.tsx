@@ -16,6 +16,7 @@ import {
     RenderCardItem,
     RenderSegmentItem,
     RenderMasonryItem,
+    RenderFormFieldItem,
 } from "../types/renderTypes";
 import {
     Accordion,
@@ -36,6 +37,7 @@ import {
     TableCell,
     TableHead,
     TableRow,
+    TextField,
     Typography,
 } from "@mui/material";
 import {
@@ -78,6 +80,7 @@ export default class MuiRenderParser<
         absolute: this.renderAbsoluteItem,
         segment: this.renderSegmentItem,
         masonry: this.renderMasonryItem,
+        "form-field": this.renderFormFieldItem,
     };
 
     private iconMap = {
@@ -451,6 +454,18 @@ export default class MuiRenderParser<
                 {children}
             </Masonry>
         );
+    }
+
+    renderFormFieldItem(
+        children: (JSX.Element | null)[],
+        object: RenderFormFieldItem
+    ): JSX.Element {
+        switch (object.inputParams.type) {
+            case "text":
+                return <TextField />;
+            default:
+                return <></>;
+        }
     }
 
     reportError(error: Error): JSX.Element {

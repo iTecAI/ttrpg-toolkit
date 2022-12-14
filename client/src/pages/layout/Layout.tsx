@@ -186,6 +186,27 @@ export function Layout(props: {
                                     >
                                         {loc("layout.buttons.compendium")}
                                     </Button>
+                                    <Button
+                                        sx={{
+                                            color: location.pathname.includes(
+                                                "/playground"
+                                            )
+                                                ? "primary"
+                                                : "contrastText.background",
+                                            borderBottomStyle: "solid",
+                                            borderBottomColor: "primary",
+                                            borderBottomWidth:
+                                                location.pathname.includes(
+                                                    "/playground"
+                                                )
+                                                    ? "2px"
+                                                    : "0px",
+                                        }}
+                                        size="large"
+                                        onClick={() => nav("/playground")}
+                                    >
+                                        Playground
+                                    </Button>
                                 </Stack>
                                 <IconButton
                                     onClick={(

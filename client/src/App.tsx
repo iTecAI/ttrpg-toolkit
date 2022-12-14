@@ -19,6 +19,7 @@ import { themeOptionsDefault } from "./theme/default";
 import { get } from "./util/api";
 import { loc } from "./util/localization";
 import { ModularRenderer, MuiRenderParser } from "./libs/modoc";
+import { Playground } from "./pages/playground/Playground";
 export const RootContext: React.Context<{} | RootModel> = React.createContext(
     {}
 );
@@ -80,6 +81,7 @@ function RouterChild() {
                     }
                 />
                 <Route path="/compendium" element={<Compendium />} />
+                <Route path="/playground" element={<Playground />} />
             </Route>
             <Route
                 path="/login"

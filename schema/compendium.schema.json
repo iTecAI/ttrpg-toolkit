@@ -85,6 +85,9 @@
         },
         {
           "$ref": "#/definitions/DataItem"
+        },
+        {
+          "$ref": "#/definitions/FormDataItem"
         }
       ]
     },
@@ -197,6 +200,31 @@
         "supertype",
         "type",
         "source"
+      ],
+      "additionalProperties": false
+    },
+    "FormDataItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "value"
+        },
+        "type": {
+          "type": "string",
+          "const": "form-data"
+        },
+        "path": {
+          "type": "string"
+        },
+        "default": {
+          "$ref": "#/definitions/ValueItem"
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "path"
       ],
       "additionalProperties": false
     },
@@ -345,9 +373,6 @@
         },
         {
           "$ref": "#/definitions/RenderFormFieldItem"
-        },
-        {
-          "$ref": "#/definitions/RenderFormGroupItem"
         },
         {
           "$ref": "#/definitions/RenderFormSelectItem"
@@ -1447,48 +1472,6 @@
         "type",
         "key",
         "inputParams"
-      ],
-      "additionalProperties": false
-    },
-    "RenderFormGroupItem": {
-      "type": "object",
-      "properties": {
-        "supertype": {
-          "type": "string",
-          "const": "render"
-        },
-        "type": {
-          "type": "string",
-          "const": "form-group"
-        },
-        "conditionalRender": {
-          "$ref": "#/definitions/ParsedFunction"
-        },
-        "key": {
-          "type": "string"
-        },
-        "validator": {
-          "$ref": "#/definitions/ParsedFunction"
-        },
-        "children": {
-          "anyOf": [
-            {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/AllRenderItems"
-              }
-            },
-            {
-              "$ref": "#/definitions/AllSourceItems"
-            }
-          ]
-        }
-      },
-      "required": [
-        "supertype",
-        "type",
-        "key",
-        "children"
       ],
       "additionalProperties": false
     },

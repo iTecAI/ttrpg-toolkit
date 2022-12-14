@@ -1,0 +1,15 @@
+{
+    "supertype": "render",
+    "type": "segment",
+    "variant": "outlined",
+    "children": [
+        {
+            "supertype": "render",
+            "type": "form-field",
+            "key": "test1",
+            "inputParams": {
+                "type": "text"
+            }
+        }
+    ]
+}

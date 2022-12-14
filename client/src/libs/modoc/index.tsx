@@ -25,58 +25,71 @@ export function ModularRenderer(props: ModularRendererProps) {
         [key: string]: ((data: FormSpec) => void)[];
     }>({});
     const [form, setForm] = useState<FormSpec>(props.formSpec || {});
-    const [parser] = useState<RenderParser<any>>(
-        new props.parser(
-            props.data,
-            props.renderer,
-            props.formSpec ?? {},
-            (path: string, value: any) => {
-                let data: any = JSON.parse(
-                    JSON.stringify(props.formSpec ?? {})
-                );
-                data[path] = value;
-                const updated = [];
-                for (let k of Object.keys(data)) {
-                    if (data[k] !== form[k]) {
-                        updated.push(k);
-                    }
-                }
-                for (let u of updated) {
-                    if (Object.keys(updateFuncs).includes(u)) {
-                        updateFuncs[u].forEach((f) => f(data));
-                    }
-                }
-                setForm(data);
-                props.onChange && props.onChange(data);
-            },
-            updateFuncs,
-            (key: string, func: (data: FormSpec) => void) => {
-                if (Object.keys(updateFuncs).includes(key)) {
-                    updateFuncs[key].push(func);
-                } else {
-                    updateFuncs[key] = [func];
-                }
-                setUpdateFuncs(updateFuncs);
-            }
-        )
+    const [parser, setParser] = useState<RenderParser<any>>(
+        null as unknown as RenderParser
     );
-    const [rendered, setRendered] = useState<JSX.Element | null>(
-        parser.render()
-    );
+    useEffect(() => {
+        setParser(
+            new props.parser(
+                props.data,
+                props.renderer,
+                props.formSpec ?? {},
+                (path: string, value: any) => {
+                    let data: any = JSON.parse(
+                        JSON.stringify(props.formSpec ?? {})
+                    );
+                    data[path] = value;
+                    const updated = [];
+                    for (let k of Object.keys(data)) {
+                        if (data[k] !== form[k]) {
+                            updated.push(k);
+                        }
+                    }
+                    for (let u of updated) {
+                        if (Object.keys(updateFuncs).includes(u)) {
+                            updateFuncs[u].forEach((f) => f(data));
+                        }
+                    }
+                    setForm(data);
+                    props.onChange && props.onChange(data);
+                },
+                updateFuncs,
+                (key: string, func: (data: FormSpec) => void) => {
+                    console.log("Adding func.");
+                    if (Object.keys(updateFuncs).includes(key)) {
+                        updateFuncs[key].push(func);
+                    } else {
+                        updateFuncs[key] = [func];
+                    }
+                    setUpdateFuncs(updateFuncs);
+                }
+            )
+        );
+    }, [props, updateFuncs, form]);
+    const [rendered, setRendered] = useState<JSX.Element | null>(null);
 
     useEffect(() => {
+        if (!parser) {
+            return;
+        }
+        console.log("T1");
         parser.setData(props.data);
         setUpdateFuncs({});
         setRendered(parser.render());
     }, [props.data, parser]);
 
     useEffect(() => {
+        if (!parser) {
+            return;
+        }
+        console.log("T2");
         parser.setRenderer(props.renderer);
         setUpdateFuncs({});
         setRendered(parser.render());
     }, [props.renderer, parser]);
 
     useEffect(() => {
+        console.log("Updating form");
         const updated = [];
         for (let k of Object.keys(props.formSpec ?? {})) {
             if ((props.formSpec ?? {})[k] !== form[k]) {
