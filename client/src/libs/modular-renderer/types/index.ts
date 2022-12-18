@@ -18,6 +18,7 @@ import {
     RenderFormSelectItem,
     RenderFormSelectOptionItem,
     RenderFormSwitchItem,
+    RenderSimpleFieldItem,
 } from "./renderTypes";
 
 import * as MdReactIcons from "react-icons/md";
@@ -116,7 +117,6 @@ export type ListSourceItem<T = AllRenderItems> = {
      * @type {string}
      */
     source: string;
-    sourceKind?: "data" | "form";
     renderer: AllRenderItems;
     conditionalRender?: ParsedFunction;
 };
@@ -168,7 +168,8 @@ export type AllRenderItems =
     | RenderFormFieldItem
     | RenderFormSelectItem
     | RenderFormSelectOptionItem
-    | RenderFormSwitchItem;
+    | RenderFormSwitchItem
+    | RenderSimpleFieldItem;
 export type AllSourceItems<T = any> =
     | ListSourceItem<T>
     | GeneratorSourceItem<T>;
