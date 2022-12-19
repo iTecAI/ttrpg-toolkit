@@ -3,7 +3,7 @@ import {
     AllRenderItems,
     AllSourceItems,
     AvatarType,
-} from "../libs/modoc/types";
+} from "../libs/modular-renderer/types";
 
 export type CompendiumItem = {
     supertype: "compendium-item";
