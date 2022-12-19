@@ -58,11 +58,11 @@ export function useSubscribe(fields: string[]): { [key: string]: any } {
         for (let f of fields) {
             tmp[f] = (staticContext.values && staticContext.values[f]) ?? null;
         }
-        if (JSON.stringify(tmp) != JSON.stringify(out)) {
+        if (JSON.stringify(tmp) !== JSON.stringify(out)) {
             setOut(tmp);
         }
     }, [staticContext.values, fields]);
-    if (context == null) {
+    if (context === null) {
         /*console.warn(
             `Cannot fetch fields [${fields.join(", ")}] : Document is NULL`
         );*/
@@ -70,4 +70,13 @@ export function useSubscribe(fields: string[]): { [key: string]: any } {
     }
 
     return out;
+}
+
+export function useFormField<T>(
+    fieldId?: string
+): [T | null, (value: T | null) => void] {
+    let sub = useSubscribe(fieldId ? [fieldId] : []);
+    const [val, setVal] = useState<T | null>(fieldId ? sub[fieldId] : null);
+    useUpdateField(fieldId ?? undefined, val);
+    return [val, setVal];
 }

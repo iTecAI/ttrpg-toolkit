@@ -1,23 +1,16 @@
-import { TextField, Typography } from "@mui/material";
+import { TextField } from "@mui/material";
 import { RendererFunction } from ".";
 import { FormData } from "../types";
 import { RenderSimpleFieldItem } from "../types/renderTypes";
 import * as React from "react";
-import {
-    useSubscribe,
-    useUpdateField,
-} from "../utility/document_communication";
-import { useState } from "react";
+import { useFormField } from "../utility/document_communication";
 
 export const SimpleFieldItem: RendererFunction = (
     renderer: RenderSimpleFieldItem,
     _data: any,
     _formData: FormData
 ) => {
-    const fieldId = renderer.fieldId ?? null;
-    let sub = useSubscribe(fieldId ? [fieldId] : []);
-    const [value, setValue] = useState<string>(fieldId ? sub[fieldId] : "");
-    useUpdateField(fieldId ?? undefined, value);
+    const [value, setValue] = useFormField<string>(renderer.fieldId);
     return (
         <TextField
             className="render-item child simple-field"
