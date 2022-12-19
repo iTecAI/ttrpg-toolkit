@@ -72,7 +72,6 @@ export function ModularRenderer(props: ModularRendererProps) {
         if (!parser) {
             return;
         }
-        console.log("T1");
         parser.setData(props.data);
         setUpdateFuncs({});
         setRendered(parser.render());
@@ -82,14 +81,12 @@ export function ModularRenderer(props: ModularRendererProps) {
         if (!parser) {
             return;
         }
-        console.log("T2");
         parser.setRenderer(props.renderer);
         setUpdateFuncs({});
         setRendered(parser.render());
     }, [props.renderer, parser]);
 
     useEffect(() => {
-        console.log("Updating form");
         const updated = [];
         for (let k of Object.keys(props.formSpec ?? {})) {
             if ((props.formSpec ?? {})[k] !== form[k]) {

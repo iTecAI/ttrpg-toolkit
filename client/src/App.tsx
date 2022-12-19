@@ -80,7 +80,7 @@ function RouterChild() {
                         />
                     }
                 />
-                <Route path="/compendium" element={<Compendium />} />
+                <Route path="/compendium" element={<></>} />
                 <Route path="/playground" element={<Playground />} />
             </Route>
             <Route
@@ -147,17 +147,6 @@ function App() {
             <SnackbarProvider maxSnack={5}>
                 <RootContextProvider />
             </SnackbarProvider>
-            <ModularRenderer
-                data={{}}
-                renderer={{
-                    type: "text",
-                    supertype: "render",
-                    text: "eeee",
-                    textType: "body1",
-                    style: [],
-                }}
-                parser={MuiRenderParser}
-            />
         </ThemeProvider>
     );
 }

@@ -39,7 +39,7 @@ export function useValueItem(item: ValueItem, dataOverride?: any): any {
         [item, data, updates]
     );
     if (context === null) {
-        console.warn(`Cannot use ValueItem : Document is NULL`);
+        //console.warn(`Cannot use ValueItem : Document is NULL`);
         return;
     }
     return result;

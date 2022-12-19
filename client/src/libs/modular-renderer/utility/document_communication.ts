@@ -32,9 +32,9 @@ export function useUpdateField(fieldName: string | undefined, fieldValue: any) {
         }
     }, [fieldName, fieldValue, staticContext.update, context]);
     if (context === null) {
-        console.warn(
+        /*console.warn(
             `Cannot update field ${fieldName} with value ${fieldValue} : Document is NULL`
-        );
+        );*/
         return;
     }
 }
@@ -56,9 +56,9 @@ export function useSubscribe(fields: string[]): { [key: string]: any } {
         setOut(tmp);
     }, [staticContext.values, fields]);
     if (context == null) {
-        console.warn(
+        /*console.warn(
             `Cannot fetch fields [${fields.join(", ")}] : Document is NULL`
-        );
+        );*/
         return {};
     }
 

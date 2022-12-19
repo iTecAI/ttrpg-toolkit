@@ -47,13 +47,7 @@ export default function RenderItem(props: {
         if (context) {
             setDatas();
         }
-    }, [
-        props.dataOverride,
-        props.formDataOverride,
-        context,
-        contextStatic.data,
-        contextStatic.values,
-    ]);
+    }, [context]);
     if (isArray(props.renderer)) {
         return (
             <>
@@ -63,8 +57,6 @@ export default function RenderItem(props: {
             </>
         );
     }
-
-    setDatas();
 
     if (isSourceItem(props.renderer)) {
         if (props.renderer.conditionalRender) {

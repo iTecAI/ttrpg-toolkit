@@ -62,9 +62,9 @@ export function parseNested(
                 obj[key] = {};
                 return parseNested(obj[key], keys, new_val);
             }
-            console.warn(
+            /*console.warn(
                 `Attempt to access key ${key} of ${JSON.stringify(obj)} failed.`
-            );
+            );*/
             return null;
         }
     } catch {
@@ -72,9 +72,9 @@ export function parseNested(
             obj[key] = {};
             return parseNested(obj[key], keys, new_val);
         }
-        console.warn(
-            `Attempt to access key ${key} of ${JSON.stringify(obj)} failed.`
-        );
+        /*console.warn(
+                `Attempt to access key ${key} of ${JSON.stringify(obj)} failed.`
+            );*/
         return null;
     }
 }

@@ -15,10 +15,11 @@ export const SimpleFieldItem: RendererFunction = (
     _formData: FormData
 ) => {
     const fieldId = renderer.fieldId ?? null;
-    let sub = useSubscribe(fieldId ? [fieldId] : []);
+    /*let sub = useSubscribe(fieldId ? [fieldId] : []);
     const [value, setValue] = useState<string | undefined>(
         fieldId && sub[fieldId]
-    );
+    );*/
+    const [value, setValue] = useState<string | undefined>("");
     useUpdateField(fieldId ?? undefined, value);
     return (
         <TextField
