@@ -70,12 +70,14 @@
             margin: 4px;
             width: calc(100% - 8px);
 
-            .modoc_mui-segment {
-                padding: 4px;
-            }
+            .render-item {
+                &.child.segment {
+                    padding: 4px;
+                }
 
-            .modoc_mui-chip {
-                margin: 2px;
+                &.child.chip {
+                    margin: 2px;
+                }
             }
         }
     }

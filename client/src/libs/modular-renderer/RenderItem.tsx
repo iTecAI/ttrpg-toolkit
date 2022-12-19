@@ -110,13 +110,13 @@ export default function RenderItem(props: {
         );
         //console.log("RES:", result);
         return (
-            <div className="rendered-item single" key={key}>
+            <span className="rendered-item single" key={key}>
                 {result ?? (
                     <Error
                         text={`Renderer type ${props.renderer.type} not found.`}
                     />
                 )}
-            </div>
+            </span>
         );
     }
 }

@@ -35,7 +35,7 @@ export default function SourceItem(props: {
     }
     const srcRender = props.source.renderer;
     return (
-        <div className="rendered-item source">
+        <span className="rendered-item source">
             {result.map((v, i) => {
                 return (
                     <RenderItem
@@ -45,6 +45,6 @@ export default function SourceItem(props: {
                     />
                 );
             })}
-        </div>
+        </span>
     );
 }

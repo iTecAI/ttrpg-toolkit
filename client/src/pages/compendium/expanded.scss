@@ -20,15 +20,16 @@
         }
     }
 
-    .modoc_mui-card {
-        width: 100%;
-        display: inline-block;
-    }
-    .modoc_mui-chip {
-        margin: 2px;
-    }
-    .modoc_mui-accordion {
-        .MuiAccordionSummary-content {
+    .render-item {
+        &.child.card {
+            width: 100%;
+            display: inline-block;
+        }
+        &.child.chip {
+            margin: 2px;
+        }
+        &.child.accordion {
+            .MuiAccordionSummary-content {
             position: relative;
 
             .MuiTypography-root {
@@ -38,6 +39,7 @@
                 transform: translate(0, -50%);
                 font-size: 20px;
             }
+        }
         }
     }
 }
