@@ -6,7 +6,7 @@ const fs = require("fs");
 /** @type {import('ts-json-schema-generator/dist/src/Config').Config} */
 const configs = [
     {
-        path: "./src/libs/modoc/types/index.ts",
+        path: "./src/libs/modular-renderer/types/index.ts",
         tsconfig: "./tsconfig.json",
         type: "AllItems", // Or <type-name> if you want to generate schema for that one type only,
         output: "../schema/renderer.schema.json",

@@ -1,15 +1,16 @@
 {
     "supertype": "render",
-    "type": "segment",
-    "variant": "outlined",
+    "type": "group",
     "children": [
         {
             "supertype": "render",
-            "type": "form-field",
-            "key": "test1",
-            "inputParams": {
-                "type": "text"
-            }
+            "type": "simple-field",
+            "fieldId": "test"
+        },
+        {
+            "supertype": "render",
+            "type": "text",
+            "text": "$form:test"
         }
     ]
 }

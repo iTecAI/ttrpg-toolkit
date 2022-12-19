@@ -70,6 +70,9 @@
         },
         {
           "$ref": "#/definitions/RenderFormSwitchItem"
+        },
+        {
+          "$ref": "#/definitions/RenderSimpleFieldItem"
         }
       ]
     },
@@ -103,8 +106,7 @@
       },
       "required": [
         "supertype",
-        "type",
-        "children"
+        "type"
       ],
       "additionalProperties": false
     },
@@ -418,10 +420,7 @@
       },
       "required": [
         "supertype",
-        "type",
-        "text",
-        "textType",
-        "style"
+        "type"
       ],
       "additionalProperties": false
     },
@@ -453,8 +452,7 @@
       },
       "required": [
         "supertype",
-        "type",
-        "variant"
+        "type"
       ],
       "additionalProperties": false
     },
@@ -484,9 +482,7 @@
       },
       "required": [
         "supertype",
-        "type",
-        "text",
-        "filled"
+        "type"
       ],
       "additionalProperties": false
     },
@@ -679,9 +675,7 @@
       },
       "required": [
         "supertype",
-        "type",
-        "itemMarkers",
-        "children"
+        "type"
       ],
       "additionalProperties": false
     },
@@ -725,8 +719,7 @@
       },
       "required": [
         "supertype",
-        "type",
-        "children"
+        "type"
       ],
       "additionalProperties": false
     },
@@ -769,9 +762,7 @@
       },
       "required": [
         "supertype",
-        "type",
-        "headers",
-        "children"
+        "type"
       ],
       "additionalProperties": false
     },
@@ -805,8 +796,7 @@
       },
       "required": [
         "supertype",
-        "type",
-        "children"
+        "type"
       ],
       "additionalProperties": false
     },
@@ -910,8 +900,7 @@
       },
       "required": [
         "supertype",
-        "type",
-        "text"
+        "type"
       ],
       "additionalProperties": false
     },
@@ -1106,9 +1095,7 @@
       },
       "required": [
         "supertype",
-        "type",
-        "children",
-        "text"
+        "type"
       ],
       "additionalProperties": false
     },
@@ -1186,8 +1173,7 @@
       },
       "required": [
         "supertype",
-        "type",
-        "children"
+        "type"
       ],
       "additionalProperties": false
     },
@@ -1228,9 +1214,7 @@
       },
       "required": [
         "supertype",
-        "type",
-        "children",
-        "variant"
+        "type"
       ],
       "additionalProperties": false
     },
@@ -1648,6 +1632,30 @@
         "supertype",
         "type",
         "key"
+      ],
+      "additionalProperties": false
+    },
+    "RenderSimpleFieldItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "render"
+        },
+        "type": {
+          "type": "string",
+          "const": "simple-field"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        },
+        "fieldId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "supertype",
+        "type"
       ],
       "additionalProperties": false
     }

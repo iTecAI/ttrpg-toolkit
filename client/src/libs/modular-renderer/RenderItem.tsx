@@ -1,17 +1,21 @@
 import * as React from "react";
 import { useContext, useState, useEffect } from "react";
-import { AllItems, FormData } from "./types";
-import { isSourceItem } from "./types/guards";
-import { DocumentContext } from "./utility/document_communication";
+import { AllItems, FormData, ModularDocument } from "./types";
+import { isArray, isSourceItem } from "./types/guards";
+import {
+    DocumentContext,
+    buildStaticContext,
+} from "./utility/document_communication";
 import { Renderers } from "./renderers";
 import SourceItem from "./SourceItem";
+import { parseFunction } from "./utility/parsers";
 
 export function Error(props: { text: string }): JSX.Element {
     return <div className="render-item child error">Error: {props.text}</div>;
 }
 
 export default function RenderItem(props: {
-    renderer: AllItems;
+    renderer: AllItems | AllItems[];
     dataOverride?: any;
     formDataOverride?: FormData;
 }): JSX.Element {
@@ -37,18 +41,42 @@ export default function RenderItem(props: {
         }
     }
 
-    setDatas();
-    if (context) {
-        useEffect(setDatas, [
-            props.dataOverride,
-            props.formDataOverride,
-            context,
-            context.data,
-            context.values,
-        ]);
+    let contextStatic = buildStaticContext(context);
+
+    useEffect(() => {
+        if (context) {
+            setDatas();
+        }
+    }, [
+        props.dataOverride,
+        props.formDataOverride,
+        context,
+        contextStatic.data,
+        contextStatic.values,
+    ]);
+    if (isArray(props.renderer)) {
+        return (
+            <>
+                {props.renderer.map((v) => (
+                    <RenderItem {...props} renderer={v} />
+                ))}
+            </>
+        );
     }
 
+    setDatas();
+
     if (isSourceItem(props.renderer)) {
+        if (props.renderer.conditionalRender) {
+            const doRender = parseFunction(
+                props.renderer.conditionalRender,
+                data,
+                formData
+            );
+            if (!doRender) {
+                return <></>;
+            }
+        }
         return (
             <SourceItem
                 source={props.renderer}
@@ -57,6 +85,16 @@ export default function RenderItem(props: {
             />
         );
     } else {
+        if (props.renderer.conditionalRender) {
+            const doRender = parseFunction(
+                props.renderer.conditionalRender,
+                data,
+                formData
+            );
+            if (!doRender) {
+                return <></>;
+            }
+        }
         const fn = Renderers[props.renderer.type];
         return (
             <div className="rendered-item single">

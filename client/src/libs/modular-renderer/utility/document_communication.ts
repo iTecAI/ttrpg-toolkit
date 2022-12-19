@@ -7,14 +7,31 @@ export const DocumentContext = React.createContext<ModularDocument | null>(
     null
 );
 
+export function buildStaticContext(
+    context: ModularDocument | undefined | null
+) {
+    return {
+        documentId: context && context.documentId,
+        update: context && context.update,
+        values: context && context.values,
+        data: context && context.data,
+    };
+}
+
 /**
  * Hook to update a field with a value
  * @param fieldName Field ID to update
  * @param fieldValue Value to pass
  */
-export function useUpdateField(fieldName: string, fieldValue: any) {
+export function useUpdateField(fieldName: string | undefined, fieldValue: any) {
     const context = useContext(DocumentContext);
-    if (context == null) {
+    const staticContext = buildStaticContext(context);
+    useEffect(() => {
+        if (fieldName !== undefined && context !== null) {
+            context.update(fieldName, fieldValue);
+        }
+    }, [fieldName, fieldValue, staticContext.update, context]);
+    if (context === null) {
         console.warn(
             `Cannot update field ${fieldName} with value ${fieldValue} : Document is NULL`
         );
@@ -30,18 +47,20 @@ export function useUpdateField(fieldName: string, fieldValue: any) {
 export function useSubscribe(fields: string[]): { [key: string]: any } {
     const context = useContext(DocumentContext);
     const [out, setOut] = useState<{ [key: string]: any }>({});
+    const staticContext = buildStaticContext(context);
+    useEffect(() => {
+        const tmp: { [key: string]: any } = {};
+        for (let f of fields) {
+            tmp[f] = (staticContext.values && staticContext.values[f]) ?? null;
+        }
+        setOut(tmp);
+    }, [staticContext.values, fields]);
     if (context == null) {
         console.warn(
             `Cannot fetch fields [${fields.join(", ")}] : Document is NULL`
         );
         return {};
     }
-    useEffect(() => {
-        const tmp: { [key: string]: any } = {};
-        for (let f of fields) {
-            tmp[f] = context.values[f] ?? null;
-        }
-        setOut(tmp);
-    }, [context.values, fields]);
+
     return out;
 }

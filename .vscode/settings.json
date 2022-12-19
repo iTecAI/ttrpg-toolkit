@@ -2,15 +2,15 @@
     "json.schemas": [
         {
             "fileMatch": ["*.compendium.json", "*.compendium.json5"],
-            "url": "file:/mnt/data1/Programming/ttrpg-toolkit/schema/compendium.schema.json"
+            "url": "file:/home/itec/Code/ttrpg-toolkit/schema/compendium.schema.json"
         },
         {
             "fileMatch": ["*.renderer.json", "*.renderer.json5"],
-            "url": "file:/mnt/data1/Programming/ttrpg-toolkit/schema/renderer.schema.json"
+            "url": "file:/home/itec/Code/ttrpg-toolkit/schema/renderer.schema.json"
         },
         {
             "fileMatch": ["manifest.json", "manifest.json5"],
-            "url": "file:/mnt/data1/Programming/ttrpg-toolkit/schema/manifest.schema.json"
+            "url": "file:/home/itec/Code/ttrpg-toolkit/schema/manifest.schema.json"
         }
     ],
     "python.formatting.provider": "black"

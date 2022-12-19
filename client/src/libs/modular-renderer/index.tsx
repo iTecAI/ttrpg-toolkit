@@ -20,10 +20,16 @@ export function ModularRenderer(props: {
             let formCopy = JSON.parse(JSON.stringify(formData));
             formCopy[field] = value;
             setFormData(formCopy);
+            props.onFormDataChange && props.onFormDataChange(formCopy);
         },
         values: formData,
         data: props.data,
     };
+
+    useEffect(
+        () => props.formData && setFormData(props.formData),
+        [props.formData]
+    );
 
     return (
         <div className="modular-renderer" id={props.id}>

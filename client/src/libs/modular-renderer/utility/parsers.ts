@@ -1,5 +1,4 @@
 import {
-    AllRenderItems,
     GeneratorSourceItem,
     ListSourceItem,
     ParsedFunction,
@@ -32,7 +31,7 @@ export function parseFunction(
 ): any {
     const parsedOptions: { [key: string]: any } = {};
     for (let k of Object.keys(func.opts)) {
-        //parsedOptions[k] = parseValueItem(item.opts[k], data, formData).result;
+        parsedOptions[k] = parseValueItem(func.opts[k], data, formData).result;
     }
     const fn = parseFunctionCode(func.function);
     return fn(parsedOptions);
@@ -80,17 +79,8 @@ export function parseNested(
     }
 }
 
-export function parseListSourceItem(
-    item: ListSourceItem,
-    data: RawData,
-    formData: FormData
-): any[] {
-    let src: any;
-    if (item.sourceKind == "form") {
-        src = parseNested(formData, item.source);
-    } else {
-        src = parseNested(data, item.source);
-    }
+export function parseListSourceItem(item: ListSourceItem, data: RawData): any[] {
+    const src: any = parseNested(data, item.source);
 
     if (!isArray(src)) {
         console.warn(
@@ -131,7 +121,7 @@ export function parseValueItem(
     data: any,
     formData?: FormData
 ): ValueItemOutput {
-    if (formData == undefined) {
+    if (formData === undefined) {
         formData = {};
     }
     const OUTPUT: ValueItemOutput = {

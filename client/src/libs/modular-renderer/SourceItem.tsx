@@ -21,11 +21,7 @@ export default function SourceItem(props: {
             );
             break;
         case "list":
-            result = parseListSourceItem(
-                props.source,
-                props.data,
-                props.formData
-            );
+            result = parseListSourceItem(props.source, props.data);
             break;
         default:
             return (
