@@ -72,6 +72,11 @@ export function useSubscribe(fields: string[]): { [key: string]: any } {
     return out;
 }
 
+/**
+ * Expose a control interface for a single form field
+ * @param fieldId Field ID to expose
+ * @returns [value, function to set value]
+ */
 export function useFormField<T>(
     fieldId?: string
 ): [T | null, (value: T | null) => void] {
