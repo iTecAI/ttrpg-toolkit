@@ -6,6 +6,7 @@ import {
     useSubscribe,
 } from "./document_communication";
 import { parseValueItem } from "./parsers";
+import { matchArrays } from "./arraymatch";
 
 export function useValueItem(item: ValueItem, dataOverride?: any): any {
     const context = useContext(DocumentContext);
@@ -26,18 +27,24 @@ export function useValueItem(item: ValueItem, dataOverride?: any): any {
     const [result, setResult] = useState<any>(
         parseValueItem(item, data, updates).result
     );
-    useEffect(
-        () =>
-            setDeps(
-                parseValueItem(item, data, context ? context.values : undefined)
-                    .form_dependencies
-            ),
-        [item, data, staticContext.values, context]
-    );
-    useEffect(
-        () => setResult(parseValueItem(item, data, updates).result),
-        [item, data, updates]
-    );
+    useEffect(() => {
+        const _deps = parseValueItem(
+            item,
+            data,
+            context ? context.values : undefined
+        ).form_dependencies;
+        if (!matchArrays(_deps, deps)) {
+            setDeps(_deps);
+            console.log(_deps, deps);
+        }
+    }, [item, data, staticContext.values, context]);
+    useEffect(() => {
+        const _result = parseValueItem(item, data, updates).result;
+        if (_result !== result) {
+            //console.log(_result, result);
+            setResult(_result);
+        }
+    }, [item, data, updates]);
     if (context === null) {
         //console.warn(`Cannot use ValueItem : Document is NULL`);
         return;

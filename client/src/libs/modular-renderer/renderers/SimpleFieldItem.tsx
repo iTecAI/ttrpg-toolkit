@@ -21,7 +21,7 @@ export const SimpleFieldItem: RendererFunction = (
     return (
         <TextField
             className="render-item child simple-field"
-            value={value}
+            value={value ?? ""}
             onChange={(event) => setValue(event.target.value)}
         />
     );

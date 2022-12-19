@@ -49,7 +49,14 @@ export default function RenderItem(props: {
 
     useEffect(() => {
         if (context) {
-            setDatas();
+            if (
+                (data !== context.data && data !== props.dataOverride) ||
+                (formData !== context.values &&
+                    formData !== props.formDataOverride)
+            ) {
+                setDatas();
+            }
+                
         }
     }, [context]);
     if (isArray(props.renderer)) {

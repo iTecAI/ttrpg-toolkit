@@ -28,7 +28,9 @@ export function useUpdateField(fieldName: string | undefined, fieldValue: any) {
     const staticContext = buildStaticContext(context);
     useEffect(() => {
         if (fieldName !== undefined && context) {
-            context.update(fieldName, fieldValue);
+            if (context.values[fieldName] !== fieldValue) {
+                context.update(fieldName, fieldValue);
+            }
         }
     }, [fieldName, fieldValue, staticContext.update, context]);
     if (context === null) {
@@ -56,7 +58,9 @@ export function useSubscribe(fields: string[]): { [key: string]: any } {
         for (let f of fields) {
             tmp[f] = (staticContext.values && staticContext.values[f]) ?? null;
         }
-        setOut(tmp);
+        if (JSON.stringify(tmp) != JSON.stringify(out)) {
+            setOut(tmp);
+        }
     }, [staticContext.values, fields]);
     if (context == null) {
         /*console.warn(
