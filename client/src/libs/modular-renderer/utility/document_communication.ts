@@ -27,7 +27,7 @@ export function useUpdateField(fieldName: string | undefined, fieldValue: any) {
     const context = useContext(DocumentContext);
     const staticContext = buildStaticContext(context);
     useEffect(() => {
-        if (fieldName !== undefined && context !== null) {
+        if (fieldName !== undefined && context) {
             context.update(fieldName, fieldValue);
         }
     }, [fieldName, fieldValue, staticContext.update, context]);
@@ -49,6 +49,9 @@ export function useSubscribe(fields: string[]): { [key: string]: any } {
     const [out, setOut] = useState<{ [key: string]: any }>({});
     const staticContext = buildStaticContext(context);
     useEffect(() => {
+        if (!fields) {
+            return;
+        }
         const tmp: { [key: string]: any } = {};
         for (let f of fields) {
             tmp[f] = (staticContext.values && staticContext.values[f]) ?? null;

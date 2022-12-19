@@ -22,9 +22,13 @@ export default function RenderItem(props: {
     const context = useContext(DocumentContext);
     const [data, setData] = useState<any>({});
     const [formData, setFormData] = useState<FormData>({});
+    const [key, _] = useState(Math.random());
 
     function setDatas() {
         if (context == null) {
+            if (!props.dataOverride || !props.formDataOverride) {
+                return;
+            }
             setData(props.dataOverride ?? {});
             setFormData(props.dataOverride ?? {});
         } else {
@@ -74,6 +78,7 @@ export default function RenderItem(props: {
                 source={props.renderer}
                 data={data}
                 formData={formData}
+                key={key}
             />
         );
     } else {
@@ -89,7 +94,7 @@ export default function RenderItem(props: {
         }
         const fn = Renderers[props.renderer.type];
         return (
-            <div className="rendered-item single">
+            <div className="rendered-item single" key={key}>
                 {fn ? (
                     fn(props.renderer, data, formData)
                 ) : (
