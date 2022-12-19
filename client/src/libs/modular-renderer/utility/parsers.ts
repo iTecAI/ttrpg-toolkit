@@ -7,8 +7,10 @@ import {
     ValueStringDirective,
     ValueStringDirectiveNames,
     FormData,
+    AllItems,
+    AllRenderItems,
 } from "../types";
-import { isArray, isLiteral } from "../types/guards";
+import { isArray, isLiteral, isRenderItem } from "../types/guards";
 
 export function parseFunctionCode(code: string | string[]): Function {
     let formattedFunction: string;
@@ -34,7 +36,13 @@ export function parseFunction(
         parsedOptions[k] = parseValueItem(func.opts[k], data, formData).result;
     }
     const fn = parseFunctionCode(func.function);
-    return fn(parsedOptions);
+    //console.log(func.function, parsedOptions, func, data);
+    try {
+        return fn(parsedOptions);
+    } catch (e: any) {
+        console.error(e);
+        return "ERROR";
+    }
 }
 
 export function parseNested(
@@ -79,7 +87,10 @@ export function parseNested(
     }
 }
 
-export function parseListSourceItem(item: ListSourceItem, data: RawData): any[] {
+export function parseListSourceItem(
+    item: ListSourceItem,
+    data: RawData
+): any[] {
     const src: any = parseNested(data, item.source);
 
     if (!isArray(src)) {
@@ -277,4 +288,65 @@ export function parseValueItem(
         }
     }
     return OUTPUT;
+}
+
+export type ExpandedRenderItem = { renderer: AllRenderItems; data: any };
+export function expandItems(
+    item: AllItems | AllItems[],
+    data: any,
+    formData: FormData
+): ExpandedRenderItem[] {
+    if (isArray(item)) {
+        const out: ExpandedRenderItem[] = [];
+        item.forEach((v) =>
+            expandItems(v, data, formData).forEach((vv) => out.push(vv))
+        );
+        return out;
+    }
+    if (isRenderItem(item)) {
+        if (item.conditionalRender) {
+            if (
+                parseFunction(item.conditionalRender, data, formData) === false
+            ) {
+                return [];
+            }
+        }
+        return [{ renderer: item, data: data }];
+    }
+    switch (item.type) {
+        case "generator":
+            return parseGeneratorSourceItem(item, data, formData)
+                .map((v) => {
+                    if (item.renderer.conditionalRender) {
+                        if (
+                            parseFunction(
+                                item.renderer.conditionalRender,
+                                v,
+                                formData
+                            ) === false
+                        ) {
+                            return null;
+                        }
+                    }
+                    return { renderer: item.renderer, data: v };
+                })
+                .filter((v) => v != null) as ExpandedRenderItem[];
+        case "list":
+            return parseListSourceItem(item, data)
+                .map((v) => {
+                    if (item.renderer.conditionalRender) {
+                        if (
+                            parseFunction(
+                                item.renderer.conditionalRender,
+                                v,
+                                formData
+                            ) === false
+                        ) {
+                            return null;
+                        }
+                    }
+                    return { renderer: item.renderer, data: v };
+                })
+                .filter((v) => v != null) as ExpandedRenderItem[];
+    }
 }

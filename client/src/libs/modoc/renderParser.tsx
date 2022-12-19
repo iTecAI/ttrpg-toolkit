@@ -274,7 +274,7 @@ export default class RenderParser<T extends AllRenderItems = AllRenderItems> {
                         this.renderer.type === "form-switch"
                     ) {
                         if (!this.pathedFuncs.includes(this.renderer.key)) {
-                            console.log("Adding new func");
+                            //console.log("Adding new func");
                             this.addUpdateFunc(
                                 this.renderer.key,
                                 this.setFormData

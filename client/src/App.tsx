@@ -79,7 +79,7 @@ function RouterChild() {
                         />
                     }
                 />
-                <Route path="/compendium" element={<></>} />
+                <Route path="/compendium" element={<Compendium />} />
                 <Route path="/playground" element={<Playground />} />
             </Route>
             <Route

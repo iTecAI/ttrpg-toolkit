@@ -55,7 +55,7 @@ export function ModularRenderer(props: ModularRendererProps) {
                 },
                 updateFuncs,
                 (key: string, func: (data: FormSpec) => void) => {
-                    console.log("Adding func.");
+                    //console.log("Adding func.");
                     if (Object.keys(updateFuncs).includes(key)) {
                         updateFuncs[key].push(func);
                     } else {

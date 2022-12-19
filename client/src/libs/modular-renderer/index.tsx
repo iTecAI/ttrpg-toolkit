@@ -14,6 +14,7 @@ export function ModularRenderer(props: {
     const [formData, setFormData] = useState<{ [key: string]: any }>(
         props.formData ?? {}
     );
+    //console.log("INJECT_RENDER", props.data);
     const document: ModularDocument = {
         documentId: props.id,
         update: (field: string, value: any) => {
@@ -30,7 +31,6 @@ export function ModularRenderer(props: {
         () => props.formData && setFormData(props.formData),
         [props.formData]
     );
-
     return (
         <div className="modular-renderer" id={props.id}>
             <DocumentContext.Provider value={document}>

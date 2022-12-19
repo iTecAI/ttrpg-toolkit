@@ -120,7 +120,7 @@ export type RenderMarkdownItem = {
     supertype: "render";
     type: "markdown";
     conditionalRender?: ParsedFunction;
-    text?: ValueItem | ValueItem[];
+    text?: ValueItem | string[];
 };
 
 export type RenderAccordionItem = {
@@ -164,18 +164,18 @@ export type RenderAbsoluteItem = {
     supertype: "render";
     type: "absolute";
     conditionalRender?: ParsedFunction;
-    child: AllRenderItems;
-    top: number; // Percent
-    left: number; // Percent
-    width: number; // Percent
-    height: number; // Percent
+    child?: AllRenderItems;
+    top?: number; // Percent
+    left?: number; // Percent
+    width?: number; // Percent
+    height?: number; // Percent
 };
 
 export type RenderAbsoluteContainerItem = {
     supertype: "render";
     type: "absolute-container";
     conditionalRender?: ParsedFunction;
-    children: RenderAbsoluteItem[] | AllSourceItems<RenderAbsoluteItem>;
+    children?: RenderAbsoluteItem[] | AllSourceItems<RenderAbsoluteItem>;
     height?: number; // Pixels
 };
 
@@ -183,8 +183,8 @@ export type RenderMasonryItem = {
     supertype: "render";
     type: "masonry";
     conditionalRender?: ParsedFunction;
-    children: AllRenderItems[] | AllSourceItems;
-    columns: number;
+    children?: AllRenderItems[] | AllSourceItems;
+    columns?: number;
     spacing?: number;
 };
 
@@ -192,7 +192,7 @@ export type RenderFormSelectOptionItem = {
     supertype: "render";
     type: "form-select-option";
     conditionalRender?: ParsedFunction;
-    value: ValueItem;
+    value?: ValueItem;
     displayValue?: ValueItem;
 };
 
@@ -200,7 +200,7 @@ export type RenderFormFieldItem = {
     supertype: "render";
     type: "form-field";
     conditionalRender?: ParsedFunction;
-    key: string;
+    key?: string;
     validator?: ParsedFunction; // Along with selected data, metadata and value of the field will be passed automatically in opts.__data
     required?: boolean;
     disabled?: ValueItem; // Should return a boolean (if it doesn't, will be cast to one)
@@ -213,7 +213,7 @@ export type RenderFormFieldItem = {
     fullWidth?: boolean;
     variant?: "outlined" | "filled" | "standard";
     icon?: AvatarType | ValueItem;
-    inputParams:
+    inputParams?:
         | {
               type: "text";
               maxLength?: ValueItem;

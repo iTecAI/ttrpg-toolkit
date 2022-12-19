@@ -35,9 +35,10 @@ export default function SourceItem(props: {
     const srcRender = props.source.renderer;
     return (
         <div className="rendered-item source">
-            {result.map((v) => (
-                <RenderItem renderer={srcRender} dataOverride={v} />
-            ))}
+            {result.map((v) => {
+                //console.log(srcRender, v);
+                return <RenderItem renderer={srcRender} dataOverride={v} />;
+            })}
         </div>
     );
 }

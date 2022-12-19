@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useMemo } from "react";
 import { ValueItem } from "../types";
 import {
     DocumentContext,
@@ -19,10 +19,7 @@ export function useValueItem(item: ValueItem, dataOverride?: any): any {
         data = dataOverride;
     }
 
-    const [deps, setDeps] = useState<string[]>(
-        parseValueItem(item, data, context ? context.values : undefined)
-            .form_dependencies
-    );
+    const [deps, setDeps] = useState<string[]>([]);
     const updates = useSubscribe(deps);
     const [result, setResult] = useState<any>(
         parseValueItem(item, data, updates).result
@@ -43,9 +40,17 @@ export function useValueItem(item: ValueItem, dataOverride?: any): any {
             setResult(_result);
         }
     }, [item, data, updates]);
+    useMemo(
+        () =>
+            setDeps(
+                parseValueItem(item, data, context ? context.values : undefined)
+                    .form_dependencies
+            ),
+        []
+    );
     if (context === null) {
         //console.warn(`Cannot use ValueItem : Document is NULL`);
-        return;
+        return "";
     }
     return result;
 }

@@ -115,7 +115,7 @@ export function Compendium() {
     );
 
     useEffect(() => {
-        console.log(searchResults, currentPlugin, category);
+        //console.log(searchResults, currentPlugin, category);
     }, [searchResults, currentPlugin, category]);
 
     return (
@@ -215,7 +215,7 @@ export function Compendium() {
                 anchor={searchAnchor}
                 onClose={() => setSearchAnchor(null)}
                 onSubmit={(fields) => {
-                    console.log(fields);
+                    //console.log(fields);
                     if (plugin && category) {
                         setLoadingResults(true);
                         let filledFields: { [key: string]: DataSearchField } =
@@ -267,8 +267,9 @@ export function Compendium() {
                         spacing={1}
                         className="compendium-item-container"
                     >
-                        {searchResults.map(
-                            (r) =>
+                        {searchResults.map((r) => {
+                            //console.log("DATA", r);
+                            return (
                                 currentPlugin.data_source?.categories[category]
                                     .renderer && (
                                     <CompendiumItemRenderer
@@ -281,7 +282,8 @@ export function Compendium() {
                                         key={Math.random()}
                                     />
                                 )
-                        )}
+                            );
+                        })}
                     </Masonry>
                 </div>
             ) : (

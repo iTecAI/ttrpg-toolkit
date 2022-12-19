@@ -1,20 +1,25 @@
+import Masonry from "@mui/lab/Masonry";
 import { RendererFunction, RendererFunctionProps } from ".";
 import RenderItem from "../RenderItem";
 import { FormData } from "../types";
-import { RenderGroupItem } from "../types/renderTypes";
+import { RenderMasonryItem } from "../types/renderTypes";
 
-export const GroupItem: RendererFunction<RenderGroupItem> = (
-    props: RendererFunctionProps<RenderGroupItem>
+export const MasonryItem: RendererFunction<RenderMasonryItem> = (
+    props: RendererFunctionProps<RenderMasonryItem>
 ) => {
     const { renderer, data, formData } = props;
     const children = renderer.children ?? [];
     return (
-        <div className="render-item child group">
+        <Masonry
+            spacing={renderer.spacing ?? 2}
+            columns={renderer.columns ?? 2}
+            className="render-item child masonry"
+        >
             <RenderItem
                 renderer={children}
                 dataOverride={data}
                 formDataOverride={formData}
             />
-        </div>
+        </Masonry>
     );
 };

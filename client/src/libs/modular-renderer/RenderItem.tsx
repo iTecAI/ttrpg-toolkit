@@ -1,11 +1,8 @@
 import * as React from "react";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useMemo } from "react";
 import { AllItems, FormData } from "./types";
 import { isArray, isSourceItem } from "./types/guards";
-import {
-    DocumentContext,
-    buildStaticContext,
-} from "./utility/document_communication";
+import { DocumentContext } from "./utility/document_communication";
 import { Renderers } from "./renderers";
 import SourceItem from "./SourceItem";
 import { parseFunction } from "./utility/parsers";
@@ -45,7 +42,9 @@ export default function RenderItem(props: {
         }
     }
 
-    useEffect(() => {
+    useMemo(setDatas, []);
+
+    useMemo(() => {
         if (context) {
             if (
                 (data !== context.data && data !== props.dataOverride) ||
@@ -81,6 +80,7 @@ export default function RenderItem(props: {
                 return <></>;
             }
         }
+        //console.log("INJECT", data);
         return (
             <SourceItem
                 source={props.renderer}
@@ -100,12 +100,18 @@ export default function RenderItem(props: {
                 return <></>;
             }
         }
-        const fn = Renderers[props.renderer.type];
+        const DynamicElement = Renderers[props.renderer.type];
+        const result = DynamicElement && (
+            <DynamicElement
+                renderer={props.renderer}
+                data={data}
+                formData={formData}
+            />
+        );
+        //console.log("RES:", result);
         return (
             <div className="rendered-item single" key={key}>
-                {fn ? (
-                    fn(props.renderer, data, formData)
-                ) : (
+                {result ?? (
                     <Error
                         text={`Renderer type ${props.renderer.type} not found.`}
                     />
