@@ -35,13 +35,11 @@ export function useValueItem(item: ValueItem, dataOverride?: any): any {
         ).form_dependencies;
         if (!matchArrays(_deps, deps)) {
             setDeps(_deps);
-            console.log(_deps, deps);
         }
     }, [item, data, staticContext.values, context]);
     useEffect(() => {
         const _result = parseValueItem(item, data, updates).result;
         if (_result !== result) {
-            //console.log(_result, result);
             setResult(_result);
         }
     }, [item, data, updates]);

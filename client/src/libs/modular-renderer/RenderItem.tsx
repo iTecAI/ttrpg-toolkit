@@ -63,7 +63,11 @@ export default function RenderItem(props: {
         return (
             <>
                 {props.renderer.map((v) => (
-                    <RenderItem {...props} renderer={v} />
+                    <RenderItem
+                        {...props}
+                        renderer={v}
+                        key={JSON.stringify(v)}
+                    />
                 ))}
             </>
         );
