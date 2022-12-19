@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useContext, useState, useEffect } from "react";
-import { AllItems, FormData, ModularDocument } from "./types";
+import { AllItems, FormData } from "./types";
 import { isArray, isSourceItem } from "./types/guards";
 import {
     DocumentContext,
@@ -22,7 +22,7 @@ export default function RenderItem(props: {
     const context = useContext(DocumentContext);
     const [data, setData] = useState<any>({});
     const [formData, setFormData] = useState<FormData>({});
-    const [key, _] = useState(Math.random());
+    const key = useState(Math.random())[0];
 
     function setDatas() {
         if (context == null) {
@@ -45,8 +45,6 @@ export default function RenderItem(props: {
         }
     }
 
-    let contextStatic = buildStaticContext(context);
-
     useEffect(() => {
         if (context) {
             if (
@@ -56,7 +54,6 @@ export default function RenderItem(props: {
             ) {
                 setDatas();
             }
-                
         }
     }, [context]);
     if (isArray(props.renderer)) {
