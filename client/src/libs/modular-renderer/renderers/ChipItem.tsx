@@ -12,7 +12,6 @@ export const ChipItem: RendererFunction<RenderChipItem> = (
     const text = useValueItem(renderer.text ?? "", data);
     const filled = renderer.filled ?? true;
     const avatar = renderer.avatar && <ModularAvatar item={renderer.avatar} />;
-    console.log(text, renderer.text);
     return (
         <Chip
             className="render-item child chip"

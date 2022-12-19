@@ -36,11 +36,17 @@ export function parseFunction(
         parsedOptions[k] = parseValueItem(func.opts[k], data, formData).result;
     }
     const fn = parseFunctionCode(func.function);
-    //console.log(func.function, parsedOptions, func, data);
     try {
         return fn(parsedOptions);
     } catch (e: any) {
-        console.error(e);
+        console.debug(
+            `Error executing ${
+                isArray(func.function)
+                    ? func.function.join("\n")
+                    : func.function
+            } with options ${JSON.stringify(parsedOptions)}`,
+            e
+        );
         return "ERROR";
     }
 }
