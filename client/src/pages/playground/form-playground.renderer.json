@@ -38,14 +38,14 @@
         {
             "supertype": "render",
             "type": "text-field",
-            "fieldId": "name2",
-            "placeholder": "Name2",
+            "fieldId": "chips",
+            "placeholder": "Enter Chips",
             "icon": {
                 "type": {
                     "type": "icon",
                     "icon": {
                         "family": "md",
-                        "name": "MdPerson"
+                        "name": "MdLabel"
                     }
                 },
                 "position": "start"
@@ -61,6 +61,25 @@
                 "substitutions": {
                     "name": "$form:name",
                     "age": "$form:age"
+                }
+            }
+        },
+        {
+            "supertype": "render",
+            "type": "group",
+            "children": {
+                "supertype": "source",
+                "type": "generator",
+                "renderer": {
+                    "supertype": "render",
+                    "type": "chip",
+                    "text": "$self"
+                },
+                "function": {
+                    "function": "(opts) => opts.value.split(',').filter((v) => v.length > 0)",
+                    "opts": {
+                        "value": "$form:chips"
+                    }
                 }
             }
         }
