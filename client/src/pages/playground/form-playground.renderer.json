@@ -34,6 +34,19 @@
                 "position": "start"
             },
             "numerical": true
+        },
+        {
+            "supertype": "render",
+            "type": "text",
+            "text": {
+                "type": "text",
+                "supertype": "value",
+                "content": "Hi, {{name}}! You are {{age}} years old.",
+                "substitutions": {
+                    "name": "$form:name",
+                    "age": "$form:age"
+                }
+            }
         }
     ]
 }

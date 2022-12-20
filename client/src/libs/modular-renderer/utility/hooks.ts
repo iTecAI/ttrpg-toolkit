@@ -24,30 +24,28 @@ export function useValueItem(item: ValueItem, dataOverride?: any): any {
     const [result, setResult] = useState<any>(
         parseValueItem(item, data, updates).result
     );
+
     useEffect(() => {
-        const _deps = parseValueItem(
+        const out = parseValueItem(
             item,
             data,
             context ? context.values : undefined
-        ).form_dependencies;
+        );
+        const _deps = out.form_dependencies;
         if (!matchArrays(_deps, deps)) {
             setDeps(_deps);
         }
-    }, [item, data, staticContext.values, context]);
-    useEffect(() => {
-        const _result = parseValueItem(item, data, updates).result;
+        const _result = out.result;
         if (_result !== result) {
             setResult(_result);
         }
-    }, [item, data, updates]);
-    useMemo(
-        () =>
-            setDeps(
-                parseValueItem(item, data, context ? context.values : undefined)
-                    .form_dependencies
-            ),
-        []
-    );
+    }, [item, data, staticContext.values, context]);
+    useMemo(() => {
+        setDeps(
+            parseValueItem(item, data, context ? context.values : undefined)
+                .form_dependencies
+        );
+    }, []);
     if (context === null) {
         //console.warn(`Cannot use ValueItem : Document is NULL`);
         return "";

@@ -254,7 +254,7 @@ export function parseValueItem(
                     ).result;
                     subbedText = subbedText.replaceAll(
                         `{{${k}}}`,
-                        (sub || "[NO VALUE]").toString()
+                        (sub ?? "[NO VALUE]").toString()
                     );
                 }
                 OUTPUT.result = subbedText;

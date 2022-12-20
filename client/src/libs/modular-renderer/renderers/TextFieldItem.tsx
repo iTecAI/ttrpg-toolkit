@@ -31,7 +31,7 @@ export const TextFieldItem: RendererFunction<RenderTextFieldItem> = (
                 placeholder={placeholder}
                 variant={variant}
                 id={renderer.fieldId}
-                value={val}
+                value={val ?? ""}
                 onChange={(event) => {
                     let current: any = event.target.value;
                     if (numerical) {
