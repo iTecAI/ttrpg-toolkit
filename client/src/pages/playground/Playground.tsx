@@ -4,7 +4,11 @@ import formSchema from "./form-playground.renderer.json";
 import { useState } from "react";
 
 export function Playground() {
-    const [form, setForm] = useState<any>({ name: "test", age: 100 });
+    const [form, setForm] = useState<any>({
+        name: "test",
+        name2: "test2",
+        age: 100,
+    });
     return (
         <Container>
             <ModularRenderer

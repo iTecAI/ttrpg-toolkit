@@ -14,10 +14,12 @@ export function ModularRenderer(props: {
     const [formData, setFormData] = useState<{ [key: string]: any }>(
         props.formData ?? {}
     );
-    //console.log("INJECT_RENDER", props.data);
     const document: ModularDocument = {
         documentId: props.id,
         update: (field: string, value: any) => {
+            if (value === null) {
+                return;
+            }
             let formCopy = JSON.parse(JSON.stringify(formData));
             formCopy[field] = value;
             setFormData(formCopy);
@@ -27,10 +29,9 @@ export function ModularRenderer(props: {
         data: props.data,
     };
 
-    useEffect(
-        () => props.formData && setFormData(props.formData),
-        [props.formData]
-    );
+    useEffect(() => {
+        props.formData && setFormData(props.formData);
+    }, [props.formData]);
     return (
         <div className="modular-renderer" id={props.id}>
             <DocumentContext.Provider value={document}>

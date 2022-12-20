@@ -6,7 +6,7 @@ import { useValueItem } from "../utility/hooks";
 export const TextItem: RendererFunction<RenderTextItem> = (
     props: RendererFunctionProps<RenderTextItem>
 ) => {
-    const { renderer, data, formData } = props;
+    const { renderer, data } = props;
     const text = renderer.text ?? "";
     const textType = renderer.textType ?? "body1";
     const style = renderer.style ?? [];

@@ -37,6 +37,22 @@
         },
         {
             "supertype": "render",
+            "type": "text-field",
+            "fieldId": "name2",
+            "placeholder": "Name2",
+            "icon": {
+                "type": {
+                    "type": "icon",
+                    "icon": {
+                        "family": "md",
+                        "name": "MdPerson"
+                    }
+                },
+                "position": "start"
+            }
+        },
+        {
+            "supertype": "render",
             "type": "text",
             "text": {
                 "type": "text",

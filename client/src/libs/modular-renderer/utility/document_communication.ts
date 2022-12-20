@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useMemo } from "react";
 import { ModularDocument } from "../types";
 
 // Context for Documents
@@ -81,7 +81,18 @@ export function useFormField<T>(
     fieldId?: string
 ): [T | null, (value: T | null) => void] {
     let sub = useSubscribe(fieldId ? [fieldId] : []);
-    const [val, setVal] = useState<T | null>(fieldId ? sub[fieldId] : null);
+    const [val, setVal] = useState<T | null>(sub[fieldId ?? ""]);
+    const [cont, setCont] = useState<boolean>(false);
+    useMemo(() => {
+        if (cont && val !== undefined && val !== null) {
+            return;
+        }
+        setVal(sub[fieldId ?? ""]);
+        if (val !== undefined && val !== null) {
+            setCont(true);
+        }
+    }, [sub, cont]);
+
     useUpdateField(fieldId ?? undefined, val);
     return [val, setVal];
 }
