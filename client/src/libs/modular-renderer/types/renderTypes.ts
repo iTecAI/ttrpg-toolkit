@@ -200,6 +200,34 @@ export type RenderTextFieldItem = {
         position?: "start" | "end";
     };
     placeholder?: ValueItem;
+    label?: ValueItem;
     numerical?: boolean;
     validator?: ParsedFunction;
+};
+
+export type RenderSelectFieldOptionItem = {
+    supertype: "render";
+    type: "select-option";
+    conditionalRender?: ParsedFunction;
+    optionId?: ValueItem;
+    displayName?: ValueItem;
+};
+
+export type RenderSelectFieldItem = {
+    supertype: "render";
+    type: "select-field";
+    conditionalRender?: ParsedFunction;
+    fieldId?: string;
+    variant?: "filled" | "outlined" | "standard";
+    fullWidth?: boolean;
+    icon?: {
+        type: AvatarType;
+        position?: "start" | "end";
+    };
+    multiple?: boolean;
+    placeholder?: ValueItem;
+    label?: ValueItem;
+    options?:
+        | RenderSelectFieldOptionItem[]
+        | AllSourceItems<RenderSelectFieldOptionItem>;
 };

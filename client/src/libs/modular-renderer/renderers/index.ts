@@ -14,6 +14,7 @@ import { SegmentItem } from "./SegmentItem";
 import { MasonryItem } from "./MasonryItem";
 import { AbsoluteItem, AbsoluteContainerItem } from "./AbsoluteItem";
 import { TextFieldItem } from "./TextFieldItem";
+import { SelectFieldItem } from "./SelectFieldItem";
 
 export type RendererFunctionProps<T> = {
     renderer: T;
@@ -45,4 +46,5 @@ export const Renderers: {
     absolute: AbsoluteItem,
     "absolute-container": AbsoluteContainerItem,
     "text-field": TextFieldItem,
+    "select-field": SelectFieldItem,
 };

@@ -46,6 +46,8 @@ As a rule, all RendererItems must only have the `supertype` and `type` keys. All
     Renders children in a masonry configuration
 - [TextFieldItem - `text-field`](./textfield.md)
     Renders a customizable text field
+- [SelectFieldItem - `select-field`](./selectfield.md)
+    Renders a customizable select field
 
 #### AvatarType
 Several RendererItems refer to the `AvatarType` object. This is a generic Avatar/Icon renderer, and can be any one of the following:

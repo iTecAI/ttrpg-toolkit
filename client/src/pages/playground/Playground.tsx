@@ -6,7 +6,8 @@ import { useState } from "react";
 export function Playground() {
     const [form, setForm] = useState<any>({
         name: "test",
-        chips: "",
+        chips: "test1,test2,test3",
+        "chip-select": [],
         age: 100,
     });
     return (

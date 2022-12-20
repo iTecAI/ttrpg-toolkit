@@ -16,6 +16,8 @@ import {
     RenderMasonryItem,
     RenderSimpleFieldItem,
     RenderTextFieldItem,
+    RenderSelectFieldItem,
+    RenderSelectFieldOptionItem,
 } from "./renderTypes";
 
 import * as MdReactIcons from "react-icons/md";
@@ -163,7 +165,9 @@ export type AllRenderItems =
     | RenderSegmentItem
     | RenderMasonryItem
     | RenderSimpleFieldItem
-    | RenderTextFieldItem;
+    | RenderTextFieldItem
+    | RenderSelectFieldItem
+    | RenderSelectFieldOptionItem;
 export type AllSourceItems<T = any> =
     | ListSourceItem<T>
     | GeneratorSourceItem<T>;

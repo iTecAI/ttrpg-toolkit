@@ -16,6 +16,7 @@ export const TextFieldItem: RendererFunction<RenderTextFieldItem> = (
     const fullWidth = renderer.fullWidth ?? false;
     const iconDesc = renderer.icon ?? null;
     const placeholder = useValueItem(renderer.placeholder ?? "", data);
+    const label = useValueItem(renderer.label ?? "", data);
     const numerical = renderer.numerical ?? false;
     const validatorRaw = renderer.validator ?? null;
 
@@ -29,6 +30,7 @@ export const TextFieldItem: RendererFunction<RenderTextFieldItem> = (
         <div className="render-item child text-field">
             <TextField
                 placeholder={placeholder}
+                label={renderer.label && label}
                 variant={variant}
                 id={renderer.fieldId}
                 value={val ?? ""}

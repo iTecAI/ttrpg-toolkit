@@ -27,6 +27,7 @@ export default function RenderItem(props: {
     renderer: AllItems | AllItems[];
     dataOverride?: any;
     formDataOverride?: FormData;
+    unwrap?: boolean;
 }): JSX.Element {
     const context = useContext(DocumentContext);
     const [data, setData] = useState<any>({});
@@ -75,6 +76,7 @@ export default function RenderItem(props: {
                         {...props}
                         renderer={v}
                         key={JSON.stringify(v)}
+                        unwrap={props.unwrap}
                     />
                 ))}
             </>
@@ -99,6 +101,7 @@ export default function RenderItem(props: {
                 data={data}
                 formData={formData}
                 key={key}
+                unwrap={props.unwrap}
             />
         );
     } else {
@@ -120,15 +123,24 @@ export default function RenderItem(props: {
                 formData={formData}
             />
         );
-        //console.log("RES:", result);
-        return (
-            <span className="rendered-item single" key={key}>
-                {result ?? (
+        if (props.unwrap) {
+            return (
+                result ?? (
                     <Error
                         text={`Renderer type ${props.renderer.type} not found.`}
                     />
-                )}
-            </span>
-        );
+                )
+            );
+        } else {
+            return (
+                <span className="rendered-item single" key={key}>
+                    {result ?? (
+                        <Error
+                            text={`Renderer type ${props.renderer.type} not found.`}
+                        />
+                    )}
+                </span>
+            );
+        }
     }
 }

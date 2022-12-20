@@ -17,6 +17,7 @@ export default function SourceItem(props: {
     source: AllSourceItems;
     data: any;
     formData: FormData;
+    unwrap?: boolean;
 }): JSX.Element {
     let result: any[];
     const key = React.useState(Math.random())[0];
@@ -41,17 +42,35 @@ export default function SourceItem(props: {
             );
     }
     const srcRender = props.source.renderer;
-    return (
-        <span className="rendered-item source">
-            {result.map((v, i) => {
-                return (
-                    <RenderItem
-                        renderer={srcRender}
-                        dataOverride={v}
-                        key={`si-${i}-${key}`}
-                    />
-                );
-            })}
-        </span>
-    );
+    if (props.unwrap) {
+        return (
+            <>
+                {result.map((v, i) => {
+                    return (
+                        <RenderItem
+                            renderer={srcRender}
+                            dataOverride={v}
+                            key={`si-${i}-${key}`}
+                            unwrap={props.unwrap}
+                        />
+                    );
+                })}
+            </>
+        );
+    } else {
+        return (
+            <span className="rendered-item source">
+                {result.map((v, i) => {
+                    return (
+                        <RenderItem
+                            renderer={srcRender}
+                            dataOverride={v}
+                            key={`si-${i}-${key}`}
+                            unwrap={props.unwrap}
+                        />
+                    );
+                })}
+            </span>
+        );
+    }
 }

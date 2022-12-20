@@ -640,6 +640,12 @@
         },
         {
           "$ref": "#/definitions/RenderTextFieldItem"
+        },
+        {
+          "$ref": "#/definitions/RenderSelectFieldItem"
+        },
+        {
+          "$ref": "#/definitions/RenderSelectFieldOptionItem"
         }
       ]
     },
@@ -1641,6 +1647,9 @@
         "placeholder": {
           "$ref": "#/definitions/ValueItem"
         },
+        "label": {
+          "$ref": "#/definitions/ValueItem"
+        },
         "numerical": {
           "type": "boolean"
         },
@@ -1651,6 +1660,179 @@
       "required": [
         "supertype",
         "type"
+      ],
+      "additionalProperties": false
+    },
+    "RenderSelectFieldItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "render"
+        },
+        "type": {
+          "type": "string",
+          "const": "select-field"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        },
+        "fieldId": {
+          "type": "string"
+        },
+        "variant": {
+          "type": "string",
+          "enum": [
+            "filled",
+            "outlined",
+            "standard"
+          ]
+        },
+        "fullWidth": {
+          "type": "boolean"
+        },
+        "icon": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "$ref": "#/definitions/AvatarType"
+            },
+            "position": {
+              "type": "string",
+              "enum": [
+                "start",
+                "end"
+              ]
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "additionalProperties": false
+        },
+        "multiple": {
+          "type": "boolean"
+        },
+        "placeholder": {
+          "$ref": "#/definitions/ValueItem"
+        },
+        "label": {
+          "$ref": "#/definitions/ValueItem"
+        },
+        "options": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/RenderSelectFieldOptionItem"
+              }
+            },
+            {
+              "$ref": "#/definitions/AllSourceItems%3CRenderSelectFieldOptionItem%3E"
+            }
+          ]
+        }
+      },
+      "required": [
+        "supertype",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    "RenderSelectFieldOptionItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "render"
+        },
+        "type": {
+          "type": "string",
+          "const": "select-option"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        },
+        "optionId": {
+          "$ref": "#/definitions/ValueItem"
+        },
+        "displayName": {
+          "$ref": "#/definitions/ValueItem"
+        }
+      },
+      "required": [
+        "supertype",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    "AllSourceItems<RenderSelectFieldOptionItem>": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ListSourceItem%3CRenderSelectFieldOptionItem%3E"
+        },
+        {
+          "$ref": "#/definitions/GeneratorSourceItem%3CRenderSelectFieldOptionItem%3E"
+        }
+      ]
+    },
+    "ListSourceItem<RenderSelectFieldOptionItem>": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "source"
+        },
+        "type": {
+          "type": "string",
+          "const": "list"
+        },
+        "source": {
+          "type": "string",
+          "description": "Dot path to an array value in the data (ie. i.am.a.path.to.an.array)"
+        },
+        "renderer": {
+          "$ref": "#/definitions/AllRenderItems"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "source",
+        "renderer"
+      ],
+      "additionalProperties": false
+    },
+    "GeneratorSourceItem<RenderSelectFieldOptionItem>": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "source"
+        },
+        "type": {
+          "type": "string",
+          "const": "generator"
+        },
+        "function": {
+          "$ref": "#/definitions/ParsedFunction",
+          "description": "A function that takes data and outputs an array of {[key: string]: ValueItem | {...}}"
+        },
+        "renderer": {
+          "$ref": "#/definitions/AllRenderItems"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        }
+      },
+      "required": [
+        "supertype",
+        "type",
+        "function",
+        "renderer"
       ],
       "additionalProperties": false
     }

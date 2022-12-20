@@ -1,6 +1,6 @@
-# TextFieldItem - `text-field`
+# SelectFieldItem - `select-field`
 
-TextFieldItems render a configurable text field, and have the following keys in addition to their required keys:
+SelectFieldItems render a configurable selection field, and have the following keys in addition to their required keys:
 
 ```typescript
 {
@@ -28,13 +28,22 @@ TextFieldItems render a configurable text field, and have the following keys in 
     // Input label
     // Defaults to none
     "label"?: ValueItem,
-    // Whether the input should only accept numbers
+    // Whether to allow multiple inputs or not
     // Defaults to false
-    "numerical"?: boolean,
-    // Function to run on every input to validate
-    // Defaults to no validation
-    // If input is numerical, this will run after numerical check.
-    // Function should return true, a string error, or false for an unspecified error
-    "validator"?: ParsedFunction
+    "multiple"?: boolean,
+    // Options to render
+    "options"?: SelectFieldOptionItem[] | SourceItem<SelectFieldOptionItem>
+}
+```
+
+# SelectFieldOptionItem - `select-option`
+This pseudo-item represents a SelectOption, and can only be rendered inside a SelectFieldItem. Its optional keys are as follows:
+
+```typescript
+{
+    // Unique ID of the option
+    "optionId"?: ValueItem,
+    // Display value of the option
+    "displayName"?: ValueItem
 }
 ```
