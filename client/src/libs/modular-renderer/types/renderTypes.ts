@@ -176,7 +176,7 @@ export type RenderAbsoluteContainerItem = {
     type: "absolute-container";
     conditionalRender?: ParsedFunction;
     children?: RenderAbsoluteItem[] | AllSourceItems<RenderAbsoluteItem>;
-    height?: number; // Pixels
+    height?: number; // Percent
 };
 
 export type RenderMasonryItem = {

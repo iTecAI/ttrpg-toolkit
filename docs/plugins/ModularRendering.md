@@ -16,11 +16,13 @@ The syntax is largely self-documenting using JSON Schemas stored [here](../../sc
 ## See Also
 - [SourceItems](./SourceItems.md)
     Generate multiple RenderItems from arrays
+- [RendererItems](./renderer-items/index.md)
+    Render information in multiple formats
 
 ---
 
 #### Base Syntax
-The Modular Rendering system is composed of nested RendererItems and [SourceItems](./SourceItems.md). These items can use static data, or use data sourced from [ValueItems](#valueitems). Every RendererItem or SourceItem must have the following structure:
+The Modular Rendering system is composed of nested [RendererItems](./renderer-items/index.md) and [SourceItems](./SourceItems.md). These items can use static data, or use data sourced from [ValueItems](#valueitems). Every RendererItem or SourceItem must have the following structure:
 ```typescript
 {
     // Whether the item is a Renderer or Source

@@ -34,3 +34,15 @@ As a rule, all RendererItems must only have the `supertype` and `type` keys. All
     Renders tabulated data. Also includes the [TableRowItem - `tableRow`](./table.md#tablerowitem---tablerow) item
 - [MarkdownItem - `markdown`](./markdown.md)
     Renders markdown text
+- [AccordionItem - `accordion`](./accordion.md)
+    Renders a collapsible collection of items
+- [CardItem - `card`](./card.md)
+    Renders a complex card
+- [SegmentItem - `segment`](./segment.md)
+    Renders a raised or outlined section
+- [AbsoluteItem - `absolute`](./absolute.md)
+    Renders an absolutely-positioned item within an [AbsoluteContainerItem - `absolute-container`](./absolute.md#absolutecontaineritem---absolute-container)
+- [MasonryItem - `masonry`](./masonry.md)
+    Renders children in a masonry configuration
+- [TextFieldItem - `text-field`](./textfield.md)
+    Renders a customizable text field
