@@ -6,7 +6,7 @@ import { useState } from "react";
 export function Playground() {
     const [form, setForm] = useState<any>({
         name: "test",
-        name2: "test2",
+        chips: "",
         age: 100,
     });
     return (

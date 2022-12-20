@@ -7,10 +7,22 @@ import { Renderers } from "./renderers";
 import SourceItem from "./SourceItem";
 import { parseFunction } from "./utility/parsers";
 
+/**
+ * Generic <Error /> element
+ * @param text Text of error
+ * @returns <Error>Error: {text}</Error>
+ */
 export function Error(props: { text: string }): JSX.Element {
     return <div className="render-item child error">Error: {props.text}</div>;
 }
 
+/**
+ * Renders any item or item[]
+ * @param renderer Single AllItems (RendererItem or SourceItem) or array of AllItems
+ * @param dataOverride (Optional) Static data to override DocumentContext
+ * @param formDataOverride (Optional) Form data to override DocumentContext
+ * @returns Rendered <Item> or array of rendered <Item>
+ */
 export default function RenderItem(props: {
     renderer: AllItems | AllItems[];
     dataOverride?: any;

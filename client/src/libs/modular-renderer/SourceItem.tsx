@@ -6,6 +6,13 @@ import {
 } from "./utility/parsers";
 import RenderItem, { Error } from "./RenderItem";
 
+/**
+ * Render a SourceItem
+ * @param source SourceItem to render
+ * @param data Data to use
+ * @param formData Form data to use
+ * @returns Rendered SourceItem
+ */
 export default function SourceItem(props: {
     source: AllSourceItems;
     data: any;

@@ -12,6 +12,11 @@ import {
 } from "../types";
 import { isArray, isLiteral, isRenderItem } from "../types/guards";
 
+/**
+ * Parses function code from a ParsedFunction into a callable
+ * @param code Code to parse, either as a string or array of strings
+ * @returns Function of type (opts: {[key: string]: any}) => any
+ */
 export function parseFunctionCode(code: string | string[]): Function {
     let formattedFunction: string;
     if (isArray(code)) {
@@ -27,6 +32,13 @@ export function parseFunctionCode(code: string | string[]): Function {
     );
 }
 
+/**
+ * Parse a ParsedFunction object and return the output
+ * @param func ParsedFunction object
+ * @param data Data to use
+ * @param formData FormData to use
+ * @returns Function result, or "ERROR"
+ */
 export function parseFunction(
     func: ParsedFunction,
     data: RawData,
@@ -52,6 +64,13 @@ export function parseFunction(
     }
 }
 
+/**
+ * Parse a nested key (such as this.is.a.key.to.an.object), and may set a new value
+ * @param obj Object to search
+ * @param keys Key in form "this.is.a.key" or ["this", "is", "a", "key"]
+ * @param new_val (Optional) New value to set
+ * @returns 
+ */
 export function parseNested(
     obj: any,
     keys: string | string[],
@@ -94,6 +113,12 @@ export function parseNested(
     }
 }
 
+/**
+ * Parse a ListSourceItem
+ * @param item Item to parse
+ * @param data Raw data
+ * @returns Array of data objects
+ */
 export function parseListSourceItem(
     item: ListSourceItem,
     data: RawData
@@ -109,6 +134,13 @@ export function parseListSourceItem(
     return src;
 }
 
+/**
+ * Parse a GeneratorSourceItem
+ * @param item Item to parse
+ * @param data Data to use
+ * @param formData FormData to use
+ * @returns Array of data objects
+ */
 export function parseGeneratorSourceItem(
     item: GeneratorSourceItem,
     data: RawData,

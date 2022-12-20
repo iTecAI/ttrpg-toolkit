@@ -17,6 +17,11 @@ type IconExpanded = {
 
 export type IconType = IconExpanded | ValueItem;
 
+/**
+ * Typeguard to check if an icon object is an IconExpanded
+ * @param object Object to check
+ * @returns true if Object is IconExpanded
+ */
 function isExpandedIcon(object: any): object is IconExpanded {
     return (
         object.family &&
@@ -25,6 +30,14 @@ function isExpandedIcon(object: any): object is IconExpanded {
     );
 }
 
+/**
+ * Render an icon from react-icons
+ * @param icon An IconType item
+ * @param iconProps (Optional) Props to pass to underlying Icon
+ * @param data (Optional) Data object to pass to ValueItem
+ * @param formData (Optional) Form Data to pass to ValueItem
+ * @returns 
+ */
 export function Icon(props: {
     icon: IconType;
     iconProps?: IconBaseProps;
@@ -94,7 +107,8 @@ export function Icon(props: {
 
 /**
  * Renders an avatar from a generic AvatarType
- * @param props {item: AvatarType Object, data?: Data override}
+ * @param item AvatarType item
+ * @param data (Optional) data to pass to ValueItem
  * @return <Avatar>
  */
 export function ModularAvatar(props: {

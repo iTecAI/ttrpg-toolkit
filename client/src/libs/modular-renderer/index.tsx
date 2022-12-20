@@ -5,10 +5,15 @@ import { DocumentContext } from "./utility/document_communication";
 import RenderItem from "./RenderItem";
 
 export function ModularRenderer(props: {
+    /** Document ID */
     id: string;
+    /** Renderer Specification (either a RenderItem or SourceItem) */
     renderer: AllItems;
+    /** Static data (not user-modified) */
     data: RawData;
+    /** Form data, can be used as a control */
     formData?: { [key: string]: any };
+    /** Function to update on form data change */
     onFormDataChange?: (data: { [key: string]: any }) => void;
 }) {
     const [formData, setFormData] = useState<{ [key: string]: any }>(

@@ -8,6 +8,12 @@ import {
 import { parseValueItem } from "./parsers";
 import { matchArrays } from "./arraymatch";
 
+/**
+ * Hook wrapper around parseValueItem to add functionality for fetching form data
+ * @param item ValueItem to parse
+ * @param dataOverride (Optional) Data to use instead of data from DocumentContext
+ * @returns A result, which will update as necessary.
+ */
 export function useValueItem(item: ValueItem, dataOverride?: any): any {
     const context = useContext(DocumentContext);
     const staticContext = buildStaticContext(context);
