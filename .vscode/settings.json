@@ -13,5 +13,12 @@
             "url": "file:/home/itec/Code/ttrpg-toolkit/schema/manifest.schema.json"
         }
     ],
-    "python.formatting.provider": "black"
+    "python.formatting.provider": "black",
+    "[markdown]": {
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": true,
+            "strings": true
+        }
+    }
 }
