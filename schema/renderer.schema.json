@@ -60,19 +60,10 @@
           "$ref": "#/definitions/RenderMasonryItem"
         },
         {
-          "$ref": "#/definitions/RenderFormFieldItem"
-        },
-        {
-          "$ref": "#/definitions/RenderFormSelectItem"
-        },
-        {
-          "$ref": "#/definitions/RenderFormSelectOptionItem"
-        },
-        {
-          "$ref": "#/definitions/RenderFormSwitchItem"
-        },
-        {
           "$ref": "#/definitions/RenderSimpleFieldItem"
+        },
+        {
+          "$ref": "#/definitions/RenderTextFieldItem"
         }
       ]
     },
@@ -892,7 +883,7 @@
             {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/ValueItem"
+                "type": "string"
               }
             }
           ]
@@ -937,8 +928,7 @@
       },
       "required": [
         "supertype",
-        "type",
-        "children"
+        "type"
       ],
       "additionalProperties": false
     },
@@ -974,12 +964,7 @@
       },
       "required": [
         "supertype",
-        "type",
-        "child",
-        "top",
-        "left",
-        "width",
-        "height"
+        "type"
       ],
       "additionalProperties": false
     },
@@ -1254,384 +1239,7 @@
       },
       "required": [
         "supertype",
-        "type",
-        "children",
-        "columns"
-      ],
-      "additionalProperties": false
-    },
-    "RenderFormFieldItem": {
-      "type": "object",
-      "properties": {
-        "supertype": {
-          "type": "string",
-          "const": "render"
-        },
-        "type": {
-          "type": "string",
-          "const": "form-field"
-        },
-        "conditionalRender": {
-          "$ref": "#/definitions/ParsedFunction"
-        },
-        "key": {
-          "type": "string"
-        },
-        "validator": {
-          "$ref": "#/definitions/ParsedFunction"
-        },
-        "required": {
-          "type": "boolean"
-        },
-        "disabled": {
-          "$ref": "#/definitions/ValueItem"
-        },
-        "helperText": {
-          "$ref": "#/definitions/ValueItem"
-        },
-        "label": {
-          "$ref": "#/definitions/ValueItem"
-        },
-        "labelShrunk": {
-          "type": "boolean"
-        },
-        "placeholder": {
-          "$ref": "#/definitions/ValueItem"
-        },
-        "error": {
-          "$ref": "#/definitions/ValueItem"
-        },
-        "default": {
-          "$ref": "#/definitions/ValueItem"
-        },
-        "fullWidth": {
-          "type": "boolean"
-        },
-        "variant": {
-          "type": "string",
-          "enum": [
-            "outlined",
-            "filled",
-            "standard"
-          ]
-        },
-        "icon": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/AvatarType"
-            },
-            {
-              "$ref": "#/definitions/ValueItem"
-            }
-          ]
-        },
-        "inputParams": {
-          "anyOf": [
-            {
-              "type": "object",
-              "properties": {
-                "type": {
-                  "type": "string",
-                  "const": "text"
-                },
-                "maxLength": {
-                  "$ref": "#/definitions/ValueItem"
-                },
-                "multiline": {
-                  "type": "boolean"
-                }
-              },
-              "required": [
-                "type"
-              ],
-              "additionalProperties": false
-            },
-            {
-              "type": "object",
-              "properties": {
-                "type": {
-                  "type": "string",
-                  "const": "number"
-                },
-                "min": {
-                  "$ref": "#/definitions/ValueItem"
-                },
-                "max": {
-                  "$ref": "#/definitions/ValueItem"
-                }
-              },
-              "required": [
-                "type"
-              ],
-              "additionalProperties": false
-            },
-            {
-              "type": "object",
-              "properties": {
-                "type": {
-                  "type": "string",
-                  "const": "masked"
-                },
-                "mask": {
-                  "type": "string"
-                },
-                "definitions": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "type": "string"
-                  }
-                }
-              },
-              "required": [
-                "type",
-                "mask"
-              ],
-              "additionalProperties": false
-            }
-          ]
-        }
-      },
-      "required": [
-        "supertype",
-        "type",
-        "key",
-        "inputParams"
-      ],
-      "additionalProperties": false
-    },
-    "RenderFormSelectItem": {
-      "type": "object",
-      "properties": {
-        "supertype": {
-          "type": "string",
-          "const": "render"
-        },
-        "type": {
-          "type": "string",
-          "const": "form-select"
-        },
-        "conditionalRender": {
-          "$ref": "#/definitions/ParsedFunction"
-        },
-        "key": {
-          "type": "string"
-        },
-        "required": {
-          "type": "boolean"
-        },
-        "disabled": {
-          "$ref": "#/definitions/ValueItem"
-        },
-        "helperText": {
-          "$ref": "#/definitions/ValueItem"
-        },
-        "label": {
-          "$ref": "#/definitions/ValueItem"
-        },
-        "labelShrunk": {
-          "type": "boolean"
-        },
-        "placeholder": {
-          "$ref": "#/definitions/ValueItem"
-        },
-        "default": {
-          "$ref": "#/definitions/ValueItem"
-        },
-        "fullWidth": {
-          "type": "boolean"
-        },
-        "variant": {
-          "type": "string",
-          "enum": [
-            "outlined",
-            "filled",
-            "standard"
-          ]
-        },
-        "icon": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/AvatarType"
-            },
-            {
-              "$ref": "#/definitions/ValueItem"
-            }
-          ]
-        },
-        "multiple": {
-          "type": "boolean"
-        },
-        "children": {
-          "anyOf": [
-            {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/RenderFormSelectOptionItem"
-              }
-            },
-            {
-              "$ref": "#/definitions/AllSourceItems%3CRenderFormSelectItem%3E"
-            }
-          ]
-        }
-      },
-      "required": [
-        "supertype",
-        "type",
-        "key",
-        "children"
-      ],
-      "additionalProperties": false
-    },
-    "RenderFormSelectOptionItem": {
-      "type": "object",
-      "properties": {
-        "supertype": {
-          "type": "string",
-          "const": "render"
-        },
-        "type": {
-          "type": "string",
-          "const": "form-select-option"
-        },
-        "conditionalRender": {
-          "$ref": "#/definitions/ParsedFunction"
-        },
-        "value": {
-          "$ref": "#/definitions/ValueItem"
-        },
-        "displayValue": {
-          "$ref": "#/definitions/ValueItem"
-        }
-      },
-      "required": [
-        "supertype",
-        "type",
-        "value"
-      ],
-      "additionalProperties": false
-    },
-    "AllSourceItems<RenderFormSelectItem>": {
-      "anyOf": [
-        {
-          "$ref": "#/definitions/ListSourceItem%3CRenderFormSelectItem%3E"
-        },
-        {
-          "$ref": "#/definitions/GeneratorSourceItem%3CRenderFormSelectItem%3E"
-        }
-      ]
-    },
-    "ListSourceItem<RenderFormSelectItem>": {
-      "type": "object",
-      "properties": {
-        "supertype": {
-          "type": "string",
-          "const": "source"
-        },
-        "type": {
-          "type": "string",
-          "const": "list"
-        },
-        "source": {
-          "type": "string",
-          "description": "Dot path to an array value in the data (ie. i.am.a.path.to.an.array)"
-        },
-        "renderer": {
-          "$ref": "#/definitions/AllRenderItems"
-        },
-        "conditionalRender": {
-          "$ref": "#/definitions/ParsedFunction"
-        }
-      },
-      "required": [
-        "supertype",
-        "type",
-        "source",
-        "renderer"
-      ],
-      "additionalProperties": false
-    },
-    "GeneratorSourceItem<RenderFormSelectItem>": {
-      "type": "object",
-      "properties": {
-        "supertype": {
-          "type": "string",
-          "const": "source"
-        },
-        "type": {
-          "type": "string",
-          "const": "generator"
-        },
-        "function": {
-          "$ref": "#/definitions/ParsedFunction",
-          "description": "A function that takes data and outputs an array of {[key: string]: ValueItem | {...}}"
-        },
-        "renderer": {
-          "$ref": "#/definitions/AllRenderItems"
-        },
-        "conditionalRender": {
-          "$ref": "#/definitions/ParsedFunction"
-        }
-      },
-      "required": [
-        "supertype",
-        "type",
-        "function",
-        "renderer"
-      ],
-      "additionalProperties": false
-    },
-    "RenderFormSwitchItem": {
-      "type": "object",
-      "properties": {
-        "supertype": {
-          "type": "string",
-          "const": "render"
-        },
-        "type": {
-          "type": "string",
-          "const": "form-switch"
-        },
-        "conditionalRender": {
-          "$ref": "#/definitions/ParsedFunction"
-        },
-        "key": {
-          "type": "string"
-        },
-        "required": {
-          "type": "boolean"
-        },
-        "disabled": {
-          "$ref": "#/definitions/ValueItem"
-        },
-        "label": {
-          "$ref": "#/definitions/ValueItem"
-        },
-        "default": {
-          "$ref": "#/definitions/ValueItem"
-        },
-        "icon": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/AvatarType"
-            },
-            {
-              "$ref": "#/definitions/ValueItem"
-            }
-          ]
-        },
-        "variant": {
-          "type": "string",
-          "enum": [
-            "switch",
-            "checkbox"
-          ]
-        }
-      },
-      "required": [
-        "supertype",
-        "type",
-        "key"
+        "type"
       ],
       "additionalProperties": false
     },
@@ -1651,6 +1259,69 @@
         },
         "fieldId": {
           "type": "string"
+        }
+      },
+      "required": [
+        "supertype",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    "RenderTextFieldItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "render"
+        },
+        "type": {
+          "type": "string",
+          "const": "text-field"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        },
+        "fieldId": {
+          "type": "string"
+        },
+        "variant": {
+          "type": "string",
+          "enum": [
+            "filled",
+            "outlined",
+            "standard"
+          ]
+        },
+        "fullWidth": {
+          "type": "boolean"
+        },
+        "icon": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "$ref": "#/definitions/AvatarType"
+            },
+            "position": {
+              "type": "string",
+              "enum": [
+                "start",
+                "end"
+              ]
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "additionalProperties": false
+        },
+        "placeholder": {
+          "$ref": "#/definitions/ValueItem"
+        },
+        "numerical": {
+          "type": "boolean"
+        },
+        "validator": {
+          "$ref": "#/definitions/ParsedFunction"
         }
       },
       "required": [

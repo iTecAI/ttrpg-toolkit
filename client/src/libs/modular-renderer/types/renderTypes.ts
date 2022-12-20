@@ -188,79 +188,18 @@ export type RenderMasonryItem = {
     spacing?: number;
 };
 
-export type RenderFormSelectOptionItem = {
+export type RenderTextFieldItem = {
     supertype: "render";
-    type: "form-select-option";
+    type: "text-field";
     conditionalRender?: ParsedFunction;
-    value?: ValueItem;
-    displayValue?: ValueItem;
-};
-
-export type RenderFormFieldItem = {
-    supertype: "render";
-    type: "form-field";
-    conditionalRender?: ParsedFunction;
-    key?: string;
-    validator?: ParsedFunction; // Along with selected data, metadata and value of the field will be passed automatically in opts.__data
-    required?: boolean;
-    disabled?: ValueItem; // Should return a boolean (if it doesn't, will be cast to one)
-    helperText?: ValueItem;
-    label?: ValueItem;
-    labelShrunk?: boolean;
-    placeholder?: ValueItem;
-    error?: ValueItem; // Should return a boolean (if it doesn't, will be cast to one)
-    default?: ValueItem;
+    fieldId?: string;
+    variant?: "filled" | "outlined" | "standard";
     fullWidth?: boolean;
-    variant?: "outlined" | "filled" | "standard";
-    icon?: AvatarType | ValueItem;
-    inputParams?:
-        | {
-              type: "text";
-              maxLength?: ValueItem;
-              multiline?: boolean;
-          }
-        | {
-              type: "number";
-              min?: ValueItem;
-              max?: ValueItem;
-          }
-        | {
-              type: "masked";
-              mask: string;
-              definitions?: { [key: string]: string };
-          };
-};
-
-export type RenderFormSelectItem = {
-    supertype: "render";
-    type: "form-select";
-    conditionalRender?: ParsedFunction;
-    key: string;
-    required?: boolean;
-    disabled?: ValueItem; // Should return a boolean (if it doesn't, will be cast to one)
-    helperText?: ValueItem;
-    label?: ValueItem;
-    labelShrunk?: boolean;
+    icon?: {
+        type: AvatarType;
+        position?: "start" | "end";
+    };
     placeholder?: ValueItem;
-    default?: ValueItem;
-    fullWidth?: boolean;
-    variant?: "outlined" | "filled" | "standard";
-    icon?: AvatarType | ValueItem;
-    multiple?: boolean;
-    children:
-        | RenderFormSelectOptionItem[]
-        | AllSourceItems<RenderFormSelectItem>;
-};
-
-export type RenderFormSwitchItem = {
-    supertype: "render";
-    type: "form-switch";
-    conditionalRender?: ParsedFunction;
-    key: string;
-    required?: boolean;
-    disabled?: ValueItem; // Should return a boolean (if it doesn't, will be cast to one)
-    label?: ValueItem;
-    default?: ValueItem;
-    icon?: AvatarType | ValueItem;
-    variant?: "switch" | "checkbox";
+    numerical?: boolean;
+    validator?: ParsedFunction;
 };

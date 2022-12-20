@@ -14,11 +14,8 @@ import {
     RenderCardItem,
     RenderSegmentItem,
     RenderMasonryItem,
-    RenderFormFieldItem,
-    RenderFormSelectItem,
-    RenderFormSelectOptionItem,
-    RenderFormSwitchItem,
     RenderSimpleFieldItem,
+    RenderTextFieldItem,
 } from "./renderTypes";
 
 import * as MdReactIcons from "react-icons/md";
@@ -165,11 +162,8 @@ export type AllRenderItems =
     | RenderCardItem
     | RenderSegmentItem
     | RenderMasonryItem
-    | RenderFormFieldItem
-    | RenderFormSelectItem
-    | RenderFormSelectOptionItem
-    | RenderFormSwitchItem
-    | RenderSimpleFieldItem;
+    | RenderSimpleFieldItem
+    | RenderTextFieldItem;
 export type AllSourceItems<T = any> =
     | ListSourceItem<T>
     | GeneratorSourceItem<T>;

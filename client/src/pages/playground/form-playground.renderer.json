@@ -4,13 +4,36 @@
     "children": [
         {
             "supertype": "render",
-            "type": "simple-field",
-            "fieldId": "test"
+            "type": "text-field",
+            "fieldId": "name",
+            "placeholder": "Name",
+            "icon": {
+                "type": {
+                    "type": "icon",
+                    "icon": {
+                        "family": "md",
+                        "name": "MdPerson"
+                    }
+                },
+                "position": "start"
+            }
         },
         {
             "supertype": "render",
-            "type": "text",
-            "text": "$form:test"
+            "type": "text-field",
+            "fieldId": "age",
+            "placeholder": "Age",
+            "icon": {
+                "type": {
+                    "type": "icon",
+                    "icon": {
+                        "family": "md",
+                        "name": "MdWatchLater"
+                    }
+                },
+                "position": "start"
+            },
+            "numerical": true
         }
     ]
 }

@@ -13,6 +13,7 @@ import { CardItem } from "./CardItem";
 import { SegmentItem } from "./SegmentItem";
 import { MasonryItem } from "./MasonryItem";
 import { AbsoluteItem, AbsoluteContainerItem } from "./AbsoluteItem";
+import { TextFieldItem } from "./TextFieldItem";
 
 export type RendererFunctionProps<T> = {
     renderer: T;
@@ -43,4 +44,5 @@ export const Renderers: {
     masonry: MasonryItem,
     absolute: AbsoluteItem,
     "absolute-container": AbsoluteContainerItem,
+    "text-field": TextFieldItem,
 };

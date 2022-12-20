@@ -107,7 +107,7 @@ export function ModularAvatar(props: {
     switch (item.type) {
         case "icon":
             return (
-                <Avatar>
+                <Avatar sx={{ width: 24, height: 24 }}>
                     <Icon icon={item.icon} />
                 </Avatar>
             );
@@ -116,11 +116,12 @@ export function ModularAvatar(props: {
                 <Avatar
                     src={parseValueItem(item.source, data, formData).result}
                     alt={parseValueItem(item.alt, data, formData).result}
+                    sx={{ width: 24, height: 24 }}
                 />
             );
         case "text":
             return (
-                <Avatar>
+                <Avatar sx={{ width: 24, height: 24 }}>
                     {parseValueItem(item.text, data, formData).result}
                 </Avatar>
             );
