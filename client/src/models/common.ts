@@ -1,4 +1,4 @@
-import { ValueItem } from "../libs/modoc/types";
+import { ValueItem } from "../libs/modular-renderer/types";
 
 export type IconFamily = "md" | "gi";
 

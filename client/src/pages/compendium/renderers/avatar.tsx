@@ -1,7 +1,7 @@
 import { Avatar } from "@mui/material";
-import { Icon } from "../../../libs/modoc/renderers/common";
-import { AvatarType } from "../../../libs/modoc/types";
-import { parseValueItem } from "../../../libs/modoc/util";
+import { Icon } from "../../../libs/modular-renderer/renderers/common";
+import { AvatarType } from "../../../libs/modular-renderer/types";
+import { parseValueItem } from "../../../libs/modular-renderer/utility/parsers";
 import { DataItem } from "../../../models/compendium";
 
 export function AvatarItem(props: {

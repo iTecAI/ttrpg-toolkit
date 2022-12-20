@@ -1,4 +1,3 @@
-import { IconType } from "../renderers/common";
 import {
     RenderGroupItem,
     RenderTextItem,
@@ -15,15 +14,32 @@ import {
     RenderCardItem,
     RenderSegmentItem,
     RenderMasonryItem,
-    RenderFormFieldItem,
-    RenderFormSelectItem,
-    RenderFormSelectOptionItem,
-    RenderFormSwitchItem,
+    RenderSimpleFieldItem,
+    RenderTextFieldItem,
 } from "./renderTypes";
+
+import * as MdReactIcons from "react-icons/md";
+import * as GiReactIcons from "react-icons/gi";
+
+export const iconMap = { md: MdReactIcons, gi: GiReactIcons };
+export type IconFamily = "md" | "gi";
+type IconExpanded = {
+    family: IconFamily;
+    name: string | ValueItem;
+};
+
+export type IconType = IconExpanded | ValueItem;
 
 export type Literal = string | number | boolean | null | undefined;
 
-export type FormSpec = { [key: string]: any };
+export type FormData = { [key: string]: any };
+
+export type ModularDocument = {
+    documentId: string;
+    update: (field: string, value: any) => void;
+    values: FormData;
+    data: RawData;
+};
 
 export type TextItem = {
     supertype: "value";
@@ -146,10 +162,8 @@ export type AllRenderItems =
     | RenderCardItem
     | RenderSegmentItem
     | RenderMasonryItem
-    | RenderFormFieldItem
-    | RenderFormSelectItem
-    | RenderFormSelectOptionItem
-    | RenderFormSwitchItem;
+    | RenderSimpleFieldItem
+    | RenderTextFieldItem;
 export type AllSourceItems<T = any> =
     | ListSourceItem<T>
     | GeneratorSourceItem<T>;

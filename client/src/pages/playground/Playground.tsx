@@ -1,16 +1,24 @@
-import { Container, Typography } from "@mui/material";
-import { ModularRenderer, MuiRenderParser } from "../../libs/modoc";
-import { loc } from "../../util/localization";
+import { Container, Paper } from "@mui/material";
+import { ModularRenderer } from "../../libs/modular-renderer";
 import formSchema from "./form-playground.renderer.json";
+import { useState } from "react";
 
 export function Playground() {
+    const [form, setForm] = useState<any>({
+        name: "test",
+        name2: "test2",
+        age: 100,
+    });
     return (
         <Container>
             <ModularRenderer
-                data={{}}
+                id="playground-render"
                 renderer={formSchema as any}
-                parser={MuiRenderParser}
+                data={{}}
+                formData={form}
+                onFormDataChange={(data) => setForm(data)}
             />
+            <Paper>{JSON.stringify(form)}</Paper>
         </Container>
     );
 }

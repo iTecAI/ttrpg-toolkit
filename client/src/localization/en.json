@@ -68,6 +68,11 @@
         },
         "debug": {
             "not_active": "Debug mode is not active"
+        },
+        "renderer": {
+            "root": "Error",
+            "not_number": "Must be a number.",
+            "validation": "Validation failed."
         }
     },
     "plugin": {

@@ -104,7 +104,7 @@ export function SearchPopup(props: {
                     Object.keys(
                         props.dataSource.categories[props.category]
                             .search_fields
-                    ).map((f) => {
+                    ).map((f, ind) => {
                         if (!fields[f]) {
                             return null;
                         }
@@ -333,6 +333,7 @@ export function SearchPopup(props: {
                                     boxSizing: "border-box",
                                 }}
                                 elevation={fields[f].value.length > 0 ? 1 : 2}
+                                key={`sp-${ind}`}
                             >
                                 <Stack direction={"row"} spacing={2} key={f}>
                                     <span

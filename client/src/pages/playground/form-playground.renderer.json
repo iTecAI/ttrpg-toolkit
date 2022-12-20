@@ -1,14 +1,86 @@
 {
     "supertype": "render",
-    "type": "segment",
-    "variant": "outlined",
+    "type": "group",
     "children": [
         {
             "supertype": "render",
-            "type": "form-field",
-            "key": "test1",
-            "inputParams": {
-                "type": "text"
+            "type": "text-field",
+            "fieldId": "name",
+            "placeholder": "Name",
+            "icon": {
+                "type": {
+                    "type": "icon",
+                    "icon": {
+                        "family": "md",
+                        "name": "MdPerson"
+                    }
+                },
+                "position": "start"
+            }
+        },
+        {
+            "supertype": "render",
+            "type": "text-field",
+            "fieldId": "age",
+            "placeholder": "Age",
+            "icon": {
+                "type": {
+                    "type": "icon",
+                    "icon": {
+                        "family": "md",
+                        "name": "MdWatchLater"
+                    }
+                },
+                "position": "start"
+            },
+            "numerical": true
+        },
+        {
+            "supertype": "render",
+            "type": "text-field",
+            "fieldId": "chips",
+            "placeholder": "Enter Chips",
+            "icon": {
+                "type": {
+                    "type": "icon",
+                    "icon": {
+                        "family": "md",
+                        "name": "MdLabel"
+                    }
+                },
+                "position": "start"
+            }
+        },
+        {
+            "supertype": "render",
+            "type": "text",
+            "text": {
+                "type": "text",
+                "supertype": "value",
+                "content": "Hi, {{name}}! You are {{age}} years old.",
+                "substitutions": {
+                    "name": "$form:name",
+                    "age": "$form:age"
+                }
+            }
+        },
+        {
+            "supertype": "render",
+            "type": "group",
+            "children": {
+                "supertype": "source",
+                "type": "generator",
+                "renderer": {
+                    "supertype": "render",
+                    "type": "chip",
+                    "text": "$self"
+                },
+                "function": {
+                    "function": "(opts) => opts.value.split(',').filter((v) => v.length > 0)",
+                    "opts": {
+                        "value": "$form:chips"
+                    }
+                }
             }
         }
     ]

@@ -1,12 +1,128 @@
 import {
-    FormSpec,
+    GeneratorSourceItem,
+    ListSourceItem,
+    ParsedFunction,
+    RawData,
     ValueItem,
     ValueStringDirective,
     ValueStringDirectiveNames,
+    FormData,
+    AllItems,
+    AllRenderItems,
 } from "../types";
-import { isLiteral } from "../types/guards";
-import parseFunction from "./functionParser";
-import parseNested from "./nestedParser";
+import { isArray, isLiteral, isRenderItem } from "../types/guards";
+
+export function parseFunctionCode(code: string | string[]): Function {
+    let formattedFunction: string;
+    if (isArray(code)) {
+        formattedFunction = code.map((line) => line.trim()).join("");
+    } else {
+        formattedFunction = code.trim();
+    }
+    formattedFunction = formattedFunction.replace(/;$/g, "");
+    // eslint-disable-next-line
+    return new Function(
+        "options",
+        `"use strict"; return (${formattedFunction})(options)`
+    );
+}
+
+export function parseFunction(
+    func: ParsedFunction,
+    data: RawData,
+    formData: FormData
+): any {
+    const parsedOptions: { [key: string]: any } = {};
+    for (let k of Object.keys(func.opts)) {
+        parsedOptions[k] = parseValueItem(func.opts[k], data, formData).result;
+    }
+    const fn = parseFunctionCode(func.function);
+    try {
+        return fn(parsedOptions);
+    } catch (e: any) {
+        console.debug(
+            `Error executing ${
+                isArray(func.function)
+                    ? func.function.join("\n")
+                    : func.function
+            } with options ${JSON.stringify(parsedOptions)}`,
+            e
+        );
+        return "ERROR";
+    }
+}
+
+export function parseNested(
+    obj: any,
+    keys: string | string[],
+    new_val?: any
+): any {
+    if (typeof keys === "string") {
+        keys = keys.split(".");
+    }
+
+    const key: string = keys[0];
+    keys = keys.slice(1);
+    try {
+        if (Object.keys(obj).includes(key)) {
+            if (keys.length === 0) {
+                if (new_val !== undefined) {
+                    obj[key] = new_val;
+                }
+                return obj[key];
+            }
+            return parseNested(obj[key], keys, new_val);
+        } else {
+            if (new_val !== undefined) {
+                obj[key] = {};
+                return parseNested(obj[key], keys, new_val);
+            }
+            /*console.warn(
+                `Attempt to access key ${key} of ${JSON.stringify(obj)} failed.`
+            );*/
+            return null;
+        }
+    } catch {
+        if (new_val !== undefined) {
+            obj[key] = {};
+            return parseNested(obj[key], keys, new_val);
+        }
+        /*console.warn(
+                `Attempt to access key ${key} of ${JSON.stringify(obj)} failed.`
+            );*/
+        return null;
+    }
+}
+
+export function parseListSourceItem(
+    item: ListSourceItem,
+    data: RawData
+): any[] {
+    const src: any = parseNested(data, item.source);
+
+    if (!isArray(src)) {
+        console.warn(
+            `Item at ${item.source} in ${JSON.stringify(data)} is not an array.`
+        );
+        return [];
+    }
+    return src;
+}
+
+export function parseGeneratorSourceItem(
+    item: GeneratorSourceItem,
+    data: RawData,
+    formData: FormData
+): any[] {
+    const result = parseFunction(item.function, data, formData);
+    if (!isArray(result)) {
+        console.warn(
+            `Function ${item.function.function.toString()} does not produce an array.`
+        );
+        return [];
+    }
+    return result;
+}
 
 type ValueItemOutput = {
     result: any;
@@ -21,8 +137,11 @@ type ValueItemOutput = {
 export function parseValueItem(
     item: ValueItem,
     data: any,
-    formData: FormSpec
+    formData?: FormData
 ): ValueItemOutput {
+    if (formData === undefined) {
+        formData = {};
+    }
     const OUTPUT: ValueItemOutput = {
         result: null,
         form_dependencies: [],
@@ -135,13 +254,13 @@ export function parseValueItem(
                     ).result;
                     subbedText = subbedText.replaceAll(
                         `{{${k}}}`,
-                        (sub || "[NO VALUE]").toString()
+                        (sub ?? "[NO VALUE]").toString()
                     );
                 }
                 OUTPUT.result = subbedText;
                 break;
             case "function":
-                const executor = parseFunction(item.function);
+                const executor = parseFunctionCode(item.function);
 
                 const parsedOptions: { [key: string]: any } = {};
                 for (let k of Object.keys(item.opts)) {
@@ -178,6 +297,63 @@ export function parseValueItem(
     return OUTPUT;
 }
 
-export function parseValueItemNoForm(item: ValueItem, data: any): any {
-    return parseValueItem(item, data, {}).result;
+export type ExpandedRenderItem = { renderer: AllRenderItems; data: any };
+export function expandItems(
+    item: AllItems | AllItems[],
+    data: any,
+    formData: FormData
+): ExpandedRenderItem[] {
+    if (isArray(item)) {
+        const out: ExpandedRenderItem[] = [];
+        item.forEach((v) =>
+            expandItems(v, data, formData).forEach((vv) => out.push(vv))
+        );
+        return out;
+    }
+    if (isRenderItem(item)) {
+        if (item.conditionalRender) {
+            if (
+                parseFunction(item.conditionalRender, data, formData) === false
+            ) {
+                return [];
+            }
+        }
+        return [{ renderer: item, data: data }];
+    }
+    switch (item.type) {
+        case "generator":
+            return parseGeneratorSourceItem(item, data, formData)
+                .map((v) => {
+                    if (item.renderer.conditionalRender) {
+                        if (
+                            parseFunction(
+                                item.renderer.conditionalRender,
+                                v,
+                                formData
+                            ) === false
+                        ) {
+                            return null;
+                        }
+                    }
+                    return { renderer: item.renderer, data: v };
+                })
+                .filter((v) => v != null) as ExpandedRenderItem[];
+        case "list":
+            return parseListSourceItem(item, data)
+                .map((v) => {
+                    if (item.renderer.conditionalRender) {
+                        if (
+                            parseFunction(
+                                item.renderer.conditionalRender,
+                                v,
+                                formData
+                            ) === false
+                        ) {
+                            return null;
+                        }
+                    }
+                    return { renderer: item.renderer, data: v };
+                })
+                .filter((v) => v != null) as ExpandedRenderItem[];
+    }
 }

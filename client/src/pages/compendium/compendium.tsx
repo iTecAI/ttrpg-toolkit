@@ -31,10 +31,10 @@ import { useHorizontalScroll } from "../../util/hscroll";
 import { DataItem } from "../../models/compendium";
 import { CompendiumItemRenderer } from "./renderers/compendiumItem";
 import { Masonry } from "@mui/lab";
-import { ModularRenderer, MuiRenderParser } from "../../libs/modoc";
+import { ModularRenderer } from "../../libs/modular-renderer";
 import { AvatarItem } from "./renderers/avatar";
 import { SearchPopup } from "./searchPopup";
-import { parseValueItemNoForm } from "../../libs/modoc/util/valueItemParser";
+import { parseValueItem } from "../../libs/modular-renderer/utility/parsers";
 
 export function Compendium() {
     const [plugin, setPlugin] = useState<string>("");
@@ -115,7 +115,7 @@ export function Compendium() {
     );
 
     useEffect(() => {
-        console.log(searchResults, currentPlugin, category);
+        //console.log(searchResults, currentPlugin, category);
     }, [searchResults, currentPlugin, category]);
 
     return (
@@ -215,7 +215,7 @@ export function Compendium() {
                 anchor={searchAnchor}
                 onClose={() => setSearchAnchor(null)}
                 onSubmit={(fields) => {
-                    console.log(fields);
+                    //console.log(fields);
                     if (plugin && category) {
                         setLoadingResults(true);
                         let filledFields: { [key: string]: DataSearchField } =
@@ -267,8 +267,9 @@ export function Compendium() {
                         spacing={1}
                         className="compendium-item-container"
                     >
-                        {searchResults.map(
-                            (r) =>
+                        {searchResults.map((r) => {
+                            //console.log("DATA", r);
+                            return (
                                 currentPlugin.data_source?.categories[category]
                                     .renderer && (
                                     <CompendiumItemRenderer
@@ -281,7 +282,8 @@ export function Compendium() {
                                         key={Math.random()}
                                     />
                                 )
-                        )}
+                            );
+                        })}
                     </Masonry>
                 </div>
             ) : (
@@ -322,26 +324,30 @@ export function Compendium() {
                                 <></>
                             )}
                             <div className="title">
-                                {parseValueItemNoForm(
-                                    currentPlugin.data_source?.categories[
-                                        category
-                                    ].renderer.displayName,
-                                    expandedDialog
-                                )}
+                                {
+                                    parseValueItem(
+                                        currentPlugin.data_source?.categories[
+                                            category
+                                        ].renderer.displayName,
+                                        expandedDialog
+                                    ).result
+                                }
                             </div>
                             <div className="subtitle">
-                                {parseValueItemNoForm(
-                                    currentPlugin.data_source?.categories[
-                                        category
-                                    ].renderer.source,
-                                    expandedDialog
-                                )}
+                                {
+                                    parseValueItem(
+                                        currentPlugin.data_source?.categories[
+                                            category
+                                        ].renderer.source,
+                                        expandedDialog
+                                    ).result
+                                }
                             </div>
                         </DialogTitle>
                         <DialogContent dividers>
                             <ModularRenderer
+                                id={"dialog-expanded-" + expandedDialog.oid}
                                 data={expandedDialog}
-                                parser={MuiRenderParser}
                                 renderer={
                                     currentPlugin.data_source?.categories[
                                         category

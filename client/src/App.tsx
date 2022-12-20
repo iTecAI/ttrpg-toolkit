@@ -18,7 +18,6 @@ import { Login } from "./pages/login/Login";
 import { themeOptionsDefault } from "./theme/default";
 import { get } from "./util/api";
 import { loc } from "./util/localization";
-import { ModularRenderer, MuiRenderParser } from "./libs/modoc";
 import { Playground } from "./pages/playground/Playground";
 export const RootContext: React.Context<{} | RootModel> = React.createContext(
     {}
@@ -147,17 +146,6 @@ function App() {
             <SnackbarProvider maxSnack={5}>
                 <RootContextProvider />
             </SnackbarProvider>
-            <ModularRenderer
-                data={{}}
-                renderer={{
-                    type: "text",
-                    supertype: "render",
-                    text: "eeee",
-                    textType: "body1",
-                    style: [],
-                }}
-                parser={MuiRenderParser}
-            />
         </ThemeProvider>
     );
 }
