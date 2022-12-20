@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useContext, useState, useEffect, useMemo } from "react";
+import { useContext, useState, useMemo } from "react";
 import { AllItems, FormData } from "./types";
 import { isArray, isSourceItem } from "./types/guards";
 import { DocumentContext } from "./utility/document_communication";

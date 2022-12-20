@@ -7,13 +7,9 @@ import {
 } from "@mui/material";
 import { RendererFunction, RendererFunctionProps } from ".";
 import RenderItem from "../RenderItem";
-import { FormData, ValueItem } from "../types";
+import { ValueItem } from "../types";
 import { RenderTableItem, RenderTableRowItem } from "../types/renderTypes";
-import {
-    ExpandedRenderItem,
-    expandItems,
-    parseValueItem,
-} from "../utility/parsers";
+import { ExpandedRenderItem, expandItems } from "../utility/parsers";
 import { useValueItem } from "../utility/hooks";
 
 export function TableHeadCell(props: {

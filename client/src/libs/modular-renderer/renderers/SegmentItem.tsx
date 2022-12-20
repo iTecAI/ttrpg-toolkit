@@ -1,7 +1,6 @@
 import { Paper } from "@mui/material";
 import { RendererFunction, RendererFunctionProps } from ".";
 import RenderItem from "../RenderItem";
-import { FormData } from "../types";
 import { RenderSegmentItem } from "../types/renderTypes";
 
 export const SegmentItem: RendererFunction<RenderSegmentItem> = (

@@ -1,7 +1,6 @@
 import Masonry from "@mui/lab/Masonry";
 import { RendererFunction, RendererFunctionProps } from ".";
 import RenderItem from "../RenderItem";
-import { FormData } from "../types";
 import { RenderMasonryItem } from "../types/renderTypes";
 
 export const MasonryItem: RendererFunction<RenderMasonryItem> = (

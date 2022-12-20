@@ -1,7 +1,6 @@
 import { Card, CardContent, CardHeader, CardMedia } from "@mui/material";
 import { RendererFunction, RendererFunctionProps } from ".";
 import RenderItem from "../RenderItem";
-import { FormData } from "../types";
 import { RenderCardItem } from "../types/renderTypes";
 import { ModularAvatar } from "./common";
 import { useValueItem } from "../utility/hooks";

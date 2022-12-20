@@ -1,6 +1,5 @@
 import { TextField } from "@mui/material";
 import { RendererFunction, RendererFunctionProps } from ".";
-import { FormData } from "../types";
 import { RenderSimpleFieldItem } from "../types/renderTypes";
 import * as React from "react";
 import { useFormField } from "../utility/document_communication";
@@ -8,7 +7,7 @@ import { useFormField } from "../utility/document_communication";
 export const SimpleFieldItem: RendererFunction<RenderSimpleFieldItem> = (
     props: RendererFunctionProps<RenderSimpleFieldItem>
 ) => {
-    const { renderer, data, formData } = props;
+    const { renderer } = props;
     const [value, setValue] = useFormField<string>(renderer.fieldId);
     return (
         <TextField

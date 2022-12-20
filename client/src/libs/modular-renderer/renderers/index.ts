@@ -1,4 +1,4 @@
-import { ParsedFunction, FormData } from "../types";
+import { FormData } from "../types";
 import { GroupItem } from "./GroupItem";
 import { TextItem } from "./TextItem";
 import { SimpleFieldItem } from "./SimpleFieldItem";
@@ -12,6 +12,7 @@ import { AccordionItem } from "./AccordionItem";
 import { CardItem } from "./CardItem";
 import { SegmentItem } from "./SegmentItem";
 import { MasonryItem } from "./MasonryItem";
+import { AbsoluteItem, AbsoluteContainerItem } from "./AbsoluteItem";
 
 export type RendererFunctionProps<T> = {
     renderer: T;
@@ -40,4 +41,6 @@ export const Renderers: {
     card: CardItem,
     segment: SegmentItem,
     masonry: MasonryItem,
+    absolute: AbsoluteItem,
+    "absolute-container": AbsoluteContainerItem,
 };

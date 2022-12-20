@@ -1,6 +1,5 @@
 import { RendererFunction, RendererFunctionProps } from ".";
 import RenderItem from "../RenderItem";
-import { FormData } from "../types";
 import { RenderListItem } from "../types/renderTypes";
 import { expandItems } from "../utility/parsers";
 

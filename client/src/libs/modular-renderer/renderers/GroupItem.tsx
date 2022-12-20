@@ -1,6 +1,5 @@
 import { RendererFunction, RendererFunctionProps } from ".";
 import RenderItem from "../RenderItem";
-import { FormData } from "../types";
 import { RenderGroupItem } from "../types/renderTypes";
 
 export const GroupItem: RendererFunction<RenderGroupItem> = (

@@ -20,6 +20,7 @@ export function parseFunctionCode(code: string | string[]): Function {
         formattedFunction = code.trim();
     }
     formattedFunction = formattedFunction.replace(/;$/g, "");
+    // eslint-disable-next-line
     return new Function(
         "options",
         `"use strict"; return (${formattedFunction})(options)`

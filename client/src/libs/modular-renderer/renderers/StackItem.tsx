@@ -1,6 +1,5 @@
 import { Stack } from "@mui/material";
 import { RendererFunction, RendererFunctionProps } from ".";
-import { FormData } from "../types";
 import { RenderStackItem } from "../types/renderTypes";
 import { expandItems } from "../utility/parsers";
 import RenderItem from "../RenderItem";

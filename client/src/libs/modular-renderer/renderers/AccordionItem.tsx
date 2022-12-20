@@ -6,7 +6,6 @@ import {
 } from "@mui/material";
 import { RendererFunction, RendererFunctionProps } from ".";
 import RenderItem from "../RenderItem";
-import { FormData } from "../types";
 import { RenderAccordionItem } from "../types/renderTypes";
 import { ModularAvatar } from "./common";
 import { MdExpandMore } from "react-icons/md";
