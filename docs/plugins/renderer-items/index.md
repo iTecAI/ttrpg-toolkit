@@ -46,3 +46,53 @@ As a rule, all RendererItems must only have the `supertype` and `type` keys. All
     Renders children in a masonry configuration
 - [TextFieldItem - `text-field`](./textfield.md)
     Renders a customizable text field
+
+#### AvatarType
+Several RendererItems refer to the `AvatarType` object. This is a generic Avatar/Icon renderer, and can be any one of the following:
+- Text Avatar
+```typescript
+{
+    "type": "text",
+    // Text to be rendered in the avatar circle.
+    // Should only be 1 or 2 characters
+    "text": ValueItem
+}
+```
+- Icon Avatar (see also [IconType](#icontype))
+```typescript
+{
+    "type": "icon",
+    // Icon to render
+    "icon": IconType
+}
+```
+- Image Avatar
+```typescript
+{
+    "type": "image",
+    // Image source
+    "source": ValueItem,
+    // Alt text
+    "alt": ValueItem
+}
+```
+
+#### IconType
+A generic representation of an icon. Currently, Modular Rendering supports **Material Icons** and **Game Icons** from [react-icons](https://react-icons.github.io/react-icons). An IconType can be either of the following:
+- Expanded Icon object
+```typescript
+{
+    // Icon group.
+    // md -> Material Design icons
+    // gi -> Game Icons
+    "family": "md" | "gi",
+    // Icon name, preceded by Md or Gi depending on the family.
+    "name": ValueItem
+}
+```
+- String representation/ValueItem
+```typescript
+"family.name"
+// For example, "md.MdInfo" for the material design info icon
+// This supports normal ValueItem usage as well.
+```
