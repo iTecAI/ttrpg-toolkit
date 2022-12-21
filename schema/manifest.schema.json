@@ -646,6 +646,12 @@
         },
         {
           "$ref": "#/definitions/RenderSelectFieldOptionItem"
+        },
+        {
+          "$ref": "#/definitions/RenderAutocompleteFieldItem"
+        },
+        {
+          "$ref": "#/definitions/RenderAutocompleteFieldOptionItem"
         }
       ]
     },
@@ -1833,6 +1839,109 @@
         "type",
         "function",
         "renderer"
+      ],
+      "additionalProperties": false
+    },
+    "RenderAutocompleteFieldItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "render"
+        },
+        "type": {
+          "type": "string",
+          "const": "autocomplete-field"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        },
+        "fieldId": {
+          "type": "string"
+        },
+        "variant": {
+          "type": "string",
+          "enum": [
+            "filled",
+            "outlined",
+            "standard"
+          ]
+        },
+        "fullWidth": {
+          "type": "boolean"
+        },
+        "icon": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "$ref": "#/definitions/AvatarType"
+            },
+            "position": {
+              "type": "string",
+              "enum": [
+                "start",
+                "end"
+              ]
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "additionalProperties": false
+        },
+        "multiple": {
+          "type": "boolean"
+        },
+        "placeholder": {
+          "$ref": "#/definitions/ValueItem"
+        },
+        "label": {
+          "$ref": "#/definitions/ValueItem"
+        },
+        "options": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "$ref": "#/definitions/ValueItem"
+            }
+          ]
+        },
+        "allowAny": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "supertype",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    "RenderAutocompleteFieldOptionItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "render"
+        },
+        "type": {
+          "type": "string",
+          "const": "autocomplete-option"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        },
+        "option": {
+          "$ref": "#/definitions/ValueItem"
+        }
+      },
+      "required": [
+        "supertype",
+        "type"
       ],
       "additionalProperties": false
     }

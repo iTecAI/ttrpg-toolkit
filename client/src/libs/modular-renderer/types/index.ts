@@ -18,6 +18,8 @@ import {
     RenderTextFieldItem,
     RenderSelectFieldItem,
     RenderSelectFieldOptionItem,
+    RenderAutocompleteFieldItem,
+    RenderAutocompleteFieldOptionItem,
 } from "./renderTypes";
 
 import * as MdReactIcons from "react-icons/md";
@@ -167,7 +169,9 @@ export type AllRenderItems =
     | RenderSimpleFieldItem
     | RenderTextFieldItem
     | RenderSelectFieldItem
-    | RenderSelectFieldOptionItem;
+    | RenderSelectFieldOptionItem
+    | RenderAutocompleteFieldItem
+    | RenderAutocompleteFieldOptionItem;
 export type AllSourceItems<T = any> =
     | ListSourceItem<T>
     | GeneratorSourceItem<T>;

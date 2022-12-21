@@ -15,6 +15,7 @@ import { MasonryItem } from "./MasonryItem";
 import { AbsoluteItem, AbsoluteContainerItem } from "./AbsoluteItem";
 import { TextFieldItem } from "./TextFieldItem";
 import { SelectFieldItem } from "./SelectFieldItem";
+import { AutocompleteFieldItem } from "./AutocompleteFieldItem";
 
 export type RendererFunctionProps<T> = {
     renderer: T;
@@ -47,4 +48,5 @@ export const Renderers: {
     "absolute-container": AbsoluteContainerItem,
     "text-field": TextFieldItem,
     "select-field": SelectFieldItem,
+    "autocomplete-field": AutocompleteFieldItem,
 };

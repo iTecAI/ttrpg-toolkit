@@ -88,6 +88,32 @@
         },
         {
             "supertype": "render",
+            "type": "autocomplete-field",
+            "fieldId": "chip-auto",
+            "multiple": true,
+            "allowAny": true,
+            "placeholder": "Select Chips",
+            "icon": {
+                "type": {
+                    "type": "icon",
+                    "icon": {
+                        "family": "md",
+                        "name": "MdLabel"
+                    }
+                },
+                "position": "start"
+            },
+            "options": {
+                "supertype": "value",
+                "type": "function",
+                "function": "(opts) => opts.value ? opts.value.split(',').filter((v) => v.length > 0) : []",
+                "opts": {
+                    "value": "$form:chips"
+                }
+            }
+        },
+        {
+            "supertype": "render",
             "type": "text",
             "text": {
                 "type": "text",

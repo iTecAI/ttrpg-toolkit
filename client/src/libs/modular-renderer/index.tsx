@@ -19,7 +19,7 @@ export function ModularRenderer(props: {
     const [formData, setFormData] = useState<{ [key: string]: any }>(
         props.formData ?? {}
     );
-    const document: ModularDocument = {
+    const [doc, setDoc] = useState<ModularDocument>({
         documentId: props.id,
         update: (field: string, value: any) => {
             if (value === null) {
@@ -32,14 +32,37 @@ export function ModularRenderer(props: {
         },
         values: formData,
         data: props.data,
-    };
+    });
 
     useEffect(() => {
-        props.formData && setFormData(props.formData);
-    }, [props.formData]);
+        if (
+            JSON.stringify(props.formData) !== JSON.stringify(doc.values) ||
+            JSON.stringify(props.data) !== JSON.stringify(doc.data)
+        ) {
+            setDoc({
+                documentId: props.id,
+                update: (field: string, value: any) => {
+                    if (value === null) {
+                        return;
+                    }
+                    let formCopy = JSON.parse(JSON.stringify(formData));
+                    formCopy[field] = value;
+                    setFormData(formCopy);
+                    props.onFormDataChange && props.onFormDataChange(formCopy);
+                },
+                values: formData,
+                data: props.data,
+            });
+        }
+    }, [props.formData, props.data]);
+
+    useEffect(
+        () => props.formData && setFormData(props.formData),
+        [props.formData]
+    );
     return (
         <div className="modular-renderer" id={props.id}>
-            <DocumentContext.Provider value={document}>
+            <DocumentContext.Provider value={doc}>
                 <RenderItem renderer={props.renderer} />
             </DocumentContext.Provider>
         </div>

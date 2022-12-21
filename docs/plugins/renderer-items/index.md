@@ -48,6 +48,8 @@ As a rule, all RendererItems must only have the `supertype` and `type` keys. All
     Renders a customizable text field
 - [SelectFieldItem - `select-field`](./selectfield.md)
     Renders a customizable select field
+- [AutocompleteFieldItem - `autocomplete-field`](./autocomplete.md)
+    Renders a text field with autocompletion options
 
 #### AvatarType
 Several RendererItems refer to the `AvatarType` object. This is a generic Avatar/Icon renderer, and can be any one of the following:

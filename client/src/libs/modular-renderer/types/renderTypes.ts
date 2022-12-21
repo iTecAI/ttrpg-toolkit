@@ -231,3 +231,28 @@ export type RenderSelectFieldItem = {
         | RenderSelectFieldOptionItem[]
         | AllSourceItems<RenderSelectFieldOptionItem>;
 };
+
+export type RenderAutocompleteFieldOptionItem = {
+    supertype: "render";
+    type: "autocomplete-option";
+    conditionalRender?: ParsedFunction;
+    option?: ValueItem;
+};
+
+export type RenderAutocompleteFieldItem = {
+    supertype: "render";
+    type: "autocomplete-field";
+    conditionalRender?: ParsedFunction;
+    fieldId?: string;
+    variant?: "filled" | "outlined" | "standard";
+    fullWidth?: boolean;
+    icon?: {
+        type: AvatarType;
+        position?: "start" | "end";
+    };
+    multiple?: boolean;
+    placeholder?: ValueItem;
+    label?: ValueItem;
+    options?: string[] | ValueItem;
+    allowAny?: boolean;
+};
