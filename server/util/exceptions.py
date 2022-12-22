@@ -22,12 +22,14 @@ class BaseHTTPException(BaseException, HTTPException):
         super().__init__(extra)
         if status_code:
             self.status_code = status_code
-        self.detail = json.dumps({
-            "errorType": HTTPStatus(self.status_code).phrase,
-            "message": self.message,
-            "messageClass": self.message_class,
-            "extra": extra,
-        })
+        self.detail = json.dumps(
+            {
+                "errorType": HTTPStatus(self.status_code).phrase,
+                "message": self.message,
+                "messageClass": self.message_class,
+                "extra": extra,
+            }
+        )
 
     def __repr__(self) -> str:
         return f"{self.status_code} - {self.__class__.__name__} - {self.message}"
@@ -151,3 +153,10 @@ class DebugNotActiveError(BaseHTTPException):
     message: str = "Debug mode is not active"
     message_class: str = "error.debug.not_active"
     status_code: int = HTTP_405_METHOD_NOT_ALLOWED
+
+
+# Collection Errors
+class CollectionNotFoundError(BaseHTTPException):
+    message: str = "Collection not found:"
+    message_class: str = "error.collection.not_found"
+    status_code: int = HTTP_404_NOT_FOUND
