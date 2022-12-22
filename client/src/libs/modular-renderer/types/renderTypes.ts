@@ -4,6 +4,7 @@ import {
     AllSourceItems,
     AllRenderItems,
     AvatarType,
+    IconType,
 } from ".";
 
 export type RenderGroupItem = {
@@ -232,13 +233,6 @@ export type RenderSelectFieldItem = {
         | AllSourceItems<RenderSelectFieldOptionItem>;
 };
 
-export type RenderAutocompleteFieldOptionItem = {
-    supertype: "render";
-    type: "autocomplete-option";
-    conditionalRender?: ParsedFunction;
-    option?: ValueItem;
-};
-
 export type RenderAutocompleteFieldItem = {
     supertype: "render";
     type: "autocomplete-field";
@@ -255,4 +249,22 @@ export type RenderAutocompleteFieldItem = {
     label?: ValueItem;
     options?: string[] | ValueItem;
     allowAny?: boolean;
+};
+
+export type RenderSwitchItem = {
+    supertype: "render";
+    type: "toggle-switch";
+    conditionalRender?: ParsedFunction;
+    fieldId?: string;
+    variant?: "radio" | "checkbox" | "switch";
+    label?: ValueItem;
+};
+
+export type RenderToggleButtonItem = {
+    supertype: "render";
+    type: "toggle-button";
+    conditionalRender?: ParsedFunction;
+    fieldId?: string;
+    icon?: IconType;
+    label?: ValueItem;
 };

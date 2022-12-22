@@ -114,6 +114,34 @@
         },
         {
             "supertype": "render",
+            "type": "toggle-switch",
+            "fieldId": "switch1",
+            "label": "Switch 1",
+            "variant": "checkbox"
+        },
+        {
+            "supertype": "render",
+            "type": "toggle-switch",
+            "fieldId": "switch2",
+            "label": "Switch 2",
+            "variant": "radio"
+        },
+        {
+            "supertype": "render",
+            "type": "toggle-switch",
+            "fieldId": "switch3",
+            "label": "Switch 3",
+            "variant": "switch"
+        },
+        {
+            "supertype": "render",
+            "type": "toggle-button",
+            "fieldId": "button",
+            "label": "Toggle Button",
+            "icon": "md.MdCheck"
+        },
+        {
+            "supertype": "render",
             "type": "text",
             "text": {
                 "type": "text",

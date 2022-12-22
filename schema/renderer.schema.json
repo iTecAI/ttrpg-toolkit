@@ -75,7 +75,10 @@
           "$ref": "#/definitions/RenderAutocompleteFieldItem"
         },
         {
-          "$ref": "#/definitions/RenderAutocompleteFieldOptionItem"
+          "$ref": "#/definitions/RenderSwitchItem"
+        },
+        {
+          "$ref": "#/definitions/RenderToggleButtonItem"
         }
       ]
     },
@@ -1597,7 +1600,7 @@
       ],
       "additionalProperties": false
     },
-    "RenderAutocompleteFieldOptionItem": {
+    "RenderSwitchItem": {
       "type": "object",
       "properties": {
         "supertype": {
@@ -1606,12 +1609,53 @@
         },
         "type": {
           "type": "string",
-          "const": "autocomplete-option"
+          "const": "toggle-switch"
         },
         "conditionalRender": {
           "$ref": "#/definitions/ParsedFunction"
         },
-        "option": {
+        "fieldId": {
+          "type": "string"
+        },
+        "variant": {
+          "type": "string",
+          "enum": [
+            "radio",
+            "checkbox",
+            "switch"
+          ]
+        },
+        "label": {
+          "$ref": "#/definitions/ValueItem"
+        }
+      },
+      "required": [
+        "supertype",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    "RenderToggleButtonItem": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "render"
+        },
+        "type": {
+          "type": "string",
+          "const": "toggle-button"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        },
+        "fieldId": {
+          "type": "string"
+        },
+        "icon": {
+          "$ref": "#/definitions/IconType"
+        },
+        "label": {
           "$ref": "#/definitions/ValueItem"
         }
       },

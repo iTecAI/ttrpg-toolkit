@@ -10,6 +10,10 @@ export function Playground() {
         "chip-select": [],
         "chip-auto": [],
         age: 100,
+        switch1: true,
+        switch2: false,
+        switch3: true,
+        button: false,
     });
     return (
         <Container>
