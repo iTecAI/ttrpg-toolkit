@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from starlite import Starlite, MediaType, get
 from starlite.datastructures import State
-from starlite.exceptions.utils import create_exception_response
+from starlite.utils.exception import create_exception_response
 from starlette.responses import Response
 from pymongo.mongo_client import MongoClient
 from util import *
@@ -29,6 +29,12 @@ def setup_state(state: State):
     state.config = CONF
     state.database = mncli[state.config["database"]["database"]]
     state.plugins = PLUG
+    if CONF["user_content"]["mode"] == "local":
+        state.user_content = LocalContentManager(CONF, state.database)
+    else:
+        raise NotImplementedError(
+            f"Loader mode {CONF['user_content']['mode']} is not implemented."
+        )
 
 
 def http_exception_handler(request: Request, exc: Exception) -> StarletteResponse:

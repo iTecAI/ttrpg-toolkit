@@ -160,3 +160,10 @@ class CollectionNotFoundError(BaseHTTPException):
     message: str = "Collection not found:"
     message_class: str = "error.collection.not_found"
     status_code: int = HTTP_404_NOT_FOUND
+
+
+# User Content Errors
+class ContentNotFoundError(BaseHTTPException):
+    message: str = "User content not found:"
+    message_class: str = "error.user_content.not_found"
+    status_code: int = HTTP_404_NOT_FOUND

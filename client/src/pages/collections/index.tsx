@@ -69,7 +69,7 @@ function CreateCollectionDialog(props: {
                         label={loc("collections.dialog.field-desc")}
                         fullWidth
                         multiline
-                        minRows={4}
+                        minRows={2}
                         InputProps={{
                             startAdornment: (
                                 <InputAdornment position="start">
