@@ -21,6 +21,7 @@ class MinimalCollection(BaseModel):
     name: str
     description: str
     image: str
+    tags: list[str]
     children: list[str]
 
     @classmethod
@@ -32,6 +33,7 @@ class MinimalCollection(BaseModel):
             collection.name,
             collection.description,
             collection.image,
+            collection.tags,
             collection.children_ids,
         )
 
@@ -58,6 +60,13 @@ class MinimalCollectionObject(BaseModel):
             obj.description,
             obj.image,
         )
+
+
+class CreateCollectionModel(BaseModel):
+    name: str
+    description: Optional[str] = None
+    image: Optional[str] = None
+    tags: Optional[list[str]] = []
 
 
 class CollectionsController(Controller):
@@ -111,3 +120,18 @@ class CollectionsController(Controller):
         return [
             r for r in results_unfiltered if subtype != None and subtype == r.subtype
         ]
+
+    @post("/")
+    async def create_collection(
+        self, state: State, session: Session, data: CreateCollectionModel
+    ) -> MinimalCollection:
+        new_collection: Collection = Collection.create(
+            state.database,
+            session.user,
+            data.name,
+            data.description,
+            data.tags,
+            data.image,
+        )
+        new_collection.save()
+        return MinimalCollection.from_collection(new_collection)

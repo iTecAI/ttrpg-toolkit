@@ -209,6 +209,42 @@ class Collection(ORM):
         self.image = image
         self.children_ids = children_ids
 
+    @classmethod
+    def create(
+        cls,
+        database: Database,
+        owner: User,
+        name: str = None,
+        description: str = None,
+        tags: list[str] = [],
+        image: str = None,
+    ) -> "Collection":
+        """Create a collection object from basic instance data
+
+        :param database: PyMongo Database object
+        :type database: Database
+        :param owner: User object
+        :type owner: User
+        :param name: Name string, defaults to None
+        :type name: str, optional
+        :param description: Description string, defaults to None
+        :type description: str, optional
+        :param tags: List of string tags, defaults to []
+        :type tags: list[str], optional
+        :param image: Image URI, defaults to None
+        :type image: str, optional
+        :return: Instantiated Collection with new OID
+        :rtype: Collection
+        """
+        return Collection(
+            database=database,
+            owner_id=owner.oid,
+            name=name,
+            description=description,
+            tags=tags,
+            image=image,
+        )
+
     def check_permissions(self, user: User) -> COLLECTION_SHARE_TYPE:
         """Gets the permissions array of a user for this Collection
 
