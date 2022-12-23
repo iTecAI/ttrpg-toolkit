@@ -37,6 +37,7 @@ class MinimalCollection(BaseModel):
 
 
 class MinimalCollectionObject(BaseModel):
+    subtype: str
     collectionId: str
     ownerId: str
     permissions: ITEM_SHARE_TYPE
@@ -49,6 +50,7 @@ class MinimalCollectionObject(BaseModel):
         cls, obj: CollectionObject, user: User
     ) -> "MinimalCollectionObject":
         return cls(
+            obj.subtype,
             obj.oid,
             obj.owner_id,
             obj.expand_share_array(obj.check_permissions(user)),
@@ -88,7 +90,11 @@ class CollectionsController(Controller):
         dependencies={"collection": Provide(collection_dep)},
     )
     async def get_collection_children(
-        self, state: State, session: Session, collection: Collection
+        self,
+        state: State,
+        session: Session,
+        collection: Collection,
+        subtype: Optional[str] = None,
     ) -> list[MinimalCollectionObject]:
         user = session.user
         children = collection.get_accessible_children(user)
@@ -99,4 +105,9 @@ class CollectionsController(Controller):
         ):
             raise CollectionNotFoundError(extra=collection)
 
-        return [MinimalCollectionObject.from_collection_object(c) for c in children]
+        results_unfiltered = [
+            MinimalCollectionObject.from_collection_object(c) for c in children
+        ]
+        return [
+            r for r in results_unfiltered if subtype != None and subtype == r.subtype
+        ]
