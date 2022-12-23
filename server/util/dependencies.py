@@ -2,7 +2,7 @@ from typing import Any
 from starlite import Request, State
 from models import *
 from .plugins import Plugin, PluginLoader
-from .exceptions import PluginDoesNotExistError
+from .exceptions import PluginDoesNotExistError, CollectionNotFoundError
 
 
 def session_dep(state: State, request: Any) -> Session | None:
@@ -22,3 +22,10 @@ def plugin_dep(state: State, plugin: str) -> Plugin:
         return loader[plugin]
     except:
         raise PluginDoesNotExistError(extra=plugin)
+
+
+def collection_dep(state: State, collection_id: str) -> Collection:
+    result = Collection.load_oid(collection_id, state.database)
+    if result:
+        return result
+    raise CollectionNotFoundError(extra=collection_id)

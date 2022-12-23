@@ -1,7 +1,7 @@
 from typing import Dict, Optional
 from starlite import Controller, Provide, State, get, post
 from util.guards import guard_loggedIn
-from util.dependencies import session_dep
+from util.dependencies import session_dep, collection_dep
 from util.exceptions import CollectionNotFoundError
 from models import (
     Session,
@@ -44,6 +44,19 @@ class MinimalCollectionObject(BaseModel):
     description: str
     image: str
 
+    @classmethod
+    def from_collection_object(
+        cls, obj: CollectionObject, user: User
+    ) -> "MinimalCollectionObject":
+        return cls(
+            obj.oid,
+            obj.owner_id,
+            obj.expand_share_array(obj.check_permissions(user)),
+            obj.name,
+            obj.description,
+            obj.image,
+        )
+
 
 class CollectionsController(Controller):
     guards = [guard_loggedIn]
@@ -58,15 +71,32 @@ class CollectionsController(Controller):
 
         return [MinimalCollection.from_collection(v, user) for v in visible]
 
-    @get("/{collection:str}")
+    @get("/{collection_id:str}", dependencies={"collection": Provide(collection_dep)})
     async def get_specific_collection(
-        self, state: State, session: Session, collection: str
+        self, state: State, session: Session, collection: Collection
     ) -> MinimalCollection:
         user = session.user
-        result = Collection.load_oid(collection, state.database)
-        if result == None:
-            raise CollectionNotFoundError(extra=collection)
-        if not "read" in result.expand_share_array(result.check_permissions(user)):
+        if not "read" in collection.expand_share_array(
+            collection.check_permissions(user)
+        ):
             raise CollectionNotFoundError(extra=collection)
 
-        return MinimalCollection.from_collection(result, user)
+        return MinimalCollection.from_collection(collection, user)
+
+    @get(
+        "/{collection_id:str}/children",
+        dependencies={"collection": Provide(collection_dep)},
+    )
+    async def get_collection_children(
+        self, state: State, session: Session, collection: Collection
+    ) -> list[MinimalCollectionObject]:
+        user = session.user
+        children = collection.get_accessible_children(user)
+        if (
+            not "read"
+            in collection.expand_share_array(collection.check_permissions(user))
+            and len(children) == 0
+        ):
+            raise CollectionNotFoundError(extra=collection)
+
+        return [MinimalCollectionObject.from_collection_object(c) for c in children]

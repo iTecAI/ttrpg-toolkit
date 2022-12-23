@@ -357,3 +357,26 @@ class Collection(ORM):
             result[coll.oid] = coll
 
         return list(result.values())
+
+    def get_accessible_children(self, user: User) -> list[CollectionObject]:
+        """Gets an array of all accessible children in a Collection
+
+        :param user: User object
+        :type user: User
+        :return: Array of CollectionObjects
+        :rtype: list[CollectionObject]
+        """
+        all_children: list[
+            CollectionObject
+        ] = CollectionObject.load_multiple_from_query(
+            {"oid": {"$in": self.children_ids}}
+        )
+        if "read" in self.expand_share_array(self.check_permissions(user)):
+            return all_children
+
+        results = []
+        for c in all_children:
+            if "read" in c.expand_share_array(c.check_permissions(user)):
+                results.append(c)
+
+        return c
