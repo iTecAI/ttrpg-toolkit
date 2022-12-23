@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from starlite import Starlite, MediaType, get
+from starlite import Starlite, MediaType, get, Request
 from starlite.datastructures import State
 from starlite.utils.exception import create_exception_response
 from starlette.responses import Response
@@ -95,6 +95,7 @@ BASE_HANDLERS = [
     DebugController,
     PluginAssetController,
     CollectionsController,
+    UserContentController,
 ]
 
 for plugin in PLUG.plugins.values():

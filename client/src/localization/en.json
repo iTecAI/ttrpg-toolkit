@@ -143,7 +143,8 @@
         "search": "Search",
         "close": "Close",
         "dismiss": "Dismiss",
-        "loading": "Loading..."
+        "loading": "Loading...",
+        "required": "{{field}} is required"
     },
     "compendium": {
         "nav": {
@@ -182,7 +183,11 @@
             "desc": "Create an empty collection of items, such as characters or homebrew NPCs",
             "field-name": "Name",
             "field-desc": "Description",
-            "field-tags": "Tags"
+            "field-tags": "Tags",
+            "field-file": "Upload Image",
+            "field-file-tooltip": "Click or Drag to Upload",
+            "field-file-clear": "Clear Image",
+            "error-image-failed": "Image failed to upload: {{detail}}"
         }
     }
 }

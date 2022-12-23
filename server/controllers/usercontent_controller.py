@@ -38,4 +38,4 @@ class UserContentController(Controller):
         data: UploadFile = Body(media_type=RequestEncodingType.MULTI_PART),
     ) -> str:
         manager: GenericContentManager = state.user_content
-        return manager.save(data, session.user)
+        return await manager.save(data, session.user)

@@ -20,7 +20,7 @@ class GenericContentManager:
         self.user_content_config = config["user_content"]
         self.mode: CONTENT_MODE = self.user_content_config["mode"]
         self.database: Database = database
-        self.collection: Collection
+        self.collection: Collection = self.database[self.COLLECTION]
 
     def generate_metadata(self, file: UploadFile, user: User) -> dict:
         new_id = uuid.uuid4().hex + "-" + user.oid
@@ -47,7 +47,7 @@ class GenericContentManager:
         result = self.collection.find_one({"id": oid})
         if result == None:
             raise KeyError(f"ID {oid} not found")
-        return self.load(result)
+        return self.load_meta(result)
 
     def clear_id(self, oid: str):
         self.collection.delete_one({"id": oid})
@@ -58,11 +58,11 @@ class LocalContentManager(GenericContentManager):
         super().__init__(config, database)
         self.path = self.user_content_config["path"]
 
-    def save(self, file: UploadFile, user: User) -> str:
+    async def save(self, file: UploadFile, user: User) -> str:
         metadata = self.generate_metadata(file, user)
-        with open(os.path.join(self.path, metadata["filename"]), "w") as f:
+        with open(os.path.join(self.path, metadata["filename"]), "wb") as f:
             while True:
-                data = file.read(self.CHUNKSIZE)
+                data = await file.read(self.CHUNKSIZE)
                 if len(data) == 0:
                     break
                 f.write(data)
@@ -75,7 +75,7 @@ class LocalContentManager(GenericContentManager):
             raise KeyError(f"ID {meta['id']} not found")
 
         async def generate_stream() -> AsyncGenerator[bytes, None]:
-            with open(os.path.join(self.path, meta["filename"]), "r") as f:
+            with open(os.path.join(self.path, meta["filename"]), "rb") as f:
                 while True:
                     data = f.read(self.CHUNKSIZE)
                     if len(data) == 0:

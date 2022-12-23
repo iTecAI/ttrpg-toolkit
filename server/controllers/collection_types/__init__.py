@@ -27,14 +27,16 @@ class MinimalCollection(BaseModel):
     @classmethod
     def from_collection(cls, collection: Collection, user: User) -> "MinimalCollection":
         return cls(
-            collection.oid,
-            collection.owner_id,
-            collection.expand_share_array(collection.check_permissions(user)),
-            collection.name,
-            collection.description,
-            collection.image,
-            collection.tags,
-            collection.children_ids,
+            collectionId=collection.oid,
+            ownerId=collection.owner_id,
+            permissions=collection.expand_share_array(
+                collection.check_permissions(user)
+            ),
+            name=collection.name,
+            description=collection.description,
+            image=collection.image,
+            tags=collection.tags,
+            children=collection.children_ids,
         )
 
 
@@ -52,13 +54,13 @@ class MinimalCollectionObject(BaseModel):
         cls, obj: CollectionObject, user: User
     ) -> "MinimalCollectionObject":
         return cls(
-            obj.subtype,
-            obj.oid,
-            obj.owner_id,
-            obj.expand_share_array(obj.check_permissions(user)),
-            obj.name,
-            obj.description,
-            obj.image,
+            subtype=obj.subtype,
+            collectionId=obj.oid,
+            ownerId=obj.owner_id,
+            permissions=obj.expand_share_array(obj.check_permissions(user)),
+            name=obj.name,
+            description=obj.description,
+            image=obj.image,
         )
 
 
@@ -116,7 +118,7 @@ class CollectionsController(Controller):
             raise CollectionNotFoundError(extra=collection)
 
         results_unfiltered = [
-            MinimalCollectionObject.from_collection_object(c) for c in children
+            MinimalCollectionObject.from_collection_object(c, user) for c in children
         ]
         return [
             r for r in results_unfiltered if subtype != None and subtype == r.subtype
@@ -126,13 +128,14 @@ class CollectionsController(Controller):
     async def create_collection(
         self, state: State, session: Session, data: CreateCollectionModel
     ) -> MinimalCollection:
+        user = session.user
         new_collection: Collection = Collection.create(
             state.database,
-            session.user,
+            user,
             data.name,
             data.description,
             data.tags,
             data.image,
         )
         new_collection.save()
-        return MinimalCollection.from_collection(new_collection)
+        return MinimalCollection.from_collection(new_collection, user)
