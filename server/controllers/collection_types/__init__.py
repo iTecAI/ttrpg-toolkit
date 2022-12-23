@@ -70,6 +70,7 @@ class CreateCollectionModel(BaseModel):
 
 
 class CollectionsController(Controller):
+    path = "/collections"
     guards = [guard_loggedIn]
     dependencies: Optional[Dict[str, "Provide"]] = {"session": Provide(session_dep)}
 

@@ -174,5 +174,15 @@
     "debug": {
         "reload_config": "Reload Config",
         "reload_plugins": "Reload Plugins"
+    },
+    "collections": {
+        "new": "Create Collection",
+        "dialog": {
+            "title": "Create Collection",
+            "desc": "Create an empty collection of items, such as characters or homebrew NPCs",
+            "field-name": "Name",
+            "field-desc": "Description",
+            "field-tags": "Tags"
+        }
     }
 }
