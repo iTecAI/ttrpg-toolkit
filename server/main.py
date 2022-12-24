@@ -96,6 +96,7 @@ BASE_HANDLERS = [
     PluginAssetController,
     CollectionsController,
     UserContentController,
+    UpdateController,
 ]
 
 for plugin in PLUG.plugins.values():

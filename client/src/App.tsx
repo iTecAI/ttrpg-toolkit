@@ -1,6 +1,6 @@
 import { Box, Button, ThemeProvider } from "@mui/material";
 import { SnackbarProvider, useSnackbar } from "notistack";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
     BrowserRouter,
     Route,
@@ -20,9 +20,12 @@ import { get } from "./util/api";
 import { loc } from "./util/localization";
 import { Playground } from "./pages/playground/Playground";
 import { Collections } from "./pages/collections";
+import { UpdateManager, Updates } from "./util/updates";
 export const RootContext: React.Context<{} | RootModel> = React.createContext(
     {}
 );
+export const UpdateContext: React.Context<null | UpdateManager> =
+    React.createContext<null | UpdateManager>(null);
 
 function RouterChild() {
     const [userInfo, setUserInfo] = useState<UserInfoModel | null>(null);
@@ -30,6 +33,7 @@ function RouterChild() {
     const [loading, setLoading] = useState<boolean>(true);
     let location = useLocation();
     let nav = useNavigate();
+    let updates = useContext(UpdateContext);
 
     useEffect(() => {
         get<UserInfoModel>("/account").then((result) => {
@@ -40,6 +44,10 @@ function RouterChild() {
                 setUserInfo(result.value);
                 if (!loggedIn) {
                     setLoggedIn(true);
+                }
+                const sid = localStorage.getItem("sessionId");
+                if (updates && !updates.updates && sid) {
+                    updates.activate(sid);
                 }
             } else {
                 if (loggedIn) {
@@ -100,7 +108,7 @@ function RouterChild() {
     );
 }
 
-function RootContextProvider() {
+function RootContextProvider(props: { children: React.ReactNode }) {
     const [currentRoot, setCurrentRoot] = useState<{} | RootModel>({});
 
     const { enqueueSnackbar, closeSnackbar } = useSnackbar();
@@ -126,6 +134,23 @@ function RootContextProvider() {
 
     return (
         <RootContext.Provider value={currentRoot}>
+            {props.children}
+        </RootContext.Provider>
+    );
+}
+
+function UpdateContextProvider(): JSX.Element {
+    const [updates, setUpdates] = useState<null | Updates>(null);
+
+    return (
+        <UpdateContext.Provider
+            value={{
+                updates: updates,
+                activate(session: string) {
+                    setUpdates(new Updates(session));
+                },
+            }}
+        >
             <Box
                 sx={{
                     width: "100vw",
@@ -138,7 +163,7 @@ function RootContextProvider() {
                     <RouterChild />
                 </BrowserRouter>
             </Box>
-        </RootContext.Provider>
+        </UpdateContext.Provider>
     );
 }
 
@@ -146,7 +171,9 @@ function App() {
     return (
         <ThemeProvider theme={themeOptionsDefault}>
             <SnackbarProvider maxSnack={5}>
-                <RootContextProvider />
+                <RootContextProvider>
+                    <UpdateContextProvider />
+                </RootContextProvider>
             </SnackbarProvider>
         </ThemeProvider>
     );

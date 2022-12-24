@@ -1,6 +1,15 @@
 from .config import Config
 from models import Session, User
 from pymongo.database import Database
+from asyncio import Queue
+from typing import TypedDict, Union, Any
+from time import time
+
+
+class Update(TypedDict):
+    session: Union[str, list[str]]
+    update: str
+    data: dict[str, Any]
 
 
 class Cluster:
@@ -9,3 +18,27 @@ class Cluster:
         self.node_id = conf["cluster_id"]
         self.database = db
         self.sessions = db[Session.collection]
+        self.event_queues: dict[str, Queue] = {}
+
+    def ensure_queue(self, session: str):
+        if not session in self.event_queues.keys():
+            self.event_queues[session] = Queue()
+
+    def dispatch_update(self, update: Update):
+        sessions: list[str] = []
+        if type(update["session"]) == list:
+            sessions = update["session"]
+        else:
+            sessions = [update["session"]]
+
+        active_sessions = [s for s in self.sessions.find({"oid": {"$in": sessions}})]
+        for a in active_sessions:
+            if a["node_id"] == self.node_id:
+                self.ensure_queue(a["oid"])
+                self.event_queues[a["oid"]].put_nowait(
+                    {
+                        "event": update["update"],
+                        "data": update["data"],
+                        "dispatched": time(),
+                    }
+                )

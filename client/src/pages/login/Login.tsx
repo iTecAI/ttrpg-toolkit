@@ -10,7 +10,7 @@ import {
     Stack,
     TextField,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
     MdAccountCircle,
     MdAlternateEmail,
@@ -22,6 +22,7 @@ import { isValidEmail } from "../../util/validators";
 import { ApiResponse, post } from "../../util/api";
 import { SessionModel } from "../../models/account";
 import { useNavigate } from "react-router-dom";
+import { UpdateContext } from "../../App";
 
 type loginMode = "login" | "signup";
 type loginStatus = null | "error" | "working" | "success";
@@ -38,6 +39,7 @@ function LoginForm(props: formProps) {
     const [pass, setPass] = useState("");
 
     const nav = useNavigate();
+    const updates = useContext(UpdateContext);
 
     return (
         <Card className="login-form">
@@ -144,6 +146,10 @@ function LoginForm(props: formProps) {
                                             "sessionId",
                                             result.value.sessionId
                                         );
+                                        updates &&
+                                            updates.activate(
+                                                result.value.sessionId
+                                            );
                                         nav("/");
                                     } else {
                                         props.setStatus("error");
@@ -167,6 +173,7 @@ function CreateAccountForm(props: formProps) {
     const [passConfirm, setPassConfirm] = useState("");
 
     const nav = useNavigate();
+    const updates = useContext(UpdateContext);
 
     return (
         <Card className="login-form">
@@ -298,6 +305,10 @@ function CreateAccountForm(props: formProps) {
                                             "sessionId",
                                             result.value.sessionId
                                         );
+                                        updates &&
+                                            updates.activate(
+                                                result.value.sessionId
+                                            );
                                         nav("/");
                                     } else {
                                         props.setStatus("error");
