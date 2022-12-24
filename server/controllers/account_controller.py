@@ -33,7 +33,7 @@ class AccountController(Controller):
     @post()
     async def login(self, data: AccountModel, state: State) -> SessionModel:
         session = Session.login(
-            data.username, data.password, state.database
+            data.username, data.password, state.database, state.cluster.node_id
         )  # Raises BadLoginException
         session.save()
         return {"sessionId": session.oid, "userId": session.uid}

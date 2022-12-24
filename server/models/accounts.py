@@ -60,11 +60,13 @@ class Session(ORM):
         database: Database = None,
         uid: str = None,
         expiration: float = 0,
+        node_id: str = "",
         **kwargs
     ):
         super().__init__(oid, database, **kwargs)
         self.uid = uid
         self.expiration = expiration
+        self.node_id = node_id
 
     @property
     def valid(self) -> bool:
@@ -85,7 +87,7 @@ class Session(ORM):
         raise exceptions.UserDoesNotExistError()
 
     @classmethod
-    def login(cls, username: str, password: str, database: Database):
+    def login(cls, username: str, password: str, database: Database, node_id: str):
         results = User.load_multiple_from_query({"username": username}, database)
         if len(results) == 0:
             raise exceptions.BadLoginError()
@@ -97,5 +99,8 @@ class Session(ORM):
         database[cls.collection].delete_many({"uid": user.oid})
 
         return cls(
-            database=database, uid=user.oid, expiration=time.time() + cls.SESSION_EXPIRE
+            database=database,
+            uid=user.oid,
+            expiration=time.time() + cls.SESSION_EXPIRE,
+            node_id=node_id,
         )

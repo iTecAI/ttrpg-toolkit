@@ -2,12 +2,10 @@ from pydantic import BaseModel
 from starlite import Starlite, MediaType, get, Request
 from starlite.datastructures import State
 from starlite.utils.exception import create_exception_response
-from starlette.responses import Response
 from pymongo.mongo_client import MongoClient
 from util import *
 from controllers import *
 import logging
-import json
 
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from starlette.middleware.errors import ServerErrorMiddleware
@@ -35,6 +33,8 @@ def setup_state(state: State):
         raise NotImplementedError(
             f"Loader mode {CONF['user_content']['mode']} is not implemented."
         )
+
+    state.cluster = Cluster(CONF, state.database)
 
 
 def http_exception_handler(request: Request, exc: Exception) -> StarletteResponse:
