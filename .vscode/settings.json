@@ -14,11 +14,17 @@
         }
     ],
     "python.formatting.provider": "black",
+    "editor.formatOnSave": true,
     "[markdown]": {
         "editor.quickSuggestions": {
             "other": true,
             "comments": true,
             "strings": true
         }
+    },
+    "python.analysis.typeCheckingMode": "off",
+    "[python]": {
+        "editor.formatOnPaste": false,
+        "editor.formatOnSaveMode": "file"
     }
 }

@@ -145,6 +145,54 @@ export async function post<T>(
     }
 }
 
+export async function postFile<T>(
+    path: string,
+    opts: { urlParams?: { [key: string]: string }; body: File }
+): Promise<ApiResponse<T>> {
+    let form = new FormData();
+    form.append("files", opts.body, opts.body.name);
+    let paramsString: string =
+        opts && opts.urlParams
+            ? `?${new URLSearchParams(opts.urlParams).toString()}`
+            : "";
+    let sessionId: string | null = window.localStorage.getItem("sessionId");
+    let result: Response = await fetch(
+        `/api${path.trimStart()}${paramsString}`,
+        {
+            headers: sessionId ? { Authorization: sessionId } : undefined,
+            body: form,
+            method: "POST",
+        }
+    );
+
+    let data: any;
+    try {
+        data = await result.json();
+    } catch (e) {
+        data = null;
+    }
+
+    if (result.status < 400) {
+        return {
+            success: true,
+            value: data,
+        };
+    } else {
+        if (typeof data.detail === "string") {
+            data.detail = JSON.parse(data.detail);
+        }
+        return {
+            success: false,
+            message: data.detail.messageClass
+                ? loc(data.detail.messageClass, { extra: data.extra })
+                : loc("error.generic"),
+            messageClass: data.detail.messageClass ?? "error.generic",
+            debugMessage: data.detail.message ?? "Generic error",
+            statusCode: result.status,
+        };
+    }
+}
+
 export async function patch<T>(
     path: string,
     opts?: { urlParams?: { [key: string]: string }; body?: any }

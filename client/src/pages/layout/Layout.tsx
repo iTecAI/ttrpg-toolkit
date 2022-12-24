@@ -162,6 +162,7 @@ export function Layout(props: {
                                                     : "0px",
                                         }}
                                         size="large"
+                                        onClick={() => nav("/collections")}
                                     >
                                         {loc("layout.buttons.collections")}
                                     </Button>

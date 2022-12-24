@@ -1,5 +1,6 @@
 from typing import Dict
 from util import ORM, exceptions
+from .games import Game
 from pymongo.database import Database
 import time
 import bcrypt
@@ -38,6 +39,14 @@ class User(ORM):
         return bcrypt.checkpw(
             password.encode("utf-8"), urlsafe_b64decode(self.password_hash)
         )
+
+    @property
+    def games(self) -> list[str]:
+        games = Game.load_multiple_from_query(
+            {"$or": [{"participants": self.oid}, {"game_master": self.oid}]},
+            self.database,
+        )
+        return [g.oid for g in games]
 
 
 class Session(ORM):
