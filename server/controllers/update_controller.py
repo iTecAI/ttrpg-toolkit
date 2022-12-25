@@ -6,6 +6,7 @@ from typing import TypedDict, Any
 import json
 import time
 from sse_starlette.sse import EventSourceResponse
+from asyncio.queues import QueueEmpty
 
 
 class EventType(TypedDict):
@@ -43,13 +44,18 @@ class UpdateController(Controller):
         cluster.ensure_queue(session.oid)
 
         async def publisher(req: Request):
-            """while session.oid in cluster.event_queues.keys():
-            event: EventType = await cluster.event_queues[session.oid].get()
-            yield encode(event)"""
-            while True:
-                await flush(req)
-                yield encode({"event": "test", "data": {}, "dispatched": time.time()})
-                time.sleep(2)
+            while session.oid in cluster.event_queues.keys():
+                try:
+                    event: EventType = cluster.event_queues[session.oid].get_nowait()
+                    print(event)
+                    await flush(req)
+                    yield encode(event)
+                except QueueEmpty:
+                    if round(time.time()) % 30 == 0:
+                        await flush(req)
+                        yield encode(f"ping {time.ctime()}")
+
+                time.sleep(0.25)
 
         gen = publisher(request)
         return EventSourceResponse(gen)

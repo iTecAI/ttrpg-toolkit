@@ -12,6 +12,7 @@ from models import (
     User,
 )
 from pydantic import BaseModel
+from util import Cluster
 
 
 class MinimalCollection(BaseModel):
@@ -138,4 +139,10 @@ class CollectionsController(Controller):
             data.image,
         )
         new_collection.save()
+
+        cluster: Cluster = state.cluster
+        cluster.dispatch_update(
+            {"session": session.oid, "update": "collections.new", "data": {}}
+        )
+
         return MinimalCollection.from_collection(new_collection, user)
