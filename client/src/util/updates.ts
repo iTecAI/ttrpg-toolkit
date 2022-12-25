@@ -14,7 +14,7 @@ export class Updates {
         this.waiting_events = 0;
 
         this.source.addEventListener("open", console.log);
-        this.source.addEventListener("update", console.log);
+        this.source.addEventListener("message", console.log);
     }
 }
 

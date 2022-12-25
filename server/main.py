@@ -7,6 +7,8 @@ from util import *
 from controllers import *
 import logging
 
+logging.getLogger("sse_starlette.sse").setLevel(logging.INFO)
+
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from starlette.middleware.errors import ServerErrorMiddleware
 from starlette.responses import Response as StarletteResponse
