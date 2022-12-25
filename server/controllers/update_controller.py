@@ -1,11 +1,13 @@
-from starlite import Controller, get, post, State, Provide
+from starlite import Controller, get, post, State, Provide, Request
 from starlite.response import StreamingResponse
-from util import Cluster, Session
+from util import Cluster, Session, session_dep, guard_loggedIn
 from util.exceptions import AuthorizationFailedError
-from typing import TypedDict, Any
+from typing import TypedDict, Any, Optional
 import json
 import time
-from sse_starlette.sse import EventSourceResponse
+from pydantic import BaseModel
+from asyncio.queues import QueueEmpty
+from asyncio import sleep
 
 
 class EventType(TypedDict):
@@ -14,27 +16,30 @@ class EventType(TypedDict):
     dispatched: float
 
 
-def encode(data):
-    return {"data": json.dumps(data)}
+class PollEvent(BaseModel):
+    event: str
+    body: Optional[dict[str, Any]] = None
 
 
 class UpdateController(Controller):
     path: str = "/updates"
 
-    @get("/subscribe/{sessionId:str}")
-    async def subscribe(self, state: State, sessionId: str) -> EventSourceResponse:
-        session = Session.load_oid(sessionId, state.database)
-        if session == None:
-            raise AuthorizationFailedError()
+    @get(
+        "/poll", guards=[guard_loggedIn], dependencies={"session": Provide(session_dep)}
+    )
+    async def poll(self, session: Session, state: State, request: Request) -> PollEvent:
         cluster: Cluster = state.cluster
         cluster.ensure_queue(session.oid)
 
-        async def publisher():
-            """while session.oid in cluster.event_queues.keys():
-            event: EventType = await cluster.event_queues[session.oid].get()
-            yield encode(event)"""
-            while True:
-                yield encode({"event": "test", "data": {}, "dispatched": time.time()})
-                time.sleep(2)
+        while request.is_connected:
+            try:
+                event: EventType = cluster.event_queues[session.oid].get_nowait()
+                break
+            except QueueEmpty:
+                pass
+            await sleep(0.5)
 
-        return EventSourceResponse(publisher())
+        return PollEvent(
+            event=event["event"],
+            body=event["data"] if len(event["data"].keys()) > 0 else None,
+        )

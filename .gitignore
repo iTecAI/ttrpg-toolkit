@@ -130,3 +130,4 @@ dmypy.json
 
 server/config/*
 server/user_content
+*/certs

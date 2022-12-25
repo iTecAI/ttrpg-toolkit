@@ -9,29 +9,23 @@ export type ApiResponse<T> =
           debugMessage: string;
           statusCode: number;
       };
-
-export async function get<T>(
-    path: string,
-    opts?: { urlParams?: { [key: string]: string } }
-): Promise<ApiResponse<T>> {
-    let paramsString: string =
-        opts && opts.urlParams
-            ? `?${new URLSearchParams(opts.urlParams).toString()}`
-            : "";
-    let sessionId: string | null = window.localStorage.getItem("sessionId");
-    let result: Response = await fetch(
-        `/api${path.trimStart()}${paramsString}`,
-        {
-            headers: sessionId ? { Authorization: sessionId } : undefined,
-            method: "GET",
-        }
-    );
-
+      
+async function processResult<T>(result: Response): Promise<ApiResponse<T>> {
     let data: any;
     try {
         data = await result.json();
     } catch {
         data = null;
+    }
+
+    if (!data) {
+        return {
+            success: false,
+            statusCode: result.status,
+            message: "EMPTY",
+            messageClass: "error.generic",
+            debugMessage: result.statusText,
+        };
     }
 
     if (result.status < 400) {
@@ -55,6 +49,26 @@ export async function get<T>(
     }
 }
 
+export async function get<T>(
+    path: string,
+    opts?: { urlParams?: { [key: string]: string } }
+): Promise<ApiResponse<T>> {
+    let paramsString: string =
+        opts && opts.urlParams
+            ? `?${new URLSearchParams(opts.urlParams).toString()}`
+            : "";
+    let sessionId: string | null = window.localStorage.getItem("sessionId");
+    let result: Response = await fetch(
+        `/api${path.trimStart()}${paramsString}`,
+        {
+            headers: sessionId ? { Authorization: sessionId } : undefined,
+            method: "GET",
+        }
+    );
+
+    return await processResult<T>(result);
+}
+
 export async function del<T>(
     path: string,
     opts?: { urlParams?: { [key: string]: string } }
@@ -72,31 +86,7 @@ export async function del<T>(
         }
     );
 
-    let data: any;
-    try {
-        data = await result.json();
-    } catch {
-        data = null;
-    }
-    if (result.status < 400) {
-        return {
-            success: true,
-            value: data,
-        };
-    } else {
-        if (typeof data.detail === "string") {
-            data.detail = JSON.parse(data.detail);
-        }
-        return {
-            success: false,
-            message: data.detail.messageClass
-                ? loc(data.detail.messageClass, { extra: data.extra })
-                : loc("error.generic"),
-            messageClass: data.detail.messageClass ?? "error.generic",
-            debugMessage: data.detail.message ?? "Generic error",
-            statusCode: result.status,
-        };
-    }
+    return await processResult<T>(result);
 }
 
 export async function post<T>(
@@ -117,32 +107,7 @@ export async function post<T>(
         }
     );
 
-    let data: any;
-    try {
-        data = await result.json();
-    } catch (e) {
-        data = null;
-    }
-
-    if (result.status < 400) {
-        return {
-            success: true,
-            value: data,
-        };
-    } else {
-        if (typeof data.detail === "string") {
-            data.detail = JSON.parse(data.detail);
-        }
-        return {
-            success: false,
-            message: data.detail.messageClass
-                ? loc(data.detail.messageClass, { extra: data.extra })
-                : loc("error.generic"),
-            messageClass: data.detail.messageClass ?? "error.generic",
-            debugMessage: data.detail.message ?? "Generic error",
-            statusCode: result.status,
-        };
-    }
+    return await processResult<T>(result);
 }
 
 export async function postFile<T>(
@@ -165,32 +130,7 @@ export async function postFile<T>(
         }
     );
 
-    let data: any;
-    try {
-        data = await result.json();
-    } catch (e) {
-        data = null;
-    }
-
-    if (result.status < 400) {
-        return {
-            success: true,
-            value: data,
-        };
-    } else {
-        if (typeof data.detail === "string") {
-            data.detail = JSON.parse(data.detail);
-        }
-        return {
-            success: false,
-            message: data.detail.messageClass
-                ? loc(data.detail.messageClass, { extra: data.extra })
-                : loc("error.generic"),
-            messageClass: data.detail.messageClass ?? "error.generic",
-            debugMessage: data.detail.message ?? "Generic error",
-            statusCode: result.status,
-        };
-    }
+    return await processResult<T>(result);
 }
 
 export async function patch<T>(
@@ -211,29 +151,5 @@ export async function patch<T>(
         }
     );
 
-    let data: any;
-    try {
-        data = await result.json();
-    } catch {
-        data = null;
-    }
-    if (result.status < 400) {
-        return {
-            success: true,
-            value: data,
-        };
-    } else {
-        if (typeof data.detail === "string") {
-            data.detail = JSON.parse(data.detail);
-        }
-        return {
-            success: false,
-            message: data.detail.messageClass
-                ? loc(data.detail.messageClass, { extra: data.extra })
-                : loc("error.generic"),
-            messageClass: data.detail.messageClass ?? "error.generic",
-            debugMessage: data.detail.message ?? "Generic error",
-            statusCode: result.status,
-        };
-    }
+    return await processResult<T>(result);
 }
