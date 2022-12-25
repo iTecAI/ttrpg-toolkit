@@ -21,13 +21,14 @@ export class Updates {
         while (true) {
             result = await get<UpdateType>("/updates/poll");
             if (result.success) {
+                this.retry = 0;
                 console.log(result.value);
             } else {
                 console.warn(
                     `Polling error ${result.statusCode}: ${result.debugMessage}. Waiting ${this.retry}s for retry.`
                 );
-                setTimeout(this.run, this.retry * 1000);
-                this.retry += 5;
+                setTimeout(this.run.bind(this), this.retry * 1000);
+                this.retry = this.retry + 5;
                 break;
             }
         }

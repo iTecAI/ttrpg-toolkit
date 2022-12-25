@@ -7,6 +7,7 @@ import json
 import time
 from pydantic import BaseModel
 from asyncio.queues import QueueEmpty
+from asyncio import sleep
 
 
 class EventType(TypedDict):
@@ -26,11 +27,18 @@ class UpdateController(Controller):
     @get(
         "/poll", guards=[guard_loggedIn], dependencies={"session": Provide(session_dep)}
     )
-    async def poll(self, session: Session, state: State) -> PollEvent:
+    async def poll(self, session: Session, state: State, request: Request) -> PollEvent:
         cluster: Cluster = state.cluster
         cluster.ensure_queue(session.oid)
 
-        event: EventType = await cluster.event_queues[session.oid].get()
+        while request.is_connected:
+            try:
+                event: EventType = cluster.event_queues[session.oid].get_nowait()
+                break
+            except QueueEmpty:
+                pass
+            await sleep(0.5)
+
         return PollEvent(
             event=event["event"],
             body=event["data"] if len(event["data"].keys()) > 0 else None,

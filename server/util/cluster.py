@@ -25,7 +25,6 @@ class Cluster:
             self.event_queues[session] = Queue()
 
     def dispatch_update(self, update: Update):
-        print("TRYING", update)
         sessions: list[str] = []
         if type(update["session"]) == list:
             sessions = update["session"]
@@ -35,7 +34,6 @@ class Cluster:
         active_sessions = [s for s in self.sessions.find({"oid": {"$in": sessions}})]
         for a in active_sessions:
             if a["node_id"] == self.node_id:
-                print("DISP", update)
                 self.ensure_queue(a["oid"])
                 self.event_queues[a["oid"]].put_nowait(
                     {
