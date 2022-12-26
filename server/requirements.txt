@@ -6,3 +6,4 @@ bcrypt
 ijson
 json5
 sse-starlette
+httpagentparser

@@ -26,10 +26,11 @@ import {
 } from "react-icons/md";
 import "./index.scss";
 import { loc } from "../../util/localization";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { post, postFile } from "../../util/api";
 import { useSnackbar } from "notistack";
 import { MinimalCollection } from "../../models/collection";
+import { useUpdate } from "../../util/updates";
 
 function CreateCollectionDialog(props: {
     open: boolean;
@@ -264,6 +265,10 @@ function CreateCollectionDialog(props: {
 
 export function Collections(): JSX.Element {
     const [creating, setCreating] = useState<boolean>(false);
+    const [updates, popUpdate] = useUpdate("collections.new");
+    useEffect(() => {
+        console.log(popUpdate());
+    }, [updates]);
 
     return (
         <Box className="collections-area">

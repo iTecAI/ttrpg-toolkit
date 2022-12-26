@@ -146,10 +146,6 @@ function LoginForm(props: formProps) {
                                             "sessionId",
                                             result.value.sessionId
                                         );
-                                        updates &&
-                                            updates.activate(
-                                                result.value.sessionId
-                                            );
                                         nav("/");
                                     } else {
                                         props.setStatus("error");
@@ -305,10 +301,7 @@ function CreateAccountForm(props: formProps) {
                                             "sessionId",
                                             result.value.sessionId
                                         );
-                                        updates &&
-                                            updates.activate(
-                                                result.value.sessionId
-                                            );
+
                                         nav("/");
                                     } else {
                                         props.setStatus("error");

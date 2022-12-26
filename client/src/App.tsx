@@ -16,16 +16,32 @@ import { Index } from "./pages/index/Index";
 import { Layout } from "./pages/layout/Layout";
 import { Login } from "./pages/login/Login";
 import { themeOptionsDefault } from "./theme/default";
-import { get } from "./util/api";
+import { del, get } from "./util/api";
 import { loc } from "./util/localization";
 import { Playground } from "./pages/playground/Playground";
 import { Collections } from "./pages/collections";
-import { UpdateManager, Updates } from "./util/updates";
+import { UpdateType } from "./util/updates";
 export const RootContext: React.Context<{} | RootModel> = React.createContext(
     {}
 );
-export const UpdateContext: React.Context<null | UpdateManager> =
-    React.createContext<null | UpdateManager>(null);
+
+export type UpdateContextType =
+    | {
+          active: false;
+          activate: (session: string) => void;
+      }
+    | {
+          active: true;
+          deactivate: () => void;
+          events: UpdateType[];
+          pop: (type: string) => UpdateType[];
+      };
+
+export const UpdateContext: React.Context<UpdateContextType> =
+    React.createContext<UpdateContextType>({
+        active: false,
+        activate(session) {},
+    });
 
 function RouterChild() {
     const [userInfo, setUserInfo] = useState<UserInfoModel | null>(null);
@@ -42,12 +58,11 @@ function RouterChild() {
             }
             if (result.success) {
                 setUserInfo(result.value);
+                if (!updates.active) {
+                    updates.activate(localStorage.getItem("sessionId") ?? "");
+                }
                 if (!loggedIn) {
                     setLoggedIn(true);
-                }
-                const sid = localStorage.getItem("sessionId");
-                if (updates && !updates.updates && sid) {
-                    updates.activate(sid);
                 }
             } else {
                 if (loggedIn) {
@@ -140,17 +155,81 @@ function RootContextProvider(props: { children: React.ReactNode }) {
 }
 
 function UpdateContextProvider(): JSX.Element {
-    const [updates, setUpdates] = useState<null | Updates>(null);
+    const [events, setEvents] = useState<UpdateType[]>([]);
+    const [source, setSource] = useState<EventSource | null>(null);
+    const [ctx, setCtx] = useState<UpdateContextType>({
+        active: false,
+        activate,
+    });
+
+    useEffect(() => {
+        window.addEventListener("unload", () => {
+            del<null>("/updates/poll").then(console.log);
+        });
+    }, [source]);
+
+    function deactivate() {
+        setCtx({
+            active: false,
+            activate,
+        });
+        if (source) {
+            source.close();
+        }
+        setEvents([]);
+    }
+
+    function updateCtx(newEvents: UpdateType[]) {
+        if (ctx.active) {
+            setCtx({
+                active: true,
+                deactivate,
+                events,
+                pop: (type: string) => {
+                    const results = events.filter((v) => v.event === type);
+                    const newEvents = events.filter((v) => v.event !== type);
+                    setEvents(newEvents);
+                    return results;
+                },
+            });
+        }
+    }
+
+    function activate(sessionId: string) {
+        if (ctx.active) {
+            return;
+        }
+        setEvents([]);
+        const src = new EventSource(`/api/updates/poll/${sessionId}`, {
+            withCredentials: true,
+        });
+        src.addEventListener("message", (ev: MessageEvent<string>) => {
+            const data: UpdateType[] = JSON.parse(ev.data);
+            console.log(data);
+            if (data.length > 0) {
+                events.unshift(...data);
+                setEvents(events);
+                console.log(events);
+                updateCtx(events);
+            }
+        });
+        src.addEventListener("error", console.log);
+        setSource(src);
+        setCtx({
+            active: true,
+            deactivate,
+            events,
+            pop: (type: string) => {
+                const results = events.filter((v) => v.event === type);
+                const newEvents = events.filter((v) => v.event !== type);
+                setEvents(newEvents);
+                return results;
+            },
+        });
+    }
 
     return (
-        <UpdateContext.Provider
-            value={{
-                updates: updates,
-                activate(session: string) {
-                    setUpdates(new Updates(session));
-                },
-            }}
-        >
+        <UpdateContext.Provider value={ctx}>
             <Box
                 sx={{
                     width: "100vw",
