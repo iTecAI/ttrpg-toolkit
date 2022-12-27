@@ -63,6 +63,10 @@ export const UpdateContext: React.Context<
     (value: UpdateContextAction) => {},
 ]);
 
+/**
+ * Router Setup
+ * @returns JSX.Element
+ */
 function RouterChild() {
     const [userInfo, setUserInfo] = useState<UserInfoModel | null>(null);
     const [loggedIn, setLoggedIn] = useState<boolean>(false);
@@ -146,6 +150,11 @@ function RouterChild() {
     );
 }
 
+/**
+ * Provides RootContext
+ * @param props Children nodes
+ * @returns JSX.Element
+ */
 function RootContextProvider(props: { children: React.ReactNode }) {
     const [currentRoot, setCurrentRoot] = useState<{} | RootModel>({});
 
@@ -177,6 +186,10 @@ function RootContextProvider(props: { children: React.ReactNode }) {
     );
 }
 
+/**
+ * Handles EventSource context
+ * @returns JSX.Element
+ */
 function UpdateContextProvider(): JSX.Element {
     const [source, setSource] = useState<EventSource | null>(null);
 
@@ -274,6 +287,10 @@ function UpdateContextProvider(): JSX.Element {
     );
 }
 
+/**
+ * Root App component
+ * @returns JSX.Element
+ */
 function App() {
     return (
         <ThemeProvider theme={themeOptionsDefault}>

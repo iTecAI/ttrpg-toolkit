@@ -7,6 +7,11 @@ export type UpdateType = {
     dispatched: number;
 };
 
+/**
+ * Adds callback to specific update type
+ * @param callback Callback to call for each update
+ * @param updateName update name to check for
+ */
 export function useUpdate(
     callback: (update: UpdateType) => void,
     updateName: string
