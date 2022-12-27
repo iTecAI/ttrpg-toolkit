@@ -1,6 +1,7 @@
 import {
     Autocomplete,
     Avatar,
+    Button,
     Checkbox,
     Chip,
     Dialog,
@@ -20,7 +21,7 @@ import { useEffect, useState } from "react";
 import { UserSearchResult } from "../../../models/account";
 import { get } from "../../../util/api";
 import { calculateGravatar } from "../../../util/gravatar";
-import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
+import { MdCheckBox, MdCheckBoxOutlineBlank, MdSend } from "react-icons/md";
 import {
     MinimalCollection,
     ShareCollectionItem,
@@ -40,8 +41,11 @@ const PERMISSIONS: { [key: string]: string } = {
     read: "#32712c",
 };
 
-function SharedItem(props: { item: ShareCollectionItem }): JSX.Element {
-    const { item } = props;
+function SharedItem(props: {
+    item: ShareCollectionItem;
+    collection: MinimalCollection;
+}): JSX.Element {
+    const { item, collection } = props;
     const [perms, setPerms] = useState<string[]>([]);
 
     useEffect(() => setPerms(item.permissions), [item]);
@@ -103,7 +107,24 @@ function SharedItem(props: { item: ShareCollectionItem }): JSX.Element {
                         >
                             {Object.keys(PERMISSIONS).map((p) =>
                                 p === "owner" ? null : (
-                                    <MenuItem key={p} value={p}>
+                                    <MenuItem
+                                        key={p}
+                                        value={p}
+                                        disabled={
+                                            (p === "promoter" &&
+                                                !collection.permissions.includes(
+                                                    "owner"
+                                                )) ||
+                                            (p === "admin" &&
+                                                !collection.permissions.includes(
+                                                    "promoter"
+                                                )) ||
+                                            (p === "configure" &&
+                                                !collection.permissions.includes(
+                                                    "configure"
+                                                ))
+                                        }
+                                    >
                                         <Checkbox checked={perms.includes(p)} />
                                         <Stack spacing={0.25}>
                                             <span>
@@ -182,106 +203,146 @@ export function ShareCollectionDialog(props: {
             </DialogTitle>
             <DialogContent>
                 <Stack spacing={2}>
-                    <Autocomplete
-                        sx={{ marginTop: "12px" }}
-                        multiple
-                        inputValue={inputValue}
-                        value={value as any}
-                        onChange={(event, value) => setValue(value as any)}
-                        onInputChange={(event, value) => setInputValue(value)}
-                        renderInput={(params) => (
-                            <TextField
-                                {...params}
-                                label={loc("collections.list.item.share.input")}
-                                placeholder={loc(
-                                    "collections.list.item.share.input-placeholder"
-                                )}
-                            />
-                        )}
-                        options={options}
-                        getOptionLabel={(option: UserSearchResult) =>
-                            `${option.display} (${option.email})`
-                        }
-                        renderTags={(value: UserSearchResult[], getTagProps) =>
-                            value.map((v, index) => (
-                                <Chip
-                                    variant="filled"
-                                    label={
-                                        <Stack
-                                            direction={"row"}
-                                            spacing={0.75}
-                                            sx={{ paddingTop: "4px" }}
-                                        >
-                                            <Typography
-                                                variant="body1"
-                                                sx={{
-                                                    display: "inline",
-                                                }}
-                                            >
-                                                {v.display}
-                                            </Typography>
-                                            <Typography
-                                                variant="caption"
-                                                sx={{
-                                                    display: "inline",
-                                                    paddingTop: "1px",
-                                                    opacity: 0.75,
-                                                }}
-                                            >
-                                                ({v.email})
-                                            </Typography>
-                                        </Stack>
-                                    }
-                                    avatar={
-                                        <Avatar
-                                            src={calculateGravatar(v.email)}
-                                        />
-                                    }
-                                    {...getTagProps({ index })}
+                    <Stack
+                        spacing={2}
+                        direction={"row"}
+                        sx={{
+                            width: "100%",
+                            display: "inline-block",
+                        }}
+                    >
+                        <Autocomplete
+                            sx={{
+                                width: "calc(100% - 128px)",
+                                display: "inline-block",
+                            }}
+                            multiple
+                            inputValue={inputValue}
+                            value={value as any}
+                            onChange={(event, value) => setValue(value as any)}
+                            onInputChange={(event, value) =>
+                                setInputValue(value)
+                            }
+                            renderInput={(params) => (
+                                <TextField
+                                    {...params}
+                                    label={loc(
+                                        "collections.list.item.share.input"
+                                    )}
+                                    placeholder={loc(
+                                        "collections.list.item.share.input-placeholder"
+                                    )}
                                 />
-                            ))
-                        }
-                        renderOption={(props, option, { selected }) => (
-                            <li {...props}>
-                                <Checkbox
-                                    icon={<MdCheckBoxOutlineBlank size={24} />}
-                                    checkedIcon={<MdCheckBox size={24} />}
-                                    style={{ marginRight: 8 }}
-                                    checked={selected}
-                                />
-                                <Stack direction={"row"} spacing={1}>
-                                    <Avatar
-                                        src={calculateGravatar(option.email)}
-                                        sx={{ width: 24, height: 24 }}
+                            )}
+                            options={options}
+                            getOptionLabel={(option: UserSearchResult) =>
+                                `${option.display} (${option.email})`
+                            }
+                            renderTags={(
+                                value: UserSearchResult[],
+                                getTagProps
+                            ) =>
+                                value.map((v, index) => (
+                                    <Chip
+                                        variant="filled"
+                                        label={
+                                            <Stack
+                                                direction={"row"}
+                                                spacing={0.75}
+                                                sx={{ paddingTop: "4px" }}
+                                            >
+                                                <Typography
+                                                    variant="body1"
+                                                    sx={{
+                                                        display: "inline",
+                                                    }}
+                                                >
+                                                    {v.display}
+                                                </Typography>
+                                                <Typography
+                                                    variant="caption"
+                                                    sx={{
+                                                        display: "inline",
+                                                        paddingTop: "1px",
+                                                        opacity: 0.75,
+                                                    }}
+                                                >
+                                                    ({v.email})
+                                                </Typography>
+                                            </Stack>
+                                        }
+                                        avatar={
+                                            <Avatar
+                                                src={calculateGravatar(v.email)}
+                                            />
+                                        }
+                                        {...getTagProps({ index })}
                                     />
-                                    <Typography
-                                        variant="body1"
-                                        sx={{
-                                            display: "inline",
-                                            paddingTop: "5px",
-                                        }}
-                                    >
-                                        {option.display}
-                                    </Typography>
-                                    <Typography
-                                        variant="caption"
-                                        sx={{
-                                            display: "inline",
-                                            paddingTop: "6px",
-                                            opacity: 0.75,
-                                            verticalAlign: "middle",
-                                        }}
-                                    >
-                                        ({option.email})
-                                    </Typography>
-                                </Stack>
-                            </li>
-                        )}
-                    />
+                                ))
+                            }
+                            renderOption={(props, option, { selected }) => (
+                                <li {...props}>
+                                    <Checkbox
+                                        icon={
+                                            <MdCheckBoxOutlineBlank size={24} />
+                                        }
+                                        checkedIcon={<MdCheckBox size={24} />}
+                                        style={{ marginRight: 8 }}
+                                        checked={selected}
+                                    />
+                                    <Stack direction={"row"} spacing={1}>
+                                        <Avatar
+                                            src={calculateGravatar(
+                                                option.email
+                                            )}
+                                            sx={{ width: 24, height: 24 }}
+                                        />
+                                        <Typography
+                                            variant="body1"
+                                            sx={{
+                                                display: "inline",
+                                                paddingTop: "5px",
+                                            }}
+                                        >
+                                            {option.display}
+                                        </Typography>
+                                        <Typography
+                                            variant="caption"
+                                            sx={{
+                                                display: "inline",
+                                                paddingTop: "6px",
+                                                opacity: 0.75,
+                                                verticalAlign: "middle",
+                                            }}
+                                        >
+                                            ({option.email})
+                                        </Typography>
+                                    </Stack>
+                                </li>
+                            )}
+                        />
+                        <Button
+                            startIcon={<MdSend />}
+                            className="share-btn"
+                            sx={{
+                                width: "112px",
+                                height: "48px",
+                                transform: "translate(0, 16px)",
+                                display: "inline-block",
+                            }}
+                            variant="contained"
+                        >
+                            <span className="text">{loc("generic.share")}</span>
+                        </Button>
+                    </Stack>
                     <Divider variant="middle" />
                     <Stack spacing={2}>
                         {shared.map((v) => (
-                            <SharedItem item={v} key={v.oid} />
+                            <SharedItem
+                                item={v}
+                                key={v.oid}
+                                collection={props.collection}
+                            />
                         ))}
                     </Stack>
                 </Stack>

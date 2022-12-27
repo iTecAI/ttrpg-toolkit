@@ -70,3 +70,29 @@ def guard_debugMode(request: Any, _: BaseRouteHandler) -> None:
 def guard_isDataSource(request: Any, _: BaseRouteHandler) -> None:
     # print(request.path_params)
     pass
+
+
+def guard_hasCollectionPermission(permission: COLLECTION_SHARE_TYPE):
+    def guard_intl_hasCollectionPermission(request: Any, _: BaseRouteHandler) -> None:
+        if not "collection_id" in request.path_params.keys():
+            raise GenericNetworkError(extra="Collection ID not passed to Guard")
+
+        session: Session = Session.load_oid(
+            request.headers["authorization"], request.app.state.database
+        )
+        if session == None:
+            raise AuthorizationFailedError(extra="@ Session not found")
+
+        collection: Collection = Collection.load_oid(
+            request.path_params["collection_id"], request.app.state.database
+        )
+        if collection == None:
+            raise CollectionNotFoundError()
+
+        perms = collection.expand_share_array(
+            collection.check_permissions(session.user)
+        )
+        if not permission in perms:
+            raise PermissionError()
+
+    return guard_intl_hasCollectionPermission

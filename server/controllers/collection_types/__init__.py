@@ -1,8 +1,8 @@
 from typing import Dict, Optional, Literal
 from starlite import Controller, Provide, State, get, post, delete
-from util.guards import guard_loggedIn
+from util.guards import guard_loggedIn, guard_hasCollectionPermission
 from util.dependencies import session_dep, collection_dep
-from util.exceptions import CollectionNotFoundError
+from util.exceptions import CollectionNotFoundError, PermissionError
 from models import (
     Session,
     Collection,
@@ -81,6 +81,12 @@ class CollectionShareResultsModel(BaseModel):
     permissions: list[str]
     name: str
     imageSrc: str
+
+
+class ShareCollectionModel(BaseModel):
+    shareType: Literal["user", "game"]
+    oid: str
+    permissions: list[str]
 
 
 class CollectionsController(Controller):
@@ -231,3 +237,36 @@ class CollectionsController(Controller):
                 )
             )
         return results
+
+    @post(
+        "/{collection_id:str}/share",
+        dependencies={"collection": Provide(collection_dep)},
+        guards=[guard_hasCollectionPermission("share")],
+    )
+    async def share_collection(
+        self,
+        state: State,
+        session: Session,
+        collection: Collection,
+        data: ShareCollectionModel,
+    ) -> list[str]:
+        user = session.user
+        user_perms = collection.expand_share_array(collection.check_permissions(user))
+
+        for p in data.permissions:
+            if p == "owner":
+                raise PermissionError()
+            if p == "promoter" and not "owner" in user_perms:
+                raise PermissionError()
+            if p == "admin" and not "promoter" in user_perms:
+                raise PermissionError()
+            if p == "configure" and not "configure" in user_perms:
+                raise PermissionError()
+
+        if data.shareType == "user":
+            collection.shared_users[data.oid] = data.permissions
+        else:
+            raise NotImplementedError("GAME SHARING IS TODO")
+
+        collection.save()
+        return data.permissions

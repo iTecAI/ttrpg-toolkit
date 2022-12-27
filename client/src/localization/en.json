@@ -148,7 +148,8 @@
         "required": "{{field}} is required",
         "yes": "Yes",
         "no": "No",
-        "confirm": "Confirm"
+        "confirm": "Confirm",
+        "share": "Share"
     },
     "compendium": {
         "nav": {
