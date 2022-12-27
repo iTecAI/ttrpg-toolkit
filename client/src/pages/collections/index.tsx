@@ -16,6 +16,8 @@ import {
     Fab,
     InputAdornment,
     Paper,
+    SpeedDial,
+    SpeedDialAction,
     Stack,
     TextField,
     Tooltip,
@@ -23,22 +25,28 @@ import {
 } from "@mui/material";
 import {
     MdAdd,
+    MdDelete,
     MdDescription,
     MdDriveFileRenameOutline,
     MdHideImage,
     MdImage,
+    MdMenu,
+    MdPersonAdd,
+    MdSettings,
     MdStar,
     MdTag,
+    MdVisibility,
 } from "react-icons/md";
 import "./index.scss";
 import { loc } from "../../util/localization";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { get, post, postFile } from "../../util/api";
 import { useSnackbar } from "notistack";
 import { MinimalCollection } from "../../models/collection";
 import { UpdateType, useUpdate } from "../../util/updates";
 import { Masonry } from "@mui/lab";
 import { Md5 } from "ts-md5";
+import { useWindowSize } from "../../util/general";
 
 function CreateCollectionDialog(props: {
     open: boolean;
@@ -290,6 +298,45 @@ function CollectionItem(props: { item: MinimalCollection }): JSX.Element {
                     </span>
                 </Tooltip>
             )}
+            <SpeedDial
+                className="collection-actions"
+                icon={<MdMenu size={24} />}
+                ariaLabel=""
+                direction="down"
+                FabProps={{
+                    color: "default",
+                    size: "medium",
+                }}
+            >
+                <SpeedDialAction
+                    icon={<MdVisibility size={24} />}
+                    tooltipTitle={loc("collections.list.item.actions.view")}
+                />
+                {item.permissions.includes("configure") && (
+                    <SpeedDialAction
+                        icon={<MdSettings size={24} />}
+                        tooltipTitle={loc(
+                            "collections.list.item.actions.settings"
+                        )}
+                    />
+                )}
+                {item.permissions.includes("share") && (
+                    <SpeedDialAction
+                        icon={<MdPersonAdd size={24} />}
+                        tooltipTitle={loc(
+                            "collections.list.item.actions.share"
+                        )}
+                    />
+                )}
+                {item.permissions.includes("admin") && (
+                    <SpeedDialAction
+                        icon={<MdDelete size={24} />}
+                        tooltipTitle={loc(
+                            "collections.list.item.actions.delete"
+                        )}
+                    />
+                )}
+            </SpeedDial>
             <CardHeader title={item.name} />
             {item.image ? (
                 <CardMedia
@@ -317,7 +364,8 @@ function CollectionItem(props: { item: MinimalCollection }): JSX.Element {
                 />
             )}
             <CardContent>
-                {item.description}
+                {item.description &&
+                    item.description.split("\n").map((line) => <p>{line}</p>)}
                 <Paper variant="outlined" className="tag-area">
                     {item.tags.length ? (
                         <Stack spacing={1} direction={"row"}>
@@ -337,6 +385,7 @@ function CollectionItem(props: { item: MinimalCollection }): JSX.Element {
 export function Collections(): JSX.Element {
     const [creating, setCreating] = useState<boolean>(false);
     const [collections, setCollections] = useState<MinimalCollection[]>([]);
+    const { width, height } = useWindowSize();
     useUpdate(
         (update: UpdateType) =>
             get<MinimalCollection[]>("/collections/").then((result) => {
@@ -380,7 +429,7 @@ export function Collections(): JSX.Element {
             />
             <Masonry
                 spacing={2}
-                columns={Math.ceil(window.innerWidth / 480)}
+                columns={Math.ceil((width ?? window.innerWidth) / 480)}
                 className={"collections-list"}
             >
                 {collections.map((c) => (

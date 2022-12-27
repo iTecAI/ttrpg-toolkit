@@ -192,7 +192,13 @@
         "list": {
             "item": {
                 "media-alt": "{{name}} collection image",
-                "tags-empty": "No Tags"
+                "tags-empty": "No Tags",
+                "actions": {
+                    "view": "View",
+                    "settings": "Settings",
+                    "delete": "Delete",
+                    "share": "Share"
+                }
             }
         },
         "permissions": {

@@ -19,12 +19,18 @@
     .collections-list {
         padding: 16px;
         height: 100%;
-        width: 100%;
+        width: 100vw;
         box-sizing: border-box;
         z-index: 10;
+        overflow-y: auto;
+        overflow-x: hidden;
+        position: relative;
+        display: block;
 
         .collection {
             position: relative;
+            display: inline-block;
+            vertical-align: top;
             .perm-icon {
                 position: absolute;
                 top: 16px;
@@ -42,6 +48,12 @@
                 margin-top: 8px;
                 padding: 8px;
                 box-sizing: border-box;
+            }
+
+            .collection-actions {
+                position: absolute;
+                top: 32px;
+                right: 8px;
             }
         }
     }
