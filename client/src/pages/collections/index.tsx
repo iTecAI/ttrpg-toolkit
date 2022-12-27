@@ -2,6 +2,10 @@ import {
     Autocomplete,
     Box,
     Button,
+    Card,
+    CardContent,
+    CardHeader,
+    CardMedia,
     Chip,
     Dialog,
     DialogActions,
@@ -11,6 +15,7 @@ import {
     Divider,
     Fab,
     InputAdornment,
+    Paper,
     Stack,
     TextField,
     Tooltip,
@@ -22,19 +27,23 @@ import {
     MdDriveFileRenameOutline,
     MdHideImage,
     MdImage,
+    MdStar,
     MdTag,
 } from "react-icons/md";
 import "./index.scss";
 import { loc } from "../../util/localization";
 import { useEffect, useState } from "react";
-import { post, postFile } from "../../util/api";
+import { get, post, postFile } from "../../util/api";
 import { useSnackbar } from "notistack";
 import { MinimalCollection } from "../../models/collection";
-import { useUpdate } from "../../util/updates";
+import { UpdateType, useUpdate } from "../../util/updates";
+import { Masonry } from "@mui/lab";
+import { Md5 } from "ts-md5";
 
 function CreateCollectionDialog(props: {
     open: boolean;
     setOpen: (open: boolean) => void;
+    onCreate: () => void;
 }): JSX.Element {
     const [name, setName] = useState<string>("");
     const [nameError, setNameError] = useState<boolean>(false);
@@ -62,7 +71,11 @@ function CreateCollectionDialog(props: {
                 image: img ? `/api/user_content/${img}` : "",
                 tags: tags,
             },
-        }).then(console.log);
+        }).then((result) => {
+            if (result.success) {
+                props.onCreate();
+            }
+        });
         close();
     }
 
@@ -236,11 +249,11 @@ function CreateCollectionDialog(props: {
                             return;
                         }
                         if (file !== null) {
-                            postFile<string>("/user_content/", {
+                            postFile<{ itemId: string }>("/user_content/", {
                                 body: file,
                             }).then((value) => {
                                 if (value.success) {
-                                    submit(value.value);
+                                    submit(value.value.itemId);
                                 } else {
                                     enqueueSnackbar(
                                         loc(
@@ -263,9 +276,84 @@ function CreateCollectionDialog(props: {
     );
 }
 
+function CollectionItem(props: { item: MinimalCollection }): JSX.Element {
+    const { item } = props;
+    return (
+        <Card className="collection">
+            {item.permissions.includes("owner") && (
+                <Tooltip
+                    title={loc("collections.permissions.owner.name")}
+                    disableInteractive
+                >
+                    <span className="perm-icon">
+                        <MdStar size={24} color="gold" />
+                    </span>
+                </Tooltip>
+            )}
+            <CardHeader title={item.name} />
+            {item.image ? (
+                <CardMedia
+                    component="img"
+                    image={item.image}
+                    alt={loc("collections.list.item.media-alt", {
+                        name: item.name,
+                    })}
+                    height={320}
+                />
+            ) : (
+                <CardMedia
+                    component="img"
+                    image={`https://www.gravatar.com/avatar/${Md5.hashStr(
+                        item.collectionId
+                    )}?d=identicon&f=y&s=1024`}
+                    alt={loc("collections.list.item.media-alt", {
+                        name: item.name,
+                    })}
+                    height={320}
+                    sx={{
+                        filter: "grayscale(1)",
+                        opacity: 0.5,
+                    }}
+                />
+            )}
+            <CardContent>
+                {item.description}
+                <Paper variant="outlined" className="tag-area">
+                    {item.tags.length ? (
+                        <Stack spacing={1} direction={"row"}>
+                            {item.tags.map((t) => (
+                                <Chip label={t} key={t} />
+                            ))}
+                        </Stack>
+                    ) : (
+                        loc("collections.list.item.tags-empty")
+                    )}
+                </Paper>
+            </CardContent>
+        </Card>
+    );
+}
+
 export function Collections(): JSX.Element {
     const [creating, setCreating] = useState<boolean>(false);
-    useUpdate(console.log, "collections.new");
+    const [collections, setCollections] = useState<MinimalCollection[]>([]);
+    useUpdate(
+        (update: UpdateType) =>
+            get<MinimalCollection[]>("/collections/").then((result) => {
+                if (result.success) {
+                    setCollections(result.value);
+                }
+            }),
+        "collections.new"
+    );
+
+    useEffect(() => {
+        get<MinimalCollection[]>("/collections/").then((result) => {
+            if (result.success) {
+                setCollections(result.value);
+            }
+        });
+    }, []);
 
     return (
         <Box className="collections-area">
@@ -282,7 +370,23 @@ export function Collections(): JSX.Element {
             <CreateCollectionDialog
                 open={creating}
                 setOpen={(open: boolean) => setCreating(open)}
+                onCreate={() =>
+                    get<MinimalCollection[]>("/collections/").then((result) => {
+                        if (result.success) {
+                            setCollections(result.value);
+                        }
+                    })
+                }
             />
+            <Masonry
+                spacing={2}
+                columns={Math.ceil(window.innerWidth / 480)}
+                className={"collections-list"}
+            >
+                {collections.map((c) => (
+                    <CollectionItem item={c} key={c.collectionId} />
+                ))}
+            </Masonry>
         </Box>
     );
 }

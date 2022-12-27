@@ -188,6 +188,18 @@
             "field-file-tooltip": "Click or Drag to Upload",
             "field-file-clear": "Clear Image",
             "error-image-failed": "Image failed to upload: {{detail}}"
+        },
+        "list": {
+            "item": {
+                "media-alt": "{{name}} collection image",
+                "tags-empty": "No Tags"
+            }
+        },
+        "permissions": {
+            "owner": {
+                "name": "Owner",
+                "help": "You own this Collection"
+            }
         }
     }
 }

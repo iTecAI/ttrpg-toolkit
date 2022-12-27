@@ -14,6 +14,11 @@ from util.exceptions import ContentNotFoundError
 from util.guards import guard_loggedIn
 from util.dependencies import session_dep
 from typing import Dict, Optional
+from pydantic import BaseModel
+
+
+class ItemId(BaseModel):
+    itemId: str
 
 
 class UserContentController(Controller):
@@ -36,6 +41,6 @@ class UserContentController(Controller):
         state: State,
         session: Session,
         data: UploadFile = Body(media_type=RequestEncodingType.MULTI_PART),
-    ) -> str:
+    ) -> ItemId:
         manager: GenericContentManager = state.user_content
-        return await manager.save(data, session.user)
+        return {"itemId": await manager.save(data, session.user)}

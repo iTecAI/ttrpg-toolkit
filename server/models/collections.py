@@ -355,6 +355,25 @@ class Collection(ORM):
                     ]
                 },
             ]
+            if len(user_games) > 0
+            else [
+                {
+                    f"shared_users.${user.oid}": {
+                        "$exists": True,
+                        "$in": [
+                            "read",
+                            "edit",
+                            "create",
+                            "delete",
+                            "share",
+                            "configure",
+                            "admin",
+                            "promoter",
+                        ],
+                    },
+                },
+                {"owner_id": user.oid},
+            ]
         }
         QUERY_OBJECTS = {
             "$or": [
@@ -377,6 +396,16 @@ class Collection(ORM):
                     ]
                 },
             ]
+            if len(user_games) > 0
+            else [
+                {
+                    f"shared_users.${user.oid}": {
+                        "$exists": True,
+                        "$in": ["read", "write", "configure", "share"],
+                    },
+                },
+                {"owner_id": user.oid},
+            ]
         }
 
         result: dict[str, "Collection"] = {}
@@ -389,7 +418,7 @@ class Collection(ORM):
                 QUERY_OBJECTS, database
             )
         ]
-        for coll in cls.load_multiple_from_query({"oid": {"$in": extra_ids}}):
+        for coll in cls.load_multiple_from_query({"oid": {"$in": extra_ids}}, database):
             result[coll.oid] = coll
 
         return list(result.values())
