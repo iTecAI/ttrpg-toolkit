@@ -47,6 +47,7 @@ import { UpdateType, useUpdate } from "../../util/updates";
 import { Masonry } from "@mui/lab";
 import { Md5 } from "ts-md5";
 import { useWindowSize } from "../../util/general";
+import { useDialog } from "../../util/DialogContext";
 
 function CreateCollectionDialog(props: {
     open: boolean;
@@ -286,6 +287,25 @@ function CreateCollectionDialog(props: {
 
 function CollectionItem(props: { item: MinimalCollection }): JSX.Element {
     const { item } = props;
+    const confirmDialog = useDialog({
+        title: loc("collections.list.item.delete.title", { name: item.name }),
+        content: loc("collections.list.item.delete.body", { name: item.name }),
+        buttons: [
+            {
+                text: loc("generic.cancel"),
+                variant: "outlined",
+                id: "cancel",
+            },
+            {
+                text: loc("generic.confirm"),
+                variant: "contained",
+                id: "confirm",
+                action(id, initializer) {
+                    del<null>(`/collections/${initializer.id}`);
+                },
+            },
+        ],
+    });
     return (
         <Card className="collection">
             {item.permissions.includes("owner") && (
@@ -334,9 +354,7 @@ function CollectionItem(props: { item: MinimalCollection }): JSX.Element {
                         tooltipTitle={loc(
                             "collections.list.item.actions.delete"
                         )}
-                        onClick={() => {
-                            del<null>(`/collections/${item.collectionId}`);
-                        }}
+                        onClick={() => confirmDialog({ id: item.collectionId })}
                     />
                 )}
             </SpeedDial>

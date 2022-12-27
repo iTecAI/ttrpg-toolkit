@@ -145,7 +145,10 @@
         "close": "Close",
         "dismiss": "Dismiss",
         "loading": "Loading...",
-        "required": "{{field}} is required"
+        "required": "{{field}} is required",
+        "yes": "Yes",
+        "no": "No",
+        "confirm": "Confirm"
     },
     "compendium": {
         "nav": {
@@ -199,6 +202,10 @@
                     "settings": "Settings",
                     "delete": "Delete",
                     "share": "Share"
+                },
+                "delete": {
+                    "title": "Confirm Deletion of {{name}}",
+                    "body": "Are you sure you want to delete {{name}}? This action cannot be undone."
                 }
             }
         },

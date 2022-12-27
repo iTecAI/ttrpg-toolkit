@@ -21,6 +21,7 @@ import { loc } from "./util/localization";
 import { Playground } from "./pages/playground/Playground";
 import { Collections } from "./pages/collections";
 import { UpdateType } from "./util/updates";
+import { DialogProvider } from "./util/DialogContext";
 export const RootContext: React.Context<{} | RootModel> = React.createContext(
     {}
 );
@@ -295,9 +296,11 @@ function App() {
     return (
         <ThemeProvider theme={themeOptionsDefault}>
             <SnackbarProvider maxSnack={5}>
-                <RootContextProvider>
-                    <UpdateContextProvider />
-                </RootContextProvider>
+                <DialogProvider>
+                    <RootContextProvider>
+                        <UpdateContextProvider />
+                    </RootContextProvider>
+                </DialogProvider>
             </SnackbarProvider>
         </ThemeProvider>
     );
