@@ -19,3 +19,11 @@ export type MinimalCollection = {
     tags: string[];
     children: string[];
 };
+
+export type ShareCollectionItem = {
+    shareType: "user" | "game";
+    oid: string;
+    permissions: CollectionShare[];
+    name: string;
+    imageSrc: string;
+};

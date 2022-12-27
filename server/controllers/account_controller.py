@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, TypedDict
 from pydantic import BaseModel
 from starlite import Controller, Provide, State, post, get
 from models import Session, User
@@ -25,6 +25,12 @@ class AccountInfoModel(BaseModel):
 
 class EditAccountModel(BaseModel):
     displayName: Optional[str] = None
+
+
+class AccountSearchResult(TypedDict):
+    uid: str
+    email: str
+    display: str
 
 
 class AccountController(Controller):
@@ -88,3 +94,19 @@ class AccountController(Controller):
 
         user.save()
         return None
+
+    @get("/search", guards=[guard_loggedIn])
+    async def search_users(self, state: State, q: str) -> list[AccountSearchResult]:
+        users: list[User] = User.load_multiple_from_query(
+            {
+                "$or": [
+                    {"username": {"$regex": f"^{q}.*", "$options": "i"}},
+                    {"display_name": {"$regex": f"^{q}.*", "$options": "i"}},
+                ]
+            },
+            state.database,
+        )
+        return [
+            {"uid": u.oid, "email": u.username, "display": u.display_name}
+            for u in users
+        ]

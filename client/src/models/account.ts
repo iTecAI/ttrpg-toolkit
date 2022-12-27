@@ -4,3 +4,8 @@ export type UserInfoModel = {
     username: string;
     displayName: string;
 };
+export type UserSearchResult = {
+    uid: string;
+    email: string;
+    display: string;
+};

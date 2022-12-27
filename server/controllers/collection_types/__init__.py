@@ -1,4 +1,4 @@
-from typing import Dict, Optional
+from typing import Dict, Optional, Literal
 from starlite import Controller, Provide, State, get, post, delete
 from util.guards import guard_loggedIn
 from util.dependencies import session_dep, collection_dep
@@ -10,6 +10,7 @@ from models import (
     COLLECTION_SHARE_TYPE,
     ITEM_SHARE_TYPE,
     User,
+    Game,
 )
 from pydantic import BaseModel
 from util import Cluster, GenericContentManager
@@ -72,6 +73,14 @@ class CreateCollectionModel(BaseModel):
     description: Optional[str] = None
     image: Optional[str] = None
     tags: Optional[list[str]] = []
+
+
+class CollectionShareResultsModel(BaseModel):
+    shareType: Literal["user", "game"]
+    oid: str
+    permissions: list[str]
+    name: str
+    imageSrc: str
 
 
 class CollectionsController(Controller):
@@ -173,3 +182,52 @@ class CollectionsController(Controller):
         )
 
         return MinimalCollection.from_collection(new_collection, user)
+
+    @get(
+        "/{collection_id:str}/shared",
+        dependencies={"collection": Provide(collection_dep)},
+    )
+    async def get_shared_ids(
+        self, state: State, collection: Collection
+    ) -> list[CollectionShareResultsModel]:
+        users: list[User] = User.load_multiple_from_query(
+            {"oid": {"$in": list(collection.shared_users.keys())}}, state.database
+        )
+        games: list[Game] = Game.load_multiple_from_query(
+            {"oid": {"$in": list(collection.shared_games.keys())}}, state.database
+        )
+        owner: User = User.load_oid(collection.owner_id, state.database)
+
+        results: list[CollectionShareResultsModel] = []
+        if owner:
+            results.append(
+                CollectionShareResultsModel(
+                    shareType="user",
+                    oid=owner.oid,
+                    permissions=["owner"],
+                    name=owner.display_name,
+                    imageSrc=owner.username,
+                )
+            )
+        for u in users:
+            results.append(
+                CollectionShareResultsModel(
+                    shareType="user",
+                    oid=u.oid,
+                    permissions=collection.shared_users[u.oid],
+                    name=u.display_name,
+                    imageSrc=u.username,
+                )
+            )
+
+        for g in games:
+            results.append(
+                CollectionShareResultsModel(
+                    shareType="game",
+                    oid=g.oid,
+                    permissions=collection.shared_games[g.oid],
+                    name=g.name,
+                    imageSrc=g.image,
+                )
+            )
+        return results

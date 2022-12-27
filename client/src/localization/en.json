@@ -205,6 +205,11 @@
                 "delete": {
                     "title": "Confirm Deletion of {{name}}",
                     "body": "Are you sure you want to delete {{name}}? This action cannot be undone."
+                },
+                "share": {
+                    "title": "Share Collection",
+                    "input": "Search Users",
+                    "input-placeholder": "Display Name or Email..."
                 }
             }
         },
@@ -212,6 +217,38 @@
             "owner": {
                 "name": "Owner",
                 "help": "You own this Collection"
+            },
+            "promoter": {
+                "name": "Promote",
+                "help": "You can promote users to Admin"
+            },
+            "admin": {
+                "name": "Admin",
+                "help": "You can perform destructive actions"
+            },
+            "configure": {
+                "name": "Configure",
+                "help": "You can configure collection settings"
+            },
+            "share": {
+                "name": "Share",
+                "help": "You can share the collection"
+            },
+            "delete": {
+                "name": "Delete",
+                "help": "You can delete items in the collection"
+            },
+            "create": {
+                "name": "Create",
+                "help": "You can create items in the collection"
+            },
+            "edit": {
+                "name": "Edit",
+                "help": "You can edit items in the collection"
+            },
+            "read": {
+                "name": "Read",
+                "help": "You can view items in the collection"
             }
         }
     }

@@ -1,0 +1,21 @@
+.shared-item {
+    display: block;
+    position: relative;
+    padding: 16px;
+
+    .item-user {
+        position: relative;
+
+        .user-icon {
+            position: absolute;
+            top: 50%;
+            left: 8px;
+            transform: translate(0, -50%);
+        }
+
+        .user-content {
+            position: relative;
+            margin-left: 72px;
+        }
+    }
+}

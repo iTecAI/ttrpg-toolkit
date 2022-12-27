@@ -48,6 +48,7 @@ import { Masonry } from "@mui/lab";
 import { Md5 } from "ts-md5";
 import { useWindowSize } from "../../util/general";
 import { useDialog } from "../../util/DialogContext";
+import { ShareCollectionDialog } from "./dialogs/ShareDialog";
 
 function CreateCollectionDialog(props: {
     open: boolean;
@@ -306,6 +307,9 @@ function CollectionItem(props: { item: MinimalCollection }): JSX.Element {
             },
         ],
     });
+
+    const [sharing, setSharing] = useState<boolean>(false);
+
     return (
         <Card className="collection">
             {item.permissions.includes("owner") && (
@@ -345,6 +349,7 @@ function CollectionItem(props: { item: MinimalCollection }): JSX.Element {
                             tooltipTitle={loc(
                                 "collections.list.item.actions.share"
                             )}
+                            onClick={() => setSharing(true)}
                         />
                     )}
                     {item.permissions.includes("admin") && (
@@ -405,6 +410,11 @@ function CollectionItem(props: { item: MinimalCollection }): JSX.Element {
                     </Paper>
                 </CardContent>
             </CardActionArea>
+            <ShareCollectionDialog
+                collection={item}
+                open={sharing}
+                setOpen={setSharing}
+            />
         </Card>
     );
 }
