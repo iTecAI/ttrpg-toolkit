@@ -39,8 +39,8 @@ import {
 } from "react-icons/md";
 import "./index.scss";
 import { loc } from "../../util/localization";
-import { useEffect, useLayoutEffect, useState } from "react";
-import { get, post, postFile } from "../../util/api";
+import { useEffect, useState } from "react";
+import { del, get, post, postFile } from "../../util/api";
 import { useSnackbar } from "notistack";
 import { MinimalCollection } from "../../models/collection";
 import { UpdateType, useUpdate } from "../../util/updates";
@@ -334,6 +334,9 @@ function CollectionItem(props: { item: MinimalCollection }): JSX.Element {
                         tooltipTitle={loc(
                             "collections.list.item.actions.delete"
                         )}
+                        onClick={() => {
+                            del<null>(`/collections/${item.collectionId}`);
+                        }}
                     />
                 )}
             </SpeedDial>
@@ -365,7 +368,9 @@ function CollectionItem(props: { item: MinimalCollection }): JSX.Element {
             )}
             <CardContent>
                 {item.description &&
-                    item.description.split("\n").map((line) => <p>{line}</p>)}
+                    item.description
+                        .split("\n")
+                        .map((line) => <p key={Math.random()}>{line}</p>)}
                 <Paper variant="outlined" className="tag-area">
                     {item.tags.length ? (
                         <Stack spacing={1} direction={"row"}>
@@ -385,7 +390,7 @@ function CollectionItem(props: { item: MinimalCollection }): JSX.Element {
 export function Collections(): JSX.Element {
     const [creating, setCreating] = useState<boolean>(false);
     const [collections, setCollections] = useState<MinimalCollection[]>([]);
-    const { width, height } = useWindowSize();
+    const { width } = useWindowSize();
     useUpdate(
         (update: UpdateType) =>
             get<MinimalCollection[]>("/collections/").then((result) => {
@@ -393,7 +398,7 @@ export function Collections(): JSX.Element {
                     setCollections(result.value);
                 }
             }),
-        "collections.new"
+        "collections.update"
     );
 
     useEffect(() => {

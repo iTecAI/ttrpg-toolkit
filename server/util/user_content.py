@@ -52,6 +52,15 @@ class GenericContentManager:
     def clear_id(self, oid: str):
         self.collection.delete_one({"id": oid})
 
+    def delete(self, oid: str):
+        result = self.collection.find_one({"id": oid})
+        if result == None:
+            raise KeyError(f"ID {oid} not found")
+        return self.delete_meta(result)
+
+    def delete_meta(self, meta: dict):
+        raise NotImplementedError("CANNOT DELETE FROM GENERIC MANAGER")
+
 
 class LocalContentManager(GenericContentManager):
     def __init__(self, config: Config, database: Database):
@@ -83,3 +92,8 @@ class LocalContentManager(GenericContentManager):
                     yield data
 
         return Stream(iterator=generate_stream, media_type=meta["content_type"])
+
+    def delete_meta(self, meta: dict):
+        if os.path.exists(os.path.join(self.path, meta["filename"])):
+            os.remove(os.path.join(self.path, meta["filename"]))
+        self.clear_id(meta["id"])

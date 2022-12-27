@@ -1,4 +1,6 @@
 from util.orm import ORM
+from .games import Game
+from .accounts import Session
 from pymongo.database import Database
 from typing import Literal, List
 from .accounts import User
@@ -262,6 +264,36 @@ class Collection(ORM):
             if g in self.shared_games.keys():
                 game_perms.extend(self.shared_games[g])
         return list(set(game_perms))
+
+    @property
+    def users(self) -> list[str]:
+        results = []
+        results.append(self.owner_id)
+        results.extend(
+            [
+                u.oid
+                for u in User.load_multiple_from_query(
+                    {"oid": {"$in": list(self.shared_users.keys())}}, self.database
+                )
+            ]
+        )
+        game_users = []
+        [
+            game_users.extend([u.owner_id, *u.participants])
+            for u in Game.load_multiple_from_query(
+                {"oid": {"$in": list(self.shared_games.keys())}}, self.database
+            )
+        ]
+        results.extend(game_users)
+        return list(set(results))
+
+    @property
+    def sessions(self) -> list[str]:
+        users = self.users
+        sessions: list[Session] = Session.load_multiple_from_query(
+            {"uid": {"$in": users}}, self.database
+        )
+        return [s.oid for s in sessions]
 
     @staticmethod
     def expand_share_array(shares: COLLECTION_SHARE_TYPE) -> COLLECTION_SHARE_TYPE:

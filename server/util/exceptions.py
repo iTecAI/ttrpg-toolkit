@@ -109,6 +109,12 @@ class BadLoginError(BaseHTTPException):
     status_code: int = HTTP_401_UNAUTHORIZED
 
 
+class PermissionError(BaseHTTPException):
+    message: str = "You do not have permission to access this resource"
+    message_class: str = "error.account.permission"
+    status_code: int = HTTP_403_FORBIDDEN
+
+
 # Authorization errors
 class AuthorizationFailedError(BaseHTTPException):
     message: str = "Failed to authorize with token"

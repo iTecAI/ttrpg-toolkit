@@ -18,7 +18,7 @@ async function processResult<T>(result: Response): Promise<ApiResponse<T>> {
         data = null;
     }
 
-    if (!data) {
+    if (!data && result.status !== 204) {
         return {
             success: false,
             statusCode: result.status,

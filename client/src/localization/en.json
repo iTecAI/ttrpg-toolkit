@@ -53,7 +53,8 @@
         "account": {
             "user_exists": "A user with that email already exists.",
             "user_nonexistent": "That user does not exist.",
-            "login_failed": "Incorrect username or password."
+            "login_failed": "Incorrect username or password.",
+            "permission": "You do not have permission to access this resource."
         },
         "auth": {
             "generic": "Failed to authorize with token"

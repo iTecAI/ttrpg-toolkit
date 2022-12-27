@@ -1,5 +1,5 @@
 from typing import Dict, Optional
-from starlite import Controller, Provide, State, get, post
+from starlite import Controller, Provide, State, get, post, delete
 from util.guards import guard_loggedIn
 from util.dependencies import session_dep, collection_dep
 from util.exceptions import CollectionNotFoundError
@@ -12,7 +12,9 @@ from models import (
     User,
 )
 from pydantic import BaseModel
-from util import Cluster
+from util import Cluster, GenericContentManager
+from starlette.status import *
+from pymongo.collection import Collection as MongoCollection
 
 
 class MinimalCollection(BaseModel):
@@ -98,6 +100,31 @@ class CollectionsController(Controller):
 
         return MinimalCollection.from_collection(collection, user)
 
+    @delete(
+        "/{collection_id:str}",
+        dependencies={"collection": Provide(collection_dep)},
+        status_code=HTTP_204_NO_CONTENT,
+    )
+    async def delete_collection(
+        self, state: State, session: Session, collection: Collection
+    ) -> None:
+        permissions = collection.expand_share_array(
+            collection.check_permissions(session.user)
+        )
+        if not "admin" in permissions:
+            raise PermissionError()
+
+        to_update = collection.sessions
+        manager: GenericContentManager = state.user_content
+        if collection.image != "":
+            manager.delete(collection.image.split("/")[3])
+        cluster: Cluster = state.cluster
+        ccol: MongoCollection = state.database[Collection.collection]
+        ccol.delete_one({"oid": collection.oid})
+        cluster.dispatch_update(
+            {"session": to_update, "update": "collections.update", "data": {}}
+        )
+
     @get(
         "/{collection_id:str}/children",
         dependencies={"collection": Provide(collection_dep)},
@@ -142,7 +169,7 @@ class CollectionsController(Controller):
 
         cluster: Cluster = state.cluster
         cluster.dispatch_update(
-            {"session": session.oid, "update": "collections.new", "data": {}}
+            {"session": session.oid, "update": "collections.update", "data": {}}
         )
 
         return MinimalCollection.from_collection(new_collection, user)
