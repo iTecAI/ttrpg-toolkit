@@ -2,7 +2,7 @@ from typing import Optional, TypedDict
 from pydantic import BaseModel
 from starlite import Controller, Provide, State, post, get
 from models import Session, User
-from util import guards
+from util import guards, Cluster
 from util import exceptions, guard_loggedIn, session_dep
 from starlette.status import *
 
@@ -65,7 +65,11 @@ class AccountController(Controller):
         )  # Raises UserExistsException
         new_user.save()
 
-        session = Session.login(data.username, data.password, state.database)
+        cluster: Cluster = state.cluster
+
+        session = Session.login(
+            data.username, data.password, state.database, cluster.node_id
+        )
         session.save()
         return {"sessionId": session.oid, "userId": session.uid}
 
