@@ -3,6 +3,7 @@ import {
     Box,
     Button,
     Card,
+    CardActionArea,
     CardContent,
     CardHeader,
     CardMedia,
@@ -35,7 +36,6 @@ import {
     MdSettings,
     MdStar,
     MdTag,
-    MdVisibility,
 } from "react-icons/md";
 import "./index.scss";
 import { loc } from "../../util/localization";
@@ -318,89 +318,93 @@ function CollectionItem(props: { item: MinimalCollection }): JSX.Element {
                     </span>
                 </Tooltip>
             )}
-            <SpeedDial
-                className="collection-actions"
-                icon={<MdMenu size={24} />}
-                ariaLabel=""
-                direction="down"
-                FabProps={{
-                    color: "default",
-                    size: "medium",
-                }}
-            >
-                <SpeedDialAction
-                    icon={<MdVisibility size={24} />}
-                    tooltipTitle={loc("collections.list.item.actions.view")}
-                />
-                {item.permissions.includes("configure") && (
-                    <SpeedDialAction
-                        icon={<MdSettings size={24} />}
-                        tooltipTitle={loc(
-                            "collections.list.item.actions.settings"
-                        )}
-                    />
-                )}
-                {item.permissions.includes("share") && (
-                    <SpeedDialAction
-                        icon={<MdPersonAdd size={24} />}
-                        tooltipTitle={loc(
-                            "collections.list.item.actions.share"
-                        )}
-                    />
-                )}
-                {item.permissions.includes("admin") && (
-                    <SpeedDialAction
-                        icon={<MdDelete size={24} />}
-                        tooltipTitle={loc(
-                            "collections.list.item.actions.delete"
-                        )}
-                        onClick={() => confirmDialog({ id: item.collectionId })}
-                    />
-                )}
-            </SpeedDial>
-            <CardHeader title={item.name} />
-            {item.image ? (
-                <CardMedia
-                    component="img"
-                    image={item.image}
-                    alt={loc("collections.list.item.media-alt", {
-                        name: item.name,
-                    })}
-                    height={320}
-                />
-            ) : (
-                <CardMedia
-                    component="img"
-                    image={`https://www.gravatar.com/avatar/${Md5.hashStr(
-                        item.collectionId
-                    )}?d=identicon&f=y&s=1024`}
-                    alt={loc("collections.list.item.media-alt", {
-                        name: item.name,
-                    })}
-                    height={320}
-                    sx={{
-                        filter: "grayscale(1)",
-                        opacity: 0.5,
+            {(item.permissions.includes("configure") ||
+                item.permissions.includes("share") ||
+                item.permissions.includes("admin")) && (
+                <SpeedDial
+                    className="collection-actions"
+                    icon={<MdMenu size={24} />}
+                    ariaLabel=""
+                    direction="down"
+                    FabProps={{
+                        color: "default",
+                        size: "medium",
                     }}
-                />
-            )}
-            <CardContent>
-                {item.description &&
-                    item.description
-                        .split("\n")
-                        .map((line) => <p key={Math.random()}>{line}</p>)}
-                <Paper variant="outlined" className="tag-area">
-                    {item.tags.length ? (
-                        <Stack spacing={1} direction={"row"}>
-                            {item.tags.map((t) => (
-                                <Chip label={t} key={t} />
-                            ))}
-                        </Stack>
-                    ) : (
-                        loc("collections.list.item.tags-empty")
+                >
+                    {item.permissions.includes("configure") && (
+                        <SpeedDialAction
+                            icon={<MdSettings size={24} />}
+                            tooltipTitle={loc(
+                                "collections.list.item.actions.settings"
+                            )}
+                        />
                     )}
-                </Paper>
-            </CardContent>
+                    {item.permissions.includes("share") && (
+                        <SpeedDialAction
+                            icon={<MdPersonAdd size={24} />}
+                            tooltipTitle={loc(
+                                "collections.list.item.actions.share"
+                            )}
+                        />
+                    )}
+                    {item.permissions.includes("admin") && (
+                        <SpeedDialAction
+                            icon={<MdDelete size={24} />}
+                            tooltipTitle={loc(
+                                "collections.list.item.actions.delete"
+                            )}
+                            onClick={() =>
+                                confirmDialog({ id: item.collectionId })
+                            }
+                        />
+                    )}
+                </SpeedDial>
+            )}
+            <CardActionArea>
+                <CardHeader title={item.name} />
+                {item.image ? (
+                    <CardMedia
+                        component="img"
+                        image={item.image}
+                        alt={loc("collections.list.item.media-alt", {
+                            name: item.name,
+                        })}
+                        height={320}
+                    />
+                ) : (
+                    <CardMedia
+                        component="img"
+                        image={`https://www.gravatar.com/avatar/${Md5.hashStr(
+                            item.collectionId
+                        )}?d=identicon&f=y&s=1024`}
+                        alt={loc("collections.list.item.media-alt", {
+                            name: item.name,
+                        })}
+                        height={320}
+                        sx={{
+                            filter: "grayscale(1)",
+                            opacity: 0.5,
+                        }}
+                    />
+                )}
+                <CardContent>
+                    {item.description &&
+                        item.description
+                            .split("\n")
+                            .map((line) => <p key={Math.random()}>{line}</p>)}
+                    <Paper variant="outlined" className="tag-area">
+                        {item.tags.length ? (
+                            <Stack spacing={1} direction={"row"}>
+                                {item.tags.map((t) => (
+                                    <Chip label={t} key={t} />
+                                ))}
+                            </Stack>
+                        ) : (
+                            loc("collections.list.item.tags-empty")
+                        )}
+                    </Paper>
+                </CardContent>
+            </CardActionArea>
         </Card>
     );
 }
