@@ -1,41 +1,42 @@
 import { useContext, useEffect, useState } from "react";
-import { UpdateContext, UpdateContextType } from "../App";
+import { UpdateContext } from "../App";
 
 export type UpdateType = {
     event: string;
     body: { [key: string]: any } | null;
+    dispatched: number;
 };
 
-export function useUpdate(
-    updateName: string
-): [UpdateType[], () => UpdateType | null] {
-    const update = useContext(UpdateContext) as UpdateContextType;
-    const [queue, setQueue] = useState<UpdateType[]>([]);
+export function useUpdate(updateName: string): {
+    events: UpdateType[];
+    clearEvents: () => void;
+} {
+    function clearEvents() {
+        setResult({ events: [], clearEvents });
+    }
 
-    const eventArray = update.active ? update.events : [];
-    const popEvents = update.active ? update.pop : (type: string) => [];
-
-    useEffect(() => console.log(update), [update]);
+    const [update] = useContext(UpdateContext);
+    const [result, setResult] = useState<{
+        events: UpdateType[];
+        clearEvents: () => void;
+    }>({
+        events: [],
+        clearEvents,
+    });
 
     useEffect(() => {
-        if (eventArray.length > 0) {
-            const results = popEvents(updateName);
-            console.log(results);
-            if (results.length > 0) {
-                queue.unshift(...results);
-                setQueue(queue);
+        if (update.active) {
+            if (update.events.length > 0) {
+                const results = update.pop(updateName);
+                if (results.length > 0) {
+                    console.log(results);
+                    const events = result.events;
+                    events.unshift(...results);
+                    setResult({ events, clearEvents });
+                }
             }
         }
-    }, [eventArray]);
+    }, [update]);
 
-    return [
-        queue,
-        () => {
-            const out = queue.pop();
-            if (out) {
-                setQueue(queue);
-            }
-            return out ?? null;
-        },
-    ];
+    return result;
 }

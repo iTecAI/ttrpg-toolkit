@@ -1,6 +1,6 @@
 import { Box, Button, ThemeProvider } from "@mui/material";
 import { SnackbarProvider, useSnackbar } from "notistack";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useReducer, useState } from "react";
 import {
     BrowserRouter,
     Route,
@@ -28,20 +28,40 @@ export const RootContext: React.Context<{} | RootModel> = React.createContext(
 export type UpdateContextType =
     | {
           active: false;
-          activate: (session: string) => void;
       }
     | {
           active: true;
-          deactivate: () => void;
           events: UpdateType[];
           pop: (type: string) => UpdateType[];
       };
 
-export const UpdateContext: React.Context<UpdateContextType> =
-    React.createContext<UpdateContextType>({
+export type UpdateContextAction =
+    | {
+          type: "activate";
+          sessionId: string;
+      }
+    | {
+          type: "deactivate";
+      }
+    | {
+          type: "push";
+          updates: UpdateType[];
+      }
+    | {
+          type: "set";
+          newUpdates: UpdateType[];
+      };
+
+export const UpdateContext: React.Context<
+    [UpdateContextType, React.Dispatch<UpdateContextAction>]
+> = React.createContext<
+    [UpdateContextType, React.Dispatch<UpdateContextAction>]
+>([
+    {
         active: false,
-        activate(session) {},
-    });
+    },
+    (value: UpdateContextAction) => {},
+]);
 
 function RouterChild() {
     const [userInfo, setUserInfo] = useState<UserInfoModel | null>(null);
@@ -49,7 +69,7 @@ function RouterChild() {
     const [loading, setLoading] = useState<boolean>(true);
     let location = useLocation();
     let nav = useNavigate();
-    let updates = useContext(UpdateContext);
+    let [updates, dispatch] = useContext(UpdateContext);
 
     useEffect(() => {
         get<UserInfoModel>("/account").then((result) => {
@@ -59,7 +79,11 @@ function RouterChild() {
             if (result.success) {
                 setUserInfo(result.value);
                 if (!updates.active) {
-                    updates.activate(localStorage.getItem("sessionId") ?? "");
+                    console.log("ACTIV");
+                    dispatch({
+                        type: "activate",
+                        sessionId: localStorage.getItem("sessionId") ?? "",
+                    });
                 }
                 if (!loggedIn) {
                     setLoggedIn(true);
@@ -155,12 +179,78 @@ function RootContextProvider(props: { children: React.ReactNode }) {
 }
 
 function UpdateContextProvider(): JSX.Element {
-    const [events, setEvents] = useState<UpdateType[]>([]);
     const [source, setSource] = useState<EventSource | null>(null);
-    const [ctx, setCtx] = useState<UpdateContextType>({
-        active: false,
-        activate,
-    });
+
+    function buildActiveState(events: UpdateType[]): UpdateContextType {
+        return {
+            active: true,
+            events: events,
+            pop: (type: string) => {
+                const result = events.filter((v) => v.event === type);
+                dispatchCtx({
+                    type: "set",
+                    newUpdates: events.filter((v) => v.event !== type),
+                });
+                return result;
+            },
+        };
+    }
+
+    function ctxReducer(
+        state: UpdateContextType,
+        action: UpdateContextAction
+    ): UpdateContextType {
+        switch (action.type) {
+            case "activate":
+                console.log("ACTIVATING");
+                const src = new EventSource(
+                    `/api/updates/poll/${action.sessionId}`,
+                    {
+                        withCredentials: true,
+                    }
+                );
+                src.addEventListener("message", (ev: MessageEvent<string>) => {
+                    const data: UpdateType[] = JSON.parse(ev.data);
+                    if (data.length > 0) {
+                        dispatchCtx({ type: "push", updates: data });
+                    }
+                });
+                setSource(src);
+                return buildActiveState([]);
+            case "deactivate":
+                if (source && source.readyState !== 2) {
+                    source.close();
+                }
+                return {
+                    active: false,
+                };
+            case "push":
+                if (state.active) {
+                    let currentEvents = state.events;
+                    currentEvents.unshift(
+                        ...action.updates.filter(
+                            (u) =>
+                                currentEvents.filter(
+                                    (c) => c.dispatched === u.dispatched
+                                ).length === 0
+                        )
+                    );
+                    return buildActiveState(currentEvents);
+                } else {
+                    console.error("Attempted push on inactive state.");
+                    return { active: false };
+                }
+            case "set":
+                if (state.active) {
+                    return buildActiveState(action.newUpdates);
+                } else {
+                    console.error("Attempted set on inactive state.");
+                    return { active: false };
+                }
+        }
+    }
+
+    const [ctx, dispatchCtx] = useReducer(ctxReducer, { active: false });
 
     useEffect(() => {
         window.addEventListener("unload", () => {
@@ -168,68 +258,8 @@ function UpdateContextProvider(): JSX.Element {
         });
     }, [source]);
 
-    function deactivate() {
-        setCtx({
-            active: false,
-            activate,
-        });
-        if (source) {
-            source.close();
-        }
-        setEvents([]);
-    }
-
-    function updateCtx(newEvents: UpdateType[]) {
-        if (ctx.active) {
-            setCtx({
-                active: true,
-                deactivate,
-                events,
-                pop: (type: string) => {
-                    const results = events.filter((v) => v.event === type);
-                    const newEvents = events.filter((v) => v.event !== type);
-                    setEvents(newEvents);
-                    return results;
-                },
-            });
-        }
-    }
-
-    function activate(sessionId: string) {
-        if (ctx.active) {
-            return;
-        }
-        setEvents([]);
-        const src = new EventSource(`/api/updates/poll/${sessionId}`, {
-            withCredentials: true,
-        });
-        src.addEventListener("message", (ev: MessageEvent<string>) => {
-            const data: UpdateType[] = JSON.parse(ev.data);
-            console.log(data);
-            if (data.length > 0) {
-                events.unshift(...data);
-                setEvents(events);
-                console.log(events);
-                updateCtx(events);
-            }
-        });
-        src.addEventListener("error", console.log);
-        setSource(src);
-        setCtx({
-            active: true,
-            deactivate,
-            events,
-            pop: (type: string) => {
-                const results = events.filter((v) => v.event === type);
-                const newEvents = events.filter((v) => v.event !== type);
-                setEvents(newEvents);
-                return results;
-            },
-        });
-    }
-
     return (
-        <UpdateContext.Provider value={ctx}>
+        <UpdateContext.Provider value={[ctx, dispatchCtx]}>
             <Box
                 sx={{
                     width: "100vw",
