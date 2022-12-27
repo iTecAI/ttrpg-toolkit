@@ -265,14 +265,7 @@ function CreateCollectionDialog(props: {
 
 export function Collections(): JSX.Element {
     const [creating, setCreating] = useState<boolean>(false);
-    const { events, clearEvents } = useUpdate("collections.new");
-    useEffect(() => {
-        console.log(events);
-        if (events.length > 0) {
-            console.log(events);
-            clearEvents();
-        }
-    }, [events]);
+    useUpdate(console.log, "collections.new");
 
     return (
         <Box className="collections-area">

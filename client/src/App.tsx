@@ -79,7 +79,6 @@ function RouterChild() {
             if (result.success) {
                 setUserInfo(result.value);
                 if (!updates.active) {
-                    console.log("ACTIV");
                     dispatch({
                         type: "activate",
                         sessionId: localStorage.getItem("sessionId") ?? "",
@@ -202,7 +201,6 @@ function UpdateContextProvider(): JSX.Element {
     ): UpdateContextType {
         switch (action.type) {
             case "activate":
-                console.log("ACTIVATING");
                 const src = new EventSource(
                     `/api/updates/poll/${action.sessionId}`,
                     {

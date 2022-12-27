@@ -7,36 +7,20 @@ export type UpdateType = {
     dispatched: number;
 };
 
-export function useUpdate(updateName: string): {
-    events: UpdateType[];
-    clearEvents: () => void;
-} {
-    function clearEvents() {
-        setResult({ events: [], clearEvents });
-    }
-
+export function useUpdate(
+    callback: (update: UpdateType) => void,
+    updateName: string
+) {
     const [update] = useContext(UpdateContext);
-    const [result, setResult] = useState<{
-        events: UpdateType[];
-        clearEvents: () => void;
-    }>({
-        events: [],
-        clearEvents,
-    });
 
     useEffect(() => {
         if (update.active) {
             if (update.events.length > 0) {
                 const results = update.pop(updateName);
                 if (results.length > 0) {
-                    console.log(results);
-                    const events = result.events;
-                    events.unshift(...results);
-                    setResult({ events, clearEvents });
+                    results.map((v) => callback(v));
                 }
             }
         }
     }, [update]);
-
-    return result;
 }
