@@ -22,6 +22,9 @@
 
 .share-btn {
     position: relative;
+    height: calc(100% - 12px);
+    transform: translate(0, 16px);
+    box-sizing: border-box;
 
     .MuiButton-startIcon {
         transform: translate(-24px, 4px);

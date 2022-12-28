@@ -5,5 +5,4 @@ from .collections import (
     Collection,
     CollectionObject,
     COLLECTION_SHARE_TYPE,
-    ITEM_SHARE_TYPE,
 )

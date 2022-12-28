@@ -45,23 +45,6 @@ COLLECTION_SHARE_TYPE = List[
     ]
 ]
 
-"""
-Defines a Literal type for sharing permissions for individual CollectionObjects
-`read`: User can view object
-    Note: Any user that can view an Object in a Collection can also view that Collection on their Collections page.
-          However, they will only be able to view Objects within Collections that they have `read` permissions for
-`write`: User can edit object contents
-    This permission also implies `read` permissions
-`configure`: User can edit object settings
-    This permission also implies `read` permissions
-`share`: User can share object with other users or games, granting any permissions they have.
-    This permission also implies `read` permissions
-`owner`: Permission indicating that the user owns the Object. Meant for internal use
-    This permission also implies all other permissions
-    This permission has the following limitation: It can only be retained by one user and cannot be granted to Games
-"""
-ITEM_SHARE_TYPE = List[Literal["read", "write", "configure", "share", "owner"]]
-
 
 class CollectionObject(ORM):
     object_type: str = "collection_object"
@@ -74,8 +57,6 @@ class CollectionObject(ORM):
         database: Database = None,
         collection_id: str = None,
         owner_id: str = None,
-        shared_users: dict[str, ITEM_SHARE_TYPE] = {},
-        shared_games: dict[str, ITEM_SHARE_TYPE] = {},
         name: str = None,
         description: str = None,
         image: str = None,
@@ -92,12 +73,6 @@ class CollectionObject(ORM):
         :param owner_id: User ID of owner, defaults to None
             This may be different from the Collection owner, if another user has the `create` permission
         :type creator_id: str, optional
-        :param shared_users: Users with access to the Object, as a {User ID: ITEM_SHARE_TYPE} dictionary, defaults to {}
-            Permissions granted here take precedence over any permissions granted to an entire Game
-        :type shared_users: dict[str, ITEM_SHARE_TYPE], optional
-        :param shared_games: Games to share the Object to, as a {Game ID: ITEM_SHARE_TYPE} dictionary, defaults to {}
-            All Users within the shared Game will have the same permissions, unless they are overridden by user share permissions.
-        :type shared_games: dict[str, ITEM_SHARE_TYPE], optional
         :param name: Object display name, defaults to None
         :type name: str, optional
         :param description: Object description, defaults to None
@@ -108,54 +83,9 @@ class CollectionObject(ORM):
         super().__init__(oid, database, **kwargs)
         self.collection_id = collection_id
         self.owner_id = owner_id
-        self.shared_users = shared_users
-        self.shared_games = shared_games
         self.name = name
         self.description = description
         self.image = image
-
-    def check_permissions(self, user: User) -> ITEM_SHARE_TYPE:
-        """Gets the permissions array of a user for this Collection Object
-
-        :param user: User object
-        :type user: User
-        :return: Array of permission strings
-        :rtype: ITEM_SHARE_TYPE
-        """
-        if user.oid == self.owner_id:
-            return ["owner"]
-        if user.oid in self.shared_users.keys():
-            return self.shared_users[user.oid]
-        game_perms = []
-        for g in user.games:
-            if g in self.shared_games.keys():
-                game_perms.extend(self.shared_games[g])
-        return list(set(game_perms))
-
-    @staticmethod
-    def expand_share_array(shares: ITEM_SHARE_TYPE) -> ITEM_SHARE_TYPE:
-        """Expands share array to include all implied permissions
-
-        :param shares: Non-expanded array
-        :type shares: ITEM_SHARE_TYPE
-        :return: Expanded array
-        :rtype: ITEM_SHARE_TYPE
-        """
-        output = []
-        expand_mapping = {
-            "read": [],
-            "write": ["read"],
-            "share": ["read"],
-            "configure": ["read"],
-            "owner": ["read", "write", "share", "configure"],
-        }
-
-        for s in shares:
-            if s in expand_mapping.keys():
-                output.append(s)
-                output.extend(expand_mapping[s])
-
-        return list(set(output))
 
 
 class Collection(ORM):
@@ -369,7 +299,7 @@ class Collection(ORM):
                 {
                     "$or": [
                         {
-                            f"shared_games.${g}": {
+                            f"shared_games.{g}": {
                                 "$exists": True,
                                 "$in": [
                                     "read",
@@ -390,7 +320,7 @@ class Collection(ORM):
             if len(user_games) > 0
             else [
                 {
-                    f"shared_users.${user.oid}": {
+                    f"shared_users.{user.oid}": {
                         "$exists": True,
                         "$in": [
                             "read",
@@ -407,50 +337,9 @@ class Collection(ORM):
                 {"owner_id": user.oid},
             ]
         }
-        QUERY_OBJECTS = {
-            "$or": [
-                {
-                    f"shared_users.${user.oid}": {
-                        "$exists": True,
-                        "$in": ["read", "write", "configure", "share"],
-                    },
-                },
-                {"owner_id": user.oid},
-                {
-                    "$or": [
-                        {
-                            f"shared_games.${g}": {
-                                "$exists": True,
-                                "$in": ["read", "write", "configure", "share"],
-                            }
-                        }
-                        for g in user_games
-                    ]
-                },
-            ]
-            if len(user_games) > 0
-            else [
-                {
-                    f"shared_users.${user.oid}": {
-                        "$exists": True,
-                        "$in": ["read", "write", "configure", "share"],
-                    },
-                },
-                {"owner_id": user.oid},
-            ]
-        }
 
         result: dict[str, "Collection"] = {}
         for coll in cls.load_multiple_from_query(QUERY_COLLECTIONS, database):
-            result[coll.oid] = coll
-
-        extra_ids = [
-            obj.collection_id
-            for obj in CollectionObject.load_multiple_from_query(
-                QUERY_OBJECTS, database
-            )
-        ]
-        for coll in cls.load_multiple_from_query({"oid": {"$in": extra_ids}}, database):
             result[coll.oid] = coll
 
         return list(result.values())

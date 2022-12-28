@@ -366,7 +366,14 @@ function CollectionItem(props: { item: MinimalCollection }): JSX.Element {
                 </SpeedDial>
             )}
             <CardActionArea>
-                <CardHeader title={item.name} />
+                <CardHeader
+                    title={item.name}
+                    sx={{
+                        paddingLeft: item.permissions.includes("owner")
+                            ? "48px"
+                            : "16px",
+                    }}
+                />
                 {item.image ? (
                     <CardMedia
                         component="img"

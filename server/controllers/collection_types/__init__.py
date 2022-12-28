@@ -8,7 +8,6 @@ from models import (
     Collection,
     CollectionObject,
     COLLECTION_SHARE_TYPE,
-    ITEM_SHARE_TYPE,
     User,
     Game,
 )
@@ -48,7 +47,6 @@ class MinimalCollectionObject(BaseModel):
     subtype: str
     collectionId: str
     ownerId: str
-    permissions: ITEM_SHARE_TYPE
     name: str
     description: str
     image: str
@@ -61,7 +59,6 @@ class MinimalCollectionObject(BaseModel):
             subtype=obj.subtype,
             collectionId=obj.oid,
             ownerId=obj.owner_id,
-            permissions=obj.expand_share_array(obj.check_permissions(user)),
             name=obj.name,
             description=obj.description,
             image=obj.image,
@@ -252,6 +249,7 @@ class CollectionsController(Controller):
     ) -> list[str]:
         user = session.user
         user_perms = collection.expand_share_array(collection.check_permissions(user))
+        cluster: Cluster = state.cluster
 
         for p in data.permissions:
             if p == "owner":
@@ -264,9 +262,18 @@ class CollectionsController(Controller):
                 raise PermissionError()
 
         if data.shareType == "user":
-            collection.shared_users[data.oid] = data.permissions
+            if len(data.permissions) == 0:
+                sessions = collection.sessions
+                del collection.shared_users[data.oid]
+            else:
+                collection.shared_users[data.oid] = data.permissions
+                sessions = collection.sessions
         else:
             raise NotImplementedError("GAME SHARING IS TODO")
+
+        cluster.dispatch_update(
+            {"session": sessions, "update": "collections.update", "data": {}}
+        )
 
         collection.save()
         return data.permissions

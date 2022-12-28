@@ -19,15 +19,17 @@ import {
 import { loc } from "../../../util/localization";
 import { useEffect, useState } from "react";
 import { UserSearchResult } from "../../../models/account";
-import { get } from "../../../util/api";
+import { get, post } from "../../../util/api";
 import { calculateGravatar } from "../../../util/gravatar";
 import { MdCheckBox, MdCheckBoxOutlineBlank, MdSend } from "react-icons/md";
 import {
+    CollectionShare,
     MinimalCollection,
     ShareCollectionItem,
 } from "../../../models/collection";
 import "./share.scss";
 import { Box } from "@mui/system";
+import { useUpdate } from "../../../util/updates";
 
 const PERMISSIONS: { [key: string]: string } = {
     owner: "#8f49b3",
@@ -64,7 +66,7 @@ function SharedItem(props: {
                             fullWidth
                             multiple
                             value={perms}
-                            onChange={(event) =>
+                            onChange={(event) => {
                                 setPerms(
                                     (event.target.value as string[]).sort(
                                         (a, b) =>
@@ -73,8 +75,18 @@ function SharedItem(props: {
                                             ) -
                                             Object.keys(PERMISSIONS).indexOf(b)
                                     )
-                                )
-                            }
+                                );
+                                post<CollectionShare[]>(
+                                    `/collections/${props.collection.collectionId}/share`,
+                                    {
+                                        body: {
+                                            shareType: "user",
+                                            oid: item.oid,
+                                            permissions: event.target.value,
+                                        },
+                                    }
+                                );
+                            }}
                             renderValue={(selected) => (
                                 <Box
                                     sx={{
@@ -160,6 +172,17 @@ export function ShareCollectionDialog(props: {
     const [value, setValue] = useState<UserSearchResult[]>([]);
     const [inputValue, setInputValue] = useState<string>("");
     const [shared, setShared] = useState<ShareCollectionItem[]>([]);
+    useUpdate((update) => {
+        if (props.open) {
+            get<ShareCollectionItem[]>(
+                `/collections/${props.collection.collectionId}/shared`
+            ).then((result) => {
+                if (result.success) {
+                    setShared(result.value);
+                }
+            });
+        }
+    }, "collections.update");
 
     useEffect(() => {
         if (inputValue.length > 4) {
@@ -174,14 +197,16 @@ export function ShareCollectionDialog(props: {
     }, [inputValue]);
 
     useEffect(() => {
-        get<ShareCollectionItem[]>(
-            `/collections/${props.collection.collectionId}/shared`
-        ).then((result) => {
-            if (result.success) {
-                setShared(result.value);
-            }
-        });
-    }, []);
+        if (props.open) {
+            get<ShareCollectionItem[]>(
+                `/collections/${props.collection.collectionId}/shared`
+            ).then((result) => {
+                if (result.success) {
+                    setShared(result.value);
+                }
+            });
+        }
+    }, [props.open]);
 
     function close() {
         setOptions([]);
@@ -212,6 +237,7 @@ export function ShareCollectionDialog(props: {
                         }}
                     >
                         <Autocomplete
+                            className="user-search"
                             sx={{
                                 width: "calc(100% - 128px)",
                                 display: "inline-block",
@@ -326,11 +352,27 @@ export function ShareCollectionDialog(props: {
                             className="share-btn"
                             sx={{
                                 width: "112px",
-                                height: "48px",
-                                transform: "translate(0, 16px)",
+                                transform: "translate(0, 14px)",
                                 display: "inline-block",
                             }}
                             variant="contained"
+                            onClick={() => {
+                                value.length &&
+                                    value.map((u) =>
+                                        post<CollectionShare[]>(
+                                            `/collections/${props.collection.collectionId}/share`,
+                                            {
+                                                body: {
+                                                    shareType: "user",
+                                                    oid: u.uid,
+                                                    permissions: ["read"],
+                                                },
+                                            }
+                                        )
+                                    );
+                                setValue([]);
+                                setInputValue("");
+                            }}
                         >
                             <span className="text">{loc("generic.share")}</span>
                         </Button>
