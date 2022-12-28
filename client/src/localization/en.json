@@ -74,6 +74,9 @@
             "root": "Error",
             "not_number": "Must be a number.",
             "validation": "Validation failed."
+        },
+        "collections": {
+            "not_found": "Collection not found."
         }
     },
     "plugin": {

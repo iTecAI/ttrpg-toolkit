@@ -302,7 +302,10 @@ class CollectionsController(Controller):
         if data.description:
             collection.description = data.description
         if data.image:
-            collection.image = data.image
+            if data.image == "$remove":
+                collection.image = ""
+            else:
+                collection.image = data.image
         if data.tags:
             collection.tags = data.tags
         collection.save()

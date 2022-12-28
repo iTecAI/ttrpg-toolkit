@@ -59,7 +59,11 @@ export function ConfigureDialog(props: {
                         form.description === props.collection.description
                             ? undefined
                             : form.description,
-                    image: image ? `/api/user_content/${image}` : undefined,
+                    image: image
+                        ? `/api/user_content/${image}`
+                        : form.image === "$remove"
+                        ? "$remove"
+                        : "",
                     tags:
                         form.tags === props.collection.tags
                             ? undefined
@@ -201,7 +205,7 @@ export function ConfigureDialog(props: {
                                 }}
                             />
                         </Tooltip>
-                        {form.image ? (
+                        {form.image && form.image !== "$remove" ? (
                             <span className="file-preview">
                                 <img src={form.image} alt="" />
                                 <Tooltip
@@ -218,7 +222,7 @@ export function ConfigureDialog(props: {
                                             setNewFile(null);
                                             dispatchForm({
                                                 key: "image",
-                                                value: null,
+                                                value: "$remove",
                                             });
                                         }}
                                     >

@@ -50,6 +50,7 @@ import { useWindowSize } from "../../util/general";
 import { useDialog } from "../../util/DialogContext";
 import { ShareCollectionDialog } from "./dialogs/ShareDialog";
 import { ConfigureDialog } from "./dialogs/ConfigureDialog";
+import { useNavigate } from "react-router-dom";
 
 function CreateCollectionDialog(props: {
     open: boolean;
@@ -311,6 +312,7 @@ function CollectionItem(props: { item: MinimalCollection }): JSX.Element {
 
     const [sharing, setSharing] = useState<boolean>(false);
     const [configuring, setConfiguring] = useState<boolean>(false);
+    const nav = useNavigate();
 
     return (
         <Card className="collection">
@@ -368,7 +370,11 @@ function CollectionItem(props: { item: MinimalCollection }): JSX.Element {
                     )}
                 </SpeedDial>
             )}
-            <CardActionArea>
+            <CardActionArea
+                onClick={() =>
+                    nav(`/collections/collection/${item.collectionId}`)
+                }
+            >
                 <CardHeader
                     title={item.name}
                     sx={{

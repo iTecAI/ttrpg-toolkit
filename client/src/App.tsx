@@ -22,6 +22,7 @@ import { Playground } from "./pages/playground/Playground";
 import { Collections } from "./pages/collections";
 import { UpdateType } from "./util/updates";
 import { DialogProvider } from "./util/DialogContext";
+import { CollectionItemListPage } from "./pages/collections/listPage";
 export const RootContext: React.Context<{} | RootModel> = React.createContext(
     {}
 );
@@ -134,6 +135,10 @@ function RouterChild() {
                 <Route path="/compendium" element={<Compendium />} />
                 <Route path="/playground" element={<Playground />} />
                 <Route path="/collections" element={<Collections />} />
+                <Route
+                    path="/collections/:type/:itemId"
+                    element={<CollectionItemListPage />}
+                />
             </Route>
             <Route
                 path="/login"

@@ -360,9 +360,4 @@ class Collection(ORM):
         if "read" in self.expand_share_array(self.check_permissions(user)):
             return all_children
 
-        results = []
-        for c in all_children:
-            if "read" in c.expand_share_array(c.check_permissions(user)):
-                results.append(c)
-
-        return c
+        return []
