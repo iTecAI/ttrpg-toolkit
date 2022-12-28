@@ -357,7 +357,7 @@ function CollectionItem(props: { item: MinimalCollection }): JSX.Element {
                     )}
                     {item.permissions.includes("admin") && (
                         <SpeedDialAction
-                            icon={<MdDelete size={24} />}
+                            icon={<MdDelete size={24} color={"#f44336"} />}
                             tooltipTitle={loc(
                                 "collections.list.item.actions.delete"
                             )}
