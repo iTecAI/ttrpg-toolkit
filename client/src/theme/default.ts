@@ -40,5 +40,8 @@ export const themeOptionsDefault: ThemeOptions = createTheme({
             secondary: "#ffffff",
             background: "#ffffff",
         },
+        info: {
+            main: "#2f2f2f",
+        },
     },
 });

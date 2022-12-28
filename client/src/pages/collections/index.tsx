@@ -333,7 +333,7 @@ function CollectionItem(props: { item: MinimalCollection }): JSX.Element {
                     ariaLabel=""
                     direction="down"
                     FabProps={{
-                        color: "default",
+                        color: "info",
                         size: "medium",
                     }}
                 >
