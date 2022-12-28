@@ -20,7 +20,7 @@ class ORM:
 
     @property
     def dict(self):  # Good for storing on-db
-        raw = self.__dict__
+        raw = self.__dict__.copy()
         del raw["database"]
         for e in self.exclude:
             if e in raw.keys():
@@ -74,6 +74,7 @@ class ORM:
 
     def save(self, database: Database = None):
         if database != None:
+            self.database = database
             collection = database[self.collection]
         elif self.database != None:
             collection = self.database[self.collection]

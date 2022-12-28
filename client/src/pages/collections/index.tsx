@@ -49,6 +49,7 @@ import { Md5 } from "ts-md5";
 import { useWindowSize } from "../../util/general";
 import { useDialog } from "../../util/DialogContext";
 import { ShareCollectionDialog } from "./dialogs/ShareDialog";
+import { ConfigureDialog } from "./dialogs/ConfigureDialog";
 
 function CreateCollectionDialog(props: {
     open: boolean;
@@ -309,6 +310,7 @@ function CollectionItem(props: { item: MinimalCollection }): JSX.Element {
     });
 
     const [sharing, setSharing] = useState<boolean>(false);
+    const [configuring, setConfiguring] = useState<boolean>(false);
 
     return (
         <Card className="collection">
@@ -341,6 +343,7 @@ function CollectionItem(props: { item: MinimalCollection }): JSX.Element {
                             tooltipTitle={loc(
                                 "collections.list.item.actions.settings"
                             )}
+                            onClick={() => setConfiguring(true)}
                         />
                     )}
                     {item.permissions.includes("share") && (
@@ -405,15 +408,9 @@ function CollectionItem(props: { item: MinimalCollection }): JSX.Element {
                             .split("\n")
                             .map((line) => <p key={Math.random()}>{line}</p>)}
                     <Paper variant="outlined" className="tag-area">
-                        {item.tags.length ? (
-                            <Stack spacing={1} direction={"row"}>
-                                {item.tags.map((t) => (
-                                    <Chip label={t} key={t} />
-                                ))}
-                            </Stack>
-                        ) : (
-                            loc("collections.list.item.tags-empty")
-                        )}
+                        {item.tags.length
+                            ? item.tags.map((t) => <Chip label={t} key={t} />)
+                            : loc("collections.list.item.tags-empty")}
                     </Paper>
                 </CardContent>
             </CardActionArea>
@@ -421,6 +418,11 @@ function CollectionItem(props: { item: MinimalCollection }): JSX.Element {
                 collection={item}
                 open={sharing}
                 setOpen={setSharing}
+            />
+            <ConfigureDialog
+                collection={item}
+                open={configuring}
+                setOpen={setConfiguring}
             />
         </Card>
     );

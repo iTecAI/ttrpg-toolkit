@@ -211,6 +211,9 @@
                     "title": "Share Collection",
                     "input": "Search Users",
                     "input-placeholder": "Display Name or Email..."
+                },
+                "configure": {
+                    "title": "Collection Settings"
                 }
             }
         },

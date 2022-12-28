@@ -72,6 +72,13 @@ class CreateCollectionModel(BaseModel):
     tags: Optional[list[str]] = []
 
 
+class ConfigureCollectionModel(BaseModel):
+    name: Optional[str] = None
+    description: Optional[str] = None
+    image: Optional[str] = None
+    tags: Optional[list[str]] = None
+
+
 class CollectionShareResultsModel(BaseModel):
     shareType: Literal["user", "game"]
     oid: str
@@ -277,3 +284,29 @@ class CollectionsController(Controller):
 
         collection.save()
         return data.permissions
+
+    @post(
+        "/{collection_id:str}/configure",
+        dependencies={"collection": Provide(collection_dep)},
+        guards=[guard_hasCollectionPermission("configure")],
+    )
+    async def configure_collection(
+        self,
+        state: State,
+        session: Session,
+        collection: Collection,
+        data: ConfigureCollectionModel,
+    ) -> MinimalCollection:
+        if data.name:
+            collection.name = data.name
+        if data.description:
+            collection.description = data.description
+        if data.image:
+            collection.image = data.image
+        if data.tags:
+            collection.tags = data.tags
+        collection.save()
+        state.cluster.dispatch_update(
+            {"session": collection.sessions, "update": "collections.update", "data": {}}
+        )
+        return MinimalCollection.from_collection(collection, session.user)
