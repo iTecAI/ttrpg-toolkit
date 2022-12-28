@@ -136,7 +136,7 @@ function RouterChild() {
                 <Route path="/playground" element={<Playground />} />
                 <Route path="/collections" element={<Collections />} />
                 <Route
-                    path="/collections/:type/:itemId"
+                    path="/collections/:itemId"
                     element={<CollectionItemListPage />}
                 />
             </Route>

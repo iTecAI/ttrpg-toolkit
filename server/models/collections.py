@@ -45,6 +45,8 @@ COLLECTION_SHARE_TYPE = List[
     ]
 ]
 
+COLLECTION_ITEM_TYPE = Literal["subcollection"]
+
 
 class CollectionObject(ORM):
     object_type: str = "collection_object"
@@ -55,11 +57,8 @@ class CollectionObject(ORM):
         self,
         oid: str = None,
         database: Database = None,
-        collection_id: str = None,
+        parents: list[str] = [],
         owner_id: str = None,
-        name: str = None,
-        description: str = None,
-        image: str = None,
         **kwargs,
     ):
         """A generic Collection Object. Should not be directly instantiated.
@@ -68,24 +67,15 @@ class CollectionObject(ORM):
         :type oid: str, optional
         :param database: MongoDB Database to save to, defaults to None
         :type database: Database, optional
-        :param collection_id: ID of parent Collection, defaults to None
-        :type collection_id: str, optional
+        :param parents: List of parent collections
+        :type parents: list[str]
         :param owner_id: User ID of owner, defaults to None
             This may be different from the Collection owner, if another user has the `create` permission
-        :type creator_id: str, optional
-        :param name: Object display name, defaults to None
-        :type name: str, optional
-        :param description: Object description, defaults to None
-        :type description: str, optional
-        :param image: Object image, defaults to None
-        :type image: str, optional
+        :type owner_id: str, optional
         """
         super().__init__(oid, database, **kwargs)
-        self.collection_id = collection_id
+        self.parents = parents
         self.owner_id = owner_id
-        self.name = name
-        self.description = description
-        self.image = image
 
 
 class Collection(ORM):
@@ -97,13 +87,14 @@ class Collection(ORM):
         oid: str = None,
         database: Database = None,
         owner_id: str = None,
+        parents: list[str] = [],
         shared_users: dict[str, COLLECTION_SHARE_TYPE] = {},
         shared_games: dict[str, COLLECTION_SHARE_TYPE] = {},
         name: str = None,
         description: str = None,
         tags: List[str] = [],
         image: str = None,
-        children_ids: List[str] = [],
+        children: dict[str, COLLECTION_ITEM_TYPE] = {},
         **kwargs,
     ):
         """Initialize a Collection of CollectionObjects
@@ -114,6 +105,8 @@ class Collection(ORM):
         :type database: Database, optional
         :param owner_id: Owner User ID, defaults to None
         :type owner_id: str, optional
+        :param parents: Array of parent collection IDs or "root" to specify that this is a top-level collection
+        :type parents: list[str], optional
         :param shared_users: Dictionary of {User ID: COLLECTION_SHARE_TYPE} defining what Users to share with, defaults to {}
             Permissions granted here take precedence over any permissions granted to an entire Game
         :type shared_users: dict[str, COLLECTION_SHARE_TYPE], optional
@@ -128,24 +121,26 @@ class Collection(ORM):
         :type tags: List[str], optional
         :param image: Link to Collection image, defaults to None
         :type image: str, optional
-        :param children_ids: List of Collection Object IDs, defaults to []
-        :type children_ids: List[str], optional
+        :param children: Dict of {child ID : child type}
+        :type children: dict[str, COLLECTION_ITEM_TYPE], optional
         """
         super().__init__(oid, database, **kwargs)
         self.owner_id = owner_id
+        self.parents = parents
         self.shared_users = shared_users
         self.shared_games = shared_games
         self.name = name
         self.description = description
         self.tags = tags
         self.image = image
-        self.children_ids = children_ids
+        self.children = children
 
     @classmethod
     def create(
         cls,
         database: Database,
         owner: User,
+        parent: str = None,
         name: str = None,
         description: str = None,
         tags: list[str] = [],
@@ -157,6 +152,8 @@ class Collection(ORM):
         :type database: Database
         :param owner: User object
         :type owner: User
+        :param parent: Parent collection ID or None to signify a top-level collection
+        :type parent: str, optional
         :param name: Name string, defaults to None
         :type name: str, optional
         :param description: Description string, defaults to None
@@ -171,6 +168,7 @@ class Collection(ORM):
         return Collection(
             database=database,
             owner_id=owner.oid,
+            parents=[parent] if parent else ["root"],
             name=name,
             description=description,
             tags=tags,
@@ -264,13 +262,17 @@ class Collection(ORM):
         return list(set(output))
 
     @classmethod
-    def get_accessible(cls, database: Database, user: User) -> list["Collection"]:
+    def get_accessible(
+        cls, database: Database, user: User, parent: str
+    ) -> list["Collection"]:
         """Returns an array of all Collections the user has read permissions for
 
         :param database: MongoDB Database object
         :type database: Database
         :param user: User object to check
         :type user: User
+        :param parent: ID of parent to search within, or "root"
+        :type parent: str
 
         :return: List of Collection objects
         :rtype: Collection[]
@@ -335,7 +337,8 @@ class Collection(ORM):
                     },
                 },
                 {"owner_id": user.oid},
-            ]
+            ],
+            "parents": parent,
         }
 
         result: dict[str, "Collection"] = {}
@@ -344,7 +347,7 @@ class Collection(ORM):
 
         return list(result.values())
 
-    def get_accessible_children(self, user: User) -> list[CollectionObject]:
+    def get_accessible_children(self, user: User) -> dict[str, COLLECTION_ITEM_TYPE]:
         """Gets an array of all accessible children in a Collection
 
         :param user: User object
@@ -352,12 +355,18 @@ class Collection(ORM):
         :return: Array of CollectionObjects
         :rtype: list[CollectionObject]
         """
-        all_children: list[
-            CollectionObject
-        ] = CollectionObject.load_multiple_from_query(
-            {"oid": {"$in": self.children_ids}}
-        )
-        if "read" in self.expand_share_array(self.check_permissions(user)):
-            return all_children
+        if not "read" in self.expand_share_array(self.check_permissions(user)):
+            return {}
 
-        return []
+        results = {}
+        for oid in self.children.keys():
+            if self.children[oid] == "subcollection":
+                coll: Collection = Collection.load_oid(oid, self.database)
+                if coll and "read" in coll.expand_share_array(
+                    coll.check_permissions(user)
+                ):
+                    results[oid] = self.children[oid]
+            else:
+                results[oid] = self.children[oid]
+
+        return results

@@ -11,6 +11,7 @@ export type CollectionShare =
 
 export type MinimalCollection = {
     collectionId: string;
+    parents: string[];
     ownerId: string;
     permissions: CollectionShare[];
     name: string;
@@ -26,4 +27,17 @@ export type ShareCollectionItem = {
     permissions: CollectionShare[];
     name: string;
     imageSrc: string;
+};
+
+export type CollectionItem = {
+    type: "subcollection";
+    collectionId: string;
+    parents: string[];
+    ownerId: string;
+    permissions: CollectionShare[];
+    name: string;
+    description: string | null;
+    image: string | null;
+    tags: string[];
+    children: string[];
 };

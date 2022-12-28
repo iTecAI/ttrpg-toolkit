@@ -257,6 +257,14 @@
                 "name": "Read",
                 "help": "You can view items in the collection"
             }
+        },
+        "contents": {
+            "nav-up": "To Parent Collection",
+            "new-item": {
+                "collection": "Collection",
+                "document": "Document",
+                "character": "Character"
+            }
         }
     }
 }

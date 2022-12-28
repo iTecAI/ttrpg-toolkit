@@ -2,11 +2,6 @@ import {
     Autocomplete,
     Box,
     Button,
-    Card,
-    CardActionArea,
-    CardContent,
-    CardHeader,
-    CardMedia,
     Chip,
     Dialog,
     DialogActions,
@@ -16,9 +11,6 @@ import {
     Divider,
     Fab,
     InputAdornment,
-    Paper,
-    SpeedDial,
-    SpeedDialAction,
     Stack,
     TextField,
     Tooltip,
@@ -26,36 +18,24 @@ import {
 } from "@mui/material";
 import {
     MdAdd,
-    MdDelete,
     MdDescription,
     MdDriveFileRenameOutline,
     MdHideImage,
     MdImage,
-    MdMenu,
-    MdPersonAdd,
-    MdSettings,
-    MdStar,
     MdTag,
 } from "react-icons/md";
-import "./index.scss";
-import { loc } from "../../util/localization";
-import { useEffect, useState } from "react";
-import { del, get, post, postFile } from "../../util/api";
+import "./creation.scss";
+import { loc } from "../../../../util/localization";
+import { useState } from "react";
+import { post, postFile } from "../../../../util/api";
 import { useSnackbar } from "notistack";
-import { MinimalCollection } from "../../models/collection";
-import { UpdateType, useUpdate } from "../../util/updates";
-import { Masonry } from "@mui/lab";
-import { Md5 } from "ts-md5";
-import { useWindowSize } from "../../util/general";
-import { useDialog } from "../../util/DialogContext";
-import { ShareCollectionDialog } from "./dialogs/ShareDialog";
-import { ConfigureDialog } from "./dialogs/ConfigureDialog";
-import { useNavigate } from "react-router-dom";
+import { MinimalCollection } from "../../../../models/collection";
 
-function CreateCollectionDialog(props: {
+export function CreateSubCollectionDialog(props: {
     open: boolean;
     setOpen: (open: boolean) => void;
     onCreate: () => void;
+    parent: string;
 }): JSX.Element {
     const [name, setName] = useState<string>("");
     const [nameError, setNameError] = useState<boolean>(false);
@@ -82,7 +62,7 @@ function CreateCollectionDialog(props: {
                 description: desc,
                 image: img ? `/api/user_content/${img}` : "",
                 tags: tags,
-                parent: "root",
+                parent: props.parent,
             },
         }).then((result) => {
             if (result.success) {
@@ -286,211 +266,5 @@ function CreateCollectionDialog(props: {
                 </Button>
             </DialogActions>
         </Dialog>
-    );
-}
-
-function CollectionItem(props: { item: MinimalCollection }): JSX.Element {
-    const { item } = props;
-    const confirmDialog = useDialog({
-        title: loc("collections.list.item.delete.title", { name: item.name }),
-        content: loc("collections.list.item.delete.body", { name: item.name }),
-        buttons: [
-            {
-                text: loc("generic.cancel"),
-                variant: "outlined",
-                id: "cancel",
-            },
-            {
-                text: loc("generic.confirm"),
-                variant: "contained",
-                id: "confirm",
-                action(id, initializer) {
-                    del<null>(`/collections/${initializer.id}`);
-                },
-            },
-        ],
-    });
-
-    const [sharing, setSharing] = useState<boolean>(false);
-    const [configuring, setConfiguring] = useState<boolean>(false);
-    const nav = useNavigate();
-
-    return (
-        <Card className="collection">
-            {item.permissions.includes("owner") && (
-                <Tooltip
-                    title={loc("collections.permissions.owner.name")}
-                    disableInteractive
-                >
-                    <span className="perm-icon">
-                        <MdStar size={24} color="gold" />
-                    </span>
-                </Tooltip>
-            )}
-            {(item.permissions.includes("configure") ||
-                item.permissions.includes("share") ||
-                item.permissions.includes("admin")) && (
-                <SpeedDial
-                    className="collection-actions"
-                    icon={<MdMenu size={24} />}
-                    ariaLabel=""
-                    direction="down"
-                    FabProps={{
-                        color: "info",
-                        size: "medium",
-                    }}
-                >
-                    {item.permissions.includes("configure") && (
-                        <SpeedDialAction
-                            icon={<MdSettings size={24} />}
-                            tooltipTitle={loc(
-                                "collections.list.item.actions.settings"
-                            )}
-                            onClick={() => setConfiguring(true)}
-                        />
-                    )}
-                    {item.permissions.includes("share") && (
-                        <SpeedDialAction
-                            icon={<MdPersonAdd size={24} />}
-                            tooltipTitle={loc(
-                                "collections.list.item.actions.share"
-                            )}
-                            onClick={() => setSharing(true)}
-                        />
-                    )}
-                    {item.permissions.includes("admin") && (
-                        <SpeedDialAction
-                            icon={<MdDelete size={24} color={"#f44336"} />}
-                            tooltipTitle={loc(
-                                "collections.list.item.actions.delete"
-                            )}
-                            onClick={() =>
-                                confirmDialog({ id: item.collectionId })
-                            }
-                        />
-                    )}
-                </SpeedDial>
-            )}
-            <CardActionArea
-                onClick={() => nav(`/collections/${item.collectionId}`)}
-            >
-                <CardHeader
-                    title={item.name}
-                    sx={{
-                        paddingLeft: item.permissions.includes("owner")
-                            ? "48px"
-                            : "16px",
-                    }}
-                />
-                {item.image ? (
-                    <CardMedia
-                        component="img"
-                        image={item.image}
-                        alt={loc("collections.list.item.media-alt", {
-                            name: item.name,
-                        })}
-                        height={320}
-                    />
-                ) : (
-                    <CardMedia
-                        component="img"
-                        image={`https://www.gravatar.com/avatar/${Md5.hashStr(
-                            item.collectionId
-                        )}?d=identicon&f=y&s=1024`}
-                        alt={loc("collections.list.item.media-alt", {
-                            name: item.name,
-                        })}
-                        height={320}
-                        sx={{
-                            filter: "grayscale(1)",
-                            opacity: 0.5,
-                        }}
-                    />
-                )}
-                <CardContent>
-                    {item.description &&
-                        item.description
-                            .split("\n")
-                            .map((line) => <p key={Math.random()}>{line}</p>)}
-                    <Paper variant="outlined" className="tag-area">
-                        {item.tags.length
-                            ? item.tags.map((t) => <Chip label={t} key={t} />)
-                            : loc("collections.list.item.tags-empty")}
-                    </Paper>
-                </CardContent>
-            </CardActionArea>
-            <ShareCollectionDialog
-                collection={item}
-                open={sharing}
-                setOpen={setSharing}
-            />
-            <ConfigureDialog
-                collection={item}
-                open={configuring}
-                setOpen={setConfiguring}
-            />
-        </Card>
-    );
-}
-
-export function Collections(): JSX.Element {
-    const [creating, setCreating] = useState<boolean>(false);
-    const [collections, setCollections] = useState<MinimalCollection[]>([]);
-    const { width } = useWindowSize();
-    useUpdate(
-        (update: UpdateType) =>
-            get<MinimalCollection[]>("/collections/", {
-                urlParams: { parent: "root" },
-            }).then((result) => {
-                if (result.success) {
-                    setCollections(result.value);
-                }
-            }),
-        "collections.update"
-    );
-
-    useEffect(() => {
-        get<MinimalCollection[]>("/collections/", {
-            urlParams: { parent: "root" },
-        }).then((result) => {
-            if (result.success) {
-                setCollections(result.value);
-            }
-        });
-    }, []);
-
-    return (
-        <Box className="collections-area">
-            <Tooltip title={loc("collections.new")}>
-                <Fab
-                    className="btn-new-collection"
-                    color="primary"
-                    size="large"
-                    onClick={() => setCreating(true)}
-                >
-                    <MdAdd size={24} />
-                </Fab>
-            </Tooltip>
-            <CreateCollectionDialog
-                open={creating}
-                setOpen={(open: boolean) => setCreating(open)}
-                onCreate={() =>
-                    get<MinimalCollection[]>("/collections/").then((result) => {
-                        if (result.success) {
-                            setCollections(result.value);
-                        }
-                    })
-                }
-            />
-            <Masonry
-                spacing={2}
-                columns={Math.ceil((width ?? window.innerWidth) / 480)}
-                className={"collections-list"}
-            >
-                {collections.map((c) => (
-                    <CollectionItem item={c} key={c.collectionId} />
-                ))}
-            </Masonry>
-        </Box>
     );
 }
