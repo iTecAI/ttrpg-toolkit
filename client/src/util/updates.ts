@@ -3,7 +3,7 @@ import { UpdateContext } from "../App";
 
 export type UpdateType = {
     event: string;
-    body: { [key: string]: any } | null;
+    data: { [key: string]: any } | null;
     dispatched: number;
 };
 

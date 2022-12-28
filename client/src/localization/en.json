@@ -259,7 +259,6 @@
             }
         },
         "contents": {
-            "nav-up": "To Parent Collection",
             "new-item": {
                 "collection": "Collection",
                 "document": "Document",

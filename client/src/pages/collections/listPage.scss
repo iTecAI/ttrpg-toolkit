@@ -50,6 +50,16 @@
         }
     }
 
+    .item-list {
+        position: absolute;
+        top: 64px;
+        left: 0px;
+        padding: 16px;
+        display: inline-block;
+        width: 100%;
+        height: calc(100% - 64px);
+    }
+
     .new-item-btn {
         position: absolute;
         bottom: 32px;

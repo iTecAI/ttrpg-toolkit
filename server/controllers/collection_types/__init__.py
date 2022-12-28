@@ -124,6 +124,15 @@ class CollectionsController(Controller):
         cluster.dispatch_update(
             {"session": to_update, "update": "collections.update", "data": {}}
         )
+        for c in collection.parents:
+            if c != "root":
+                cluster.dispatch_update(
+                    {
+                        "session": to_update,
+                        "update": "collections.update.children",
+                        "data": {"collection": c},
+                    }
+                )
 
     @get(
         "/{collection_id:str}/children",
@@ -184,8 +193,21 @@ class CollectionsController(Controller):
             data.image,
         )
         new_collection.save()
-
         cluster: Cluster = state.cluster
+
+        if data.parent and data.parent != "root":
+            parent: Collection = Collection.load_oid(data.parent, state.database)
+            if parent:
+                parent.children[new_collection.oid] = "subcollection"
+                parent.save()
+                cluster.dispatch_update(
+                    {
+                        "session": parent.sessions,
+                        "update": "collections.update.children",
+                        "data": {"collection": parent.oid},
+                    }
+                )
+
         cluster.dispatch_update(
             {"session": session.oid, "update": "collections.update", "data": {}}
         )
