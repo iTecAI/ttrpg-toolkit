@@ -12,6 +12,10 @@
 
         .child-count .MuiBadge-badge {
             transform: translate(4px, 4px);
+            font-size: 12px;
+            font-weight: bold;
+            padding-top: 2px;
+            box-sizing: border-box;
         }
 
         .avatar {
@@ -20,9 +24,12 @@
         }
     }
 
+    .MuiCardHeader-root {
+        padding-left: 0px;
+    }
     .MuiCardHeader-title {
         position: relative;
-        padding-left: 8px;
+        padding-left: 56px;
     }
 
     .tag-area {
