@@ -72,7 +72,7 @@ def guard_isDataSource(request: Any, _: BaseRouteHandler) -> None:
     pass
 
 
-def guard_hasCollectionPermission(permission: COLLECTION_SHARE_TYPE):
+"""def guard_hasCollectionPermission(permission: COLLECTION_SHARE_TYPE):
     def guard_intl_hasCollectionPermission(request: Any, _: BaseRouteHandler) -> None:
         if not "collection_id" in request.path_params.keys():
             raise GenericNetworkError(extra="Collection ID not passed to Guard")
@@ -95,4 +95,4 @@ def guard_hasCollectionPermission(permission: COLLECTION_SHARE_TYPE):
         if not permission in perms:
             raise PermissionError()
 
-    return guard_intl_hasCollectionPermission
+    return guard_intl_hasCollectionPermission"""

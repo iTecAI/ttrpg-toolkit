@@ -1,10 +1,19 @@
-export type SharePermission = "view" | "edit" | "share" | "delete" | "admin";
+export type SharePermissionValue = boolean | null;
+
+export type SharePermission = {
+    view: SharePermissionValue;
+    edit: SharePermissionValue;
+    share: SharePermissionValue;
+    delete: SharePermissionValue;
+    admin: SharePermissionValue;
+    owner: SharePermissionValue;
+};
 
 interface BaseContentType {
     oid: string;
     type: string;
     owner: string;
-    shared: { [key: string]: SharePermission[] };
+    shared: { [key: string]: SharePermission };
     parent: string | "root";
     name: string;
     image: string | null;
