@@ -20,7 +20,7 @@ import { Md5 } from "ts-md5";
 
 export type DialogContextOptions = {
     title: string;
-    content?: string;
+    content?: ReactNode;
     buttons: {
         id: string;
         text: string;
@@ -112,13 +112,7 @@ export function DialogProvider(props: { children: ReactNode }): JSX.Element {
                             }
                         >
                             <DialogTitle>{options.title}</DialogTitle>
-                            <DialogContent>
-                                {options.content && (
-                                    <DialogContentText>
-                                        {options.content}
-                                    </DialogContentText>
-                                )}
-                            </DialogContent>
+                            <DialogContent>{options.content}</DialogContent>
 
                             <DialogActions>
                                 {options.buttons.length > 0 ? (

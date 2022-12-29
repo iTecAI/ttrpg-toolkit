@@ -8,6 +8,7 @@ import {
     CardHeader,
     CardMedia,
     Chip,
+    CircularProgress,
     Paper,
     SpeedDial,
     SpeedDialAction,
@@ -22,23 +23,57 @@ import {
 } from "react-icons/md";
 import "./render.scss";
 import { loc } from "../../../../util/localization";
-import { useState } from "react";
-import { del } from "../../../../util/api";
-import { MinimalCollection } from "../../../../models/collection";
+import { useEffect, useState } from "react";
+import { del, get } from "../../../../util/api";
+import {
+    CollectionItemLocator,
+    MinimalCollection,
+} from "../../../../models/collection";
 import { Md5 } from "ts-md5";
 import { useDialog } from "../../../../util/DialogContext";
 import { ShareCollectionDialog } from "../../dialogs/ShareDialog";
 import { ConfigureDialog } from "../../dialogs/ConfigureDialog";
 import { useNavigate } from "react-router-dom";
 
+function DeleteQueryResult(props: { item: MinimalCollection }) {
+    const [query, setQuery] = useState<string[] | null>(null);
+    useEffect(() => {
+        get<string[]>(
+            `/collections/${props.item.collectionId}/query_result/delete`
+        ).then((result) => {
+            if (result.success) {
+                setQuery(result.value);
+            }
+        });
+    }, [props.item]);
+
+    return (
+        <Paper sx={{ padding: "4px", marginTop: "8px" }} elevation={0}>
+            {query ? (
+                query.map((v) => (
+                    <Chip key={v} label={v} sx={{ margin: "4px" }} />
+                ))
+            ) : (
+                <CircularProgress />
+            )}
+        </Paper>
+    );
+}
+
 export function SubCollectionItem(props: {
     item: MinimalCollection;
     parent: MinimalCollection | "root";
 }): JSX.Element {
     const { item } = props;
+
     const confirmDialog = useDialog({
         title: loc("collections.list.item.delete.title", { name: item.name }),
-        content: loc("collections.list.item.delete.body", { name: item.name }),
+        content: (
+            <>
+                {loc("collections.list.item.delete.body", { name: item.name })}
+                <DeleteQueryResult item={item} />
+            </>
+        ),
         buttons: [
             {
                 text: loc("generic.cancel"),

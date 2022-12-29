@@ -41,3 +41,8 @@ export type CollectionItem = {
     tags: string[];
     children: string[];
 };
+
+export type CollectionItemLocator = {
+    oid: string;
+    subtype: string;
+};

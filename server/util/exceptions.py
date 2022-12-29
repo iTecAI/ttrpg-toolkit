@@ -168,6 +168,12 @@ class CollectionNotFoundError(BaseHTTPException):
     status_code: int = HTTP_404_NOT_FOUND
 
 
+class InvalidCollectionQuery(BaseHTTPException):
+    message: str = "Invalid collection query:"
+    message_class: str = "error.collection.invalid_query"
+    status_code: int = HTTP_405_METHOD_NOT_ALLOWED
+
+
 # User Content Errors
 class ContentNotFoundError(BaseHTTPException):
     message: str = "User content not found:"

@@ -1,8 +1,12 @@
-from typing import Dict, Optional, Literal
+from typing import Dict, Optional, Literal, Any
 from starlite import Controller, Provide, State, get, post, delete
 from util.guards import guard_loggedIn, guard_hasCollectionPermission
 from util.dependencies import session_dep, collection_dep
-from util.exceptions import CollectionNotFoundError, PermissionError
+from util.exceptions import (
+    CollectionNotFoundError,
+    PermissionError,
+    InvalidCollectionQuery,
+)
 from models import (
     Session,
     Collection,
@@ -333,3 +337,20 @@ class CollectionsController(Controller):
             {"session": collection.sessions, "update": "collections.update", "data": {}}
         )
         return MinimalCollection.from_collection(collection, session.user)
+
+    @get(
+        "/{collection_id:str}/query_result/{kind:str}",
+        dependencies={"collection": Provide(collection_dep)},
+        guards=[guard_hasCollectionPermission("read")],
+    )
+    async def query_action_result(
+        self, state: State, session: Session, collection: Collection, kind: str
+    ) -> list[Any]:
+        if kind == "delete":
+            results = collection.delete(dry=True)
+            to_delete: list[Collection] = Collection.load_multiple_from_query(
+                {"oid": {"$in": [r["oid"] for r in results]}}, state.database
+            )
+            return [t.name for t in to_delete]
+
+        raise InvalidCollectionQuery(extra=kind)

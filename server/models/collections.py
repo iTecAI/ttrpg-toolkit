@@ -2,7 +2,7 @@ from util.orm import ORM
 from .games import Game
 from .accounts import Session
 from pymongo.database import Database
-from typing import Literal, List
+from typing import Literal, List, TypedDict
 from .accounts import User
 
 """
@@ -46,6 +46,11 @@ COLLECTION_SHARE_TYPE = List[
 ]
 
 COLLECTION_ITEM_TYPE = Literal["subcollection"]
+
+
+class ItemLocator(TypedDict):
+    oid: str
+    subtype: COLLECTION_ITEM_TYPE
 
 
 class CollectionObject(ORM):
@@ -371,20 +376,34 @@ class Collection(ORM):
 
         return results
 
-    def delete(self) -> None:
+    def delete(self, dry=False) -> list[ItemLocator]:
+        result = []
+        result.append({"oid": self.oid, "subtype": "subcollection"})
         for c in self.children.keys():
             if self.children[c] == "subcollection":
                 item: Collection = Collection.load_oid(c, self.database)
                 if item:
-                    item.remove_parent(self.oid)
+                    result.extend(item.remove_parent(self.oid, dry=dry))
+        if not dry:
+            self.database[self.collection].delete_one({"oid": self.oid})
+        return result
 
-        self.database[self.collection].delete_one({"oid": self.oid})
+    def remove_parent(self, parent: str, dry=False) -> list[ItemLocator]:
+        result = []
+        new_parents = self.parents[:]
+        if dry:
+            if parent in new_parents:
+                new_parents.remove(parent)
+            if len(new_parents) == 0:
+                result.extend(self.delete(dry=dry))
 
-    def remove_parent(self, parent: str) -> None:
-        if parent in self.parents:
-            self.parents.remove(parent)
-
-        if len(self.parents) == 0:
-            self.delete()
+            return result
         else:
-            self.save()
+            if parent in self.parents:
+                self.parents.remove(parent)
+            if len(self.parents) == 0:
+                result.extend(self.delete(dry=dry))
+            else:
+                self.save()
+
+            return result
