@@ -6,13 +6,23 @@
     vertical-align: top;
     .bk-icon {
         position: absolute;
-        top: 16px;
-        left: 16px;
+        top: 6px;
+        left: 6px;
         z-index: 20;
+
+        .child-count .MuiBadge-badge {
+            transform: translate(4px, 4px);
+        }
+
+        .avatar {
+            background-color: #00000000;
+            color: white;
+        }
     }
 
     .MuiCardHeader-title {
         position: relative;
+        padding-left: 8px;
     }
 
     .tag-area {

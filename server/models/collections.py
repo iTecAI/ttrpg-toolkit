@@ -370,3 +370,21 @@ class Collection(ORM):
                 results[oid] = self.children[oid]
 
         return results
+
+    def delete(self) -> None:
+        for c in self.children.keys():
+            if self.children[c] == "subcollection":
+                item: Collection = Collection.load_oid(c, self.database)
+                if item:
+                    item.remove_parent(self.oid)
+
+        self.database[self.collection].delete_one({"oid": self.oid})
+
+    def remove_parent(self, parent: str) -> None:
+        if parent in self.parents:
+            self.parents.remove(parent)
+
+        if len(self.parents) == 0:
+            self.delete()
+        else:
+            self.save()

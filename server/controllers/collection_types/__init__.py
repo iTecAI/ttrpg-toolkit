@@ -119,8 +119,7 @@ class CollectionsController(Controller):
         if collection.image != "":
             manager.delete(collection.image.split("/")[3])
         cluster: Cluster = state.cluster
-        ccol: MongoCollection = state.database[Collection.collection]
-        ccol.delete_one({"oid": collection.oid})
+        collection.delete()
         cluster.dispatch_update(
             {"session": to_update, "update": "collections.update", "data": {}}
         )

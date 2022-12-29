@@ -18,7 +18,7 @@ export type MinimalCollection = {
     description: string | null;
     image: string | null;
     tags: string[];
-    children: string[];
+    children: { [key: string]: string };
 };
 
 export type ShareCollectionItem = {

@@ -1,4 +1,7 @@
 import {
+    Avatar,
+    Badge,
+    Box,
     Card,
     CardActionArea,
     CardContent,
@@ -59,14 +62,24 @@ export function SubCollectionItem(props: {
 
     return (
         <Card className="collection">
-            <Tooltip
-                title={loc("collections.contents.new-item.collection")}
-                disableInteractive
-            >
-                <span className="bk-icon">
-                    <MdCollectionsBookmark size={24} />
-                </span>
-            </Tooltip>
+            <Box className="bk-icon">
+                <Badge
+                    badgeContent={Object.keys(item.children).length}
+                    className="child-count"
+                    max={99}
+                    color={"primary"}
+                    anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+                >
+                    <Tooltip
+                        title={loc("collections.contents.new-item.collection")}
+                        disableInteractive
+                    >
+                        <Avatar className="avatar">
+                            <MdCollectionsBookmark size={24} />
+                        </Avatar>
+                    </Tooltip>
+                </Badge>
+            </Box>
             {(item.permissions.includes("configure") ||
                 item.permissions.includes("share") ||
                 item.permissions.includes("admin")) && (
