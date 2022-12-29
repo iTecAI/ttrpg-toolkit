@@ -131,7 +131,9 @@ export function SubCollectionItem(props: {
                 variant: "contained",
                 id: "confirm",
                 action(id, initializer) {
-                    //del<null>(`/collections/${initializer.id}`);
+                    del<null>(
+                        `/collections/${initializer.parent}/child/${initializer.id}`
+                    );
                 },
             },
         ],

@@ -6,6 +6,7 @@ from util.exceptions import (
     CollectionNotFoundError,
     PermissionError,
     InvalidCollectionQuery,
+    CollectionChildNotFound,
 )
 from models import (
     Session,
@@ -367,3 +368,48 @@ class CollectionsController(Controller):
             return [t.name for t in to_delete]
 
         raise InvalidCollectionQuery(extra=kind)
+
+    @delete(
+        "/{collection_id:str}/child/{child_id:str}",
+        dependencies={"collection": Provide(collection_dep)},
+        guards=[guard_hasCollectionPermission("delete")],
+        status_code=HTTP_204_NO_CONTENT,
+    )
+    async def remove_collection_child(
+        self, state: State, session: Session, collection: Collection, child_id: str
+    ) -> None:
+        cluster: Cluster = state.cluster
+
+        # Load child
+        if child_id in collection.children.keys():
+            if collection.children[child_id] == "subcollection":
+                child = Collection.load_oid(child_id, state.database)
+                if child == None:
+                    raise CollectionChildNotFound(extra=child_id)
+                if (
+                    not "admin"
+                    in child.expand_share_array(child.check_permissions(session.user))
+                    and len(child.parents) == 1
+                ):
+                    raise PermissionError()
+        else:
+            raise CollectionChildNotFound(extra=child_id)
+
+        child_parents = child.parents
+        child.remove_parent(collection.oid)
+        cluster.dispatch_update(
+            {
+                "session": collection.sessions,
+                "update": "collections.update.children",
+                "data": {"collection": collection.oid},
+            }
+        )
+        for c in child_parents:
+            if c != "root":
+                cluster.dispatch_update(
+                    {
+                        "session": collection.sessions,
+                        "update": "collections.update.children",
+                        "data": {"collection": c},
+                    }
+                )

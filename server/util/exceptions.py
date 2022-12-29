@@ -174,6 +174,12 @@ class InvalidCollectionQuery(BaseHTTPException):
     status_code: int = HTTP_405_METHOD_NOT_ALLOWED
 
 
+class CollectionChildNotFound(BaseHTTPException):
+    message: str = "Collection child not found:"
+    message_class: str = "error.collection.child.not_found"
+    status_code: int = HTTP_404_NOT_FOUND
+
+
 # User Content Errors
 class ContentNotFoundError(BaseHTTPException):
     message: str = "User content not found:"
