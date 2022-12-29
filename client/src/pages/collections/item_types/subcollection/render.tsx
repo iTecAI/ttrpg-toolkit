@@ -30,7 +30,7 @@ import { useNavigate } from "react-router-dom";
 
 export function SubCollectionItem(props: {
     item: MinimalCollection;
-    parent: MinimalCollection;
+    parent: MinimalCollection | "root";
 }): JSX.Element {
     const { item } = props;
     const confirmDialog = useDialog({
