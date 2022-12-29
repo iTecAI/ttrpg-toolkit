@@ -15,11 +15,17 @@ import { Masonry } from "@mui/lab";
 function CreateButton(props: {
     icon: ReactNode;
     tooltip: string;
+    onClick: () => void;
 }): JSX.Element {
     return (
         <Box className="btn-container">
             <Tooltip title={props.tooltip} disableInteractive>
-                <IconButton className="create-btn" color="default" size="large">
+                <IconButton
+                    className="create-btn"
+                    color="default"
+                    size="large"
+                    onClick={props.onClick}
+                >
                     {props.icon}
                 </IconButton>
             </Tooltip>
@@ -44,18 +50,22 @@ export function CreateGridViewItem(props: {}): JSX.Element {
                             <CreateButton
                                 icon={<MdCreateNewFolder size={32} />}
                                 tooltip={loc("content.create.folder")}
+                                onClick={() => {}}
                             />
                             <CreateButton
                                 icon={<MdDescription size={32} />}
                                 tooltip={loc("content.create.document")}
+                                onClick={() => {}}
                             />
                             <CreateButton
                                 icon={<MdPersonAdd size={32} />}
                                 tooltip={loc("content.create.character")}
+                                onClick={() => {}}
                             />
                             <CreateButton
                                 icon={<MdMap size={32} />}
                                 tooltip={loc("content.create.map")}
+                                onClick={() => {}}
                             />
                         </Masonry>
                     </Paper>
