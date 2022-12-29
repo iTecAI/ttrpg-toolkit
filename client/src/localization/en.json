@@ -190,7 +190,11 @@
         },
         "create": {
             "new": "New Item",
-            "folder": "Folder"
+            "types": "Item Types",
+            "folder": "Folder",
+            "document": "Document",
+            "character": "Character",
+            "map": "Map"
         }
     }
 }

@@ -55,7 +55,7 @@
                 }
                 .add-buttons {
                     height: 50%;
-                    padding-top: 8px;
+                    padding-top: 32px;
                     padding-bottom: 8px;
                 }
             }
@@ -75,9 +75,18 @@
                 transition: height 0.2s ease-in-out;
                 overflow: hidden;
 
+                .types-title {
+                    position: absolute;
+                    top: 6px;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+
                 .btn-container {
                     position: relative;
-                    height: 80px;
+                    height: 60px;
 
                     .create-btn {
                         position: absolute;
