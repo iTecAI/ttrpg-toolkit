@@ -102,6 +102,8 @@ export function SubCollectionItem(props: {
         ],
     });
 
+    /*
+
     const confirmRemoveDialog = useDialog({
         title: loc("collections.list.item.remove.title", {
             name: item.name,
@@ -138,6 +140,32 @@ export function SubCollectionItem(props: {
             },
         ],
     });
+    {item.parents.length > 1
+        ? props.parent !== "root" &&
+            props.parent.permissions.includes("delete")
+        : props.parent !== "root" &&
+            props.parent.permissions.includes("admin") && (
+                <SpeedDialAction
+                    icon={
+                        <MdRemoveCircle
+                            size={24}
+                            color={"#f57b36"}
+                        />
+                    }
+                    tooltipTitle={loc(
+                        "collections.list.item.actions.remove"
+                    )}
+                    onClick={() => {
+                        confirmRemoveDialog({
+                            id: item.collectionId,
+                            parent: (
+                                props.parent as MinimalCollection
+                            ).collectionId,
+                        });
+                    }}
+                />
+            )}
+    */
 
     const [sharing, setSharing] = useState<boolean>(false);
     const [configuring, setConfiguring] = useState<boolean>(false);
@@ -194,31 +222,7 @@ export function SubCollectionItem(props: {
                             onClick={() => setSharing(true)}
                         />
                     )}
-                    {item.parents.length > 1
-                        ? props.parent !== "root" &&
-                          props.parent.permissions.includes("delete")
-                        : props.parent !== "root" &&
-                          props.parent.permissions.includes("admin") && (
-                              <SpeedDialAction
-                                  icon={
-                                      <MdRemoveCircle
-                                          size={24}
-                                          color={"#f57b36"}
-                                      />
-                                  }
-                                  tooltipTitle={loc(
-                                      "collections.list.item.actions.remove"
-                                  )}
-                                  onClick={() => {
-                                      confirmRemoveDialog({
-                                          id: item.collectionId,
-                                          parent: (
-                                              props.parent as MinimalCollection
-                                          ).collectionId,
-                                      });
-                                  }}
-                              />
-                          )}
+
                     {item.permissions.includes("admin") && (
                         <SpeedDialAction
                             icon={<MdDelete size={24} color={"#f44336"} />}
