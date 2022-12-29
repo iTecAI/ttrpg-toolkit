@@ -19,11 +19,12 @@ import {
     MdDelete,
     MdMenu,
     MdPersonAdd,
+    MdRemoveCircle,
     MdSettings,
 } from "react-icons/md";
 import "./render.scss";
 import { loc } from "../../../../util/localization";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { del, get } from "../../../../util/api";
 import {
     CollectionItemLocator,
@@ -35,11 +36,21 @@ import { ShareCollectionDialog } from "../../dialogs/ShareDialog";
 import { ConfigureDialog } from "../../dialogs/ConfigureDialog";
 import { useNavigate } from "react-router-dom";
 
-function DeleteQueryResult(props: { item: MinimalCollection }) {
+function QueryResult(props: {
+    item: MinimalCollection;
+    query: "delete" | "remove";
+    parent?: MinimalCollection;
+}) {
     const [query, setQuery] = useState<string[] | null>(null);
     useEffect(() => {
         get<string[]>(
-            `/collections/${props.item.collectionId}/query_result/delete`
+            `/collections/${props.item.collectionId}/query_result/${props.query}`,
+            {
+                urlParams:
+                    props.query === "remove" && props.parent
+                        ? { extra: props.parent.collectionId ?? "" }
+                        : undefined,
+            }
         ).then((result) => {
             if (result.success) {
                 setQuery(result.value);
@@ -71,7 +82,7 @@ export function SubCollectionItem(props: {
         content: (
             <>
                 {loc("collections.list.item.delete.body", { name: item.name })}
-                <DeleteQueryResult item={item} />
+                <QueryResult item={item} query={"delete"} />
             </>
         ),
         buttons: [
@@ -86,6 +97,41 @@ export function SubCollectionItem(props: {
                 id: "confirm",
                 action(id, initializer) {
                     del<null>(`/collections/${initializer.id}`);
+                },
+            },
+        ],
+    });
+
+    const confirmRemoveDialog = useDialog({
+        title: loc("collections.list.item.remove.title", {
+            name: item.name,
+            collection: (props.parent as MinimalCollection).name,
+        }),
+        content: (
+            <>
+                {loc("collections.list.item.remove.body", {
+                    name: item.name,
+                    collection: (props.parent as MinimalCollection).name,
+                })}
+                <QueryResult
+                    item={item}
+                    query={"delete"}
+                    parent={props.parent as MinimalCollection}
+                />
+            </>
+        ),
+        buttons: [
+            {
+                text: loc("generic.cancel"),
+                variant: "outlined",
+                id: "cancel",
+            },
+            {
+                text: loc("generic.confirm"),
+                variant: "contained",
+                id: "confirm",
+                action(id, initializer) {
+                    //del<null>(`/collections/${initializer.id}`);
                 },
             },
         ],
@@ -146,6 +192,31 @@ export function SubCollectionItem(props: {
                             onClick={() => setSharing(true)}
                         />
                     )}
+                    {item.parents.length > 1
+                        ? props.parent !== "root" &&
+                          props.parent.permissions.includes("delete")
+                        : props.parent !== "root" &&
+                          props.parent.permissions.includes("admin") && (
+                              <SpeedDialAction
+                                  icon={
+                                      <MdRemoveCircle
+                                          size={24}
+                                          color={"#f57b36"}
+                                      />
+                                  }
+                                  tooltipTitle={loc(
+                                      "collections.list.item.actions.remove"
+                                  )}
+                                  onClick={() => {
+                                      confirmRemoveDialog({
+                                          id: item.collectionId,
+                                          parent: (
+                                              props.parent as MinimalCollection
+                                          ).collectionId,
+                                      });
+                                  }}
+                              />
+                          )}
                     {item.permissions.includes("admin") && (
                         <SpeedDialAction
                             icon={<MdDelete size={24} color={"#f44336"} />}

@@ -204,11 +204,16 @@
                 "actions": {
                     "settings": "Settings",
                     "delete": "Delete",
-                    "share": "Share"
+                    "share": "Share",
+                    "remove": "Remove From Collection"
                 },
                 "delete": {
                     "title": "Confirm Deletion of {{name}}",
                     "body": "Are you sure you want to delete {{name}}? This will delete the following items:"
+                },
+                "remove": {
+                    "title": "Confirm Removal of {{name}} from {{collection}}",
+                    "body": "Are you sure you want to remove {{name}} from {{collection}}? This will also PERMANENTLY DELETE the following items, as they have no other parents:"
                 },
                 "share": {
                     "title": "Share Collection",

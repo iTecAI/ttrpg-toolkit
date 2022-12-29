@@ -123,11 +123,12 @@ class CollectionsController(Controller):
         if collection.image != "":
             manager.delete(collection.image.split("/")[3])
         cluster: Cluster = state.cluster
+        parents_to_update = collection.parents
         collection.delete()
         cluster.dispatch_update(
             {"session": to_update, "update": "collections.update", "data": {}}
         )
-        for c in collection.parents:
+        for c in parents_to_update:
             if c != "root":
                 cluster.dispatch_update(
                     {
@@ -344,10 +345,22 @@ class CollectionsController(Controller):
         guards=[guard_hasCollectionPermission("read")],
     )
     async def query_action_result(
-        self, state: State, session: Session, collection: Collection, kind: str
+        self,
+        state: State,
+        session: Session,
+        collection: Collection,
+        kind: str,
+        extra: Optional[str] = None,
     ) -> list[Any]:
         if kind == "delete":
             results = collection.delete(dry=True)
+            to_delete: list[Collection] = Collection.load_multiple_from_query(
+                {"oid": {"$in": [r["oid"] for r in results]}}, state.database
+            )
+            return [t.name for t in to_delete]
+
+        if kind == "remove" and extra:
+            results = collection.remove_parent(extra, dry=True)
             to_delete: list[Collection] = Collection.load_multiple_from_query(
                 {"oid": {"$in": [r["oid"] for r in results]}}, state.database
             )

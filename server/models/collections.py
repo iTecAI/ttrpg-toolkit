@@ -386,6 +386,13 @@ class Collection(ORM):
                     result.extend(item.remove_parent(self.oid, dry=dry))
         if not dry:
             self.database[self.collection].delete_one({"oid": self.oid})
+            parents: list[Collection] = Collection.load_multiple_from_query(
+                {"oid": {"$in": self.parents}}, self.database
+            )
+            for p in parents:
+                del p.children[self.oid]
+                p.save()
+
         return result
 
     def remove_parent(self, parent: str, dry=False) -> list[ItemLocator]:
@@ -401,6 +408,10 @@ class Collection(ORM):
         else:
             if parent in self.parents:
                 self.parents.remove(parent)
+                loaded = Collection.load_oid(parent, self.database)
+                if loaded:
+                    del loaded.children[self.oid]
+                    loaded.save()
             if len(self.parents) == 0:
                 result.extend(self.delete(dry=dry))
             else:
