@@ -96,7 +96,6 @@ BASE_HANDLERS = [
     PluginDataSourceController,
     DebugController,
     PluginAssetController,
-    CollectionsController,
     UserContentController,
     UpdateController,
 ]

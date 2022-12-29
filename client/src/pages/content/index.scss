@@ -1,0 +1,58 @@
+.content-page {
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .top-bar {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: inline-block;
+        width: 100%;
+        height: 64px;
+
+        .contents {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            display: inline-block;
+            width: calc(100% - 16px);
+            height: 48px;
+
+            .search {
+                width: 50%;
+                height: calc(100% - 6px);
+                position: absolute;
+                left: 0px;
+                bottom: 0px;
+
+                .MuiOutlinedInput-root {
+                    height: 100%;
+                }
+            }
+
+            .view-mode {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                display: inline-block;
+                width: fit-content;
+                height: 48px;
+            }
+        }
+    }
+
+    .view-area {
+        position: absolute;
+        top: 64px;
+        left: 0px;
+        display: inline-block;
+        width: 100%;
+        height: calc(100% - 64px);
+        overflow-y: auto;
+    }
+}

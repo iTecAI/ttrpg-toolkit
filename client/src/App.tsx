@@ -19,10 +19,9 @@ import { themeOptionsDefault } from "./theme/default";
 import { del, get } from "./util/api";
 import { loc } from "./util/localization";
 import { Playground } from "./pages/playground/Playground";
-import { Collections } from "./pages/collections";
 import { UpdateType } from "./util/updates";
 import { DialogProvider } from "./util/DialogContext";
-import { CollectionItemListPage } from "./pages/collections/listPage";
+import { ContentPage } from "./pages/content";
 export const RootContext: React.Context<{} | RootModel> = React.createContext(
     {}
 );
@@ -134,11 +133,7 @@ function RouterChild() {
                 />
                 <Route path="/compendium" element={<Compendium />} />
                 <Route path="/playground" element={<Playground />} />
-                <Route path="/collections" element={<Collections />} />
-                <Route
-                    path="/collections/:itemIdParam"
-                    element={<CollectionItemListPage />}
-                />
+                <Route path="/content" element={<ContentPage />} />
             </Route>
             <Route
                 path="/login"

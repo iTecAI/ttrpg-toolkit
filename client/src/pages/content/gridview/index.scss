@@ -1,0 +1,92 @@
+@import "../../../theme/default.scss";
+
+.grid-masonry {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: inline-block;
+    width: 100%;
+    height: fit-content;
+    padding: 16px;
+}
+
+.create-item {
+    height: 360px;
+
+    .addition-container {
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        height: 360px;
+        white-space: nowrap;
+
+        .add-icon {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            opacity: 0.6;
+            white-space: nowrap;
+
+            .icon {
+                position: absolute;
+                top: calc(50% - 16px);
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: top 0.2s ease-in-out;
+            }
+
+            .text {
+                position: absolute;
+                top: calc(50% + 16px);
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 14px;
+                transition: top 0.2s ease-in-out;
+            }
+
+            &:hover {
+                .icon {
+                    top: calc(25% - 16px);
+                }
+                .text {
+                    top: calc(25% + 16px);
+                }
+                .add-buttons {
+                    height: 50%;
+                    padding-top: 8px;
+                    padding-bottom: 8px;
+                }
+            }
+
+            .add-buttons {
+                display: inline-block;
+                white-space: nowrap;
+                width: calc(100% - 32px);
+                height: 0px;
+                padding: 8px;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                box-sizing: border-box;
+                position: absolute;
+                bottom: 16px;
+                left: 16px;
+                transition: height 0.2s ease-in-out;
+                overflow: hidden;
+
+                .btn-container {
+                    position: relative;
+                    height: 80px;
+
+                    .create-btn {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+        }
+    }
+}
