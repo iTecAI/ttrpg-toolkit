@@ -166,3 +166,22 @@ class ContentNotFoundError(BaseHTTPException):
     message: str = "User content not found:"
     message_class: str = "error.user_content.not_found"
     status_code: int = HTTP_404_NOT_FOUND
+
+
+# Content Errors
+class ContentItemNotFoundError(BaseHTTPException):
+    message: str = "Content item not found:"
+    message_class: str = "error.content.not_found"
+    status_code: int = HTTP_404_NOT_FOUND
+
+
+class InvalidContentTypeError(BaseHTTPException):
+    message = "Invalid content type:"
+    message_class = "error.content.type"
+    status_code = HTTP_405_METHOD_NOT_ALLOWED
+
+
+class InvalidContentArgumentsError(BaseHTTPException):
+    message = "The arguments provided to create/modify content were invalid:"
+    message_class = "error.content.arguments"
+    status_code = HTTP_400_BAD_REQUEST

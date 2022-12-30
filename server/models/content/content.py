@@ -1,9 +1,9 @@
 from util import ORM
-from .accounts import User
+from ..accounts import User
 from pymongo.database import Database
 from typing import Literal, Union, TypedDict
 
-PERMISSION_VALUE = Union[True, False, None]
+PERMISSION_VALUE = Union[bool, None]
 PERMISSION_TYPE_KEY = Literal["view", "edit", "share", "delete", "admin"]
 
 
@@ -37,6 +37,7 @@ admin: User can perform any action on Content and its children
 class BaseContentType(ORM):
     object_type = "content"
     collection = "content"
+    include = ["subtype"]
     subtype: str = None
 
     def __init__(
@@ -119,7 +120,7 @@ class BaseContentType(ORM):
         parent: Union[str, Literal["root"]],
         user: User,
         permission: PERMISSION_TYPE_KEY,
-    ) -> list["BaseContentType"]:
+    ) -> list[str]:
         """_summary_
 
         :param cls: Implicitly provided class
@@ -127,13 +128,13 @@ class BaseContentType(ORM):
         :param database: PyMongo Database
         :type database: Database
         :param parent: ID of parent to check within
-        :type parent: Union[str, Literal[&quot;root&quot;]]
+        :type parent: Union[str, Literal["root"]]
         :param user: User object to check
         :type user: User
         :param permission: Permission to check
         :type permission: PERMISSION_TYPE_KEY
-        :return: Array of all objects found
-        :rtype: list["BaseContentType"]
+        :return: Array of all object IDs found
+        :rtype: list[str]
         """
         all_results = cls.load_multiple_from_query(
             {"parent": parent},
@@ -142,6 +143,26 @@ class BaseContentType(ORM):
 
         results = [r for r in all_results if r.check_permission(permission, user)]
         return results
+
+    @staticmethod
+    def resolve_permission_map(mapping: PERMISSION_TYPE) -> PERMISSION_TYPE:
+        if mapping["admin"] == True:
+            return {
+                "view": True,
+                "edit": True,
+                "share": True,
+                "delete": True,
+                "admin": True,
+            }
+        if any([i for i in mapping.values()]):
+            return {
+                "view": True,
+                "edit": mapping["edit"],
+                "share": mapping["share"],
+                "delete": mapping["delete"],
+                "admin": mapping["admin"],
+            }
+        return mapping
 
     def check_permission(self, permission: PERMISSION_TYPE_KEY, user: User) -> bool:
         """Checks if a user has a specified permission on this ContentType
@@ -155,11 +176,17 @@ class BaseContentType(ORM):
         """
         if self.owner == user.oid:
             return True
-        if user.oid in self.shared.keys() and self.shared[user.oid] != None:
-            return self.shared[user.oid][permission]
+        if user.oid in self.shared.keys():
+            resolved = self.resolve_permission_map(self.shared[user.oid])
+            if resolved[permission] != None:
+                return resolved[permission]
         if self.parent == "root":
             return False
         parent: BaseContentType = BaseContentType.load_oid(self.parent, self.database)
         if parent == None:
             return False
         return parent.get_permission(permission, user)
+
+    @property
+    def minimize(self):
+        raise NotImplementedError("Cannot minimize BaseContentType")
