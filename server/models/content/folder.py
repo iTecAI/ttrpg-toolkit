@@ -43,7 +43,7 @@ class FolderContentType(BaseContentType):
             contentType="folder",
             oid=self.oid,
             owner=self.owner,
-            shared=self.shared,
+            shared=self.resolved_permissions,
             parent=self.parent,
             name=self.name,
             image=self.image,

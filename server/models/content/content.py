@@ -5,6 +5,7 @@ from typing import Literal, Union, TypedDict
 
 PERMISSION_VALUE = Union[bool, None]
 PERMISSION_TYPE_KEY = Literal["view", "edit", "share", "delete", "admin"]
+PERMISSION_TYPE_KEYS = ["view", "edit", "share", "delete", "admin"]
 
 
 class PERMISSION_TYPE(TypedDict):
@@ -164,7 +165,9 @@ class BaseContentType(ORM):
             }
         return mapping
 
-    def check_permission(self, permission: PERMISSION_TYPE_KEY, user: User) -> bool:
+    def check_permission(
+        self, permission: PERMISSION_TYPE_KEY, user: Union[User, str]
+    ) -> bool:
         """Checks if a user has a specified permission on this ContentType
 
         :param permission: Permission to check
@@ -174,10 +177,14 @@ class BaseContentType(ORM):
         :return: True or False
         :rtype: bool
         """
-        if self.owner == user.oid:
+        if type(user) == str:
+            oid = user
+        else:
+            oid = user.oid
+        if self.owner == oid:
             return True
-        if user.oid in self.shared.keys():
-            resolved = self.resolve_permission_map(self.shared[user.oid])
+        if oid in self.shared.keys():
+            resolved = self.resolve_permission_map(self.shared[oid])
             if resolved[permission] != None:
                 return resolved[permission]
         if self.parent == "root":
@@ -185,8 +192,18 @@ class BaseContentType(ORM):
         parent: BaseContentType = BaseContentType.load_oid(self.parent, self.database)
         if parent == None:
             return False
-        return parent.get_permission(permission, user)
+        return parent.get_permission(permission, oid)
 
     @property
     def minimize(self):
         raise NotImplementedError("Cannot minimize BaseContentType")
+
+    @property
+    def resolved_permissions(self):
+        return {k: self.permissions(k) for k in self.shared.keys()}
+
+    def permissions(self, user_id: str) -> PERMISSION_TYPE:
+        result = {}
+        for k in PERMISSION_TYPE_KEYS:
+            result[k] = self.check_permission(k, user_id)
+        return result
