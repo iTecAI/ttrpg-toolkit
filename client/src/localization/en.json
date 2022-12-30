@@ -203,7 +203,10 @@
         },
         "universal": {
             "create_name": "Name",
-            "create_file": "Upload File",
+            "file-picker": {
+                "new": "Upload File",
+                "clear": "Clear File"
+            },
             "create_tags": "Tags"
         }
     }

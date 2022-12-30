@@ -14,6 +14,8 @@ from models import (
 from typing import Optional
 import json
 
+from .folders import FolderContentController
+
 
 class ContentRootController(Controller):
     path = "/content"

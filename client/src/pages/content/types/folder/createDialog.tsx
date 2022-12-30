@@ -1,7 +1,14 @@
-import { Dialog, DialogContent, DialogTitle } from "@mui/material";
+import {
+    Button,
+    Dialog,
+    DialogActions,
+    DialogContent,
+    DialogTitle,
+} from "@mui/material";
 import { loc } from "../../../../util/localization";
 import { useState } from "react";
 import { UniversalCreateForm } from "../../util";
+import { post, postFile } from "../../../../util/api";
 
 export function CreateFolderDialog(props: {
     parent: string;
@@ -19,6 +26,46 @@ export function CreateFolderDialog(props: {
     const [image, setImage] = useState<File | null>(null);
     const [tags, setTags] = useState<string[]>([]);
 
+    function submit() {
+        if (name.length === 0) {
+            return;
+        }
+        let createdImage: string | null = null;
+        if (image) {
+            postFile<{ itemId: string }>("/user_content/", {
+                body: image,
+            }).then((result) => {
+                if (result.success) {
+                    createdImage = result.value.itemId;
+                }
+
+                post("/content/folder", {
+                    urlParams: {
+                        parent: props.parent,
+                    },
+                    body: {
+                        name: name,
+                        image: createdImage ?? undefined,
+                        tags: tags,
+                    },
+                }).then((result) => console.log(result));
+            });
+        } else {
+            post("/content/folder", {
+                urlParams: {
+                    parent: props.parent,
+                },
+                body: {
+                    name: name,
+                    image: createdImage ?? undefined,
+                    tags: tags,
+                },
+            }).then((result) => console.log(result));
+        }
+
+        close();
+    }
+
     return (
         <Dialog open={props.open} onClose={close} maxWidth="md" fullWidth>
             <DialogTitle>{loc("content.folder.create.title")}</DialogTitle>
@@ -32,6 +79,14 @@ export function CreateFolderDialog(props: {
                     setTags={setTags}
                 />
             </DialogContent>
+            <DialogActions>
+                <Button variant="outlined" onClick={close}>
+                    {loc("generic.cancel")}
+                </Button>
+                <Button variant="contained" onClick={submit}>
+                    {loc("generic.submit")}
+                </Button>
+            </DialogActions>
         </Dialog>
     );
 }
