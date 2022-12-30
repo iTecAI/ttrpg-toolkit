@@ -195,6 +195,16 @@
             "document": "Document",
             "character": "Character",
             "map": "Map"
+        },
+        "folder": {
+            "create": {
+                "title": "New Folder"
+            }
+        },
+        "universal": {
+            "create_name": "Name",
+            "create_file": "Upload File",
+            "create_tags": "Tags"
         }
     }
 }

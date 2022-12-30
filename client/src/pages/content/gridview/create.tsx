@@ -9,8 +9,9 @@ import {
     MdPersonAdd,
 } from "react-icons/md";
 import { loc } from "../../../util/localization";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import { Masonry } from "@mui/lab";
+import { CreateFolderDialog } from "../types/folder/createDialog";
 
 function CreateButton(props: {
     icon: ReactNode;
@@ -34,6 +35,7 @@ function CreateButton(props: {
 }
 
 export function CreateGridViewItem(props: {}): JSX.Element {
+    const [creating, setCreating] = useState<boolean>(false);
     return (
         <Paper variant="outlined" className="create-item">
             <Box className="addition-container">
@@ -50,7 +52,9 @@ export function CreateGridViewItem(props: {}): JSX.Element {
                             <CreateButton
                                 icon={<MdCreateNewFolder size={32} />}
                                 tooltip={loc("content.create.folder")}
-                                onClick={() => {}}
+                                onClick={() => {
+                                    setCreating(true);
+                                }}
                             />
                             <CreateButton
                                 icon={<MdDescription size={32} />}
@@ -71,6 +75,11 @@ export function CreateGridViewItem(props: {}): JSX.Element {
                     </Paper>
                 </Box>
             </Box>
+            <CreateFolderDialog
+                parent={"root"}
+                open={creating}
+                setOpen={setCreating}
+            />
         </Paper>
     );
 }
