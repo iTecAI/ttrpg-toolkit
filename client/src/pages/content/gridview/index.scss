@@ -11,7 +11,9 @@
 }
 
 .create-item {
+    display: inline-block;
     height: 360px;
+    box-sizing: border-box;
 
     .addition-container {
         overflow: hidden;
@@ -20,6 +22,7 @@
         width: 100%;
         height: 360px;
         white-space: nowrap;
+        box-sizing: border-box;
 
         .add-icon {
             position: relative;

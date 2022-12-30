@@ -34,7 +34,7 @@ function CreateButton(props: {
     );
 }
 
-export function CreateGridViewItem(props: {}): JSX.Element {
+export function CreateGridViewItem(props: { parent: string }): JSX.Element {
     const [creating, setCreating] = useState<boolean>(false);
     return (
         <Paper variant="outlined" className="create-item">
@@ -76,7 +76,7 @@ export function CreateGridViewItem(props: {}): JSX.Element {
                 </Box>
             </Box>
             <CreateFolderDialog
-                parent={"root"}
+                parent={props.parent}
                 open={creating}
                 setOpen={setCreating}
             />

@@ -1,0 +1,63 @@
+.render-item {
+    height: fit-content;
+    min-height: 360px;
+    display: inline-block;
+    position: relative;
+
+    .sizing-container {
+        position: relative;
+        display: inline-block;
+        height: 360px;
+        width: 100%;
+        .icon {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+        }
+
+        .MuiCardHeader-root {
+            padding-left: 64px;
+            padding-top: 18px;
+        }
+
+        .media {
+            position: relative;
+            margin-left: 8px;
+            margin-right: 8px;
+            display: inline-block;
+            border-radius: 4px;
+            width: calc(100% - 16px);
+            height: calc(100% - 112px);
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: auto;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 4px;
+                overflow: hidden;
+            }
+        }
+
+        .content {
+            padding: 8px;
+
+            .tag-area {
+                padding: 4px;
+                .container {
+                    display: inline-block;
+                    width: calc(100% - 32px);
+                    overflow: hidden;
+                    white-space: nowrap;
+
+                    .MuiChip-root {
+                        margin-right: 4px;
+                    }
+                }
+            }
+        }
+    }
+}

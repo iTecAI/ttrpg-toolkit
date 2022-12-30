@@ -122,7 +122,7 @@ class BaseContentType(ORM):
         user: User,
         permission: PERMISSION_TYPE_KEY,
     ) -> list[str]:
-        """_summary_
+        """Gets all child IDs
 
         :param cls: Implicitly provided class
         :type cls: BaseContentType
@@ -142,7 +142,7 @@ class BaseContentType(ORM):
             database,
         )
 
-        results = [r for r in all_results if r.check_permission(permission, user)]
+        results = [r.oid for r in all_results if r.check_permission(permission, user)]
         return results
 
     @staticmethod

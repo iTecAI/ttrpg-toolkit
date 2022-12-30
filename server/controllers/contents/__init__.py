@@ -10,6 +10,8 @@ from models import (
     CONTENT_TYPE,
     CONTENT_TYPE_MAP,
     load_generic_content,
+    load_generic_content_from_query,
+    BaseContentType,
 )
 from typing import Optional
 import json
@@ -51,3 +53,25 @@ class ContentRootController(Controller):
 
         new.save()
         return new.minimize
+
+    @get("/{parent:str}")
+    async def get_children(
+        self, state: State, session: Session, parent: str
+    ) -> list[MINIMAL_CONTENT_TYPE]:
+        if parent == "root":
+            parent_id = "root"
+        else:
+            parent_obj: CONTENT_TYPE = load_generic_content(parent, state.database)
+            if parent_obj == None:
+                raise ContentItemNotFoundError(extra=f"[parent] {parent}")
+            parent_id = parent
+
+        children: list[str] = BaseContentType.get_with_permission(
+            state.database, parent_id, session.user, "read"
+        )
+        return [
+            i.minimize
+            for i in load_generic_content_from_query(
+                {"oid": {"$in": children}}, state.database
+            )
+        ]

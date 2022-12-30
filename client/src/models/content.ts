@@ -11,7 +11,7 @@ export type SharePermission = {
 
 interface BaseContentType {
     oid: string;
-    type: string;
+    contentType: string;
     owner: string;
     shared: { [key: string]: SharePermission };
     parent: string | "root";
@@ -21,8 +21,9 @@ interface BaseContentType {
 }
 
 interface FolderContentType extends BaseContentType {
-    type: "folder";
+    contentType: "folder";
     children: { [key: string]: string };
 }
 
 export type ContentType = FolderContentType;
+export type MinimalContentType = FolderContentType;
