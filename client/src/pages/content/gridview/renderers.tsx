@@ -47,8 +47,9 @@ function GenericRenderer(props: {
                     <Tooltip
                         title={loc("content.universal.actions.share")}
                         placement="left"
+                        disableInteractive
                     >
-                        <IconButton size="small">
+                        <IconButton className="share">
                             <MdPersonAdd size={18} />
                         </IconButton>
                     </Tooltip>
@@ -57,8 +58,9 @@ function GenericRenderer(props: {
                     <Tooltip
                         title={loc("content.universal.actions.configure")}
                         placement="left"
+                        disableInteractive
                     >
-                        <IconButton size="small">
+                        <IconButton className="configure">
                             <MdSettings size={18} />
                         </IconButton>
                     </Tooltip>
@@ -67,12 +69,13 @@ function GenericRenderer(props: {
                     <Tooltip
                         title={loc("content.universal.actions.delete")}
                         placement="left"
+                        disableInteractive
                     >
                         <IconButton
-                            size="small"
                             onClick={() => {
                                 props.onDelete(item);
                             }}
+                            className="delete"
                         >
                             <MdDelete size={18} />
                         </IconButton>
