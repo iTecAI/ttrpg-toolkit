@@ -1,5 +1,11 @@
-from starlite import Controller, Provide, get, post, State
-from util import guard_loggedIn, session_dep, Cluster, Session
+from starlite import Controller, Provide, get, post, State, delete
+from util import (
+    guard_loggedIn,
+    session_dep,
+    Cluster,
+    Session,
+    guard_hasContentPermission,
+)
 from util.exceptions import (
     InvalidContentTypeError,
     InvalidContentArgumentsError,
@@ -90,3 +96,11 @@ class ContentRootController(Controller):
                 {"oid": {"$in": children}}, state.database
             )
         ]
+
+    @delete("/{content_id:str}", guards=[guard_hasContentPermission("delete")])
+    async def delete_child(self, state: State, content_id: str):
+        loaded = BaseContentType.load_oid(content_id, state.database)
+        if loaded == None:
+            raise ContentItemNotFoundError(extra=content_id)
+
+        to_update = loaded.sessions_with("read")

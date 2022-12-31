@@ -2,6 +2,7 @@ from util import ORM
 from models.accounts import Session
 from ..accounts import User
 from pymongo.database import Database
+from pymongo.collection import Collection
 from typing import Literal, Union, TypedDict
 
 PERMISSION_VALUE = Union[bool, None]
@@ -232,3 +233,9 @@ class BaseContentType(ORM):
             )
         ]
         return sessions
+
+    def delete(self, dry_run: bool = False) -> list[str]:
+        deleting = [self.oid]
+        if hasattr(self, "children"):
+            for child in getattr(self, "children"):
+                child_obj = ""
