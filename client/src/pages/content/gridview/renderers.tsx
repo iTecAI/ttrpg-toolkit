@@ -1,9 +1,11 @@
 import {
+    Avatar,
     Card,
     CardContent,
     CardHeader,
     CardMedia,
     Chip,
+    CircularProgress,
     IconButton,
     Paper,
     SpeedDial,
@@ -22,22 +24,61 @@ import {
     MdSettings,
     MdTag,
 } from "react-icons/md";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import { Box } from "@mui/system";
 import { calculateGravatar } from "../../../util/gravatar";
 import { loc } from "../../../util/localization";
 import { useHorizontalScroll } from "../../../util/hscroll";
-import { del } from "../../../util/api";
+import { ConfirmDeleteDialog } from "../dialogs/confirmDeleteDialog";
 
 function GenericRenderer(props: {
     item: MinimalContentType;
     body?: ReactNode;
     icon?: ReactNode;
+    onDelete: (item: MinimalContentType) => void;
 }): JSX.Element {
     const { item, body, icon } = props;
     const scrollRef = useHorizontalScroll(0.25);
+
     return (
         <Card variant="outlined" className="render-item">
+            <Stack className="actions" spacing={1} direction="column">
+                {item.shared.share && (
+                    <Tooltip
+                        title={loc("content.universal.actions.share")}
+                        placement="left"
+                    >
+                        <IconButton size="small">
+                            <MdPersonAdd size={18} />
+                        </IconButton>
+                    </Tooltip>
+                )}
+                {item.shared.edit && (
+                    <Tooltip
+                        title={loc("content.universal.actions.configure")}
+                        placement="left"
+                    >
+                        <IconButton size="small">
+                            <MdSettings size={18} />
+                        </IconButton>
+                    </Tooltip>
+                )}
+                {item.shared.delete && (
+                    <Tooltip
+                        title={loc("content.universal.actions.delete")}
+                        placement="left"
+                    >
+                        <IconButton
+                            size="small"
+                            onClick={() => {
+                                props.onDelete(item);
+                            }}
+                        >
+                            <MdDelete size={18} />
+                        </IconButton>
+                    </Tooltip>
+                )}
+            </Stack>
             <Box className="sizing-container">
                 {icon ? (
                     <Box className="icon">{icon}</Box>
@@ -46,43 +87,7 @@ function GenericRenderer(props: {
                         <MdDescription size={24} />
                     </Box>
                 )}
-                <Stack className="actions" spacing={1} direction="column">
-                    {item.shared.share && (
-                        <Tooltip
-                            title={loc("content.universal.actions.share")}
-                            placement="left"
-                        >
-                            <IconButton size="small">
-                                <MdPersonAdd size={18} />
-                            </IconButton>
-                        </Tooltip>
-                    )}
-                    {item.shared.edit && (
-                        <Tooltip
-                            title={loc("content.universal.actions.configure")}
-                            placement="left"
-                        >
-                            <IconButton size="small">
-                                <MdSettings size={18} />
-                            </IconButton>
-                        </Tooltip>
-                    )}
-                    {item.shared.delete && (
-                        <Tooltip
-                            title={loc("content.universal.actions.delete")}
-                            placement="left"
-                        >
-                            <IconButton
-                                size="small"
-                                onClick={() => {
-                                    del<null>(`/content/${item.oid}`);
-                                }}
-                            >
-                                <MdDelete size={18} />
-                            </IconButton>
-                        </Tooltip>
-                    )}
-                </Stack>
+
                 <CardHeader title={item.name} />
                 <Box className="media">
                     <CardMedia
@@ -118,12 +123,24 @@ function GenericRenderer(props: {
     );
 }
 
-function RenderFolder(props: { item: MinimalContentType }): JSX.Element {
-    return <GenericRenderer item={props.item} icon={<MdFolder size={24} />} />;
+function RenderFolder(props: {
+    item: MinimalContentType;
+    onDelete: (item: MinimalContentType) => void;
+}): JSX.Element {
+    return (
+        <GenericRenderer
+            item={props.item}
+            icon={<MdFolder size={24} />}
+            onDelete={props.onDelete}
+        />
+    );
 }
 
 export const RENDERERS: {
-    [key: string]: (props: { item: MinimalContentType }) => JSX.Element;
+    [key: string]: (props: {
+        item: MinimalContentType;
+        onDelete: (item: MinimalContentType) => void;
+    }) => JSX.Element;
 } = {
     folder: RenderFolder,
 };

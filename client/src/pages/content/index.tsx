@@ -12,12 +12,16 @@ import { MdGridView, MdSearch, MdViewList } from "react-icons/md";
 import { useEffect, useState } from "react";
 import { loc } from "../../util/localization";
 import { GridView } from "./gridview";
+import { MinimalContentType } from "../../models/content";
+import { ConfirmDeleteDialog } from "./dialogs/confirmDeleteDialog";
 
 type ViewMode = "grid" | "list";
 
 export function ContentPage() {
     const [vMode, setVMode] = useState<ViewMode>("grid");
     const [search, setSearch] = useState<string>("");
+
+    const [deleting, setDeleting] = useState<MinimalContentType | null>(null);
 
     return (
         <Box className="content-page">
@@ -52,8 +56,19 @@ export function ContentPage() {
                 </Box>
             </AppBar>
             <Box className="view-area">
-                {vMode === "grid" ? <GridView search={search} /> : <></>}
+                {vMode === "grid" ? (
+                    <GridView search={search} delete={setDeleting} />
+                ) : (
+                    <></>
+                )}
             </Box>
+            {deleting && (
+                <ConfirmDeleteDialog
+                    item={deleting}
+                    open={deleting !== null}
+                    setOpen={(open: boolean) => setDeleting(null)}
+                />
+            )}
         </Box>
     );
 }

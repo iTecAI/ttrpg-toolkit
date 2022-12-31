@@ -128,3 +128,22 @@ class ContentRootController(Controller):
                     f"content.update.{loaded.parent}",
                     data={"type": "delete"},
                 )
+
+    @get(
+        "/query_delete/{content_id:str}", guards=[guard_hasContentPermission("delete")]
+    )
+    async def get_delete_child(
+        self, state: State, session: Session, content_id: str
+    ) -> list[MinimalContentType]:
+        loaded = ContentType.load_oid(content_id, state.database)
+        if loaded == None:
+            raise ContentItemNotFoundError(extra=content_id)
+
+        to_delete = loaded.delete(state.user_content, dry_run=True)
+        user = session.user
+        return [
+            MinimalContentType.from_ContentType(i, user)
+            for i in ContentType.load_multiple_from_query(
+                {"oid": {"$in": to_delete}}, state.database
+            )
+        ]

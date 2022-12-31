@@ -9,7 +9,10 @@ import { get } from "../../../util/api";
 import { RENDERERS } from "./renderers";
 import { useUpdate } from "../../../util/updates";
 
-export function GridView(props: { search: string }): JSX.Element {
+export function GridView(props: {
+    search: string;
+    delete: (item: MinimalContentType) => void;
+}): JSX.Element {
     const { width } = useWindowSize();
     const [items, setItems] = useState<MinimalContentType[]>([]);
     const parent = useParams().current ?? "root";
@@ -49,7 +52,13 @@ export function GridView(props: { search: string }): JSX.Element {
                         props.search.length === 0
                     ) {
                         const DynamicElement = RENDERERS[item.dataType];
-                        return <DynamicElement item={item} key={item.oid} />;
+                        return (
+                            <DynamicElement
+                                item={item}
+                                key={item.oid}
+                                onDelete={props.delete}
+                            />
+                        );
                     }
                 }
                 return null;

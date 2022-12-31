@@ -11,6 +11,8 @@
         display: inline-block;
         height: 360px;
         width: 100%;
+        margin: 0px;
+        padding: 0px;
         .icon {
             position: absolute;
             top: 16px;
@@ -61,28 +63,24 @@
                 }
             }
         }
+    }
 
-        .actions {
-            position: absolute;
-            top: 12px;
-            right: -48px;
-            z-index: 50;
-            transition: right 0.2s;
+    .actions {
+        position: absolute;
+        top: 8px;
+        right: 0px;
+        z-index: 50;
 
-            button {
-                background-color: $background;
-                width: 48px;
-                border-radius: 16px 0 0 16px;
+        button {
+            background-color: $background;
+            width: 48px;
+            border-radius: 16px 0 0 16px;
+            position: relative;
 
-                svg {
-                    position: relative;
-                    margin-left: -16px;
-                }
+            svg {
+                position: relative;
+                margin-left: -16px;
             }
-        }
-
-        &:hover .actions {
-            right: 0px;
         }
     }
 }

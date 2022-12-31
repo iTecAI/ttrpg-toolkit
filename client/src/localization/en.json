@@ -212,6 +212,12 @@
                 "share": "Share",
                 "configure": "Configure",
                 "delete": "Delete"
+            },
+            "dialogs": {
+                "delete": {
+                    "title": "Confirm Deletion of \"{{name}}\"",
+                    "description": "This action is permanent, and will delete the following items:"
+                }
             }
         }
     }
