@@ -42,11 +42,11 @@ function GenericRenderer(props: {
 
     return (
         <Card variant="outlined" className="render-item">
-            <Stack className="actions" spacing={1} direction="column">
+            <Stack className="actions" spacing={1} direction="row">
                 {item.shared.share && (
                     <Tooltip
                         title={loc("content.universal.actions.share")}
-                        placement="left"
+                        placement="bottom"
                         disableInteractive
                     >
                         <IconButton className="share">
@@ -54,21 +54,10 @@ function GenericRenderer(props: {
                         </IconButton>
                     </Tooltip>
                 )}
-                {item.shared.edit && (
-                    <Tooltip
-                        title={loc("content.universal.actions.configure")}
-                        placement="left"
-                        disableInteractive
-                    >
-                        <IconButton className="configure">
-                            <MdSettings size={18} />
-                        </IconButton>
-                    </Tooltip>
-                )}
                 {item.shared.delete && (
                     <Tooltip
                         title={loc("content.universal.actions.delete")}
-                        placement="left"
+                        placement="bottom"
                         disableInteractive
                     >
                         <IconButton

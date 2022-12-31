@@ -210,7 +210,6 @@
             "create_tags": "Tags",
             "actions": {
                 "share": "Share",
-                "configure": "Configure",
                 "delete": "Delete"
             },
             "dialogs": {
