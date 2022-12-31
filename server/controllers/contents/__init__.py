@@ -11,18 +11,18 @@ from util.exceptions import (
     InvalidContentArgumentsError,
     ContentItemNotFoundError,
 )
-from models import (
-    MINIMAL_CONTENT_TYPE,
-    CONTENT_TYPE,
-    CONTENT_TYPE_MAP,
-    load_generic_content,
-    load_generic_content_from_query,
-    BaseContentType,
-)
+from models import ContentType, MinimalContentType
 from typing import Optional
 import json
+from pydantic import BaseModel
+from typing import Union, Optional
 
-from .folders import FolderContentController
+
+class ContentCreateModel(BaseModel):
+    name: str
+    image: Optional[Union[str, None]] = None
+    tags: Optional[list[str]] = []
+    data: Optional[dict] = {}
 
 
 class ContentRootController(Controller):
@@ -36,14 +36,21 @@ class ContentRootController(Controller):
         state: State,
         session: Session,
         content_type: str,
-        data: dict,
+        data: ContentCreateModel,
         parent: Optional[str] = "root",
-    ) -> MINIMAL_CONTENT_TYPE:
-        if not content_type in CONTENT_TYPE_MAP.keys():
+    ) -> MinimalContentType:
+        if not content_type in ContentType.type_map.keys():
             raise InvalidContentTypeError(extra=content_type)
-        SELECTED_TYPE: CONTENT_TYPE = CONTENT_TYPE_MAP[content_type]
         try:
-            new = SELECTED_TYPE.create(state.database, session.user, parent, **data)
+            new = ContentType.create(
+                state.database,
+                session.user,
+                parent,
+                name=data.name,
+                image=data.image,
+                tags=data.tags,
+                dataType=content_type,
+            )
         except:
             raise InvalidContentArgumentsError(extra=json.dumps(data))
 
@@ -51,7 +58,7 @@ class ContentRootController(Controller):
         new.save()
 
         if parent != "root":
-            parent_obj = load_generic_content(parent, state.database)
+            parent_obj = ContentType.load_oid(parent, state.database)
             if parent_obj == None:
                 raise ContentItemNotFoundError(extra=f"[parent] {parent}")
 
@@ -73,34 +80,34 @@ class ContentRootController(Controller):
 
         cluster.dispatch_update(new.sessions_with("view"), "content.create")
 
-        return new.minimize
+        return MinimalContentType.from_ContentType(new)
 
     @get("/{parent:str}")
     async def get_children(
         self, state: State, session: Session, parent: str
-    ) -> list[MINIMAL_CONTENT_TYPE]:
+    ) -> list[MinimalContentType]:
         if parent == "root":
             parent_id = "root"
         else:
-            parent_obj: CONTENT_TYPE = load_generic_content(parent, state.database)
+            parent_obj: ContentType = ContentType.load_oid(parent, state.database)
             if parent_obj == None:
                 raise ContentItemNotFoundError(extra=f"[parent] {parent}")
             parent_id = parent
 
-        children: list[str] = BaseContentType.get_with_permission(
+        children: list[str] = ContentType.get_with_permission(
             state.database, parent_id, session.user, "read"
         )
         return [
-            i.minimize
-            for i in load_generic_content_from_query(
+            MinimalContentType.from_ContentType(i)
+            for i in ContentType.load_multiple_from_query(
                 {"oid": {"$in": children}}, state.database
             )
         ]
 
-    @delete("/{content_id:str}", guards=[guard_hasContentPermission("delete")])
+    """@delete("/{content_id:str}", guards=[guard_hasContentPermission("delete")])
     async def delete_child(self, state: State, content_id: str):
-        loaded = BaseContentType.load_oid(content_id, state.database)
+        loaded = ContentType.load_oid(content_id, state.database)
         if loaded == None:
             raise ContentItemNotFoundError(extra=content_id)
 
-        to_update = loaded.sessions_with("read")
+        to_update = loaded.sessions_with("read")"""

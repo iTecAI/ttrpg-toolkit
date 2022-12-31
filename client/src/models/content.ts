@@ -11,13 +11,13 @@ export type SharePermission = {
 
 interface BaseContentType {
     oid: string;
-    contentType: string;
     owner: string;
     shared: { [key: string]: SharePermission };
     parent: string | "root";
     name: string;
     image: string | null;
     tags: string[];
+    dataType: string;
 }
 
 interface FolderContentType extends BaseContentType {

@@ -38,13 +38,13 @@ export function GridView(props: { search: string }): JSX.Element {
             className="grid-masonry"
         >
             {items.map((item) => {
-                if (Object.keys(RENDERERS).includes(item.contentType)) {
+                if (Object.keys(RENDERERS).includes(item.dataType)) {
                     if (
                         item.name.includes(props.search) ||
                         props.search.includes(item.name) ||
                         props.search.length === 0
                     ) {
-                        const DynamicElement = RENDERERS[item.contentType];
+                        const DynamicElement = RENDERERS[item.dataType];
                         return <DynamicElement item={item} key={item.oid} />;
                     }
                 }

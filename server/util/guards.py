@@ -72,13 +72,7 @@ def guard_isDataSource(request: Any, _: BaseRouteHandler) -> None:
     pass
 
 
-def guard_hasContentPermission(
-    permission: PERMISSION_TYPE_KEY, content_type: str = None
-):
-    SELECTED_TYPE: CONTENT_TYPE = (
-        CONTENT_TYPE_MAP[content_type] if content_type else BaseContentType
-    )
-
+def guard_hasContentPermission(permission: PERMISSION_TYPE_KEY):
     def guard_intl_hasContentPermission(request: Any, _: BaseRouteHandler) -> None:
         if not "content_id" in request.path_params.keys():
             raise GenericNetworkError(extra="Content ID not passed to Guard")
@@ -89,7 +83,7 @@ def guard_hasContentPermission(
         if session == None:
             raise AuthorizationFailedError(extra="@ Session not found")
 
-        content: BaseContentType = SELECTED_TYPE.load_oid(
+        content: ContentType = ContentType.load_oid(
             request.path_params["content_id"], request.app.state.database
         )
         if content == None:

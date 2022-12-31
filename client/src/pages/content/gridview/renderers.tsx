@@ -34,7 +34,7 @@ function GenericRenderer(props: {
     icon?: ReactNode;
 }): JSX.Element {
     const { item, body, icon } = props;
-    const scrollRef = useHorizontalScroll();
+    const scrollRef = useHorizontalScroll(0.25);
     return (
         <Card variant="outlined" className="render-item">
             <Box className="sizing-container">

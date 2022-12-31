@@ -1,4 +1,4 @@
-from util import ORM
+from util.orm import ORM
 from models.accounts import Session
 from ..accounts import User
 from pymongo.database import Database
@@ -37,11 +37,11 @@ admin: User can perform any action on Content and its children
 """
 
 
-class BaseContentType(ORM):
+class ContentType(ORM):
     object_type = "content"
     collection = "content"
-    include = ["subtype"]
-    subtype: str = None
+
+    type_map = {"folder": None}
 
     def __init__(
         self,
@@ -53,27 +53,10 @@ class BaseContentType(ORM):
         name: str = None,
         image: Union[str, None] = None,
         tags: list[str] = [],
+        data: Union[str, None] = None,
+        dataType: Union[str, None] = None,
         **kwargs,
     ):
-        """BaseContentType initializer
-
-        :param oid: Object UUID, defaults to None
-        :type oid: str, optional
-        :param database: PyMongo DB, defaults to None
-        :type database: Database, optional
-        :param owner: Owner UUID, defaults to None
-        :type owner: str, optional
-        :param shared: Mapping of {User/Game UUID : PERMISSION_TYPE}, defaults to {}
-        :type shared: dict[str, PERMISSION_TYPE], optional
-        :param parent: Parent Content UUID or "root", defaults to None
-        :type parent: Union[str, Literal["root"]], optional
-        :param name: Content name, defaults to None
-        :type name: str, optional
-        :param image: Link to Content image, defaults to None
-        :type image: Union[str, None], optional
-        :param tags: Array of Content tags, defaults to []
-        :type tags: list[str], optional
-        """
         super().__init__(oid, database, **kwargs)
         self.owner = owner
         self.shared = shared
@@ -81,6 +64,8 @@ class BaseContentType(ORM):
         self.name = name
         self.image = image
         self.tags = tags
+        self.data = data
+        self.dataType = dataType
 
     @classmethod
     def create(
@@ -91,22 +76,9 @@ class BaseContentType(ORM):
         name: str,
         image: Union[str, None] = None,
         tags: list[str] = [],
+        data: Union[str, None] = None,
+        dataType: str = "folder",
     ):
-        """BaseContentType creator function
-
-        :param database: PyMongo DB, defaults to None
-        :type database: Database
-        :param user: User object
-        :type user: User
-        :param parent: Parent Content UUID or "root"
-        :type parent: Union[str, Literal["root"]]
-        :param name: Content name
-        :type name: str
-        :param image: Link to Content image, defaults to None
-        :type image: Union[str, None], optional
-        :param tags: Array of Content tags, defaults to []
-        :type tags: list[str], optional
-        """
         return cls(
             database=database,
             owner=user.oid,
@@ -114,11 +86,13 @@ class BaseContentType(ORM):
             name=name,
             image=image,
             tags=tags,
+            data=data,
+            dataType=dataType,
         )
 
     @classmethod
     def get_with_permission(
-        cls: "BaseContentType",
+        cls: "ContentType",
         database: Database,
         parent: Union[str, Literal["root"]],
         user: User,
@@ -127,7 +101,7 @@ class BaseContentType(ORM):
         """Gets all child IDs
 
         :param cls: Implicitly provided class
-        :type cls: BaseContentType
+        :type cls: ContentType
         :param database: PyMongo Database
         :type database: Database
         :param parent: ID of parent to check within
@@ -191,14 +165,10 @@ class BaseContentType(ORM):
                 return resolved[permission]
         if self.parent == "root":
             return False
-        parent: BaseContentType = BaseContentType.load_oid(self.parent, self.database)
+        parent: ContentType = ContentType.load_oid(self.parent, self.database)
         if parent == None:
             return False
         return parent.get_permission(permission, oid)
-
-    @property
-    def minimize(self):
-        raise NotImplementedError("Cannot minimize BaseContentType")
 
     @property
     def resolved_permissions(self) -> dict[str, PERMISSION_TYPE]:
@@ -233,9 +203,3 @@ class BaseContentType(ORM):
             )
         ]
         return sessions
-
-    def delete(self, dry_run: bool = False) -> list[str]:
-        deleting = [self.oid]
-        if hasattr(self, "children"):
-            for child in getattr(self, "children"):
-                child_obj = ""

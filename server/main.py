@@ -99,7 +99,6 @@ BASE_HANDLERS = [
     UserContentController,
     UpdateController,
     ContentRootController,
-    FolderContentController,
 ]
 
 for plugin in PLUG.plugins.values():
