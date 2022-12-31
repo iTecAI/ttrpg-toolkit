@@ -26,6 +26,7 @@ import { ReactNode } from "react";
 import { Box } from "@mui/system";
 import { calculateGravatar } from "../../../util/gravatar";
 import { loc } from "../../../util/localization";
+import { useHorizontalScroll } from "../../../util/hscroll";
 
 function GenericRenderer(props: {
     item: MinimalContentType;
@@ -33,6 +34,7 @@ function GenericRenderer(props: {
     icon?: ReactNode;
 }): JSX.Element {
     const { item, body, icon } = props;
+    const scrollRef = useHorizontalScroll();
     return (
         <Card variant="outlined" className="render-item">
             <Box className="sizing-container">
@@ -88,8 +90,9 @@ function GenericRenderer(props: {
                             <MdTag className="tag-icon" size={24} />
                             <Stack
                                 className="container"
-                                spacing={1}
+                                spacing={0.5}
                                 direction="row"
+                                ref={scrollRef}
                             >
                                 {item.tags.map((v) => (
                                     <Chip size="small" key={v} label={v} />
