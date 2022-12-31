@@ -27,6 +27,7 @@ import { Box } from "@mui/system";
 import { calculateGravatar } from "../../../util/gravatar";
 import { loc } from "../../../util/localization";
 import { useHorizontalScroll } from "../../../util/hscroll";
+import { del } from "../../../util/api";
 
 function GenericRenderer(props: {
     item: MinimalContentType;
@@ -46,30 +47,41 @@ function GenericRenderer(props: {
                     </Box>
                 )}
                 <Stack className="actions" spacing={1} direction="column">
-                    <Tooltip
-                        title={loc("content.universal.actions.share")}
-                        placement="left"
-                    >
-                        <IconButton size="small">
-                            <MdPersonAdd size={18} />
-                        </IconButton>
-                    </Tooltip>
-                    <Tooltip
-                        title={loc("content.universal.actions.configure")}
-                        placement="left"
-                    >
-                        <IconButton size="small">
-                            <MdSettings size={18} />
-                        </IconButton>
-                    </Tooltip>
-                    <Tooltip
-                        title={loc("content.universal.actions.delete")}
-                        placement="left"
-                    >
-                        <IconButton size="small">
-                            <MdDelete size={18} />
-                        </IconButton>
-                    </Tooltip>
+                    {item.shared.share && (
+                        <Tooltip
+                            title={loc("content.universal.actions.share")}
+                            placement="left"
+                        >
+                            <IconButton size="small">
+                                <MdPersonAdd size={18} />
+                            </IconButton>
+                        </Tooltip>
+                    )}
+                    {item.shared.edit && (
+                        <Tooltip
+                            title={loc("content.universal.actions.configure")}
+                            placement="left"
+                        >
+                            <IconButton size="small">
+                                <MdSettings size={18} />
+                            </IconButton>
+                        </Tooltip>
+                    )}
+                    {item.shared.delete && (
+                        <Tooltip
+                            title={loc("content.universal.actions.delete")}
+                            placement="left"
+                        >
+                            <IconButton
+                                size="small"
+                                onClick={() => {
+                                    del<null>(`/content/${item.oid}`);
+                                }}
+                            >
+                                <MdDelete size={18} />
+                            </IconButton>
+                        </Tooltip>
+                    )}
                 </Stack>
                 <CardHeader title={item.name} />
                 <Box className="media">

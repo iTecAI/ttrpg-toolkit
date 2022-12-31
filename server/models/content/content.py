@@ -1,4 +1,5 @@
 from util.orm import ORM
+from util.user_content import GenericContentManager
 from models.accounts import Session
 from ..accounts import User
 from pymongo.database import Database
@@ -170,6 +171,9 @@ class ContentType(ORM):
             return False
         return parent.get_permission(permission, oid)
 
+    def permissions_of(self, user: Union[User, str]) -> PERMISSION_TYPE:
+        return {i: self.check_permission(i, user) for i in PERMISSION_TYPE_KEYS}
+
     @property
     def resolved_permissions(self) -> dict[str, PERMISSION_TYPE]:
         results = {self.owner: self.resolve_permission_map({"admin": True})}
@@ -203,3 +207,21 @@ class ContentType(ORM):
             )
         ]
         return sessions
+
+    def delete(self, content: GenericContentManager, dry_run=False) -> list[str]:
+        results = [self.oid]
+        if self.dataType == "folder":
+            children: list[ContentType] = ContentType.load_multiple_from_query(
+                {"parent": self.oid}, self.database
+            )
+            results.extend([c.delete(dry_run=dry_run) for c in children])
+        else:
+            raise NotImplementedError("TODO: Other data types")
+
+        if not dry_run and self.image:
+            content.delete(self.image)
+
+        if not dry_run:
+            self.database[self.collection].delete_one({"oid": self.oid})
+
+        return list(set(results))

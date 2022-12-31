@@ -12,7 +12,7 @@ export type SharePermission = {
 interface BaseContentType {
     oid: string;
     owner: string;
-    shared: { [key: string]: SharePermission };
+    shared: SharePermission;
     parent: string | "root";
     name: string;
     image: string | null;

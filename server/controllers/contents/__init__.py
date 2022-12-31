@@ -80,7 +80,7 @@ class ContentRootController(Controller):
 
         cluster.dispatch_update(new.sessions_with("view"), "content.create")
 
-        return MinimalContentType.from_ContentType(new)
+        return MinimalContentType.from_ContentType(new, session.user)
 
     @get("/{parent:str}")
     async def get_children(
@@ -97,17 +97,34 @@ class ContentRootController(Controller):
         children: list[str] = ContentType.get_with_permission(
             state.database, parent_id, session.user, "read"
         )
+        user = session.user
         return [
-            MinimalContentType.from_ContentType(i)
+            MinimalContentType.from_ContentType(i, user)
             for i in ContentType.load_multiple_from_query(
                 {"oid": {"$in": children}}, state.database
             )
         ]
 
-    """@delete("/{content_id:str}", guards=[guard_hasContentPermission("delete")])
-    async def delete_child(self, state: State, content_id: str):
+    @delete("/{content_id:str}", guards=[guard_hasContentPermission("delete")])
+    async def delete_child(self, state: State, content_id: str) -> None:
         loaded = ContentType.load_oid(content_id, state.database)
         if loaded == None:
             raise ContentItemNotFoundError(extra=content_id)
 
-        to_update = loaded.sessions_with("read")"""
+        to_update = loaded.sessions_with("view")
+        loaded.delete(state.user_content)
+        cluster: Cluster = state.cluster
+        if loaded.parent == "root":
+            cluster.dispatch_update(
+                to_update,
+                f"content.update.root",
+                data={"type": "delete"},
+            )
+        else:
+            parent = ContentType.load_oid(loaded.parent)
+            if parent:
+                cluster.dispatch_update(
+                    to_update,
+                    f"content.update.{loaded.parent}",
+                    data={"type": "delete"},
+                )

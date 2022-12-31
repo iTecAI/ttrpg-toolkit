@@ -4,12 +4,13 @@ from pymongo.collection import Collection
 
 from .content import *
 from pydantic import BaseModel
+from models.accounts import User
 
 
 class MinimalContentType(BaseModel):
     oid: str
     owner: str
-    shared: dict[str, PERMISSION_TYPE] = {}
+    shared: PERMISSION_TYPE
     parent: typing.Union[str, typing.Literal["root"]]
     name: str
     image: typing.Union[str, None]
@@ -17,11 +18,11 @@ class MinimalContentType(BaseModel):
     dataType: str
 
     @classmethod
-    def from_ContentType(cls, content: ContentType):
+    def from_ContentType(cls, content: ContentType, user: User):
         return cls(
             oid=content.oid,
             owner=content.owner,
-            shared=content.resolved_permissions,
+            shared=content.permissions_of(user),
             parent=content.parent,
             name=content.name,
             image=content.image,
