@@ -1,3 +1,5 @@
+@import "../../../theme/default.scss";
+
 .render-item {
     height: fit-content;
     min-height: 360px;
@@ -58,6 +60,29 @@
                     }
                 }
             }
+        }
+
+        .actions {
+            position: absolute;
+            top: 12px;
+            right: -48px;
+            z-index: 50;
+            transition: right 0.2s;
+
+            button {
+                background-color: $background;
+                width: 48px;
+                border-radius: 16px 0 0 16px;
+
+                svg {
+                    position: relative;
+                    margin-left: -16px;
+                }
+            }
+        }
+
+        &:hover .actions {
+            right: 0px;
         }
     }
 }

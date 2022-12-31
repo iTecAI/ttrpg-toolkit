@@ -4,15 +4,28 @@ import {
     CardHeader,
     CardMedia,
     Chip,
+    IconButton,
     Paper,
+    SpeedDial,
+    SpeedDialAction,
     Stack,
+    Tooltip,
 } from "@mui/material";
 import { MinimalContentType } from "../../../models/content";
 import "./renderers.scss";
-import { MdDescription, MdFolder, MdTag } from "react-icons/md";
+import {
+    MdDelete,
+    MdDescription,
+    MdFolder,
+    MdMenu,
+    MdPersonAdd,
+    MdSettings,
+    MdTag,
+} from "react-icons/md";
 import { ReactNode } from "react";
 import { Box } from "@mui/system";
 import { calculateGravatar } from "../../../util/gravatar";
+import { loc } from "../../../util/localization";
 
 function GenericRenderer(props: {
     item: MinimalContentType;
@@ -30,6 +43,32 @@ function GenericRenderer(props: {
                         <MdDescription size={24} />
                     </Box>
                 )}
+                <Stack className="actions" spacing={1} direction="column">
+                    <Tooltip
+                        title={loc("content.universal.actions.share")}
+                        placement="left"
+                    >
+                        <IconButton size="small">
+                            <MdPersonAdd size={18} />
+                        </IconButton>
+                    </Tooltip>
+                    <Tooltip
+                        title={loc("content.universal.actions.configure")}
+                        placement="left"
+                    >
+                        <IconButton size="small">
+                            <MdSettings size={18} />
+                        </IconButton>
+                    </Tooltip>
+                    <Tooltip
+                        title={loc("content.universal.actions.delete")}
+                        placement="left"
+                    >
+                        <IconButton size="small">
+                            <MdDelete size={18} />
+                        </IconButton>
+                    </Tooltip>
+                </Stack>
                 <CardHeader title={item.name} />
                 <Box className="media">
                     <CardMedia

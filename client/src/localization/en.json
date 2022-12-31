@@ -207,7 +207,12 @@
                 "new": "Upload File",
                 "clear": "Clear File"
             },
-            "create_tags": "Tags"
+            "create_tags": "Tags",
+            "actions": {
+                "share": "Share",
+                "configure": "Configure",
+                "delete": "Delete"
+            }
         }
     }
 }
