@@ -40,8 +40,12 @@ export function GridView(props: { search: string }): JSX.Element {
             {items.map((item) => {
                 if (Object.keys(RENDERERS).includes(item.dataType)) {
                     if (
-                        item.name.includes(props.search) ||
-                        props.search.includes(item.name) ||
+                        item.name
+                            .toLowerCase()
+                            .includes(props.search.toLowerCase()) ||
+                        props.search
+                            .toLowerCase()
+                            .includes(item.name.toLowerCase()) ||
                         props.search.length === 0
                     ) {
                         const DynamicElement = RENDERERS[item.dataType];
