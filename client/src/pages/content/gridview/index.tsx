@@ -29,8 +29,14 @@ export function GridView(props: { search: string }): JSX.Element {
         >
             {items.map((item) => {
                 if (Object.keys(RENDERERS).includes(item.contentType)) {
-                    const DynamicElement = RENDERERS[item.contentType];
-                    return <DynamicElement item={item} key={item.oid} />;
+                    if (
+                        item.name.includes(props.search) ||
+                        props.search.includes(item.name) ||
+                        props.search.length === 0
+                    ) {
+                        const DynamicElement = RENDERERS[item.contentType];
+                        return <DynamicElement item={item} key={item.oid} />;
+                    }
                 }
                 return null;
             })}

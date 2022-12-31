@@ -42,6 +42,7 @@ class ContentRootController(Controller):
             raise InvalidContentArgumentsError(extra=json.dumps(data))
 
         cluster: Cluster = state.cluster
+        new.save()
 
         if parent != "root":
             parent_obj = load_generic_content(parent, state.database)
@@ -50,8 +51,16 @@ class ContentRootController(Controller):
 
             parent_obj.children.append(new.oid)
             parent_obj.save()
+            cluster.dispatch_update(
+                parent_obj.sessions_with("view"),
+                f"content.update.{parent}",
+                data={"type": "addChild"},
+            )
 
-        new.save()
+        cluster.dispatch_update(
+            new.sessions_with("view"), "content.update", data={"type": "create"}
+        )
+
         return new.minimize
 
     @get("/{parent:str}")

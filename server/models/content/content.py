@@ -1,4 +1,4 @@
-from util import ORM
+from util import ORM, Session
 from ..accounts import User
 from pymongo.database import Database
 from typing import Literal, Union, TypedDict
@@ -199,11 +199,33 @@ class BaseContentType(ORM):
         raise NotImplementedError("Cannot minimize BaseContentType")
 
     @property
-    def resolved_permissions(self):
-        return {k: self.permissions(k) for k in self.shared.keys()}
+    def resolved_permissions(self) -> dict[str, PERMISSION_TYPE]:
+        results = {self.owner: self.resolve_permission_map({"admin": True})}
+        for s in self.shared.keys():
+            results[s] = self.resolve_permission_map(self.shared[s])
 
-    def permissions(self, user_id: str) -> PERMISSION_TYPE:
-        result = {}
-        for k in PERMISSION_TYPE_KEYS:
-            result[k] = self.check_permission(k, user_id)
-        return result
+        if self.parent != "root":
+            parent = self.load_oid(self.parent, self.database)
+            parent_rp = parent.resolved_permissions
+            for k, v in parent_rp.items():
+                if k in results.keys():
+                    results[k] = v
+                else:
+                    for i, j in v.items():
+                        if j == None:
+                            results[k][i] = j
+
+        return results
+
+    def users_with(self, permission: PERMISSION_TYPE_KEY) -> list[str]:
+        res = [k for k, v in self.resolved_permissions if v[permission] == True]
+        res.append(self.owner)
+        return res
+
+    def sessions_with(self, permission: PERMISSION_TYPE_KEY) -> list[str]:
+        users_with_perm = self.users_with(permission)
+        sessions = [
+            i.oid
+            for i in Session.load_multiple_from_query({"uid": {"$in": users_with_perm}})
+        ]
+        return sessions
