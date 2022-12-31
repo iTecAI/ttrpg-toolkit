@@ -14,17 +14,17 @@ export function GridView(props: { search: string }): JSX.Element {
     const [items, setItems] = useState<MinimalContentType[]>([]);
     const parent = useParams().current ?? "root";
     useUpdate((update) => {
-        console.log(`UPDATE: ${update.event} : ${JSON.stringify(update.data)}`);
         get<MinimalContentType[]>(`/content/${parent}`).then((result) => {
-            console.log(result);
-            if (result.success) {
+            if (
+                result.success &&
+                JSON.stringify(result.value) !== JSON.stringify(items)
+            ) {
                 setItems(result.value);
             }
         });
     }, `content.update.${parent}`);
     useEffect(() => {
         get<MinimalContentType[]>(`/content/${parent}`).then((result) => {
-            console.log(result);
             if (result.success) {
                 setItems(result.value);
             }

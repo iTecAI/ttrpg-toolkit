@@ -9,7 +9,7 @@ import { Box } from "@mui/system";
 
 import "./index.scss";
 import { MdGridView, MdSearch, MdViewList } from "react-icons/md";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { loc } from "../../util/localization";
 import { GridView } from "./gridview";
 

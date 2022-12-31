@@ -201,10 +201,13 @@ function UpdateContextProvider(): JSX.Element {
             events: events,
             pop: (type: string) => {
                 const result = events.filter((v) => v.event === type);
-                dispatchCtx({
-                    type: "set",
-                    newUpdates: events.filter((v) => v.event !== type),
-                });
+                if (result.length > 0) {
+                    dispatchCtx({
+                        type: "set",
+                        newUpdates: events.filter((v) => v.event !== type),
+                    });
+                }
+
                 return result;
             },
         };
@@ -216,6 +219,9 @@ function UpdateContextProvider(): JSX.Element {
     ): UpdateContextType {
         switch (action.type) {
             case "activate":
+                if (source) {
+                    return state;
+                }
                 const src = new EventSource(
                     `/api/updates/poll/${action.sessionId}`,
                     {
