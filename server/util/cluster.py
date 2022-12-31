@@ -25,13 +25,13 @@ class Cluster:
             self.event_queues[session] = Queue()
 
     def dispatch_update(
-        self, sessions: Union[str, list[str]], event: str, data: Any = {}
+        self, sessions_raw: Union[str, list[str]], event: str, data: Any = {}
     ):
         sessions: list[str] = []
-        if type(sessions) == list:
-            sessions = sessions
+        if type(sessions_raw) == list:
+            sessions = sessions_raw
         else:
-            sessions = [sessions]
+            sessions = [sessions_raw]
 
         active_sessions = [s for s in self.sessions.find({"oid": {"$in": sessions}})]
         for a in active_sessions:

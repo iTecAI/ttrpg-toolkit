@@ -13,7 +13,6 @@ import { MdDescription, MdFolder, MdTag } from "react-icons/md";
 import { ReactNode } from "react";
 import { Box } from "@mui/system";
 import { calculateGravatar } from "../../../util/gravatar";
-import HorizontalScroll from "react-scroll-horizontal";
 
 function GenericRenderer(props: {
     item: MinimalContentType;
@@ -37,7 +36,7 @@ function GenericRenderer(props: {
                         src={
                             item.image
                                 ? `/api/user_content/${item.image}`
-                                : calculateGravatar(item.oid, 1024)
+                                : calculateGravatar(item.oid, 256)
                         }
                         alt=""
                         component="img"
@@ -53,11 +52,9 @@ function GenericRenderer(props: {
                                 spacing={1}
                                 direction="row"
                             >
-                                <HorizontalScroll reverseScroll>
-                                    {item.tags.map((v) => (
-                                        <Chip size="small" key={v} label={v} />
-                                    ))}
-                                </HorizontalScroll>
+                                {item.tags.map((v) => (
+                                    <Chip size="small" key={v} label={v} />
+                                ))}
                             </Stack>
                         </Stack>
                     </Paper>

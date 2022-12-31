@@ -57,9 +57,15 @@ class ContentRootController(Controller):
                 data={"type": "addChild"},
             )
 
-        cluster.dispatch_update(
-            new.sessions_with("view"), "content.update", data={"type": "create"}
-        )
+        else:
+            s_to_u = new.sessions_with("view")
+            cluster.dispatch_update(
+                s_to_u,
+                f"content.update.root",
+                data={"type": "addChild"},
+            )
+
+        cluster.dispatch_update(new.sessions_with("view"), "content.create")
 
         return new.minimize
 

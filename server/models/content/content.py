@@ -1,4 +1,5 @@
-from util import ORM, Session
+from util import ORM
+from models.accounts import Session
 from ..accounts import User
 from pymongo.database import Database
 from typing import Literal, Union, TypedDict
@@ -218,7 +219,7 @@ class BaseContentType(ORM):
         return results
 
     def users_with(self, permission: PERMISSION_TYPE_KEY) -> list[str]:
-        res = [k for k, v in self.resolved_permissions if v[permission] == True]
+        res = [k for k, v in self.resolved_permissions.items() if v[permission] == True]
         res.append(self.owner)
         return res
 
@@ -226,6 +227,8 @@ class BaseContentType(ORM):
         users_with_perm = self.users_with(permission)
         sessions = [
             i.oid
-            for i in Session.load_multiple_from_query({"uid": {"$in": users_with_perm}})
+            for i in Session.load_multiple_from_query(
+                {"uid": {"$in": users_with_perm}}, self.database
+            )
         ]
         return sessions

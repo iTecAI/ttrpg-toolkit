@@ -7,11 +7,21 @@ import { useEffect, useState } from "react";
 import { MinimalContentType } from "../../../models/content";
 import { get } from "../../../util/api";
 import { RENDERERS } from "./renderers";
+import { useUpdate } from "../../../util/updates";
 
 export function GridView(props: { search: string }): JSX.Element {
     const { width } = useWindowSize();
     const [items, setItems] = useState<MinimalContentType[]>([]);
     const parent = useParams().current ?? "root";
+    useUpdate((update) => {
+        console.log(`UPDATE: ${update.event} : ${update.data}`);
+        get<MinimalContentType[]>(`/content/${parent}`).then((result) => {
+            console.log(result);
+            if (result.success) {
+                setItems(result.value);
+            }
+        });
+    }, `content.update.${parent}`);
     useEffect(() => {
         get<MinimalContentType[]>(`/content/${parent}`).then((result) => {
             console.log(result);
