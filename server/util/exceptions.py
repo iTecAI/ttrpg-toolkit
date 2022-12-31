@@ -185,3 +185,9 @@ class InvalidContentArgumentsError(BaseHTTPException):
     message = "The arguments provided to create/modify content were invalid:"
     message_class = "error.content.arguments"
     status_code = HTTP_400_BAD_REQUEST
+
+
+class InvalidContentSettingError(BaseHTTPException):
+    message = "Invalid setting:"
+    message_class = "error.content.setting"
+    status_code = HTTP_405_METHOD_NOT_ALLOWED

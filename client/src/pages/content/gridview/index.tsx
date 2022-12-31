@@ -37,7 +37,7 @@ export function GridView(props: {
     return (
         <Masonry
             spacing={2}
-            columns={Math.ceil((width ?? 1920) / 320)}
+            columns={Math.ceil((width ?? 1920) / 420)}
             className="grid-masonry"
         >
             {items.map((item) => {

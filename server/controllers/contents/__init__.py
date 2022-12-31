@@ -2,17 +2,20 @@ from starlite import Controller, Provide, get, post, State, delete
 from util import (
     guard_loggedIn,
     session_dep,
+    content_dep,
     Cluster,
     Session,
     guard_hasContentPermission,
+    GenericContentManager,
 )
 from util.exceptions import (
     InvalidContentTypeError,
     InvalidContentArgumentsError,
     ContentItemNotFoundError,
+    InvalidContentSettingError,
 )
 from models import ContentType, MinimalContentType
-from typing import Optional
+from typing import Optional, Union
 import json
 from pydantic import BaseModel
 from typing import Union, Optional
@@ -147,3 +150,34 @@ class ContentRootController(Controller):
                 {"oid": {"$in": to_delete}}, state.database
             )
         ]
+
+    @post(
+        "/{content_id:str}/modify/{setting:str}",
+        guards=[guard_hasContentPermission("edit")],
+        dependencies={"content": Provide(content_dep)},
+    )
+    async def modify_content(
+        self,
+        state: State,
+        session: Session,
+        content: ContentType,
+        setting: str,
+        data: Union[str, list[str], None],
+    ) -> MinimalContentType:
+        if not setting in ["name", "image", "tags"]:
+            raise InvalidContentSettingError(extra=setting)
+
+        if setting == "image" and content.image:
+            manager: GenericContentManager = state.user_content
+            manager.delete(content.image)
+
+        setattr(content, setting, data)
+        content.save()
+        cluster: Cluster = state.cluster
+        cluster.dispatch_update(
+            content.sessions_with("view"), f"content.update.{content.parent}"
+        )
+        cluster.dispatch_update(
+            content.sessions_with("view"), f"content.update.{content.oid}"
+        )
+        return MinimalContentType.from_ContentType(content, session.user)

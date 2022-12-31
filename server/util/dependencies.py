@@ -25,7 +25,7 @@ def plugin_dep(state: State, plugin: str) -> Plugin:
 
 
 def content_dep(state: State, content_id: str) -> ContentType:
-    content: ContentType = ContentType.load_oid(content_id)
+    content: ContentType = ContentType.load_oid(content_id, state.database)
     if content == None:
         raise ContentItemNotFoundError(extra=content_id)
 

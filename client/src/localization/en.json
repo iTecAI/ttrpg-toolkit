@@ -210,7 +210,13 @@
             "create_tags": "Tags",
             "actions": {
                 "share": "Share",
-                "delete": "Delete"
+                "delete": "Delete",
+                "edit": {
+                    "image": {
+                        "clear": "Remove Image",
+                        "change": "Change Image"
+                    }
+                }
             },
             "dialogs": {
                 "delete": {

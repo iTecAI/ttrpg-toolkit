@@ -1,4 +1,5 @@
 import {
+    Autocomplete,
     Avatar,
     Card,
     CardContent,
@@ -11,11 +12,14 @@ import {
     SpeedDial,
     SpeedDialAction,
     Stack,
+    TextField,
     Tooltip,
 } from "@mui/material";
 import { MinimalContentType } from "../../../models/content";
 import "./renderers.scss";
 import {
+    MdCheck,
+    MdClear,
     MdDelete,
     MdDescription,
     MdFolder,
@@ -23,13 +27,15 @@ import {
     MdPersonAdd,
     MdSettings,
     MdTag,
+    MdUploadFile,
 } from "react-icons/md";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { Box } from "@mui/system";
 import { calculateGravatar } from "../../../util/gravatar";
 import { loc } from "../../../util/localization";
 import { useHorizontalScroll } from "../../../util/hscroll";
 import { ConfirmDeleteDialog } from "../dialogs/confirmDeleteDialog";
+import { post, postFile } from "../../../util/api";
 
 function GenericRenderer(props: {
     item: MinimalContentType;
@@ -37,8 +43,18 @@ function GenericRenderer(props: {
     icon?: ReactNode;
     onDelete: (item: MinimalContentType) => void;
 }): JSX.Element {
-    const { item, body, icon } = props;
+    const { item, icon } = props;
     const scrollRef = useHorizontalScroll(0.25);
+
+    const [editName, setEditName] = useState<string>(item.name);
+    const [nameLoading, setNameLoading] = useState<boolean>(false);
+    const [tags, setTags] = useState<string[]>([]);
+
+    useEffect(() => {
+        setEditName(item.name);
+        setNameLoading(false);
+        setTags(item.tags);
+    }, [item]);
 
     return (
         <Card variant="outlined" className="render-item">
@@ -80,7 +96,59 @@ function GenericRenderer(props: {
                     </Box>
                 )}
 
-                <CardHeader title={item.name} />
+                <CardHeader
+                    title={
+                        item.shared.edit ? (
+                            <Box className="title-edit-container">
+                                <TextField
+                                    value={editName}
+                                    onChange={(event) =>
+                                        setEditName(event.target.value)
+                                    }
+                                    error={editName.length === 0}
+                                    variant="standard"
+                                    className="title-edit"
+                                    size="small"
+                                />
+                                {editName !== item.name &&
+                                    editName.length > 0 &&
+                                    (nameLoading ? (
+                                        <CircularProgress
+                                            style={{
+                                                width: "24px",
+                                                height: "24px",
+                                                marginTop: "-11px",
+                                                marginLeft: "-8px",
+                                            }}
+                                            className="finish"
+                                        />
+                                    ) : (
+                                        <IconButton
+                                            size="small"
+                                            className="finish"
+                                            color="success"
+                                            onClick={() => {
+                                                if (
+                                                    editName.length > 0 &&
+                                                    item.shared.edit
+                                                ) {
+                                                    setNameLoading(true);
+                                                    post<MinimalContentType>(
+                                                        `/content/${item.oid}/modify/name`,
+                                                        { body: editName }
+                                                    );
+                                                }
+                                            }}
+                                        >
+                                            <MdCheck />
+                                        </IconButton>
+                                    ))}
+                            </Box>
+                        ) : (
+                            item.name
+                        )
+                    }
+                />
                 <Box className="media">
                     <CardMedia
                         src={
@@ -91,24 +159,133 @@ function GenericRenderer(props: {
                         alt=""
                         component="img"
                     />
-                    <Paper className="custom-content">{body}</Paper>
+                    {item.shared.edit && (
+                        <Stack direction="row" spacing={2} className="img-edit">
+                            <Tooltip
+                                title={loc(
+                                    "content.universal.actions.edit.image.change"
+                                )}
+                            >
+                                <Box className="file-upload">
+                                    <IconButton className="img-change">
+                                        <MdUploadFile />
+                                    </IconButton>
+                                    <input
+                                        type="file"
+                                        accept="image/*"
+                                        onChange={(event) => {
+                                            if (
+                                                event.target.files &&
+                                                event.target.files.length > 0
+                                            ) {
+                                                postFile<{ itemId: string }>(
+                                                    "/user_content",
+                                                    {
+                                                        body: event.target
+                                                            .files[0],
+                                                    }
+                                                ).then((result) => {
+                                                    if (result.success) {
+                                                        post<MinimalContentType>(
+                                                            `/content/${item.oid}/modify/image`,
+                                                            {
+                                                                body: result
+                                                                    .value
+                                                                    .itemId,
+                                                            }
+                                                        );
+                                                    }
+                                                });
+                                            }
+                                        }}
+                                    />
+                                </Box>
+                            </Tooltip>
+                            <Tooltip
+                                title={loc(
+                                    "content.universal.actions.edit.image.clear"
+                                )}
+                            >
+                                <IconButton
+                                    className="img-delete"
+                                    onClick={() =>
+                                        post<MinimalContentType>(
+                                            `/content/${item.oid}/modify/image`,
+                                            { body: null }
+                                        )
+                                    }
+                                >
+                                    <MdClear />
+                                </IconButton>
+                            </Tooltip>
+                        </Stack>
+                    )}
                 </Box>
                 <CardContent className="content">
-                    <Paper variant="outlined" className="tag-area">
-                        <Stack spacing={1} direction="row">
-                            <MdTag className="tag-icon" size={24} />
-                            <Stack
-                                className="container"
-                                spacing={0.5}
-                                direction="row"
-                                ref={scrollRef}
-                            >
-                                {item.tags.map((v) => (
-                                    <Chip size="small" key={v} label={v} />
-                                ))}
+                    {item.shared.edit ? (
+                        <Autocomplete
+                            freeSolo
+                            multiple
+                            options={[]}
+                            size="medium"
+                            renderInput={(params) => {
+                                return (
+                                    <TextField
+                                        {...params}
+                                        variant="standard"
+                                        InputProps={{
+                                            ...params.InputProps,
+                                            startAdornment: (
+                                                <>
+                                                    <MdTag size={16} />
+                                                    {
+                                                        params.InputProps
+                                                            .startAdornment
+                                                    }
+                                                </>
+                                            ),
+                                        }}
+                                    />
+                                );
+                            }}
+                            className="tags-edit"
+                            value={tags}
+                            onChange={(event, value) => {
+                                setTags(value as string[]);
+                                post<MinimalContentType>(
+                                    `/content/${item.oid}/modify/tags`,
+                                    { body: value }
+                                );
+                            }}
+                            renderTags={(value, getTagProps) =>
+                                (value as any).map(
+                                    (option: string, index: number) => (
+                                        <Chip
+                                            size="small"
+                                            label={option}
+                                            {...getTagProps({ index })}
+                                        />
+                                    )
+                                )
+                            }
+                        />
+                    ) : (
+                        <Paper variant="outlined" className="tag-area">
+                            <Stack spacing={1} direction="row">
+                                <MdTag className="tag-icon" size={24} />
+                                <Stack
+                                    className="container"
+                                    spacing={0.5}
+                                    direction="row"
+                                    ref={scrollRef}
+                                >
+                                    {item.tags.map((v) => (
+                                        <Chip size="small" key={v} label={v} />
+                                    ))}
+                                </Stack>
                             </Stack>
-                        </Stack>
-                    </Paper>
+                        </Paper>
+                    )}
                 </CardContent>
             </Box>
         </Card>
