@@ -36,6 +36,7 @@ import { loc } from "../../../util/localization";
 import { useHorizontalScroll } from "../../../util/hscroll";
 import { ConfirmDeleteDialog } from "../dialogs/confirmDeleteDialog";
 import { post, postFile } from "../../../util/api";
+import { ShareDialog } from "../dialogs/shareDialog";
 
 function GenericRenderer(props: {
     item: MinimalContentType;
@@ -56,6 +57,8 @@ function GenericRenderer(props: {
         setTags(item.tags);
     }, [item]);
 
+    const [sharing, setSharing] = useState<boolean>(false);
+
     return (
         <Card variant="outlined" className="render-item">
             <Stack className="actions" spacing={1} direction="row">
@@ -64,6 +67,7 @@ function GenericRenderer(props: {
                         title={loc("content.universal.actions.share")}
                         placement="bottom"
                         disableInteractive
+                        onClick={() => setSharing(true)}
                     >
                         <IconButton className="share">
                             <MdPersonAdd size={18} />
@@ -288,6 +292,7 @@ function GenericRenderer(props: {
                     )}
                 </CardContent>
             </Box>
+            <ShareDialog item={item} open={sharing} setOpen={setSharing} />
         </Card>
     );
 }

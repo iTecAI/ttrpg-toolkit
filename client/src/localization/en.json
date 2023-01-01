@@ -222,6 +222,9 @@
                 "delete": {
                     "title": "Confirm Deletion of \"{{name}}\"",
                     "description": "This action is permanent, and will delete the following items:"
+                },
+                "share": {
+                    "title": "Share With Other Users"
                 }
             }
         }
