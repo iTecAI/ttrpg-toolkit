@@ -60,7 +60,7 @@ function GenericRenderer(props: {
     const [sharing, setSharing] = useState<boolean>(false);
 
     return (
-        <Card variant="outlined" className="render-item">
+        <Card variant="outlined" className="render-content-item">
             <Stack className="actions" spacing={1} direction="row">
                 {item.shared.share && (
                     <Tooltip
