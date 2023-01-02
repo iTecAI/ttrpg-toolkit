@@ -157,7 +157,7 @@ class ContentType(ORM):
         parent: ContentType = ContentType.load_oid(self.parent, self.database)
         if parent == None:
             return False
-        return parent.get_permission(permission, oid)
+        return parent.check_permission(permission, oid)
 
     def permissions_of(self, user: Union[User, str]) -> PERMISSION_TYPE:
         return {i: self.check_permission(i, user) for i in PERMISSION_TYPE_KEYS}
@@ -205,7 +205,8 @@ class ContentType(ORM):
             children: list[ContentType] = ContentType.load_multiple_from_query(
                 {"parent": self.oid}, self.database
             )
-            results.extend([c.delete(dry_run=dry_run) for c in children])
+            for c in children:
+                results.extend(c.delete(content, dry_run=dry_run))
         else:
             raise NotImplementedError("TODO: Other data types")
 

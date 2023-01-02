@@ -275,7 +275,6 @@ export function ShareDialog(props: {
     useEffect(() => {
         get<ShareType[]>(`/content/${props.item.oid}/shared`).then((result) => {
             if (result.success) {
-                console.log(result.value);
                 setShared(result.value);
             }
         });

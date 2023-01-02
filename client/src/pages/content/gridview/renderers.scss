@@ -34,15 +34,22 @@
             height: calc(100% - 112px);
             overflow: hidden;
 
-            img {
+            .MuiCardActionArea-root {
+                position: relative;
+                display: inline-block;
                 width: 100%;
-                height: auto;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                border-radius: 4px;
-                overflow: hidden;
+                height: 100%;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    border-radius: 4px;
+                    overflow: hidden;
+                }
             }
         }
 
@@ -126,7 +133,7 @@
 
         .file-upload {
             position: relative;
-            
+
             input {
                 position: absolute;
                 top: 50%;

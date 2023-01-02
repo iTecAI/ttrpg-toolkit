@@ -85,9 +85,6 @@ class ContentRootController(Controller):
             parent_obj = ContentType.load_oid(parent, state.database)
             if parent_obj == None:
                 raise ContentItemNotFoundError(extra=f"[parent] {parent}")
-
-            parent_obj.children.append(new.oid)
-            parent_obj.save()
             cluster.dispatch_update(
                 parent_obj.sessions_with("view"),
                 f"content.update.{parent}",
@@ -145,7 +142,7 @@ class ContentRootController(Controller):
                 data={"type": "delete"},
             )
         else:
-            parent = ContentType.load_oid(loaded.parent)
+            parent = ContentType.load_oid(loaded.parent, state.database)
             if parent:
                 cluster.dispatch_update(
                     to_update,

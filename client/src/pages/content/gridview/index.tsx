@@ -16,6 +16,11 @@ export function GridView(props: {
     const { width } = useWindowSize();
     const [items, setItems] = useState<MinimalContentType[]>([]);
     const parent = useParams().current ?? "root";
+
+    const [updateName, setUpdateName] = useState<string>("none");
+
+    useEffect(() => setUpdateName(`content.update.${parent}`), [parent]);
+
     useUpdate((update) => {
         get<MinimalContentType[]>(`/content/${parent}`).then((result) => {
             if (
@@ -25,7 +30,7 @@ export function GridView(props: {
                 setItems(result.value);
             }
         });
-    }, `content.update.${parent}`);
+    }, updateName);
     useEffect(() => {
         get<MinimalContentType[]>(`/content/${parent}`).then((result) => {
             if (result.success) {

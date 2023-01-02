@@ -2,6 +2,7 @@ import {
     Autocomplete,
     Avatar,
     Card,
+    CardActionArea,
     CardContent,
     CardHeader,
     CardMedia,
@@ -37,6 +38,7 @@ import { useHorizontalScroll } from "../../../util/hscroll";
 import { ConfirmDeleteDialog } from "../dialogs/confirmDeleteDialog";
 import { post, postFile } from "../../../util/api";
 import { ShareDialog } from "../dialogs/shareDialog";
+import { useNavigate } from "react-router-dom";
 
 function GenericRenderer(props: {
     item: MinimalContentType;
@@ -58,6 +60,7 @@ function GenericRenderer(props: {
     }, [item]);
 
     const [sharing, setSharing] = useState<boolean>(false);
+    const nav = useNavigate();
 
     return (
         <Card variant="outlined" className="render-content-item">
@@ -154,15 +157,17 @@ function GenericRenderer(props: {
                     }
                 />
                 <Box className="media">
-                    <CardMedia
-                        src={
-                            item.image
-                                ? `/api/user_content/${item.image}`
-                                : calculateGravatar(item.oid, 256)
-                        }
-                        alt=""
-                        component="img"
-                    />
+                    <CardActionArea onClick={() => nav(`/content/${item.oid}`)}>
+                        <CardMedia
+                            src={
+                                item.image
+                                    ? `/api/user_content/${item.image}`
+                                    : calculateGravatar(item.oid, 256)
+                            }
+                            alt=""
+                            component="img"
+                        />
+                    </CardActionArea>
                     {item.shared.edit && (
                         <Stack direction="row" spacing={2} className="img-edit">
                             <Tooltip
@@ -182,13 +187,11 @@ function GenericRenderer(props: {
                                                 event.target.files &&
                                                 event.target.files.length > 0
                                             ) {
-                                                postFile<{ itemId: string }>(
-                                                    "/user_content",
-                                                    {
-                                                        body: event.target
-                                                            .files[0],
-                                                    }
-                                                ).then((result) => {
+                                                postFile<{
+                                                    itemId: string;
+                                                }>("/user_content", {
+                                                    body: event.target.files[0],
+                                                }).then((result) => {
                                                     if (result.success) {
                                                         post<MinimalContentType>(
                                                             `/content/${item.oid}/modify/image`,
