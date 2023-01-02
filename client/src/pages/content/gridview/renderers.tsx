@@ -1,6 +1,5 @@
 import {
     Autocomplete,
-    Avatar,
     Card,
     CardActionArea,
     CardContent,
@@ -10,8 +9,6 @@ import {
     CircularProgress,
     IconButton,
     Paper,
-    SpeedDial,
-    SpeedDialAction,
     Stack,
     TextField,
     Tooltip,
@@ -24,9 +21,7 @@ import {
     MdDelete,
     MdDescription,
     MdFolder,
-    MdMenu,
     MdPersonAdd,
-    MdSettings,
     MdTag,
     MdUploadFile,
 } from "react-icons/md";
@@ -35,7 +30,6 @@ import { Box } from "@mui/system";
 import { calculateGravatar } from "../../../util/gravatar";
 import { loc } from "../../../util/localization";
 import { useHorizontalScroll } from "../../../util/hscroll";
-import { ConfirmDeleteDialog } from "../dialogs/confirmDeleteDialog";
 import { post, postFile } from "../../../util/api";
 import { ShareDialog } from "../dialogs/shareDialog";
 import { useNavigate } from "react-router-dom";
@@ -157,7 +151,11 @@ function GenericRenderer(props: {
                     }
                 />
                 <Box className="media">
-                    <CardActionArea onClick={() => nav(`/content/${item.oid}`)}>
+                    <CardActionArea
+                        onClick={() =>
+                            nav(`/content/${item.dataType}/${item.oid}`)
+                        }
+                    >
                         <CardMedia
                             src={
                                 item.image
@@ -313,6 +311,19 @@ function RenderFolder(props: {
     );
 }
 
+function RenderDocument(props: {
+    item: MinimalContentType;
+    onDelete: (item: MinimalContentType) => void;
+}): JSX.Element {
+    return (
+        <GenericRenderer
+            item={props.item}
+            icon={<MdDescription size={24} />}
+            onDelete={props.onDelete}
+        />
+    );
+}
+
 export const RENDERERS: {
     [key: string]: (props: {
         item: MinimalContentType;
@@ -320,4 +331,5 @@ export const RENDERERS: {
     }) => JSX.Element;
 } = {
     folder: RenderFolder,
+    document: RenderDocument,
 };

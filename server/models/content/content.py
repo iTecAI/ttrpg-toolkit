@@ -5,6 +5,7 @@ from ..accounts import User
 from pymongo.database import Database
 from pymongo.collection import Collection
 from typing import Literal, Union, TypedDict
+from .document import DocumentContentType
 
 PERMISSION_VALUE = Union[bool, None]
 PERMISSION_TYPE_KEY = Literal["view", "edit", "share", "delete", "admin"]
@@ -38,7 +39,7 @@ class ContentType(ORM):
     object_type = "content"
     collection = "content"
 
-    type_map = {"folder": None}
+    type_map = {"folder": None, "document": DocumentContentType}
 
     def __init__(
         self,

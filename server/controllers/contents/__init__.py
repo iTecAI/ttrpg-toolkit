@@ -16,6 +16,7 @@ from util.exceptions import (
     PermissionError,
     UserDoesNotExistError,
 )
+from util.orm import ORM
 from models import (
     ContentType,
     MinimalContentType,
@@ -66,6 +67,15 @@ class ContentRootController(Controller):
         if not content_type in ContentType.type_map.keys():
             raise InvalidContentTypeError(extra=content_type)
         try:
+            new_type = ContentType.type_map[content_type]
+            if new_type != None:
+                created_data: ORM = new_type.create(session.database, **data.data)
+            else:
+                created_data: ORM = None
+
+            if created_data:
+                created_data.save()
+
             new = ContentType.create(
                 state.database,
                 session.user,
@@ -74,6 +84,7 @@ class ContentRootController(Controller):
                 image=data.image,
                 tags=data.tags,
                 dataType=content_type,
+                data=created_data.oid if created_data else None,
             )
         except:
             raise InvalidContentArgumentsError(extra=json.dumps(data))

@@ -36,47 +36,6 @@ export function CreateDocumentDialog(props: {
     const [image, setImage] = useState<File | null>(null);
     const [tags, setTags] = useState<string[]>([]);
 
-    function submit() {
-        close();
-        /*if (name.length === 0) {
-            return;
-        }
-        let createdImage: string | null = null;
-        if (image) {
-            postFile<{ itemId: string }>("/user_content/", {
-                body: image,
-            }).then((result) => {
-                if (result.success) {
-                    createdImage = result.value.itemId;
-                }
-
-                post("/content/folder", {
-                    urlParams: {
-                        parent: props.parent,
-                    },
-                    body: {
-                        name: name,
-                        image: createdImage ?? undefined,
-                        tags: tags,
-                    },
-                }).then((result) => console.log(result));
-            });
-        } else {
-            post("/content/folder", {
-                urlParams: {
-                    parent: props.parent,
-                },
-                body: {
-                    name: name,
-                    image: createdImage ?? undefined,
-                    tags: tags,
-                },
-            }).then((result) => console.log(result));
-        }
-
-        close();*/
-    }
-
     const [templates, setTemplates] = useState<{
         [key: string]: { [key: string]: DocumentType };
     }>({});
@@ -115,6 +74,57 @@ export function CreateDocumentDialog(props: {
 
     const [selectedTemplate, setSelectedTemplate] =
         useState<DocumentOption | null>(null);
+
+    function submit() {
+        if (name.length === 0) {
+            return;
+        }
+        if (selectedTemplate === null) {
+            return;
+        }
+        let createdImage: string | null = null;
+        if (image) {
+            postFile<{ itemId: string }>("/user_content/", {
+                body: image,
+            }).then((result) => {
+                if (result.success) {
+                    createdImage = result.value.itemId;
+                }
+
+                post("/content/document", {
+                    urlParams: {
+                        parent: props.parent,
+                    },
+                    body: {
+                        name: name,
+                        image: createdImage ?? undefined,
+                        tags: tags,
+                        data: {
+                            plugin: selectedTemplate.plugin,
+                            template: selectedTemplate.slug,
+                        },
+                    },
+                }).then((result) => console.log(result));
+            });
+        } else {
+            post("/content/document", {
+                urlParams: {
+                    parent: props.parent,
+                },
+                body: {
+                    name: name,
+                    image: createdImage ?? undefined,
+                    tags: tags,
+                    data: {
+                        plugin: selectedTemplate.plugin,
+                        template: selectedTemplate.slug,
+                    },
+                },
+            }).then((result) => console.log(result));
+        }
+
+        close();
+    }
 
     return (
         <Dialog open={props.open} onClose={close} maxWidth="md" fullWidth>
