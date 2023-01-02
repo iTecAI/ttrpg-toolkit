@@ -40,19 +40,21 @@ export function ContentPage() {
                         value={search}
                         onChange={(event) => setSearch(event.target.value)}
                     />
-                    <ToggleButtonGroup
-                        className="view-mode"
-                        value={vMode}
-                        onChange={(event, value) => setVMode(value)}
-                        exclusive
-                    >
-                        <ToggleButton value="grid">
-                            <MdGridView size={24} />
-                        </ToggleButton>
-                        <ToggleButton value="list">
-                            <MdViewList size={24} />
-                        </ToggleButton>
-                    </ToggleButtonGroup>
+                    {false && (
+                        <ToggleButtonGroup
+                            className="view-mode"
+                            value={vMode}
+                            onChange={(event, value) => setVMode(value)}
+                            exclusive
+                        >
+                            <ToggleButton value="grid">
+                                <MdGridView size={24} />
+                            </ToggleButton>
+                            <ToggleButton value="list">
+                                <MdViewList size={24} />
+                            </ToggleButton>
+                        </ToggleButtonGroup>
+                    )}
                 </Box>
             </AppBar>
             <Box className="view-area">
