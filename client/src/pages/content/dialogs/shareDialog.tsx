@@ -193,7 +193,7 @@ function ShareItem(props: {
                             </Grid>
                         )}
                         {props.item.shared.view &&
-                            !props.share.implicit.admin && (
+                            !(props.share.explicit.admin === true) && (
                                 <Grid item xs={12} md={6}>
                                     <SharePermissionRender
                                         share={props.share}
@@ -203,7 +203,7 @@ function ShareItem(props: {
                                 </Grid>
                             )}
                         {props.item.shared.edit &&
-                            !props.share.implicit.admin && (
+                            !(props.share.explicit.admin === true) && (
                                 <Grid item xs={12} md={6}>
                                     <SharePermissionRender
                                         share={props.share}
@@ -213,7 +213,7 @@ function ShareItem(props: {
                                 </Grid>
                             )}
                         {props.item.shared.share &&
-                            !props.share.implicit.admin && (
+                            !(props.share.explicit.admin === true) && (
                                 <Grid item xs={12} md={6}>
                                     <SharePermissionRender
                                         share={props.share}
@@ -223,7 +223,7 @@ function ShareItem(props: {
                                 </Grid>
                             )}
                         {props.item.shared.delete &&
-                            !props.share.implicit.admin && (
+                            !(props.share.explicit.admin === true) && (
                                 <Grid item xs={12} md={6}>
                                     <SharePermissionRender
                                         share={props.share}
@@ -243,6 +243,19 @@ function ShareItem(props: {
     );
 }
 
+function ShareStack(props: {
+    shared: ShareType[];
+    item: MinimalContentType;
+}): JSX.Element {
+    return (
+        <Stack className="share-item-container" spacing={2}>
+            {props.shared.map((v) => (
+                <ShareItem share={v} item={props.item} key={v.uid} />
+            ))}
+        </Stack>
+    );
+}
+
 export function ShareDialog(props: {
     item: MinimalContentType;
     open: boolean;
@@ -255,6 +268,15 @@ export function ShareDialog(props: {
     const [users, setUsers] = useState<UserSearchResult[]>([]);
     const [value, setValue] = useState<UserSearchResult[]>([]);
     const [inputValue, setInputValue] = useState<string>("");
+
+    const [updateName, setUpdateName] = useState<string>(
+        `content.share.${props.item.oid}`
+    );
+
+    useEffect(
+        () => setUpdateName(`content.share.${props.item.oid}`),
+        [props.item.oid]
+    );
 
     useEffect(() => {
         if (inputValue.length > 2) {
@@ -287,7 +309,7 @@ export function ShareDialog(props: {
                 setShared(result.value);
             }
         });
-    }, `content.share.${props.item.oid}`);
+    }, updateName);
 
     useEffect(() => {
         if (
@@ -421,11 +443,7 @@ export function ShareDialog(props: {
                 >
                     <MdCheck size={24} />
                 </IconButton>
-                <Stack className="share-item-container" spacing={2}>
-                    {shared.map((v) => (
-                        <ShareItem share={v} item={props.item} key={v.uid} />
-                    ))}
-                </Stack>
+                <ShareStack shared={shared} item={props.item} />
             </DialogContent>
         </Dialog>
     );
