@@ -12,6 +12,7 @@ import {
     DialogContent,
     DialogTitle,
     Paper,
+    Stack,
 } from "@mui/material";
 import { calculateGravatar } from "../../../util/gravatar";
 import { loc } from "../../../util/localization";
@@ -50,30 +51,32 @@ export function ConfirmDeleteDialog(props: {
                         variant="outlined"
                         sx={{ padding: "8px", marginTop: "8px" }}
                     >
-                        {deleted ? (
-                            deleted.map((v) => (
-                                <Chip
-                                    key={v.oid}
-                                    avatar={
-                                        <Avatar
-                                            src={
-                                                v.image
-                                                    ? `/api/user_content/${v.image}`
-                                                    : calculateGravatar(
-                                                          v.oid,
-                                                          64
-                                                      )
-                                            }
-                                            component="image"
-                                            alt=""
-                                        />
-                                    }
-                                    label={v.name}
-                                />
-                            ))
-                        ) : (
-                            <CircularProgress />
-                        )}
+                        <Stack spacing={1} direction="row">
+                            {deleted ? (
+                                deleted.map((v) => (
+                                    <Chip
+                                        key={v.oid}
+                                        avatar={
+                                            <Avatar
+                                                src={
+                                                    v.image
+                                                        ? `/api/user_content/${v.image}`
+                                                        : calculateGravatar(
+                                                              v.oid,
+                                                              64
+                                                          )
+                                                }
+                                                component="image"
+                                                alt=""
+                                            />
+                                        }
+                                        label={v.name}
+                                    />
+                                ))
+                            ) : (
+                                <CircularProgress />
+                            )}
+                        </Stack>
                     </Paper>
                 </Box>
             </DialogContent>
