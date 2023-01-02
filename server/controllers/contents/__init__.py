@@ -13,12 +13,21 @@ from util.exceptions import (
     InvalidContentArgumentsError,
     ContentItemNotFoundError,
     InvalidContentSettingError,
+    PermissionError,
+    UserDoesNotExistError,
 )
-from models import ContentType, MinimalContentType
+from models import (
+    ContentType,
+    MinimalContentType,
+    PERMISSION_TYPE,
+    PERMISSION_TYPE_KEY,
+    PERMISSION_TYPE_KEYS,
+)
 from typing import Optional, Union
 import json
 from pydantic import BaseModel
 from typing import Union, Optional
+from starlite.status_codes import *
 
 
 class ContentCreateModel(BaseModel):
@@ -26,6 +35,18 @@ class ContentCreateModel(BaseModel):
     image: Optional[Union[str, None]] = None
     tags: Optional[list[str]] = []
     data: Optional[dict] = {}
+
+
+class ContentShareResultModel(BaseModel):
+    uid: str
+    owner: bool
+    explicit: PERMISSION_TYPE
+    implicit: PERMISSION_TYPE
+
+
+class ShareContentModel(BaseModel):
+    user: str
+    shares: dict[PERMISSION_TYPE_KEY, Union[bool, None]]
 
 
 class ContentRootController(Controller):
@@ -98,7 +119,7 @@ class ContentRootController(Controller):
             parent_id = parent
 
         children: list[str] = ContentType.get_with_permission(
-            state.database, parent_id, session.user, "read"
+            state.database, parent_id, session.user, "view"
         )
         user = session.user
         return [
@@ -181,3 +202,89 @@ class ContentRootController(Controller):
             content.sessions_with("view"), f"content.update.{content.oid}"
         )
         return MinimalContentType.from_ContentType(content, session.user)
+
+    @get(
+        "/{content_id:str}/shared",
+        guards=[guard_hasContentPermission("share")],
+        dependencies={"content": Provide(content_dep)},
+    )
+    async def get_shared(self, content: ContentType) -> list[ContentShareResultModel]:
+        results = []
+        implicit = content.resolved_permissions
+        for s in implicit.keys():
+            results.append(
+                ContentShareResultModel(
+                    uid=s,
+                    owner=s == content.owner,
+                    implicit=implicit[s],
+                    explicit=content.resolve_permission_map(
+                        content.shared[s]
+                        if s in content.shared.keys()
+                        else {
+                            "view": None,
+                            "edit": None,
+                            "share": None,
+                            "delete": None,
+                            "admin": None,
+                        }
+                    ),
+                )
+            )
+
+        return results
+
+    @post(
+        "/{content_id:str}/shared",
+        guards=[guard_hasContentPermission("share")],
+        dependencies={"content": Provide(content_dep)},
+    )
+    async def share_content(
+        self,
+        state: State,
+        session: Session,
+        content: ContentType,
+        data: list[ShareContentModel],
+    ) -> MinimalContentType:
+        user = session.user
+        user_perms = content.permissions_of(user)
+
+        for d in data:
+            if "admin" in d.shares.keys() and content.owner != user.oid:
+                raise PermissionError(extra="(Must be owner)")
+            if not d.user in content.shared.keys():
+                content.shared[d.user] = {}
+            for k in PERMISSION_TYPE_KEYS:
+                if k in d.shares.keys():
+                    if user_perms[k] == True:
+                        content.shared[d.user][k] = d.shares[k]
+                    else:
+                        raise PermissionError(extra=f"(Must be {k} to assign)")
+                else:
+                    if not k in content.shared[d.user].keys():
+                        content.shared[d.user][k] = None
+
+        content.save()
+        to_update = content.sessions_with("view")
+        cluster: Cluster = state.cluster
+        cluster.dispatch_update(to_update, f"content.update.{content.parent}")
+        cluster.dispatch_update(to_update, f"content.update.{content.oid}")
+        cluster.dispatch_update(to_update, f"content.share.{content.oid}")
+        return MinimalContentType.from_ContentType(content, user)
+
+    @delete(
+        "/{content_id:str}/shared/{user:str}",
+        guards=[guard_hasContentPermission("share")],
+        dependencies={"content": Provide(content_dep)},
+        status_code=HTTP_204_NO_CONTENT,
+    )
+    async def remove_share(self, state: State, content: ContentType, user: str) -> None:
+        if not user in content.shared.keys():
+            raise UserDoesNotExistError()
+
+        del content.shared[user]
+        content.save()
+        to_update = content.sessions_with("view")
+        cluster: Cluster = state.cluster
+        cluster.dispatch_update(to_update, f"content.update.{content.parent}")
+        cluster.dispatch_update(to_update, f"content.update.{content.oid}")
+        cluster.dispatch_update(to_update, f"content.share.{content.oid}")

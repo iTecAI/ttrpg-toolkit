@@ -64,6 +64,9 @@ export const UpdateContext: React.Context<
     (value: UpdateContextAction) => {},
 ]);
 
+export const UserContext: React.Context<UserInfoModel | null> =
+    React.createContext<UserInfoModel | null>(null);
+
 /**
  * Router Setup
  * @returns JSX.Element
@@ -105,50 +108,52 @@ function RouterChild() {
     }, [location, nav, loggedIn, loading]);
 
     return (
-        <Routes>
-            <Route
-                path="/"
-                element={
-                    <Layout
-                        loggedIn={loggedIn}
-                        userInfo={userInfo}
-                        loading={loading}
-                    />
-                }
-            >
-                <Route index element={<Index />} />
+        <UserContext.Provider value={userInfo}>
+            <Routes>
                 <Route
-                    path="/games"
+                    path="/"
                     element={
-                        <GamesListPage
-                            userInfo={
-                                userInfo || {
-                                    userId: "",
-                                    username: "",
-                                    displayName: "",
-                                }
-                            }
+                        <Layout
+                            loggedIn={loggedIn}
+                            userInfo={userInfo}
+                            loading={loading}
                         />
                     }
-                />
-                <Route path="/compendium" element={<Compendium />} />
-                <Route path="/playground" element={<Playground />} />
-                <Route path="/content" element={<ContentPage />} />
-                <Route path="/content/:current" element={<ContentPage />} />
-            </Route>
-            <Route
-                path="/login"
-                element={
-                    <Layout
-                        loggedIn={loggedIn}
-                        userInfo={userInfo}
-                        loading={loading}
+                >
+                    <Route index element={<Index />} />
+                    <Route
+                        path="/games"
+                        element={
+                            <GamesListPage
+                                userInfo={
+                                    userInfo || {
+                                        userId: "",
+                                        username: "",
+                                        displayName: "",
+                                    }
+                                }
+                            />
+                        }
                     />
-                }
-            >
-                <Route index element={<Login />} />
-            </Route>
-        </Routes>
+                    <Route path="/compendium" element={<Compendium />} />
+                    <Route path="/playground" element={<Playground />} />
+                    <Route path="/content" element={<ContentPage />} />
+                    <Route path="/content/:current" element={<ContentPage />} />
+                </Route>
+                <Route
+                    path="/login"
+                    element={
+                        <Layout
+                            loggedIn={loggedIn}
+                            userInfo={userInfo}
+                            loading={loading}
+                        />
+                    }
+                >
+                    <Route index element={<Login />} />
+                </Route>
+            </Routes>
+        </UserContext.Provider>
     );
 }
 

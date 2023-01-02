@@ -25,15 +25,11 @@ Permissions propagate to all children, unless those children have non-null PERMI
 
 view: User can see Content and its children.
 edit: User can edit Content and its children.
-    This permission implies `read`
 share: User can share Content and its children with other users, and grant some permissions
-    This permission implies `read`
-    This permission cannot grant `share` and `admin` permissions, and can only otherwise grant permissions it has
+    This permission cannot grant `admin` permissions, and can only otherwise grant permissions it has
 delete: User can delete Content and its children.
-    This permission implies `read`
 admin: User can perform any action on Content and its children
     This permission implies all other permissions
-    This permission can grant users the `share` permission
     This permission can only be granted by the owner
 """
 
@@ -132,14 +128,6 @@ class ContentType(ORM):
                 "delete": True,
                 "admin": True,
             }
-        if any([i for i in mapping.values()]):
-            return {
-                "view": True,
-                "edit": mapping["edit"],
-                "share": mapping["share"],
-                "delete": mapping["delete"],
-                "admin": mapping["admin"],
-            }
         return mapping
 
     def check_permission(
@@ -178,7 +166,10 @@ class ContentType(ORM):
     def resolved_permissions(self) -> dict[str, PERMISSION_TYPE]:
         results = {self.owner: self.resolve_permission_map({"admin": True})}
         for s in self.shared.keys():
-            results[s] = self.resolve_permission_map(self.shared[s])
+            results[s] = {
+                k: v if self.parent != "root" else (False if v == None else v)
+                for k, v in self.resolve_permission_map(self.shared[s]).items()
+            }
 
         if self.parent != "root":
             parent = self.load_oid(self.parent, self.database)

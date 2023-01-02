@@ -98,9 +98,10 @@ class UserExistsError(BaseHTTPException):
     status_code: int = HTTP_409_CONFLICT
 
 
-class UserDoesNotExistError(BaseException):
+class UserDoesNotExistError(BaseHTTPException):
     message: str = "User does not exist"
     message_class: str = "error.account.user_nonexistent"
+    status_code = HTTP_404_NOT_FOUND
 
 
 class BadLoginError(BaseHTTPException):

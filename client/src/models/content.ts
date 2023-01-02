@@ -19,3 +19,10 @@ export type MinimalContentType = {
     tags: string[];
     dataType: string;
 };
+
+export type ShareType = {
+    uid: string;
+    owner: boolean;
+    explicit: SharePermission;
+    implicit: SharePermission;
+};

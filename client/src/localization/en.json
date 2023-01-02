@@ -224,7 +224,16 @@
                     "description": "This action is permanent, and will delete the following items:"
                 },
                 "share": {
-                    "title": "Share With Other Users"
+                    "title": "Share With Other Users",
+                    "input": "Select Users",
+                    "owner": "Owner",
+                    "permissions": {
+                        "view": "View",
+                        "edit": "Edit",
+                        "share": "Share",
+                        "delete": "Delete",
+                        "admin": "Admin"
+                    }
                 }
             }
         }

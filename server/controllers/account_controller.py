@@ -58,6 +58,18 @@ class AccountController(Controller):
             else session.user.username,
         }
 
+    @get("/{uid:str}", guards=[guard_loggedIn])
+    async def get_specific_acct_info(self, state: State, uid: str) -> AccountInfoModel:
+        user: User = User.load_oid(uid, state.database)
+        if user == None:
+            raise exceptions.UserDoesNotExistError()
+
+        return {
+            "userId": user.oid,
+            "username": user.username,
+            "displayName": user.display_name if user.display_name else user.username,
+        }
+
     @post("/create")
     async def create_account(self, data: AccountModel, state: State) -> SessionModel:
         new_user = User.new(
