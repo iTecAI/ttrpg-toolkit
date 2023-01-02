@@ -98,9 +98,10 @@ class UserExistsError(BaseHTTPException):
     status_code: int = HTTP_409_CONFLICT
 
 
-class UserDoesNotExistError(BaseException):
+class UserDoesNotExistError(BaseHTTPException):
     message: str = "User does not exist"
     message_class: str = "error.account.user_nonexistent"
+    status_code = HTTP_404_NOT_FOUND
 
 
 class BadLoginError(BaseHTTPException):
@@ -161,27 +162,33 @@ class DebugNotActiveError(BaseHTTPException):
     status_code: int = HTTP_405_METHOD_NOT_ALLOWED
 
 
-# Collection Errors
-class CollectionNotFoundError(BaseHTTPException):
-    message: str = "Collection not found:"
-    message_class: str = "error.collection.not_found"
-    status_code: int = HTTP_404_NOT_FOUND
-
-
-class InvalidCollectionQuery(BaseHTTPException):
-    message: str = "Invalid collection query:"
-    message_class: str = "error.collection.invalid_query"
-    status_code: int = HTTP_405_METHOD_NOT_ALLOWED
-
-
-class CollectionChildNotFound(BaseHTTPException):
-    message: str = "Collection child not found:"
-    message_class: str = "error.collection.child.not_found"
-    status_code: int = HTTP_404_NOT_FOUND
-
-
 # User Content Errors
 class ContentNotFoundError(BaseHTTPException):
     message: str = "User content not found:"
     message_class: str = "error.user_content.not_found"
     status_code: int = HTTP_404_NOT_FOUND
+
+
+# Content Errors
+class ContentItemNotFoundError(BaseHTTPException):
+    message: str = "Content item not found:"
+    message_class: str = "error.content.not_found"
+    status_code: int = HTTP_404_NOT_FOUND
+
+
+class InvalidContentTypeError(BaseHTTPException):
+    message = "Invalid content type:"
+    message_class = "error.content.type"
+    status_code = HTTP_405_METHOD_NOT_ALLOWED
+
+
+class InvalidContentArgumentsError(BaseHTTPException):
+    message = "The arguments provided to create/modify content were invalid:"
+    message_class = "error.content.arguments"
+    status_code = HTTP_400_BAD_REQUEST
+
+
+class InvalidContentSettingError(BaseHTTPException):
+    message = "Invalid setting:"
+    message_class = "error.content.setting"
+    status_code = HTTP_405_METHOD_NOT_ALLOWED

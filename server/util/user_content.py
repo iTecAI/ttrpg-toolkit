@@ -1,5 +1,5 @@
 from .config import Config
-from util import User
+from models.accounts import User
 from typing import Literal
 from pymongo.database import Database
 from pymongo.collection import Collection

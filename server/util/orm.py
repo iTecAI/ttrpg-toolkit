@@ -10,6 +10,7 @@ class ORM:
     object_type: str = "basic"
     collection: str = None
     exclude: Optional[List[str]] = []
+    include: Optional[List[str]] = []
 
     def __init__(self, oid: str = None, database: Database = None, **kwargs):
         self.database = database
@@ -25,6 +26,8 @@ class ORM:
         for e in self.exclude:
             if e in raw.keys():
                 del raw[e]
+        for i in self.include:
+            raw[i] = getattr(self, i)
         for k, v in raw.items():
             if isinstance(v, ORM):
                 raw[k] = {
@@ -69,6 +72,8 @@ class ORM:
         for e in self.exclude:
             if e in raw.keys():
                 del raw[e]
+        for i in self.include:
+            raw[i] = getattr(self, i)
         raw = ORM.parse_dict_raw(raw)
         return raw
 

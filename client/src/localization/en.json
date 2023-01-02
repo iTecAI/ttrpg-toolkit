@@ -29,7 +29,7 @@
         "login": "Login",
         "buttons": {
             "games": "Games",
-            "collections": "Collections",
+            "content": "Content",
             "compendium": "Compendium"
         },
         "user_settings": {
@@ -184,90 +184,57 @@
         "reload_config": "Reload Config",
         "reload_plugins": "Reload Plugins"
     },
-    "collections": {
-        "new": "Create Collection",
-        "dialog": {
-            "title": "Create Collection",
-            "desc": "Create an empty collection of items, such as characters or homebrew NPCs",
-            "field-name": "Name",
-            "field-desc": "Description",
-            "field-tags": "Tags",
-            "field-file": "Upload Image",
-            "field-file-tooltip": "Click or Drag to Upload",
-            "field-file-clear": "Clear Image",
-            "error-image-failed": "Image failed to upload: {{detail}}"
+    "content": {
+        "toolbar": {
+            "search": "Search Content"
         },
-        "list": {
-            "item": {
-                "media-alt": "{{name}} collection image",
-                "tags-empty": "No Tags",
-                "actions": {
-                    "settings": "Settings",
-                    "delete": "Delete",
-                    "share": "Share",
-                    "remove": "Remove From Collection"
-                },
+        "create": {
+            "new": "New Item",
+            "types": "Item Types",
+            "folder": "Folder",
+            "document": "Document",
+            "character": "Character",
+            "map": "Map"
+        },
+        "folder": {
+            "create": {
+                "title": "New Folder"
+            }
+        },
+        "universal": {
+            "create_name": "Name",
+            "file-picker": {
+                "new": "Upload File",
+                "clear": "Clear File"
+            },
+            "create_tags": "Tags",
+            "actions": {
+                "share": "Share",
+                "delete": "Delete",
+                "edit": {
+                    "image": {
+                        "clear": "Remove Image",
+                        "change": "Change Image"
+                    }
+                }
+            },
+            "dialogs": {
                 "delete": {
-                    "title": "Confirm Deletion of {{name}}",
-                    "body": "Are you sure you want to delete {{name}}? This will delete the following items:"
-                },
-                "remove": {
-                    "title": "Confirm Removal of {{name}} from {{collection}}",
-                    "body": "Are you sure you want to remove {{name}} from {{collection}}? This will also PERMANENTLY DELETE the following items, as they have no other parents:"
+                    "title": "Confirm Deletion of \"{{name}}\"",
+                    "description": "This action is permanent, and will delete the following items:"
                 },
                 "share": {
-                    "title": "Share Collection",
-                    "input": "Search Users",
-                    "input-placeholder": "Display Name or Email..."
-                },
-                "configure": {
-                    "title": "Collection Settings"
+                    "title": "Share With Other Users",
+                    "input": "Select Users",
+                    "owner": "Owner",
+                    "permissions": {
+                        "view": "View",
+                        "edit": "Edit",
+                        "share": "Share",
+                        "delete": "Delete",
+                        "admin": "Admin"
+                    }
                 }
-            }
-        },
-        "permissions": {
-            "owner": {
-                "name": "Owner",
-                "help": "You own this Collection"
-            },
-            "promoter": {
-                "name": "Promote",
-                "help": "You can promote users to Admin"
-            },
-            "admin": {
-                "name": "Admin",
-                "help": "You can perform destructive actions"
-            },
-            "configure": {
-                "name": "Configure",
-                "help": "You can configure collection settings"
-            },
-            "share": {
-                "name": "Share",
-                "help": "You can share the collection"
-            },
-            "delete": {
-                "name": "Delete",
-                "help": "You can delete items in the collection"
-            },
-            "create": {
-                "name": "Create",
-                "help": "You can create items in the collection"
-            },
-            "edit": {
-                "name": "Edit",
-                "help": "You can edit items in the collection"
-            },
-            "read": {
-                "name": "Read",
-                "help": "You can view items in the collection"
-            }
-        },
-        "contents": {
-            "new-item": {
-                "collection": "Collection",
-                "document": "Document",
-                "character": "Character"
             }
         }
     }

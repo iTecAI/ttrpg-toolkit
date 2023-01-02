@@ -148,7 +148,7 @@ export function Layout(props: {
                                     <Button
                                         sx={{
                                             color: location.pathname.includes(
-                                                "/collections"
+                                                "/content"
                                             )
                                                 ? "primary"
                                                 : "contrastText.background",
@@ -156,15 +156,15 @@ export function Layout(props: {
                                             borderBottomColor: "primary",
                                             borderBottomWidth:
                                                 location.pathname.includes(
-                                                    "/collections"
+                                                    "/content"
                                                 )
                                                     ? "2px"
                                                     : "0px",
                                         }}
                                         size="large"
-                                        onClick={() => nav("/collections")}
+                                        onClick={() => nav("/content")}
                                     >
-                                        {loc("layout.buttons.collections")}
+                                        {loc("layout.buttons.content")}
                                     </Button>
                                     <Button
                                         sx={{

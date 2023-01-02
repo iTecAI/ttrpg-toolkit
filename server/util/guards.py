@@ -72,10 +72,10 @@ def guard_isDataSource(request: Any, _: BaseRouteHandler) -> None:
     pass
 
 
-def guard_hasCollectionPermission(permission: COLLECTION_SHARE_TYPE):
-    def guard_intl_hasCollectionPermission(request: Any, _: BaseRouteHandler) -> None:
-        if not "collection_id" in request.path_params.keys():
-            raise GenericNetworkError(extra="Collection ID not passed to Guard")
+def guard_hasContentPermission(permission: PERMISSION_TYPE_KEY):
+    def guard_intl_hasContentPermission(request: Any, _: BaseRouteHandler) -> None:
+        if not "content_id" in request.path_params.keys():
+            raise GenericNetworkError(extra="Content ID not passed to Guard")
 
         session: Session = Session.load_oid(
             request.headers["authorization"], request.app.state.database
@@ -83,16 +83,13 @@ def guard_hasCollectionPermission(permission: COLLECTION_SHARE_TYPE):
         if session == None:
             raise AuthorizationFailedError(extra="@ Session not found")
 
-        collection: Collection = Collection.load_oid(
-            request.path_params["collection_id"], request.app.state.database
+        content: ContentType = ContentType.load_oid(
+            request.path_params["content_id"], request.app.state.database
         )
-        if collection == None:
-            raise CollectionNotFoundError()
+        if content == None:
+            raise ContentItemNotFoundError(extra=request.path_params["content_id"])
 
-        perms = collection.expand_share_array(
-            collection.check_permissions(session.user)
-        )
-        if not permission in perms:
+        if not content.check_permission(permission, session.user):
             raise PermissionError()
 
-    return guard_intl_hasCollectionPermission
+    return guard_intl_hasContentPermission

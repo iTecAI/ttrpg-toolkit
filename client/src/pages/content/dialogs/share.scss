@@ -1,0 +1,95 @@
+.content-share-dialog {
+    .user-search {
+        display: inline-block;
+        width: calc(100% - 48px);
+        height: auto;
+        margin-top: 8px;
+    }
+
+    .confirm-btn {
+        position: relative;
+        margin-top: 12px;
+        margin-left: 8px;
+        vertical-align: top;
+    }
+
+    .share-item-container {
+        margin-top: 16px;
+        position: relative;
+        max-height: 60vh;
+        overflow-y: auto;
+
+        .share-item {
+            position: relative;
+
+            .remove-share {
+                position: absolute;
+                top: 16px;
+                right: 16px;
+            }
+
+            .owner {
+                position: absolute;
+                top: 16px;
+                right: 16px;
+                display: inline-block;
+                width: 102px;
+                height: 48px;
+                box-sizing: border-box;
+                border-color: goldenrod;
+
+                svg {
+                    position: absolute;
+                    top: 50%;
+                    left: 8px;
+                    transform: translate(0, -50%);
+                    color: goldenrod;
+                }
+
+                .text {
+                    position: absolute;
+                    top: calc(50% + 3px);
+                    left: 40px;
+                    transform: translate(0, -50%);
+                    font-size: 12px;
+                    color: goldenrod;
+                }
+            }
+
+            .permission-grid {
+                .MuiGrid-item {
+                    height: 64px;
+                    box-sizing: border-box;
+
+                    .permission-item {
+                        position: relative;
+                        height: 64px;
+                        .perm-name {
+                            position: absolute;
+                            top: 50%;
+                            left: 16px;
+                            transform: translate(0, -50%);
+                            font-size: 14px;
+                        }
+
+                        .perm-buttons {
+                            position: absolute;
+                            top: 50%;
+                            right: 16px;
+                            transform: translate(0, -50%);
+                        }
+
+                        .perm-buttons-implicit {
+                            position: absolute;
+                            top: 50%;
+                            right: 148px;
+                            transform: translate(0, -50%);
+                            opacity: 0.4;
+                            pointer-events: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

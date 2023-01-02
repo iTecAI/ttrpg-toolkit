@@ -19,10 +19,9 @@ import { themeOptionsDefault } from "./theme/default";
 import { del, get } from "./util/api";
 import { loc } from "./util/localization";
 import { Playground } from "./pages/playground/Playground";
-import { Collections } from "./pages/collections";
 import { UpdateType } from "./util/updates";
 import { DialogProvider } from "./util/DialogContext";
-import { CollectionItemListPage } from "./pages/collections/listPage";
+import { ContentPage } from "./pages/content";
 export const RootContext: React.Context<{} | RootModel> = React.createContext(
     {}
 );
@@ -65,6 +64,9 @@ export const UpdateContext: React.Context<
     (value: UpdateContextAction) => {},
 ]);
 
+export const UserContext: React.Context<UserInfoModel | null> =
+    React.createContext<UserInfoModel | null>(null);
+
 /**
  * Router Setup
  * @returns JSX.Element
@@ -106,53 +108,52 @@ function RouterChild() {
     }, [location, nav, loggedIn, loading]);
 
     return (
-        <Routes>
-            <Route
-                path="/"
-                element={
-                    <Layout
-                        loggedIn={loggedIn}
-                        userInfo={userInfo}
-                        loading={loading}
-                    />
-                }
-            >
-                <Route index element={<Index />} />
+        <UserContext.Provider value={userInfo}>
+            <Routes>
                 <Route
-                    path="/games"
+                    path="/"
                     element={
-                        <GamesListPage
-                            userInfo={
-                                userInfo || {
-                                    userId: "",
-                                    username: "",
-                                    displayName: "",
-                                }
-                            }
+                        <Layout
+                            loggedIn={loggedIn}
+                            userInfo={userInfo}
+                            loading={loading}
                         />
                     }
-                />
-                <Route path="/compendium" element={<Compendium />} />
-                <Route path="/playground" element={<Playground />} />
-                <Route path="/collections" element={<Collections />} />
-                <Route
-                    path="/collections/:itemIdParam"
-                    element={<CollectionItemListPage />}
-                />
-            </Route>
-            <Route
-                path="/login"
-                element={
-                    <Layout
-                        loggedIn={loggedIn}
-                        userInfo={userInfo}
-                        loading={loading}
+                >
+                    <Route index element={<Index />} />
+                    <Route
+                        path="/games"
+                        element={
+                            <GamesListPage
+                                userInfo={
+                                    userInfo || {
+                                        userId: "",
+                                        username: "",
+                                        displayName: "",
+                                    }
+                                }
+                            />
+                        }
                     />
-                }
-            >
-                <Route index element={<Login />} />
-            </Route>
-        </Routes>
+                    <Route path="/compendium" element={<Compendium />} />
+                    <Route path="/playground" element={<Playground />} />
+                    <Route path="/content" element={<ContentPage />} />
+                    <Route path="/content/:current" element={<ContentPage />} />
+                </Route>
+                <Route
+                    path="/login"
+                    element={
+                        <Layout
+                            loggedIn={loggedIn}
+                            userInfo={userInfo}
+                            loading={loading}
+                        />
+                    }
+                >
+                    <Route index element={<Login />} />
+                </Route>
+            </Routes>
+        </UserContext.Provider>
     );
 }
 
@@ -205,10 +206,13 @@ function UpdateContextProvider(): JSX.Element {
             events: events,
             pop: (type: string) => {
                 const result = events.filter((v) => v.event === type);
-                dispatchCtx({
-                    type: "set",
-                    newUpdates: events.filter((v) => v.event !== type),
-                });
+                if (result.length > 0) {
+                    dispatchCtx({
+                        type: "set",
+                        newUpdates: events.filter((v) => v.event !== type),
+                    });
+                }
+
                 return result;
             },
         };
@@ -220,6 +224,9 @@ function UpdateContextProvider(): JSX.Element {
     ): UpdateContextType {
         switch (action.type) {
             case "activate":
+                if (source) {
+                    return state;
+                }
                 const src = new EventSource(
                     `/api/updates/poll/${action.sessionId}`,
                     {

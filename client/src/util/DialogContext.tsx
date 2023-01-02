@@ -3,7 +3,6 @@ import {
     Dialog,
     DialogActions,
     DialogContent,
-    DialogContentText,
     DialogTitle,
 } from "@mui/material";
 import {
@@ -21,12 +20,16 @@ import { Md5 } from "ts-md5";
 export type DialogContextOptions = {
     title: string;
     content?: ReactNode;
+    form?: (props: {
+        data: { [key: string]: any };
+        setData: (key: string, value: any) => void;
+    }) => JSX.Element;
     buttons: {
         id: string;
         text: string;
         color?: "primary" | "secondary" | "info" | "error" | "success";
         variant?: "outlined" | "contained";
-        action?: (id: string, initializer: any) => void;
+        action?: (id: string, initializer: any, data: any) => void;
     }[];
 };
 
@@ -45,18 +48,40 @@ export const DialogContext: Context<DialogContextType> =
 
 export function DialogProvider(props: { children: ReactNode }): JSX.Element {
     function reduce(
-        state: { [key: string]: [DialogContextOptions, boolean, any] },
+        state: {
+            [key: string]: [
+                DialogContextOptions,
+                boolean,
+                any,
+                { [key: string]: any }
+            ];
+        },
         action:
             | { type: "create"; id: string; options: DialogContextOptions }
             | { type: "hide"; id: string }
             | { type: "destroy"; id: string }
             | { type: "activate"; id: string; initializer: any }
-    ): { [key: string]: [DialogContextOptions, boolean, any] } {
-        let newState: { [key: string]: [DialogContextOptions, boolean, any] };
+            | { type: "form-update"; id: string; key: string; value: any }
+    ): {
+        [key: string]: [
+            DialogContextOptions,
+            boolean,
+            any,
+            { [key: string]: any }
+        ];
+    } {
+        let newState: {
+            [key: string]: [
+                DialogContextOptions,
+                boolean,
+                any,
+                { [key: string]: any }
+            ];
+        };
         switch (action.type) {
             case "create":
                 newState = { ...state };
-                newState[action.id] = [action.options, false, null];
+                newState[action.id] = [action.options, false, null, {}];
                 return newState;
             case "hide":
                 newState = { ...state };
@@ -75,6 +100,12 @@ export function DialogProvider(props: { children: ReactNode }): JSX.Element {
                 newState = { ...state };
                 if (Object.keys(newState).includes(action.id)) {
                     delete newState[action.id];
+                }
+                return newState;
+            case "form-update":
+                newState = { ...state };
+                if (Object.keys(newState).includes(action.id)) {
+                    newState[action.id][3][action.key] = action.value;
                 }
                 return newState;
         }
@@ -99,7 +130,8 @@ export function DialogProvider(props: { children: ReactNode }): JSX.Element {
             {props.children}
             <>
                 {Object.keys(dialogs).map((id: string) => {
-                    const [options, open, init] = dialogs[id];
+                    const [options, open, init, form] = dialogs[id];
+                    const FormElement = options.form;
                     return (
                         <Dialog
                             key={id}
@@ -112,7 +144,22 @@ export function DialogProvider(props: { children: ReactNode }): JSX.Element {
                             }
                         >
                             <DialogTitle>{options.title}</DialogTitle>
-                            <DialogContent>{options.content}</DialogContent>
+                            <DialogContent>
+                                {options.content}
+                                {FormElement && (
+                                    <FormElement
+                                        data={form}
+                                        setData={(key, value) => {
+                                            dispatch({
+                                                type: "form-update",
+                                                id: id,
+                                                key,
+                                                value,
+                                            });
+                                        }}
+                                    />
+                                )}
+                            </DialogContent>
 
                             <DialogActions>
                                 {options.buttons.length > 0 ? (
@@ -123,7 +170,7 @@ export function DialogProvider(props: { children: ReactNode }): JSX.Element {
                                             variant={b.variant ?? "contained"}
                                             onClick={() => {
                                                 b.action &&
-                                                    b.action(b.id, init);
+                                                    b.action(b.id, init, form);
                                                 dispatch({ type: "hide", id });
                                             }}
                                         >
