@@ -1,0 +1,20 @@
+{
+    "plugin_data": {
+        "slug": "core",
+        "display_name": "Core Plugin",
+        "tags": ["documents"]
+    },
+    "documentTypes": {
+        "free": {
+            "slug": "free",
+            "displayName": "Free-Form",
+            "icon": { "type": "material", "name": "MdOutlineArticle" },
+            "form": {
+                "supertype": "render",
+                "type": "group",
+                "children": []
+            }
+        }
+    },
+    "entrypoints": {}
+}

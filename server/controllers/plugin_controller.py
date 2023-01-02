@@ -1,5 +1,5 @@
 import os
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Union
 from unicodedata import category
 from pydantic import BaseModel
 from starlite import Controller, State, get, post, Provide
@@ -179,6 +179,20 @@ class PluginController(Controller):
                 return state.plugins.plugins[plugin].manifest.data
         else:
             raise PluginNotFoundError()
+
+    @get("/all/{key:str}")
+    async def get_all_keys(
+        self, state: State, session: Session, key: str
+    ) -> dict[str, Union[dict[str, Any], None]]:
+        out = {}
+        for k in state.plugins.plugins.keys():
+            plug: Plugin = state.plugins.plugins[k]
+            try:
+                out[k] = get_nested(plug.manifest.data, key)
+            except:
+                out[k] = None
+
+        return out
 
 
 class DataLoadModel(BaseModel):

@@ -12,6 +12,7 @@ import { loc } from "../../../util/localization";
 import { ReactNode, useState } from "react";
 import { Masonry } from "@mui/lab";
 import { CreateFolderDialog } from "../types/folder/createDialog";
+import { CreateDocumentDialog } from "../types/document/createDialog";
 
 function CreateButton(props: {
     icon: ReactNode;
@@ -35,7 +36,9 @@ function CreateButton(props: {
 }
 
 export function CreateGridViewItem(props: { parent: string }): JSX.Element {
-    const [creating, setCreating] = useState<boolean>(false);
+    const [creating, setCreating] = useState<"folder" | "document" | null>(
+        null
+    );
     return (
         <Paper variant="outlined" className="create-item">
             <Box className="addition-container">
@@ -53,13 +56,15 @@ export function CreateGridViewItem(props: { parent: string }): JSX.Element {
                                 icon={<MdCreateNewFolder size={32} />}
                                 tooltip={loc("content.create.folder")}
                                 onClick={() => {
-                                    setCreating(true);
+                                    setCreating("folder");
                                 }}
                             />
                             <CreateButton
                                 icon={<MdDescription size={32} />}
                                 tooltip={loc("content.create.document")}
-                                onClick={() => {}}
+                                onClick={() => {
+                                    setCreating("document");
+                                }}
                             />
                             <CreateButton
                                 icon={<MdPersonAdd size={32} />}
@@ -77,8 +82,15 @@ export function CreateGridViewItem(props: { parent: string }): JSX.Element {
             </Box>
             <CreateFolderDialog
                 parent={props.parent}
-                open={creating}
-                setOpen={setCreating}
+                open={creating === "folder"}
+                setOpen={(open: boolean) => setCreating(open ? "folder" : null)}
+            />
+            <CreateDocumentDialog
+                parent={props.parent}
+                open={creating === "document"}
+                setOpen={(open: boolean) =>
+                    setCreating(open ? "document" : null)
+                }
             />
         </Paper>
     );

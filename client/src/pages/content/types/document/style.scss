@@ -1,0 +1,18 @@
+.template-option {
+    position: relative;
+    padding-left: 40px;
+    display: inline-block;
+    height: 32px;
+    width: 100%;
+    padding-top: 8px;
+    box-sizing: border-box;
+    
+    .option-icon {
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 50%;
+        left: 8px;
+        transform: translate(0, -50%);
+    }
+}

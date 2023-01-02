@@ -9,7 +9,7 @@
             "npc_source",
             "npc_builder",
             "data_source",
-            "assets"
+            "asset_pack"
         ],
         "dependencies": ["d20_dice"]
     },

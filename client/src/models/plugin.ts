@@ -1,3 +1,5 @@
+import { AllRenderItems } from "../libs/modular-renderer/types";
+import { AbstractIconType } from "../util/AbstractIcon";
 import { CompendiumItem } from "./compendium";
 
 export type PluginTag =
@@ -23,7 +25,7 @@ export type MinimalPluginModel = {
 export type PluginDataModel = {
     slug: string;
     display_name: string;
-    tags: string[];
+    tags: PluginTag[];
     libraries?: string[];
     dependencies?: string[];
 };
@@ -93,6 +95,14 @@ export type SearchParams = {
     max?: number;
 };
 
+export type DocumentType = {
+    slug: string;
+    displayName: string;
+    icon: { type: AbstractIconType; name: string };
+    description?: string;
+    form: AllRenderItems;
+};
+
 // Manifest type
 export type PluginManifest = {
     plugin_data: PluginDataModel;
@@ -100,4 +110,5 @@ export type PluginManifest = {
     dice?: DiceModel;
     data_source?: DataSource;
     assets?: { [key: string]: string };
+    documentTypes?: { [key: string]: DocumentType };
 };

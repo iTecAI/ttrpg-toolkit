@@ -25,6 +25,12 @@
           "additionalProperties": {
             "type": "string"
           }
+        },
+        "documentTypes": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/DocumentType"
+          }
         }
       },
       "required": [
@@ -45,7 +51,7 @@
         "tags": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/PluginTag"
           }
         },
         "libraries": {
@@ -67,6 +73,20 @@
         "tags"
       ],
       "additionalProperties": false
+    },
+    "PluginTag": {
+      "type": "string",
+      "enum": [
+        "system",
+        "dice",
+        "character_sheet",
+        "character_loader",
+        "npc_source",
+        "npc_builder",
+        "documents",
+        "asset_pack",
+        "data_source"
+      ]
     },
     "EntrypointModel": {
       "type": "object",
@@ -1988,6 +2008,53 @@
         "type"
       ],
       "additionalProperties": false
+    },
+    "DocumentType": {
+      "type": "object",
+      "properties": {
+        "slug": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "icon": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "$ref": "#/definitions/AbstractIconType"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "name"
+          ],
+          "additionalProperties": false
+        },
+        "description": {
+          "type": "string"
+        },
+        "form": {
+          "$ref": "#/definitions/AllRenderItems"
+        }
+      },
+      "required": [
+        "slug",
+        "displayName",
+        "icon",
+        "form"
+      ],
+      "additionalProperties": false
+    },
+    "AbstractIconType": {
+      "type": "string",
+      "enum": [
+        "material",
+        "game"
+      ]
     }
   }
 }

@@ -201,6 +201,12 @@
                 "title": "New Folder"
             }
         },
+        "document": {
+            "create": {
+                "title": "New Document",
+                "template": "Document Template"
+            }
+        },
         "universal": {
             "create_name": "Name",
             "file-picker": {
