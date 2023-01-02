@@ -55,9 +55,16 @@ class PluginLibraryError(BaseException):
     message_class: str = "error.plugin.library"
 
 
-class PluginDoesNotExistError(BaseException):
+class PluginDoesNotExistError(BaseHTTPException):
     message: str = "Failed to locate plugin:"
     message_class: str = "error.plugin.missing"
+    status_code = HTTP_404_NOT_FOUND
+
+
+class PluginPathDoesNotExistError(BaseHTTPException):
+    message: str = "Failed to locate plugin path:"
+    message_class: str = "error.plugin.missing-path"
+    status_code = HTTP_404_NOT_FOUND
 
 
 class InvalidPluginError(BaseException):

@@ -13,6 +13,7 @@ from util import (
     plugin_dep,
     Plugin,
     guard_isDataSource,
+    get_nested,
 )
 from util.plugin_utils import SearchModel
 from models import Session
@@ -165,10 +166,17 @@ class PluginController(Controller):
 
     @get("/{plugin:str}")
     async def get_plugin_manifest(
-        self, plugin: str, state: State, session: Session
+        self, plugin: str, state: State, session: Session, path: Optional[str] = None
     ) -> PluginManifestModel:
         if plugin in state.plugins.plugins.keys():
-            return state.plugins.plugins[plugin].manifest.data
+            if path:
+                dat = state.plugins.plugins[plugin].manifest.data
+                try:
+                    return get_nested(dat, path)
+                except:
+                    raise exceptions.PluginPathDoesNotExistError(extra=path)
+            else:
+                return state.plugins.plugins[plugin].manifest.data
         else:
             raise PluginNotFoundError()
 
