@@ -281,9 +281,9 @@ class ContentRootController(Controller):
         if not user in content.shared.keys():
             raise UserDoesNotExistError()
 
+        to_update = content.sessions_with("view")
         del content.shared[user]
         content.save()
-        to_update = content.sessions_with("view")
         cluster: Cluster = state.cluster
         cluster.dispatch_update(to_update, f"content.update.{content.parent}")
         cluster.dispatch_update(to_update, f"content.update.{content.oid}")
