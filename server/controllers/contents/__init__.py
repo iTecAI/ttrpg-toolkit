@@ -23,6 +23,7 @@ from models import (
     PERMISSION_TYPE,
     PERMISSION_TYPE_KEY,
     PERMISSION_TYPE_KEYS,
+    ExpandedContentType,
 )
 from typing import Optional, Union
 import json
@@ -54,6 +55,16 @@ class ContentRootController(Controller):
     path = "/content"
     dependencies = {"session": Provide(session_dep)}
     guards = [guard_loggedIn]
+
+    @get(
+        "/specific/{content_id:str}",
+        dependencies={"content": Provide(content_dep)},
+        guards={guard_hasContentPermission("view")},
+    )
+    async def get_content(
+        self, content: ContentType, session: Session
+    ) -> ExpandedContentType:
+        return ExpandedContentType.from_ContentType(content, session.user)
 
     @post("/{content_type:str}")
     async def create_content(

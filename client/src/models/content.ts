@@ -18,6 +18,19 @@ export type MinimalContentType = {
     image: string | null;
     tags: string[];
     dataType: string;
+    data: string;
+};
+
+export type ExpandedContentType<T> = {
+    oid: string;
+    owner: string;
+    shared: SharePermission;
+    parent: string | "root";
+    name: string;
+    image: string | null;
+    tags: string[];
+    dataType: string;
+    data: T;
 };
 
 export type ShareType = {
@@ -25,4 +38,10 @@ export type ShareType = {
     owner: boolean;
     explicit: SharePermission;
     implicit: SharePermission;
+};
+
+export type DocumentItemType = {
+    plugin: string;
+    template: string;
+    contents: { [key: string]: any };
 };
