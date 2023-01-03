@@ -21,6 +21,7 @@ import {
     RenderAutocompleteFieldItem,
     RenderSwitchItem,
     RenderToggleButtonItem,
+    RenderTextEditor,
 } from "./renderTypes";
 
 import * as MdReactIcons from "react-icons/md";
@@ -173,7 +174,8 @@ export type AllRenderItems =
     | RenderSelectFieldOptionItem
     | RenderAutocompleteFieldItem
     | RenderSwitchItem
-    | RenderToggleButtonItem;
+    | RenderToggleButtonItem
+    | RenderTextEditor;
 export type AllSourceItems<T = any> =
     | ListSourceItem<T>
     | GeneratorSourceItem<T>;

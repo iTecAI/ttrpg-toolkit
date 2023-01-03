@@ -11,8 +11,8 @@
             "icon": { "type": "material", "name": "MdOutlineArticle" },
             "form": {
                 "supertype": "render",
-                "type": "group",
-                "children": []
+                "type": "text-editor",
+                "fieldId": "main"
             }
         }
     },

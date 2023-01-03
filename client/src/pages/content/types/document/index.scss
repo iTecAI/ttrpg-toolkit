@@ -41,5 +41,11 @@
         width: 100%;
         height: calc(100% - 48px);
         overflow: auto;
+        padding: 16px;
+        box-sizing: border-box;
+
+        #document-renderer {
+            height: 100%;
+        }
     }
 }

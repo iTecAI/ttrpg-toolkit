@@ -391,6 +391,9 @@
         },
         {
           "$ref": "#/definitions/RenderToggleButtonItem"
+        },
+        {
+          "$ref": "#/definitions/RenderTextEditor"
         }
       ]
     },
@@ -1400,6 +1403,21 @@
         },
         "validator": {
           "$ref": "#/definitions/ParsedFunction"
+        },
+        "lines": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string",
+              "const": "auto"
+            },
+            {
+              "type": "string",
+              "const": "full"
+            }
+          ]
         }
       },
       "required": [
@@ -1717,6 +1735,36 @@
         },
         "label": {
           "$ref": "#/definitions/ValueItem"
+        }
+      },
+      "required": [
+        "supertype",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    "RenderTextEditor": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "render"
+        },
+        "type": {
+          "type": "string",
+          "const": "text-editor"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        },
+        "fieldId": {
+          "type": "string"
+        },
+        "title": {
+          "$ref": "#/definitions/ValueItem"
+        },
+        "icon": {
+          "$ref": "#/definitions/IconType"
         }
       },
       "required": [

@@ -18,6 +18,7 @@ import { SelectFieldItem } from "./SelectFieldItem";
 import { AutocompleteFieldItem } from "./AutocompleteFieldItem";
 import { SwitchItem } from "./SwitchItem";
 import { ToggleButtonItem } from "./ToggleButtonItem";
+import { TextEditorItem } from "./text-editor/TextEditor";
 
 export type RendererFunctionProps<T> = {
     renderer: T;
@@ -53,4 +54,5 @@ export const Renderers: {
     "autocomplete-field": AutocompleteFieldItem,
     "toggle-switch": SwitchItem,
     "toggle-button": ToggleButtonItem,
+    "text-editor": TextEditorItem,
 };

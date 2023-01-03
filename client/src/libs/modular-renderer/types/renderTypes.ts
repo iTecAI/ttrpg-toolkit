@@ -204,6 +204,7 @@ export type RenderTextFieldItem = {
     label?: ValueItem;
     numerical?: boolean;
     validator?: ParsedFunction;
+    lines?: number | "auto" | "full";
 };
 
 export type RenderSelectFieldOptionItem = {
@@ -267,4 +268,13 @@ export type RenderToggleButtonItem = {
     fieldId?: string;
     icon?: IconType;
     label?: ValueItem;
+};
+
+export type RenderTextEditor = {
+    supertype: "render";
+    type: "text-editor";
+    conditionalRender?: ParsedFunction;
+    fieldId?: string;
+    title?: ValueItem;
+    icon?: IconType;
 };

@@ -84,6 +84,21 @@ export const TextFieldItem: RendererFunction<RenderTextFieldItem> = (
                           }
                         : undefined
                 }
+                multiline={
+                    renderer.lines !== undefined &&
+                    renderer.lines !== 1 &&
+                    renderer.lines !== 0
+                }
+                minRows={
+                    renderer.lines !== undefined && renderer.lines !== "auto"
+                        ? renderer.lines
+                        : undefined
+                }
+                maxRows={
+                    renderer.lines !== undefined && renderer.lines !== "auto"
+                        ? renderer.lines
+                        : undefined
+                }
             />
         </div>
     );
