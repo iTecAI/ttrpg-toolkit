@@ -34,6 +34,16 @@
             margin-left: 16px;
             transform: translate(0, -2px);
         }
+
+        .save-btn {
+            position: absolute;
+            top: 50%;
+            right: 8px;
+            transform: translate(0, -50%);
+            width: 32px;
+            height: 32px;
+            min-height: 32px;
+        }
     }
 
     .render-area {

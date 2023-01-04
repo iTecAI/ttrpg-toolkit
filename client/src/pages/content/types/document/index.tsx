@@ -2,13 +2,15 @@ import { Box } from "@mui/system";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { DocumentItemType } from "../../../../models/content";
-import { get } from "../../../../util/api";
+import { get, post } from "../../../../util/api";
 import { ExpandedContentType } from "../../../../models/content";
 import { DocumentType } from "../../../../models/plugin";
-import { Chip, Paper, Typography } from "@mui/material";
+import { Chip, Fab, Paper, Typography } from "@mui/material";
 import AbstractIcon from "../../../../util/AbstractIcon";
 import "./index.scss";
 import { ModularRenderer } from "../../../../libs/modular-renderer";
+import { useUpdate } from "../../../../util/updates";
+import { MdSave } from "react-icons/md";
 
 export function DocumentTypeRenderer(props: { itemId: string }): JSX.Element {
     const [doc, setDoc] =
@@ -17,6 +19,11 @@ export function DocumentTypeRenderer(props: { itemId: string }): JSX.Element {
     const [template, setTemplate] = useState<DocumentType | null>(null);
 
     const [form, setForm] = useState<{ [key: string]: any }>({});
+    const [updateName, setUpdateName] = useState<string>("");
+
+    useEffect(() => {
+        setUpdateName(`content.update.${props.itemId}`);
+    }, [props.itemId]);
 
     useEffect(() => {
         get<ExpandedContentType<DocumentItemType>>(
@@ -41,6 +48,17 @@ export function DocumentTypeRenderer(props: { itemId: string }): JSX.Element {
         }
     }, [doc]);
 
+    useUpdate((update) => {
+        get<ExpandedContentType<DocumentItemType>>(
+            `/content/specific/${props.itemId}`
+        ).then((result) => {
+            if (result.success) {
+                setDoc(result.value);
+                setForm(result.value.data.contents);
+            }
+        });
+    }, updateName);
+
     useEffect(() => {
         console.log(form);
     }, [form]);
@@ -64,6 +82,21 @@ export function DocumentTypeRenderer(props: { itemId: string }): JSX.Element {
                             className="type"
                             size="small"
                         />
+                        {doc.shared.edit && (
+                            <Fab
+                                color="primary"
+                                className="save-btn"
+                                size="small"
+                                onClick={() => {
+                                    post<ExpandedContentType<DocumentItemType>>(
+                                        `/content_types/documents/${doc.oid}/update`,
+                                        { body: form }
+                                    ).then(console.log);
+                                }}
+                            >
+                                <MdSave size={20} />
+                            </Fab>
+                        )}
                     </Paper>
                     <Box className="render-area">
                         <ModularRenderer

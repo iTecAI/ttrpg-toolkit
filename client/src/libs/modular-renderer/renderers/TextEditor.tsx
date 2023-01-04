@@ -54,7 +54,9 @@ export const TextEditorItem: RendererFunction<RenderTextEditor> = (
                 mode="html"
                 value={value ?? ""}
                 onChange={(value) => {
-                    setValue(value);
+                    if (value) {
+                        setValue(value);
+                    }
                 }}
             />
         </Box>

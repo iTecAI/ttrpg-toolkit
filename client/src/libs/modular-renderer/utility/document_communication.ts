@@ -28,7 +28,10 @@ export function useUpdateField(fieldName: string | undefined, fieldValue: any) {
     const staticContext = buildStaticContext(context);
     useEffect(() => {
         if (fieldName !== undefined && context) {
-            if (context.values[fieldName] !== fieldValue) {
+            if (
+                context.values[fieldName] !== fieldValue &&
+                fieldValue !== undefined
+            ) {
                 context.update(fieldName, fieldValue);
             }
         }
@@ -85,6 +88,9 @@ export function useFormField<T>(
     const [cont, setCont] = useState<boolean>(false);
     useMemo(() => {
         if (cont && val !== undefined && val !== null) {
+            return;
+        }
+        if (sub[fieldId ?? ""] === undefined) {
             return;
         }
         setVal(sub[fieldId ?? ""]);

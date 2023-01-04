@@ -1,5 +1,8 @@
 import ExampleTheme from "./themes/ExampleTheme";
-import { LexicalComposer } from "@lexical/react/LexicalComposer";
+import {
+    InitialConfigType,
+    LexicalComposer,
+} from "@lexical/react/LexicalComposer";
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
@@ -23,7 +26,7 @@ import AutoLinkPlugin from "./plugins/AutoLinkPlugin";
 import "./styles.scss";
 import "./index.scss";
 import { LexicalEditor, SerializedEditorState } from "lexical";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { EditorState } from "lexical";
 import {
     $convertFromMarkdownString,
@@ -61,7 +64,7 @@ function isControlled(props: RichTextProps): props is ControlledRTP {
 }
 
 export default function RichTextEditor(props: RichTextProps) {
-    const editorConfig = {
+    const editorConfig: InitialConfigType = {
         // The editor theme
         theme: ExampleTheme,
         // Handling of errors during update
@@ -82,16 +85,21 @@ export default function RichTextEditor(props: RichTextProps) {
             AutoLinkNode,
             LinkNode,
         ],
+        namespace: "rich-editor",
     };
 
     const [state, setState] = useState<EditorState>();
     const [editor, setEditor] = useState<LexicalEditor>();
+    const [initialized, setInitialized] = useState<boolean>(false);
 
     useEffect(() => {
         if (editor && state) {
             if (isControlled(props)) {
                 switch (props.mode) {
                     case "json":
+                        if (!initialized) {
+                            return;
+                        }
                         editor.setEditorState(state);
                         props.onChange(state.toJSON());
                         break;
@@ -104,6 +112,9 @@ export default function RichTextEditor(props: RichTextProps) {
                                 converted.endsWith(" ") ||
                                 converted.endsWith("\n")
                             ) {
+                                return;
+                            }
+                            if (!initialized) {
                                 return;
                             }
                             props.onChange(converted);
@@ -119,16 +130,26 @@ export default function RichTextEditor(props: RichTextProps) {
                             ) {
                                 return;
                             }
+                            if (!initialized) {
+                                return;
+                            }
+                            if (
+                                converted ===
+                                '<p class="editor-paragraph"><br></p>'
+                            ) {
+                                return;
+                            }
                             props.onChange(converted);
                         });
                         break;
                 }
             }
         }
-    }, [editor, state]);
+    }, [editor, state, initialized]);
 
     useEffect(() => {
         if (isControlled(props) && editor && state) {
+            console.log(editor, editor.getEditorState()._readOnly);
             switch (props.mode) {
                 case "json":
                     let newState = editor.parseEditorState(props.value);
@@ -153,9 +174,11 @@ export default function RichTextEditor(props: RichTextProps) {
                             )
                         );
                         setState(editor.getEditorState());
+                        console.log("SET", props.value);
                     });
                     break;
             }
+            setInitialized(true);
         }
     }, [props]);
 

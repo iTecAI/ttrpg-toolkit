@@ -17,6 +17,7 @@ import { useState } from "react";
 import { ShareDialog } from "../dialogs/shareDialog";
 import { useHorizontalScroll } from "../../../util/hscroll";
 import { useParams } from "react-router";
+import { ConfigDialog } from "../dialogs/configDialog";
 
 export function RenderGeneric(props: {
     item: MinimalContentType;
@@ -25,12 +26,14 @@ export function RenderGeneric(props: {
 }): JSX.Element {
     const { item, badge } = props;
     const [sharing, setSharing] = useState<boolean>(false);
+    const [config, setConfig] = useState<boolean>(false);
     const tagRef = useHorizontalScroll(0.25);
     const { id } = useParams();
     return (
         <Paper
             className={`generic-renderer${id === item.oid ? " selected" : ""}`}
             elevation={3}
+            onClick={(event) => event.stopPropagation()}
         >
             <Avatar
                 component={"image"}
@@ -65,6 +68,7 @@ export function RenderGeneric(props: {
                         className="btn settings"
                         color="info"
                         onClick={(event) => {
+                            setConfig(true);
                             event.stopPropagation();
                         }}
                     >
@@ -97,6 +101,7 @@ export function RenderGeneric(props: {
                 )}
             </Stack>
             <ShareDialog item={item} open={sharing} setOpen={setSharing} />
+            <ConfigDialog item={item} open={config} setOpen={setConfig} />
         </Paper>
     );
 }

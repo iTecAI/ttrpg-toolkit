@@ -241,6 +241,9 @@
                         "delete": "Delete",
                         "admin": "Admin"
                     }
+                },
+                "config": {
+                    "title": "Configure \"{{name}}\""
                 }
             }
         }

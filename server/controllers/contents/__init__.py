@@ -30,6 +30,7 @@ import json
 from pydantic import BaseModel
 from typing import Union, Optional
 from starlite.status_codes import *
+from .document import DocumentTypeController
 
 
 class ContentCreateModel(BaseModel):
