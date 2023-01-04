@@ -11,8 +11,16 @@
             "icon": { "type": "material", "name": "MdOutlineArticle" },
             "form": {
                 "supertype": "render",
-                "type": "text-editor",
-                "fieldId": "main"
+                "type": "group",
+                "children": [
+                    {
+                        "supertype": "render",
+                        "type": "text-editor",
+                        "fieldId": "free-text",
+                        "icon": "md.MdArticle",
+                        "title": "Free-Form Text"
+                    }
+                ]
             }
         }
     },

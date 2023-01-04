@@ -1,5 +1,7 @@
 export type SharePermissionValue = boolean | null;
 
+export type ContentDataType = "folder" | "document";
+
 export type SharePermission = {
     view: SharePermissionValue;
     edit: SharePermissionValue;

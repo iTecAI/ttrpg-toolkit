@@ -1,0 +1,68 @@
+@import "../../../theme/default.scss";
+
+.content-renderer {
+    .generic-renderer {
+        padding: 8px;
+        position: relative;
+        box-sizing: border-box;
+
+        &.selected {
+            border: 1px solid $primary;
+        }
+
+        .content-name {
+            position: absolute;
+            padding-left: 24px;
+            top: 4px;
+            left: 64px;
+
+            .badge {
+                position: absolute;
+                top: 50%;
+                left: 0px;
+                transform: translate(0, -50%);
+            }
+        }
+
+        .tags {
+            position: absolute;
+            bottom: 4px;
+            left: 64px;
+            display: inline-block;
+            height: fit-content;
+            width: calc(100% - 64px);
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .actions {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translate(0, -50%);
+            opacity: 0;
+            transition: opacity 0.1s;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            .btn {
+                display: inline-block;
+                width: 28px;
+                height: 28px;
+                min-height: 28px;
+                padding: 0px;
+                box-sizing: border-box;
+                position: relative;
+
+                svg {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
+}

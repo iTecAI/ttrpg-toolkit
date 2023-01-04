@@ -7,52 +7,100 @@
     height: 100%;
     overflow: hidden;
 
-    .top-bar {
-        position: absolute;
-        top: 0px;
-        left: 0px;
+    .item-select-resize {
         display: inline-block;
-        width: 100%;
-        height: 64px;
+        position: relative;
+        z-index: 60;
 
-        .contents {
-            position: absolute;
-            top: 8px;
-            left: 8px;
+        .view-container {
             display: inline-block;
-            width: calc(100% - 16px);
-            height: 48px;
-
-            .search {
-                width: 50%;
-                height: calc(100% - 6px);
+            height: 100%;
+            width: 100%;
+            position: relative;
+            border-radius: 0px;
+            .top-bar {
                 position: absolute;
+                top: 0px;
                 left: 0px;
-                bottom: 0px;
+                display: inline-block;
+                width: 100%;
+                height: 64px;
+                padding: 4px;
 
-                .MuiOutlinedInput-root {
-                    height: 100%;
+                .contents {
+                    position: absolute;
+                    top: 8px;
+                    left: 8px;
+                    display: inline-block;
+                    width: calc(100% - 16px);
+                    height: 48px;
+
+                    .search {
+                        width: calc(100% - 96px);
+                        height: calc(100% - 6px);
+                        position: absolute;
+                        left: 0px;
+                        bottom: 0px;
+
+                        .MuiOutlinedInput-root {
+                            height: 100%;
+                        }
+                    }
+
+                    .view-mode {
+                        position: absolute;
+                        top: 0px;
+                        right: 0px;
+                        display: inline-block;
+                        width: fit-content;
+                        height: 48px;
+                    }
                 }
             }
 
-            .view-mode {
+            .view-area {
                 position: absolute;
-                top: 0px;
-                right: 0px;
+                top: 64px;
+                left: 0px;
                 display: inline-block;
-                width: fit-content;
-                height: 48px;
+                width: 100%;
+                height: calc(100% - 64px);
+                overflow-y: auto;
             }
         }
     }
 
-    .view-area {
+    .item-view {
         position: absolute;
-        top: 64px;
-        left: 0px;
+        top: 0px;
         display: inline-block;
-        width: 100%;
-        height: calc(100% - 64px);
-        overflow-y: auto;
+        height: 100%;
+
+        .no-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.3;
+            pointer-events: none;
+
+            .icon {
+                height: 25vh;
+                width: auto;
+                color: white;
+            }
+
+            .text {
+                position: absolute;
+                bottom: -48px;
+                left: 50%;
+                transform: translate(-50%, 0px);
+                font-size: 32px;
+                color: white;
+                display: inline-block;
+                width: fit-content;
+                white-space: nowrap;
+            }
+        }
     }
 }

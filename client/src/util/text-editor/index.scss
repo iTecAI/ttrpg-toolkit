@@ -102,6 +102,10 @@
             background-color: $background-paper;
             color: white;
 
+            * {
+                color: white;
+            }
+
             .editor-text-code {
                 padding: 8px;
                 border-radius: 4px;

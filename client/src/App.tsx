@@ -140,12 +140,8 @@ function RouterChild() {
                     <Route path="/playground" element={<Playground />} />
                     <Route path="/content" element={<ContentPage />} />
                     <Route
-                        path="/content/folder/:current"
+                        path="/content/:type/:id"
                         element={<ContentPage />}
-                    />
-                    <Route
-                        path="/content/document/:current"
-                        element={<DocumentTypePage />}
                     />
                 </Route>
                 <Route

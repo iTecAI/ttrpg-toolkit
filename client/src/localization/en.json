@@ -185,6 +185,7 @@
         "reload_plugins": "Reload Plugins"
     },
     "content": {
+        "no-content": "No Content",
         "toolbar": {
             "search": "Search Content"
         },

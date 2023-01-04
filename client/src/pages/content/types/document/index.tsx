@@ -41,6 +41,10 @@ export function DocumentTypeRenderer(props: { itemId: string }): JSX.Element {
         }
     }, [doc]);
 
+    useEffect(() => {
+        console.log(form);
+    }, [form]);
+
     return (
         <Box className="document-container">
             {template && doc && (

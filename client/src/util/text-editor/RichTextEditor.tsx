@@ -29,6 +29,7 @@ import {
     $convertFromMarkdownString,
     $convertToMarkdownString,
 } from "@lexical/markdown";
+import { $generateNodesFromDOM, $generateHtmlFromNodes } from "@lexical/html";
 import { Box } from "@mui/system";
 
 function Placeholder() {
@@ -44,7 +45,7 @@ type ControlledRTP =
       }
     | {
           height?: number;
-          mode: "markdown";
+          mode: "markdown" | "html";
           value: string;
           onChange: (value: string) => void;
       };
@@ -108,6 +109,19 @@ export default function RichTextEditor(props: RichTextProps) {
                             props.onChange(converted);
                         });
                         break;
+                    case "html":
+                        editor.setEditorState(state);
+                        state.read(() => {
+                            let converted = $generateHtmlFromNodes(editor);
+                            if (
+                                converted.endsWith(" ") ||
+                                converted.endsWith("\n")
+                            ) {
+                                return;
+                            }
+                            props.onChange(converted);
+                        });
+                        break;
                 }
             }
         }
@@ -128,6 +142,19 @@ export default function RichTextEditor(props: RichTextProps) {
                         $convertFromMarkdownString(props.value);
                         setState(editor.getEditorState());
                     });
+                    break;
+                case "html":
+                    editor.update(() => {
+                        $generateNodesFromDOM(
+                            editor,
+                            new DOMParser().parseFromString(
+                                props.value,
+                                "text/html"
+                            )
+                        );
+                        setState(editor.getEditorState());
+                    });
+                    break;
             }
         }
     }, [props]);

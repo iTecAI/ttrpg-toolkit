@@ -1,0 +1,60 @@
+.view-root {
+    padding: 4px;
+    box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 60;
+
+    .create {
+        position: relative;
+        display: inline-block;
+        height: 56px;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+
+        .icon {
+            position: relative;
+            display: inline-block;
+            width: 56px;
+            height: 56px;
+            background-color: #00000020;
+
+            svg {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .buttons {
+            position: absolute;
+            top: 50%;
+            left: 56px;
+            transform: translate(0, -50%);
+            overflow-x: hidden;
+            white-space: nowrap;
+            display: inline-block;
+            height: 56px;
+            width: calc(100% - 56px);
+            box-sizing: border-box;
+            padding-left: 8px;
+            padding-top: 6px;
+
+            .create-btn {
+                position: relative;
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                min-height: 40px;
+
+                svg {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
+}
