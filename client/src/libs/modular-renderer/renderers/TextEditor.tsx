@@ -49,16 +49,18 @@ export const TextEditorItem: RendererFunction<RenderTextEditor> = (
                     )}
                 </Box>
             ) : null}
-            <RichTextEditor
-                height={512}
-                mode="html"
-                value={value ?? ""}
-                onChange={(value) => {
-                    if (value) {
-                        setValue(value);
-                    }
-                }}
-            />
+            {value && (
+                <RichTextEditor
+                    height={512}
+                    mode="html"
+                    value={value ?? ""}
+                    onChange={(newValue) => {
+                        if (newValue) {
+                            setValue(newValue);
+                        }
+                    }}
+                />
+            )}
         </Box>
     );
 };

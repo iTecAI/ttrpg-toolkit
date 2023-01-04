@@ -19,6 +19,7 @@ import { ListPlugin } from "@lexical/react/LexicalListPlugin";
 import { MarkdownShortcutPlugin } from "@lexical/react/LexicalMarkdownShortcutPlugin";
 import { TRANSFORMERS } from "@lexical/markdown";
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
+import { createHeadlessEditor } from "@lexical/headless";
 
 import ListMaxIndentLevelPlugin from "./plugins/ListMaxIndentLevelPlugin";
 import CodeHighlightPlugin from "./plugins/CodeHighlightPlugin";
@@ -90,16 +91,12 @@ export default function RichTextEditor(props: RichTextProps) {
 
     const [state, setState] = useState<EditorState>();
     const [editor, setEditor] = useState<LexicalEditor>();
-    const [initialized, setInitialized] = useState<boolean>(false);
 
     useEffect(() => {
         if (editor && state) {
             if (isControlled(props)) {
                 switch (props.mode) {
                     case "json":
-                        if (!initialized) {
-                            return;
-                        }
                         editor.setEditorState(state);
                         props.onChange(state.toJSON());
                         break;
@@ -112,9 +109,6 @@ export default function RichTextEditor(props: RichTextProps) {
                                 converted.endsWith(" ") ||
                                 converted.endsWith("\n")
                             ) {
-                                return;
-                            }
-                            if (!initialized) {
                                 return;
                             }
                             props.onChange(converted);
@@ -130,26 +124,16 @@ export default function RichTextEditor(props: RichTextProps) {
                             ) {
                                 return;
                             }
-                            if (!initialized) {
-                                return;
-                            }
-                            if (
-                                converted ===
-                                '<p class="editor-paragraph"><br></p>'
-                            ) {
-                                return;
-                            }
                             props.onChange(converted);
                         });
                         break;
                 }
             }
         }
-    }, [editor, state, initialized]);
+    }, [editor, state]);
 
     useEffect(() => {
         if (isControlled(props) && editor && state) {
-            console.log(editor, editor.getEditorState()._readOnly);
             switch (props.mode) {
                 case "json":
                     let newState = editor.parseEditorState(props.value);
@@ -178,7 +162,6 @@ export default function RichTextEditor(props: RichTextProps) {
                     });
                     break;
             }
-            setInitialized(true);
         }
     }, [props]);
 
