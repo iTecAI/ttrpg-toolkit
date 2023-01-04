@@ -39,11 +39,11 @@ export const TextEditorItem: RendererFunction<RenderTextEditor> = (
                             icon={renderer.icon}
                             data={props.data}
                             formData={props.formData}
-                            iconProps={{ className: "title-icon", size: 32 }}
+                            iconProps={{ className: "title-icon", size: 24 }}
                         />
                     )}
                     {renderer.title && (
-                        <Typography className="title-text" variant="h4">
+                        <Typography className="title-text" variant="h5">
                             {title}
                         </Typography>
                     )}
