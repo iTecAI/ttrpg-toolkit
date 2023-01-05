@@ -52,7 +52,7 @@ export default function RichTextEditor(props: {
             value={props.value}
             onChange={props.onChange}
             style={{
-                height: props.height,
+                height: props.height ? `calc(props.height - 40px)` : undefined,
             }}
             modules={modules}
             formats={formats}

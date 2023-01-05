@@ -16,20 +16,39 @@ import { ConfirmDeleteDialog } from "./dialogs/confirmDeleteDialog";
 import { ListView } from "./listview";
 import { Rnd } from "react-rnd";
 import { useWindowSize } from "../../util/general";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { DocumentTypeRenderer } from "./types/document";
 import { isArray } from "../../libs/modular-renderer/types/guards";
+import { get } from "../../util/api";
 
 function RenderContentPage(props: {
     type: ContentDataType;
     id: string;
 }): JSX.Element {
+    const nav = useNavigate();
+    useEffect(() => {
+        if (props.type === "folder") {
+            get<string[]>(`/content/${props.id}/parents`).then((result) => {
+                if (result.success) {
+                    nav(
+                        `/content/folder/expanded/${
+                            result.value.join("/") +
+                            (result.value.length > 0 ? "/" : "") +
+                            props.id
+                        }`
+                    );
+                }
+            });
+        }
+    }, [props.type, props.id]);
     const RENDERER_MAP: {
         [key: string]: (props: { itemId: string }) => JSX.Element;
     } = {
         document: DocumentTypeRenderer,
     };
-
+    if (props.type === "folder") {
+        return <></>;
+    }
     const RendererElement = RENDERER_MAP[props.type];
     return <RendererElement itemId={props.id} />;
 }

@@ -13,6 +13,7 @@ import { useFormField } from "../utility/document_communication";
 import { useEffect, useState } from "react";
 import { get } from "../../../util/api";
 import { calculateGravatar } from "../../../util/gravatar";
+import { useNavigate } from "react-router";
 
 type ContentSearchResult = {
     oid: string;
@@ -64,6 +65,8 @@ export const ContentSelectorFieldItem: RendererFunction<
             });
         }
     }, [search]);
+
+    const nav = useNavigate();
 
     return (
         <div className="render-item child content-select-field">
@@ -118,6 +121,10 @@ export const ContentSelectorFieldItem: RendererFunction<
                                     }
                                 />
                             }
+                            onClick={(event) => {
+                                event.stopPropagation();
+                                nav(`/content/folder/${option.oid}`);
+                            }}
                             {...getTagProps({ index })}
                         />
                     ))

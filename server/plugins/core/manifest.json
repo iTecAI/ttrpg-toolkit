@@ -11,7 +11,9 @@
             "icon": { "type": "material", "name": "MdOutlineArticle" },
             "form": {
                 "supertype": "render",
-                "type": "group",
+                "type": "stack",
+                "spacing": 2,
+                "direction": "vertical",
                 "children": [
                     {
                         "supertype": "render",
@@ -19,6 +21,21 @@
                         "fieldId": "free-text",
                         "icon": "md.MdArticle",
                         "title": "Free-Form Text"
+                    },
+                    {
+                        "supertype": "render",
+                        "type": "content-selector",
+                        "fieldId": "related",
+                        "fullWidth": true,
+                        "icon": {
+                            "type": {
+                                "type": "icon",
+                                "icon": "md.MdAutorenew"
+                            },
+                            "position": "start"
+                        },
+                        "label": "Related Documents",
+                        "multiple": true
                     }
                 ]
             }

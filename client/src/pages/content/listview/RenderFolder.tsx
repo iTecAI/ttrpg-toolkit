@@ -36,7 +36,7 @@ export default function RenderFolder(
                         ).then((result) => {
                             if (result.success) {
                                 nav(
-                                    `/content/folder/${
+                                    `/content/folder/expanded/${
                                         result.value.join("/") +
                                         (result.value.length > 0 ? "/" : "") +
                                         props.item.oid
