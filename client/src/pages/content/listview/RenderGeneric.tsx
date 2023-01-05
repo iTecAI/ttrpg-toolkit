@@ -27,10 +27,14 @@ export function RenderGeneric(props: {
     const [sharing, setSharing] = useState<boolean>(false);
     const [config, setConfig] = useState<boolean>(false);
     const tagRef = useHorizontalScroll(0.25);
-    const { id } = useParams();
+    const { id, "*": stub } = useParams();
     return (
         <Paper
-            className={`generic-renderer${id === item.oid ? " selected" : ""}`}
+            className={`generic-renderer${
+                id === item.oid || (stub && stub.split("/").includes(item.oid))
+                    ? " selected"
+                    : ""
+            }`}
             elevation={3}
         >
             <Avatar
