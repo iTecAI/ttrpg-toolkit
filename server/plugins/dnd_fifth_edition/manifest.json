@@ -5,7 +5,6 @@
         "tags": [
             "system",
             "character_sheet",
-            "character_loader",
             "npc_source",
             "npc_builder",
             "data_source",
@@ -13,7 +12,12 @@
         ],
         "dependencies": ["d20_dice"]
     },
-    "entrypoints": {},
+    "entrypoints": {
+        "character": {
+            "file": "characters/__init__.py",
+            "controllers": ["Controller"]
+        }
+    },
     "data_source": {
         "kwargs": {},
         "default_category": "class",
@@ -78,5 +82,11 @@
         "sorcerer": "assets/sorcerer.jpeg",
         "warlock": "assets/warlock.jpeg",
         "wizard": "assets/wizard.jpeg"
+    },
+    "characterTypes": {
+        "base": {
+            "slug": "base",
+            "displayName": "5e Character"
+        }
     }
 }

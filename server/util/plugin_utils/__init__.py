@@ -6,6 +6,6 @@ from .dice import (
     StaticSegmentModel,
     SummaryModel,
 )
-
-from .character import AbstractCharacter
+from .characters import AbstractCharacter
 from .data_source import AbstractDataSourceItem, AbstractDataSourceLoader, SearchModel
+from .util_types import *

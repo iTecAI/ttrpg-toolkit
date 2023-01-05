@@ -31,6 +31,12 @@
           "additionalProperties": {
             "$ref": "#/definitions/DocumentType"
           }
+        },
+        "characterTypes": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/CharacterSheetModel"
+          }
         }
       },
       "required": [
@@ -80,7 +86,6 @@
         "system",
         "dice",
         "character_sheet",
-        "character_loader",
         "npc_source",
         "npc_builder",
         "documents",
@@ -2181,6 +2186,105 @@
         "material",
         "game"
       ]
+    },
+    "CharacterSheetModel": {
+      "type": "object",
+      "properties": {
+        "slug": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "loaders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CharacterSheetLoader"
+          }
+        },
+        "builder": {
+          "$ref": "#/definitions/CharacterSheetBuilder"
+        },
+        "objectModel": {
+          "type": "object",
+          "properties": {
+            "entrypoint": {
+              "type": "string"
+            },
+            "export": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "entrypoint",
+            "export"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "slug",
+        "displayName",
+        "builder",
+        "objectModel"
+      ],
+      "additionalProperties": false
+    },
+    "CharacterSheetLoader": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "endpoint": {
+          "type": "string"
+        },
+        "form": {
+          "$ref": "#/definitions/AllRenderItems"
+        }
+      },
+      "required": [
+        "name",
+        "endpoint",
+        "form"
+      ],
+      "additionalProperties": false
+    },
+    "CharacterSheetBuilder": {
+      "type": "object",
+      "properties": {
+        "endpoint": {
+          "type": "string"
+        },
+        "tabs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "slug": {
+                "type": "string"
+              },
+              "displayName": {
+                "type": "string"
+              },
+              "form": {
+                "$ref": "#/definitions/AllRenderItems"
+              }
+            },
+            "required": [
+              "slug",
+              "displayName",
+              "form"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "endpoint",
+        "tabs"
+      ],
+      "additionalProperties": false
     }
   }
 }

@@ -6,7 +6,6 @@ export type PluginTag =
     | "system"
     | "dice"
     | "character_sheet"
-    | "character_loader"
     | "npc_source"
     | "npc_builder"
     | "documents"
@@ -103,9 +102,26 @@ export type DocumentType = {
     form: AllRenderItems;
 };
 
-export type CharacterSheetType = {
+export type CharacterSheetLoader = {
+    name: string;
+    endpoint: string;
+    form: AllRenderItems;
+};
+
+export type CharacterSheetBuilder = {
+    endpoint: string;
+    tabs: { slug: string; displayName: string; form: AllRenderItems }[];
+};
+
+export type CharacterSheetModel = {
     slug: string;
     displayName: string;
+    loaders?: CharacterSheetLoader[];
+    builder: CharacterSheetBuilder;
+    objectModel: {
+        entrypoint: string;
+        export: string;
+    };
 };
 
 // Manifest type
@@ -116,4 +132,5 @@ export type PluginManifest = {
     data_source?: DataSource;
     assets?: { [key: string]: string };
     documentTypes?: { [key: string]: DocumentType };
+    characterTypes?: { [key: string]: CharacterSheetModel };
 };
