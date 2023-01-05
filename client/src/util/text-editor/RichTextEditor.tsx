@@ -44,6 +44,7 @@ export default function RichTextEditor(props: {
     height?: string;
     value?: string;
     onChange?: (value: string) => void;
+    disabled?: boolean;
 }): JSX.Element {
     return (
         <ReactQuill
@@ -55,6 +56,7 @@ export default function RichTextEditor(props: {
             }}
             modules={modules}
             formats={formats}
+            className={`rich-editor${props.disabled ? " disabled" : ""}`}
         />
     );
 }

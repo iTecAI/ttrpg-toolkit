@@ -5,6 +5,14 @@
     border: none;
     box-shadow: $paper-2;
 
+    &.disabled {
+        pointer-events: none;
+
+        .ql-toolbar {
+            opacity: 0.3;
+        }
+    }
+
     * {
         font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     }

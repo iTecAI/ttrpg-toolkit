@@ -4,7 +4,7 @@ import * as React from "react";
 import { useFormField } from "../utility/document_communication";
 import { Box, SxProps } from "@mui/system";
 import { Icon } from "./common";
-import { useValueItem } from "../utility/hooks";
+import { useDisabled, useValueItem } from "../utility/hooks";
 import { Typography } from "@mui/material";
 import RichTextEditor from "../../../util/text-editor/RichTextEditor";
 
@@ -29,6 +29,9 @@ export const TextEditorItem: RendererFunction<RenderTextEditor> = (
     const { renderer } = props;
     const [value, setValue] = useFormField<string>(renderer.fieldId);
     const title = useValueItem(renderer.title ?? "");
+    const disabled = useDisabled();
+
+    console.log(disabled);
 
     return (
         <Box className="render-item text-editor child" sx={style}>
@@ -53,6 +56,7 @@ export const TextEditorItem: RendererFunction<RenderTextEditor> = (
                 height="512px"
                 value={value ?? ""}
                 onChange={setValue}
+                disabled={disabled}
             />
         </Box>
     );

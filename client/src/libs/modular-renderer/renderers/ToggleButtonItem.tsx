@@ -3,7 +3,7 @@ import { RendererFunction, RendererFunctionProps } from ".";
 import { RenderToggleButtonItem } from "../types/renderTypes";
 import * as React from "react";
 import { useFormField } from "../utility/document_communication";
-import { useValueItem } from "../utility/hooks";
+import { useDisabled, useValueItem } from "../utility/hooks";
 import { Icon } from "./common";
 
 export const ToggleButtonItem: RendererFunction<RenderToggleButtonItem> = (
@@ -21,8 +21,10 @@ export const ToggleButtonItem: RendererFunction<RenderToggleButtonItem> = (
     ) : (
         <></>
     );
+    const disabled = useDisabled();
     return (
         <ToggleButton
+            disabled={disabled}
             color={Boolean(value) ? "primary" : undefined}
             onClick={(event) => setValue(!Boolean(value))}
             selected={Boolean(value)}

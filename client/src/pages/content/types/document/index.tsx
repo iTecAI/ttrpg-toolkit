@@ -5,7 +5,7 @@ import { DocumentItemType } from "../../../../models/content";
 import { get, post } from "../../../../util/api";
 import { ExpandedContentType } from "../../../../models/content";
 import { DocumentType } from "../../../../models/plugin";
-import { Chip, Fab, Paper, Typography } from "@mui/material";
+import { Chip, Fab, Paper, Switch, Typography } from "@mui/material";
 import AbstractIcon from "../../../../util/AbstractIcon";
 import "./index.scss";
 import { ModularRenderer } from "../../../../libs/modular-renderer";
@@ -105,6 +105,7 @@ export function DocumentTypeRenderer(props: { itemId: string }): JSX.Element {
                             data={{}}
                             formData={form}
                             onFormDataChange={setForm}
+                            disabled={!doc.shared.edit}
                         />
                     </Box>
                 </>

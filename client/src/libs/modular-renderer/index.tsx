@@ -15,6 +15,8 @@ export function ModularRenderer(props: {
     formData?: { [key: string]: any };
     /** Function to update on form data change */
     onFormDataChange?: (data: { [key: string]: any }) => void;
+    /** Whether to disable form inputs */
+    disabled?: boolean;
 }) {
     const [formData, setFormData] = useState<{ [key: string]: any }>(
         props.formData ?? {}
@@ -32,12 +34,14 @@ export function ModularRenderer(props: {
         },
         values: formData,
         data: props.data,
+        disabled: props.disabled ?? false,
     });
 
     useEffect(() => {
         if (
             JSON.stringify(props.formData) !== JSON.stringify(doc.values) ||
-            JSON.stringify(props.data) !== JSON.stringify(doc.data)
+            JSON.stringify(props.data) !== JSON.stringify(doc.data) ||
+            props.disabled !== doc.disabled
         ) {
             setDoc({
                 documentId: props.id,
@@ -52,9 +56,10 @@ export function ModularRenderer(props: {
                 },
                 values: formData,
                 data: props.data,
+                disabled: props.disabled ?? false,
             });
         }
-    }, [props.formData, props.data]);
+    }, [props.formData, props.data, props.disabled]);
 
     useEffect(
         () => props.formData && setFormData(props.formData),

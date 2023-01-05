@@ -3,7 +3,7 @@ import { RendererFunction, RendererFunctionProps } from ".";
 import { RenderSwitchItem } from "../types/renderTypes";
 import * as React from "react";
 import { useFormField } from "../utility/document_communication";
-import { useValueItem } from "../utility/hooks";
+import { useDisabled, useValueItem } from "../utility/hooks";
 import { MdRadioButtonChecked, MdRadioButtonUnchecked } from "react-icons/md";
 
 export const SwitchItem: RendererFunction<RenderSwitchItem> = (
@@ -12,6 +12,7 @@ export const SwitchItem: RendererFunction<RenderSwitchItem> = (
     const { renderer, data } = props;
     const [value, setValue] = useFormField<boolean>(renderer.fieldId);
     const label = useValueItem(renderer.label ?? "", data);
+    const disabled = useDisabled();
     function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
         setValue(event.target.checked);
     }
@@ -26,6 +27,7 @@ export const SwitchItem: RendererFunction<RenderSwitchItem> = (
                         />
                     }
                     label={label}
+                    disabled={disabled}
                 />
             );
         case "radio":
@@ -40,6 +42,7 @@ export const SwitchItem: RendererFunction<RenderSwitchItem> = (
                         />
                     }
                     label={label}
+                    disabled={disabled}
                 />
             );
         case "switch":
@@ -52,6 +55,7 @@ export const SwitchItem: RendererFunction<RenderSwitchItem> = (
                         />
                     }
                     label={label}
+                    disabled={disabled}
                 />
             );
     }

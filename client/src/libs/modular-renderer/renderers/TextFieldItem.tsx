@@ -1,7 +1,7 @@
 import { InputAdornment, TextField } from "@mui/material";
 import { RendererFunction, RendererFunctionProps } from ".";
 import { RenderTextFieldItem } from "../types/renderTypes";
-import { useValueItem } from "../utility/hooks";
+import { useDisabled, useValueItem } from "../utility/hooks";
 import { ModularAvatar } from "./common";
 import { useFormField } from "../utility/document_communication";
 import { useState } from "react";
@@ -25,10 +25,12 @@ export const TextFieldItem: RendererFunction<RenderTextFieldItem> = (
 
     const [val, setVal] = useFormField<string | number>(renderer.fieldId);
     const [errorText, setErrorText] = useState<string | undefined>(undefined);
+    const disabled = useDisabled();
 
     return (
         <div className="render-item child text-field">
             <TextField
+                disabled={disabled}
                 placeholder={placeholder}
                 label={renderer.label && label}
                 variant={variant}

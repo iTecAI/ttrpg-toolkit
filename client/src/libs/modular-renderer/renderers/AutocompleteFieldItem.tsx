@@ -1,7 +1,7 @@
 import { Autocomplete, Chip, InputAdornment, TextField } from "@mui/material";
 import { RendererFunction, RendererFunctionProps } from ".";
 import { RenderAutocompleteFieldItem } from "../types/renderTypes";
-import { useValueItem } from "../utility/hooks";
+import { useDisabled, useValueItem } from "../utility/hooks";
 import { ModularAvatar } from "./common";
 import { useFormField } from "../utility/document_communication";
 import { useEffect, useMemo, useState } from "react";
@@ -62,6 +62,7 @@ export const AutocompleteFieldItem: RendererFunction<
     const { renderer, data } = props;
 
     const [dat, setDat] = useState<any>(data);
+    const disabled = useDisabled();
 
     useEffect(() => {
         if (JSON.stringify(dat) !== JSON.stringify(data)) {
@@ -85,6 +86,7 @@ export const AutocompleteFieldItem: RendererFunction<
     return (
         <div className="render-item child select-field">
             <Autocomplete
+                disabled={disabled}
                 disablePortal
                 multiple={renderer.multiple ?? false}
                 placeholder={placeholder}

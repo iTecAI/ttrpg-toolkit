@@ -4,7 +4,7 @@ import {
     RenderSelectFieldItem,
     RenderSelectFieldOptionItem,
 } from "../types/renderTypes";
-import { useValueItem } from "../utility/hooks";
+import { useDisabled, useValueItem } from "../utility/hooks";
 import { ModularAvatar } from "./common";
 import { useFormField } from "../utility/document_communication";
 import { isArray } from "../types/guards";
@@ -24,12 +24,14 @@ export const SelectFieldItem: RendererFunction<RenderSelectFieldItem> = (
 
     const icon = iconDesc && <ModularAvatar item={iconDesc.type} />;
     const iconPos = iconDesc && (iconDesc.position ?? "start");
+    const disabled = useDisabled();
 
     const [val, setVal] = useFormField<any>(renderer.fieldId);
 
     return (
         <div className="render-item child select-field">
             <TextField
+                disabled={disabled}
                 placeholder={placeholder}
                 label={renderer.label && label}
                 variant={variant}

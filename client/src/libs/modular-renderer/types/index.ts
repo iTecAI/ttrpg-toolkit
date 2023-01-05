@@ -45,6 +45,7 @@ export type ModularDocument = {
     update: (field: string, value: any) => void;
     values: FormData;
     data: RawData;
+    disabled: boolean;
 };
 
 export type TextItem = {

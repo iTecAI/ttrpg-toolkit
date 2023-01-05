@@ -58,3 +58,8 @@ export function useValueItem(item: ValueItem, dataOverride?: any): any {
     }
     return result;
 }
+
+export function useDisabled(): boolean {
+    const context = useContext(DocumentContext);
+    return context ? context.disabled ?? false : false;
+}
