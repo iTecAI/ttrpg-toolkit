@@ -47,7 +47,6 @@ export const SelectFieldItem: RendererFunction<RenderSelectFieldItem> = (
                         : val ?? ""
                 }
                 onChange={(event) => {
-                    console.log(event.target.value);
                     setVal(event.target.value);
                 }}
                 fullWidth={fullWidth}

@@ -83,7 +83,7 @@ class ContentSearchResult(BaseModel):
     dataType: str
 
     @classmethod
-    def from_ContentType(content: ContentType):
+    def from_ContentType(cls, content: ContentType):
         return ContentSearchResult(
             oid=content.oid,
             name=content.name,

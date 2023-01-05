@@ -278,3 +278,20 @@ export type RenderTextEditor = {
     title?: ValueItem;
     icon?: IconType;
 };
+
+export type RenderContentSelector = {
+    supertype: "render";
+    type: "content-selector";
+    conditionalRender?: ParsedFunction;
+    fieldId?: string;
+    variant?: "filled" | "outlined" | "standard";
+    fullWidth?: boolean;
+    icon?: {
+        type: AvatarType;
+        position?: "start" | "end";
+    };
+    multiple?: boolean;
+    placeholder?: ValueItem;
+    label?: ValueItem;
+    allowedTypes?: ("folder" | "document" | "character" | "map")[];
+};

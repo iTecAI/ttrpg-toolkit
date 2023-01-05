@@ -114,6 +114,23 @@
         },
         {
             "supertype": "render",
+            "type": "content-selector",
+            "fieldId": "content-item",
+            "multiple": true,
+            "placeholder": "Select Content",
+            "icon": {
+                "type": {
+                    "type": "icon",
+                    "icon": {
+                        "family": "md",
+                        "name": "MdDescription"
+                    }
+                },
+                "position": "start"
+            }
+        },
+        {
+            "supertype": "render",
             "type": "toggle-switch",
             "fieldId": "switch1",
             "label": "Switch 1",

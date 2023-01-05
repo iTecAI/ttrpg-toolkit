@@ -29,6 +29,13 @@ export function useUpdateField(fieldName: string | undefined, fieldValue: any) {
     useEffect(() => {
         if (fieldName !== undefined && context) {
             if (
+                typeof fieldValue === "object" &&
+                JSON.stringify(fieldValue) ===
+                    JSON.stringify(context.values[fieldName])
+            ) {
+                return;
+            }
+            if (
                 context.values[fieldName] !== fieldValue &&
                 fieldValue !== undefined
             ) {
@@ -100,5 +107,19 @@ export function useFormField<T>(
     }, [sub, cont]);
 
     useUpdateField(fieldId ?? undefined, val);
-    return [val, setVal];
+    return [
+        val,
+        (value: T | null) => {
+            if (
+                typeof value === "object" &&
+                JSON.stringify(value) === JSON.stringify(val)
+            ) {
+                return;
+            }
+            if (value === val) {
+                return;
+            }
+            setVal(value);
+        },
+    ];
 }

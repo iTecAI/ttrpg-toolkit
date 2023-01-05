@@ -14,6 +14,7 @@ export function Playground() {
         switch2: false,
         switch3: true,
         button: false,
+        "content-item": [],
     });
     return (
         <Container>

@@ -394,6 +394,9 @@
         },
         {
           "$ref": "#/definitions/RenderTextEditor"
+        },
+        {
+          "$ref": "#/definitions/RenderContentSelector"
         }
       ]
     },
@@ -1765,6 +1768,81 @@
         },
         "icon": {
           "$ref": "#/definitions/IconType"
+        }
+      },
+      "required": [
+        "supertype",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    "RenderContentSelector": {
+      "type": "object",
+      "properties": {
+        "supertype": {
+          "type": "string",
+          "const": "render"
+        },
+        "type": {
+          "type": "string",
+          "const": "content-selector"
+        },
+        "conditionalRender": {
+          "$ref": "#/definitions/ParsedFunction"
+        },
+        "fieldId": {
+          "type": "string"
+        },
+        "variant": {
+          "type": "string",
+          "enum": [
+            "filled",
+            "outlined",
+            "standard"
+          ]
+        },
+        "fullWidth": {
+          "type": "boolean"
+        },
+        "icon": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "$ref": "#/definitions/AvatarType"
+            },
+            "position": {
+              "type": "string",
+              "enum": [
+                "start",
+                "end"
+              ]
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "additionalProperties": false
+        },
+        "multiple": {
+          "type": "boolean"
+        },
+        "placeholder": {
+          "$ref": "#/definitions/ValueItem"
+        },
+        "label": {
+          "$ref": "#/definitions/ValueItem"
+        },
+        "allowedTypes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "folder",
+              "document",
+              "character",
+              "map"
+            ]
+          }
         }
       },
       "required": [

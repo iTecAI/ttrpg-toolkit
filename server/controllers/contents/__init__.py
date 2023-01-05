@@ -312,13 +312,18 @@ class ContentRootController(Controller):
 
     @get("/")
     async def search_content(
-        self, state: State, session: Session, q: Optional[str] = None
+        self,
+        state: State,
+        session: Session,
+        q: Optional[str] = None,
+        t: Optional[str] = None,
     ) -> list[ContentSearchResult]:
         user = session.user
         all_accessible = ContentType.load_multiple_from_query(
             {
                 "$or": [
-                    {f"shared.{user.oid}": {"$or": [{"view": True}, {"admin": True}]}},
+                    {f"shared.{user.oid}.view": True},
+                    {f"shared.{user.oid}.admin": True},
                     {"owner": user.oid},
                 ]
             },
@@ -328,7 +333,11 @@ class ContentRootController(Controller):
         return [
             ContentSearchResult.from_ContentType(c)
             for c in all_accessible
-            if q == None or (c.name.lower() in q.lower() or q.lower() in c.name.lower())
+            if (
+                q == None
+                or (c.name.lower() in q.lower() or q.lower() in c.name.lower())
+                and (t == None or c.dataType in t.split(","))
+            )
         ]
 
     @get(
