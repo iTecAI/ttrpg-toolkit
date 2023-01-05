@@ -16,6 +16,7 @@ import {
 } from "@mui/material";
 import { calculateGravatar } from "../../../util/gravatar";
 import { loc } from "../../../util/localization";
+import { useNavigate, useParams } from "react-router";
 
 export function ConfirmDeleteDialog(props: {
     item: MinimalContentType;
@@ -23,6 +24,8 @@ export function ConfirmDeleteDialog(props: {
     setOpen: (open: boolean) => void;
 }) {
     const [deleted, setDeleted] = useState<MinimalContentType[] | null>(null);
+    const { id } = useParams();
+    const nav = useNavigate();
     useEffect(() => {
         get<MinimalContentType[]>(
             `/content/query_delete/${props.item.oid}`
@@ -88,6 +91,9 @@ export function ConfirmDeleteDialog(props: {
                     variant="contained"
                     onClick={() => {
                         del(`/content/${props.item.oid}`);
+                        if (props.item.oid === id) {
+                            nav("/content");
+                        }
                         close();
                     }}
                 >

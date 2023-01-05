@@ -22,7 +22,6 @@ import { Playground } from "./pages/playground/Playground";
 import { UpdateType } from "./util/updates";
 import { DialogProvider } from "./util/DialogContext";
 import { ContentPage } from "./pages/content";
-import { DocumentTypePage } from "./pages/content/types/document";
 export const RootContext: React.Context<{} | RootModel> = React.createContext(
     {}
 );

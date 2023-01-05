@@ -209,7 +209,11 @@ class ContentType(ORM):
             for c in children:
                 results.extend(c.delete(content, dry_run=dry_run))
         else:
-            raise NotImplementedError("TODO: Other data types")
+            collection_map = {"document": "documents"}
+            if not dry_run:
+                self.database[collection_map[self.dataType]].delete_one(
+                    {"oid": self.data}
+                )
 
         if not dry_run and self.image:
             content.delete(self.image)

@@ -1,13 +1,4 @@
-import {
-    Avatar,
-    Badge,
-    Chip,
-    Fab,
-    IconButton,
-    Paper,
-    Stack,
-    Typography,
-} from "@mui/material";
+import { Avatar, Chip, Fab, Paper, Stack, Typography } from "@mui/material";
 import { MinimalContentType } from "../../../models/content";
 import { calculateGravatar } from "../../../util/gravatar";
 import "./generic.scss";
@@ -18,6 +9,14 @@ import { ShareDialog } from "../dialogs/shareDialog";
 import { useHorizontalScroll } from "../../../util/hscroll";
 import { useParams } from "react-router";
 import { ConfigDialog } from "../dialogs/configDialog";
+
+export function matchSearch(check: string, search: string): boolean {
+    return (
+        check.toLowerCase().includes(search.toLowerCase()) ||
+        search.toLowerCase().includes(check.toLowerCase()) ||
+        search.length === 0
+    );
+}
 
 export function RenderGeneric(props: {
     item: MinimalContentType;
@@ -33,7 +32,6 @@ export function RenderGeneric(props: {
         <Paper
             className={`generic-renderer${id === item.oid ? " selected" : ""}`}
             elevation={3}
-            onClick={(event) => event.stopPropagation()}
         >
             <Avatar
                 component={"image"}
@@ -100,8 +98,10 @@ export function RenderGeneric(props: {
                     </Fab>
                 )}
             </Stack>
-            <ShareDialog item={item} open={sharing} setOpen={setSharing} />
-            <ConfigDialog item={item} open={config} setOpen={setConfig} />
+            <span onClick={(event) => event.stopPropagation()}>
+                <ShareDialog item={item} open={sharing} setOpen={setSharing} />
+                <ConfigDialog item={item} open={config} setOpen={setConfig} />
+            </span>
         </Paper>
     );
 }

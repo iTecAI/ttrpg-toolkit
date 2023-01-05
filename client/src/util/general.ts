@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 export async function sleep(seconds: number) {
     return new Promise((resolve) => setTimeout(resolve, seconds * 1000));
