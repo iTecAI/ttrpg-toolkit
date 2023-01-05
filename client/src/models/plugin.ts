@@ -103,6 +103,11 @@ export type DocumentType = {
     form: AllRenderItems;
 };
 
+export type CharacterSheetType = {
+    slug: string;
+    displayName: string;
+};
+
 // Manifest type
 export type PluginManifest = {
     plugin_data: PluginDataModel;
