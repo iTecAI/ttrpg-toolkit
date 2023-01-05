@@ -3,10 +3,10 @@ import { RenderTextEditor } from "../types/renderTypes";
 import * as React from "react";
 import { useFormField } from "../utility/document_communication";
 import { Box, SxProps } from "@mui/system";
-import RichTextEditor from "../../../util/text-editor/RichTextEditor";
 import { Icon } from "./common";
 import { useValueItem } from "../utility/hooks";
 import { Typography } from "@mui/material";
+import RichTextEditor from "../../../util/text-editor/RichTextEditor";
 
 const style: SxProps = {
     ".title": {
@@ -49,18 +49,11 @@ export const TextEditorItem: RendererFunction<RenderTextEditor> = (
                     )}
                 </Box>
             ) : null}
-            {value && (
-                <RichTextEditor
-                    height={512}
-                    mode="html"
-                    value={value ?? ""}
-                    onChange={(newValue) => {
-                        if (newValue) {
-                            setValue(newValue);
-                        }
-                    }}
-                />
-            )}
+            <RichTextEditor
+                height="512px"
+                value={value ?? ""}
+                onChange={setValue}
+            />
         </Box>
     );
 };

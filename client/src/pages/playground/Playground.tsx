@@ -1,4 +1,4 @@
-/*import { Autocomplete, Container, Paper, TextField } from "@mui/material";
+import { Autocomplete, Container, Paper, TextField } from "@mui/material";
 import { ModularRenderer } from "../../libs/modular-renderer";
 import formSchema from "./form-playground.renderer.json";
 import { useState } from "react";
@@ -35,26 +35,5 @@ export function Playground() {
                 )}
             />
         </Container>
-    );
-}*/
-
-import { Box } from "@mui/system";
-import RichTextEditor from "../../util/text-editor/RichTextEditor";
-import { useState } from "react";
-
-export function Playground() {
-    const [value, setValue] = useState<string>("");
-
-    return (
-        <Box sx={{ padding: "16px" }}>
-            <RichTextEditor
-                mode="markdown"
-                value={value}
-                onChange={(value) => {
-                    console.log(value);
-                    setValue(value);
-                }}
-            />
-        </Box>
     );
 }

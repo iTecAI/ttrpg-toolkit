@@ -1,0 +1,85 @@
+@import "../../theme/util.scss";
+@import "../../theme/default.scss";
+
+.quill {
+    border: none;
+    box-shadow: $paper-2;
+
+    * {
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    }
+
+    .ql-container {
+        border: none;
+        border-radius: 0 0 4px 4px;
+        background-color: $background-paper;
+        * {
+            color: white;
+        }
+
+        code, pre.ql-syntax {
+            background-color: $background;
+            padding: 8px;
+        }
+    }
+
+    .ql-toolbar {
+        border: none;
+        background-color: #00000022;
+        border-radius: 4px 4px 0 0;
+        
+        * {
+            color: white;
+        }
+
+        svg {
+            .ql-stroke {
+                stroke: white;
+            }
+
+            .ql-fill {
+                stroke: white;
+            }
+        }
+
+        .ql-formats .ql-active * {
+            stroke: $primary;
+        }
+
+        .ql-formats button:hover * {
+            stroke: $primary;
+            color: $primary;
+        }
+
+        .ql-picker {
+            .ql-picker-label {
+                border: none;
+            }
+            .ql-picker-label:hover {
+                color: $primary;
+
+                svg {
+                    color: $primary;
+
+                    .ql-stroke {
+                        fill: $primary;
+                        stroke: $primary;
+                    }
+                }
+            }
+
+            .ql-picker-options {
+                background-color: $background;
+                box-shadow: $paper-2;
+                border: none;
+                border-radius: 4px;
+
+                .ql-picker-item {
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+            }
+        }
+    }
+}
