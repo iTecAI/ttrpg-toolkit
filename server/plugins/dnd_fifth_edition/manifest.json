@@ -13,12 +13,7 @@
         ],
         "dependencies": ["d20_dice"]
     },
-    "entrypoints": {
-        "data": {
-            "file": "data_source.py",
-            "exports": ["DataLoader5e"]
-        }
-    },
+    "entrypoints": {},
     "data_source": {
         "kwargs": {},
         "default_category": "class",
