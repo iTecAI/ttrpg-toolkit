@@ -1,25 +1,13 @@
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import "./overrides.scss";
+import { Box } from "@mui/system";
+import { MuiRichTextToolbar } from "./MuiToolbar";
 
 const modules = {
-    toolbar: [
-        [
-            { header: [1, 2, 3, 4, false] },
-            { size: ["small", false, "large", "huge"] },
-            { font: [] },
-        ],
-        ["bold", "italic", "underline", "strike", "code"],
-        ["blockquote", "code-block"],
-        [
-            { list: "ordered" },
-            { list: "bullet" },
-            { indent: "-1" },
-            { indent: "+1" },
-        ],
-        ["link", "image"],
-        ["clean"],
-    ],
+    toolbar: {
+        container: "#mui-editor",
+    },
 };
 
 const formats = [
@@ -47,16 +35,25 @@ export default function RichTextEditor(props: {
     disabled?: boolean;
 }): JSX.Element {
     return (
-        <ReactQuill
-            theme="snow"
-            value={props.value}
-            onChange={props.onChange}
-            style={{
-                height: props.height ? `calc(props.height - 40px)` : undefined,
-            }}
-            modules={modules}
-            formats={formats}
-            className={`rich-editor${props.disabled ? " disabled" : ""}`}
-        />
+        <Box
+            className={`rich-editor-container${
+                props.disabled ? " disabled" : ""
+            }`}
+        >
+            <MuiRichTextToolbar id={"mui-editor"} />
+            <ReactQuill
+                theme="snow"
+                value={props.value}
+                onChange={props.onChange}
+                style={{
+                    height: props.height
+                        ? `calc(props.height - 40px)`
+                        : undefined,
+                }}
+                modules={modules}
+                formats={formats}
+                className={`rich-editor${props.disabled ? " disabled" : ""}`}
+            />
+        </Box>
     );
 }

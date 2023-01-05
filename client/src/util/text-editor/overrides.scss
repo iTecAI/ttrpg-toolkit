@@ -1,7 +1,7 @@
 @import "../../theme/util.scss";
 @import "../../theme/default.scss";
 
-.quill {
+.rich-editor-container {
     border: none;
     box-shadow: $paper-2;
 
@@ -87,6 +87,16 @@
                         color: $primary;
                     }
                 }
+            }
+        }
+
+        .ql-formats .include-content {
+            width: fit-content;
+            white-space: nowrap;
+            
+            .text {
+                font-size: 13px;
+                margin-left: 4px;
             }
         }
     }
