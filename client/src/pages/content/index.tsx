@@ -9,7 +9,7 @@ import { Box } from "@mui/system";
 
 import "./index.scss";
 import { MdImage, MdSearch } from "react-icons/md";
-import { useState } from "react";
+import { createContext, useEffect, useReducer, useState } from "react";
 import { loc } from "../../util/localization";
 import { MinimalContentType, ContentDataType } from "../../models/content";
 import { ConfirmDeleteDialog } from "./dialogs/confirmDeleteDialog";
@@ -18,6 +18,7 @@ import { Rnd } from "react-rnd";
 import { useWindowSize } from "../../util/general";
 import { useParams } from "react-router";
 import { DocumentTypeRenderer } from "./types/document";
+import { isArray } from "../../libs/modular-renderer/types/guards";
 
 function RenderContentPage(props: {
     type: ContentDataType;
@@ -33,10 +34,42 @@ function RenderContentPage(props: {
     return <RendererElement itemId={props.id} />;
 }
 
+export const ItemsExpandedContext = createContext<string[]>([]);
+
 export function ContentPage() {
     const [search, setSearch] = useState<string>("");
     const { height } = useWindowSize();
-    const { type, id } = useParams() as { type?: ContentDataType; id?: string };
+    const {
+        type,
+        id,
+        "*": stub,
+    } = useParams() as { type?: ContentDataType; id?: string; "*"?: string };
+
+    const [expanded, setExpanded] = useReducer(
+        (
+            state: string[],
+            action: { id: string; expanded: boolean } | string[]
+        ) => {
+            if (isArray(action)) {
+                return action;
+            } else {
+                let newState: string[] = JSON.parse(JSON.stringify(state));
+                if (action.expanded && !state.includes(action.id)) {
+                    newState.push(action.id);
+                } else if (!action.expanded && state.includes(action.id)) {
+                    newState = newState.filter((v) => v !== action.id);
+                }
+                return newState;
+            }
+        },
+        []
+    );
+
+    useEffect(() => {
+        if (stub && stub.length > 0) {
+            setExpanded(stub.split("/"));
+        }
+    }, [stub]);
 
     const [deleting, setDeleting] = useState<MinimalContentType | null>(null);
     const [vWidth, setVWidth] = useState<string>("320px");
@@ -74,12 +107,18 @@ export function ContentPage() {
                         </Box>
                     </AppBar>
                     <Box className="view-area">
-                        <ListView
-                            search={search}
-                            delete={setDeleting}
-                            dense={false}
-                            parent="root"
-                        />
+                        <ItemsExpandedContext.Provider value={expanded}>
+                            <ListView
+                                search={search}
+                                delete={setDeleting}
+                                dense={false}
+                                parent="root"
+                                setExpanded={(id, expanded) => {
+                                    setExpanded({ id, expanded });
+                                    console.log(id, expanded);
+                                }}
+                            />
+                        </ItemsExpandedContext.Provider>
                     </Box>
                     {deleting && (
                         <ConfirmDeleteDialog

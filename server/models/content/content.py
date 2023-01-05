@@ -222,3 +222,14 @@ class ContentType(ORM):
             self.database[self.collection].delete_one({"oid": self.oid})
 
         return list(set(results))
+
+    @property
+    def parents(self) -> list[str]:
+        if self.parent == "root":
+            return []
+        else:
+            result = [self.parent]
+            parent_obj = self.load_oid(self.parent, self.database)
+            if parent_obj:
+                result.extend(parent_obj.parents)
+            return result

@@ -74,3 +74,19 @@ class ExpandedContentType(BaseModel):
             dataType=content.dataType,
             data=data,
         )
+
+
+class ContentSearchResult(BaseModel):
+    oid: str
+    name: str
+    image: Union[str, None]
+    dataType: str
+
+    @classmethod
+    def from_ContentType(content: ContentType):
+        return ContentSearchResult(
+            oid=content.oid,
+            name=content.name,
+            image=content.image,
+            dataType=content.dataType,
+        )

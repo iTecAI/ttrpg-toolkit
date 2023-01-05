@@ -21,13 +21,16 @@ import { CreateFolderDialog } from "../types/folder/createDialog";
 import { CreateDocumentDialog } from "../types/document/createDialog";
 import RenderDocument from "./RenderDocument";
 
+export type ContentItemRenderProps = {
+    item: MinimalContentType;
+    delete: (item: MinimalContentType) => void;
+    dense: boolean;
+    search: string;
+    setExpanded: (id: string, expanded: boolean) => void;
+};
+
 const RENDER_MAP: {
-    [key: string]: (props: {
-        item: MinimalContentType;
-        delete: (item: MinimalContentType) => void;
-        dense: boolean;
-        search: string;
-    }) => JSX.Element;
+    [key: string]: (props: ContentItemRenderProps) => JSX.Element;
 } = {
     folder: RenderFolder,
     document: RenderDocument,
@@ -56,6 +59,7 @@ export function ListView(props: {
     delete: (item: MinimalContentType) => void;
     dense: boolean;
     parent: string;
+    setExpanded: (id: string, expanded: boolean) => void;
 }): JSX.Element {
     const [updateName, setUpdateName] = useState<string>("");
     const [items, setItems] = useState<MinimalContentType[]>([]);
@@ -115,6 +119,7 @@ export function ListView(props: {
                             delete={props.delete}
                             search={props.search}
                             dense={props.dense}
+                            setExpanded={props.setExpanded}
                         />
                     );
                 }

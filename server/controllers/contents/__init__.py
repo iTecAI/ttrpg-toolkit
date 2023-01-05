@@ -24,6 +24,7 @@ from models import (
     PERMISSION_TYPE_KEY,
     PERMISSION_TYPE_KEYS,
     ExpandedContentType,
+    ContentSearchResult,
 )
 from typing import Optional, Union
 import json
@@ -308,3 +309,32 @@ class ContentRootController(Controller):
         cluster.dispatch_update(to_update, f"content.update.{content.parent}")
         cluster.dispatch_update(to_update, f"content.update.{content.oid}")
         cluster.dispatch_update(to_update, f"content.share.{content.oid}")
+
+    @get("/")
+    async def search_content(
+        self, state: State, session: Session, q: Optional[str] = None
+    ) -> list[ContentSearchResult]:
+        user = session.user
+        all_accessible = ContentType.load_multiple_from_query(
+            {
+                "$or": [
+                    {f"shared.{user.oid}": {"$or": [{"view": True}, {"admin": True}]}},
+                    {"owner": user.oid},
+                ]
+            },
+            state.database,
+        )
+
+        return [
+            ContentSearchResult.from_ContentType(c)
+            for c in all_accessible
+            if q == None or (c.name.lower() in q.lower() or q.lower() in c.name.lower())
+        ]
+
+    @get(
+        "/{content_id:str}/parents",
+        guards=[guard_hasContentPermission("view")],
+        dependencies={"content": Provide(content_dep)},
+    )
+    async def get_parents(self, content: ContentType) -> list[str]:
+        return content.parents

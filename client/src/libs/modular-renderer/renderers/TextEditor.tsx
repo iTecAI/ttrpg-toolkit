@@ -31,8 +31,6 @@ export const TextEditorItem: RendererFunction<RenderTextEditor> = (
     const title = useValueItem(renderer.title ?? "");
     const disabled = useDisabled();
 
-    console.log(disabled);
-
     return (
         <Box className="render-item text-editor child" sx={style}>
             {renderer.title || renderer.icon ? (
