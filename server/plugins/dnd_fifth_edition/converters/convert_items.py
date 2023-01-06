@@ -180,26 +180,43 @@ class ItemConverter:
         self.property_map = {i["abbreviation"]: i for i in base_raw["itemProperty"]}
         self.type_map = {i["abbreviation"]: i for i in base_raw["itemType"]}
         self.entry_map = {i["name"]: i for i in base_raw["itemEntry"]}
+        self.item_map = {i["name"] + "/" + i["source"]: i for i in self.items_raw}
 
-    def _parse_one_entry(self, entry: Union[str, dict]) -> list[str]:
+    def _parse_one_entry(self, entry: Union[str, dict], item: Any) -> list[str]:
         if type(entry) != dict:
-            return [parse_5etools_string(str(entry))]
+            if re.match("\{#itemEntry .*?\}", str(entry)):
+                name = str(entry).split(" ", maxsplit=1)[1].split("|")[0].strip("{}")
+                if name in self.entry_map.keys():
+                    return self._parse_entries(
+                        self.entry_map[name]["entriesTemplate"], item
+                    )
+
+            parsed_5e = parse_5etools_string(str(entry))
+            for i in re.findall("\{\{item\..*?\}\}", parsed_5e):
+                key = i.split(".")[1].strip("}")
+                if key in item.keys():
+                    if type(item[key]) == list:
+                        parsed_5e = parsed_5e.replace(i, ", ".join(item[key]))
+                    else:
+                        parsed_5e = parsed_5e.replace(i, item[key])
+
+            return [parsed_5e]
         else:
             et = entry["type"]
             if et == "entries":
-                entry_lines = self._parse_entries(entry["entries"])
+                entry_lines = self._parse_entries(entry["entries"], item)
                 if "name" in entry.keys():
                     entry_lines[0] = f"***{entry['name']}.*** {entry_lines[0]}"
                 entry_lines.insert(0, "")
                 entry_lines.append("")
                 return entry_lines
             elif et == "list":
-                return [f"- {i}" for i in self._parse_entries(entry["items"])]
+                return [f"- {i}" for i in self._parse_entries(entry["items"], item)]
             elif et == "item":
                 return [
                     "**{name}:** {entry}".format(
                         name=entry["name"],
-                        entry="\n".join(self._parse_one_entry(entry["entry"]))
+                        entry="\n".join(self._parse_one_entry(entry["entry"], item))
                         if "entry" in entry.keys()
                         else "",
                     )
@@ -209,7 +226,7 @@ class ItemConverter:
                 if "name" in entry.keys():
                     entry_lines.append(f"> **{entry['name']}**")
                 entry_lines.extend(
-                    ["> " + i for i in self._parse_entries(entry["entries"])]
+                    ["> " + i for i in self._parse_entries(entry["entries"], item)]
                 )
                 entry_lines.append("")
                 return entry_lines
@@ -222,9 +239,9 @@ class ItemConverter:
                         and "name" in k.keys()
                     ):
                         entry_lines.append(f"## {k['name']}")
-                        entry_lines.extend(self._parse_entries(k["entries"]))
+                        entry_lines.extend(self._parse_entries(k["entries"], item))
                     else:
-                        entry_lines.extend(self._parse_one_entry(k))
+                        entry_lines.extend(self._parse_one_entry(k, item))
                 entry_lines.append("")
                 return entry_lines
             elif et == "table":
@@ -238,12 +255,12 @@ class ItemConverter:
                 )
                 for row in entry["rows"]:
                     entry_lines.append(
-                        f"|{'|'.join([self._parse_one_entry(c)[0] for c in row])}|"
+                        f"|{'|'.join([self._parse_one_entry(c, item)[0] for c in row])}|"
                     )
                 entry_lines.append("")
                 return entry_lines
             elif et == "cell":
-                result = self._parse_one_entry(entry.get("entry", ""))[0]
+                result = self._parse_one_entry(entry.get("entry", ""), item)[0]
                 if "roll" in entry.keys():
                     if "exact" in entry["roll"].keys():
                         result = f"{entry['roll']['exact']} : {result}"
@@ -257,14 +274,47 @@ class ItemConverter:
                 print(et)
         return [""]
 
-    def _parse_entries(self, entries: list[Union[str, dict]]) -> list[str]:
+    def _parse_entries(self, entries: list[Union[str, dict]], item: Any) -> list[str]:
         lines = []
         for entry in entries:
-            lines.extend(self._parse_one_entry(entry))
+            lines.extend(self._parse_one_entry(entry, item))
 
         return lines
 
-    def _convert_one(self, item: dict[str, Any]) -> ItemType:
+    def _copy_to(self, item: dict[str, Any], copy: dict[str, Any]) -> dict[str, Any]:
+        del item["_copy"]
+        key = copy.get("name", "none") + "/" + copy.get("source", "none")
+        if not key in self.item_map.keys():
+            return item
+
+        copied_item: dict[str, Any] = self.item_map[key]
+        preserve = copy.get("_preserve", {})
+
+        for k, v in item.items():
+            if not k in preserve.keys():
+                copied_item[k] = v
+
+        if "_mod" in copy.keys():
+            if "entries" in copy["_mod"].keys():
+                if not "entries" in copied_item.keys():
+                    copied_item["entries"] = []
+                if copy["_mod"]["entries"]["mode"] == "insertArr":
+                    copied_item["entries"].insert(
+                        copy["_mod"]["entries"]["index"],
+                        copy["_mod"]["entries"]["items"],
+                    )
+                else:
+                    copied_item["entries"].append(copy["_mod"]["entries"]["items"])
+
+        return copied_item
+
+    def _convert_one(self, _item: dict[str, Any]) -> ItemType:
+        # Copy information if necessary
+        if "_copy" in _item.keys():
+            item = self._copy_to(_item, _item["_copy"])
+        else:
+            item = _item
+
         # Get tags
         itypes = []
         for t in [
@@ -325,7 +375,7 @@ class ItemConverter:
                         )
 
         # Parse item entries
-        item_entries = self._parse_entries(item.get("entries", []))
+        item_entries = self._parse_entries(item.get("entries", []), item)
 
         for p in item.get("property", []):
             if p in self.property_map.keys():
@@ -333,7 +383,7 @@ class ItemConverter:
                 if not "entries" in prop.keys():
                     continue
                 prop_entries = [""]
-                new_entries = self._parse_entries(prop["entries"])
+                new_entries = self._parse_entries(prop["entries"], item)
                 if len(new_entries) > 1:
                     prop_entries.extend(new_entries[: len(new_entries) - 1])
                 if "source" in prop.keys() and "page" in prop.keys():
@@ -348,7 +398,7 @@ class ItemConverter:
             type_entries = [""]
             if "name" in tp.keys():
                 type_entries.append(f"## {tp['name']}")
-            new_entries = self._parse_entries(tp["entries"])
+            new_entries = self._parse_entries(tp["entries"], item)
             type_entries.extend(new_entries)
             if "source" in tp.keys() and "page" in tp.keys():
                 type_entries.append(f"*({tp['source']} - pg. {tp['page']})*")
@@ -430,4 +480,4 @@ class ItemConverter:
 
 if __name__ == "__main__":
     converter = ItemConverter("../_data/items.json", "../_data/items-base.json")
-    converter.convert("./test-items.json")
+    converter.convert("../data/items.json")

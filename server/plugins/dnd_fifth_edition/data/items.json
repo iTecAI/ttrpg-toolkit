@@ -159,8 +159,8 @@
     },
     {
         "type": [
-            "rod",
-            "magic"
+            "magic",
+            "rod"
         ],
         "name": "+1 Rod of the Pact Keeper",
         "source": "DMG",
@@ -349,8 +349,8 @@
     },
     {
         "type": [
-            "rod",
-            "magic"
+            "magic",
+            "rod"
         ],
         "name": "+2 Rod of the Pact Keeper",
         "source": "DMG",
@@ -539,8 +539,8 @@
     },
     {
         "type": [
-            "rod",
-            "magic"
+            "magic",
+            "rod"
         ],
         "name": "+3 Rod of the Pact Keeper",
         "source": "DMG",
@@ -659,7 +659,14 @@
             "acid"
         ],
         "text": [
-            "{#itemEntry Absorbing Tattoo|TCE}"
+            "Produced by a special needle, this magic tattoo features designs that emphasize one color (green).",
+            "",
+            "***Tattoo Attunement.*** To attune to this item, you hold the needle to your skin where you want the tattoo to appear, pressing the needle there throughout the attunement process. When the attunement is complete, the needle turns into the ink that becomes the tattoo, which appears on the skin.",
+            "If your attunement to the tattoo ends, the tattoo vanishes, and the needle reappears in your space.",
+            "",
+            "***Damage Resistance.*** While the tattoo is on your skin, you have resistance to acid damage.",
+            "",
+            "***Damage Absorption.*** When you take acid damage, you can use your reaction to gain immunity against that instance of the damage, and you regain a number of hit points equal to half the damage you would have taken. Once this reaction is used, it can't be used again until the next dawn."
         ],
         "rarity": "very rare",
         "attunement": true
@@ -784,6 +791,7 @@
         "name": "Alchemist's Doom",
         "source": "SCC",
         "page": 179,
+        "weight": 1,
         "text": [
             "This sticky, adhesive fluid ignites when exposed to air. As an action, you can throw this flask up to 20 feet, shattering it on impact. Make a ranged attack against a creature or object, treating the alchemist's doom as an improvised weapon. On a hit, the target takes 7 (2d6) fire damage at the start of each of its turns. A creature can end this damage by using its action to make a DC 10 Dexterity check to extinguish the flames."
         ],
@@ -793,14 +801,14 @@
         "type": [
             "gear"
         ],
-        "name": "Alchemist's Fire (flask)",
-        "source": "PHB",
-        "page": 148,
+        "name": "Alchemist's Doom",
+        "source": "SCC",
+        "page": 179,
         "weight": 1,
-        "value": 5000,
         "text": [
-            "This sticky, adhesive fluid ignites when exposed to air. As an action, you can throw this flask up to 20 feet, shattering it on impact. Make a ranged attack against a creature or object, treating the alchemist's fire as an improvised weapon. On a hit, the target takes **1d4** fire damage at the start of each of its turns. A creature can end this damage by using its action to make a DC 10 Dexterity check to extinguish the flames."
-        ]
+            "This sticky, adhesive fluid ignites when exposed to air. As an action, you can throw this flask up to 20 feet, shattering it on impact. Make a ranged attack against a creature or object, treating the alchemist's doom as an improvised weapon. On a hit, the target takes 7 (2d6) fire damage at the start of each of its turns. A creature can end this damage by using its action to make a DC 10 Dexterity check to extinguish the flames."
+        ],
+        "rarity": "unknown"
     },
     {
         "type": [
@@ -902,8 +910,8 @@
     },
     {
         "type": [
-            "food",
-            "gear"
+            "gear",
+            "food"
         ],
         "name": "Ale (Gallon)",
         "source": "PHB",
@@ -912,8 +920,8 @@
     },
     {
         "type": [
-            "food",
-            "gear"
+            "gear",
+            "food"
         ],
         "name": "Ale (Mug)",
         "source": "PHB",
@@ -995,9 +1003,9 @@
     },
     {
         "type": [
+            "gear",
             "magic",
-            "focus",
-            "gear"
+            "focus"
         ],
         "name": "Amulet",
         "source": "PHB",
@@ -1141,8 +1149,8 @@
     },
     {
         "type": [
-            "shield",
-            "armor"
+            "armor",
+            "shield"
         ],
         "name": "Animated Shield",
         "source": "DMG",
@@ -1278,8 +1286,8 @@
     },
     {
         "type": [
-            "armor",
-            "heavy"
+            "heavy",
+            "armor"
         ],
         "name": "Armor of Invulnerability",
         "source": "DMG",
@@ -1296,8 +1304,8 @@
     },
     {
         "type": [
-            "armor",
             "heavy",
+            "armor",
             "curse"
         ],
         "name": "Armor of Vulnerability (Bludgeoning)",
@@ -1324,8 +1332,8 @@
     },
     {
         "type": [
-            "armor",
             "heavy",
+            "armor",
             "curse"
         ],
         "name": "Armor of Vulnerability (Piercing)",
@@ -1352,8 +1360,8 @@
     },
     {
         "type": [
-            "armor",
             "heavy",
+            "armor",
             "curse"
         ],
         "name": "Armor of Vulnerability (Slashing)",
@@ -1380,8 +1388,8 @@
     },
     {
         "type": [
-            "shield",
-            "armor"
+            "armor",
+            "shield"
         ],
         "name": "Arrow-Catching Shield",
         "source": "DMG",
@@ -1409,6 +1417,14 @@
     {
         "name": "Ascendant Dragon-Touched Focus",
         "source": "FTD",
+        "related_spells": [
+            "hold monster",
+            "rime's binding ice|ftd",
+            "rary's telepathic bond",
+            "raulothim's psychic lance|ftd",
+            "fizban's platinum shield|ftd",
+            "legend lore"
+        ],
         "text": [
             "This wondrous item can be a scepter, an orb, an amulet, a crystal, or another finely crafted object. It typically incorporates imagery of dragons' wings, claws, teeth, or scales.",
             "You have advantage on initiative rolls. While you are holding the focus, it can function as a spellcasting focus for all your spells.",
@@ -1437,8 +1453,8 @@
     },
     {
         "type": [
-            "gear",
-            "poison"
+            "poison",
+            "gear"
         ],
         "name": "Assassin's Blood",
         "source": "DMG",
@@ -1596,8 +1612,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Azorius Guild Signet",
         "source": "GGR",
@@ -2044,8 +2060,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Band of Loyalty",
         "source": "UAWGE",
@@ -2291,8 +2307,8 @@
     },
     {
         "type": [
-            "gear",
-            "poison"
+            "poison",
+            "gear"
         ],
         "name": "Basic Poison (vial)",
         "source": "PHB",
@@ -2317,8 +2333,8 @@
     },
     {
         "type": [
-            "shield",
-            "armor"
+            "armor",
+            "shield"
         ],
         "name": "Battering Shield",
         "source": "EGW",
@@ -2669,7 +2685,9 @@
             "acid"
         ],
         "text": [
-            "{#itemEntry Chromatic Rose|WBtW}"
+            "While this rose is held, it drips acid as a harmless visual effect.",
+            "While holding the rose by its stem, you gain resistance to acid damage. If you would take more than 10 acid damage from a single source (after applying the resistance), the rose disintegrates, and you take no damage instead.",
+            "As an action, you can blow the petals from the rose to produce a 20-foot cone of acid. Each creature in the cone must make a DC 15 Constitution saving throw, taking **3d10** acid damage on a failed save, or half as much damage on a successful one. Using this property destroys the rose."
         ],
         "rarity": "rare"
     },
@@ -2970,8 +2988,15 @@
         "attunement": true
     },
     {
+        "type": [
+            "sentient",
+            "weapon",
+            "melee"
+        ],
         "name": "Blade of Broken Mirrors (Awakened)",
         "source": "EGW",
+        "page": 275,
+        "weight": 1,
         "related_spells": [
             "fabricate",
             "hallucinatory terrain",
@@ -2981,21 +3006,6 @@
         "bonuses": {
             "weapon_attack": 2,
             "weapon_damage": 2
-        }
-    },
-    {
-        "type": [
-            "sentient",
-            "weapon",
-            "melee"
-        ],
-        "name": "Blade of Broken Mirrors (Dormant)",
-        "source": "EGW",
-        "page": 275,
-        "weight": 1,
-        "bonuses": {
-            "weapon_attack": 1,
-            "weapon_damage": 1
         },
         "range": [
             20,
@@ -3018,6 +3028,70 @@
             "- You gain a +1 bonus to attack and damage rolls made with this magic weapon. Immediately after you make a ranged attack with this weapon, it returns to your hand.",
             "- Whenever you kill a humanoid with an attack using the Blade of Broken Mirrors, the blade remembers the creature's appearance. While holding the dagger, you can use an action to change your form to match any humanoid the blade remembers. Your statistics, other than your size, don't change. Any equipment you are wearing or carrying isn't transformed. You can revert to your true appearance as an action. You revert to your true appearance automatically when you die. When the Blade of Broken Mirrors attunes to a new wielder, the appearances of humanoids it has killed are wiped from its memory.",
             "",
+            "***Awakened.*** When the dagger reaches an awakened state, it gains the following properties:",
+            "- The weapon's bonus to attack and damage rolls increases to +2.",
+            "- While holding the weapon, you can use an action to cast one of the following spells from it (save DC 15): *fabricate*, *hallucinatory terrain*, *major image*, or *phantasmal killer*. Once a spell has been cast using the dagger, that spell can't be cast from the dagger again until the next dawn.",
+            "",
+            "> **Betrayer Artifact Properties**",
+            "> The Arms of the Betrayers advance in power in the same manner as the Vestiges of Divergence. In its dormant state, each of these artifacts has one minor beneficial property and one minor detrimental property. When the artifact attains an awakened state, it gains an additional minor beneficial property and an additional minor detrimental property. When the item reaches its exalted state, it gains a major beneficial property. See \"Artifact Properties\" in chapter 7 of the Dungeon Master's Guide for more information.",
+            "",
+            "***Finesse.*** When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.",
+            "*(PHB - pg. 147)*",
+            "",
+            "***Light.*** A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.",
+            "*(PHB - pg. 147)*",
+            "",
+            "***Thrown.*** If a weapon has the thrown property, you can throw the weapon to make a ranged attack. If the weapon is a melee weapon, you use the same ability modifier for that attack roll and damage roll that you would use for a melee attack with the weapon. For example, if you throw a handaxe, you use your Strength, but if you throw a dagger, you can use either your Strength or your Dexterity, since the dagger has the finesse property.",
+            "*(PHB - pg. 147)*"
+        ],
+        "rarity": "artifact",
+        "attunement": "by a humanoid"
+    },
+    {
+        "type": [
+            "sentient",
+            "weapon",
+            "melee"
+        ],
+        "name": "Blade of Broken Mirrors (Awakened)",
+        "source": "EGW",
+        "page": 275,
+        "weight": 1,
+        "related_spells": [
+            "fabricate",
+            "hallucinatory terrain",
+            "major image",
+            "phantasmal killer"
+        ],
+        "bonuses": {
+            "weapon_attack": 2,
+            "weapon_damage": 2
+        },
+        "range": [
+            20,
+            60
+        ],
+        "damage_dice": [
+            "1d4"
+        ],
+        "damage_type": "piercing",
+        "text": [
+            "A weapon of Tharizdun, this dagger is a piece of jagged stone whose blade is scribed with a maze-like pattern with no beginning or end.",
+            "",
+            "***Sentience.*** The Blade of Broken Mirrors is a sentient chaotic evil weapon with an Intelligence of 21, a Wisdom of 24, and a Charisma of 24. It has hearing and *darkvision* out to a range of 120 feet.",
+            "The weapon communicates telepathically with its wielder and can speak, read, and understand Abyssal and Common.",
+            "",
+            "***Personality.*** An insane **glabrezu** named Ragazuu lives within the Blade of Broken Mirrors. The weapon yearns to cause chaos. It learns its wielder's principles, then uses those ideals to encourage reckless action. The dagger whispers ideas of revolution.",
+            "",
+            "***Dormant.*** The dagger grants the following benefits in its dormant state:",
+            "- You can speak, read, and write Abyssal.",
+            "- You gain a +1 bonus to attack and damage rolls made with this magic weapon. Immediately after you make a ranged attack with this weapon, it returns to your hand.",
+            "- Whenever you kill a humanoid with an attack using the Blade of Broken Mirrors, the blade remembers the creature's appearance. While holding the dagger, you can use an action to change your form to match any humanoid the blade remembers. Your statistics, other than your size, don't change. Any equipment you are wearing or carrying isn't transformed. You can revert to your true appearance as an action. You revert to your true appearance automatically when you die. When the Blade of Broken Mirrors attunes to a new wielder, the appearances of humanoids it has killed are wiped from its memory.",
+            "",
+            "***Awakened.*** When the dagger reaches an awakened state, it gains the following properties:",
+            "- The weapon's bonus to attack and damage rolls increases to +2.",
+            "- While holding the weapon, you can use an action to cast one of the following spells from it (save DC 15): *fabricate*, *hallucinatory terrain*, *major image*, or *phantasmal killer*. Once a spell has been cast using the dagger, that spell can't be cast from the dagger again until the next dawn.",
+            "",
             "> **Betrayer Artifact Properties**",
             "> The Arms of the Betrayers advance in power in the same manner as the Vestiges of Divergence. In its dormant state, each of these artifacts has one minor beneficial property and one minor detrimental property. When the artifact attains an awakened state, it gains an additional minor beneficial property and an additional minor detrimental property. When the item reaches its exalted state, it gains a major beneficial property. See \"Artifact Properties\" in chapter 7 of the Dungeon Master's Guide for more information.",
             "",
@@ -3036,10 +3110,22 @@
     {
         "name": "Blade of Broken Mirrors (Exalted)",
         "source": "EGW",
+        "related_spells": [
+            "fabricate",
+            "hallucinatory terrain",
+            "major image",
+            "phantasmal killer"
+        ],
         "bonuses": {
             "weapon_attack": 3,
             "weapon_damage": 3
-        }
+        },
+        "text": [
+            "***Exalted.*** When the dagger reaches an exalted state, it gains the following properties:",
+            "- The weapon's bonus to attack and damage rolls increases to +3.",
+            "- The saving throw DC for spells cast from the dagger increases to 17.",
+            "- While holding the dagger, you can turn *invisible* as an action. Anything you are wearing or carrying is *invisible* with you. You remain *invisible* until you stop holding the dagger, until you attack or cast a spell that forces a creature to make a saving throw, or until you use a bonus action to become visible again."
+        ]
     },
     {
         "type": [
@@ -3053,8 +3139,8 @@
     },
     {
         "type": [
-            "rod",
-            "magic"
+            "magic",
+            "rod"
         ],
         "name": "Blast Scepter",
         "source": "WDMM",
@@ -3192,8 +3278,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Blood of the Lycanthrope Antidote",
         "source": "IMR",
@@ -3293,7 +3379,9 @@
             "lightning"
         ],
         "text": [
-            "{#itemEntry Chromatic Rose|WBtW}"
+            "While this rose is held, it crackles with lightning as a harmless visual effect.",
+            "While holding the rose by its stem, you gain resistance to lightning damage. If you would take more than 10 lightning damage from a single source (after applying the resistance), the rose disintegrates, and you take no damage instead.",
+            "As an action, you can blow the petals from the rose to produce a 20-foot cone of lightning. Each creature in the cone must make a DC 15 Constitution saving throw, taking **3d10** lightning damage on a failed save, or half as much damage on a successful one. Using this property destroys the rose."
         ],
         "rarity": "rare"
     },
@@ -3689,8 +3777,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Boros Guild Signet",
         "source": "GGR",
@@ -3747,8 +3835,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Bottled Breath",
         "source": "PotA",
@@ -3790,8 +3878,8 @@
     },
     {
         "type": [
-            "wondrous",
-            "curse"
+            "curse",
+            "wondrous"
         ],
         "name": "Bracelet of Rock Magic",
         "source": "TftYP",
@@ -4091,8 +4179,8 @@
     },
     {
         "type": [
-            "gear",
-            "poison"
+            "poison",
+            "gear"
         ],
         "name": "Burnt Othur Fumes",
         "source": "DMG",
@@ -4362,8 +4450,8 @@
     },
     {
         "type": [
-            "gear",
-            "poison"
+            "poison",
+            "gear"
         ],
         "name": "Carrion Crawler Mucus",
         "source": "DMG",
@@ -4601,9 +4689,25 @@
         "charges": 3
     },
     {
+        "type": [
+            "magic",
+            "wand"
+        ],
         "name": "Charred Wand of Magic Missiles",
         "source": "WDH",
-        "page": 77
+        "page": 77,
+        "weight": 1,
+        "related_spells": [
+            "magic missile"
+        ],
+        "text": [
+            "This wand has 7 charges. While holding it, you can use an action to expend 1 or more of its charges to cast the *magic missile* spell from it. For 1 charge, you cast the 1st-level version of the spell. You can increase the spell slot level by one for each additional charge you expend.",
+            "The wand regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll a d20. On a 1, the wand crumbles into ashes and is destroyed.",
+            "Each time you expend a charge from this wand, there is a 50 chance that nothing happens and the charge is wasted."
+        ],
+        "rarity": "uncommon",
+        "recharge": "dawn",
+        "charges": 7
     },
     {
         "type": [
@@ -4732,8 +4836,8 @@
     },
     {
         "type": [
-            "food",
-            "gear"
+            "gear",
+            "food"
         ],
         "name": "Chunk of Meat",
         "source": "PHB",
@@ -5169,7 +5273,14 @@
             "cold"
         ],
         "text": [
-            "{#itemEntry Absorbing Tattoo|TCE}"
+            "Produced by a special needle, this magic tattoo features designs that emphasize one color (blue).",
+            "",
+            "***Tattoo Attunement.*** To attune to this item, you hold the needle to your skin where you want the tattoo to appear, pressing the needle there throughout the attunement process. When the attunement is complete, the needle turns into the ink that becomes the tattoo, which appears on the skin.",
+            "If your attunement to the tattoo ends, the tattoo vanishes, and the needle reappears in your space.",
+            "",
+            "***Damage Resistance.*** While the tattoo is on your skin, you have resistance to cold damage.",
+            "",
+            "***Damage Absorption.*** When you take cold damage, you can use your reaction to gain immunity against that instance of the damage, and you regain a number of hit points equal to half the damage you would have taken. Once this reaction is used, it can't be used again until the next dawn."
         ],
         "rarity": "very rare",
         "attunement": true
@@ -5198,8 +5309,8 @@
     },
     {
         "type": [
-            "food",
-            "gear"
+            "gear",
+            "food"
         ],
         "name": "Common Wine (Pitcher)",
         "source": "PHB",
@@ -5721,8 +5832,8 @@
     },
     {
         "type": [
-            "wondrous",
-            "curse"
+            "curse",
+            "wondrous"
         ],
         "name": "Cursed Luckstone",
         "source": "GoS",
@@ -5862,18 +5973,39 @@
         "rarity": "unknown (magic)"
     },
     {
+        "type": [
+            "wondrous"
+        ],
         "name": "Danoth's Visor (Awakened)",
-        "source": "EGW"
+        "source": "EGW",
+        "page": 270,
+        "text": [
+            "These mithral-frame goggles with clear diamond lenses were used by the evoker Danoth Oro to spot *invisible* enemies and scout areas from afar.",
+            "",
+            "***Awakened.*** When Danoth's Visor reaches an awakened state, it gains the following properties:",
+            "- You see *invisible* creatures and objects within 60 feet of you as if they were visible, and you can see into the Ethereal Plane. Ethereal creatures and objects appear ghostly and translucent.",
+            "- As a bonus action, you can speak a command word and use the goggles to see into and through solid matter. This vision has a radius of 60 feet and lasts for 1 minute. To you, solid objects within that radius appear transparent. The vision can penetrate 1 foot of stone, 1 inch of common metal, or up to 3 feet of wood or dirt. Thicker substances block the vision, as does a thin sheet of lead. This property can't be used again until the next dawn.",
+            "- As a bonus action, you can speak a command word to switch the goggles into spyglass mode. While in this mode, creatures and objects viewed through the goggles are magnified to twice their size. Speaking the command word again reverts the goggles to their normal operation.",
+            "",
+            "***Dormant.*** While wearing the goggles in their dormant state, you can see normally in darkness, both magical and nonmagical, to a distance of 60 feet. Additionally, you have advantage on Intelligence (Investigation) and Wisdom (Perception) checks that rely on sight."
+        ],
+        "rarity": "legendary",
+        "attunement": true
     },
     {
         "type": [
             "wondrous"
         ],
-        "name": "Danoth's Visor (Dormant)",
+        "name": "Danoth's Visor (Awakened)",
         "source": "EGW",
         "page": 270,
         "text": [
             "These mithral-frame goggles with clear diamond lenses were used by the evoker Danoth Oro to spot *invisible* enemies and scout areas from afar.",
+            "",
+            "***Awakened.*** When Danoth's Visor reaches an awakened state, it gains the following properties:",
+            "- You see *invisible* creatures and objects within 60 feet of you as if they were visible, and you can see into the Ethereal Plane. Ethereal creatures and objects appear ghostly and translucent.",
+            "- As a bonus action, you can speak a command word and use the goggles to see into and through solid matter. This vision has a radius of 60 feet and lasts for 1 minute. To you, solid objects within that radius appear transparent. The vision can penetrate 1 foot of stone, 1 inch of common metal, or up to 3 feet of wood or dirt. Thicker substances block the vision, as does a thin sheet of lead. This property can't be used again until the next dawn.",
+            "- As a bonus action, you can speak a command word to switch the goggles into spyglass mode. While in this mode, creatures and objects viewed through the goggles are magnified to twice their size. Speaking the command word again reverts the goggles to their normal operation.",
             "",
             "***Dormant.*** While wearing the goggles in their dormant state, you can see normally in darkness, both magical and nonmagical, to a distance of 60 feet. Additionally, you have advantage on Intelligence (Investigation) and Wisdom (Perception) checks that rely on sight."
         ],
@@ -5885,6 +6017,11 @@
         "source": "EGW",
         "related_spells": [
             "antimagic field"
+        ],
+        "text": [
+            "***Exalted.*** When Danoth's Visor reaches an exalted state, it gains the following properties:",
+            "- You automatically detect illusions you can see and automatically succeed on saving throws against them. In addition, you see a bright aura around any creature that isn't in its true form.",
+            "- As an action, you can cast the *antimagic field* spell from the visor. This property can't be used again until the next dawn."
         ]
     },
     {
@@ -6248,8 +6385,8 @@
     },
     {
         "type": [
-            "armor",
             "heavy",
+            "armor",
             "curse"
         ],
         "name": "Demon Armor",
@@ -6389,7 +6526,29 @@
         ],
         "name": "Devlin's Staff of Striking",
         "source": "ToA",
-        "page": 141
+        "page": 141,
+        "weight": 4,
+        "bonuses": {
+            "weapon_attack": 3,
+            "weapon_damage": 3
+        },
+        "damage_dice": [
+            "1d6",
+            "1d8"
+        ],
+        "damage_type": "bludgeoning",
+        "text": [
+            "This staff can be wielded as a magic quarterstaff that grants a +3 bonus to attack and damage rolls made with it.",
+            "The staff has 10 charges. When you hit with a melee attack using it, you can expend up to 3 of its charges. For each charge you expend, the target takes an extra **1d6** force damage. The staff regains 1d6 + 4 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the staff becomes a nonmagical quarterstaff.",
+            "If you attune to this staff, you transform into a goat-humanoid hybrid over the course of 3 days. Tieflings are immune to this curse. Throughout the first day, shaggy fur begins to grow all over your body. After 24 hours, your eyes become goat-like, and stumpy horns sprout from your brow. On the last day, your fingers and toes meld into double digits, and the horns grow to full length. This transformation doesn't prevent you from wielding weapons or casting spells. *remove curse*, *greater restoration*, or any other effect that ends a curse restores your original appearance, but only a *wish* spell can rid the staff of its power to transform those who attune to it.",
+            "",
+            "***Versatile.*** This weapon can be used with one or two hands. A damage value in parentheses appears with the property\u2014the damage when the weapon is used with two hands to make a melee attack.",
+            "*(PHB - pg. 147)*"
+        ],
+        "rarity": "very rare",
+        "attunement": true,
+        "recharge": "dawn",
+        "charges": 10
     },
     {
         "type": [
@@ -6475,8 +6634,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Dimir Guild Signet",
         "source": "GGR",
@@ -6925,8 +7084,8 @@
     },
     {
         "type": [
-            "gear",
-            "poison"
+            "poison",
+            "gear"
         ],
         "name": "Drow Poison",
         "source": "DMG",
@@ -7187,8 +7346,8 @@
     },
     {
         "type": [
-            "armor",
-            "heavy"
+            "heavy",
+            "armor"
         ],
         "name": "Dwarven Plate",
         "source": "DMG",
@@ -7378,8 +7537,8 @@
     },
     {
         "type": [
-            "armor",
-            "heavy"
+            "heavy",
+            "armor"
         ],
         "name": "Efreeti Chain",
         "source": "DMG",
@@ -7686,8 +7845,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Elixir of Health",
         "source": "DMG",
@@ -7737,9 +7896,9 @@
     },
     {
         "type": [
+            "gear",
             "magic",
-            "focus",
-            "gear"
+            "focus"
         ],
         "name": "Emblem",
         "source": "PHB",
@@ -7802,9 +7961,20 @@
         "rarity": "uncommon"
     },
     {
+        "type": [
+            "tool",
+            "gaming"
+        ],
         "name": "Enchanted Three-Dragon Ante Set",
         "source": "LLK",
-        "page": 15
+        "page": 15,
+        "text": [
+            "One card in this deck is enchanted to appear as whatever specific card its owner commands. This magic works only 25 percent of the time, but the deck is worth 500 gp to any serious gambler who doesn't mind the risk\u2014or who isn't told about it.",
+            "",
+            "## Gaming Set",
+            "If you are proficient with a gaming set, you can add your proficiency bonus to ability checks you make to play a game with that set. Each type of gaming set requires a separate proficiency.",
+            "*(PHB - pg. 154)*"
+        ]
     },
     {
         "type": [
@@ -7916,8 +8086,8 @@
     },
     {
         "type": [
-            "gear",
-            "poison"
+            "poison",
+            "gear"
         ],
         "name": "Essence of Ether",
         "source": "DMG",
@@ -8630,8 +8800,8 @@
     },
     {
         "type": [
-            "food",
-            "gear"
+            "gear",
+            "food"
         ],
         "name": "Fine Wine (Bottle)",
         "source": "PHB",
@@ -8659,7 +8829,14 @@
             "fire"
         ],
         "text": [
-            "{#itemEntry Absorbing Tattoo|TCE}"
+            "Produced by a special needle, this magic tattoo features designs that emphasize one color (red).",
+            "",
+            "***Tattoo Attunement.*** To attune to this item, you hold the needle to your skin where you want the tattoo to appear, pressing the needle there throughout the attunement process. When the attunement is complete, the needle turns into the ink that becomes the tattoo, which appears on the skin.",
+            "If your attunement to the tattoo ends, the tattoo vanishes, and the needle reappears in your space.",
+            "",
+            "***Damage Resistance.*** While the tattoo is on your skin, you have resistance to fire damage.",
+            "",
+            "***Damage Absorption.*** When you take fire damage, you can use your reaction to gain immunity against that instance of the damage, and you regain a number of hit points equal to half the damage you would have taken. Once this reaction is used, it can't be used again until the next dawn."
         ],
         "rarity": "very rare",
         "attunement": true
@@ -8894,7 +9071,14 @@
             "force"
         ],
         "text": [
-            "{#itemEntry Absorbing Tattoo|TCE}"
+            "Produced by a special needle, this magic tattoo features designs that emphasize one color (white).",
+            "",
+            "***Tattoo Attunement.*** To attune to this item, you hold the needle to your skin where you want the tattoo to appear, pressing the needle there throughout the attunement process. When the attunement is complete, the needle turns into the ink that becomes the tattoo, which appears on the skin.",
+            "If your attunement to the tattoo ends, the tattoo vanishes, and the needle reappears in your space.",
+            "",
+            "***Damage Resistance.*** While the tattoo is on your skin, you have resistance to force damage.",
+            "",
+            "***Damage Absorption.*** When you take force damage, you can use your reaction to gain immunity against that instance of the damage, and you regain a number of hit points equal to half the damage you would have taken. Once this reaction is used, it can't be used again until the next dawn."
         ],
         "rarity": "very rare",
         "attunement": true
@@ -9605,8 +9789,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Golgari Guild Signet",
         "source": "GGR",
@@ -9701,7 +9885,9 @@
             "poison"
         ],
         "text": [
-            "{#itemEntry Chromatic Rose|WBtW}"
+            "While this rose is held, it issues green gas as a harmless visual effect.",
+            "While holding the rose by its stem, you gain resistance to poison damage. If you would take more than 10 poison damage from a single source (after applying the resistance), the rose disintegrates, and you take no damage instead.",
+            "As an action, you can blow the petals from the rose to produce a 20-foot cone of poison. Each creature in the cone must make a DC 15 Constitution saving throw, taking **3d10** poison damage on a failed save, or half as much damage on a successful one. Using this property destroys the rose."
         ],
         "rarity": "rare"
     },
@@ -9782,19 +9968,40 @@
         ]
     },
     {
-        "name": "Grimoire Infinitus (Awakened)",
-        "source": "EGW"
-    },
-    {
         "type": [
             "wondrous"
         ],
-        "name": "Grimoire Infinitus (Dormant)",
+        "name": "Grimoire Infinitus (Awakened)",
         "source": "EGW",
         "page": 271,
         "weight": 3,
         "text": [
             "Several of these spellbooks with gilded pages and silver-plated covers were created during the Age of Arcanum, but only one has been found since the Calamity ended. The book has an infinite number of pages, is three inches thick, eight inches wide, twelve inches long, and weighs three pounds.",
+            "",
+            "***Awakened.*** When the Grimoire Infinitus reaches an awakened state, it gains the following properties:",
+            "- While you carry the spellbook, you have advantage on saving throws against spells and magical effects.",
+            "- When you prepare wizard spells using the grimoire as your spellbook, the number of spells you can prepare increases by 1 again.",
+            "",
+            "***Dormant.*** Most of the book is blank, but the following spells are recorded in the first pages of the tome: *alarm*, *antimagic field*, *bigby's hand*, *blight*, *charm person*, *confusion*, *control weather*, *create undead*, *detect thoughts*, *enlarge/reduce*, *fear*, *foresight*, *gaseous form*, *glyph of warding*, *legend lore*, *leomund's tiny hut*, *mass suggestion*, *mislead*, *misty step*, *mordenkainen's faithful hound*, *prismatic spray*, *ray of enfeeblement*, *silent image*, *teleport*, and *thunderwave*.",
+            "You can use the grimoire as your spellbook, and you can scribe new spells into it as normal. When you prepare wizard spells using the grimoire, the number of wizard spells you can prepare increases by 1."
+        ],
+        "rarity": "legendary",
+        "attunement": "by a wizard"
+    },
+    {
+        "type": [
+            "wondrous"
+        ],
+        "name": "Grimoire Infinitus (Awakened)",
+        "source": "EGW",
+        "page": 271,
+        "weight": 3,
+        "text": [
+            "Several of these spellbooks with gilded pages and silver-plated covers were created during the Age of Arcanum, but only one has been found since the Calamity ended. The book has an infinite number of pages, is three inches thick, eight inches wide, twelve inches long, and weighs three pounds.",
+            "",
+            "***Awakened.*** When the Grimoire Infinitus reaches an awakened state, it gains the following properties:",
+            "- While you carry the spellbook, you have advantage on saving throws against spells and magical effects.",
+            "- When you prepare wizard spells using the grimoire as your spellbook, the number of spells you can prepare increases by 1 again.",
             "",
             "***Dormant.*** Most of the book is blank, but the following spells are recorded in the first pages of the tome: *alarm*, *antimagic field*, *bigby's hand*, *blight*, *charm person*, *confusion*, *control weather*, *create undead*, *detect thoughts*, *enlarge/reduce*, *fear*, *foresight*, *gaseous form*, *glyph of warding*, *legend lore*, *leomund's tiny hut*, *mass suggestion*, *mislead*, *misty step*, *mordenkainen's faithful hound*, *prismatic spray*, *ray of enfeeblement*, *silent image*, *teleport*, and *thunderwave*.",
             "You can use the grimoire as your spellbook, and you can scribe new spells into it as normal. When you prepare wizard spells using the grimoire, the number of wizard spells you can prepare increases by 1."
@@ -9804,15 +10011,12 @@
     },
     {
         "name": "Grimoire Infinitus (Exalted)",
-        "source": "EGW"
-    },
-    {
-        "name": "Grovelthrash (Awakened)",
         "source": "EGW",
-        "bonuses": {
-            "weapon_attack": 2,
-            "weapon_damage": 2
-        }
+        "text": [
+            "***Exalted.*** When the Grimoire Infinitus reaches an exalted state, it gains the following properties:",
+            "- You can now use your Arcane Recovery feature twice between long rests, rather than once.",
+            "- When you prepare wizard spells using the grimoire as your spellbook, the number of spells you can prepare increases by 1 again."
+        ]
     },
     {
         "type": [
@@ -9820,13 +10024,13 @@
             "weapon",
             "melee"
         ],
-        "name": "Grovelthrash (Dormant)",
+        "name": "Grovelthrash (Awakened)",
         "source": "EGW",
         "page": 275,
         "weight": 2,
         "bonuses": {
-            "weapon_attack": 1,
-            "weapon_damage": 1
+            "weapon_attack": 2,
+            "weapon_damage": 2
         },
         "damage_dice": [
             "1d8",
@@ -9845,6 +10049,57 @@
             "- You can speak, read, and write Abyssal and Infernal.",
             "- You gain a +1 bonus to attack and damage rolls made with this magic weapon. When you hit with an attack using this warhammer, you can deal an extra **2d6** bludgeoning damage to the target. If you do, you take **1d6** psychic damage. The warhammer deals double damage to objects and structures.",
             "- While holding this weapon, you have advantage on Wisdom (Insight) checks made to discern a lie spoken in a language you understand.",
+            "",
+            "***Awakened.*** When the warhammer reaches an awakened state, it gains the following properties:",
+            "- The weapon's bonus to attack and damage rolls increases to +2.",
+            "- You gain a burrowing speed equal to your walking speed. You can use your burrowing speed to move through sand, loose earth, mud, or ice, not solid rock.",
+            "- When a creature you can see within 30 feet of you hits you with an attack while you are wielding the warhammer, you can use your reaction to deal an amount of psychic damage to that creature equal to the damage you took from the attack. This property can't be used again until the next dawn.",
+            "",
+            "> **Betrayer Artifact Properties**",
+            "> The Arms of the Betrayers advance in power in the same manner as the Vestiges of Divergence. In its dormant state, each of these artifacts has one minor beneficial property and one minor detrimental property. When the artifact attains an awakened state, it gains an additional minor beneficial property and an additional minor detrimental property. When the item reaches its exalted state, it gains a major beneficial property. See \"Artifact Properties\" in chapter 7 of the Dungeon Master's Guide for more information.",
+            "",
+            "***Versatile.*** This weapon can be used with one or two hands. A damage value in parentheses appears with the property\u2014the damage when the weapon is used with two hands to make a melee attack.",
+            "*(PHB - pg. 147)*"
+        ],
+        "rarity": "artifact",
+        "attunement": true
+    },
+    {
+        "type": [
+            "sentient",
+            "weapon",
+            "melee"
+        ],
+        "name": "Grovelthrash (Awakened)",
+        "source": "EGW",
+        "page": 275,
+        "weight": 2,
+        "bonuses": {
+            "weapon_attack": 2,
+            "weapon_damage": 2
+        },
+        "damage_dice": [
+            "1d8",
+            "1d10"
+        ],
+        "damage_type": "bludgeoning",
+        "text": [
+            "Crafted from a single piece of obsidian, this warhammer of Torog hums with magical energy and is carved with the images of faces screaming in pain.",
+            "",
+            "***Sentience.*** Grovelthrash is a sentient neutral evil weapon with an Intelligence of 18, a Wisdom of 15, and a Charisma of 19. It has hearing and *darkvision* out to a range of 120 feet.",
+            "The weapon communicates telepathically with its wielder and can speak, read, and understand Abyssal, Common, and Infernal.",
+            "",
+            "***Personality.*** A covetous **ultroloth** named Ciria lives within Grovelthrash. The weapon values material possessions and doling out pain. It compliments its wielder whenever they claim treasure and takes pleasure in harming others.",
+            "",
+            "***Dormant.*** The warhammer grants the following benefits in its dormant state:",
+            "- You can speak, read, and write Abyssal and Infernal.",
+            "- You gain a +1 bonus to attack and damage rolls made with this magic weapon. When you hit with an attack using this warhammer, you can deal an extra **2d6** bludgeoning damage to the target. If you do, you take **1d6** psychic damage. The warhammer deals double damage to objects and structures.",
+            "- While holding this weapon, you have advantage on Wisdom (Insight) checks made to discern a lie spoken in a language you understand.",
+            "",
+            "***Awakened.*** When the warhammer reaches an awakened state, it gains the following properties:",
+            "- The weapon's bonus to attack and damage rolls increases to +2.",
+            "- You gain a burrowing speed equal to your walking speed. You can use your burrowing speed to move through sand, loose earth, mud, or ice, not solid rock.",
+            "- When a creature you can see within 30 feet of you hits you with an attack while you are wielding the warhammer, you can use your reaction to deal an amount of psychic damage to that creature equal to the damage you took from the attack. This property can't be used again until the next dawn.",
             "",
             "> **Betrayer Artifact Properties**",
             "> The Arms of the Betrayers advance in power in the same manner as the Vestiges of Divergence. In its dormant state, each of these artifacts has one minor beneficial property and one minor detrimental property. When the artifact attains an awakened state, it gains an additional minor beneficial property and an additional minor detrimental property. When the item reaches its exalted state, it gains a major beneficial property. See \"Artifact Properties\" in chapter 7 of the Dungeon Master's Guide for more information.",
@@ -9866,12 +10121,18 @@
         "bonuses": {
             "weapon_attack": 3,
             "weapon_damage": 3
-        }
+        },
+        "text": [
+            "***Exalted.*** When the warhammer reaches an exalted state, it gains the following properties:",
+            "- The weapon's bonus to attack and damage rolls increases to +3.",
+            "- When you have fewer hit points than half your hit point maximum, the warhammer deals an extra **2d6** bludgeoning damage on a hit. You can burrow through solid rock at half your burrowing speed and leave a 5-foot-diameter tunnel in your wake.",
+            "- As an action, you can use the warhammer to cast one of the following spells from it (save DC 17): *earthquake*, *meld into stone*, or *stone shape*. Once a spell has been cast using the warhammer, that spell can't be cast from the warhammer again until the next dawn."
+        ]
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Gruul Guild Signet",
         "source": "GGR",
@@ -10171,8 +10432,8 @@
     },
     {
         "type": [
-            "wondrous",
-            "curse"
+            "curse",
+            "wondrous"
         ],
         "name": "Harkon's Bite",
         "source": "VRGR",
@@ -10355,8 +10616,8 @@
     },
     {
         "type": [
-            "wondrous",
-            "curse"
+            "curse",
+            "wondrous"
         ],
         "name": "Hell Hound Cloak",
         "source": "TftYP",
@@ -10663,20 +10924,11 @@
         "attunement": true
     },
     {
-        "name": "Hide of the Feral Guardian (Awakened)",
-        "source": "EGW",
-        "bonuses": {
-            "armor_class": 2,
-            "weapon_attack": 2,
-            "weapon_damage": 2
-        }
-    },
-    {
         "type": [
             "armor",
             "light"
         ],
-        "name": "Hide of the Feral Guardian (Dormant)",
+        "name": "Hide of the Feral Guardian (Awakened)",
         "source": "EGW",
         "page": 271,
         "weight": 13,
@@ -10684,13 +10936,52 @@
             "polymorph"
         ],
         "bonuses": {
-            "armor_class": 1,
-            "weapon_attack": 1,
-            "weapon_damage": 1
+            "armor_class": 2,
+            "weapon_attack": 2,
+            "weapon_damage": 2
         },
         "armor_class": 12,
         "text": [
             "It is believed that this polished and beautifully detailed leather armor was a gift from Melora, bestowed on a long-forgotten archdruid and champion of the natural world before the terrors of the Calamity.",
+            "",
+            "***Awakened.*** When the armor reaches an awakened state, it gains the following properties:",
+            "- The AC bonus of the armor increases to +2.",
+            "- While you are transformed by an effect that replaces any of your game statistics with those of another creature, your bonus to melee attack and damage rolls increases by 1 (to +2).",
+            "- When you cast the *polymorph* spell using this armor, you can transform into a **cave bear**.",
+            "",
+            "***Dormant.*** While wearing the armor in its dormant state, you gain the following benefits:",
+            "- The armor grants you a +1 bonus to AC.",
+            "- While you are transformed by an effect that replaces any of your game statistics with those of another creature, you have a +1 bonus to melee attack and damage rolls, and you retain the benefits of this armor.",
+            "- As an action, you can use the armor to cast *polymorph* on yourself, transforming into a **giant owl** while retaining your Intelligence, Wisdom, and Charisma scores. This property can't be used again until the next dawn."
+        ],
+        "rarity": "legendary",
+        "attunement": true
+    },
+    {
+        "type": [
+            "armor",
+            "light"
+        ],
+        "name": "Hide of the Feral Guardian (Awakened)",
+        "source": "EGW",
+        "page": 271,
+        "weight": 13,
+        "related_spells": [
+            "polymorph"
+        ],
+        "bonuses": {
+            "armor_class": 2,
+            "weapon_attack": 2,
+            "weapon_damage": 2
+        },
+        "armor_class": 12,
+        "text": [
+            "It is believed that this polished and beautifully detailed leather armor was a gift from Melora, bestowed on a long-forgotten archdruid and champion of the natural world before the terrors of the Calamity.",
+            "",
+            "***Awakened.*** When the armor reaches an awakened state, it gains the following properties:",
+            "- The AC bonus of the armor increases to +2.",
+            "- While you are transformed by an effect that replaces any of your game statistics with those of another creature, your bonus to melee attack and damage rolls increases by 1 (to +2).",
+            "- When you cast the *polymorph* spell using this armor, you can transform into a **cave bear**.",
             "",
             "***Dormant.*** While wearing the armor in its dormant state, you gain the following benefits:",
             "- The armor grants you a +1 bonus to AC.",
@@ -10707,7 +10998,13 @@
             "armor_class": 3,
             "weapon_attack": 3,
             "weapon_damage": 3
-        }
+        },
+        "text": [
+            "***Exalted.*** When the armor reaches an exalted state, it gains the following properties:",
+            "- The AC bonus of the armor increases to +3.",
+            "- While you are transformed by an effect that replaces any of your game statistics with those of another creature, your bonus to melee attack and damage rolls increases by 1 (to +3).",
+            "- When you cast the *polymorph* spell using this armor, you can transform into a **guardian wolf**."
+        ]
     },
     {
         "type": [
@@ -10826,26 +11123,31 @@
         "charges": 4
     },
     {
+        "type": [
+            "wondrous"
+        ],
         "name": "Horn of the Endless Maze",
         "source": "WDMM",
         "page": 163,
+        "weight": 2,
         "text": [
             "You can use an action to blow this horn. In response, warrior spirits from the Abyss appear within 60 feet of you. These spirits look like minotaurs, and use the **berserker** statistics. They return to Abyss after 1 hour or when they drop to 0 hit points. Once you use the horn, it can't be used again until 7 days have passed.",
             "The horn summons 3d4 + 3 **berserker**. To use the horn, you must be proficient with all simple weapons.",
             "If you blow the horn without meeting its requirement, the summoned **berserker** attack you. If you meet the requirement, they are friendly to you and your companions and follow your commands."
-        ]
+        ],
+        "rarity": "rare"
     },
     {
         "type": [
             "wondrous"
         ],
-        "name": "Horn of Valhalla, Brass",
-        "source": "DMG",
-        "page": 175,
+        "name": "Horn of the Endless Maze",
+        "source": "WDMM",
+        "page": 163,
         "weight": 2,
         "text": [
-            "You can use an action to blow this horn. In response, warrior spirits from the plane of Ysgard appear within 60 feet of you. These spirits use the **berserker** statistics. They return to Ysgard after 1 hour or when they drop to 0 hit points. Once you use the horn, it can't be used again until 7 days have passed.",
-            "A brass horn summons 3d4 + 3 **berserker**. To use the brass horn, you must be proficient with all simple weapons.",
+            "You can use an action to blow this horn. In response, warrior spirits from the Abyss appear within 60 feet of you. These spirits look like minotaurs, and use the **berserker** statistics. They return to Abyss after 1 hour or when they drop to 0 hit points. Once you use the horn, it can't be used again until 7 days have passed.",
+            "The horn summons 3d4 + 3 **berserker**. To use the horn, you must be proficient with all simple weapons.",
             "If you blow the horn without meeting its requirement, the summoned **berserker** attack you. If you meet the requirement, they are friendly to you and your companions and follow your commands."
         ],
         "rarity": "rare"
@@ -10897,8 +11199,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Horned Ring",
         "source": "WDMM",
@@ -11060,8 +11362,8 @@
     },
     {
         "type": [
-            "food",
-            "gear"
+            "gear",
+            "food"
         ],
         "name": "Hunk of Cheese",
         "source": "PHB",
@@ -11272,8 +11574,8 @@
     },
     {
         "type": [
-            "rod",
-            "magic"
+            "magic",
+            "rod"
         ],
         "name": "Immovable Rod",
         "source": "DMG",
@@ -11314,8 +11616,12 @@
         "attunement": "by a creature of evil alignment."
     },
     {
+        "type": [
+            "wondrous"
+        ],
         "name": "Infiltrator's Key (Awakened)",
         "source": "EGW",
+        "page": 272,
         "related_spells": [
             "alter self",
             "invisibility",
@@ -11325,21 +11631,44 @@
         "bonuses": {
             "weapon_attack": 2,
             "weapon_damage": 2
-        }
+        },
+        "text": [
+            "This mithral skeleton key was forged using the blood of twelve master thieves executed for trying to steal magic items during the Age of Arcanum.",
+            "",
+            "***Awakened.*** When the Infiltrator's Key reaches an awakened state, it gains the following properties:",
+            "- While holding the key, you can use a bonus action to transform the key into a magic dagger or back into a key. While the key is in the form of a dagger, you gain a +1 bonus to attack and damage rolls made with it, and it returns to your hand immediately after it is used to make a ranged attack.",
+            "- While holding the key, you can use an action to cast one of the following spells from it: *alter self*, *invisibility*, *knock*, or *pass without trace*. Once a spell has been cast using the key, it can't be used to cast that spell again until the next dawn.",
+            "",
+            "***Dormant.*** The Infiltrator's Key grants the following benefits in its dormant state:",
+            "- The key can be used as thieves' tools for the purpose of opening locks. When using the key, you are considered proficient in thieves' tools and you have advantage on ability checks made to open locks.",
+            "- While holding the key, your steps are muffled, giving you advantage on Dexterity (Stealth) checks made to move silently."
+        ],
+        "rarity": "legendary",
+        "attunement": true
     },
     {
         "type": [
             "wondrous"
         ],
-        "name": "Infiltrator's Key (Dormant)",
+        "name": "Infiltrator's Key (Awakened)",
         "source": "EGW",
         "page": 272,
+        "related_spells": [
+            "alter self",
+            "invisibility",
+            "knock",
+            "pass without trace"
+        ],
         "bonuses": {
-            "weapon_attack": 1,
-            "weapon_damage": 1
+            "weapon_attack": 2,
+            "weapon_damage": 2
         },
         "text": [
             "This mithral skeleton key was forged using the blood of twelve master thieves executed for trying to steal magic items during the Age of Arcanum.",
+            "",
+            "***Awakened.*** When the Infiltrator's Key reaches an awakened state, it gains the following properties:",
+            "- While holding the key, you can use a bonus action to transform the key into a magic dagger or back into a key. While the key is in the form of a dagger, you gain a +1 bonus to attack and damage rolls made with it, and it returns to your hand immediately after it is used to make a ranged attack.",
+            "- While holding the key, you can use an action to cast one of the following spells from it: *alter self*, *invisibility*, *knock*, or *pass without trace*. Once a spell has been cast using the key, it can't be used to cast that spell again until the next dawn.",
             "",
             "***Dormant.*** The Infiltrator's Key grants the following benefits in its dormant state:",
             "- The key can be used as thieves' tools for the purpose of opening locks. When using the key, you are considered proficient in thieves' tools and you have advantage on ability checks made to open locks.",
@@ -11363,7 +11692,12 @@
         "bonuses": {
             "weapon_attack": 3,
             "weapon_damage": 3
-        }
+        },
+        "text": [
+            "***Exalted.*** When the Infiltrator's Key reaches an exalted state, it gains the following properties:",
+            "- As a bonus action, you can touch the key to a floor, wall, or ceiling that is no more than 5 feet thick and cause a magical opening to appear in the surface. When you create the opening, you choose its length and width, up to 10 feet for each dimension. The opening lasts until the key passes through it to the other side, at which point it disappears (if a creature is in the opening when the doorway closes, the creature is safely shunted to the nearest unoccupied space). The key can't be used to create another opening until the next dawn.",
+            "- While holding the key, you can use an action to cast one of the following spells from it: *dimension door*, *gaseous form*, or *mislead*. Once a spell has been cast using the key, it can't be used to cast that spell again until the next dawn."
+        ]
     },
     {
         "type": [
@@ -12324,8 +12658,8 @@
     },
     {
         "type": [
-            "gear",
-            "poison"
+            "poison",
+            "gear"
         ],
         "name": "Ivana's Whisper",
         "source": "VRGR",
@@ -12340,8 +12674,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Izzet Guild Signet",
         "source": "GGR",
@@ -12467,7 +12801,35 @@
     {
         "name": "Jakarion's Staff of Frost",
         "source": "CoS",
-        "page": 187
+        "page": 187,
+        "resist": [
+            "cold"
+        ],
+        "weight": 4,
+        "related_spells": [
+            "cone of cold",
+            "fog cloud",
+            "ice storm",
+            "wall of ice"
+        ],
+        "damage_dice": [
+            "1d6",
+            "1d8"
+        ],
+        "damage_type": "bludgeoning",
+        "text": [
+            "You have resistance to cold damage while you hold this staff.",
+            "The staff has 10 charges. While holding it, you can use an action to expend 1 or more of its charges to cast one of the following spells from it, using your spell save DC: *cone of cold* (5 charges), *fog cloud* (1 charge), *ice storm* (4 charges), or *wall of ice* (4 charges).",
+            "The staff regains 1d6 + 4 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1. the staff turns to water and is destroyed.",
+            "Imprinted on this staff is a fragment of a dead wizard's personality. The first character who touches the staff gains the following flaw: \"I crave power above all else, and will do anything to obtain more of it.\" This flaw trumps any conflicting personality trait.",
+            "",
+            "***Versatile.*** This weapon can be used with one or two hands. A damage value in parentheses appears with the property\u2014the damage when the weapon is used with two hands to make a melee attack.",
+            "*(PHB - pg. 147)*"
+        ],
+        "rarity": "very rare",
+        "attunement": "by a druid, sorcerer, warlock, or wizard",
+        "recharge": "dawn",
+        "charges": 10
     },
     {
         "type": [
@@ -12555,28 +12917,28 @@
         ]
     },
     {
-        "name": "Jewel of Three Prayers (Awakened)",
-        "source": "CRCotN",
-        "bonuses": {
-            "armor_class": 2
-        },
-        "charges": 5
-    },
-    {
         "type": [
             "wondrous"
         ],
-        "name": "Jewel of Three Prayers (Dormant)",
+        "name": "Jewel of Three Prayers (Awakened)",
         "source": "CRCotN",
         "page": 213,
         "related_spells": [
             "invisibility"
         ],
         "bonuses": {
-            "armor_class": 1
+            "armor_class": 2
         },
         "text": [
             "The Jewel of Three Prayers is a Vestige of Divergence (see the \"Vestiges of Divergence\" sidebar). In ancient times, Alyxian the Apotheon bore this amulet as a symbol of his covenant with three Prime Deities: Sehanine the Moon Weaver, Avandra the Change Bringer, and Corellon the Arch Heart. When the jewel is found, only Sehanine's power thrums within its dormant heart. The power of the other two deities waits to be reawakened by a hero\u2014or heroes\u2014who can follow in Alyxian's footsteps.",
+            "",
+            "***Awakened State.*** In this state, the jewel has received the blessing of Avandra the Change Bringer. Three delicate spires unfurl from the jewel's center, like the buds of flowers opening in the spring. Three lapis lazuli stones rest like dewdrops on these spires.",
+            "- The following benefits of the jewel improve:",
+            "- The bonus that the jewel confers to your AC increases to +2.",
+            "- Its number of charges increases to 5.",
+            "The jewel gains the following additional properties, which you can use while wearing or holding it:",
+            "- You can expend 1 of the jewel's charges (no action required) to end one of the following conditions on yourself: *grappled*, *paralyzed*, or *restrained*.",
+            "- When another creature you can see within 60 feet of you fails a saving throw, you can expend 1 of the jewel's charges as a reaction to enable that creature to reroll the saving throw, potentially turning a failure into a success. The creature must use the new roll.",
             "",
             "***Dormant State.*** In this state, the Jewel of Three Prayers is a glittering golden disk attached to a fine golden chain. The chain magically resizes to function as a necklace for the creature that wears it.",
             "In its Dormant State, the jewel has the following properties:",
@@ -12587,7 +12949,42 @@
         "rarity": "legendary",
         "attunement": true,
         "recharge": "dawn",
-        "charges": 3
+        "charges": 5
+    },
+    {
+        "type": [
+            "wondrous"
+        ],
+        "name": "Jewel of Three Prayers (Awakened)",
+        "source": "CRCotN",
+        "page": 213,
+        "related_spells": [
+            "invisibility"
+        ],
+        "bonuses": {
+            "armor_class": 2
+        },
+        "text": [
+            "The Jewel of Three Prayers is a Vestige of Divergence (see the \"Vestiges of Divergence\" sidebar). In ancient times, Alyxian the Apotheon bore this amulet as a symbol of his covenant with three Prime Deities: Sehanine the Moon Weaver, Avandra the Change Bringer, and Corellon the Arch Heart. When the jewel is found, only Sehanine's power thrums within its dormant heart. The power of the other two deities waits to be reawakened by a hero\u2014or heroes\u2014who can follow in Alyxian's footsteps.",
+            "",
+            "***Awakened State.*** In this state, the jewel has received the blessing of Avandra the Change Bringer. Three delicate spires unfurl from the jewel's center, like the buds of flowers opening in the spring. Three lapis lazuli stones rest like dewdrops on these spires.",
+            "- The following benefits of the jewel improve:",
+            "- The bonus that the jewel confers to your AC increases to +2.",
+            "- Its number of charges increases to 5.",
+            "The jewel gains the following additional properties, which you can use while wearing or holding it:",
+            "- You can expend 1 of the jewel's charges (no action required) to end one of the following conditions on yourself: *grappled*, *paralyzed*, or *restrained*.",
+            "- When another creature you can see within 60 feet of you fails a saving throw, you can expend 1 of the jewel's charges as a reaction to enable that creature to reroll the saving throw, potentially turning a failure into a success. The creature must use the new roll.",
+            "",
+            "***Dormant State.*** In this state, the Jewel of Three Prayers is a glittering golden disk attached to a fine golden chain. The chain magically resizes to function as a necklace for the creature that wears it.",
+            "In its Dormant State, the jewel has the following properties:",
+            "- You gain a +1 bonus to AC while wearing the jewel.",
+            "- While wearing or holding the jewel, you can use an action to cause it to shed bright light in a 15-foot radius and dim light for an additional 15 feet. The light lasts until you extinguish it (no action required).",
+            "- The jewel has 3 charges and regains all its expended charges daily at dawn. While holding the jewel, you can expend 1 charge from it to cast the *invisibility* spell."
+        ],
+        "rarity": "legendary",
+        "attunement": true,
+        "recharge": "dawn",
+        "charges": 5
     },
     {
         "name": "Jewel of Three Prayers (Exalted)",
@@ -12595,6 +12992,16 @@
         "bonuses": {
             "armor_class": 3
         },
+        "text": [
+            "***Exalted State.*** In this state, the jewel has received the blessing of Corellon the Arch Heart. A gleaming emerald surrounded by a halo of gold appears on the jewel.",
+            "The following benefits of the jewel improve:",
+            "- The bonus that the jewel confers to your AC increases to +3.",
+            "- Its number of charges increases to 7.",
+            "The jewel gains the following additional properties, which you can use while wearing or holding it:",
+            "- You gain the ability to breathe water, and you gain a swimming speed equal to your walking speed.",
+            "- Each of your allies within 30 feet of you gains the ability to breathe water and gains a swimming speed equal to its walking speed.",
+            "- As a bonus action, you can expend 1 of the jewel's charges to target yourself or one willing creature you can see within 15 feet of yourself. The target teleports to an unoccupied space of your choice within 15 feet of yourself, along with any equipment the target is wearing or carrying. The target appears in a flash of golden radiance, and each creature of your choice within 5 feet of the target's new location must make a DC 18 Constitution saving throw. On a failed save, the creature takes **4d10** radiant damage and is *blinded* until the start of your next turn. On a successful save, the creature takes half as much damage and isn't *blinded*."
+        ],
         "charges": 7
     },
     {
@@ -13030,26 +13437,18 @@
         "value": 25000
     },
     {
-        "name": "Lash of Shadows (Awakened)",
-        "source": "EGW",
-        "bonuses": {
-            "weapon_attack": 2,
-            "weapon_damage": 2
-        }
-    },
-    {
         "type": [
             "sentient",
             "weapon",
             "melee"
         ],
-        "name": "Lash of Shadows (Dormant)",
+        "name": "Lash of Shadows (Awakened)",
         "source": "EGW",
         "page": 276,
         "weight": 3,
         "bonuses": {
-            "weapon_attack": 1,
-            "weapon_damage": 1
+            "weapon_attack": 2,
+            "weapon_damage": 2
         },
         "damage_dice": [
             "1d4"
@@ -13070,6 +13469,61 @@
             "- - **Dead Eyes:** A creature that fails the saving throw against this poison is *poisoned* for 1 hour. While *poisoned* in this way, the creature is *blinded*.",
             "- - **Serpent Venom:** A creature that fails the saving throw against this poison takes **3d6** poison damage, or half as much damage on a successful save.",
             "",
+            "***Awakened.*** When the whip reaches an awakened state, it gains the following properties:",
+            "- The weapon's bonus to attack and damage rolls increases to +2.",
+            "- The saving throw DC for the weapon's poisons increases to 15.",
+            "- The weapon gains a new poison option called Ghoul's Blood. A creature that fails the saving throw against this poison is *poisoned* for 1 minute. While *poisoned* in this way, the creature is *paralyzed*. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+            "",
+            "> **Betrayer Artifact Properties**",
+            "> The Arms of the Betrayers advance in power in the same manner as the Vestiges of Divergence. In its dormant state, each of these artifacts has one minor beneficial property and one minor detrimental property. When the artifact attains an awakened state, it gains an additional minor beneficial property and an additional minor detrimental property. When the item reaches its exalted state, it gains a major beneficial property. See \"Artifact Properties\" in chapter 7 of the Dungeon Master's Guide for more information.",
+            "",
+            "***Finesse.*** When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.",
+            "*(PHB - pg. 147)*",
+            "",
+            "***Reach.*** This weapon adds 5 feet to your reach when you attack with it. This property also determines your reach for opportunity attacks with a reach weapon.",
+            "*(PHB - pg. 147)*"
+        ],
+        "rarity": "artifact",
+        "attunement": true
+    },
+    {
+        "type": [
+            "sentient",
+            "weapon",
+            "melee"
+        ],
+        "name": "Lash of Shadows (Awakened)",
+        "source": "EGW",
+        "page": 276,
+        "weight": 3,
+        "bonuses": {
+            "weapon_attack": 2,
+            "weapon_damage": 2
+        },
+        "damage_dice": [
+            "1d4"
+        ],
+        "damage_type": "slashing",
+        "text": [
+            "This snakeskin whip is touched by the power of Zehir and ends in five animated serpent heads.",
+            "",
+            "***Sentience.*** The Lash of Shadows is a sentient chaotic evil weapon with an Intelligence of 18, a Wisdom of 16, and a Charisma of 20. It has hearing and *darkvision* out to a range of 120 feet.",
+            "The weapon communicates telepathically with its wielder and can speak, read, and understand Abyssal, Common, and Draconic.",
+            "",
+            "***Personality.*** A mad **marilith** named Sizlifeth lives within the Lash of Shadows. The weapon has a short temper and experiences only extreme emotions. It is most happy when dealing harm.",
+            "",
+            "***Dormant.*** The whip grants the following benefits in its dormant state:",
+            "- You can speak, read, and write Abyssal and Draconic.",
+            "- You gain a +1 bonus to attack and damage rolls made with this magic weapon.",
+            "- You can attempt to poison any creature that is hit by the whip. The creature must succeed on a DC 13 Constitution saving throw or suffer the effect of one of the following poisons of your choice; once a poison other than Serpent Venom has been used, that poison can't be used again until the next dawn:",
+            "- - **Dead Eyes:** A creature that fails the saving throw against this poison is *poisoned* for 1 hour. While *poisoned* in this way, the creature is *blinded*.",
+            "- - **Serpent Venom:** A creature that fails the saving throw against this poison takes **3d6** poison damage, or half as much damage on a successful save.",
+            "",
+            "***Awakened.*** When the whip reaches an awakened state, it gains the following properties:",
+            "- The weapon's bonus to attack and damage rolls increases to +2.",
+            "- The saving throw DC for the weapon's poisons increases to 15.",
+            "- The weapon gains a new poison option called Ghoul's Blood. A creature that fails the saving throw against this poison is *poisoned* for 1 minute. While *poisoned* in this way, the creature is *paralyzed*. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+            "",
             "> **Betrayer Artifact Properties**",
             "> The Arms of the Betrayers advance in power in the same manner as the Vestiges of Divergence. In its dormant state, each of these artifacts has one minor beneficial property and one minor detrimental property. When the artifact attains an awakened state, it gains an additional minor beneficial property and an additional minor detrimental property. When the item reaches its exalted state, it gains a major beneficial property. See \"Artifact Properties\" in chapter 7 of the Dungeon Master's Guide for more information.",
             "",
@@ -13088,7 +13542,13 @@
         "bonuses": {
             "weapon_attack": 3,
             "weapon_damage": 3
-        }
+        },
+        "text": [
+            "***Exalted.*** When the whip reaches an exalted state, it gains the following additional properties:",
+            "- The weapon's bonus to attack and damage rolls increases to +3.",
+            "- The saving throw DC for the weapon's poisons increases to 17.",
+            "- The weapon gains a new poison option called Cockatrice Tears. A creature that fails the saving throw against this poison begins to turn to stone and is *restrained*. It must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure, the creature is *petrified* for 24 hours."
+        ]
     },
     {
         "type": [
@@ -13256,7 +13716,14 @@
             "lightning"
         ],
         "text": [
-            "{#itemEntry Absorbing Tattoo|TCE}"
+            "Produced by a special needle, this magic tattoo features designs that emphasize one color (yellow).",
+            "",
+            "***Tattoo Attunement.*** To attune to this item, you hold the needle to your skin where you want the tattoo to appear, pressing the needle there throughout the attunement process. When the attunement is complete, the needle turns into the ink that becomes the tattoo, which appears on the skin.",
+            "If your attunement to the tattoo ends, the tattoo vanishes, and the needle reappears in your space.",
+            "",
+            "***Damage Resistance.*** While the tattoo is on your skin, you have resistance to lightning damage.",
+            "",
+            "***Damage Absorption.*** When you take lightning damage, you can use your reaction to gain immunity against that instance of the damage, and you regain a number of hit points equal to half the damage you would have taken. Once this reaction is used, it can't be used again until the next dawn."
         ],
         "rarity": "very rare",
         "attunement": true
@@ -13339,8 +13806,8 @@
     },
     {
         "type": [
-            "wondrous",
-            "curse"
+            "curse",
+            "wondrous"
         ],
         "name": "Loadstone",
         "source": "TftYP",
@@ -13355,8 +13822,8 @@
     },
     {
         "type": [
-            "food",
-            "gear"
+            "gear",
+            "food"
         ],
         "name": "Loaf of Bread",
         "source": "PHB",
@@ -13726,20 +14193,12 @@
         "charges": 3
     },
     {
-        "name": "Mace of the Black Crown (Awakened)",
-        "source": "EGW",
-        "bonuses": {
-            "weapon_attack": 2,
-            "weapon_damage": 2
-        }
-    },
-    {
         "type": [
             "sentient",
             "weapon",
             "melee"
         ],
-        "name": "Mace of the Black Crown (Dormant)",
+        "name": "Mace of the Black Crown (Awakened)",
         "source": "EGW",
         "page": 276,
         "resist": [
@@ -13748,8 +14207,8 @@
         ],
         "weight": 4,
         "bonuses": {
-            "weapon_attack": 1,
-            "weapon_damage": 1
+            "weapon_attack": 2,
+            "weapon_damage": 2
         },
         "damage_dice": [
             "1d6"
@@ -13769,6 +14228,58 @@
             "- While holding the mace, you can use a bonus action to speak its Infernal command word, causing flames to erupt from the head. These flames shed bright light in a 40-foot radius and dim light for an additional 40 feet. While the mace is ablaze, it deals an extra **1d6** fire damage to any target it hits. The flames last until you use a bonus action to speak the command word again or until you are no longer holding the mace.",
             "- While holding the mace, you can use an action to summon an **imp**. Any devil you summon with this mace is friendly to you and your companions for the duration. The imp obeys any verbal commands that you issue to it and returns to the Nine Hells 10 minutes after you summoned it. This property can't be used again until the next dawn.",
             "",
+            "***Awakened.*** When the mace reaches an awakened state, it gains the following properties:",
+            "- The weapon's bonus to attack and damage rolls increases to +2, and the extra fire damage dealt by the weapon when it is ignited increases to 2d6.",
+            "- The weapon's Summon Devil feature can also be used to summon a **bearded devil**.",
+            "- You have resistance to poison damage while holding this weapon.",
+            "",
+            "> **Betrayer Artifact Properties**",
+            "> The Arms of the Betrayers advance in power in the same manner as the Vestiges of Divergence. In its dormant state, each of these artifacts has one minor beneficial property and one minor detrimental property. When the artifact attains an awakened state, it gains an additional minor beneficial property and an additional minor detrimental property. When the item reaches its exalted state, it gains a major beneficial property. See \"Artifact Properties\" in chapter 7 of the Dungeon Master's Guide for more information."
+        ],
+        "rarity": "artifact",
+        "attunement": true
+    },
+    {
+        "type": [
+            "sentient",
+            "weapon",
+            "melee"
+        ],
+        "name": "Mace of the Black Crown (Awakened)",
+        "source": "EGW",
+        "page": 276,
+        "resist": [
+            "fire",
+            "poison"
+        ],
+        "weight": 4,
+        "bonuses": {
+            "weapon_attack": 2,
+            "weapon_damage": 2
+        },
+        "damage_dice": [
+            "1d6"
+        ],
+        "damage_type": "bludgeoning",
+        "text": [
+            "This mace has a haft of black iron and a ruby head with a fiendish countenance. Carrying the boon of Asmodeus, it is fit for the most powerful servants of the Nine Hells.",
+            "",
+            "***Sentience.*** The Mace of the Black Crown is a sentient lawful evil weapon with an Intelligence of 20, a Wisdom of 12, and a Charisma of 18. It has hearing and *darkvision* out to a range of 120 feet.",
+            "The weapon communicates telepathically with its wielder and can speak, read, and understand Common and Infernal.",
+            "",
+            "***Personality.*** A greedy **erinyes** named Xartaza lives within the Mace of the Black Crown. Xartaza wants to recruit more souls for Asmodeus, so the weapon pushes its wielder toward lawful evil actions by manipulating the wielder's dreams. A former Blood War general, Xartaza hates demons and relishes crafting sound battle plans in any conflict.",
+            "",
+            "***Dormant.*** The mace grants the following benefits in its dormant state:",
+            "- You can speak, read, and write Infernal.",
+            "- You gain a +1 bonus to attack and damage rolls made with this magic weapon.",
+            "- While holding the mace, you can use a bonus action to speak its Infernal command word, causing flames to erupt from the head. These flames shed bright light in a 40-foot radius and dim light for an additional 40 feet. While the mace is ablaze, it deals an extra **1d6** fire damage to any target it hits. The flames last until you use a bonus action to speak the command word again or until you are no longer holding the mace.",
+            "- While holding the mace, you can use an action to summon an **imp**. Any devil you summon with this mace is friendly to you and your companions for the duration. The imp obeys any verbal commands that you issue to it and returns to the Nine Hells 10 minutes after you summoned it. This property can't be used again until the next dawn.",
+            "",
+            "***Awakened.*** When the mace reaches an awakened state, it gains the following properties:",
+            "- The weapon's bonus to attack and damage rolls increases to +2, and the extra fire damage dealt by the weapon when it is ignited increases to 2d6.",
+            "- The weapon's Summon Devil feature can also be used to summon a **bearded devil**.",
+            "- You have resistance to poison damage while holding this weapon.",
+            "",
             "> **Betrayer Artifact Properties**",
             "> The Arms of the Betrayers advance in power in the same manner as the Vestiges of Divergence. In its dormant state, each of these artifacts has one minor beneficial property and one minor detrimental property. When the artifact attains an awakened state, it gains an additional minor beneficial property and an additional minor detrimental property. When the item reaches its exalted state, it gains a major beneficial property. See \"Artifact Properties\" in chapter 7 of the Dungeon Master's Guide for more information."
         ],
@@ -13781,7 +14292,13 @@
         "bonuses": {
             "weapon_attack": 3,
             "weapon_damage": 3
-        }
+        },
+        "text": [
+            "***Exalted.*** When the mace reaches an exalted state, it gains the following properties:",
+            "- The weapon's bonus to attack and damage rolls increases to +3, and the extra fire damage dealt by the weapon when it is ignited increases to 3d6. Fire damage dealt by the mace ignores resistance to fire damage.",
+            "- The weapon's Summon Devil feature can also be used to summon a **barbed devil**.",
+            "- You have resistance to fire damage while you hold this weapon."
+        ]
     },
     {
         "type": [
@@ -13845,8 +14362,8 @@
     },
     {
         "type": [
-            "gear",
-            "poison"
+            "poison",
+            "gear"
         ],
         "name": "Malice",
         "source": "DMG",
@@ -14376,8 +14893,8 @@
     },
     {
         "type": [
-            "gear",
-            "poison"
+            "poison",
+            "gear"
         ],
         "name": "Midnight Tears",
         "source": "DMG",
@@ -14721,8 +15238,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Mummy Rot Antidote",
         "source": "IMR",
@@ -14747,8 +15264,8 @@
     {
         "type": [
             "sentient",
-            "wondrous",
-            "curse"
+            "curse",
+            "wondrous"
         ],
         "name": "Murgaxor's Orb",
         "source": "SCC",
@@ -14959,7 +15476,14 @@
             "necrotic"
         ],
         "text": [
-            "{#itemEntry Absorbing Tattoo|TCE}"
+            "Produced by a special needle, this magic tattoo features designs that emphasize one color (black).",
+            "",
+            "***Tattoo Attunement.*** To attune to this item, you hold the needle to your skin where you want the tattoo to appear, pressing the needle there throughout the attunement process. When the attunement is complete, the needle turns into the ink that becomes the tattoo, which appears on the skin.",
+            "If your attunement to the tattoo ends, the tattoo vanishes, and the needle reappears in your space.",
+            "",
+            "***Damage Resistance.*** While the tattoo is on your skin, you have resistance to necrotic damage.",
+            "",
+            "***Damage Absorption.*** When you take necrotic damage, you can use your reaction to gain immunity against that instance of the damage, and you regain a number of hit points equal to half the damage you would have taken. Once this reaction is used, it can't be used again until the next dawn."
         ],
         "rarity": "very rare",
         "attunement": true
@@ -15176,8 +15700,8 @@
     },
     {
         "type": [
-            "armor",
-            "heavy"
+            "heavy",
+            "armor"
         ],
         "name": "Obsidian Flint Dragon Plate",
         "source": "BGDIA",
@@ -15271,8 +15795,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Oil of Etherealness",
         "source": "DMG",
@@ -15287,8 +15811,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Oil of Sharpness",
         "source": "DMG",
@@ -15304,8 +15828,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Oil of Slipperiness",
         "source": "DMG",
@@ -15321,8 +15845,8 @@
     },
     {
         "type": [
-            "gear",
-            "poison"
+            "poison",
+            "gear"
         ],
         "name": "Oil of Taggit",
         "source": "DMG",
@@ -15405,8 +15929,8 @@
     },
     {
         "type": [
-            "rune",
-            "magic"
+            "magic",
+            "rune"
         ],
         "name": "Opal of the Ild Rune",
         "source": "UAPrestigeClassesRunMagic",
@@ -15528,8 +16052,8 @@
     },
     {
         "type": [
-            "rune",
-            "magic"
+            "magic",
+            "rune"
         ],
         "name": "Orb of the Stein Rune",
         "source": "UAPrestigeClassesRunMagic",
@@ -15556,8 +16080,8 @@
     },
     {
         "type": [
-            "wondrous",
-            "curse"
+            "curse",
+            "wondrous"
         ],
         "name": "Orb of the Veil",
         "source": "EGW",
@@ -15665,8 +16189,8 @@
     },
     {
         "type": [
-            "shield",
-            "armor"
+            "armor",
+            "shield"
         ],
         "name": "Order of the Silver Dragon +2 Shield",
         "source": "CoS",
@@ -15747,8 +16271,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Orzhov Guild Signet",
         "source": "GGR",
@@ -16002,8 +16526,8 @@
     },
     {
         "type": [
-            "gear",
-            "poison"
+            "poison",
+            "gear"
         ],
         "name": "Pale Tincture",
         "source": "DMG",
@@ -16066,8 +16590,8 @@
     },
     {
         "type": [
-            "shield",
-            "armor"
+            "armor",
+            "shield"
         ],
         "name": "Pariah's Shield",
         "source": "GGR",
@@ -16179,8 +16703,8 @@
     },
     {
         "type": [
-            "rune",
-            "magic"
+            "magic",
+            "rune"
         ],
         "name": "Pennant of the Vind Rune",
         "source": "UAPrestigeClassesRunMagic",
@@ -16336,8 +16860,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Philter of Love",
         "source": "DMG",
@@ -16605,8 +17129,8 @@
     },
     {
         "type": [
-            "armor",
-            "heavy"
+            "heavy",
+            "armor"
         ],
         "name": "Plate Armor of Etherealness",
         "source": "DMG",
@@ -16763,7 +17287,14 @@
             "poison"
         ],
         "text": [
-            "{#itemEntry Absorbing Tattoo|TCE}"
+            "Produced by a special needle, this magic tattoo features designs that emphasize one color (violet).",
+            "",
+            "***Tattoo Attunement.*** To attune to this item, you hold the needle to your skin where you want the tattoo to appear, pressing the needle there throughout the attunement process. When the attunement is complete, the needle turns into the ink that becomes the tattoo, which appears on the skin.",
+            "If your attunement to the tattoo ends, the tattoo vanishes, and the needle reappears in your space.",
+            "",
+            "***Damage Resistance.*** While the tattoo is on your skin, you have resistance to poison damage.",
+            "",
+            "***Damage Absorption.*** When you take poison damage, you can use your reaction to gain immunity against that instance of the damage, and you regain a number of hit points equal to half the damage you would have taken. Once this reaction is used, it can't be used again until the next dawn."
         ],
         "rarity": "very rare",
         "attunement": true
@@ -16882,8 +17413,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Acid Resistance",
         "source": "DMG",
@@ -16892,14 +17423,14 @@
             "acid"
         ],
         "text": [
-            "{#itemEntry Potion of Resistance}"
+            "When you drink this potion, you gain resistance to acid damage for 1 hour."
         ],
         "rarity": "uncommon"
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Advantage",
         "source": "WBtW",
@@ -16912,8 +17443,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Animal Friendship",
         "source": "DMG",
@@ -16928,8 +17459,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Aqueous Form",
         "source": "MOT",
@@ -16945,8 +17476,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Clairvoyance",
         "source": "DMG",
@@ -16961,8 +17492,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Climbing",
         "source": "DMG",
@@ -16974,8 +17505,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Cloud Giant Strength",
         "source": "DMG",
@@ -16994,8 +17525,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Cold Resistance",
         "source": "DMG",
@@ -17004,14 +17535,14 @@
             "cold"
         ],
         "text": [
-            "{#itemEntry Potion of Resistance}"
+            "When you drink this potion, you gain resistance to cold damage for 1 hour."
         ],
         "rarity": "uncommon"
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Comprehension",
         "source": "WDMM",
@@ -17023,8 +17554,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Diminution",
         "source": "DMG",
@@ -17039,8 +17570,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Dragon's Majesty",
         "source": "FTD",
@@ -17052,8 +17583,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Fire Breath",
         "source": "DMG",
@@ -17065,8 +17596,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Fire Giant Strength",
         "source": "DMG",
@@ -17085,8 +17616,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Fire Resistance",
         "source": "DMG",
@@ -17095,14 +17626,14 @@
             "fire"
         ],
         "text": [
-            "{#itemEntry Potion of Resistance}"
+            "When you drink this potion, you gain resistance to fire damage for 1 hour."
         ],
         "rarity": "uncommon"
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Flying",
         "source": "DMG",
@@ -17114,8 +17645,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Force Resistance",
         "source": "DMG",
@@ -17124,14 +17655,14 @@
             "force"
         ],
         "text": [
-            "{#itemEntry Potion of Resistance}"
+            "When you drink this potion, you gain resistance to force damage for 1 hour."
         ],
         "rarity": "uncommon"
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Frost Giant Strength",
         "source": "DMG",
@@ -17150,8 +17681,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Gaseous Form",
         "source": "DMG",
@@ -17166,8 +17697,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Giant Size",
         "source": "SKT",
@@ -17181,8 +17712,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Greater Healing",
         "source": "DMG",
@@ -17194,8 +17725,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Growth",
         "source": "DMG",
@@ -17210,8 +17741,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Healing",
         "source": "DMG",
@@ -17225,8 +17756,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Heroism",
         "source": "DMG",
@@ -17241,8 +17772,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Hill Giant Strength",
         "source": "DMG",
@@ -17261,8 +17792,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Invisibility",
         "source": "DMG",
@@ -17274,8 +17805,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Invulnerability",
         "source": "DMG",
@@ -17302,8 +17833,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Lightning Resistance",
         "source": "DMG",
@@ -17312,14 +17843,14 @@
             "lightning"
         ],
         "text": [
-            "{#itemEntry Potion of Resistance}"
+            "When you drink this potion, you gain resistance to lightning damage for 1 hour."
         ],
         "rarity": "uncommon"
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Longevity",
         "source": "DMG",
@@ -17331,8 +17862,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Maximum Power",
         "source": "EGW",
@@ -17345,8 +17876,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Mind Control (beast)",
         "source": "TftYP",
@@ -17362,8 +17893,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Mind Control (humanoid)",
         "source": "TftYP",
@@ -17379,8 +17910,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Mind Control (monster)",
         "source": "TftYP",
@@ -17396,8 +17927,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Mind Reading",
         "source": "DMG",
@@ -17412,8 +17943,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Necrotic Resistance",
         "source": "DMG",
@@ -17422,14 +17953,14 @@
             "necrotic"
         ],
         "text": [
-            "{#itemEntry Potion of Resistance}"
+            "When you drink this potion, you gain resistance to necrotic damage for 1 hour."
         ],
         "rarity": "uncommon"
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Poison",
         "source": "DMG",
@@ -17442,8 +17973,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Poison Resistance",
         "source": "DMG",
@@ -17452,14 +17983,14 @@
             "poison"
         ],
         "text": [
-            "{#itemEntry Potion of Resistance}"
+            "When you drink this potion, you gain resistance to poison damage for 1 hour."
         ],
         "rarity": "uncommon"
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Possibility",
         "source": "EGW",
@@ -17474,8 +18005,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Psychic Resistance",
         "source": "DMG",
@@ -17484,14 +18015,14 @@
             "psychic"
         ],
         "text": [
-            "{#itemEntry Potion of Resistance}"
+            "When you drink this potion, you gain resistance to psychic damage for 1 hour."
         ],
         "rarity": "uncommon"
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Radiant Resistance",
         "source": "DMG",
@@ -17500,14 +18031,14 @@
             "radiant"
         ],
         "text": [
-            "{#itemEntry Potion of Resistance}"
+            "When you drink this potion, you gain resistance to radiant damage for 1 hour."
         ],
         "rarity": "uncommon"
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Speed",
         "source": "DMG",
@@ -17522,8 +18053,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Stone Giant Strength",
         "source": "DMG",
@@ -17542,8 +18073,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Storm Giant Strength",
         "source": "DMG",
@@ -17562,8 +18093,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Superior Healing",
         "source": "DMG",
@@ -17575,8 +18106,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Supreme Healing",
         "source": "DMG",
@@ -17588,8 +18119,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Thunder Resistance",
         "source": "DMG",
@@ -17598,14 +18129,14 @@
             "thunder"
         ],
         "text": [
-            "{#itemEntry Potion of Resistance}"
+            "When you drink this potion, you gain resistance to thunder damage for 1 hour."
         ],
         "rarity": "uncommon"
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Vitality",
         "source": "DMG",
@@ -17617,8 +18148,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Watchful Rest",
         "source": "WDMM",
@@ -17630,8 +18161,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Potion of Water Breathing",
         "source": "DMG",
@@ -17672,8 +18203,8 @@
     },
     {
         "type": [
-            "armor",
-            "heavy"
+            "heavy",
+            "armor"
         ],
         "name": "Powered Armor",
         "source": "LLK",
@@ -17842,9 +18373,17 @@
         "rarity": "rare"
     },
     {
+        "type": [
+            "sentient",
+            "wondrous"
+        ],
         "name": "Professor Skant",
         "source": "IDRotF",
         "page": 315,
+        "weight": 5,
+        "related_spells": [
+            "mage hand"
+        ],
         "text": [
             "The professor orb owned by Vellynne Harpell and stolen by Nass Lantomir calls itself Professor Skant. It is lawful good, and it has a Wisdom of 11 and a Charisma of 9 > *(as a professor orb, it has an Intelligence of 18)*. It speaks and reads Common, Draconic, Elvish, and Loross (the dead language of the Empire of Netheril). Professor Skant is a chatterbox and assumes all humanoids are dunderheads. When elaborating on its areas of expertise, it adopts an unintentionally patronizing tone. It has the following four areas of expertise:",
             "- The history of Netheril (see the \"Fate of netheril\" sidebar)",
@@ -17855,7 +18394,8 @@
             "Professor Skant takes the form of a smooth, solid, 5-pound sphere of smoky gray quartz about the size of a grapefruit. Close examination reveals two or more pinpricks of silver light deep inside the sphere.",
             "Professor Skant can see and hear normally out to a range of 60 feet. Unlike most sentient items, the orb has no will of its own and can't initiate a conflict with the creature in possession of it.",
             "In addition to the knowledge it possesses, Professor Skant can cast the *mage hand* cantrip at will. It uses the spell only to transport itself. Its spellcasting ability is Intelligence."
-        ]
+        ],
+        "rarity": "rare"
     },
     {
         "type": [
@@ -17958,15 +18498,22 @@
             "psychic"
         ],
         "text": [
-            "{#itemEntry Absorbing Tattoo|TCE}"
+            "Produced by a special needle, this magic tattoo features designs that emphasize one color (silver).",
+            "",
+            "***Tattoo Attunement.*** To attune to this item, you hold the needle to your skin where you want the tattoo to appear, pressing the needle there throughout the attunement process. When the attunement is complete, the needle turns into the ink that becomes the tattoo, which appears on the skin.",
+            "If your attunement to the tattoo ends, the tattoo vanishes, and the needle reappears in your space.",
+            "",
+            "***Damage Resistance.*** While the tattoo is on your skin, you have resistance to psychic damage.",
+            "",
+            "***Damage Absorption.*** When you take psychic damage, you can use your reaction to gain immunity against that instance of the damage, and you regain a number of hit points equal to half the damage you would have taken. Once this reaction is used, it can't be used again until the next dawn."
         ],
         "rarity": "very rare",
         "attunement": true
     },
     {
         "type": [
-            "gear",
-            "poison"
+            "poison",
+            "gear"
         ],
         "name": "Purple Worm Poison",
         "source": "DMG",
@@ -17993,8 +18540,8 @@
     },
     {
         "type": [
-            "wondrous",
-            "curse"
+            "curse",
+            "wondrous"
         ],
         "name": "Pyxis of Pandemonium",
         "source": "MOT",
@@ -18191,7 +18738,14 @@
             "radiant"
         ],
         "text": [
-            "{#itemEntry Absorbing Tattoo|TCE}"
+            "Produced by a special needle, this magic tattoo features designs that emphasize one color (gold).",
+            "",
+            "***Tattoo Attunement.*** To attune to this item, you hold the needle to your skin where you want the tattoo to appear, pressing the needle there throughout the attunement process. When the attunement is complete, the needle turns into the ink that becomes the tattoo, which appears on the skin.",
+            "If your attunement to the tattoo ends, the tattoo vanishes, and the needle reappears in your space.",
+            "",
+            "***Damage Resistance.*** While the tattoo is on your skin, you have resistance to radiant damage.",
+            "",
+            "***Damage Absorption.*** When you take radiant damage, you can use your reaction to gain immunity against that instance of the damage, and you regain a number of hit points equal to half the damage you would have taken. Once this reaction is used, it can't be used again until the next dawn."
         ],
         "rarity": "very rare",
         "attunement": true
@@ -18211,8 +18765,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Rakdos Guild Signet",
         "source": "GGR",
@@ -18311,7 +18865,9 @@
             "fire"
         ],
         "text": [
-            "{#itemEntry Chromatic Rose|WBtW}"
+            "While this rose is held, it wreathed in fire as a harmless visual effect.",
+            "While holding the rose by its stem, you gain resistance to fire damage. If you would take more than 10 fire damage from a single source (after applying the resistance), the rose disintegrates, and you take no damage instead.",
+            "As an action, you can blow the petals from the rose to produce a 20-foot cone of fire. Each creature in the cone must make a DC 15 Constitution saving throw, taking **3d10** fire damage on a failed save, or half as much damage on a successful one. Using this property destroys the rose."
         ],
         "rarity": "rare"
     },
@@ -18387,9 +18943,9 @@
     },
     {
         "type": [
+            "gear",
             "magic",
-            "focus",
-            "gear"
+            "focus"
         ],
         "name": "Reliquary",
         "source": "PHB",
@@ -18483,8 +19039,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Acid Resistance",
         "source": "DMG",
@@ -18493,15 +19049,15 @@
             "acid"
         ],
         "text": [
-            "{#itemEntry Ring of Resistance}"
+            "You have resistance to acid damage while wearing this ring. The ring is set with pearl."
         ],
         "rarity": "rare",
         "attunement": true
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Air Elemental Command",
         "source": "DMG",
@@ -18531,8 +19087,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Animal Influence",
         "source": "DMG",
@@ -18554,8 +19110,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Cold Resistance",
         "source": "DMG",
@@ -18564,15 +19120,15 @@
             "cold"
         ],
         "text": [
-            "{#itemEntry Ring of Resistance}"
+            "You have resistance to cold damage while wearing this ring. The ring is set with tourmaline."
         ],
         "rarity": "rare",
         "attunement": true
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Djinni Summoning",
         "source": "DMG",
@@ -18587,8 +19143,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Earth Elemental Command",
         "source": "DMG",
@@ -18618,8 +19174,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Evasion",
         "source": "DMG",
@@ -18634,8 +19190,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Feather Falling",
         "source": "DMG",
@@ -18648,8 +19204,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Fire Elemental Command",
         "source": "DMG",
@@ -18681,8 +19237,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Fire Resistance",
         "source": "DMG",
@@ -18691,15 +19247,15 @@
             "fire"
         ],
         "text": [
-            "{#itemEntry Ring of Resistance}"
+            "You have resistance to fire damage while wearing this ring. The ring is set with garnet."
         ],
         "rarity": "rare",
         "attunement": true
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Force Resistance",
         "source": "DMG",
@@ -18708,15 +19264,15 @@
             "force"
         ],
         "text": [
-            "{#itemEntry Ring of Resistance}"
+            "You have resistance to force damage while wearing this ring. The ring is set with sapphire."
         ],
         "rarity": "rare",
         "attunement": true
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Free Action",
         "source": "DMG",
@@ -18729,8 +19285,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Invisibility",
         "source": "DMG",
@@ -18743,8 +19299,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Jumping",
         "source": "DMG",
@@ -18760,8 +19316,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Lightning Resistance",
         "source": "DMG",
@@ -18770,15 +19326,15 @@
             "lightning"
         ],
         "text": [
-            "{#itemEntry Ring of Resistance}"
+            "You have resistance to lightning damage while wearing this ring. The ring is set with citrine."
         ],
         "rarity": "rare",
         "attunement": true
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Mind Shielding",
         "source": "DMG",
@@ -18793,8 +19349,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Necrotic Resistance",
         "source": "DMG",
@@ -18803,15 +19359,15 @@
             "necrotic"
         ],
         "text": [
-            "{#itemEntry Ring of Resistance}"
+            "You have resistance to necrotic damage while wearing this ring. The ring is set with jet."
         ],
         "rarity": "rare",
         "attunement": true
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Obscuring",
         "source": "EGW",
@@ -18829,8 +19385,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Poison Resistance",
         "source": "DMG",
@@ -18839,15 +19395,15 @@
             "poison"
         ],
         "text": [
-            "{#itemEntry Ring of Resistance}"
+            "You have resistance to poison damage while wearing this ring. The ring is set with amethyst."
         ],
         "rarity": "rare",
         "attunement": true
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Protection",
         "source": "DMG",
@@ -18864,8 +19420,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Psychic Resistance",
         "source": "DMG",
@@ -18874,15 +19430,15 @@
             "psychic"
         ],
         "text": [
-            "{#itemEntry Ring of Resistance}"
+            "You have resistance to psychic damage while wearing this ring. The ring is set with jade."
         ],
         "rarity": "rare",
         "attunement": true
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Radiant Resistance",
         "source": "DMG",
@@ -18891,15 +19447,15 @@
             "radiant"
         ],
         "text": [
-            "{#itemEntry Ring of Resistance}"
+            "You have resistance to radiant damage while wearing this ring. The ring is set with topaz."
         ],
         "rarity": "rare",
         "attunement": true
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Red Fury",
         "source": "CRCotN",
@@ -18924,8 +19480,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Regeneration",
         "source": "DMG",
@@ -18938,8 +19494,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Shooting Stars",
         "source": "DMG",
@@ -18968,8 +19524,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Spell Storing",
         "source": "DMG",
@@ -18984,8 +19540,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Spell Turning",
         "source": "DMG",
@@ -18998,8 +19554,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Swimming",
         "source": "DMG",
@@ -19011,8 +19567,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Telekinesis",
         "source": "DMG",
@@ -19028,8 +19584,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Temporal Salvation",
         "source": "EGW",
@@ -19042,8 +19598,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of the Ram",
         "source": "DMG",
@@ -19059,8 +19615,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Three Wishes",
         "source": "DMG",
@@ -19075,8 +19631,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Thunder Resistance",
         "source": "DMG",
@@ -19085,15 +19641,15 @@
             "thunder"
         ],
         "text": [
-            "{#itemEntry Ring of Resistance}"
+            "You have resistance to thunder damage while wearing this ring. The ring is set with spinel."
         ],
         "rarity": "rare",
         "attunement": true
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Truth Telling",
         "source": "WDH",
@@ -19106,8 +19662,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Warmth",
         "source": "DMG",
@@ -19123,8 +19679,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Water Elemental Command",
         "source": "DMG",
@@ -19151,8 +19707,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of Water Walking",
         "source": "DMG",
@@ -19213,8 +19769,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Ring of X-ray Vision",
         "source": "DMG",
@@ -19228,8 +19784,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Rings of Shared Suffering",
         "source": "UAWGE",
@@ -19394,8 +19950,8 @@
     },
     {
         "type": [
-            "rod",
-            "magic"
+            "magic",
+            "rod"
         ],
         "name": "Rod of Absorption",
         "source": "DMG",
@@ -19412,8 +19968,8 @@
     },
     {
         "type": [
-            "rod",
-            "magic"
+            "magic",
+            "rod"
         ],
         "name": "Rod of Alertness",
         "source": "DMG",
@@ -19444,8 +20000,8 @@
     },
     {
         "type": [
-            "rod",
-            "magic"
+            "magic",
+            "rod"
         ],
         "name": "Rod of Lordly Might",
         "source": "DMG",
@@ -19477,8 +20033,8 @@
     },
     {
         "type": [
-            "rod",
-            "magic"
+            "magic",
+            "rod"
         ],
         "name": "Rod of Resurrection",
         "source": "DMG",
@@ -19499,8 +20055,8 @@
     },
     {
         "type": [
-            "rod",
-            "magic"
+            "magic",
+            "rod"
         ],
         "name": "Rod of Retribution",
         "source": "EGW",
@@ -19517,8 +20073,8 @@
     },
     {
         "type": [
-            "rod",
-            "magic"
+            "magic",
+            "rod"
         ],
         "name": "Rod of Rulership",
         "source": "DMG",
@@ -19532,8 +20088,8 @@
     },
     {
         "type": [
-            "rod",
-            "magic"
+            "magic",
+            "rod"
         ],
         "name": "Rod of Security",
         "source": "DMG",
@@ -19548,8 +20104,8 @@
     },
     {
         "type": [
-            "rod",
-            "magic"
+            "magic",
+            "rod"
         ],
         "name": "Rod of the Vonindod",
         "source": "SKT",
@@ -19687,8 +20243,8 @@
     },
     {
         "type": [
-            "shield",
-            "armor"
+            "armor",
+            "shield"
         ],
         "name": "Ruidium Shield",
         "source": "CRCotN",
@@ -19717,26 +20273,18 @@
         "attunement": true
     },
     {
-        "name": "Ruin's Wake (Awakened)",
-        "source": "EGW",
-        "bonuses": {
-            "weapon_attack": 2,
-            "weapon_damage": 2
-        }
-    },
-    {
         "type": [
             "sentient",
             "weapon",
             "melee"
         ],
-        "name": "Ruin's Wake (Dormant)",
+        "name": "Ruin's Wake (Awakened)",
         "source": "EGW",
         "page": 277,
         "weight": 3,
         "bonuses": {
-            "weapon_attack": 1,
-            "weapon_damage": 1
+            "weapon_attack": 2,
+            "weapon_damage": 2
         },
         "range": [
             20,
@@ -19760,6 +20308,62 @@
             "- You gain a +1 bonus to attack and damage rolls made with this magic weapon, and it deals an extra **1d8** piercing damage to any target it hits. Immediately after you make a ranged attack with this weapon, it flies back to your hand.",
             "- As a reaction when you are hit by a melee attack, you can make a melee attack with Ruin's Wake with advantage against the attacker. You can't use this property again until you finish a short or long rest.",
             "",
+            "***Awakened.*** When the spear reaches an awakened state, it gains the following properties:",
+            "- The weapon's bonus to attack and damage rolls increases to +2, and the extra piercing damage dealt by the weapon increases to 2d8.",
+            "- When you hurl the spear and speak a command word, it transforms into a bolt of lightning, forming a line 5 feet wide that extends out from you to a creature you can see within 120 feet of you. Each creature in the line, excluding you, must make a DC 15 Dexterity saving throw, taking **8d6** lightning damage on a failed save, or half as much damage on a successful one. Ruin's Wake then returns to your hand. This property can't be used again until the next dawn.",
+            "",
+            "> **Betrayer Artifact Properties**",
+            "> The Arms of the Betrayers advance in power in the same manner as the Vestiges of Divergence. In its dormant state, each of these artifacts has one minor beneficial property and one minor detrimental property. When the artifact attains an awakened state, it gains an additional minor beneficial property and an additional minor detrimental property. When the item reaches its exalted state, it gains a major beneficial property. See \"Artifact Properties\" in chapter 7 of the Dungeon Master's Guide for more information.",
+            "",
+            "***Thrown.*** If a weapon has the thrown property, you can throw the weapon to make a ranged attack. If the weapon is a melee weapon, you use the same ability modifier for that attack roll and damage roll that you would use for a melee attack with the weapon. For example, if you throw a handaxe, you use your Strength, but if you throw a dagger, you can use either your Strength or your Dexterity, since the dagger has the finesse property.",
+            "*(PHB - pg. 147)*",
+            "",
+            "***Versatile.*** This weapon can be used with one or two hands. A damage value in parentheses appears with the property\u2014the damage when the weapon is used with two hands to make a melee attack.",
+            "*(PHB - pg. 147)*"
+        ],
+        "rarity": "artifact",
+        "attunement": true
+    },
+    {
+        "type": [
+            "sentient",
+            "weapon",
+            "melee"
+        ],
+        "name": "Ruin's Wake (Awakened)",
+        "source": "EGW",
+        "page": 277,
+        "weight": 3,
+        "bonuses": {
+            "weapon_attack": 2,
+            "weapon_damage": 2
+        },
+        "range": [
+            20,
+            60
+        ],
+        "damage_dice": [
+            "1d6",
+            "1d8"
+        ],
+        "damage_type": "piercing",
+        "text": [
+            "This spear is made from the ivory bone of an ancient gold dragon and carved with an Orc hymn to Gruumsh.",
+            "",
+            "***Sentience.*** Ruin's Wake is a sentient chaotic evil weapon with an Intelligence of 20, a Wisdom of 16, and a Charisma of 22. It has hearing and *darkvision* out to a range of 120 feet.",
+            "The weapon communicates telepathically with its wielder and can speak, read, and understand Abyssal, Common, and Orc.",
+            "",
+            "***Personality.*** A slaughter-loving **balor** named Yarrowish lives within Ruin's Wake. The weapon desires only to draw blood and pushes its wielder to solve problems with violence.",
+            "",
+            "***Dormant.*** The spear grants the following benefits in its dormant state:",
+            "- You can speak, read, and write Abyssal and Orc.",
+            "- You gain a +1 bonus to attack and damage rolls made with this magic weapon, and it deals an extra **1d8** piercing damage to any target it hits. Immediately after you make a ranged attack with this weapon, it flies back to your hand.",
+            "- As a reaction when you are hit by a melee attack, you can make a melee attack with Ruin's Wake with advantage against the attacker. You can't use this property again until you finish a short or long rest.",
+            "",
+            "***Awakened.*** When the spear reaches an awakened state, it gains the following properties:",
+            "- The weapon's bonus to attack and damage rolls increases to +2, and the extra piercing damage dealt by the weapon increases to 2d8.",
+            "- When you hurl the spear and speak a command word, it transforms into a bolt of lightning, forming a line 5 feet wide that extends out from you to a creature you can see within 120 feet of you. Each creature in the line, excluding you, must make a DC 15 Dexterity saving throw, taking **8d6** lightning damage on a failed save, or half as much damage on a successful one. Ruin's Wake then returns to your hand. This property can't be used again until the next dawn.",
+            "",
             "> **Betrayer Artifact Properties**",
             "> The Arms of the Betrayers advance in power in the same manner as the Vestiges of Divergence. In its dormant state, each of these artifacts has one minor beneficial property and one minor detrimental property. When the artifact attains an awakened state, it gains an additional minor beneficial property and an additional minor detrimental property. When the item reaches its exalted state, it gains a major beneficial property. See \"Artifact Properties\" in chapter 7 of the Dungeon Master's Guide for more information.",
             "",
@@ -19778,7 +20382,13 @@
         "bonuses": {
             "weapon_attack": 3,
             "weapon_damage": 3
-        }
+        },
+        "text": [
+            "***Exalted.*** When the spear reaches an exalted state, it gains the following properties:",
+            "- The weapon's bonus to attack and damage rolls increases to +3.",
+            "- While holding the spear, you can let out a battle cry as a bonus action. Each creature you choose within 30 feet of you gains advantage on attack rolls until the start of your next turn. This property can't be used again until the next dawn.",
+            "- When you reduce a creature to 0 hit points with an attack from the spear, you can regain hit points equal to the damage you dealt with the attack. This property can't be used again until the next dawn."
+        ]
     },
     {
         "type": [
@@ -19952,8 +20562,8 @@
     },
     {
         "type": [
-            "shield",
-            "armor"
+            "armor",
+            "shield"
         ],
         "name": "Sapphire Buckler",
         "source": "FTD",
@@ -20067,8 +20677,8 @@
     },
     {
         "type": [
-            "armor",
             "heavy",
+            "armor",
             "curse"
         ],
         "name": "Scorpion Armor",
@@ -20291,8 +20901,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Selesnya Guild Signet",
         "source": "GGR",
@@ -20372,8 +20982,8 @@
     },
     {
         "type": [
-            "shield",
-            "armor"
+            "armor",
+            "shield"
         ],
         "name": "Sentinel Shield",
         "source": "DMG",
@@ -20402,8 +21012,8 @@
     },
     {
         "type": [
-            "gear",
-            "poison"
+            "poison",
+            "gear"
         ],
         "name": "Serpent Venom",
         "source": "DMG",
@@ -20538,8 +21148,8 @@
     },
     {
         "type": [
-            "rune",
-            "magic"
+            "magic",
+            "rune"
         ],
         "name": "Shard of the Kalt Rune",
         "source": "UAPrestigeClassesRunMagic",
@@ -20673,8 +21283,8 @@
     },
     {
         "type": [
-            "shield",
-            "armor"
+            "armor",
+            "shield"
         ],
         "name": "Shield of Expression",
         "source": "XGE",
@@ -20688,8 +21298,8 @@
     },
     {
         "type": [
-            "shield",
-            "armor"
+            "armor",
+            "shield"
         ],
         "name": "Shield of Far Sight",
         "source": "VGM",
@@ -20704,8 +21314,8 @@
     },
     {
         "type": [
-            "shield",
             "armor",
+            "shield",
             "curse"
         ],
         "name": "Shield of Missile Attraction",
@@ -20723,9 +21333,9 @@
     },
     {
         "type": [
+            "armor",
             "sentient",
-            "shield",
-            "armor"
+            "shield"
         ],
         "name": "Shield of the Hidden Lord",
         "source": "BGDIA",
@@ -20762,8 +21372,8 @@
     },
     {
         "type": [
-            "shield",
-            "armor"
+            "armor",
+            "shield"
         ],
         "name": "Shield of the Uven Rune",
         "source": "WDMM",
@@ -20873,8 +21483,15 @@
         ]
     },
     {
+        "type": [
+            "sentient",
+            "weapon",
+            "melee"
+        ],
         "name": "Silken Spite (Awakened)",
         "source": "EGW",
+        "page": 277,
+        "weight": 2,
         "related_spells": [
             "cloudkill",
             "darkness",
@@ -20884,21 +21501,6 @@
         "bonuses": {
             "weapon_attack": 2,
             "weapon_damage": 2
-        }
-    },
-    {
-        "type": [
-            "sentient",
-            "weapon",
-            "melee"
-        ],
-        "name": "Silken Spite (Dormant)",
-        "source": "EGW",
-        "page": 277,
-        "weight": 2,
-        "bonuses": {
-            "weapon_attack": 1,
-            "weapon_damage": 1
         },
         "damage_dice": [
             "1d8"
@@ -20919,6 +21521,64 @@
             "- You can use an action to cause poison to coat the rapier's blade. The poison remains for 1 minute or until an attack using this weapon hits a creature. That creature must succeed on a DC 13 Constitution saving throw or become *poisoned* for 1 hour. If the saving throw fails by 5 or more, the creature is also *unconscious* while *poisoned* in this way. The creature wakes up if it takes damage or if another creature uses its action to shake the creature awake.",
             "- While carrying the rapier, you can move up, down, and across vertical surfaces and upside down along ceilings, while leaving your hands free. You have a climbing speed equal to your walking speed. Additionally, you can't be caught in webs of any sort and can move through webs as if they were difficult terrain.",
             "",
+            "***Awakened.*** The rapier grants the following benefits in its awakened state:",
+            "- The weapon's bonus to attack and damage rolls increases to +2.",
+            "- The saving throw DC for the weapon's poison increases to 15.",
+            "- While holding the rapier, you can use an action to cast one of the following spells from it (save DC 15): *cloudkill*, *darkness*, *levitate*, or *web*. Once a spell has been cast using the rapier, that spell can't be cast from the rapier again until the next dawn.",
+            "",
+            "> **Betrayer Artifact Properties**",
+            "> The Arms of the Betrayers advance in power in the same manner as the Vestiges of Divergence. In its dormant state, each of these artifacts has one minor beneficial property and one minor detrimental property. When the artifact attains an awakened state, it gains an additional minor beneficial property and an additional minor detrimental property. When the item reaches its exalted state, it gains a major beneficial property. See \"Artifact Properties\" in chapter 7 of the Dungeon Master's Guide for more information.",
+            "",
+            "***Finesse.*** When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.",
+            "*(PHB - pg. 147)*"
+        ],
+        "rarity": "artifact",
+        "attunement": true
+    },
+    {
+        "type": [
+            "sentient",
+            "weapon",
+            "melee"
+        ],
+        "name": "Silken Spite (Awakened)",
+        "source": "EGW",
+        "page": 277,
+        "weight": 2,
+        "related_spells": [
+            "cloudkill",
+            "darkness",
+            "levitate",
+            "web"
+        ],
+        "bonuses": {
+            "weapon_attack": 2,
+            "weapon_damage": 2
+        },
+        "damage_dice": [
+            "1d8"
+        ],
+        "damage_type": "piercing",
+        "text": [
+            "The blade of this rapier is made of spider silk. Its onyx pommel is tipped with a ruby cut in the shape of a spider, and the blade carries the blessing of Lolth.",
+            "",
+            "***Sentience.*** Silken Spite is a sentient chaotic evil weapon with an Intelligence of 13, a Wisdom of 15, and a Charisma of 15. It has hearing and *darkvision* out to a range of 120 feet.",
+            "The weapon communicates telepathically with its wielder and can speak, read, and understand Abyssal, Common, Elvish, and Undercommon.",
+            "",
+            "***Personality.*** A murderous **yochlol** named Sinnafex lives within Silken Spite. The weapon speaks in whispers, pushing its wielder to trust no one and to kill those who cause the slightest personal offense.",
+            "",
+            "***Dormant.*** The rapier grants the following benefits in its dormant state:",
+            "- You can speak, read, and write Abyssal, Elvish, and Undercommon.",
+            "- You have *darkvision* out to a range of 60 feet. If you already have *darkvision*, being attuned to the rapier increases the range of your *darkvision* by 60 feet.",
+            "- You gain a +1 bonus to attack and damage rolls made with this magic weapon.",
+            "- You can use an action to cause poison to coat the rapier's blade. The poison remains for 1 minute or until an attack using this weapon hits a creature. That creature must succeed on a DC 13 Constitution saving throw or become *poisoned* for 1 hour. If the saving throw fails by 5 or more, the creature is also *unconscious* while *poisoned* in this way. The creature wakes up if it takes damage or if another creature uses its action to shake the creature awake.",
+            "- While carrying the rapier, you can move up, down, and across vertical surfaces and upside down along ceilings, while leaving your hands free. You have a climbing speed equal to your walking speed. Additionally, you can't be caught in webs of any sort and can move through webs as if they were difficult terrain.",
+            "",
+            "***Awakened.*** The rapier grants the following benefits in its awakened state:",
+            "- The weapon's bonus to attack and damage rolls increases to +2.",
+            "- The saving throw DC for the weapon's poison increases to 15.",
+            "- While holding the rapier, you can use an action to cast one of the following spells from it (save DC 15): *cloudkill*, *darkness*, *levitate*, or *web*. Once a spell has been cast using the rapier, that spell can't be cast from the rapier again until the next dawn.",
+            "",
             "> **Betrayer Artifact Properties**",
             "> The Arms of the Betrayers advance in power in the same manner as the Vestiges of Divergence. In its dormant state, each of these artifacts has one minor beneficial property and one minor detrimental property. When the artifact attains an awakened state, it gains an additional minor beneficial property and an additional minor detrimental property. When the item reaches its exalted state, it gains a major beneficial property. See \"Artifact Properties\" in chapter 7 of the Dungeon Master's Guide for more information.",
             "",
@@ -20931,10 +21591,23 @@
     {
         "name": "Silken Spite (Exalted)",
         "source": "EGW",
+        "related_spells": [
+            "cloudkill",
+            "darkness",
+            "levitate",
+            "web"
+        ],
         "bonuses": {
             "weapon_attack": 3,
             "weapon_damage": 3
-        }
+        },
+        "text": [
+            "***Exalted.*** The rapier grants the following benefits in its exalted state:",
+            "- The weapon's bonus to attack and damage rolls increases to +3.",
+            "- The saving throw DC for the weapon's poison and spells cast from the weapon increases to 17.",
+            "- Magical darkness doesn't impede your *darkvision*.",
+            "- While holding the weapon in dim light or darkness, you can use a bonus action to teleport up to 60 feet to an unoccupied space you can see that is also in dim light or darkness. This property can't be used again until the next dawn."
+        ]
     },
     {
         "type": [
@@ -21132,8 +21805,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Simic Guild Signet",
         "source": "GGR",
@@ -21996,8 +22669,8 @@
     },
     {
         "type": [
-            "shield",
-            "armor"
+            "armor",
+            "shield"
         ],
         "name": "Spellguard Shield",
         "source": "DMG",
@@ -22268,9 +22941,9 @@
     },
     {
         "type": [
+            "gear",
             "magic",
-            "focus",
-            "gear"
+            "focus"
         ],
         "name": "Sprig of Mistletoe",
         "source": "PHB",
@@ -22521,9 +23194,9 @@
         "charges": 10
     },
     {
-        "name": "Staff of Frost",
-        "source": "DMG",
-        "page": 202,
+        "name": "Jakarion's Staff of Frost",
+        "source": "CoS",
+        "page": 187,
         "resist": [
             "cold"
         ],
@@ -22543,6 +23216,7 @@
             "You have resistance to cold damage while you hold this staff.",
             "The staff has 10 charges. While holding it, you can use an action to expend 1 or more of its charges to cast one of the following spells from it, using your spell save DC: *cone of cold* (5 charges), *fog cloud* (1 charge), *ice storm* (4 charges), or *wall of ice* (4 charges).",
             "The staff regains 1d6 + 4 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1. the staff turns to water and is destroyed.",
+            "Imprinted on this staff is a fragment of a dead wizard's personality. The first character who touches the staff gains the following flaw: \"I crave power above all else, and will do anything to obtain more of it.\" This flaw trumps any conflicting personality trait.",
             "",
             "***Versatile.*** This weapon can be used with one or two hands. A damage value in parentheses appears with the property\u2014the damage when the weapon is used with two hands to make a melee attack.",
             "*(PHB - pg. 147)*"
@@ -22633,9 +23307,12 @@
         "charges": 20
     },
     {
-        "name": "Staff of Striking",
-        "source": "DMG",
-        "page": 203,
+        "type": [
+            "curse"
+        ],
+        "name": "Devlin's Staff of Striking",
+        "source": "ToA",
+        "page": 141,
         "weight": 4,
         "bonuses": {
             "weapon_attack": 3,
@@ -22649,6 +23326,7 @@
         "text": [
             "This staff can be wielded as a magic quarterstaff that grants a +3 bonus to attack and damage rolls made with it.",
             "The staff has 10 charges. When you hit with a melee attack using it, you can expend up to 3 of its charges. For each charge you expend, the target takes an extra **1d6** force damage. The staff regains 1d6 + 4 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the staff becomes a nonmagical quarterstaff.",
+            "If you attune to this staff, you transform into a goat-humanoid hybrid over the course of 3 days. Tieflings are immune to this curse. Throughout the first day, shaggy fur begins to grow all over your body. After 24 hours, your eyes become goat-like, and stumpy horns sprout from your brow. On the last day, your fingers and toes meld into double digits, and the horns grow to full length. This transformation doesn't prevent you from wielding weapons or casting spells. *remove curse*, *greater restoration*, or any other effect that ends a curse restores your original appearance, but only a *wish* spell can rid the staff of its power to transform those who attune to it.",
             "",
             "***Versatile.*** This weapon can be used with one or two hands. A damage value in parentheses appears with the property\u2014the damage when the weapon is used with two hands to make a melee attack.",
             "*(PHB - pg. 147)*"
@@ -23042,17 +23720,37 @@
         "value": 500
     },
     {
+        "type": [
+            "wondrous"
+        ],
         "name": "Stirring Dragon Vessel",
         "source": "FTD",
+        "page": 27,
         "text": [
             "This vessel can be a potion bottle, drinking horn, or other container meant to hold a liquid.",
             "As a bonus action, if the vessel is empty, you can speak the command word to fill the vessel with one of the following (your choice): ale, olive oil, mead, a potion of healing, a potion of greater healing, a potion of climbing, or a potion of fire breath. Once this property is used, it can't be used until the next dawn. A potion you create in this way loses its magical properties if it isn't imbibed within 24 hours."
         ],
-        "rarity": "rare"
+        "rarity": "rare",
+        "attunement": true
     },
     {
+        "type": [
+            "wondrous"
+        ],
         "name": "Stirring Dragon-Touched Focus",
         "source": "FTD",
+        "page": 26,
+        "focus_for": [
+            "Artificer",
+            "Bard",
+            "Cleric",
+            "Druid",
+            "Paladin",
+            "Ranger",
+            "Sorcerer",
+            "Warlock",
+            "Wizard"
+        ],
         "text": [
             "This wondrous item can be a scepter, an orb, an amulet, a crystal, or another finely crafted object. It typically incorporates imagery of dragons' wings, claws, teeth, or scales.",
             "You have advantage on initiative rolls. While you are holding the focus, it can function as a spellcasting focus for all your spells.",
@@ -23061,16 +23759,25 @@
             "- **Gem:** ",
             "- **Metallic:** "
         ],
-        "rarity": "rare"
+        "rarity": "rare",
+        "attunement": "by a spellcaster"
     },
     {
+        "type": [
+            "wondrous"
+        ],
         "name": "Stirring Scaled Ornament",
         "source": "FTD",
+        "page": 27,
+        "bonuses": {
+            "armor_class": 1
+        },
         "text": [
             "This ornament can be jewelry, a cloak, or another wearable accessory. It appears to be fashioned from a dragon's scale, tooth, or claw, or it incorporates images in those shapes.",
             "You gain a +1 bonus to AC, and you can't be *charmed* or *frightened*. Moreover, each creature of your choice within 30 feet of you has advantage on saving throws it makes to avoid being *charmed* or *frightened* or to end those conditions on itself."
         ],
-        "rarity": "rare"
+        "rarity": "rare",
+        "attunement": true
     },
     {
         "type": [
@@ -23173,8 +23880,8 @@
     },
     {
         "type": [
-            "wondrous",
-            "curse"
+            "curse",
+            "wondrous"
         ],
         "name": "Stone of Ill Luck",
         "source": "TftYP",
@@ -23217,8 +23924,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Stonky's ring",
         "source": "CM",
@@ -23260,14 +23967,10 @@
         "rarity": "uncommon"
     },
     {
-        "name": "Stormgirdle (Awakened)",
-        "source": "EGW"
-    },
-    {
         "type": [
             "wondrous"
         ],
-        "name": "Stormgirdle (Dormant)",
+        "name": "Stormgirdle (Awakened)",
         "source": "EGW",
         "page": 273,
         "resist": [
@@ -23276,6 +23979,45 @@
         ],
         "text": [
             "A Stormgirdle is a wide belt made of thick leather branded with the symbol of Kord. The girdle's clasps are made from dragon ivory.",
+            "",
+            "***Awakened.*** While wearing the Stormgirdle in its awakened state, you gain the following benefits:",
+            "- Your Strength score becomes 23 if it isn't already 23 or higher.",
+            "- Your Storm Avatar's lightning strike deals **4d6** lightning damage (instead of 3d6).",
+            "- While transformed into a Storm Avatar, you gain a flying speed of 30 feet and can hover.",
+            "",
+            "***Dormant.*** While wearing the Stormgirdle in its dormant state, you have resistance to lightning damage and thunder damage, and your Strength score becomes 21 if it isn't already 21 or higher. In addition, you can use an action to become a Storm Avatar for 1 minute, gaining the following benefits for the duration:",
+            "- You have immunity to lightning damage and thunder damage.",
+            "- When you hit with a weapon attack that normally deals bludgeoning damage, it deals thunder damage instead. When you hit with a weapon attack that normally deals piercing or slashing damage, it deals lightning damage instead.",
+            "- As a bonus action, you can choose one creature you can see within 30 feet of you to be struck by lightning. The target must make a DC 15 Dexterity saving throw, taking **3d6** lightning damage on a failed save, or half as much damage on a successful one.",
+            "Once you use the girdle's Storm Avatar property, that property can't be used again until the next dawn."
+        ],
+        "rarity": "legendary",
+        "attunement": true,
+        "abilities": {
+            "strength": {
+                "type": "set",
+                "value": 21
+            }
+        }
+    },
+    {
+        "type": [
+            "wondrous"
+        ],
+        "name": "Stormgirdle (Awakened)",
+        "source": "EGW",
+        "page": 273,
+        "resist": [
+            "lightning",
+            "thunder"
+        ],
+        "text": [
+            "A Stormgirdle is a wide belt made of thick leather branded with the symbol of Kord. The girdle's clasps are made from dragon ivory.",
+            "",
+            "***Awakened.*** While wearing the Stormgirdle in its awakened state, you gain the following benefits:",
+            "- Your Strength score becomes 23 if it isn't already 23 or higher.",
+            "- Your Storm Avatar's lightning strike deals **4d6** lightning damage (instead of 3d6).",
+            "- While transformed into a Storm Avatar, you gain a flying speed of 30 feet and can hover.",
             "",
             "***Dormant.*** While wearing the Stormgirdle in its dormant state, you have resistance to lightning damage and thunder damage, and your Strength score becomes 21 if it isn't already 21 or higher. In addition, you can use an action to become a Storm Avatar for 1 minute, gaining the following benefits for the duration:",
             "- You have immunity to lightning damage and thunder damage.",
@@ -23297,6 +24039,12 @@
         "source": "EGW",
         "related_spells": [
             "control weather"
+        ],
+        "text": [
+            "***Exalted.*** While wearing the Stormgirdle in its exalted state, you gain the following benefits:",
+            "- Your Strength score becomes 25 if it isn't already 25 or higher.",
+            "- Your Storm Avatar's lightning strike deals **5d6** lightning damage (instead of 3d6).",
+            "- You can cast the *control weather* spell from the girdle. This property can't be used again until the next dawn."
         ]
     },
     {
@@ -24095,8 +24843,8 @@
     },
     {
         "type": [
-            "food",
-            "gear"
+            "gear",
+            "food"
         ],
         "name": "Tej",
         "source": "ToA",
@@ -24122,8 +24870,8 @@
     },
     {
         "type": [
-            "ring",
-            "magic"
+            "magic",
+            "ring"
         ],
         "name": "Teleporter Ring",
         "source": "WDH",
@@ -24135,8 +24883,8 @@
     },
     {
         "type": [
-            "rod",
-            "magic"
+            "magic",
+            "rod"
         ],
         "name": "Tentacle Rod",
         "source": "DMG",
@@ -24149,20 +24897,12 @@
         "attunement": true
     },
     {
-        "name": "The Bloody End (Awakened)",
-        "source": "EGW",
-        "bonuses": {
-            "weapon_attack": 2,
-            "weapon_damage": 2
-        }
-    },
-    {
         "type": [
             "sentient",
             "weapon",
             "melee"
         ],
-        "name": "The Bloody End (Dormant)",
+        "name": "The Bloody End (Awakened)",
         "source": "EGW",
         "page": 278,
         "weight": 4,
@@ -24172,8 +24912,8 @@
             "fear"
         ],
         "bonuses": {
-            "weapon_attack": 1,
-            "weapon_damage": 1
+            "weapon_attack": 2,
+            "weapon_damage": 2
         },
         "damage_dice": [
             "1d8"
@@ -24193,6 +24933,61 @@
             "- While holding the morningstar, you can use an action to cast one of the following spells from it (save DC 13): *charm person*, *dominate person*, or *fear*. Once a spell has been cast using the morningstar, that spell can't be cast from it again until the next dawn.",
             "- While holding the morningstar, you have advantage on Charisma (Intimidation) checks.",
             "",
+            "***Awakened.*** When the morningstar reaches an awakened state, it gains the following properties:",
+            "- The weapon's bonus to attack and damage rolls increases to +2.",
+            "- The saving throw DC for spells cast from the morningstar increases to 15.",
+            "- When you reduce a creature to 0 hit points with an attack using The Bloody End, you can cause the following effect: each creature of your choice within 15 feet of you must succeed on a DC 15 Wisdom saving throw or be *frightened* of you until the end of your next turn. This property can't be used again until the next dawn.",
+            "- When a creature hits you with a melee attack, you can use your reaction to deal **1d6** psychic damage to the attacker.",
+            "",
+            "> **Betrayer Artifact Properties**",
+            "> The Arms of the Betrayers advance in power in the same manner as the Vestiges of Divergence. In its dormant state, each of these artifacts has one minor beneficial property and one minor detrimental property. When the artifact attains an awakened state, it gains an additional minor beneficial property and an additional minor detrimental property. When the item reaches its exalted state, it gains a major beneficial property. See \"Artifact Properties\" in chapter 7 of the Dungeon Master's Guide for more information."
+        ],
+        "rarity": "artifact",
+        "attunement": true
+    },
+    {
+        "type": [
+            "sentient",
+            "weapon",
+            "melee"
+        ],
+        "name": "The Bloody End (Awakened)",
+        "source": "EGW",
+        "page": 278,
+        "weight": 4,
+        "related_spells": [
+            "charm person",
+            "dominate person",
+            "fear"
+        ],
+        "bonuses": {
+            "weapon_attack": 2,
+            "weapon_damage": 2
+        },
+        "damage_dice": [
+            "1d8"
+        ],
+        "damage_type": "piercing",
+        "text": [
+            "Carrying the power of Bane, this adamantine morningstar sports foot-long spikes and has a jagged blade on its pommel.",
+            "",
+            "***Sentience.*** The Bloody End is a sentient lawful evil weapon with an Intelligence of 22, a Wisdom of 18, and a Charisma of 24. It has hearing and *darkvision* out to a range of 120 feet.",
+            "The weapon communicates telepathically with its wielder and can speak, read, and understand Common and Infernal.",
+            "",
+            "***Personality.*** A tyrannical **pit fiend** named Izeelzee lives within The Bloody End. The weapon boisterously pushes its wielder to subjugate others and to never back down from a challenge. If the wielder doesn't demand fealty from others, the weapon is happy to demand it on their behalf.",
+            "",
+            "***Dormant.*** The morningstar grants the following benefits in its dormant state:",
+            "- You can speak, read, and write Infernal.",
+            "- You gain a +1 bonus to attack and damage rolls made with this magic weapon.",
+            "- While holding the morningstar, you can use an action to cast one of the following spells from it (save DC 13): *charm person*, *dominate person*, or *fear*. Once a spell has been cast using the morningstar, that spell can't be cast from it again until the next dawn.",
+            "- While holding the morningstar, you have advantage on Charisma (Intimidation) checks.",
+            "",
+            "***Awakened.*** When the morningstar reaches an awakened state, it gains the following properties:",
+            "- The weapon's bonus to attack and damage rolls increases to +2.",
+            "- The saving throw DC for spells cast from the morningstar increases to 15.",
+            "- When you reduce a creature to 0 hit points with an attack using The Bloody End, you can cause the following effect: each creature of your choice within 15 feet of you must succeed on a DC 15 Wisdom saving throw or be *frightened* of you until the end of your next turn. This property can't be used again until the next dawn.",
+            "- When a creature hits you with a melee attack, you can use your reaction to deal **1d6** psychic damage to the attacker.",
+            "",
             "> **Betrayer Artifact Properties**",
             "> The Arms of the Betrayers advance in power in the same manner as the Vestiges of Divergence. In its dormant state, each of these artifacts has one minor beneficial property and one minor detrimental property. When the artifact attains an awakened state, it gains an additional minor beneficial property and an additional minor detrimental property. When the item reaches its exalted state, it gains a major beneficial property. See \"Artifact Properties\" in chapter 7 of the Dungeon Master's Guide for more information."
         ],
@@ -24205,7 +25000,14 @@
         "bonuses": {
             "weapon_attack": 3,
             "weapon_damage": 3
-        }
+        },
+        "text": [
+            "***Exalted.*** When the morningstar reaches an exalted state, it gains the following properties:",
+            "- The weapon's bonus to attack and damage rolls increases to +3.",
+            "- Add *dominate monster* to the list of spells that can be cast from the morningstar.",
+            "- The saving throw DC for spells cast from the morningstar, as well as for creatures to avoid being *frightened* by it, increases to 17.",
+            "- When you use your reaction to deal psychic damage to a creature that hits you with a melee attack, the amount of psychic damage increases to 2d6."
+        ]
     },
     {
         "type": [
@@ -24478,8 +25280,8 @@
     },
     {
         "type": [
-            "potion",
-            "magic"
+            "magic",
+            "potion"
         ],
         "name": "Thessaltoxin Antidote",
         "source": "IMR",
@@ -24507,11 +25309,12 @@
             "tool",
             "gaming"
         ],
-        "name": "Three-Dragon Ante Set",
-        "source": "PHB",
-        "page": 154,
-        "value": 100,
+        "name": "Enchanted Three-Dragon Ante Set",
+        "source": "LLK",
+        "page": 15,
         "text": [
+            "One card in this deck is enchanted to appear as whatever specific card its owner commands. This magic works only 25 percent of the time, but the deck is worth 500 gp to any serious gambler who doesn't mind the risk\u2014or who isn't told about it.",
+            "",
             "## Gaming Set",
             "If you are proficient with a gaming set, you can add your proficiency bonus to ability checks you make to play a game with that set. Each type of gaming set requires a separate proficiency.",
             "*(PHB - pg. 154)*"
@@ -24529,7 +25332,14 @@
             "thunder"
         ],
         "text": [
-            "{#itemEntry Absorbing Tattoo|TCE}"
+            "Produced by a special needle, this magic tattoo features designs that emphasize one color (orange).",
+            "",
+            "***Tattoo Attunement.*** To attune to this item, you hold the needle to your skin where you want the tattoo to appear, pressing the needle there throughout the attunement process. When the attunement is complete, the needle turns into the ink that becomes the tattoo, which appears on the skin.",
+            "If your attunement to the tattoo ends, the tattoo vanishes, and the needle reappears in your space.",
+            "",
+            "***Damage Resistance.*** While the tattoo is on your skin, you have resistance to thunder damage.",
+            "",
+            "***Damage Absorption.*** When you take thunder damage, you can use your reaction to gain immunity against that instance of the damage, and you regain a number of hit points equal to half the damage you would have taken. Once this reaction is used, it can't be used again until the next dawn."
         ],
         "rarity": "very rare",
         "attunement": true
@@ -24833,8 +25643,8 @@
     },
     {
         "type": [
-            "gear",
-            "poison"
+            "poison",
+            "gear"
         ],
         "name": "Torpor",
         "source": "DMG",
@@ -24846,9 +25656,9 @@
     },
     {
         "type": [
+            "gear",
             "magic",
-            "focus",
-            "gear"
+            "focus"
         ],
         "name": "Totem",
         "source": "PHB",
@@ -25369,8 +26179,8 @@
     },
     {
         "type": [
-            "gear",
-            "poison"
+            "poison",
+            "gear"
         ],
         "name": "Truth Serum",
         "source": "DMG",
@@ -25535,31 +26345,61 @@
         "recharge": "dawn"
     },
     {
+        "type": [
+            "wondrous"
+        ],
         "name": "Verminshroud (Awakened)",
         "source": "EGW",
+        "page": 273,
         "resist": [
             "poison"
+        ],
+        "conditionImmune": [
+            "disease"
         ],
         "related_spells": [
             "polymorph",
             "insect plague"
-        ]
+        ],
+        "text": [
+            "This patchy cloak was pieced together from the pelts of rats found feasting on the dead in Blightshore and is dotted with the bloated corpses of magically preserved insects along its seams.",
+            "",
+            "***Awakened.*** While wearing the Verminshroud in its awakened state, you gain the following benefits:",
+            "- You have resistance to poison damage.",
+            "- You can use an action to cast the *insect plague* spell (save DC 15) from the Verminshroud, requiring no material components. This property can't be used again until the next dawn.",
+            "- When you cast the *polymorph* spell using the Verminshroud, you can transform into a **giant wasp**.",
+            "",
+            "***Dormant.*** While wearing the Verminshroud in its dormant state, you gain the following benefits:",
+            "- You have advantage on Wisdom (Perception) checks that rely on smell, you are immune to disease, and you have *darkvision* out to a range of 60 feet. If you already have *darkvision*, wearing the cloak increases the range of your *darkvision* by 60 feet.",
+            "- As an action, you can use the Verminshroud to cast *polymorph* on yourself, transforming into a **giant rat** or **rat** while retaining your Intelligence, Wisdom, and Charisma scores, as well as the properties of the cloak. This property can't be used again until the next dawn."
+        ],
+        "rarity": "legendary",
+        "attunement": true
     },
     {
         "type": [
             "wondrous"
         ],
-        "name": "Verminshroud (Dormant)",
+        "name": "Verminshroud (Awakened)",
         "source": "EGW",
         "page": 273,
+        "resist": [
+            "poison"
+        ],
         "conditionImmune": [
             "disease"
         ],
         "related_spells": [
-            "polymorph"
+            "polymorph",
+            "insect plague"
         ],
         "text": [
             "This patchy cloak was pieced together from the pelts of rats found feasting on the dead in Blightshore and is dotted with the bloated corpses of magically preserved insects along its seams.",
+            "",
+            "***Awakened.*** While wearing the Verminshroud in its awakened state, you gain the following benefits:",
+            "- You have resistance to poison damage.",
+            "- You can use an action to cast the *insect plague* spell (save DC 15) from the Verminshroud, requiring no material components. This property can't be used again until the next dawn.",
+            "- When you cast the *polymorph* spell using the Verminshroud, you can transform into a **giant wasp**.",
             "",
             "***Dormant.*** While wearing the Verminshroud in its dormant state, you gain the following benefits:",
             "- You have advantage on Wisdom (Perception) checks that rely on smell, you are immune to disease, and you have *darkvision* out to a range of 60 feet. If you already have *darkvision*, wearing the cloak increases the range of your *darkvision* by 60 feet.",
@@ -25571,9 +26411,18 @@
     {
         "name": "Verminshroud (Exalted)",
         "source": "EGW",
+        "resist": [
+            "poison"
+        ],
         "related_spells": [
             "polymorph",
             "insect plague"
+        ],
+        "text": [
+            "***Exalted.*** While wearing the Verminshroud in its exalted state, you gain the following benefits:",
+            "- You gain a climbing speed equal to your walking speed.",
+            "- Your teeth become razor-sharp natural weapons, which you can use to make unarmed strikes. If you hit with them, you deal piercing damage equal to 1d6 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike. You can make this attack as a bonus action. When you bite a creature and deal damage to it, the creature must succeed on a DC 17 Constitution saving throw or be *poisoned* for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the condition on itself on a success.",
+            "- When you cast the *polymorph* spell using the Verminshroud, you can transform into a **giant scorpion**."
         ]
     },
     {
@@ -25705,16 +26554,16 @@
         "charges": 10
     },
     {
-        "name": "Wakened Dragon Vessel",
+        "name": "Ascendant Dragon Vessel",
         "source": "FTD",
         "text": [
             "This vessel can be a potion bottle, drinking horn, or other container meant to hold a liquid.",
-            "As a bonus action, if the vessel is empty, you can speak the command word to fill the vessel with one of the following (your choice): ale, olive oil, mead, wine, a potion of healing, a potion of greater healing, a potion of superior healing, a potion of climbing, a potion of fire breath, or a potion of flying. Once this property is used, it can't be used until the next dawn. A potion you create in this way loses its magical properties if it isn't imbibed within 24 hours."
+            "As a bonus action, if the vessel is empty, you can speak the command word to fill the vessel with one of the following (your choice): ale, olive oil, mead, wine, whiskey, a potion of healing, a potion of greater healing, a potion of superior healing, a potion of supreme healing, a potion of climbing, a potion of fire breath, a potion of flying, or a potion of dragon's majesty. Once this property is used, it can't be used until the next dawn. A potion you create in this way loses its magical properties if it isn't imbibed within 24 hours."
         ],
-        "rarity": "very rare"
+        "rarity": "legendary"
     },
     {
-        "name": "Wakened Dragon-Touched Focus",
+        "name": "Ascendant Dragon-Touched Focus",
         "source": "FTD",
         "related_spells": [
             "hold monster",
@@ -25734,19 +26583,21 @@
             "While you are holding a Wakened focus, you can use it to cast certain spells. Once the item is used to cast a given spell, it can't be used to cast that spell again until the next dawn. The spells are determined by the family of the dragon in whose hoard it became Wakened.",
             "- **Chromatic:** ",
             "- **Gem:** ",
-            "- **Metallic:** "
+            "- **Metallic:** ",
+            "When you cast a spell of 1st level or higher while holding this focus, you can treat the spell as if it were cast using a 9th-level spell slot. Once this property is used, it can't be used again until the next dawn."
         ],
-        "rarity": "very rare"
+        "rarity": "legendary"
     },
     {
-        "name": "Wakened Scaled Ornament",
+        "name": "Ascendant Scaled Ornament",
         "source": "FTD",
         "text": [
             "This ornament can be jewelry, a cloak, or another wearable accessory. It appears to be fashioned from a dragon's scale, tooth, or claw, or it incorporates images in those shapes.",
             "You gain a +1 bonus to AC, and you can't be *charmed* or *frightened*. Moreover, each creature of your choice within 30 feet of you has advantage on saving throws it makes to avoid being *charmed* or *frightened* or to end those conditions on itself.",
-            "When you would take damage of the type dealt by the breath of the dragon in whose hoard the ornament became Wakened, you can use your reaction to take no damage instead, and you regain hit points equal to the damage you would have taken. Once this property is used, it can't be used again until the next dawn."
+            "When you would take damage of the type dealt by the breath of the dragon in whose hoard the ornament became Wakened, you can use your reaction to take no damage instead, and you regain hit points equal to the damage you would have taken. Once this property is used, it can't be used again until the next dawn.",
+            "While you are wearing the ornament, you gain a flying speed equal to your walking speed and can hover. While you are flying using this speed, spectral dragon wings appear on your back."
         ],
-        "rarity": "very rare"
+        "rarity": "legendary"
     },
     {
         "type": [
@@ -25919,16 +26770,17 @@
             "magic",
             "wand"
         ],
-        "name": "Wand of Magic Missiles",
-        "source": "DMG",
-        "page": 211,
+        "name": "Charred Wand of Magic Missiles",
+        "source": "WDH",
+        "page": 77,
         "weight": 1,
         "related_spells": [
             "magic missile"
         ],
         "text": [
             "This wand has 7 charges. While holding it, you can use an action to expend 1 or more of its charges to cast the *magic missile* spell from it. For 1 charge, you cast the 1st-level version of the spell. You can increase the spell slot level by one for each additional charge you expend.",
-            "The wand regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll a d20. On a 1, the wand crumbles into ashes and is destroyed."
+            "The wand regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll a d20. On a 1, the wand crumbles into ashes and is destroyed.",
+            "Each time you expend a charge from this wand, there is a 50 chance that nothing happens and the charge is wasted."
         ],
         "rarity": "uncommon",
         "recharge": "dawn",
@@ -25937,8 +26789,8 @@
     {
         "type": [
             "sentient",
-            "magic",
-            "wand"
+            "wand",
+            "magic"
         ],
         "name": "Wand of Orcus",
         "source": "DMG",
@@ -26608,7 +27460,9 @@
             "cold"
         ],
         "text": [
-            "{#itemEntry Chromatic Rose|WBtW}"
+            "While this rose is held, it covered in frost as a harmless visual effect.",
+            "While holding the rose by its stem, you gain resistance to cold damage. If you would take more than 10 cold damage from a single source (after applying the resistance), the rose disintegrates, and you take no damage instead.",
+            "As an action, you can blow the petals from the rose to produce a 20-foot cone of cold. Each creature in the cone must make a DC 15 Constitution saving throw, taking **3d10** cold damage on a failed save, or half as much damage on a successful one. Using this property destroys the rose."
         ],
         "rarity": "rare"
     },
@@ -26693,8 +27547,14 @@
         "rarity": "unknown"
     },
     {
+        "type": [
+            "sentient",
+            "weapon",
+            "melee"
+        ],
         "name": "Will of the Talon (Awakened)",
         "source": "EGW",
+        "page": 279,
         "resist": [
             "acid",
             "cold",
@@ -26702,24 +27562,10 @@
             "lightning",
             "poison"
         ],
+        "weight": 2,
         "bonuses": {
             "weapon_attack": 2,
             "weapon_damage": 2
-        }
-    },
-    {
-        "type": [
-            "sentient",
-            "weapon",
-            "melee"
-        ],
-        "name": "Will of the Talon (Dormant)",
-        "source": "EGW",
-        "page": 279,
-        "weight": 2,
-        "bonuses": {
-            "weapon_attack": 1,
-            "weapon_damage": 1
         },
         "damage_dice": [
             "1d8"
@@ -26749,6 +27595,73 @@
             "|Lightning|5 ft. wide, 30 ft. long line|Dexterity|",
             "|Poison|15 ft. cone|Constitution|",
             "",
+            "***Awakened.*** When the war pick reaches an awakened state, it gains the following properties:",
+            "- The weapon's bonus to attack and damage rolls increases to +2.",
+            "- The saving throw DC for the war pick's Breath Weapon property increases to 15, and that property deals **4d6** damage on a failed save, or half as much damage on a successful one.",
+            "- The saving throw DC for the war pick's Frightful Presence property increases to 15.",
+            "- While carrying the weapon, you have resistance to acid, cold, fire, lightning, and poison damage.",
+            "",
+            "> **Betrayer Artifact Properties**",
+            "> The Arms of the Betrayers advance in power in the same manner as the Vestiges of Divergence. In its dormant state, each of these artifacts has one minor beneficial property and one minor detrimental property. When the artifact attains an awakened state, it gains an additional minor beneficial property and an additional minor detrimental property. When the item reaches its exalted state, it gains a major beneficial property. See \"Artifact Properties\" in chapter 7 of the Dungeon Master's Guide for more information."
+        ],
+        "rarity": "artifact",
+        "attunement": true
+    },
+    {
+        "type": [
+            "sentient",
+            "weapon",
+            "melee"
+        ],
+        "name": "Will of the Talon (Awakened)",
+        "source": "EGW",
+        "page": 279,
+        "resist": [
+            "acid",
+            "cold",
+            "fire",
+            "lightning",
+            "poison"
+        ],
+        "weight": 2,
+        "bonuses": {
+            "weapon_attack": 2,
+            "weapon_damage": 2
+        },
+        "damage_dice": [
+            "1d8"
+        ],
+        "damage_type": "piercing",
+        "text": [
+            "Black, blue, green, red, and white gems carved in the form of dragon heads cover this ostentatious gold war pick, marking it as a weapon channeling the power of Tiamat.",
+            "",
+            "***Sentience.*** Will of the Talon is a sentient lawful evil weapon with an Intelligence of 14, a Wisdom of 15, and a Charisma of 19. It has hearing and *darkvision* out to a range of 120 feet.",
+            "The weapon communicates telepathically with its wielder and can speak, read, and understand Common, Draconic, and Infernal.",
+            "",
+            "***Personality.*** A short-tempered **bone devil** named Ashtyrlon lives within Will of the Talon. The weapon is greedy and values strong leadership. It demands that its wielder take decisive action to keep order in high-pressure situations\u2014and to always take a fair share of treasure in return.",
+            "",
+            "***Dormant.*** The war pick grants the following benefits in its dormant state:",
+            "- You can speak, read, and write Draconic and Infernal.",
+            "- You gain a +1 bonus to attack and damage rolls made with this magic weapon.",
+            "- As a bonus action while holding the war pick, you can cause the following effect: each creature of your choice that is within 30 feet of you and is aware of you must succeed on a DC 13 Wisdom saving throw or become *frightened* of you for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to your Frightful Presence for the next 24 hours. This property can't be used again until the next dawn.",
+            "- While holding the war pick, you can use your action to exhale destructive energy. Pick a damage type from the Will of the Talon Breath Weapons table. Each creature in the area of the exhalation must make a DC 13 saving throw, the type of which is specified in the table. A creature takes **3d6** damage on a failed save, or half as much damage on a successful one.",
+            "When you use the war pick to unleash a breath weapon of a specific damage type, you can't choose that same damage type again until the next dawn.",
+            "",
+            "**Will of the Talon Breath Weapons**",
+            "|Damage Type|Area|Saving Throw|",
+            "|:-:|:-:|:-:|:-:|",
+            "|Acid|5 ft. wide, 30 ft. long line|Dexterity|",
+            "|Cold|15 ft. cone|Constitution|",
+            "|Fire|15 ft. cone|Dexterity|",
+            "|Lightning|5 ft. wide, 30 ft. long line|Dexterity|",
+            "|Poison|15 ft. cone|Constitution|",
+            "",
+            "***Awakened.*** When the war pick reaches an awakened state, it gains the following properties:",
+            "- The weapon's bonus to attack and damage rolls increases to +2.",
+            "- The saving throw DC for the war pick's Breath Weapon property increases to 15, and that property deals **4d6** damage on a failed save, or half as much damage on a successful one.",
+            "- The saving throw DC for the war pick's Frightful Presence property increases to 15.",
+            "- While carrying the weapon, you have resistance to acid, cold, fire, lightning, and poison damage.",
+            "",
             "> **Betrayer Artifact Properties**",
             "> The Arms of the Betrayers advance in power in the same manner as the Vestiges of Divergence. In its dormant state, each of these artifacts has one minor beneficial property and one minor detrimental property. When the artifact attains an awakened state, it gains an additional minor beneficial property and an additional minor detrimental property. When the item reaches its exalted state, it gains a major beneficial property. See \"Artifact Properties\" in chapter 7 of the Dungeon Master's Guide for more information."
         ],
@@ -26758,10 +27671,23 @@
     {
         "name": "Will of the Talon (Exalted)",
         "source": "EGW",
+        "resist": [
+            "acid",
+            "cold",
+            "fire",
+            "lightning",
+            "poison"
+        ],
         "bonuses": {
             "weapon_attack": 3,
             "weapon_damage": 3
-        }
+        },
+        "text": [
+            "***Exalted.*** When the war pick reaches an exalted state, it gains the following properties:",
+            "- The weapon's bonus to attack and damage rolls increases to +3.",
+            "- The saving throw DC for the war pick's Breath Weapon property increases to 17, and that property deals **5d6** damage on a failed save, or half as much damage on a successful one.",
+            "- The saving throw DC for the war pick's Frightful Presence property increases to 17."
+        ]
     },
     {
         "type": [
@@ -27034,14 +27960,10 @@
         "rarity": "rare"
     },
     {
-        "name": "Wreath of the Prism (Awakened)",
-        "source": "EGW"
-    },
-    {
         "type": [
             "wondrous"
         ],
-        "name": "Wreath of the Prism (Dormant)",
+        "name": "Wreath of the Prism (Awakened)",
         "source": "EGW",
         "page": 274,
         "related_spells": [
@@ -27049,6 +27971,33 @@
         ],
         "text": [
             "This loop of golden thorns is inset with dozens of gems representing the five colors of Tiamat.",
+            "",
+            "***Awakened.*** Once the Wreath of the Prism reaches an awakened state, it gains the following benefits:",
+            "- You can affect creatures of challenge rating 10 or lower with the wreath.",
+            "- The save DC of the wreath's spell increases to 15.",
+            "",
+            "***Dormant.*** While wearing the wreath in its dormant state, you have *darkvision* out to a range of 60 feet. If you already have *darkvision*, wearing the wreath increases the range of your *darkvision* by 60 feet.",
+            "When you hit a beast, dragon, or monstrosity of challenge rating 5 or lower with an attack, or when you grapple it, you can use the wreath to cast *dominate monster* on the creature (save DC 13). On a successful save, the target is immune to the power of the wreath for 24 hours. On a failure, a shimmering, golden image of the wreath appears as a collar around the target's neck or as a crown on its head (your choice) until it is no longer *charmed* by the spell. If you use the wreath to charm a second creature, the first spell immediately ends. When the spell ends, the target knows it was *charmed* by you."
+        ],
+        "rarity": "legendary",
+        "attunement": true
+    },
+    {
+        "type": [
+            "wondrous"
+        ],
+        "name": "Wreath of the Prism (Awakened)",
+        "source": "EGW",
+        "page": 274,
+        "related_spells": [
+            "dominate monster"
+        ],
+        "text": [
+            "This loop of golden thorns is inset with dozens of gems representing the five colors of Tiamat.",
+            "",
+            "***Awakened.*** Once the Wreath of the Prism reaches an awakened state, it gains the following benefits:",
+            "- You can affect creatures of challenge rating 10 or lower with the wreath.",
+            "- The save DC of the wreath's spell increases to 15.",
             "",
             "***Dormant.*** While wearing the wreath in its dormant state, you have *darkvision* out to a range of 60 feet. If you already have *darkvision*, wearing the wreath increases the range of your *darkvision* by 60 feet.",
             "When you hit a beast, dragon, or monstrosity of challenge rating 5 or lower with an attack, or when you grapple it, you can use the wreath to cast *dominate monster* on the creature (save DC 13). On a successful save, the target is immune to the power of the wreath for 24 hours. On a failure, a shimmering, golden image of the wreath appears as a collar around the target's neck or as a crown on its head (your choice) until it is no longer *charmed* by the spell. If you use the wreath to charm a second creature, the first spell immediately ends. When the spell ends, the target knows it was *charmed* by you."
@@ -27058,7 +28007,12 @@
     },
     {
         "name": "Wreath of the Prism (Exalted)",
-        "source": "EGW"
+        "source": "EGW",
+        "text": [
+            "***Exalted.*** Once the Wreath of the Prism reaches an exalted state, it gains the following benefits:",
+            "- You can affect creatures of challenge rating 15 or lower with the wreath.",
+            "- The save DC of the wreath's spell increases to 17."
+        ]
     },
     {
         "type": [
@@ -27077,7 +28031,23 @@
         "name": "Wyllow's Staff of Flowers",
         "source": "WDMM",
         "page": 75,
-        "attunement": true
+        "weight": 4,
+        "damage_dice": [
+            "1d6",
+            "1d8"
+        ],
+        "damage_type": "bludgeoning",
+        "text": [
+            "This wooden staff has 10 charges. While holding it, you can use an action to expend 1 charge from the staff and cause a flower to sprout from a patch of earth or soil within 5 feet of you, or from the staff itself. Unless you choose a specific kind of flower, the staff creates a mildscented daisy. The flower is harmless and nonmagical, and it grows or withers as a normal flower would. The staff regains 1d6 + 4 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the staff turns into flower petals and is lost forever.",
+            "Wyllow's staff is peculiar in that it can't create roses, which the archdruid dislikes. If a rose is chosen, a daisy grows instead.",
+            "",
+            "***Versatile.*** This weapon can be used with one or two hands. A damage value in parentheses appears with the property\u2014the damage when the weapon is used with two hands to make a melee attack.",
+            "*(PHB - pg. 147)*"
+        ],
+        "rarity": "common",
+        "attunement": true,
+        "recharge": "dawn",
+        "charges": 10
     },
     {
         "type": [
@@ -27111,8 +28081,8 @@
     },
     {
         "type": [
-            "gear",
-            "poison"
+            "poison",
+            "gear"
         ],
         "name": "Wyvern Poison",
         "source": "DMG",
@@ -27166,9 +28136,9 @@
     },
     {
         "type": [
+            "gear",
             "magic",
-            "focus",
-            "gear"
+            "focus"
         ],
         "name": "Yew Wand",
         "source": "PHB",
@@ -27528,9 +28498,9 @@
     },
     {
         "type": [
+            "gear",
             "magic",
-            "focus",
-            "gear"
+            "focus"
         ],
         "name": "Crystal",
         "source": "PHB",
@@ -27602,8 +28572,8 @@
     {
         "type": [
             "weapon",
-            "special",
-            "melee"
+            "melee",
+            "special"
         ],
         "name": "Double-Bladed Scimitar",
         "source": "ERLW",
@@ -27623,8 +28593,8 @@
     },
     {
         "type": [
-            "futuristic",
-            "ammo"
+            "ammo",
+            "futuristic"
         ],
         "name": "Energy Cell",
         "source": "DMG",
@@ -27975,8 +28945,8 @@
     {
         "type": [
             "weapon",
-            "special",
-            "melee"
+            "melee",
+            "special"
         ],
         "name": "Lance",
         "source": "PHB",
@@ -28268,8 +29238,8 @@
     },
     {
         "type": [
-            "futuristic",
-            "ammo"
+            "ammo",
+            "futuristic"
         ],
         "name": "Modern Bullet",
         "source": "DMG",
@@ -28278,8 +29248,8 @@
     },
     {
         "type": [
-            "futuristic",
-            "ammo"
+            "ammo",
+            "futuristic"
         ],
         "name": "Modern Bullets (10)",
         "source": "DMG",
@@ -28340,8 +29310,8 @@
     {
         "type": [
             "weapon",
-            "range",
-            "special"
+            "special",
+            "range"
         ],
         "name": "Net",
         "source": "PHB",
@@ -28366,9 +29336,9 @@
     },
     {
         "type": [
+            "gear",
             "magic",
-            "focus",
-            "gear"
+            "focus"
         ],
         "name": "Orb",
         "source": "PHB",
@@ -28508,8 +29478,8 @@
     },
     {
         "type": [
-            "futuristic",
-            "ammo"
+            "ammo",
+            "futuristic"
         ],
         "name": "Renaissance Bullet",
         "source": "DMG",
@@ -28519,8 +29489,8 @@
     },
     {
         "type": [
-            "futuristic",
-            "ammo"
+            "ammo",
+            "futuristic"
         ],
         "name": "Renaissance Bullets (10)",
         "source": "DMG",
@@ -28578,9 +29548,9 @@
     },
     {
         "type": [
+            "gear",
             "magic",
-            "focus",
-            "gear"
+            "focus"
         ],
         "name": "Rod",
         "source": "PHB",
@@ -28629,8 +29599,8 @@
     },
     {
         "type": [
-            "shield",
-            "armor"
+            "armor",
+            "shield"
         ],
         "name": "Shield",
         "source": "PHB",
@@ -28861,9 +29831,9 @@
     },
     {
         "type": [
+            "gear",
             "magic",
-            "focus",
-            "gear"
+            "focus"
         ],
         "name": "Staff",
         "source": "PHB",
@@ -28925,9 +29895,9 @@
     },
     {
         "type": [
+            "gear",
             "magic",
-            "focus",
-            "gear"
+            "focus"
         ],
         "name": "Wand",
         "source": "PHB",
@@ -28996,9 +29966,9 @@
     },
     {
         "type": [
+            "gear",
             "magic",
-            "focus",
-            "gear"
+            "focus"
         ],
         "name": "Wooden Staff",
         "source": "PHB",
