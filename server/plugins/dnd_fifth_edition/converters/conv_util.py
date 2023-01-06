@@ -72,6 +72,12 @@ def parse_5etools_command(directive: str, arguments: List[str]):
         except:
             return f"**{arguments[0].capitalize()}**"
 
+    if directive == "table":
+        try:
+            return arguments[2]
+        except:
+            return arguments[0]
+
     # print(f"Unknown command {directive} with args [{', '.join(arguments)}]")
 
     return arguments[0].capitalize() if len(arguments) > 0 else directive.capitalize()
@@ -112,9 +118,17 @@ def filter_dict_array(array: list[dict], filter: Dict[str, Any]):
 def parse_5etools_table_cell(cell: str | Dict):
     if type(cell) != dict:
         return str(cell)
-    # print(cell)
     if "roll" in cell.keys():
-        return str(cell["roll"]["exact"])
+        if "exact" in cell["roll"].keys():
+            return str(cell["roll"]["exact"]) + " " + cell.get("entry", "")
+        if "min" in cell["roll"].keys() and "max" in cell["roll"].keys():
+            return (
+                "{min} - {max}".format(min=cell["roll"]["min"], max=cell["roll"]["max"])
+                + " "
+                + cell.get("entry", "")
+            )
+        print(cell)
+        return ""
 
 
 # === CONSTANTS ===
