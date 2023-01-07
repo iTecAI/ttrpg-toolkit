@@ -250,8 +250,6 @@ class DataSourceLoader:
                     )
                     > 0
                 )
-                if matches > 0:
-                    print(field.value, record_value)
             else:
                 matches += int(str(field.value).lower() == str(record_value).lower())
 
