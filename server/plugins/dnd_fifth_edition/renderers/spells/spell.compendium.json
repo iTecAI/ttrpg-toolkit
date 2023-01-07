@@ -1,0 +1,14 @@
+{
+    "supertype": "compendium-item",
+    "type": "spell",
+    "plugin": "dnd_fifth_edition",
+    "slug": "$data:slug",
+    "displayName": "$data:name",
+    "source": "$data:source",
+    "briefContents": [],
+    "fullContents": {
+        "supertype": "render",
+        "type": "group",
+        "children": []
+    }
+}

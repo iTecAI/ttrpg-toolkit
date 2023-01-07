@@ -1,5 +1,6 @@
 [
     {
+        "slug": "conjure_barlgura__ua__uathatoldblackmagic",
         "name": "Conjure Barlgura (UA)",
         "source": "UAThatOldBlackMagic",
         "page": 2,
@@ -49,6 +50,7 @@
         ]
     },
     {
+        "slug": "conjure_hezrou__ua__uathatoldblackmagic",
         "name": "Conjure Hezrou (UA)",
         "source": "UAThatOldBlackMagic",
         "page": 2,
@@ -99,6 +101,7 @@
         ]
     },
     {
+        "slug": "conjure_lesser_demon__ua__uathatoldblackmagic",
         "name": "Conjure Lesser Demon (UA)",
         "source": "UAThatOldBlackMagic",
         "page": 2,
@@ -150,6 +153,7 @@
         ]
     },
     {
+        "slug": "conjure_shadow_demon__ua__uathatoldblackmagic",
         "name": "Conjure Shadow Demon (UA)",
         "source": "UAThatOldBlackMagic",
         "page": 3,
@@ -199,6 +203,7 @@
         ]
     },
     {
+        "slug": "conjure_vrock__ua__uathatoldblackmagic",
         "name": "Conjure Vrock (UA)",
         "source": "UAThatOldBlackMagic",
         "page": 3,

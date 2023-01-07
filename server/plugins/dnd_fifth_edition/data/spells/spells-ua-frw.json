@@ -1,5 +1,6 @@
 [
     {
+        "slug": "ego_whip_uafighterroguewizard",
         "name": "Ego Whip",
         "source": "UAFighterRogueWizard",
         "page": 7,
@@ -60,6 +61,7 @@
         ]
     },
     {
+        "slug": "id_insinuation_uafighterroguewizard",
         "name": "Id Insinuation",
         "source": "UAFighterRogueWizard",
         "page": 7,
@@ -126,6 +128,7 @@
         ]
     },
     {
+        "slug": "intellect_fortress_uafighterroguewizard",
         "name": "Intellect Fortress",
         "source": "UAFighterRogueWizard",
         "page": 7,
@@ -183,6 +186,7 @@
         ]
     },
     {
+        "slug": "mental_barrier_uafighterroguewizard",
         "name": "Mental Barrier",
         "source": "UAFighterRogueWizard",
         "page": 7,
@@ -239,6 +243,7 @@
         ]
     },
     {
+        "slug": "mind_sliver_uafighterroguewizard",
         "name": "Mind Sliver",
         "source": "UAFighterRogueWizard",
         "page": 7,
@@ -302,6 +307,7 @@
         ]
     },
     {
+        "slug": "mind_thrust_uafighterroguewizard",
         "name": "Mind Thrust",
         "source": "UAFighterRogueWizard",
         "page": 7,
@@ -366,6 +372,7 @@
         ]
     },
     {
+        "slug": "psionic_blast_uafighterroguewizard",
         "name": "Psionic Blast",
         "source": "UAFighterRogueWizard",
         "page": 8,
@@ -431,6 +438,7 @@
         ]
     },
     {
+        "slug": "psychic_crush_uafighterroguewizard",
         "name": "Psychic Crush",
         "source": "UAFighterRogueWizard",
         "page": 8,
@@ -497,6 +505,7 @@
         ]
     },
     {
+        "slug": "thought_shield_uafighterroguewizard",
         "name": "Thought Shield",
         "source": "UAFighterRogueWizard",
         "page": 8,

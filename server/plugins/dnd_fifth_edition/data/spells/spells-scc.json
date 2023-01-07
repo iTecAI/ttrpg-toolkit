@@ -1,5 +1,6 @@
 [
     {
+        "slug": "borrowed_knowledge_scc",
         "name": "Borrowed Knowledge",
         "source": "SCC",
         "page": 37,
@@ -55,6 +56,7 @@
         ]
     },
     {
+        "slug": "kinetic_jaunt_scc",
         "name": "Kinetic Jaunt",
         "source": "SCC",
         "page": 37,
@@ -117,6 +119,7 @@
         ]
     },
     {
+        "slug": "silvery_barbs_scc",
         "name": "Silvery Barbs",
         "source": "SCC",
         "page": 38,
@@ -168,6 +171,7 @@
         ]
     },
     {
+        "slug": "vortex_warp_scc",
         "name": "Vortex Warp",
         "source": "SCC",
         "page": 38,
@@ -222,6 +226,7 @@
         ]
     },
     {
+        "slug": "wither_and_bloom_scc",
         "name": "Wither and Bloom",
         "source": "SCC",
         "page": 38,

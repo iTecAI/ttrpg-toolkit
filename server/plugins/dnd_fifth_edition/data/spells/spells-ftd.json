@@ -1,5 +1,6 @@
 [
     {
+        "slug": "ashardalon_s_stride_ftd",
         "name": "Ashardalon's Stride",
         "source": "FTD",
         "page": 19,
@@ -62,6 +63,7 @@
         ]
     },
     {
+        "slug": "draconic_transformation_ftd",
         "name": "Draconic Transformation",
         "source": "FTD",
         "page": 19,
@@ -122,6 +124,7 @@
         ]
     },
     {
+        "slug": "fizban_s_platinum_shield_ftd",
         "name": "Fizban's Platinum Shield",
         "source": "FTD",
         "page": 20,
@@ -173,6 +176,7 @@
         ]
     },
     {
+        "slug": "nathair_s_mischief_ftd",
         "name": "Nathair's Mischief",
         "source": "FTD",
         "page": 20,
@@ -233,6 +237,7 @@
         ]
     },
     {
+        "slug": "raulothim_s_psychic_lance_ftd",
         "name": "Raulothim's Psychic Lance",
         "source": "FTD",
         "page": 21,
@@ -299,6 +304,7 @@
         ]
     },
     {
+        "slug": "rime_s_binding_ice_ftd",
         "name": "Rime's Binding Ice",
         "source": "FTD",
         "page": 21,
@@ -351,6 +357,7 @@
         ]
     },
     {
+        "slug": "summon_draconic_spirit_ftd",
         "name": "Summon Draconic Spirit",
         "source": "FTD",
         "page": 21,

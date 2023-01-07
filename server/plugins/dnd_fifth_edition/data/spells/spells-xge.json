@@ -1,5 +1,6 @@
 [
     {
+        "slug": "abi_dalzim_s_horrid_wilting_xge",
         "name": "Abi-Dalzim's Horrid Wilting",
         "source": "XGE",
         "page": 150,
@@ -51,6 +52,7 @@
         ]
     },
     {
+        "slug": "absorb_elements_xge",
         "name": "Absorb Elements",
         "source": "XGE",
         "page": 150,
@@ -126,6 +128,7 @@
         ]
     },
     {
+        "slug": "aganazzar_s_scorcher_xge",
         "name": "Aganazzar's Scorcher",
         "source": "XGE",
         "page": 150,
@@ -178,6 +181,7 @@
         ]
     },
     {
+        "slug": "beast_bond_xge",
         "name": "Beast Bond",
         "source": "XGE",
         "page": 150,
@@ -227,6 +231,7 @@
         ]
     },
     {
+        "slug": "bones_of_the_earth_xge",
         "name": "Bones of the Earth",
         "source": "XGE",
         "page": 150,
@@ -279,6 +284,7 @@
         ]
     },
     {
+        "slug": "catapult_xge",
         "name": "Catapult",
         "source": "XGE",
         "page": 150,
@@ -341,6 +347,7 @@
         ]
     },
     {
+        "slug": "catnap_xge",
         "name": "Catnap",
         "source": "XGE",
         "page": 151,
@@ -407,6 +414,7 @@
         ]
     },
     {
+        "slug": "cause_fear_xge",
         "name": "Cause Fear",
         "source": "XGE",
         "page": 151,
@@ -462,6 +470,7 @@
         ]
     },
     {
+        "slug": "ceremony_xge",
         "name": "Ceremony",
         "source": "XGE",
         "page": 151,
@@ -517,6 +526,7 @@
         ]
     },
     {
+        "slug": "chaos_bolt_xge",
         "name": "Chaos Bolt",
         "source": "XGE",
         "page": 151,
@@ -589,6 +599,7 @@
         ]
     },
     {
+        "slug": "charm_monster_xge",
         "name": "Charm Monster",
         "source": "XGE",
         "page": 151,
@@ -658,6 +669,7 @@
         ]
     },
     {
+        "slug": "control_flames_xge",
         "name": "Control Flames",
         "source": "XGE",
         "page": 152,
@@ -717,6 +729,7 @@
         ]
     },
     {
+        "slug": "control_winds_xge",
         "name": "Control Winds",
         "source": "XGE",
         "page": 152,
@@ -781,6 +794,7 @@
         ]
     },
     {
+        "slug": "create_bonfire_xge",
         "name": "Create Bonfire",
         "source": "XGE",
         "page": 152,
@@ -856,6 +870,7 @@
         ]
     },
     {
+        "slug": "create_homunculus_xge",
         "name": "Create Homunculus",
         "source": "XGE",
         "page": 152,
@@ -896,6 +911,7 @@
         ]
     },
     {
+        "slug": "crown_of_stars_xge",
         "name": "Crown of Stars",
         "source": "XGE",
         "page": 152,
@@ -953,6 +969,7 @@
         ]
     },
     {
+        "slug": "danse_macabre_xge",
         "name": "Danse Macabre",
         "source": "XGE",
         "page": 153,
@@ -1004,6 +1021,7 @@
         ]
     },
     {
+        "slug": "dawn_xge",
         "name": "Dawn",
         "source": "XGE",
         "page": 153,
@@ -1059,6 +1077,7 @@
         ]
     },
     {
+        "slug": "dragon_s_breath_xge",
         "name": "Dragon's Breath",
         "source": "XGE",
         "page": 154,
@@ -1117,6 +1136,7 @@
         ]
     },
     {
+        "slug": "druid_grove_xge",
         "name": "Druid Grove",
         "source": "XGE",
         "page": 154,
@@ -1172,6 +1192,7 @@
         ]
     },
     {
+        "slug": "dust_devil_xge",
         "name": "Dust Devil",
         "source": "XGE",
         "page": 154,
@@ -1234,6 +1255,7 @@
         ]
     },
     {
+        "slug": "earth_tremor_xge",
         "name": "Earth Tremor",
         "source": "XGE",
         "page": 155,
@@ -1299,6 +1321,7 @@
         ]
     },
     {
+        "slug": "earthbind_xge",
         "name": "Earthbind",
         "source": "XGE",
         "page": 154,
@@ -1359,6 +1382,7 @@
         ]
     },
     {
+        "slug": "elemental_bane_xge",
         "name": "Elemental Bane",
         "source": "XGE",
         "page": 155,
@@ -1433,6 +1457,7 @@
         ]
     },
     {
+        "slug": "enemies_abound_xge",
         "name": "Enemies Abound",
         "source": "XGE",
         "page": 155,
@@ -1494,6 +1519,7 @@
         ]
     },
     {
+        "slug": "enervation_xge",
         "name": "Enervation",
         "source": "XGE",
         "page": 155,
@@ -1555,6 +1581,7 @@
         ]
     },
     {
+        "slug": "erupting_earth_xge",
         "name": "Erupting Earth",
         "source": "XGE",
         "page": 155,
@@ -1612,6 +1639,7 @@
         ]
     },
     {
+        "slug": "far_step_xge",
         "name": "Far Step",
         "source": "XGE",
         "page": 155,
@@ -1663,6 +1691,7 @@
         ]
     },
     {
+        "slug": "find_greater_steed_xge",
         "name": "Find Greater Steed",
         "source": "XGE",
         "page": 156,
@@ -1709,6 +1738,7 @@
         ]
     },
     {
+        "slug": "flame_arrows_xge",
         "name": "Flame Arrows",
         "source": "XGE",
         "page": 156,
@@ -1780,6 +1810,7 @@
         ]
     },
     {
+        "slug": "frostbite_xge",
         "name": "Frostbite",
         "source": "XGE",
         "page": 156,
@@ -1851,6 +1882,7 @@
         ]
     },
     {
+        "slug": "guardian_of_nature_xge",
         "name": "Guardian of Nature",
         "source": "XGE",
         "page": 157,
@@ -1917,6 +1949,7 @@
         ]
     },
     {
+        "slug": "gust_xge",
         "name": "Gust",
         "source": "XGE",
         "page": 157,
@@ -1979,6 +2012,7 @@
         ]
     },
     {
+        "slug": "healing_spirit_xge",
         "name": "Healing Spirit",
         "source": "XGE",
         "page": 157,
@@ -2030,6 +2064,7 @@
         ]
     },
     {
+        "slug": "holy_weapon_xge",
         "name": "Holy Weapon",
         "source": "XGE",
         "page": 157,
@@ -2086,6 +2121,7 @@
         ]
     },
     {
+        "slug": "ice_knife_xge",
         "name": "Ice Knife",
         "source": "XGE",
         "page": 157,
@@ -2145,6 +2181,7 @@
         ]
     },
     {
+        "slug": "illusory_dragon_xge",
         "name": "Illusory Dragon",
         "source": "XGE",
         "page": 157,
@@ -2205,6 +2242,7 @@
         ]
     },
     {
+        "slug": "immolation_xge",
         "name": "Immolation",
         "source": "XGE",
         "page": 158,
@@ -2259,6 +2297,7 @@
         ]
     },
     {
+        "slug": "infernal_calling_xge",
         "name": "Infernal Calling",
         "source": "XGE",
         "page": 158,
@@ -2312,6 +2351,7 @@
         ]
     },
     {
+        "slug": "infestation_xge",
         "name": "Infestation",
         "source": "XGE",
         "page": 158,
@@ -2373,6 +2413,7 @@
         ]
     },
     {
+        "slug": "investiture_of_flame_xge",
         "name": "Investiture of Flame",
         "source": "XGE",
         "page": 159,
@@ -2444,6 +2485,7 @@
         ]
     },
     {
+        "slug": "investiture_of_ice_xge",
         "name": "Investiture of Ice",
         "source": "XGE",
         "page": 159,
@@ -2516,6 +2558,7 @@
         ]
     },
     {
+        "slug": "investiture_of_stone_xge",
         "name": "Investiture of Stone",
         "source": "XGE",
         "page": 159,
@@ -2587,6 +2630,7 @@
         ]
     },
     {
+        "slug": "investiture_of_wind_xge",
         "name": "Investiture of Wind",
         "source": "XGE",
         "page": 160,
@@ -2652,6 +2696,7 @@
         ]
     },
     {
+        "slug": "invulnerability_xge",
         "name": "Invulnerability",
         "source": "XGE",
         "page": 160,
@@ -2693,6 +2738,7 @@
         ]
     },
     {
+        "slug": "life_transference_xge",
         "name": "Life Transference",
         "source": "XGE",
         "page": 160,
@@ -2742,6 +2788,7 @@
         ]
     },
     {
+        "slug": "maddening_darkness_xge",
         "name": "Maddening Darkness",
         "source": "XGE",
         "page": 160,
@@ -2796,6 +2843,7 @@
         ]
     },
     {
+        "slug": "maelstrom_xge",
         "name": "Maelstrom",
         "source": "XGE",
         "page": 160,
@@ -2844,6 +2892,7 @@
         ]
     },
     {
+        "slug": "magic_stone_xge",
         "name": "Magic Stone",
         "source": "XGE",
         "page": 160,
@@ -2904,6 +2953,7 @@
         ]
     },
     {
+        "slug": "mass_polymorph_xge",
         "name": "Mass Polymorph",
         "source": "XGE",
         "page": 160,
@@ -2963,6 +3013,7 @@
         ]
     },
     {
+        "slug": "maximilian_s_earthen_grasp_xge",
         "name": "Maximilian's Earthen Grasp",
         "source": "XGE",
         "page": 161,
@@ -3022,6 +3073,7 @@
         ]
     },
     {
+        "slug": "melf_s_minute_meteors_xge",
         "name": "Melf's Minute Meteors",
         "source": "XGE",
         "page": 161,
@@ -3076,6 +3128,7 @@
         ]
     },
     {
+        "slug": "mental_prison_xge",
         "name": "Mental Prison",
         "source": "XGE",
         "page": 161,
@@ -3134,6 +3187,7 @@
         ]
     },
     {
+        "slug": "mighty_fortress_xge",
         "name": "Mighty Fortress",
         "source": "XGE",
         "page": 161,
@@ -3183,6 +3237,7 @@
         ]
     },
     {
+        "slug": "mind_spike_xge",
         "name": "Mind Spike",
         "source": "XGE",
         "page": 162,
@@ -3243,6 +3298,7 @@
         ]
     },
     {
+        "slug": "mold_earth_xge",
         "name": "Mold Earth",
         "source": "XGE",
         "page": 162,
@@ -3301,6 +3357,7 @@
         ]
     },
     {
+        "slug": "negative_energy_flood_xge",
         "name": "Negative Energy Flood",
         "source": "XGE",
         "page": 163,
@@ -3352,6 +3409,7 @@
         ]
     },
     {
+        "slug": "power_word_pain_xge",
         "name": "Power Word Pain",
         "source": "XGE",
         "page": 163,
@@ -3406,6 +3464,7 @@
         ]
     },
     {
+        "slug": "primal_savagery_xge",
         "name": "Primal Savagery",
         "source": "XGE",
         "page": 163,
@@ -3449,6 +3508,7 @@
         ]
     },
     {
+        "slug": "primordial_ward_xge",
         "name": "Primordial Ward",
         "source": "XGE",
         "page": 163,
@@ -3505,6 +3565,7 @@
         ]
     },
     {
+        "slug": "psychic_scream_xge",
         "name": "Psychic Scream",
         "source": "XGE",
         "page": 163,
@@ -3570,6 +3631,7 @@
         ]
     },
     {
+        "slug": "pyrotechnics_xge",
         "name": "Pyrotechnics",
         "source": "XGE",
         "page": 163,
@@ -3639,6 +3701,7 @@
         ]
     },
     {
+        "slug": "scatter_xge",
         "name": "Scatter",
         "source": "XGE",
         "page": 164,
@@ -3691,6 +3754,7 @@
         ]
     },
     {
+        "slug": "shadow_blade_xge",
         "name": "Shadow Blade",
         "source": "XGE",
         "page": 164,
@@ -3748,6 +3812,7 @@
         ]
     },
     {
+        "slug": "shadow_of_moil_xge",
         "name": "Shadow of Moil",
         "source": "XGE",
         "page": 164,
@@ -3796,6 +3861,7 @@
         ]
     },
     {
+        "slug": "shape_water_xge",
         "name": "Shape Water",
         "source": "XGE",
         "page": 164,
@@ -3862,6 +3928,7 @@
         ]
     },
     {
+        "slug": "sickening_radiance_xge",
         "name": "Sickening Radiance",
         "source": "XGE",
         "page": 164,
@@ -3924,6 +3991,7 @@
         ]
     },
     {
+        "slug": "skill_empowerment_xge",
         "name": "Skill Empowerment",
         "source": "XGE",
         "page": 165,
@@ -3986,6 +4054,7 @@
         ]
     },
     {
+        "slug": "skywrite_xge",
         "name": "Skywrite",
         "source": "XGE",
         "page": 165,
@@ -4047,6 +4116,7 @@
         ]
     },
     {
+        "slug": "snare_xge",
         "name": "Snare",
         "source": "XGE",
         "page": 165,
@@ -4117,6 +4187,7 @@
         ]
     },
     {
+        "slug": "snilloc_s_snowball_swarm_xge",
         "name": "Snilloc's Snowball Swarm",
         "source": "XGE",
         "page": 165,
@@ -4169,6 +4240,7 @@
         ]
     },
     {
+        "slug": "soul_cage_xge",
         "name": "Soul Cage",
         "source": "XGE",
         "page": 165,
@@ -4226,6 +4298,7 @@
         ]
     },
     {
+        "slug": "steel_wind_strike_xge",
         "name": "Steel Wind Strike",
         "source": "XGE",
         "page": 166,
@@ -4275,6 +4348,7 @@
         ]
     },
     {
+        "slug": "storm_sphere_xge",
         "name": "Storm Sphere",
         "source": "XGE",
         "page": 166,
@@ -4334,6 +4408,7 @@
         ]
     },
     {
+        "slug": "summon_greater_demon_xge",
         "name": "Summon Greater Demon",
         "source": "XGE",
         "page": 166,
@@ -4389,6 +4464,7 @@
         ]
     },
     {
+        "slug": "summon_lesser_demons_xge",
         "name": "Summon Lesser Demons",
         "source": "XGE",
         "page": 167,
@@ -4448,6 +4524,7 @@
         ]
     },
     {
+        "slug": "synaptic_static_xge",
         "name": "Synaptic Static",
         "source": "XGE",
         "page": 167,
@@ -4510,6 +4587,7 @@
         ]
     },
     {
+        "slug": "temple_of_the_gods_xge",
         "name": "Temple of the Gods",
         "source": "XGE",
         "page": 167,
@@ -4561,6 +4639,7 @@
         ]
     },
     {
+        "slug": "tenser_s_transformation_xge",
         "name": "Tenser's Transformation",
         "source": "XGE",
         "page": 168,
@@ -4618,6 +4697,7 @@
         ]
     },
     {
+        "slug": "thunder_step_xge",
         "name": "Thunder Step",
         "source": "XGE",
         "page": 168,
@@ -4676,6 +4756,7 @@
         ]
     },
     {
+        "slug": "thunderclap_xge",
         "name": "Thunderclap",
         "source": "XGE",
         "page": 168,
@@ -4752,6 +4833,7 @@
         ]
     },
     {
+        "slug": "tidal_wave_xge",
         "name": "Tidal Wave",
         "source": "XGE",
         "page": 168,
@@ -4810,6 +4892,7 @@
         ]
     },
     {
+        "slug": "tiny_servant_xge",
         "name": "Tiny Servant",
         "source": "XGE",
         "page": 168,
@@ -4864,6 +4947,7 @@
         ]
     },
     {
+        "slug": "toll_the_dead_xge",
         "name": "Toll the Dead",
         "source": "XGE",
         "page": 169,
@@ -4920,6 +5004,7 @@
         ]
     },
     {
+        "slug": "transmute_rock_xge",
         "name": "Transmute Rock",
         "source": "XGE",
         "page": 169,
@@ -4998,6 +5083,7 @@
         ]
     },
     {
+        "slug": "vitriolic_sphere_xge",
         "name": "Vitriolic Sphere",
         "source": "XGE",
         "page": 170,
@@ -5055,6 +5141,7 @@
         ]
     },
     {
+        "slug": "wall_of_light_xge",
         "name": "Wall of Light",
         "source": "XGE",
         "page": 170,
@@ -5122,6 +5209,7 @@
         ]
     },
     {
+        "slug": "wall_of_sand_xge",
         "name": "Wall of Sand",
         "source": "XGE",
         "page": 170,
@@ -5167,6 +5255,7 @@
         ]
     },
     {
+        "slug": "wall_of_water_xge",
         "name": "Wall of Water",
         "source": "XGE",
         "page": 170,
@@ -5225,6 +5314,7 @@
         ]
     },
     {
+        "slug": "warding_wind_xge",
         "name": "Warding Wind",
         "source": "XGE",
         "page": 170,
@@ -5290,6 +5380,7 @@
         ]
     },
     {
+        "slug": "watery_sphere_xge",
         "name": "Watery Sphere",
         "source": "XGE",
         "page": 170,
@@ -5353,6 +5444,7 @@
         ]
     },
     {
+        "slug": "whirlwind_xge",
         "name": "Whirlwind",
         "source": "XGE",
         "page": 171,
@@ -5417,6 +5509,7 @@
         ]
     },
     {
+        "slug": "word_of_radiance_xge",
         "name": "Word of Radiance",
         "source": "XGE",
         "page": 171,
@@ -5463,6 +5556,7 @@
         ]
     },
     {
+        "slug": "wrath_of_nature_xge",
         "name": "Wrath of Nature",
         "source": "XGE",
         "page": 171,
@@ -5531,6 +5625,7 @@
         ]
     },
     {
+        "slug": "zephyr_strike_xge",
         "name": "Zephyr Strike",
         "source": "XGE",
         "page": 171,

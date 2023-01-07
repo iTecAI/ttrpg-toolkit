@@ -1,5 +1,5 @@
 import json
-from conv_util import parse_5etools_string
+from conv_util import parse_5etools_string, normalize_slug
 from glob import glob
 import os
 from typing import TypedDict, Optional, Union, Literal, Any
@@ -64,6 +64,7 @@ class SpellList(TypedDict):
 
 
 class SpellItem(TypedDict):
+    slug: str
     name: str
     source: str
     page: int
@@ -319,6 +320,9 @@ class SpellParser:
             )
 
         return SpellItem(
+            slug=normalize_slug(
+                spell.get("name", "").lower() + "_" + spell.get("source", "").lower()
+            ),
             name=spell.get("name", ""),
             source=spell.get("source", ""),
             page=spell.get("page", None),

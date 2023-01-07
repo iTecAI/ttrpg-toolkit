@@ -65,6 +65,40 @@
                         "type": "select"
                     }
                 }
+            },
+            "item": {
+                "display_name": "Items",
+                "renderer": "$sub:renderers/items/item.compendium.json",
+                "files": ["data/items.json"],
+                "search_fields": {
+                    "name": {
+                        "field": "name",
+                        "label": "Item Name",
+                        "type": "string"
+                    },
+                    "source": {
+                        "field": "source",
+                        "label": "Item Source",
+                        "type": "select"
+                    }
+                }
+            },
+            "spell": {
+                "display_name": "Spells",
+                "renderer": "$sub:renderers/spells/spell.compendium.json",
+                "files": ["data/spells/*.json"],
+                "search_fields": {
+                    "name": {
+                        "field": "name",
+                        "label": "Spell Name",
+                        "type": "string"
+                    },
+                    "source": {
+                        "field": "source",
+                        "label": "Spell Source",
+                        "type": "select"
+                    }
+                }
             }
         }
     },

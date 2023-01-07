@@ -1,5 +1,6 @@
 [
     {
+        "slug": "arcane_hacking__ua__uamodernmagic",
         "name": "Arcane Hacking (UA)",
         "source": "UAModernMagic",
         "page": 5,
@@ -60,6 +61,7 @@
         ]
     },
     {
+        "slug": "commune_with_city__ua__uamodernmagic",
         "name": "Commune with City (UA)",
         "source": "UAModernMagic",
         "page": 5,
@@ -122,6 +124,7 @@
         ]
     },
     {
+        "slug": "conjure_knowbot__ua__uamodernmagic",
         "name": "Conjure Knowbot (UA)",
         "source": "UAModernMagic",
         "page": 5,
@@ -183,6 +186,7 @@
         ]
     },
     {
+        "slug": "digital_phantom__ua__uamodernmagic",
         "name": "Digital Phantom (UA)",
         "source": "UAModernMagic",
         "page": 6,
@@ -241,6 +245,7 @@
         ]
     },
     {
+        "slug": "find_vehicle__ua__uamodernmagic",
         "name": "Find Vehicle (UA)",
         "source": "UAModernMagic",
         "page": 6,
@@ -304,6 +309,7 @@
         ]
     },
     {
+        "slug": "haywire__ua__uamodernmagic",
         "name": "Haywire (UA)",
         "source": "UAModernMagic",
         "page": 7,
@@ -380,6 +386,7 @@
         ]
     },
     {
+        "slug": "infallible_relay__ua__uamodernmagic",
         "name": "Infallible Relay (UA)",
         "source": "UAModernMagic",
         "page": 7,
@@ -442,6 +449,7 @@
         ]
     },
     {
+        "slug": "invisibility_to_cameras__ua__uamodernmagic",
         "name": "Invisibility to Cameras (UA)",
         "source": "UAModernMagic",
         "page": 7,
@@ -501,6 +509,7 @@
         ]
     },
     {
+        "slug": "on_off__ua__uamodernmagic",
         "name": "On/Off (UA)",
         "source": "UAModernMagic",
         "page": 7,
@@ -550,6 +559,7 @@
         ]
     },
     {
+        "slug": "protection_from_ballistics__ua__uamodernmagic",
         "name": "Protection from Ballistics (UA)",
         "source": "UAModernMagic",
         "page": 8,
@@ -608,6 +618,7 @@
         ]
     },
     {
+        "slug": "remote_access__ua__uamodernmagic",
         "name": "Remote Access (UA)",
         "source": "UAModernMagic",
         "page": 8,
@@ -673,6 +684,7 @@
         ]
     },
     {
+        "slug": "shutdown__ua__uamodernmagic",
         "name": "Shutdown (UA)",
         "source": "UAModernMagic",
         "page": 8,
@@ -742,6 +754,7 @@
         ]
     },
     {
+        "slug": "synchronicity__ua__uamodernmagic",
         "name": "Synchronicity (UA)",
         "source": "UAModernMagic",
         "page": 8,
@@ -809,6 +822,7 @@
         ]
     },
     {
+        "slug": "system_backdoor__ua__uamodernmagic",
         "name": "System Backdoor (UA)",
         "source": "UAModernMagic",
         "page": 8,

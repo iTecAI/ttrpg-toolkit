@@ -1,5 +1,6 @@
 [
     {
+        "slug": "cause_fear__ua__uastarterspells",
         "name": "Cause Fear (UA)",
         "source": "UAStarterSpells",
         "page": 2,
@@ -53,6 +54,7 @@
         ]
     },
     {
+        "slug": "ceremony__ua__uastarterspells",
         "name": "Ceremony (UA)",
         "source": "UAStarterSpells",
         "page": 2,
@@ -110,6 +112,7 @@
         ]
     },
     {
+        "slug": "chaos_bolt__ua__uastarterspells",
         "name": "Chaos Bolt (UA)",
         "source": "UAStarterSpells",
         "page": 2,
@@ -176,6 +179,7 @@
         ]
     },
     {
+        "slug": "guiding_hand__ua__uastarterspells",
         "name": "Guiding Hand (UA)",
         "source": "UAStarterSpells",
         "page": 3,
@@ -235,6 +239,7 @@
         ]
     },
     {
+        "slug": "hand_of_radiance__ua__uastarterspells",
         "name": "Hand of Radiance (UA)",
         "source": "UAStarterSpells",
         "page": 3,
@@ -281,6 +286,7 @@
         ]
     },
     {
+        "slug": "healing_elixir__ua__uastarterspells",
         "name": "Healing Elixir (UA)",
         "source": "UAStarterSpells",
         "page": 3,
@@ -327,6 +333,7 @@
         ]
     },
     {
+        "slug": "infestation__ua__uastarterspells",
         "name": "Infestation (UA)",
         "source": "UAStarterSpells",
         "page": 3,
@@ -388,6 +395,7 @@
         ]
     },
     {
+        "slug": "primal_savagery__ua__uastarterspells",
         "name": "Primal Savagery (UA)",
         "source": "UAStarterSpells",
         "page": 3,
@@ -432,6 +440,7 @@
         ]
     },
     {
+        "slug": "puppet__ua__uastarterspells",
         "name": "Puppet (UA)",
         "source": "UAStarterSpells",
         "page": 3,
@@ -484,6 +493,7 @@
         ]
     },
     {
+        "slug": "sense_emotion__ua__uastarterspells",
         "name": "Sense Emotion (UA)",
         "source": "UAStarterSpells",
         "page": 4,
@@ -530,6 +540,7 @@
         ]
     },
     {
+        "slug": "snare__ua__uastarterspells",
         "name": "Snare (UA)",
         "source": "UAStarterSpells",
         "page": 4,
@@ -592,6 +603,7 @@
         ]
     },
     {
+        "slug": "sudden_awakening__ua__uastarterspells",
         "name": "Sudden Awakening (UA)",
         "source": "UAStarterSpells",
         "page": 4,
@@ -646,6 +658,7 @@
         ]
     },
     {
+        "slug": "toll_the_dead__ua__uastarterspells",
         "name": "Toll the Dead (UA)",
         "source": "UAStarterSpells",
         "page": 4,
@@ -697,6 +710,7 @@
         ]
     },
     {
+        "slug": "unearthly_chorus__ua__uastarterspells",
         "name": "Unearthly Chorus (UA)",
         "source": "UAStarterSpells",
         "page": 4,
@@ -743,6 +757,7 @@
         ]
     },
     {
+        "slug": "virtue__ua__uastarterspells",
         "name": "Virtue (UA)",
         "source": "UAStarterSpells",
         "page": 5,
@@ -783,6 +798,7 @@
         ]
     },
     {
+        "slug": "wild_cunning__ua__uastarterspells",
         "name": "Wild Cunning (UA)",
         "source": "UAStarterSpells",
         "page": 5,
@@ -833,6 +849,7 @@
         ]
     },
     {
+        "slug": "zephyr_strike__ua__uastarterspells",
         "name": "Zephyr Strike (UA)",
         "source": "UAStarterSpells",
         "page": 5,

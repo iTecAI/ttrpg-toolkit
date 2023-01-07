@@ -1,6 +1,6 @@
 import json
 from typing import TypedDict, Union, Literal, Optional, Any
-from conv_util import parse_5etools_string
+from conv_util import parse_5etools_string, normalize_slug
 import re
 
 TAG_TYPE = Literal["sentient", "cursed", "srd"]
@@ -92,6 +92,7 @@ class DamageType(TypedDict):
 
 
 class ItemType(TypedDict):
+    slug: str
     types: list[str]
     name: str
     source: str
@@ -420,6 +421,9 @@ class ItemConverter:
             del normal_entries[0]
 
         return ItemType(
+            slug=normalize_slug(
+                item.get("name", "").lower() + "_" + item.get("source", "").lower()
+            ),
             type=list(set(itypes)),
             name=item.get("name", ""),
             source=item.get("source", None),

@@ -1,6 +1,7 @@
 import re
 from typing import Any, Dict, List
 from logging import exception, warning
+import string
 
 ab_map = {
     "str": "Strength",
@@ -10,6 +11,15 @@ ab_map = {
     "wis": "Wisdom",
     "cha": "Charisma",
 }
+
+
+def normalize_slug(slug):
+    return "".join(
+        map(
+            (lambda x: x if x in string.ascii_letters or x in string.digits else "_"),
+            slug,
+        )
+    )
 
 
 def parse_5etools_command(directive: str, arguments: List[str]):

@@ -1,5 +1,6 @@
 [
     {
+        "slug": "acid_splash_phb",
         "name": "Acid Splash",
         "source": "PHB",
         "page": 211,
@@ -66,6 +67,7 @@
         ]
     },
     {
+        "slug": "aid_phb",
         "name": "Aid",
         "source": "PHB",
         "page": 211,
@@ -181,6 +183,7 @@
         ]
     },
     {
+        "slug": "alarm_phb",
         "name": "Alarm",
         "source": "PHB",
         "page": 211,
@@ -279,6 +282,7 @@
         ]
     },
     {
+        "slug": "alter_self_phb",
         "name": "Alter Self",
         "source": "PHB",
         "page": 211,
@@ -391,6 +395,7 @@
         ]
     },
     {
+        "slug": "animal_friendship_phb",
         "name": "Animal Friendship",
         "source": "PHB",
         "page": 212,
@@ -474,6 +479,7 @@
         ]
     },
     {
+        "slug": "animal_messenger_phb",
         "name": "Animal Messenger",
         "source": "PHB",
         "page": 212,
@@ -540,6 +546,7 @@
         ]
     },
     {
+        "slug": "animal_shapes_phb",
         "name": "Animal Shapes",
         "source": "PHB",
         "page": 212,
@@ -584,6 +591,7 @@
         ]
     },
     {
+        "slug": "animate_dead_phb",
         "name": "Animate Dead",
         "source": "PHB",
         "page": 212,
@@ -665,6 +673,7 @@
         ]
     },
     {
+        "slug": "animate_objects_phb",
         "name": "Animate Objects",
         "source": "PHB",
         "page": 213,
@@ -773,6 +782,7 @@
         ]
     },
     {
+        "slug": "antilife_shell_phb",
         "name": "Antilife Shell",
         "source": "PHB",
         "page": 213,
@@ -866,6 +876,7 @@
         ]
     },
     {
+        "slug": "antimagic_field_phb",
         "name": "Antimagic Field",
         "source": "PHB",
         "page": 213,
@@ -929,6 +940,7 @@
         ]
     },
     {
+        "slug": "antipathy_sympathy_phb",
         "name": "Antipathy/Sympathy",
         "source": "PHB",
         "page": 214,
@@ -990,6 +1002,7 @@
         ]
     },
     {
+        "slug": "arcane_eye_phb",
         "name": "Arcane Eye",
         "source": "PHB",
         "page": 214,
@@ -1124,6 +1137,7 @@
         ]
     },
     {
+        "slug": "arcane_gate_phb",
         "name": "Arcane Gate",
         "source": "PHB",
         "page": 214,
@@ -1178,6 +1192,7 @@
         ]
     },
     {
+        "slug": "arcane_lock_phb",
         "name": "Arcane Lock",
         "source": "PHB",
         "page": 215,
@@ -1261,6 +1276,7 @@
         ]
     },
     {
+        "slug": "armor_of_agathys_phb",
         "name": "Armor of Agathys",
         "source": "PHB",
         "page": 215,
@@ -1355,6 +1371,7 @@
         ]
     },
     {
+        "slug": "arms_of_hadar_phb",
         "name": "Arms of Hadar",
         "source": "PHB",
         "page": 215,
@@ -1416,6 +1433,7 @@
         ]
     },
     {
+        "slug": "astral_projection_phb",
         "name": "Astral Projection",
         "source": "PHB",
         "page": 215,
@@ -1478,6 +1496,7 @@
         ]
     },
     {
+        "slug": "augury_phb",
         "name": "Augury",
         "source": "PHB",
         "page": 215,
@@ -1550,6 +1569,7 @@
         ]
     },
     {
+        "slug": "aura_of_life_phb",
         "name": "Aura of Life",
         "source": "PHB",
         "page": 216,
@@ -1663,6 +1683,7 @@
         ]
     },
     {
+        "slug": "aura_of_purity_phb",
         "name": "Aura of Purity",
         "source": "PHB",
         "page": 216,
@@ -1771,6 +1792,7 @@
         ]
     },
     {
+        "slug": "aura_of_vitality_phb",
         "name": "Aura of Vitality",
         "source": "PHB",
         "page": 216,
@@ -1855,6 +1877,7 @@
         ]
     },
     {
+        "slug": "awaken_phb",
         "name": "Awaken",
         "source": "PHB",
         "page": 216,
@@ -1914,6 +1937,7 @@
         ]
     },
     {
+        "slug": "bane_phb",
         "name": "Bane",
         "source": "PHB",
         "page": 216,
@@ -2022,6 +2046,7 @@
         ]
     },
     {
+        "slug": "banishing_smite_phb",
         "name": "Banishing Smite",
         "source": "PHB",
         "page": 216,
@@ -2090,6 +2115,7 @@
         ]
     },
     {
+        "slug": "banishment_phb",
         "name": "Banishment",
         "source": "PHB",
         "page": 217,
@@ -2260,6 +2286,7 @@
         ]
     },
     {
+        "slug": "barkskin_phb",
         "name": "Barkskin",
         "source": "PHB",
         "page": 217,
@@ -2327,6 +2354,7 @@
         ]
     },
     {
+        "slug": "beacon_of_hope_phb",
         "name": "Beacon of Hope",
         "source": "PHB",
         "page": 217,
@@ -2423,6 +2451,7 @@
         ]
     },
     {
+        "slug": "beast_sense_phb",
         "name": "Beast Sense",
         "source": "PHB",
         "page": 217,
@@ -2488,6 +2517,7 @@
         ]
     },
     {
+        "slug": "bestow_curse_phb",
         "name": "Bestow Curse",
         "source": "PHB",
         "page": 218,
@@ -2592,6 +2622,7 @@
         ]
     },
     {
+        "slug": "bigby_s_hand_phb",
         "name": "Bigby's Hand",
         "source": "PHB",
         "page": 218,
@@ -2682,6 +2713,7 @@
         ]
     },
     {
+        "slug": "blade_barrier_phb",
         "name": "Blade Barrier",
         "source": "PHB",
         "page": 218,
@@ -2731,6 +2763,7 @@
         ]
     },
     {
+        "slug": "blade_ward_phb",
         "name": "Blade Ward",
         "source": "PHB",
         "page": 218,
@@ -2791,6 +2824,7 @@
         ]
     },
     {
+        "slug": "bless_phb",
         "name": "Bless",
         "source": "PHB",
         "page": 219,
@@ -2868,6 +2902,7 @@
         ]
     },
     {
+        "slug": "blight_phb",
         "name": "Blight",
         "source": "PHB",
         "page": 219,
@@ -3014,6 +3049,7 @@
         ]
     },
     {
+        "slug": "blinding_smite_phb",
         "name": "Blinding Smite",
         "source": "PHB",
         "page": 219,
@@ -3084,6 +3120,7 @@
         ]
     },
     {
+        "slug": "blindness_deafness_phb",
         "name": "Blindness/Deafness",
         "source": "PHB",
         "page": 219,
@@ -3198,6 +3235,7 @@
         ]
     },
     {
+        "slug": "blink_phb",
         "name": "Blink",
         "source": "PHB",
         "page": 219,
@@ -3294,6 +3332,7 @@
         ]
     },
     {
+        "slug": "blur_phb",
         "name": "Blur",
         "source": "PHB",
         "page": 219,
@@ -3397,6 +3436,7 @@
         ]
     },
     {
+        "slug": "branding_smite_phb",
         "name": "Branding Smite",
         "source": "PHB",
         "page": 219,
@@ -3492,6 +3532,7 @@
         ]
     },
     {
+        "slug": "burning_hands_phb",
         "name": "Burning Hands",
         "source": "PHB",
         "page": 220,
@@ -3655,6 +3696,7 @@
         ]
     },
     {
+        "slug": "call_lightning_phb",
         "name": "Call Lightning",
         "source": "PHB",
         "page": 220,
@@ -3740,6 +3782,7 @@
         ]
     },
     {
+        "slug": "calm_emotions_phb",
         "name": "Calm Emotions",
         "source": "PHB",
         "page": 221,
@@ -3844,6 +3887,7 @@
         ]
     },
     {
+        "slug": "chain_lightning_phb",
         "name": "Chain Lightning",
         "source": "PHB",
         "page": 221,
@@ -3897,6 +3941,7 @@
         ]
     },
     {
+        "slug": "charm_person_phb",
         "name": "Charm Person",
         "source": "PHB",
         "page": 221,
@@ -4055,6 +4100,7 @@
         ]
     },
     {
+        "slug": "chill_touch_phb",
         "name": "Chill Touch",
         "source": "PHB",
         "page": 221,
@@ -4140,6 +4186,7 @@
         ]
     },
     {
+        "slug": "chromatic_orb_phb",
         "name": "Chromatic Orb",
         "source": "PHB",
         "page": 221,
@@ -4202,6 +4249,7 @@
         ]
     },
     {
+        "slug": "circle_of_death_phb",
         "name": "Circle of Death",
         "source": "PHB",
         "page": 221,
@@ -4259,6 +4307,7 @@
         ]
     },
     {
+        "slug": "circle_of_power_phb",
         "name": "Circle of Power",
         "source": "PHB",
         "page": 221,
@@ -4329,6 +4378,7 @@
         ]
     },
     {
+        "slug": "clairvoyance_phb",
         "name": "Clairvoyance",
         "source": "PHB",
         "page": 222,
@@ -4442,6 +4492,7 @@
         ]
     },
     {
+        "slug": "clone_phb",
         "name": "Clone",
         "source": "PHB",
         "page": 222,
@@ -4481,6 +4532,7 @@
         ]
     },
     {
+        "slug": "cloud_of_daggers_phb",
         "name": "Cloud of Daggers",
         "source": "PHB",
         "page": 222,
@@ -4543,6 +4595,7 @@
         ]
     },
     {
+        "slug": "cloudkill_phb",
         "name": "Cloudkill",
         "source": "PHB",
         "page": 222,
@@ -4682,6 +4735,7 @@
         ]
     },
     {
+        "slug": "color_spray_phb",
         "name": "Color Spray",
         "source": "PHB",
         "page": 222,
@@ -4734,6 +4788,7 @@
         ]
     },
     {
+        "slug": "command_phb",
         "name": "Command",
         "source": "PHB",
         "page": 223,
@@ -4879,6 +4934,7 @@
         ]
     },
     {
+        "slug": "commune_phb",
         "name": "Commune",
         "source": "PHB",
         "page": 223,
@@ -4963,6 +5019,7 @@
         ]
     },
     {
+        "slug": "commune_with_nature_phb",
         "name": "Commune with Nature",
         "source": "PHB",
         "page": 224,
@@ -5074,6 +5131,7 @@
         ]
     },
     {
+        "slug": "compelled_duel_phb",
         "name": "Compelled Duel",
         "source": "PHB",
         "page": 224,
@@ -5153,6 +5211,7 @@
         ]
     },
     {
+        "slug": "comprehend_languages_phb",
         "name": "Comprehend Languages",
         "source": "PHB",
         "page": 224,
@@ -5230,6 +5289,7 @@
         ]
     },
     {
+        "slug": "compulsion_phb",
         "name": "Compulsion",
         "source": "PHB",
         "page": 224,
@@ -5316,6 +5376,7 @@
         ]
     },
     {
+        "slug": "cone_of_cold_phb",
         "name": "Cone of Cold",
         "source": "PHB",
         "page": 224,
@@ -5460,6 +5521,7 @@
         ]
     },
     {
+        "slug": "confusion_phb",
         "name": "Confusion",
         "source": "PHB",
         "page": 224,
@@ -5594,6 +5656,7 @@
         ]
     },
     {
+        "slug": "conjure_animals_phb",
         "name": "Conjure Animals",
         "source": "PHB",
         "page": 225,
@@ -5676,6 +5739,7 @@
         ]
     },
     {
+        "slug": "conjure_barrage_phb",
         "name": "Conjure Barrage",
         "source": "PHB",
         "page": 225,
@@ -5737,6 +5801,7 @@
         ]
     },
     {
+        "slug": "conjure_celestial_phb",
         "name": "Conjure Celestial",
         "source": "PHB",
         "page": 225,
@@ -5783,6 +5848,7 @@
         ]
     },
     {
+        "slug": "conjure_elemental_phb",
         "name": "Conjure Elemental",
         "source": "PHB",
         "page": 225,
@@ -5868,6 +5934,7 @@
         ]
     },
     {
+        "slug": "conjure_fey_phb",
         "name": "Conjure Fey",
         "source": "PHB",
         "page": 226,
@@ -5920,6 +5987,7 @@
         ]
     },
     {
+        "slug": "conjure_minor_elementals_phb",
         "name": "Conjure Minor Elementals",
         "source": "PHB",
         "page": 226,
@@ -6000,6 +6068,7 @@
         ]
     },
     {
+        "slug": "conjure_volley_phb",
         "name": "Conjure Volley",
         "source": "PHB",
         "page": 226,
@@ -6049,6 +6118,7 @@
         ]
     },
     {
+        "slug": "conjure_woodland_beings_phb",
         "name": "Conjure Woodland Beings",
         "source": "PHB",
         "page": 226,
@@ -6105,6 +6175,7 @@
         ]
     },
     {
+        "slug": "contact_other_plane_phb",
         "name": "Contact Other Plane",
         "source": "PHB",
         "page": 226,
@@ -6157,6 +6228,7 @@
         ]
     },
     {
+        "slug": "contagion_phb",
         "name": "Contagion",
         "source": "PHB",
         "page": 227,
@@ -6260,6 +6332,7 @@
         ]
     },
     {
+        "slug": "contingency_phb",
         "name": "Contingency",
         "source": "PHB",
         "page": 227,
@@ -6302,6 +6375,7 @@
         ]
     },
     {
+        "slug": "continual_flame_phb",
         "name": "Continual Flame",
         "source": "PHB",
         "page": 227,
@@ -6370,6 +6444,7 @@
         ]
     },
     {
+        "slug": "control_water_phb",
         "name": "Control Water",
         "source": "PHB",
         "page": 227,
@@ -6503,6 +6578,7 @@
         ]
     },
     {
+        "slug": "control_weather_phb",
         "name": "Control Weather",
         "source": "PHB",
         "page": 228,
@@ -6585,6 +6661,7 @@
         ]
     },
     {
+        "slug": "cordon_of_arrows_phb",
         "name": "Cordon of Arrows",
         "source": "PHB",
         "page": 228,
@@ -6635,6 +6712,7 @@
         ]
     },
     {
+        "slug": "counterspell_phb",
         "name": "Counterspell",
         "source": "PHB",
         "page": 228,
@@ -6734,6 +6812,7 @@
         ]
     },
     {
+        "slug": "create_food_and_water_phb",
         "name": "Create Food and Water",
         "source": "PHB",
         "page": 229,
@@ -6832,6 +6911,7 @@
         ]
     },
     {
+        "slug": "create_or_destroy_water_phb",
         "name": "Create or Destroy Water",
         "source": "PHB",
         "page": 229,
@@ -6908,6 +6988,7 @@
         ]
     },
     {
+        "slug": "create_undead_phb",
         "name": "Create Undead",
         "source": "PHB",
         "page": 229,
@@ -6961,6 +7042,7 @@
         ]
     },
     {
+        "slug": "creation_phb",
         "name": "Creation",
         "source": "PHB",
         "page": 229,
@@ -7076,6 +7158,7 @@
         ]
     },
     {
+        "slug": "crown_of_madness_phb",
         "name": "Crown of Madness",
         "source": "PHB",
         "page": 229,
@@ -7167,6 +7250,7 @@
         ]
     },
     {
+        "slug": "crusader_s_mantle_phb",
         "name": "Crusader's Mantle",
         "source": "PHB",
         "page": 230,
@@ -7226,6 +7310,7 @@
         ]
     },
     {
+        "slug": "cure_wounds_phb",
         "name": "Cure Wounds",
         "source": "PHB",
         "page": 230,
@@ -7350,6 +7435,7 @@
         ]
     },
     {
+        "slug": "dancing_lights_phb",
         "name": "Dancing Lights",
         "source": "PHB",
         "page": 230,
@@ -7439,6 +7525,7 @@
         ]
     },
     {
+        "slug": "darkness_phb",
         "name": "Darkness",
         "source": "PHB",
         "page": 230,
@@ -7619,6 +7706,7 @@
         ]
     },
     {
+        "slug": "darkvision_phb",
         "name": "Darkvision",
         "source": "PHB",
         "page": 230,
@@ -7696,6 +7784,7 @@
         ]
     },
     {
+        "slug": "daylight_phb",
         "name": "Daylight",
         "source": "PHB",
         "page": 230,
@@ -7806,6 +7895,7 @@
         ]
     },
     {
+        "slug": "death_ward_phb",
         "name": "Death Ward",
         "source": "PHB",
         "page": 230,
@@ -7945,6 +8035,7 @@
         ]
     },
     {
+        "slug": "delayed_blast_fireball_phb",
         "name": "Delayed Blast Fireball",
         "source": "PHB",
         "page": 230,
@@ -8003,6 +8094,7 @@
         ]
     },
     {
+        "slug": "demiplane_phb",
         "name": "Demiplane",
         "source": "PHB",
         "page": 231,
@@ -8050,6 +8142,7 @@
         ]
     },
     {
+        "slug": "destructive_wave_phb",
         "name": "Destructive Wave",
         "source": "PHB",
         "page": 231,
@@ -8133,6 +8226,7 @@
         ]
     },
     {
+        "slug": "detect_evil_and_good_phb",
         "name": "Detect Evil and Good",
         "source": "PHB",
         "page": 231,
@@ -8201,6 +8295,7 @@
         ]
     },
     {
+        "slug": "detect_magic_phb",
         "name": "Detect Magic",
         "source": "PHB",
         "page": 231,
@@ -8309,6 +8404,7 @@
         ]
     },
     {
+        "slug": "detect_poison_and_disease_phb",
         "name": "Detect Poison and Disease",
         "source": "PHB",
         "page": 231,
@@ -8378,6 +8474,7 @@
         ]
     },
     {
+        "slug": "detect_thoughts_phb",
         "name": "Detect Thoughts",
         "source": "PHB",
         "page": 231,
@@ -8497,6 +8594,7 @@
         ]
     },
     {
+        "slug": "dimension_door_phb",
         "name": "Dimension Door",
         "source": "PHB",
         "page": 233,
@@ -8605,6 +8703,7 @@
         ]
     },
     {
+        "slug": "disguise_self_phb",
         "name": "Disguise Self",
         "source": "PHB",
         "page": 233,
@@ -8766,6 +8865,7 @@
         ]
     },
     {
+        "slug": "disintegrate_phb",
         "name": "Disintegrate",
         "source": "PHB",
         "page": 233,
@@ -8821,6 +8921,7 @@
         ]
     },
     {
+        "slug": "dispel_evil_and_good_phb",
         "name": "Dispel Evil and Good",
         "source": "PHB",
         "page": 233,
@@ -8876,6 +8977,7 @@
         ]
     },
     {
+        "slug": "dispel_magic_phb",
         "name": "Dispel Magic",
         "source": "PHB",
         "page": 234,
@@ -9020,6 +9122,7 @@
         ]
     },
     {
+        "slug": "dissonant_whispers_phb",
         "name": "Dissonant Whispers",
         "source": "PHB",
         "page": 234,
@@ -9100,6 +9203,7 @@
         ]
     },
     {
+        "slug": "divination_phb",
         "name": "Divination",
         "source": "PHB",
         "page": 234,
@@ -9192,6 +9296,7 @@
         ]
     },
     {
+        "slug": "divine_favor_phb",
         "name": "Divine Favor",
         "source": "PHB",
         "page": 234,
@@ -9250,6 +9355,7 @@
         ]
     },
     {
+        "slug": "divine_word_phb",
         "name": "Divine Word",
         "source": "PHB",
         "page": 234,
@@ -9302,6 +9408,7 @@
         ]
     },
     {
+        "slug": "dominate_beast_phb",
         "name": "Dominate Beast",
         "source": "PHB",
         "page": 234,
@@ -9421,6 +9528,7 @@
         ]
     },
     {
+        "slug": "dominate_monster_phb",
         "name": "Dominate Monster",
         "source": "PHB",
         "page": 235,
@@ -9489,6 +9597,7 @@
         ]
     },
     {
+        "slug": "dominate_person_phb",
         "name": "Dominate Person",
         "source": "PHB",
         "page": 235,
@@ -9646,6 +9755,7 @@
         ]
     },
     {
+        "slug": "drawmij_s_instant_summons_phb",
         "name": "Drawmij's Instant Summons",
         "source": "PHB",
         "page": 235,
@@ -9690,6 +9800,7 @@
         ]
     },
     {
+        "slug": "dream_phb",
         "name": "Dream",
         "source": "PHB",
         "page": 236,
@@ -9776,6 +9887,7 @@
         ]
     },
     {
+        "slug": "druidcraft_phb",
         "name": "Druidcraft",
         "source": "PHB",
         "page": 236,
@@ -9848,6 +9960,7 @@
         ]
     },
     {
+        "slug": "earthquake_phb",
         "name": "Earthquake",
         "source": "PHB",
         "page": 236,
@@ -9918,6 +10031,7 @@
         ]
     },
     {
+        "slug": "eldritch_blast_phb",
         "name": "Eldritch Blast",
         "source": "PHB",
         "page": 237,
@@ -9962,6 +10076,7 @@
         ]
     },
     {
+        "slug": "elemental_weapon_phb",
         "name": "Elemental Weapon",
         "source": "PHB",
         "page": 237,
@@ -10069,6 +10184,7 @@
         ]
     },
     {
+        "slug": "enhance_ability_phb",
         "name": "Enhance Ability",
         "source": "PHB",
         "page": 237,
@@ -10201,6 +10317,7 @@
         ]
     },
     {
+        "slug": "enlarge_reduce_phb",
         "name": "Enlarge/Reduce",
         "source": "PHB",
         "page": 237,
@@ -10309,6 +10426,7 @@
         ]
     },
     {
+        "slug": "ensnaring_strike_phb",
         "name": "Ensnaring Strike",
         "source": "PHB",
         "page": 237,
@@ -10374,6 +10492,7 @@
         ]
     },
     {
+        "slug": "entangle_phb",
         "name": "Entangle",
         "source": "PHB",
         "page": 238,
@@ -10457,6 +10576,7 @@
         ]
     },
     {
+        "slug": "enthrall_phb",
         "name": "Enthrall",
         "source": "PHB",
         "page": 238,
@@ -10537,6 +10657,7 @@
         ]
     },
     {
+        "slug": "etherealness_phb",
         "name": "Etherealness",
         "source": "PHB",
         "page": 238,
@@ -10614,6 +10735,7 @@
         ]
     },
     {
+        "slug": "evard_s_black_tentacles_phb",
         "name": "Evard's Black Tentacles",
         "source": "PHB",
         "page": 238,
@@ -10702,6 +10824,7 @@
         ]
     },
     {
+        "slug": "expeditious_retreat_phb",
         "name": "Expeditious Retreat",
         "source": "PHB",
         "page": 238,
@@ -10794,6 +10917,7 @@
         ]
     },
     {
+        "slug": "eyebite_phb",
         "name": "Eyebite",
         "source": "PHB",
         "page": 238,
@@ -10863,6 +10987,7 @@
         ]
     },
     {
+        "slug": "fabricate_phb",
         "name": "Fabricate",
         "source": "PHB",
         "page": 239,
@@ -10940,6 +11065,7 @@
         ]
     },
     {
+        "slug": "faerie_fire_phb",
         "name": "Faerie Fire",
         "source": "PHB",
         "page": 239,
@@ -11097,6 +11223,7 @@
         ]
     },
     {
+        "slug": "false_life_phb",
         "name": "False Life",
         "source": "PHB",
         "page": 239,
@@ -11208,6 +11335,7 @@
         ]
     },
     {
+        "slug": "fear_phb",
         "name": "Fear",
         "source": "PHB",
         "page": 239,
@@ -11312,6 +11440,7 @@
         ]
     },
     {
+        "slug": "feather_fall_phb",
         "name": "Feather Fall",
         "source": "PHB",
         "page": 239,
@@ -11388,6 +11517,7 @@
         ]
     },
     {
+        "slug": "feeblemind_phb",
         "name": "Feeblemind",
         "source": "PHB",
         "page": 239,
@@ -11451,6 +11581,7 @@
         ]
     },
     {
+        "slug": "feign_death_phb",
         "name": "Feign Death",
         "source": "PHB",
         "page": 240,
@@ -11546,6 +11677,7 @@
         ]
     },
     {
+        "slug": "find_familiar_phb",
         "name": "Find Familiar",
         "source": "PHB",
         "page": 240,
@@ -11591,6 +11723,7 @@
         ]
     },
     {
+        "slug": "find_steed_phb",
         "name": "Find Steed",
         "source": "PHB",
         "page": 240,
@@ -11634,6 +11767,7 @@
         ]
     },
     {
+        "slug": "find_the_path_phb",
         "name": "Find the Path",
         "source": "PHB",
         "page": 240,
@@ -11686,6 +11820,7 @@
         ]
     },
     {
+        "slug": "find_traps_phb",
         "name": "Find Traps",
         "source": "PHB",
         "page": 241,
@@ -11750,6 +11885,7 @@
         ]
     },
     {
+        "slug": "finger_of_death_phb",
         "name": "Finger of Death",
         "source": "PHB",
         "page": 241,
@@ -11806,6 +11942,7 @@
         ]
     },
     {
+        "slug": "fire_bolt_phb",
         "name": "Fire Bolt",
         "source": "PHB",
         "page": 242,
@@ -11894,6 +12031,7 @@
         ]
     },
     {
+        "slug": "fire_shield_phb",
         "name": "Fire Shield",
         "source": "PHB",
         "page": 242,
@@ -12021,6 +12159,7 @@
         ]
     },
     {
+        "slug": "fire_storm_phb",
         "name": "Fire Storm",
         "source": "PHB",
         "page": 242,
@@ -12077,6 +12216,7 @@
         ]
     },
     {
+        "slug": "fireball_phb",
         "name": "Fireball",
         "source": "PHB",
         "page": 241,
@@ -12200,6 +12340,7 @@
         ]
     },
     {
+        "slug": "flame_blade_phb",
         "name": "Flame Blade",
         "source": "PHB",
         "page": 242,
@@ -12256,6 +12397,7 @@
         ]
     },
     {
+        "slug": "flame_strike_phb",
         "name": "Flame Strike",
         "source": "PHB",
         "page": 242,
@@ -12407,6 +12549,7 @@
         ]
     },
     {
+        "slug": "flaming_sphere_phb",
         "name": "Flaming Sphere",
         "source": "PHB",
         "page": 242,
@@ -12518,6 +12661,7 @@
         ]
     },
     {
+        "slug": "flesh_to_stone_phb",
         "name": "Flesh to Stone",
         "source": "PHB",
         "page": 243,
@@ -12575,6 +12719,7 @@
         ]
     },
     {
+        "slug": "fly_phb",
         "name": "Fly",
         "source": "PHB",
         "page": 243,
@@ -12650,6 +12795,7 @@
         ]
     },
     {
+        "slug": "fog_cloud_phb",
         "name": "Fog Cloud",
         "source": "PHB",
         "page": 243,
@@ -12770,6 +12916,7 @@
         ]
     },
     {
+        "slug": "forbiddance_phb",
         "name": "Forbiddance",
         "source": "PHB",
         "page": 243,
@@ -12817,6 +12964,7 @@
         ]
     },
     {
+        "slug": "forcecage_phb",
         "name": "Forcecage",
         "source": "PHB",
         "page": 243,
@@ -12876,6 +13024,7 @@
         ]
     },
     {
+        "slug": "foresight_phb",
         "name": "Foresight",
         "source": "PHB",
         "page": 244,
@@ -12932,6 +13081,7 @@
         ]
     },
     {
+        "slug": "freedom_of_movement_phb",
         "name": "Freedom of Movement",
         "source": "PHB",
         "page": 244,
@@ -13108,6 +13258,7 @@
         ]
     },
     {
+        "slug": "friends_phb",
         "name": "Friends",
         "source": "PHB",
         "page": 244,
@@ -13212,6 +13363,7 @@
         ]
     },
     {
+        "slug": "gaseous_form_phb",
         "name": "Gaseous Form",
         "source": "PHB",
         "page": 244,
@@ -13369,6 +13521,7 @@
         ]
     },
     {
+        "slug": "gate_phb",
         "name": "Gate",
         "source": "PHB",
         "page": 244,
@@ -13424,6 +13577,7 @@
         ]
     },
     {
+        "slug": "geas_phb",
         "name": "Geas",
         "source": "PHB",
         "page": 244,
@@ -13510,6 +13664,7 @@
         ]
     },
     {
+        "slug": "gentle_repose_phb",
         "name": "Gentle Repose",
         "source": "PHB",
         "page": 245,
@@ -13584,6 +13739,7 @@
         ]
     },
     {
+        "slug": "giant_insect_phb",
         "name": "Giant Insect",
         "source": "PHB",
         "page": 245,
@@ -13662,6 +13818,7 @@
         ]
     },
     {
+        "slug": "glibness_phb",
         "name": "Glibness",
         "source": "PHB",
         "page": 245,
@@ -13707,6 +13864,7 @@
         ]
     },
     {
+        "slug": "globe_of_invulnerability_phb",
         "name": "Globe of Invulnerability",
         "source": "PHB",
         "page": 245,
@@ -13757,6 +13915,7 @@
         ]
     },
     {
+        "slug": "glyph_of_warding_phb",
         "name": "Glyph of Warding",
         "source": "PHB",
         "page": 245,
@@ -13877,6 +14036,7 @@
         ]
     },
     {
+        "slug": "goodberry_phb",
         "name": "Goodberry",
         "source": "PHB",
         "page": 246,
@@ -13928,6 +14088,7 @@
         ]
     },
     {
+        "slug": "grasping_vine_phb",
         "name": "Grasping Vine",
         "source": "PHB",
         "page": 246,
@@ -13991,6 +14152,7 @@
         ]
     },
     {
+        "slug": "grease_phb",
         "name": "Grease",
         "source": "PHB",
         "page": 246,
@@ -14049,6 +14211,7 @@
         ]
     },
     {
+        "slug": "greater_invisibility_phb",
         "name": "Greater Invisibility",
         "source": "PHB",
         "page": 246,
@@ -14229,6 +14392,7 @@
         ]
     },
     {
+        "slug": "greater_restoration_phb",
         "name": "Greater Restoration",
         "source": "PHB",
         "page": 246,
@@ -14340,6 +14504,7 @@
         ]
     },
     {
+        "slug": "guardian_of_faith_phb",
         "name": "Guardian of Faith",
         "source": "PHB",
         "page": 246,
@@ -14458,6 +14623,7 @@
         ]
     },
     {
+        "slug": "guards_and_wards_phb",
         "name": "Guards and Wards",
         "source": "PHB",
         "page": 248,
@@ -14521,6 +14687,7 @@
         ]
     },
     {
+        "slug": "guidance_phb",
         "name": "Guidance",
         "source": "PHB",
         "page": 248,
@@ -14603,6 +14770,7 @@
         ]
     },
     {
+        "slug": "guiding_bolt_phb",
         "name": "Guiding Bolt",
         "source": "PHB",
         "page": 248,
@@ -14690,6 +14858,7 @@
         ]
     },
     {
+        "slug": "gust_of_wind_phb",
         "name": "Gust of Wind",
         "source": "PHB",
         "page": 248,
@@ -14823,6 +14992,7 @@
         ]
     },
     {
+        "slug": "hail_of_thorns_phb",
         "name": "Hail of Thorns",
         "source": "PHB",
         "page": 249,
@@ -14872,6 +15042,7 @@
         ]
     },
     {
+        "slug": "hallow_phb",
         "name": "Hallow",
         "source": "PHB",
         "page": 249,
@@ -14983,6 +15154,7 @@
         ]
     },
     {
+        "slug": "hallucinatory_terrain_phb",
         "name": "Hallucinatory Terrain",
         "source": "PHB",
         "page": 249,
@@ -15061,6 +15233,7 @@
         ]
     },
     {
+        "slug": "harm_phb",
         "name": "Harm",
         "source": "PHB",
         "page": 249,
@@ -15106,6 +15279,7 @@
         ]
     },
     {
+        "slug": "haste_phb",
         "name": "Haste",
         "source": "PHB",
         "page": 250,
@@ -15244,6 +15418,7 @@
         ]
     },
     {
+        "slug": "heal_phb",
         "name": "Heal",
         "source": "PHB",
         "page": 250,
@@ -15290,6 +15465,7 @@
         ]
     },
     {
+        "slug": "healing_word_phb",
         "name": "Healing Word",
         "source": "PHB",
         "page": 250,
@@ -15355,6 +15531,7 @@
         ]
     },
     {
+        "slug": "heat_metal_phb",
         "name": "Heat Metal",
         "source": "PHB",
         "page": 250,
@@ -15454,6 +15631,7 @@
         ]
     },
     {
+        "slug": "hellish_rebuke_phb",
         "name": "Hellish Rebuke",
         "source": "PHB",
         "page": 250,
@@ -15542,6 +15720,7 @@
         ]
     },
     {
+        "slug": "heroes__feast_phb",
         "name": "Heroes' Feast",
         "source": "PHB",
         "page": 250,
@@ -15593,6 +15772,7 @@
         ]
     },
     {
+        "slug": "heroism_phb",
         "name": "Heroism",
         "source": "PHB",
         "page": 250,
@@ -15712,6 +15892,7 @@
         ]
     },
     {
+        "slug": "hex_phb",
         "name": "Hex",
         "source": "PHB",
         "page": 251,
@@ -15775,6 +15956,7 @@
         ]
     },
     {
+        "slug": "hold_monster_phb",
         "name": "Hold Monster",
         "source": "PHB",
         "page": 251,
@@ -15903,6 +16085,7 @@
         ]
     },
     {
+        "slug": "hold_person_phb",
         "name": "Hold Person",
         "source": "PHB",
         "page": 251,
@@ -16067,6 +16250,7 @@
         ]
     },
     {
+        "slug": "holy_aura_phb",
         "name": "Holy Aura",
         "source": "PHB",
         "page": 251,
@@ -16114,6 +16298,7 @@
         ]
     },
     {
+        "slug": "hunger_of_hadar_phb",
         "name": "Hunger of Hadar",
         "source": "PHB",
         "page": 251,
@@ -16181,6 +16366,7 @@
         ]
     },
     {
+        "slug": "hunter_s_mark_phb",
         "name": "Hunter's Mark",
         "source": "PHB",
         "page": 251,
@@ -16246,6 +16432,7 @@
         ]
     },
     {
+        "slug": "hypnotic_pattern_phb",
         "name": "Hypnotic Pattern",
         "source": "PHB",
         "page": 252,
@@ -16353,6 +16540,7 @@
         ]
     },
     {
+        "slug": "ice_storm_phb",
         "name": "Ice Storm",
         "source": "PHB",
         "page": 252,
@@ -16468,6 +16656,7 @@
         ]
     },
     {
+        "slug": "identify_phb",
         "name": "Identify",
         "source": "PHB",
         "page": 252,
@@ -16550,6 +16739,7 @@
         ]
     },
     {
+        "slug": "illusory_script_phb",
         "name": "Illusory Script",
         "source": "PHB",
         "page": 252,
@@ -16615,6 +16805,7 @@
         ]
     },
     {
+        "slug": "imprisonment_phb",
         "name": "Imprisonment",
         "source": "PHB",
         "page": 252,
@@ -16694,6 +16885,7 @@
         ]
     },
     {
+        "slug": "incendiary_cloud_phb",
         "name": "Incendiary Cloud",
         "source": "PHB",
         "page": 253,
@@ -16749,6 +16941,7 @@
         ]
     },
     {
+        "slug": "inflict_wounds_phb",
         "name": "Inflict Wounds",
         "source": "PHB",
         "page": 253,
@@ -16807,6 +17000,7 @@
         ]
     },
     {
+        "slug": "insect_plague_phb",
         "name": "Insect Plague",
         "source": "PHB",
         "page": 254,
@@ -16985,6 +17179,7 @@
         ]
     },
     {
+        "slug": "invisibility_phb",
         "name": "Invisibility",
         "source": "PHB",
         "page": 254,
@@ -17145,6 +17340,7 @@
         ]
     },
     {
+        "slug": "jump_phb",
         "name": "Jump",
         "source": "PHB",
         "page": 254,
@@ -17248,6 +17444,7 @@
         ]
     },
     {
+        "slug": "knock_phb",
         "name": "Knock",
         "source": "PHB",
         "page": 254,
@@ -17307,6 +17504,7 @@
         ]
     },
     {
+        "slug": "legend_lore_phb",
         "name": "Legend Lore",
         "source": "PHB",
         "page": 254,
@@ -17405,6 +17603,7 @@
         ]
     },
     {
+        "slug": "leomund_s_secret_chest_phb",
         "name": "Leomund's Secret Chest",
         "source": "PHB",
         "page": 254,
@@ -17479,6 +17678,7 @@
         ]
     },
     {
+        "slug": "leomund_s_tiny_hut_phb",
         "name": "Leomund's Tiny Hut",
         "source": "PHB",
         "page": 255,
@@ -17548,6 +17748,7 @@
         ]
     },
     {
+        "slug": "lesser_restoration_phb",
         "name": "Lesser Restoration",
         "source": "PHB",
         "page": 255,
@@ -17668,6 +17869,7 @@
         ]
     },
     {
+        "slug": "levitate_phb",
         "name": "Levitate",
         "source": "PHB",
         "page": 255,
@@ -17765,6 +17967,7 @@
         ]
     },
     {
+        "slug": "light_phb",
         "name": "Light",
         "source": "PHB",
         "page": 255,
@@ -17888,6 +18091,7 @@
         ]
     },
     {
+        "slug": "lightning_arrow_phb",
         "name": "Lightning Arrow",
         "source": "PHB",
         "page": 255,
@@ -17939,6 +18143,7 @@
         ]
     },
     {
+        "slug": "lightning_bolt_phb",
         "name": "Lightning Bolt",
         "source": "PHB",
         "page": 255,
@@ -18041,6 +18246,7 @@
         ]
     },
     {
+        "slug": "locate_animals_or_plants_phb",
         "name": "Locate Animals or Plants",
         "source": "PHB",
         "page": 256,
@@ -18110,6 +18316,7 @@
         ]
     },
     {
+        "slug": "locate_creature_phb",
         "name": "Locate Creature",
         "source": "PHB",
         "page": 256,
@@ -18248,6 +18455,7 @@
         ]
     },
     {
+        "slug": "locate_object_phb",
         "name": "Locate Object",
         "source": "PHB",
         "page": 256,
@@ -18344,6 +18552,7 @@
         ]
     },
     {
+        "slug": "longstrider_phb",
         "name": "Longstrider",
         "source": "PHB",
         "page": 256,
@@ -18430,6 +18639,7 @@
         ]
     },
     {
+        "slug": "mage_armor_phb",
         "name": "Mage Armor",
         "source": "PHB",
         "page": 256,
@@ -18482,6 +18692,7 @@
         ]
     },
     {
+        "slug": "mage_hand_phb",
         "name": "Mage Hand",
         "source": "PHB",
         "page": 256,
@@ -18653,6 +18864,7 @@
         ]
     },
     {
+        "slug": "magic_circle_phb",
         "name": "Magic Circle",
         "source": "PHB",
         "page": 256,
@@ -18761,6 +18973,7 @@
         ]
     },
     {
+        "slug": "magic_jar_phb",
         "name": "Magic Jar",
         "source": "PHB",
         "page": 257,
@@ -18811,6 +19024,7 @@
         ]
     },
     {
+        "slug": "magic_missile_phb",
         "name": "Magic Missile",
         "source": "PHB",
         "page": 257,
@@ -18895,6 +19109,7 @@
         ]
     },
     {
+        "slug": "magic_mouth_phb",
         "name": "Magic Mouth",
         "source": "PHB",
         "page": 257,
@@ -18961,6 +19176,7 @@
         ]
     },
     {
+        "slug": "magic_weapon_phb",
         "name": "Magic Weapon",
         "source": "PHB",
         "page": 257,
@@ -19087,6 +19303,7 @@
         ]
     },
     {
+        "slug": "major_image_phb",
         "name": "Major Image",
         "source": "PHB",
         "page": 258,
@@ -19155,6 +19372,7 @@
         ]
     },
     {
+        "slug": "mass_cure_wounds_phb",
         "name": "Mass Cure Wounds",
         "source": "PHB",
         "page": 258,
@@ -19241,6 +19459,7 @@
         ]
     },
     {
+        "slug": "mass_heal_phb",
         "name": "Mass Heal",
         "source": "PHB",
         "page": 258,
@@ -19280,6 +19499,7 @@
         ]
     },
     {
+        "slug": "mass_healing_word_phb",
         "name": "Mass Healing Word",
         "source": "PHB",
         "page": 258,
@@ -19349,6 +19569,7 @@
         ]
     },
     {
+        "slug": "mass_suggestion_phb",
         "name": "Mass Suggestion",
         "source": "PHB",
         "page": 258,
@@ -19413,6 +19634,7 @@
         ]
     },
     {
+        "slug": "maze_phb",
         "name": "Maze",
         "source": "PHB",
         "page": 258,
@@ -19457,6 +19679,7 @@
         ]
     },
     {
+        "slug": "meld_into_stone_phb",
         "name": "Meld into Stone",
         "source": "PHB",
         "page": 259,
@@ -19550,6 +19773,7 @@
         ]
     },
     {
+        "slug": "melf_s_acid_arrow_phb",
         "name": "Melf's Acid Arrow",
         "source": "PHB",
         "page": 259,
@@ -19623,6 +19847,7 @@
         ]
     },
     {
+        "slug": "mending_phb",
         "name": "Mending",
         "source": "PHB",
         "page": 259,
@@ -19699,6 +19924,7 @@
         ]
     },
     {
+        "slug": "message_phb",
         "name": "Message",
         "source": "PHB",
         "page": 259,
@@ -19787,6 +20013,7 @@
         ]
     },
     {
+        "slug": "meteor_swarm_phb",
         "name": "Meteor Swarm",
         "source": "PHB",
         "page": 259,
@@ -19839,6 +20066,7 @@
         ]
     },
     {
+        "slug": "mind_blank_phb",
         "name": "Mind Blank",
         "source": "PHB",
         "page": 259,
@@ -19890,6 +20118,7 @@
         ]
     },
     {
+        "slug": "minor_illusion_phb",
         "name": "Minor Illusion",
         "source": "PHB",
         "page": 260,
@@ -20005,6 +20234,7 @@
         ]
     },
     {
+        "slug": "mirage_arcane_phb",
         "name": "Mirage Arcane",
         "source": "PHB",
         "page": 260,
@@ -20058,6 +20288,7 @@
         ]
     },
     {
+        "slug": "mirror_image_phb",
         "name": "Mirror Image",
         "source": "PHB",
         "page": 260,
@@ -20168,6 +20399,7 @@
         ]
     },
     {
+        "slug": "mislead_phb",
         "name": "Mislead",
         "source": "PHB",
         "page": 260,
@@ -20270,6 +20502,7 @@
         ]
     },
     {
+        "slug": "misty_step_phb",
         "name": "Misty Step",
         "source": "PHB",
         "page": 260,
@@ -20423,6 +20656,7 @@
         ]
     },
     {
+        "slug": "modify_memory_phb",
         "name": "Modify Memory",
         "source": "PHB",
         "page": 261,
@@ -20516,6 +20750,7 @@
         ]
     },
     {
+        "slug": "moonbeam_phb",
         "name": "Moonbeam",
         "source": "PHB",
         "page": 261,
@@ -20597,6 +20832,7 @@
         ]
     },
     {
+        "slug": "mordenkainen_s_faithful_hound_phb",
         "name": "Mordenkainen's Faithful Hound",
         "source": "PHB",
         "page": 261,
@@ -20665,6 +20901,7 @@
         ]
     },
     {
+        "slug": "mordenkainen_s_magnificent_mansion_phb",
         "name": "Mordenkainen's Magnificent Mansion",
         "source": "PHB",
         "page": 261,
@@ -20713,6 +20950,7 @@
         ]
     },
     {
+        "slug": "mordenkainen_s_private_sanctum_phb",
         "name": "Mordenkainen's Private Sanctum",
         "source": "PHB",
         "page": 262,
@@ -20786,6 +21024,7 @@
         ]
     },
     {
+        "slug": "mordenkainen_s_sword_phb",
         "name": "Mordenkainen's Sword",
         "source": "PHB",
         "page": 262,
@@ -20838,6 +21077,7 @@
         ]
     },
     {
+        "slug": "move_earth_phb",
         "name": "Move Earth",
         "source": "PHB",
         "page": 263,
@@ -20894,6 +21134,7 @@
         ]
     },
     {
+        "slug": "nondetection_phb",
         "name": "Nondetection",
         "source": "PHB",
         "page": 263,
@@ -20984,6 +21225,7 @@
         ]
     },
     {
+        "slug": "nystul_s_magic_aura_phb",
         "name": "Nystul's Magic Aura",
         "source": "PHB",
         "page": 263,
@@ -21036,6 +21278,7 @@
         ]
     },
     {
+        "slug": "otiluke_s_freezing_sphere_phb",
         "name": "Otiluke's Freezing Sphere",
         "source": "PHB",
         "page": 263,
@@ -21085,6 +21328,7 @@
         ]
     },
     {
+        "slug": "otiluke_s_resilient_sphere_phb",
         "name": "Otiluke's Resilient Sphere",
         "source": "PHB",
         "page": 264,
@@ -21203,6 +21447,7 @@
         ]
     },
     {
+        "slug": "otto_s_irresistible_dance_phb",
         "name": "Otto's Irresistible Dance",
         "source": "PHB",
         "page": 264,
@@ -21254,6 +21499,7 @@
         ]
     },
     {
+        "slug": "pass_without_trace_phb",
         "name": "Pass without Trace",
         "source": "PHB",
         "page": 264,
@@ -21354,6 +21600,7 @@
         ]
     },
     {
+        "slug": "passwall_phb",
         "name": "Passwall",
         "source": "PHB",
         "page": 264,
@@ -21438,6 +21685,7 @@
         ]
     },
     {
+        "slug": "phantasmal_force_phb",
         "name": "Phantasmal Force",
         "source": "PHB",
         "page": 264,
@@ -21549,6 +21797,7 @@
         ]
     },
     {
+        "slug": "phantasmal_killer_phb",
         "name": "Phantasmal Killer",
         "source": "PHB",
         "page": 265,
@@ -21644,6 +21893,7 @@
         ]
     },
     {
+        "slug": "phantom_steed_phb",
         "name": "Phantom Steed",
         "source": "PHB",
         "page": 265,
@@ -21707,6 +21957,7 @@
         ]
     },
     {
+        "slug": "planar_ally_phb",
         "name": "Planar Ally",
         "source": "PHB",
         "page": 265,
@@ -21751,6 +22002,7 @@
         ]
     },
     {
+        "slug": "planar_binding_phb",
         "name": "Planar Binding",
         "source": "PHB",
         "page": 265,
@@ -21848,6 +22100,7 @@
         ]
     },
     {
+        "slug": "plane_shift_phb",
         "name": "Plane Shift",
         "source": "PHB",
         "page": 266,
@@ -21912,6 +22165,7 @@
         ]
     },
     {
+        "slug": "plant_growth_phb",
         "name": "Plant Growth",
         "source": "PHB",
         "page": 266,
@@ -22027,6 +22281,7 @@
         ]
     },
     {
+        "slug": "poison_spray_phb",
         "name": "Poison Spray",
         "source": "PHB",
         "page": 266,
@@ -22103,6 +22358,7 @@
         ]
     },
     {
+        "slug": "polymorph_phb",
         "name": "Polymorph",
         "source": "PHB",
         "page": 266,
@@ -22186,6 +22442,7 @@
         ]
     },
     {
+        "slug": "power_word_heal_phb",
         "name": "Power Word Heal",
         "source": "PHB",
         "page": 266,
@@ -22224,6 +22481,7 @@
         ]
     },
     {
+        "slug": "power_word_kill_phb",
         "name": "Power Word Kill",
         "source": "PHB",
         "page": 266,
@@ -22278,6 +22536,7 @@
         ]
     },
     {
+        "slug": "power_word_stun_phb",
         "name": "Power Word Stun",
         "source": "PHB",
         "page": 267,
@@ -22339,6 +22598,7 @@
         ]
     },
     {
+        "slug": "prayer_of_healing_phb",
         "name": "Prayer of Healing",
         "source": "PHB",
         "page": 267,
@@ -22387,6 +22647,7 @@
         ]
     },
     {
+        "slug": "prestidigitation_phb",
         "name": "Prestidigitation",
         "source": "PHB",
         "page": 267,
@@ -22482,6 +22743,7 @@
         ]
     },
     {
+        "slug": "prismatic_spray_phb",
         "name": "Prismatic Spray",
         "source": "PHB",
         "page": 267,
@@ -22559,6 +22821,7 @@
         ]
     },
     {
+        "slug": "prismatic_wall_phb",
         "name": "Prismatic Wall",
         "source": "PHB",
         "page": 267,
@@ -22636,6 +22899,7 @@
         ]
     },
     {
+        "slug": "produce_flame_phb",
         "name": "Produce Flame",
         "source": "PHB",
         "page": 269,
@@ -22699,6 +22963,7 @@
         ]
     },
     {
+        "slug": "programmed_illusion_phb",
         "name": "Programmed Illusion",
         "source": "PHB",
         "page": 269,
@@ -22749,6 +23014,7 @@
         ]
     },
     {
+        "slug": "project_image_phb",
         "name": "Project Image",
         "source": "PHB",
         "page": 270,
@@ -22803,6 +23069,7 @@
         ]
     },
     {
+        "slug": "protection_from_energy_phb",
         "name": "Protection from Energy",
         "source": "PHB",
         "page": 270,
@@ -22991,6 +23258,7 @@
         ]
     },
     {
+        "slug": "protection_from_evil_and_good_phb",
         "name": "Protection from Evil and Good",
         "source": "PHB",
         "page": 270,
@@ -23139,6 +23407,7 @@
         ]
     },
     {
+        "slug": "protection_from_poison_phb",
         "name": "Protection from Poison",
         "source": "PHB",
         "page": 270,
@@ -23232,6 +23501,7 @@
         ]
     },
     {
+        "slug": "purify_food_and_drink_phb",
         "name": "Purify Food and Drink",
         "source": "PHB",
         "page": 270,
@@ -23300,6 +23570,7 @@
         ]
     },
     {
+        "slug": "raise_dead_phb",
         "name": "Raise Dead",
         "source": "PHB",
         "page": 270,
@@ -23393,6 +23664,7 @@
         ]
     },
     {
+        "slug": "rary_s_telepathic_bond_phb",
         "name": "Rary's Telepathic Bond",
         "source": "PHB",
         "page": 270,
@@ -23463,6 +23735,7 @@
         ]
     },
     {
+        "slug": "ray_of_enfeeblement_phb",
         "name": "Ray of Enfeeblement",
         "source": "PHB",
         "page": 271,
@@ -23567,6 +23840,7 @@
         ]
     },
     {
+        "slug": "ray_of_frost_phb",
         "name": "Ray of Frost",
         "source": "PHB",
         "page": 271,
@@ -23647,6 +23921,7 @@
         ]
     },
     {
+        "slug": "ray_of_sickness_phb",
         "name": "Ray of Sickness",
         "source": "PHB",
         "page": 271,
@@ -23757,6 +24032,7 @@
         ]
     },
     {
+        "slug": "regenerate_phb",
         "name": "Regenerate",
         "source": "PHB",
         "page": 271,
@@ -23808,6 +24084,7 @@
         ]
     },
     {
+        "slug": "reincarnate_phb",
         "name": "Reincarnate",
         "source": "PHB",
         "page": 271,
@@ -23867,6 +24144,7 @@
         ]
     },
     {
+        "slug": "remove_curse_phb",
         "name": "Remove Curse",
         "source": "PHB",
         "page": 271,
@@ -23920,6 +24198,7 @@
         ]
     },
     {
+        "slug": "resistance_phb",
         "name": "Resistance",
         "source": "PHB",
         "page": 272,
@@ -23983,6 +24262,7 @@
         ]
     },
     {
+        "slug": "resurrection_phb",
         "name": "Resurrection",
         "source": "PHB",
         "page": 272,
@@ -24030,6 +24310,7 @@
         ]
     },
     {
+        "slug": "reverse_gravity_phb",
         "name": "Reverse Gravity",
         "source": "PHB",
         "page": 272,
@@ -24087,6 +24368,7 @@
         ]
     },
     {
+        "slug": "revivify_phb",
         "name": "Revivify",
         "source": "PHB",
         "page": 272,
@@ -24187,6 +24469,7 @@
         ]
     },
     {
+        "slug": "rope_trick_phb",
         "name": "Rope Trick",
         "source": "PHB",
         "page": 272,
@@ -24278,6 +24561,7 @@
         ]
     },
     {
+        "slug": "sacred_flame_phb",
         "name": "Sacred Flame",
         "source": "PHB",
         "page": 272,
@@ -24343,6 +24627,7 @@
         ]
     },
     {
+        "slug": "sanctuary_phb",
         "name": "Sanctuary",
         "source": "PHB",
         "page": 272,
@@ -24466,6 +24751,7 @@
         ]
     },
     {
+        "slug": "scorching_ray_phb",
         "name": "Scorching Ray",
         "source": "PHB",
         "page": 273,
@@ -24585,6 +24871,7 @@
         ]
     },
     {
+        "slug": "scrying_phb",
         "name": "Scrying",
         "source": "PHB",
         "page": 273,
@@ -24730,6 +25017,7 @@
         ]
     },
     {
+        "slug": "searing_smite_phb",
         "name": "Searing Smite",
         "source": "PHB",
         "page": 274,
@@ -24828,6 +25116,7 @@
         ]
     },
     {
+        "slug": "see_invisibility_phb",
         "name": "See Invisibility",
         "source": "PHB",
         "page": 274,
@@ -24909,6 +25198,7 @@
         ]
     },
     {
+        "slug": "seeming_phb",
         "name": "Seeming",
         "source": "PHB",
         "page": 274,
@@ -25022,6 +25312,7 @@
         ]
     },
     {
+        "slug": "sending_phb",
         "name": "Sending",
         "source": "PHB",
         "page": 274,
@@ -25122,6 +25413,7 @@
         ]
     },
     {
+        "slug": "sequester_phb",
         "name": "Sequester",
         "source": "PHB",
         "page": 274,
@@ -25168,6 +25460,7 @@
         ]
     },
     {
+        "slug": "shapechange_phb",
         "name": "Shapechange",
         "source": "PHB",
         "page": 274,
@@ -25219,6 +25512,7 @@
         ]
     },
     {
+        "slug": "shatter_phb",
         "name": "Shatter",
         "source": "PHB",
         "page": 275,
@@ -25343,6 +25637,7 @@
         ]
     },
     {
+        "slug": "shield_phb",
         "name": "Shield",
         "source": "PHB",
         "page": 275,
@@ -25466,6 +25761,7 @@
         ]
     },
     {
+        "slug": "shield_of_faith_phb",
         "name": "Shield of Faith",
         "source": "PHB",
         "page": 275,
@@ -25546,6 +25842,7 @@
         ]
     },
     {
+        "slug": "shillelagh_phb",
         "name": "Shillelagh",
         "source": "PHB",
         "page": 275,
@@ -25593,6 +25890,7 @@
         ]
     },
     {
+        "slug": "shocking_grasp_phb",
         "name": "Shocking Grasp",
         "source": "PHB",
         "page": 275,
@@ -25663,6 +25961,7 @@
         ]
     },
     {
+        "slug": "silence_phb",
         "name": "Silence",
         "source": "PHB",
         "page": 275,
@@ -25781,6 +26080,7 @@
         ]
     },
     {
+        "slug": "silent_image_phb",
         "name": "Silent Image",
         "source": "PHB",
         "page": 276,
@@ -25842,6 +26142,7 @@
         ]
     },
     {
+        "slug": "simulacrum_phb",
         "name": "Simulacrum",
         "source": "PHB",
         "page": 276,
@@ -25886,6 +26187,7 @@
         ]
     },
     {
+        "slug": "sleep_phb",
         "name": "Sleep",
         "source": "PHB",
         "page": 276,
@@ -25998,6 +26300,7 @@
         ]
     },
     {
+        "slug": "sleet_storm_phb",
         "name": "Sleet Storm",
         "source": "PHB",
         "page": 276,
@@ -26129,6 +26432,7 @@
         ]
     },
     {
+        "slug": "slow_phb",
         "name": "Slow",
         "source": "PHB",
         "page": 277,
@@ -26217,6 +26521,7 @@
         ]
     },
     {
+        "slug": "spare_the_dying_phb",
         "name": "Spare the Dying",
         "source": "PHB",
         "page": 277,
@@ -26298,6 +26603,7 @@
         ]
     },
     {
+        "slug": "speak_with_animals_phb",
         "name": "Speak with Animals",
         "source": "PHB",
         "page": 277,
@@ -26381,6 +26687,7 @@
         ]
     },
     {
+        "slug": "speak_with_dead_phb",
         "name": "Speak with Dead",
         "source": "PHB",
         "page": 277,
@@ -26475,6 +26782,7 @@
         ]
     },
     {
+        "slug": "speak_with_plants_phb",
         "name": "Speak with Plants",
         "source": "PHB",
         "page": 277,
@@ -26549,6 +26857,7 @@
         ]
     },
     {
+        "slug": "spider_climb_phb",
         "name": "Spider Climb",
         "source": "PHB",
         "page": 277,
@@ -26655,6 +26964,7 @@
         ]
     },
     {
+        "slug": "spike_growth_phb",
         "name": "Spike Growth",
         "source": "PHB",
         "page": 277,
@@ -26769,6 +27079,7 @@
         ]
     },
     {
+        "slug": "spirit_guardians_phb",
         "name": "Spirit Guardians",
         "source": "PHB",
         "page": 278,
@@ -26840,6 +27151,7 @@
         ]
     },
     {
+        "slug": "spiritual_weapon_phb",
         "name": "Spiritual Weapon",
         "source": "PHB",
         "page": 278,
@@ -26931,6 +27243,7 @@
         ]
     },
     {
+        "slug": "staggering_smite_phb",
         "name": "Staggering Smite",
         "source": "PHB",
         "page": 278,
@@ -27006,6 +27319,7 @@
         ]
     },
     {
+        "slug": "stinking_cloud_phb",
         "name": "Stinking Cloud",
         "source": "PHB",
         "page": 278,
@@ -27098,6 +27412,7 @@
         ]
     },
     {
+        "slug": "stone_shape_phb",
         "name": "Stone Shape",
         "source": "PHB",
         "page": 278,
@@ -27210,6 +27525,7 @@
         ]
     },
     {
+        "slug": "stoneskin_phb",
         "name": "Stoneskin",
         "source": "PHB",
         "page": 278,
@@ -27361,6 +27677,7 @@
         ]
     },
     {
+        "slug": "storm_of_vengeance_phb",
         "name": "Storm of Vengeance",
         "source": "PHB",
         "page": 279,
@@ -27425,6 +27742,7 @@
         ]
     },
     {
+        "slug": "suggestion_phb",
         "name": "Suggestion",
         "source": "PHB",
         "page": 279,
@@ -27521,6 +27839,7 @@
         ]
     },
     {
+        "slug": "sunbeam_phb",
         "name": "Sunbeam",
         "source": "PHB",
         "page": 279,
@@ -27584,6 +27903,7 @@
         ]
     },
     {
+        "slug": "sunburst_phb",
         "name": "Sunburst",
         "source": "PHB",
         "page": 279,
@@ -27644,6 +27964,7 @@
         ]
     },
     {
+        "slug": "swift_quiver_phb",
         "name": "Swift Quiver",
         "source": "PHB",
         "page": 279,
@@ -27686,6 +28007,7 @@
         ]
     },
     {
+        "slug": "symbol_phb",
         "name": "Symbol",
         "source": "PHB",
         "page": 280,
@@ -27773,6 +28095,7 @@
         ]
     },
     {
+        "slug": "tasha_s_hideous_laughter_phb",
         "name": "Tasha's Hideous Laughter",
         "source": "PHB",
         "page": 280,
@@ -27842,6 +28165,7 @@
         ]
     },
     {
+        "slug": "telekinesis_phb",
         "name": "Telekinesis",
         "source": "PHB",
         "page": 280,
@@ -27920,6 +28244,7 @@
         ]
     },
     {
+        "slug": "telepathy_phb",
         "name": "Telepathy",
         "source": "PHB",
         "page": 281,
@@ -27961,6 +28286,7 @@
         ]
     },
     {
+        "slug": "teleport_phb",
         "name": "Teleport",
         "source": "PHB",
         "page": 281,
@@ -28035,6 +28361,7 @@
         ]
     },
     {
+        "slug": "teleportation_circle_phb",
         "name": "Teleportation Circle",
         "source": "PHB",
         "page": 282,
@@ -28130,6 +28457,7 @@
         ]
     },
     {
+        "slug": "tenser_s_floating_disk_phb",
         "name": "Tenser's Floating Disk",
         "source": "PHB",
         "page": 282,
@@ -28194,6 +28522,7 @@
         ]
     },
     {
+        "slug": "thaumaturgy_phb",
         "name": "Thaumaturgy",
         "source": "PHB",
         "page": 282,
@@ -28327,6 +28656,7 @@
         ]
     },
     {
+        "slug": "thorn_whip_phb",
         "name": "Thorn Whip",
         "source": "PHB",
         "page": 282,
@@ -28381,6 +28711,7 @@
         ]
     },
     {
+        "slug": "thunderous_smite_phb",
         "name": "Thunderous Smite",
         "source": "PHB",
         "page": 282,
@@ -28445,6 +28776,7 @@
         ]
     },
     {
+        "slug": "thunderwave_phb",
         "name": "Thunderwave",
         "source": "PHB",
         "page": 282,
@@ -28604,6 +28936,7 @@
         ]
     },
     {
+        "slug": "time_stop_phb",
         "name": "Time Stop",
         "source": "PHB",
         "page": 283,
@@ -28648,6 +28981,7 @@
         ]
     },
     {
+        "slug": "tongues_phb",
         "name": "Tongues",
         "source": "PHB",
         "page": 283,
@@ -28722,6 +29056,7 @@
         ]
     },
     {
+        "slug": "transport_via_plants_phb",
         "name": "Transport via Plants",
         "source": "PHB",
         "page": 283,
@@ -28763,6 +29098,7 @@
         ]
     },
     {
+        "slug": "tree_stride_phb",
         "name": "Tree Stride",
         "source": "PHB",
         "page": 283,
@@ -28831,6 +29167,7 @@
         ]
     },
     {
+        "slug": "true_polymorph_phb",
         "name": "True Polymorph",
         "source": "PHB",
         "page": 283,
@@ -28899,6 +29236,7 @@
         ]
     },
     {
+        "slug": "true_resurrection_phb",
         "name": "True Resurrection",
         "source": "PHB",
         "page": 284,
@@ -28944,6 +29282,7 @@
         ]
     },
     {
+        "slug": "true_seeing_phb",
         "name": "True Seeing",
         "source": "PHB",
         "page": 284,
@@ -29004,6 +29343,7 @@
         ]
     },
     {
+        "slug": "true_strike_phb",
         "name": "True Strike",
         "source": "PHB",
         "page": 284,
@@ -29068,6 +29408,7 @@
         ]
     },
     {
+        "slug": "tsunami_phb",
         "name": "Tsunami",
         "source": "PHB",
         "page": 284,
@@ -29118,6 +29459,7 @@
         ]
     },
     {
+        "slug": "unseen_servant_phb",
         "name": "Unseen Servant",
         "source": "PHB",
         "page": 284,
@@ -29183,6 +29525,7 @@
         ]
     },
     {
+        "slug": "vampiric_touch_phb",
         "name": "Vampiric Touch",
         "source": "PHB",
         "page": 285,
@@ -29263,6 +29606,7 @@
         ]
     },
     {
+        "slug": "vicious_mockery_phb",
         "name": "Vicious Mockery",
         "source": "PHB",
         "page": 285,
@@ -29321,6 +29665,7 @@
         ]
     },
     {
+        "slug": "wall_of_fire_phb",
         "name": "Wall of Fire",
         "source": "PHB",
         "page": 285,
@@ -29456,6 +29801,7 @@
         ]
     },
     {
+        "slug": "wall_of_force_phb",
         "name": "Wall of Force",
         "source": "PHB",
         "page": 285,
@@ -29565,6 +29911,7 @@
         ]
     },
     {
+        "slug": "wall_of_ice_phb",
         "name": "Wall of Ice",
         "source": "PHB",
         "page": 285,
@@ -29618,6 +29965,7 @@
         ]
     },
     {
+        "slug": "wall_of_stone_phb",
         "name": "Wall of Stone",
         "source": "PHB",
         "page": 287,
@@ -29737,6 +30085,7 @@
         ]
     },
     {
+        "slug": "wall_of_thorns_phb",
         "name": "Wall of Thorns",
         "source": "PHB",
         "page": 287,
@@ -29790,6 +30139,7 @@
         ]
     },
     {
+        "slug": "warding_bond_phb",
         "name": "Warding Bond",
         "source": "PHB",
         "page": 287,
@@ -29892,6 +30242,7 @@
         ]
     },
     {
+        "slug": "water_breathing_phb",
         "name": "Water Breathing",
         "source": "PHB",
         "page": 287,
@@ -29982,6 +30333,7 @@
         ]
     },
     {
+        "slug": "water_walk_phb",
         "name": "Water Walk",
         "source": "PHB",
         "page": 287,
@@ -30075,6 +30427,7 @@
         ]
     },
     {
+        "slug": "web_phb",
         "name": "Web",
         "source": "PHB",
         "page": 287,
@@ -30203,6 +30556,7 @@
         ]
     },
     {
+        "slug": "weird_phb",
         "name": "Weird",
         "source": "PHB",
         "page": 288,
@@ -30254,6 +30608,7 @@
         ]
     },
     {
+        "slug": "wind_walk_phb",
         "name": "Wind Walk",
         "source": "PHB",
         "page": 288,
@@ -30299,6 +30654,7 @@
         ]
     },
     {
+        "slug": "wind_wall_phb",
         "name": "Wind Wall",
         "source": "PHB",
         "page": 288,
@@ -30408,6 +30764,7 @@
         ]
     },
     {
+        "slug": "wish_phb",
         "name": "Wish",
         "source": "PHB",
         "page": 288,
@@ -30491,6 +30848,7 @@
         ]
     },
     {
+        "slug": "witch_bolt_phb",
         "name": "Witch Bolt",
         "source": "PHB",
         "page": 289,
@@ -30549,6 +30907,7 @@
         ]
     },
     {
+        "slug": "word_of_recall_phb",
         "name": "Word of Recall",
         "source": "PHB",
         "page": 289,
@@ -30589,6 +30948,7 @@
         ]
     },
     {
+        "slug": "wrathful_smite_phb",
         "name": "Wrathful Smite",
         "source": "PHB",
         "page": 289,
@@ -30660,6 +31020,7 @@
         ]
     },
     {
+        "slug": "zone_of_truth_phb",
         "name": "Zone of Truth",
         "source": "PHB",
         "page": 289,

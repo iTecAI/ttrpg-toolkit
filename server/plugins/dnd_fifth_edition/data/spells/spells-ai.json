@@ -1,5 +1,6 @@
 [
     {
+        "slug": "distort_value_ai",
         "name": "Distort Value",
         "source": "AI",
         "page": 75,
@@ -58,6 +59,7 @@
         ]
     },
     {
+        "slug": "fast_friends_ai",
         "name": "Fast Friends",
         "source": "AI",
         "page": 75,
@@ -120,6 +122,7 @@
         ]
     },
     {
+        "slug": "gift_of_gab_ai",
         "name": "Gift of Gab",
         "source": "AI",
         "page": 76,
@@ -167,6 +170,7 @@
         ]
     },
     {
+        "slug": "incite_greed_ai",
         "name": "Incite Greed",
         "source": "AI",
         "page": 76,
@@ -226,6 +230,7 @@
         ]
     },
     {
+        "slug": "jim_s_glowing_coin_ai",
         "name": "Jim's Glowing Coin",
         "source": "AI",
         "page": 76,
@@ -270,6 +275,7 @@
         ]
     },
     {
+        "slug": "jim_s_magic_missile_ai",
         "name": "Jim's Magic Missile",
         "source": "AI",
         "page": 76,
@@ -319,6 +325,7 @@
         ]
     },
     {
+        "slug": "motivational_speech_ai",
         "name": "Motivational Speech",
         "source": "AI",
         "page": 77,

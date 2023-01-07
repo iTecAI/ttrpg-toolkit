@@ -1,5 +1,6 @@
 [
     {
+        "slug": "create_magen_idrotf",
         "name": "Create Magen",
         "source": "IDRotF",
         "page": 318,
@@ -40,6 +41,7 @@
         ]
     },
     {
+        "slug": "frost_fingers_idrotf",
         "name": "Frost Fingers",
         "source": "IDRotF",
         "page": 318,

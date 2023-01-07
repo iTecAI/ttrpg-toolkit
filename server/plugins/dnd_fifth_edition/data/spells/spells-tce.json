@@ -1,5 +1,6 @@
 [
     {
+        "slug": "blade_of_disaster_tce",
         "name": "Blade of Disaster",
         "source": "TCE",
         "page": 106,
@@ -41,6 +42,7 @@
         ]
     },
     {
+        "slug": "booming_blade_tce",
         "name": "Booming Blade",
         "source": "TCE",
         "page": 106,
@@ -101,6 +103,7 @@
         ]
     },
     {
+        "slug": "dream_of_the_blue_veil_tce",
         "name": "Dream of the Blue Veil",
         "source": "TCE",
         "page": 106,
@@ -140,6 +143,7 @@
         ]
     },
     {
+        "slug": "green_flame_blade_tce",
         "name": "Green-Flame Blade",
         "source": "TCE",
         "page": 107,
@@ -198,6 +202,7 @@
         ]
     },
     {
+        "slug": "intellect_fortress_tce",
         "name": "Intellect Fortress",
         "source": "TCE",
         "page": 107,
@@ -251,6 +256,7 @@
         ]
     },
     {
+        "slug": "lightning_lure_tce",
         "name": "Lightning Lure",
         "source": "TCE",
         "page": 107,
@@ -312,6 +318,7 @@
         ]
     },
     {
+        "slug": "mind_sliver_tce",
         "name": "Mind Sliver",
         "source": "TCE",
         "page": 108,
@@ -362,6 +369,7 @@
         ]
     },
     {
+        "slug": "spirit_shroud_tce",
         "name": "Spirit Shroud",
         "source": "TCE",
         "page": 108,
@@ -405,6 +413,7 @@
         ]
     },
     {
+        "slug": "summon_aberration_tce",
         "name": "Summon Aberration",
         "source": "TCE",
         "page": 109,
@@ -452,6 +461,7 @@
         ]
     },
     {
+        "slug": "summon_beast_tce",
         "name": "Summon Beast",
         "source": "TCE",
         "page": 109,
@@ -490,6 +500,7 @@
         ]
     },
     {
+        "slug": "summon_celestial_tce",
         "name": "Summon Celestial",
         "source": "TCE",
         "page": 110,
@@ -528,6 +539,7 @@
         ]
     },
     {
+        "slug": "summon_construct_tce",
         "name": "Summon Construct",
         "source": "TCE",
         "page": 111,
@@ -580,6 +592,7 @@
         ]
     },
     {
+        "slug": "summon_elemental_tce",
         "name": "Summon Elemental",
         "source": "TCE",
         "page": 111,
@@ -627,6 +640,7 @@
         ]
     },
     {
+        "slug": "summon_fey_tce",
         "name": "Summon Fey",
         "source": "TCE",
         "page": 112,
@@ -665,6 +679,7 @@
         ]
     },
     {
+        "slug": "summon_fiend_tce",
         "name": "Summon Fiend",
         "source": "TCE",
         "page": 112,
@@ -703,6 +718,7 @@
         ]
     },
     {
+        "slug": "summon_shadowspawn_tce",
         "name": "Summon Shadowspawn",
         "source": "TCE",
         "page": 113,
@@ -741,6 +757,7 @@
         ]
     },
     {
+        "slug": "summon_undead_tce",
         "name": "Summon Undead",
         "source": "TCE",
         "page": 114,
@@ -779,6 +796,7 @@
         ]
     },
     {
+        "slug": "sword_burst_tce",
         "name": "Sword Burst",
         "source": "TCE",
         "page": 115,
@@ -840,6 +858,7 @@
         ]
     },
     {
+        "slug": "tasha_s_caustic_brew_tce",
         "name": "Tasha's Caustic Brew",
         "source": "TCE",
         "page": 115,
@@ -890,6 +909,7 @@
         ]
     },
     {
+        "slug": "tasha_s_mind_whip_tce",
         "name": "Tasha's Mind Whip",
         "source": "TCE",
         "page": 115,
@@ -932,6 +952,7 @@
         ]
     },
     {
+        "slug": "tasha_s_otherworldly_guise_tce",
         "name": "Tasha's Otherworldly Guise",
         "source": "TCE",
         "page": 116,

@@ -1,5 +1,6 @@
 [
     {
+        "slug": "dark_star_egw",
         "name": "Dark Star",
         "source": "EGW",
         "page": 186,
@@ -55,6 +56,7 @@
         ]
     },
     {
+        "slug": "fortune_s_favor_egw",
         "name": "Fortune's Favor",
         "source": "EGW",
         "page": 186,
@@ -108,6 +110,7 @@
         ]
     },
     {
+        "slug": "gift_of_alacrity_egw",
         "name": "Gift of Alacrity",
         "source": "EGW",
         "page": 186,
@@ -150,6 +153,7 @@
         ]
     },
     {
+        "slug": "gravity_fissure_egw",
         "name": "Gravity Fissure",
         "source": "EGW",
         "page": 187,
@@ -200,6 +204,7 @@
         ]
     },
     {
+        "slug": "gravity_sinkhole_egw",
         "name": "Gravity Sinkhole",
         "source": "EGW",
         "page": 187,
@@ -249,6 +254,7 @@
         ]
     },
     {
+        "slug": "immovable_object_egw",
         "name": "Immovable Object",
         "source": "EGW",
         "page": 187,
@@ -294,6 +300,7 @@
         ]
     },
     {
+        "slug": "magnify_gravity_egw",
         "name": "Magnify Gravity",
         "source": "EGW",
         "page": 188,
@@ -346,6 +353,7 @@
         ]
     },
     {
+        "slug": "pulse_wave_egw",
         "name": "Pulse Wave",
         "source": "EGW",
         "page": 188,
@@ -403,6 +411,7 @@
         ]
     },
     {
+        "slug": "ravenous_void_egw",
         "name": "Ravenous Void",
         "source": "EGW",
         "page": 188,
@@ -458,6 +467,7 @@
         ]
     },
     {
+        "slug": "reality_break_egw",
         "name": "Reality Break",
         "source": "EGW",
         "page": 189,
@@ -525,6 +535,7 @@
         ]
     },
     {
+        "slug": "sapping_sting_egw",
         "name": "Sapping Sting",
         "source": "EGW",
         "page": 189,
@@ -583,6 +594,7 @@
         ]
     },
     {
+        "slug": "temporal_shunt_egw",
         "name": "Temporal Shunt",
         "source": "EGW",
         "page": 189,
@@ -632,6 +644,7 @@
         ]
     },
     {
+        "slug": "tether_essence_egw",
         "name": "Tether Essence",
         "source": "EGW",
         "page": 189,
@@ -686,6 +699,7 @@
         ]
     },
     {
+        "slug": "time_ravage_egw",
         "name": "Time Ravage",
         "source": "EGW",
         "page": 189,
@@ -733,6 +747,7 @@
         ]
     },
     {
+        "slug": "wristpocket_egw",
         "name": "Wristpocket",
         "source": "EGW",
         "page": 190,

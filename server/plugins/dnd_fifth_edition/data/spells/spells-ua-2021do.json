@@ -1,5 +1,6 @@
 [
     {
+        "slug": "draconic_transformation_ua2021draconicoptions",
         "name": "Draconic Transformation",
         "source": "UA2021DraconicOptions",
         "page": 5,
@@ -64,6 +65,7 @@
         ]
     },
     {
+        "slug": "fizban_s_platinum_shield_ua2021draconicoptions",
         "name": "Fizban's Platinum Shield",
         "source": "UA2021DraconicOptions",
         "page": 5,
@@ -126,6 +128,7 @@
         ]
     },
     {
+        "slug": "flame_stride_ua2021draconicoptions",
         "name": "Flame Stride",
         "source": "UA2021DraconicOptions",
         "page": 6,
@@ -188,6 +191,7 @@
         ]
     },
     {
+        "slug": "icingdeath_s_frost_ua2021draconicoptions",
         "name": "Icingdeath's Frost",
         "source": "UA2021DraconicOptions",
         "page": 6,
@@ -240,6 +244,7 @@
         ]
     },
     {
+        "slug": "nathair_s_mischief_ua2021draconicoptions",
         "name": "Nathair's Mischief",
         "source": "UA2021DraconicOptions",
         "page": 6,
@@ -309,6 +314,7 @@
         ]
     },
     {
+        "slug": "raulothim_s_psychic_lance_ua2021draconicoptions",
         "name": "Raulothim's Psychic Lance",
         "source": "UA2021DraconicOptions",
         "page": 6,
@@ -375,6 +381,7 @@
         ]
     },
     {
+        "slug": "summon_draconic_spirit_ua2021draconicoptions",
         "name": "Summon Draconic Spirit",
         "source": "UA2021DraconicOptions",
         "page": 7,

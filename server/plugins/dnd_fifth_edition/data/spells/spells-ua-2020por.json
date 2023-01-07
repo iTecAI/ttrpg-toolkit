@@ -1,5 +1,6 @@
 [
     {
+        "slug": "intellect_fortress_ua2020psionicoptionsrevisited",
         "name": "Intellect Fortress",
         "source": "UA2020PsionicOptionsRevisited",
         "page": 7,
@@ -66,6 +67,7 @@
         ]
     },
     {
+        "slug": "mind_sliver_ua2020psionicoptionsrevisited",
         "name": "Mind Sliver",
         "source": "UA2020PsionicOptionsRevisited",
         "page": 7,
@@ -124,6 +126,7 @@
         ]
     },
     {
+        "slug": "mind_thrust_ua2020psionicoptionsrevisited",
         "name": "Mind Thrust",
         "source": "UA2020PsionicOptionsRevisited",
         "page": 7,

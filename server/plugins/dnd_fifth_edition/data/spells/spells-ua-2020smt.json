@@ -1,5 +1,6 @@
 [
     {
+        "slug": "acid_stream_ua2020spellsandmagictattoos",
         "name": "Acid Stream",
         "source": "UA2020SpellsAndMagicTattoos",
         "page": 2,
@@ -55,6 +56,7 @@
         ]
     },
     {
+        "slug": "otherworldly_form_ua2020spellsandmagictattoos",
         "name": "Otherworldly Form",
         "source": "UA2020SpellsAndMagicTattoos",
         "page": 2,
@@ -127,6 +129,7 @@
         ]
     },
     {
+        "slug": "spirit_shroud_ua2020spellsandmagictattoos",
         "name": "Spirit Shroud",
         "source": "UA2020SpellsAndMagicTattoos",
         "page": 2,
@@ -192,6 +195,7 @@
         ]
     },
     {
+        "slug": "summon_aberrant_spirit_ua2020spellsandmagictattoos",
         "name": "Summon Aberrant Spirit",
         "source": "UA2020SpellsAndMagicTattoos",
         "page": 3,
@@ -247,6 +251,7 @@
         ]
     },
     {
+        "slug": "summon_bestial_spirit_ua2020spellsandmagictattoos",
         "name": "Summon Bestial Spirit",
         "source": "UA2020SpellsAndMagicTattoos",
         "page": 3,
@@ -297,6 +302,7 @@
         ]
     },
     {
+        "slug": "summon_celestial_spirit_ua2020spellsandmagictattoos",
         "name": "Summon Celestial Spirit",
         "source": "UA2020SpellsAndMagicTattoos",
         "page": 4,
@@ -347,6 +353,7 @@
         ]
     },
     {
+        "slug": "summon_elemental_spirit_ua2020spellsandmagictattoos",
         "name": "Summon Elemental Spirit",
         "source": "UA2020SpellsAndMagicTattoos",
         "page": 4,
@@ -402,6 +409,7 @@
         ]
     },
     {
+        "slug": "summon_fey_spirit_ua2020spellsandmagictattoos",
         "name": "Summon Fey Spirit",
         "source": "UA2020SpellsAndMagicTattoos",
         "page": 5,
@@ -467,6 +475,7 @@
         ]
     },
     {
+        "slug": "summon_fiendish_spirit_ua2020spellsandmagictattoos",
         "name": "Summon Fiendish Spirit",
         "source": "UA2020SpellsAndMagicTattoos",
         "page": 6,
@@ -517,6 +526,7 @@
         ]
     },
     {
+        "slug": "summon_shadow_spirit_ua2020spellsandmagictattoos",
         "name": "Summon Shadow Spirit",
         "source": "UA2020SpellsAndMagicTattoos",
         "page": 7,
@@ -572,6 +582,7 @@
         ]
     },
     {
+        "slug": "summon_undead_spirit_ua2020spellsandmagictattoos",
         "name": "Summon Undead Spirit",
         "source": "UA2020SpellsAndMagicTattoos",
         "page": 7,
