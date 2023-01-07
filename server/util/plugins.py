@@ -3,7 +3,7 @@ import logging
 
 import os
 from types import ModuleType
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Union
 
 from starlite import Controller, Router
 from .pip_manager import pip_install
@@ -28,7 +28,7 @@ import threading
 from .util_funcs import get_nested
 import json
 
-from models.plugins import DataSearchModel
+from models.plugins import DataSearchModel, DataSearchFieldModel
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -148,7 +148,7 @@ class DataSourceLoader:
                     try:
                         val = get_nested(r["data"], fv["field"])
                     except KeyError:
-                        val = None
+                        continue
                     to_add[fv["field"]] = val
 
                     if not fk in cat["searchParams"].keys():
@@ -170,8 +170,24 @@ class DataSourceLoader:
                             elif fv["type"] == "select":
                                 if not "choices" in cat["searchParams"][fk].keys():
                                     cat["searchParams"][fk]["choices"] = []
-                                if not val in cat["searchParams"][fk]["choices"]:
-                                    cat["searchParams"][fk]["choices"].append(val)
+                                if type(val) == list:
+                                    cat["searchParams"][fk]["choices"].extend(
+                                        list(
+                                            set(
+                                                [
+                                                    v
+                                                    for v in val
+                                                    if not v
+                                                    in cat["searchParams"][fk][
+                                                        "choices"
+                                                    ]
+                                                ]
+                                            )
+                                        )
+                                    )
+                                else:
+                                    if not val in cat["searchParams"][fk]["choices"]:
+                                        cat["searchParams"][fk]["choices"].append(val)
                         except:
                             pass
 
@@ -184,6 +200,62 @@ class DataSourceLoader:
                 {"plugin": self.plugin.slug, "category": k}, cat, upsert=True
             )
         linfo(f"Done caching search data for plugin {self.plugin.display_name}")
+
+    def _check_rv(self, field: DataSearchFieldModel, record_value: Any):
+        matches = 0
+        nulls = 0
+        if field.field_type == "string":
+            current = str(record_value)
+            target = str(field.value)
+            if field.exact:
+                matches += 1 if target.lower() == current.lower() else 0
+            else:
+                matches += (
+                    1
+                    if target.lower() in current.lower()
+                    or current.lower() in target.lower()
+                    else 0
+                )
+        elif field.field_type == "number":
+            try:
+                current = int(record_value)
+                target = int(field.value)
+            except:
+                nulls += 1
+                return matches, nulls
+            if field.comparator == "<":
+                matches += int(current < target)
+            elif field.comparator == "<=":
+                matches += int(current <= target)
+            elif field.comparator == "=":
+                matches += int(current == target)
+            elif field.comparator == ">=":
+                matches += int(current >= target)
+            elif field.comparator == ">":
+                matches += int(current > target)
+            elif field.comparator == "!=":
+                matches += int(current != target)
+        elif field.field_type == "boolean":
+            v = True if field.value == "true" else False
+            matches += int(v == record_value)
+        elif field.field_type == "select":
+            if type(field.value) == list:
+                matches += int(
+                    len(
+                        [
+                            True
+                            for cfv in field.value
+                            if str(cfv).lower() == str(record_value).lower()
+                        ]
+                    )
+                    > 0
+                )
+                if matches > 0:
+                    print(field.value, record_value)
+            else:
+                matches += int(str(field.value).lower() == str(record_value).lower())
+
+        return matches, nulls
 
     def search(self, model: DataSearchModel) -> List[Any]:
         if not model.category in self.source["categories"].keys():
@@ -205,50 +277,33 @@ class DataSourceLoader:
                     field_name
                 ]["field"]
                 if not record_key in record.keys():
-                    nulls += 1
+                    nulls += 0
                     continue
                 record_value = record[record_key]
                 if record_value == None:
                     nulls += 1
                     continue
-                if field.field_type == "string":
-                    current = str(record_value)
-                    target = str(field.value)
-                    if field.exact:
-                        matches += 1 if target.lower() == current.lower() else 0
+
+                nm = 0
+                nn = 0
+                if type(record_value) == list:
+                    current = [0, 0]
+                    for r in record_value:
+                        new = self._check_rv(field, r)
+                        current[0] += new[0]
+                        current[1] += new[1]
+
+                    if field.field_type == "select":
+                        nm += int(current[0] == len(field.value))
                     else:
-                        matches += (
-                            1
-                            if target.lower() in current.lower()
-                            or current.lower() in target.lower()
-                            else 0
-                        )
-                elif field.field_type == "number":
-                    try:
-                        current = int(record_value)
-                        target = int(field.value)
-                    except:
-                        nulls += 1
-                        continue
-                    if field.comparator == "<":
-                        matches += int(current < target)
-                    elif field.comparator == "<=":
-                        matches += int(current <= target)
-                    elif field.comparator == "=":
-                        matches += int(current == target)
-                    elif field.comparator == ">=":
-                        matches += int(current >= target)
-                    elif field.comparator == ">":
-                        matches += int(current > target)
-                    elif field.comparator == "!=":
-                        matches += int(current != target)
-                elif field.field_type == "boolean":
-                    v = True if field.value == "true" else False
-                    matches += int(v == record_value)
-                elif field.field_type == "select":
-                    matches += int(
-                        str(field.value).lower() == str(record_value).lower()
-                    )
+                        if current[0] > 0 or current[1] > 0:
+                            nm += 1
+
+                else:
+                    nm, nn = self._check_rv(field, record_value)
+
+                matches += nm
+                nulls += nn
 
             if model.all_required:
                 if matches + nulls == len(model.fields.keys()):

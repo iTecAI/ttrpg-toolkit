@@ -62,7 +62,7 @@ export function SearchPopup(props: {
 
                         let dataField: DataSearchField = {
                             field_type: field.type,
-                            value: "",
+                            value: field.type === "select" ? [] : "",
                         };
 
                         if (field.type === "string") {
@@ -177,6 +177,7 @@ export function SearchPopup(props: {
                                         <Select
                                             variant="standard"
                                             key={f}
+                                            multiple
                                             value={fields[f].value}
                                             onChange={(event) => {
                                                 let pfields = JSON.parse(
@@ -360,7 +361,11 @@ export function SearchPopup(props: {
                                                 let pfields = JSON.parse(
                                                     JSON.stringify(fields)
                                                 );
-                                                pfields[f].value = "";
+                                                pfields[f].value =
+                                                    pfields[f].field_type ===
+                                                    "select"
+                                                        ? []
+                                                        : "";
                                                 setFields(pfields);
                                             }}
                                         >

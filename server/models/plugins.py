@@ -1,10 +1,10 @@
-from typing import Dict
+from typing import Dict, Union
 from pydantic import BaseModel, validator
 
 
 class DataSearchFieldModel(BaseModel):
     field_type: str
-    value: str
+    value: Union[str, list[str]]
     exact: bool = False  # Only used for string types
     comparator: str = "="  # Only used for number types
 

@@ -77,7 +77,7 @@ export type DataSource = {
 // Search
 export type DataSearchField = {
     field_type: "string" | "number" | "boolean" | "select";
-    value: string;
+    value: string | string[];
     comparator?: "<" | "<=" | "=" | ">=" | ">" | "!=";
     exact?: boolean;
 };

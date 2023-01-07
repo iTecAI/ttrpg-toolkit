@@ -80,6 +80,11 @@
                         "field": "source",
                         "label": "Item Source",
                         "type": "select"
+                    },
+                    "type": {
+                        "field": "type",
+                        "label": "Item Type",
+                        "type": "select"
                     }
                 }
             },
