@@ -12,6 +12,8 @@ class LevelMode(TypedDict):
 class RaceLocator(TypedDict):
     name: str
     source: str
+    subrace: Optional[str]
+    subrace_source: Optional[str]
 
 
 class ClassLocator(TypedDict):
