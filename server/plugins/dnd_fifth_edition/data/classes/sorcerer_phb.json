@@ -12,11 +12,11 @@
     ],
     "armor_proficiency": [],
     "weapon_proficiency": [
-        "daggers",
-        "darts",
-        "slings",
-        "quarterstaffs",
-        "light crossbows"
+        "[dagger](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22daggers%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
+        "[dart](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22darts%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
+        "[sling](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22slings%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
+        "[quarterstaff](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22quarterstaffs%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
+        "[light crossbow](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22light%20crossbows%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
     ],
     "tool_proficiency": [],
     "skill_proficiency": [
@@ -37,10 +37,10 @@
         "backgroundItems": true,
         "gold": "3d4 * 10",
         "items": [
-            "(a) a light crossbow and 20 bolts or (b) any simple weapon",
-            "(a) a component pouch or (b) an arcane focus",
-            "(a) a dungeoneer's pack or (b) an explorer's pack",
-            "Two daggers"
+            "(a) a [light crossbow](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22light%20crossbow%22%2C%20%22source%22%3A%20%22PHB%22%7D) and [crossbow bolts (20)](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%2220%20bolts%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) any simple weapon",
+            "(a) a [component pouch](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22component%20pouch%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) an [arcane focus](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22arcane%20focus%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
+            "(a) a [dungeoneer's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22dungeoneer%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) an [explorer's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22explorer%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
+            "Two [dagger](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22daggers%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
         ]
     },
     "multiclass_requirements": {
@@ -104,7 +104,7 @@
                 "**Spell:** ['Charisma']",
                 "",
                 "## Spellcasting Focus",
-                "You can use an arcane focus as a spellcasting focus for your sorcerer spells."
+                "You can use an [arcane focus](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22arcane%20focus%22%2C%20%22source%22%3A%20%22PHB%22%7D) as a spellcasting focus for your sorcerer spells."
             ]
         },
         {
@@ -600,7 +600,7 @@
                         "",
                         "## Tides of Chaos",
                         "Starting at 1st level, you can manipulate the forces of chance and chaos to gain advantage on one attack roll, ability check, or saving throw. Once you do so, you must finish a long rest before you can use this feature again.",
-                        "Any time before you regain the use of this feature, the DM can have you roll on the Wild magic surge table immediately after you cast a sorcerer spell of 1st level or higher. You then regain the use of this feature."
+                        "Any time before you regain the use of this feature, the DM can have you roll on the Wild Magic Surge table immediately after you cast a sorcerer spell of 1st level or higher. You then regain the use of this feature."
                     ]
                 },
                 {
@@ -620,7 +620,7 @@
                     "source": "PHB",
                     "level": 14,
                     "entries": [
-                        "At 14th level, you gain a modicum of control over the surges of your wild magic. Whenever you roll on the Wild magic surge table, you can roll twice and use either number."
+                        "At 14th level, you gain a modicum of control over the surges of your wild magic. Whenever you roll on the Wild Magic Surge table, you can roll twice and use either number."
                     ]
                 },
                 {
@@ -2172,12 +2172,12 @@
         "### Arcane Origins",
         "| d6 | Origin |",
         "| :---: | :---- |",
-        "| 1 | Your power arises from your family's bloodline. You are related to some powerful creature, or you inherited a blessing or a curse. |",
-        "| 2 | You are the reincarnation of a being from another plane of existence. |",
-        "| 3 | A powerful entity entered the world. Its magic changed you. |",
-        "| 4 | Your birth was prophesied in an ancient text, and you are foretold to use your power for terrible ends. |",
-        "| 5 | You are the product of generations of careful, selective breeding. |",
-        "| 6 | You were made in a vat by an alchemist. |",
+        "| 1  | Your power arises from your family's bloodline. You are related to some powerful creature, or you inherited a blessing or a curse. |",
+        "| 2  | You are the reincarnation of a being from another plane of existence. |",
+        "| 3  | A powerful entity entered the world. Its magic changed you. |",
+        "| 4  | Your birth was prophesied in an ancient text, and you are foretold to use your power for terrible ends. |",
+        "| 5  | You are the product of generations of careful, selective breeding. |",
+        "| 6  | You were made in a vat by an alchemist. |",
         "",
         "",
         "## Reaction",
@@ -2187,12 +2187,12 @@
         "### Reactions",
         "| d6 | Reaction |",
         "| :---: | :---- |",
-        "| 1 | Your powers are seen as a great blessing by those around you, and you are expected to use them in service to your community. |",
-        "| 2 | Your powers caused destruction and even a death when they became evident, and you were treated as a criminal. |",
-        "| 3 | Your neighbors hate and fear your power, causing them to shun you. |",
-        "| 4 | You came to the attention of a sinister cult that plans on exploiting your abilities. |",
-        "| 5 | People around you believe that your powers are a curse levied on your family for a past transgression. |",
-        "| 6 | Your powers are believed to be tied to an ancient line of mad kings that supposedly ended in a bloody revolt over a century ago. |",
+        "| 1  | Your powers are seen as a great blessing by those around you, and you are expected to use them in service to your community. |",
+        "| 2  | Your powers caused destruction and even a death when they became evident, and you were treated as a criminal. |",
+        "| 3  | Your neighbors hate and fear your power, causing them to shun you. |",
+        "| 4  | You came to the attention of a sinister cult that plans on exploiting your abilities. |",
+        "| 5  | People around you believe that your powers are a curse levied on your family for a past transgression. |",
+        "| 6  | Your powers are believed to be tied to an ancient line of mad kings that supposedly ended in a bloody revolt over a century ago. |",
         "",
         "",
         "## Supernatural Mark",
@@ -2202,12 +2202,12 @@
         "### Supernatural Marks",
         "| d6 | Mark |",
         "| :---: | :---- |",
-        "| 1 | Your eyes are an unusual color, such as red. |",
-        "| 2 | You have an extra toe on one foot. |",
-        "| 3 | One of your ears is noticeably larger than the other. |",
-        "| 4 | Your hair grows at a prodigious rate. |",
-        "| 5 | You wrinkle your nose repeatedly while you are chewing. |",
-        "| 6 | A red splotch appears on your neck once a day, then vanishes after an hour. |",
+        "| 1  | Your eyes are an unusual color, such as red. |",
+        "| 2  | You have an extra toe on one foot. |",
+        "| 3  | One of your ears is noticeably larger than the other. |",
+        "| 4  | Your hair grows at a prodigious rate. |",
+        "| 5  | You wrinkle your nose repeatedly while you are chewing. |",
+        "| 6  | A red splotch appears on your neck once a day, then vanishes after an hour. |",
         "",
         "",
         "## Signs of Sorcery",
@@ -2217,12 +2217,12 @@
         "### Signs of Sorcery",
         "| d6 | Sign |",
         "| :---: | :---- |",
-        "| 1 | You deliver the verbal components of your spells in the booming voice of a titan. |",
-        "| 2 | For a moment after you cast a spell, the area around you grows dark and gloomy. |",
-        "| 3 | You sweat profusely while casting a spell and for a few seconds thereafter. |",
-        "| 4 | Your hair and garments are briefly buffeted about, as if by a breeze, whenever you call forth a spell. |",
-        "| 5 | If you are standing when you cast a spell, you rise six inches into the air and gently float back down. |",
-        "| 6 | Illusory blue flames wreathe your head as you begin your casting, then abruptly disappear. |",
+        "| 1  | You deliver the verbal components of your spells in the booming voice of a titan. |",
+        "| 2  | For a moment after you cast a spell, the area around you grows dark and gloomy. |",
+        "| 3  | You sweat profusely while casting a spell and for a few seconds thereafter. |",
+        "| 4  | Your hair and garments are briefly buffeted about, as if by a breeze, whenever you call forth a spell. |",
+        "| 5  | If you are standing when you cast a spell, you rise six inches into the air and gently float back down. |",
+        "| 6  | Illusory blue flames wreathe your head as you begin your casting, then abruptly disappear. |",
         ""
     ]
 }

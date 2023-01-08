@@ -38,10 +38,10 @@
         "backgroundItems": true,
         "gold": "5d4 * 10",
         "items": [
-            "(a) a spear or (b) a mace",
-            "(a) leather armor or (b) studded leather armor",
-            "(a) a light crossbow and 20 bolts or (b) any simple weapon",
-            "(a) a scholar's pack or (b) an explorer's pack"
+            "(a) a [spear](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22spear%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) a [mace](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22mace%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
+            "(a) [leather armor](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22leather%20armor%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) [studded leather armor](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22studded%20leather%20armor%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
+            "(a) a [light crossbow](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22light%20crossbow%22%2C%20%22source%22%3A%20%22PHB%22%7D) and [crossbow bolts (20)](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%2220%20bolts%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) any simple weapon",
+            "(a) a [scholar's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22scholar%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) an [explorer's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22explorer%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
         ]
     },
     "multiclass_requirements": {},

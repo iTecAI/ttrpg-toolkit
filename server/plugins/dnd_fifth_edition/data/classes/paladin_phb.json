@@ -14,7 +14,7 @@
         "light",
         "medium",
         "heavy",
-        "shields"
+        "[shield](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shields%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
     ],
     "weapon_proficiency": [
         "simple",
@@ -39,10 +39,10 @@
         "backgroundItems": true,
         "gold": "5d4 * 10",
         "items": [
-            "(a) a martial weapon and a shield or (b) two martial weapons",
-            "(a) five javelins or (b) any simple melee weapon",
-            "(a) a priest's pack or (b) an explorer's pack",
-            "Chain mail and a holy symbol"
+            "(a) a martial weapon and a [shield](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shield%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) two martial weapons",
+            "(a) five [javelin](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22javelins%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) any simple melee weapon",
+            "(a) a [priest's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22priest%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) an [explorer's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22explorer%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
+            "[Chain mail](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22Chain%20mail%22%2C%20%22source%22%3A%20%22PHB%22%7D) and a [holy symbol](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22holy%20symbol%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
         ]
     },
     "multiclass_requirements": {
@@ -52,7 +52,7 @@
     "multiclass_armor_proficiency": [
         "light",
         "medium",
-        "shields"
+        "[shield](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shields%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
     ],
     "multiclass_weapon_proficiency": [
         "simple",
@@ -167,7 +167,7 @@
                 "**Spell:** ['Charisma']",
                 "",
                 "## Spellcasting Focus",
-                "You can use a holy symbol as a spellcasting focus for your paladin spells."
+                "You can use a [holy symbol](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22holy%20symbol%22%2C%20%22source%22%3A%20%22PHB%22%7D) as a spellcasting focus for your paladin spells."
             ]
         },
         {
@@ -2164,12 +2164,12 @@
         "### Personal Goal",
         "| d6 | Personal Goal |",
         "| :---: | :---- |",
-        "| 1 | Peace. You fight so that future generations will not have to. |",
-        "| 2 | Revenge. Your oath is the vehicle through which you will right an ancient wrong. |",
-        "| 3 | Duty. You will live up to what you have sworn to do, or die trying. |",
-        "| 4 | Leadership. You will win a great battle that bards will sing about, and in so doing, you will become an example to inspire others. |",
-        "| 5 | Faith. You know your path is righteous, or else the gods would not have set you upon it. |",
-        "| 6 | Glory. You will lead the world into a grand new era, one that will be branded with your name. |",
+        "| 1  | Peace. You fight so that future generations will not have to. |",
+        "| 2  | Revenge. Your oath is the vehicle through which you will right an ancient wrong. |",
+        "| 3  | Duty. You will live up to what you have sworn to do, or die trying. |",
+        "| 4  | Leadership. You will win a great battle that bards will sing about, and in so doing, you will become an example to inspire others. |",
+        "| 5  | Faith. You know your path is righteous, or else the gods would not have set you upon it. |",
+        "| 6  | Glory. You will lead the world into a grand new era, one that will be branded with your name. |",
         "",
         "",
         "## Symbol",
@@ -2179,12 +2179,12 @@
         "### Symbol",
         "| d6 | Symbol |",
         "| :---: | :---- |",
-        "| 1 | A dragon, emblematic of your nobility in peace and your ferocity in combat |",
-        "| 2 | A clenched fist, because you are always ready to fight for your beliefs |",
-        "| 3 | An upraised open hand, indicating your preference for diplomacy over combat |",
-        "| 4 | A red heart, showing the world your commitment to justice |",
-        "| 5 | A black heart, signifying that emotions such as pity do not sway your dedication to your oath |",
-        "| 6 | An unblinking eye, meaning that you are ever alert to all threats against your cause |",
+        "| 1  | A dragon, emblematic of your nobility in peace and your ferocity in combat |",
+        "| 2  | A clenched fist, because you are always ready to fight for your beliefs |",
+        "| 3  | An upraised open hand, indicating your preference for diplomacy over combat |",
+        "| 4  | A red heart, showing the world your commitment to justice |",
+        "| 5  | A black heart, signifying that emotions such as pity do not sway your dedication to your oath |",
+        "| 6  | An unblinking eye, meaning that you are ever alert to all threats against your cause |",
         "",
         "",
         "## Nemesis",
@@ -2194,12 +2194,12 @@
         "### Nemesis",
         "| d6 | Nemesis |",
         "| :---: | :---- |",
-        "| 1 | A mighty orc war chief who threatens to overrun and destroy everything you hold sacred |",
-        "| 2 | A fiend or a celestial, the agent of a power of the Outer Planes, who has been charged with corrupting or redeeming you, as appropriate |",
-        "| 3 | A dragon whose servants dog your steps |",
-        "| 4 | A high priest who sees you as a misguided fool and wants you to abandon your religion |",
-        "| 5 | A rival paladin who trained with you but became an oath-breaker and holds you responsible |",
-        "| 6 | A vampire who has sworn revenge against all paladins after being defeated by one |",
+        "| 1  | A mighty orc war chief who threatens to overrun and destroy everything you hold sacred |",
+        "| 2  | A fiend or a celestial, the agent of a power of the Outer Planes, who has been charged with corrupting or redeeming you, as appropriate |",
+        "| 3  | A dragon whose servants dog your steps |",
+        "| 4  | A high priest who sees you as a misguided fool and wants you to abandon your religion |",
+        "| 5  | A rival paladin who trained with you but became an oath-breaker and holds you responsible |",
+        "| 6  | A vampire who has sworn revenge against all paladins after being defeated by one |",
         "",
         "",
         "## Temptation",
@@ -2209,12 +2209,12 @@
         "### Temptation",
         "| d6 | Temptation |",
         "| :---: | :---- |",
-        "| 1 | Fury. When your anger is roused, you have trouble thinking straight, and you fear you might do something you'll regret. |",
-        "| 2 | Pride. Your deeds are noteworthy, and no one takes note of them more often than you. |",
-        "| 3 | Lust. You can't resist an attractive face and a pleasant smile. |",
-        "| 4 | Envy. You are mindful of what some famous folk have accomplished, and you feel inadequate when your deeds don't compare to theirs. |",
-        "| 5 | Despair. You consider the great strength of the enemies you must defeat, and at times you see no way to achieve final victory. |",
-        "| 6 | Greed. Regardless of how much glory and treasure you amass, it's never enough for you. |",
+        "| 1  | Fury. When your anger is roused, you have trouble thinking straight, and you fear you might do something you'll regret. |",
+        "| 2  | Pride. Your deeds are noteworthy, and no one takes note of them more often than you. |",
+        "| 3  | Lust. You can't resist an attractive face and a pleasant smile. |",
+        "| 4  | Envy. You are mindful of what some famous folk have accomplished, and you feel inadequate when your deeds don't compare to theirs. |",
+        "| 5  | Despair. You consider the great strength of the enemies you must defeat, and at times you see no way to achieve final victory. |",
+        "| 6  | Greed. Regardless of how much glory and treasure you amass, it's never enough for you. |",
         ""
     ]
 }

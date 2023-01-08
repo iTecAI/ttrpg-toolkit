@@ -2,6 +2,15 @@ import re
 from typing import Any, Dict, List
 from logging import exception, warning
 import string
+from urllib.parse import quote
+import json
+
+
+def build_data_search_url(plugin: str, category: str, fields: dict[str, Any]) -> str:
+    return "/compendium?plugin={plugin}&category={category}&fields={fields}".format(
+        plugin=plugin, category=category, fields=quote(json.dumps(fields))
+    )
+
 
 ab_map = {
     "str": "Strength",
@@ -23,14 +32,19 @@ def normalize_slug(slug):
 
 
 def parse_5etools_command(directive: str, arguments: List[str]):
-
     if directive == "filter":
         return arguments[0]
     if directive == "item":
-        if len(arguments) < 3:
-            return arguments[0]
+        if len(arguments) == 1:
+            search = {"name": arguments[0]}
+        elif len(arguments) == 2:
+            search = {"name": arguments[0], "source": arguments[1].upper()}
         else:
-            return arguments[2]
+            search = {"name": arguments[2], "source": arguments[1].upper()}
+        return "[{name}]({url})".format(
+            name=arguments[0],
+            url=build_data_search_url("dnd_fifth_edition", "item", search),
+        )
     if directive == "dice":
         return arguments[0].replace("×", "*")
 

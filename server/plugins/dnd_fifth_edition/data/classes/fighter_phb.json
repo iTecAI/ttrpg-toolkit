@@ -14,7 +14,7 @@
         "light",
         "medium",
         "heavy",
-        "shields"
+        "[shield](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shields%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
     ],
     "weapon_proficiency": [
         "simple",
@@ -41,10 +41,10 @@
         "backgroundItems": true,
         "gold": "5d4 * 10",
         "items": [
-            "(a) chain mail or (b) leather armor, longbow, and 20 arrows",
-            "(a) a martial weapon and a shield or (b) two martial weapons",
-            "(a) a light crossbow and 20 bolts or (b) two handaxes",
-            "(a) a dungeoneer's pack or (b) an explorer's pack"
+            "(a) [chain mail](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22chain%20mail%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) [leather armor](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22leather%20armor%22%2C%20%22source%22%3A%20%22PHB%22%7D), [longbow](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22longbow%22%2C%20%22source%22%3A%20%22PHB%22%7D), and [arrows (20)](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%2220%20arrows%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
+            "(a) a martial weapon and a [shield](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shield%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) two martial weapons",
+            "(a) a [light crossbow](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22light%20crossbow%22%2C%20%22source%22%3A%20%22PHB%22%7D) and [crossbow bolts (20)](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%2220%20bolts%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) two [handaxe](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22handaxes%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
+            "(a) a [dungeoneer's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22dungeoneer%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) an [explorer's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22explorer%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
         ]
     },
     "multiclass_requirements": {
@@ -58,7 +58,7 @@
     "multiclass_armor_proficiency": [
         "light",
         "medium",
-        "shields"
+        "[shield](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shields%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
     ],
     "multiclass_weapon_proficiency": [
         "simple",
@@ -988,7 +988,7 @@
                         "The archetypal Scout excels at finding safe passage through dangerous regions. Scouts usually favor light armor and ranged weapons, but they are comfortable using heavier gear when faced with intense fighting.",
                         "",
                         "## Bonus Proficiencies",
-                        "When you choose this archetype at 3rd level, you gain proficiency in three of the following skills of your choice: Acrobatics, Athletics, Investigation, Medicine, Nature, Perception, Stealth, or Survival. You can choose to gain proficiency with thieves' tools in place of one skill choice.",
+                        "When you choose this archetype at 3rd level, you gain proficiency in three of the following skills of your choice: Acrobatics, Athletics, Investigation, Medicine, Nature, Perception, Stealth, or Survival. You can choose to gain proficiency with [thieves' tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22thieves%27%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) in place of one skill choice.",
                         "",
                         "## Combat Superiority",
                         "At 3rd level, you gain a set of abilities that are fueled by special dice called superiority dice.",
@@ -1086,7 +1086,7 @@
                         "As an archetypal Monster Hunter, you are an expert at defeating supernatural threats. Typically mentored by an older, experienced Monster Hunter, you learn to overcome a variety of unnatural defenses and attacks, including those of undead, lycanthropes, and other creatures of horror.",
                         "",
                         "## Bonus Proficiencies",
-                        "When you choose this archetype at 3rd level, you gain proficiency in two of the following skills of your choice: Arcana, History, Insight, Investigation, Nature, or Perception. You can choose to gain proficiency with thieves' tools in place of one skill choice.",
+                        "When you choose this archetype at 3rd level, you gain proficiency in two of the following skills of your choice: Arcana, History, Insight, Investigation, Nature, or Perception. You can choose to gain proficiency with [thieves' tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22thieves%27%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) in place of one skill choice.",
                         "",
                         "## Combat Superiority",
                         "At 3rd level, you gain a set of abilities that are fueled by special dice called superiority dice.",
@@ -1994,7 +1994,7 @@
                         "",
                         "## Bonus Proficiencies",
                         "*3rd-level Rune Knight feature*",
-                        "You gain proficiency with smith's tools, and you learn to speak, read, and write Giant.",
+                        "You gain proficiency with [smith's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22smith%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D), and you learn to speak, read, and write Giant.",
                         "",
                         "## Rune Magic",
                         "*3rd-level Rune Knight feature*",
@@ -2440,7 +2440,7 @@
                         "",
                         "## Bonus Proficiencies",
                         "*3rd-level Rune Knight feature*",
-                        "You gain proficiency with smith's tools, and you learn to speak, read, and write Giant.",
+                        "You gain proficiency with [smith's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22smith%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D), and you learn to speak, read, and write Giant.",
                         "",
                         "## Rune Carver",
                         "*3rd-level Rune Knight feature*",
@@ -2597,12 +2597,12 @@
         "### Heraldic Signs",
         "| d6 | Heraldic Signs |",
         "| :---: | :---- |",
-        "| 1 | A rampant golden dragon on a green field, representing valor and a quest for wealth |",
-        "| 2 | The fist of a storm giant clutching lightning before a storm cloud, symbolizing wrath and power |",
-        "| 3 | Crossed greatswords in front of a castle gate, signifying the defense of a city or kingdom |",
-        "| 4 | A skull with a dagger through it, representing the doom you bring to your enemies |",
-        "| 5 | A phoenix in a ring of fire, an expression of an indomitable spirit |",
-        "| 6 | Three drops of blood beneath a horizontal sword blade on a black background, symbolizing three foes you have sworn to kill |",
+        "| 1  | A rampant golden dragon on a green field, representing valor and a quest for wealth |",
+        "| 2  | The fist of a storm giant clutching lightning before a storm cloud, symbolizing wrath and power |",
+        "| 3  | Crossed greatswords in front of a castle gate, signifying the defense of a city or kingdom |",
+        "| 4  | A skull with a dagger through it, representing the doom you bring to your enemies |",
+        "| 5  | A phoenix in a ring of fire, an expression of an indomitable spirit |",
+        "| 6  | Three drops of blood beneath a horizontal sword blade on a black background, symbolizing three foes you have sworn to kill |",
         "",
         "",
         "## Instructor",
@@ -2613,12 +2613,12 @@
         "### Instructor",
         "| d6 | Instructor |",
         "| :---: | :---- |",
-        "| 1 | Gladiator. Your instructor was a slave who fought for freedom in the arena, or one who willingly chose the gladiator's life to earn money and fame. |",
-        "| 2 | Military. Your trainer served with a group of soldiers and knows much about working as a team. |",
-        "| 3 | City Watch. Crowd control and peacekeeping are your instructor's specialties. |",
-        "| 4 | Tribal Warrior. Your instructor grew up in a tribe, where fighting for one's life was practically an everyday occurrence. |",
-        "| 5 | Street Fighter. Your trainer excels at urban combat, combining close-quarters work with silence and efficiency. |",
-        "| 6 | Weapon Master. Your mentor helped you to become one with your chosen weapon, by imparting highly specialized knowledge of how to wield it most effectively. |",
+        "| 1  | Gladiator. Your instructor was a slave who fought for freedom in the arena, or one who willingly chose the gladiator's life to earn money and fame. |",
+        "| 2  | Military. Your trainer served with a group of soldiers and knows much about working as a team. |",
+        "| 3  | City Watch. Crowd control and peacekeeping are your instructor's specialties. |",
+        "| 4  | Tribal Warrior. Your instructor grew up in a tribe, where fighting for one's life was practically an everyday occurrence. |",
+        "| 5  | Street Fighter. Your trainer excels at urban combat, combining close-quarters work with silence and efficiency. |",
+        "| 6  | Weapon Master. Your mentor helped you to become one with your chosen weapon, by imparting highly specialized knowledge of how to wield it most effectively. |",
         "",
         "",
         "## Style",
@@ -2628,12 +2628,12 @@
         "### Style",
         "| d6 | Style |",
         "| :---: | :---- |",
-        "| 1 | Elegant. You move with precise grace and total control, never using more energy than you need. |",
-        "| 2 | Brutal. Your attacks rain down like hammer blows, meant to splinter bone or send blood flying. |",
-        "| 3 | Cunning. You dart in to attack at just the right moment and use small-scale tactics to tilt the odds in your favor. |",
-        "| 4 | Effortless. You rarely perspire or display anything other than a stoic expression in battle. |",
-        "| 5 | Energetic. You sing and laugh during combat as your spirit soars. You are happiest when you have a foe in front of you and a weapon in hand. |",
-        "| 6 | Sinister. You scowl and sneer while fighting, and you enjoy mocking your foes as you defeat them. |",
+        "| 1  | Elegant. You move with precise grace and total control, never using more energy than you need. |",
+        "| 2  | Brutal. Your attacks rain down like hammer blows, meant to splinter bone or send blood flying. |",
+        "| 3  | Cunning. You dart in to attack at just the right moment and use small-scale tactics to tilt the odds in your favor. |",
+        "| 4  | Effortless. You rarely perspire or display anything other than a stoic expression in battle. |",
+        "| 5  | Energetic. You sing and laugh during combat as your spirit soars. You are happiest when you have a foe in front of you and a weapon in hand. |",
+        "| 6  | Sinister. You scowl and sneer while fighting, and you enjoy mocking your foes as you defeat them. |",
         ""
     ]
 }

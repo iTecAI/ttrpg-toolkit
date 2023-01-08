@@ -15,13 +15,13 @@
     ],
     "weapon_proficiency": [
         "simple",
-        "hand crossbows",
-        "longswords",
-        "rapiers",
-        "shortswords"
+        "[hand crossbow](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22hand%20crossbows%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
+        "[longsword](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22longswords%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
+        "[rapier](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22rapiers%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
+        "[shortsword](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shortswords%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
     ],
     "tool_proficiency": [
-        "three musical instruments of your choice"
+        "three [musical instrument](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22musical%20instruments%22%2C%20%22source%22%3A%20%22PHB%22%7D) of your choice"
     ],
     "skill_proficiency": [
         {
@@ -34,10 +34,10 @@
         "backgroundItems": true,
         "gold": "5d4 * 10",
         "items": [
-            "(a) a rapier, (b) a longsword, or (c) any simple weapon",
-            "(a) a diplomat's pack or (b) an entertainer's pack",
-            "(a) a lute or (b) any other musical instrument",
-            "Leather armor, and a dagger"
+            "(a) a [rapier](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22rapier%22%2C%20%22source%22%3A%20%22PHB%22%7D), (b) a [longsword](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22longsword%22%2C%20%22source%22%3A%20%22PHB%22%7D), or (c) any simple weapon",
+            "(a) a [diplomat's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22diplomat%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) an [entertainer's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22entertainer%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
+            "(a) a [lute](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22lute%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) any other musical instrument",
+            "[Leather armor](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22Leather%20armor%22%2C%20%22source%22%3A%20%22PHB%22%7D), and a [dagger](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22dagger%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
         ]
     },
     "multiclass_requirements": {
@@ -48,7 +48,7 @@
     ],
     "multiclass_weapon_proficiency": [],
     "multiclass_tool_proficiency": [
-        "one musical instrument of your choice"
+        "one [musical instrument](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22musical%20instrument%22%2C%20%22source%22%3A%20%22PHB%22%7D) of your choice"
     ],
     "multiclass_skill_proficiency": [
         {
@@ -138,7 +138,7 @@
                 "You can cast any bard spell you know as a ritual if that spell has the ritual tag.",
                 "",
                 "## Spellcasting Focus",
-                "You can use a musical instrument as a spellcasting focus for your bard spells."
+                "You can use a [musical instrument](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22musical%20instrument%22%2C%20%22source%22%3A%20%22PHB%22%7D) as a spellcasting focus for your bard spells."
             ]
         },
         {
@@ -600,7 +600,7 @@
                         "Jesters adventure to safeguard the common folk and to undermine the plans of the rich, powerful, and arrogant. Their magic bolsters allies' spirits while casting doubt into foes' minds. Among bards, jesters are unmatched acrobats, and their ability to tumble, dodge, leap, and climb makes them slippery opponents in battle.",
                         "",
                         "## Bonus Proficiencies",
-                        "When you join the College of Satire at 3rd level, you gain proficiency with thieves' tools. You also gain proficiency in Sleight of Hand and one additional skill of your choice. If you are already proficient with thieves' tools or in Sleight of Hand, choose another skill proficiency for each proficiency you already have.",
+                        "When you join the College of Satire at 3rd level, you gain proficiency with [thieves' tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22thieves%27%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D). You also gain proficiency in Sleight of Hand and one additional skill of your choice. If you are already proficient with [thieves' tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22thieves%27%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) or in Sleight of Hand, choose another skill proficiency for each proficiency you already have.",
                         "",
                         "## Tumbling Fool",
                         "At 3rd level, you master a variety of acrobatic techniques that allow you to evade danger. As a bonus action, you can tumble. When you tumble, you gain the following benefits for the rest of your turn:",
@@ -953,7 +953,7 @@
                         "Blades who abandon their lives as entertainers have often run into trouble that makes maintaining their secret activities impossible. A blade caught stealing or engaging in vigilante justice is too great a liability for most troupes. With their weapon skills and magic, these blades either take up work as enforcers for thieves' guilds or strike out on their own as adventurers.",
                         "",
                         "## Bonus Proficiencies",
-                        "When you join the College of Swords at 3rd level, you gain proficiency with medium armor and the scimitar.",
+                        "When you join the College of Swords at 3rd level, you gain proficiency with medium armor and the [scimitar](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22scimitar%22%2C%20%22source%22%3A%20%22PHB%22%7D).",
                         "If you're proficient with a simple or martial melee weapon, you can use it as a spellcasting focus for your bard spells.",
                         "",
                         "## Fighting Style",
@@ -1520,12 +1520,12 @@
         "### Defining Work",
         "| d6 | Defining Work |",
         "| :---: | :---- |",
-        "| 1 | \"The Three Flambinis,\" a ribald song concerning mistaken identities and unfettered desire |",
-        "| 2 | \"Waltz of the Myconids,\" an upbeat tune that children in particular enjoy |",
-        "| 3 | \"Asmodeus's Golden Arse,\" a dramatic poem you claim was inspired by your personal visit to Avernus |",
-        "| 4 | \"The Pirates of Luskan,\" your firsthand account of being kidnapped by sea reavers as a child |",
-        "| 5 | \"A Hoop, Two Pigeons, and a Hell Hound,\" a subtle parody of an incompetent noble |",
-        "| 6 | \"A Fool in the Abyss,\" a comedic poem about a jester's travels among demons |",
+        "| 1  | \"The Three Flambinis,\" a ribald song concerning mistaken identities and unfettered desire |",
+        "| 2  | \"Waltz of the Myconids,\" an upbeat tune that children in particular enjoy |",
+        "| 3  | \"Asmodeus's Golden Arse,\" a dramatic poem you claim was inspired by your personal visit to Avernus |",
+        "| 4  | \"The Pirates of Luskan,\" your firsthand account of being kidnapped by sea reavers as a child |",
+        "| 5  | \"A Hoop, Two Pigeons, and a Hell Hound,\" a subtle parody of an incompetent noble |",
+        "| 6  | \"A Fool in the Abyss,\" a comedic poem about a jester's travels among demons |",
         "",
         "",
         "## Instrument",
@@ -1535,12 +1535,12 @@
         "### Instrument",
         "| d6 | Instrument |",
         "| :---: | :---- |",
-        "| 1 | A masterfully crafted halfling fiddle |",
-        "| 2 | A mithral horn made by elves |",
-        "| 3 | A zither made with drow spider silk |",
-        "| 4 | An orcish drum |",
-        "| 5 | A wooden bullywug croak box |",
-        "| 6 | A tinker's harp of gnomish design |",
+        "| 1  | A masterfully crafted halfling fiddle |",
+        "| 2  | A mithral [horn](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22horn%22%2C%20%22source%22%3A%20%22PHB%22%7D) made by elves |",
+        "| 3  | A zither made with drow spider silk |",
+        "| 4  | An orcish [drum](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22drum%22%2C%20%22source%22%3A%20%22PHB%22%7D) |",
+        "| 5  | A wooden bullywug croak box |",
+        "| 6  | A tinker's harp of gnomish design |",
         "",
         "",
         "## Embarrassment",
@@ -1550,12 +1550,12 @@
         "### Embarrassment",
         "| d6 | Embarrassment |",
         "| :---: | :---- |",
-        "| 1 | The time when your comedic song, \"Big Tom's Hijinks\"\u2014which, by the way, you thought was brilliant\u2014did not go over well with Big Tom |",
-        "| 2 | The matinee performance when a circus's owlbear got loose and terrorized the crowd |",
-        "| 3 | When your opening song was your enthusiastic but universally hated rendition of \"Song of the Froghemoth\" |",
-        "| 4 | The first and last public performance of \"Mirt, Man about Town\" |",
-        "| 5 | The time on stage when your wig caught fire and you threw it down\u2014which set fire to the stage |",
-        "| 6 | When you sat on your lute by mistake during the final stanza of \"Starlight Serenade\" |",
+        "| 1  | The time when your comedic song, \"Big Tom's Hijinks\"\u2014which, by the way, you thought was brilliant\u2014did not go over well with Big Tom |",
+        "| 2  | The matinee performance when a circus's owlbear got loose and terrorized the crowd |",
+        "| 3  | When your opening song was your enthusiastic but universally hated rendition of \"Song of the Froghemoth\" |",
+        "| 4  | The first and last public performance of \"Mirt, Man about Town\" |",
+        "| 5  | The time on stage when your wig caught fire and you threw it down\u2014which set fire to the stage |",
+        "| 6  | When you sat on your [lute](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22lute%22%2C%20%22source%22%3A%20%22PHB%22%7D) by mistake during the final stanza of \"Starlight Serenade\" |",
         "",
         "",
         "## A Bard's Muse",

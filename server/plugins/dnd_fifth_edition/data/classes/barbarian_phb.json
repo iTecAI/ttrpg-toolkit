@@ -13,7 +13,7 @@
     "armor_proficiency": [
         "light",
         "medium",
-        "shields"
+        "[shield](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shields%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
     ],
     "weapon_proficiency": [
         "simple",
@@ -38,16 +38,16 @@
         "backgroundItems": true,
         "gold": "2d4 * 10",
         "items": [
-            "(a) a greataxe or (b) any martial melee weapon",
-            "(a) two handaxes or (b) any simple weapon",
-            "An explorer's pack, and four javelins"
+            "(a) a [greataxe](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22greataxe%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) any martial melee weapon",
+            "(a) two [handaxe](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22handaxes%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) any simple weapon",
+            "An [explorer's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22explorer%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D), and four [javelin](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22javelins%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
         ]
     },
     "multiclass_requirements": {
         "strength": 13
     },
     "multiclass_armor_proficiency": [
-        "shields"
+        "[shield](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shields%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
     ],
     "multiclass_weapon_proficiency": [
         "simple",
@@ -583,15 +583,15 @@
                     "source": "SCAG",
                     "level": 3,
                     "entries": [
-                        "Known as Kuldjargh (literally \"axe idiot\") in Dwarvish, battleragers are dwarf followers of the gods of war and take the Path of the Battlerager. They specialize in wearing bulky, spiked armor and throwing themselves into combat, striking with their body itself and giving themselves over to the fury of battle.",
+                        "Known as Kuldjargh (literally \"axe idiot\") in Dwarvish, battleragers are dwarf followers of the gods of war and take the Path of the Battlerager. They specialize in wearing bulky, [spiked armor](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22spiked%20armor%22%2C%20%22source%22%3A%20%22SCAG%22%7D) and throwing themselves into combat, striking with their body itself and giving themselves over to the fury of battle.",
                         "",
                         "## Restriction\u2014Dwarves Only",
                         "Only dwarves can follow the Path of the Battlerager. The battlerager fills a particular niche in dwarven society and culture.",
                         "Your DM can lift this restriction to better suit the campaign. The restriction exists for the Forgotten Realms. It might not apply to your DM's setting or your DM's version of the Realms.",
                         "",
                         "## Battlerager Armor",
-                        "When you choose this path at 3rd level, you gain the ability to use spiked armor as a weapon.",
-                        "While you are wearing spiked armor and are raging, you can use a bonus action to make one melee weapon attack with your armor spikes at a target within 5 feet of you. If the attack hits, the spikes deal **1d4** piercing damage. You use your Strength modifier for the attack and damage rolls.",
+                        "When you choose this path at 3rd level, you gain the ability to use [spiked armor](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22spiked%20armor%22%2C%20%22source%22%3A%20%22SCAG%22%7D) as a weapon.",
+                        "While you are wearing [spiked armor](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22spiked%20armor%22%2C%20%22source%22%3A%20%22SCAG%22%7D) and are raging, you can use a bonus action to make one melee weapon attack with your armor spikes at a target within 5 feet of you. If the attack hits, the spikes deal **1d4** piercing damage. You use your Strength modifier for the attack and damage rolls.",
                         "Additionally, when you use the **Attack** action to grapple a creature, the target takes 3 piercing damage if your grapple check succeeds."
                     ]
                 },
@@ -622,7 +622,7 @@
                     "source": "SCAG",
                     "level": 14,
                     "entries": [
-                        "Starting at 14th level, when a creature within 5 feet of you hits you with a melee attack, the attacker takes 3 piercing damage if you are raging, aren't *incapacitated*, and are wearing spiked armor."
+                        "Starting at 14th level, when a creature within 5 feet of you hits you with a melee attack, the attacker takes 3 piercing damage if you are raging, aren't *incapacitated*, and are wearing [spiked armor](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22spiked%20armor%22%2C%20%22source%22%3A%20%22SCAG%22%7D)."
                     ]
                 }
             ]
@@ -1493,12 +1493,12 @@
         "### Personal Totems",
         "| d6 | Totem |",
         "| :---: | :---- |",
-        "| 1 | A tuft of fur from a solitary wolf that you befriended during a hunt |",
-        "| 2 | Three eagle feathers given to you by a wise shaman, who told you they would play a role in determining your fate |",
-        "| 3 | A necklace made from the claws of a young cave bear that you slew singlehandedly as a child |",
-        "| 4 | A small leather pouch holding three stones that represent your ancestors |",
-        "| 5 | A few small bones from the first beast you killed, tied together with colored wool |",
-        "| 6 | An egg-sized stone in the shape of your spirit animal that appeared one day in your belt pouch |",
+        "| 1  | A tuft of fur from a solitary wolf that you befriended during a hunt |",
+        "| 2  | Three eagle feathers given to you by a wise shaman, who told you they would play a role in determining your fate |",
+        "| 3  | A necklace made from the claws of a young cave bear that you slew singlehandedly as a child |",
+        "| 4  | A small leather pouch holding three stones that represent your ancestors |",
+        "| 5  | A few small bones from the first beast you killed, tied together with colored wool |",
+        "| 6  | An egg-sized stone in the shape of your spirit animal that appeared one day in your belt pouch |",
         "",
         "",
         "## Tattoos",
@@ -1508,12 +1508,12 @@
         "### Tattoos",
         "| d6 | Tattoo |",
         "| :---: | :---- |",
-        "| 1 | The wings of an eagle are spread wide across your upper back. |",
-        "| 2 | Etched on the backs of your hands are the paws of a cave bear. |",
-        "| 3 | The symbols of your clan are displayed in viny patterns along your arms. |",
-        "| 4 | The antlers of an elk are inked across your back. |",
-        "| 5 | Images of your spirit animal are tattooed along your weapon arm and hand. |",
-        "| 6 | The eyes of a wolf are marked on your back to help you see and ward off evil spirits. |",
+        "| 1  | The wings of an eagle are spread wide across your upper back. |",
+        "| 2  | Etched on the backs of your hands are the paws of a cave bear. |",
+        "| 3  | The symbols of your clan are displayed in viny patterns along your arms. |",
+        "| 4  | The antlers of an elk are inked across your back. |",
+        "| 5  | Images of your spirit animal are tattooed along your weapon arm and hand. |",
+        "| 6  | The eyes of a wolf are marked on your back to help you see and ward off evil spirits. |",
         "",
         "",
         "## Superstitions",
@@ -1525,12 +1525,12 @@
         "### Superstition",
         "| d6 | Superstition |",
         "| :---: | :---- |",
-        "| 1 | If you disturb the bones of the dead, you inherit all the troubles that plagued them in life. |",
-        "| 2 | Never trust a wizard. They're all devils in disguise, especially the friendly ones. |",
-        "| 3 | Dwarves have lost their spirits, and are almost like the undead. That's why they live underground. |",
-        "| 4 | Magical things bring trouble. Never sleep with a magic object within ten feet of you. |",
-        "| 5 | When you walk through a graveyard, be sure to wear silver, or a ghost might jump into your body. |",
-        "| 6 | If an elf looks you in the eyes, she's trying to read your thoughts. |",
+        "| 1  | If you disturb the bones of the dead, you inherit all the troubles that plagued them in life. |",
+        "| 2  | Never trust a wizard. They're all devils in disguise, especially the friendly ones. |",
+        "| 3  | Dwarves have lost their spirits, and are almost like the undead. That's why they live underground. |",
+        "| 4  | Magical things bring trouble. Never sleep with a magic object within ten feet of you. |",
+        "| 5  | When you walk through a graveyard, be sure to wear silver, or a ghost might jump into your body. |",
+        "| 6  | If an elf looks you in the eyes, she's trying to read your thoughts. |",
         ""
     ]
 }

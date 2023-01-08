@@ -140,7 +140,7 @@
             "",
             "**Decadent Mastery:** You learn one language of your choice, and you are proficient with one skill or **Tool (phb) - Page 5** of your choice. In the timeless city of Tu'narath, githyanki have bountiful time to master odd bits of knowledge.",
             "",
-            "**Martial Prodigy:** You are proficient with light and medium armor and with shortswords, longswords, and greatswords.",
+            "**Martial Prodigy:** You are proficient with light and medium armor and with [shortsword](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shortswords%22%2C%20%22source%22%3A%20%22PHB%22%7D), [longsword](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22longswords%22%2C%20%22source%22%3A%20%22PHB%22%7D), and [greatsword](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22greatswords%22%2C%20%22source%22%3A%20%22PHB%22%7D).",
             "",
             "**Githyanki Psionics:** You know the *mage hand* cantrip, and the hand is *invisible* when you cast the cantrip with this trait.",
             "When you reach 3rd level, you can cast *jump* once with this trait, and you regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the *misty step* spell once with this trait, and you regain the ability to do so when you finish a long rest.",

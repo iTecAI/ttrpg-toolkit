@@ -6698,7 +6698,7 @@
             "dexterity"
         ],
         "text": [
-            "You plant four pieces of nonmagical ammunition\u2014arrows or crossbow bolts\u2014in the ground within range and lay magic upon them to protect an area. Until the spell ends, whenever a creature other than you comes within 30 feet of the ammunition for the first time on a turn or ends its turn there, one piece of ammunition flies up to strike it. The creature must succeed on a Dexterity saving throw or take **1d6** piercing damage. The piece of ammunition is then destroyed. The spell ends when no ammunition remains.",
+            "You plant four pieces of nonmagical ammunition\u2014[arrow](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22arrows%22%2C%20%22source%22%3A%20%22PHB%22%7D) or [crossbow bolt](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22crossbow%20bolts%22%2C%20%22source%22%3A%20%22PHB%22%7D)\u2014in the ground within range and lay magic upon them to protect an area. Until the spell ends, whenever a creature other than you comes within 30 feet of the ammunition for the first time on a turn or ends its turn there, one piece of ammunition flies up to strike it. The creature must succeed on a Dexterity saving throw or take **1d6** piercing damage. The piece of ammunition is then destroyed. The spell ends when no ammunition remains.",
             "When you cast this spell, you can designate any creatures you choose, and the spell ignores them.",
             "",
             "***At Higher Levels.*** When you cast this spell using a spell slot of 3rd level or higher, the amount of ammunition that can be affected increases by two for each slot level above 2nd."
@@ -17473,7 +17473,7 @@
             }
         ],
         "text": [
-            "Choose an object that you can see within range. The object can be a door, a box, a chest, a set of manacles, a padlock, or another object that contains a mundane or magical means that prevents access.",
+            "Choose an object that you can see within range. The object can be a door, a box, a [chest](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22chest%22%2C%20%22source%22%3A%20%22PHB%22%7D), a set of [manacles](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22manacles%22%2C%20%22source%22%3A%20%22PHB%22%7D), a padlock, or another object that contains a mundane or magical means that prevents access.",
             "A target that is held shut by a mundane lock or that is stuck or barred becomes unlocked, unstuck, or unbarred. If the object has multiple locks, only one of them is unlocked.",
             "If you choose a target that is held shut with *arcane lock*, that spell is suppressed for 10 minutes, during which time the target can be opened and shut normally.",
             "When you cast the spell, a loud knock, audible from as far away as 300 feet, emanates from the target object."
@@ -25872,7 +25872,7 @@
             }
         ],
         "text": [
-            "The wood of a club or quarterstaff you are holding is imbued with nature's power. For the duration, you can use your spellcasting ability instead of Strength for the attack and damage rolls of melee attacks using that weapon, and the weapon's damage die becomes a d8. The weapon also becomes magical, if it isn't already. The spell ends if you cast it again or if you let go of the weapon."
+            "The wood of a [club](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22club%22%2C%20%22source%22%3A%20%22PHB%22%7D) or [quarterstaff](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22quarterstaff%22%2C%20%22source%22%3A%20%22PHB%22%7D) you are holding is imbued with nature's power. For the duration, you can use your spellcasting ability instead of Strength for the attack and damage rolls of melee attacks using that weapon, and the weapon's damage die becomes a d8. The weapon also becomes magical, if it isn't already. The spell ends if you cast it again or if you let go of the weapon."
         ],
         "spell_lists": [
             {

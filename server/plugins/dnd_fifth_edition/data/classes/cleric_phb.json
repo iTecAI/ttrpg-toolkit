@@ -13,7 +13,7 @@
     "armor_proficiency": [
         "light",
         "medium",
-        "shields"
+        "[shield](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shields%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
     ],
     "weapon_proficiency": [
         "simple"
@@ -36,11 +36,11 @@
         "backgroundItems": true,
         "gold": "5d4 * 10",
         "items": [
-            "(a) a mace or (b) a warhammer (if proficient)",
-            "(a) scale mail, (b) leather armor, or (c) chain mail (if proficient)",
-            "(a) a light crossbow and 20 bolts or (b) any simple weapon",
-            "(a) a priest's pack or (b) an explorer's pack",
-            "A shield and a holy symbol"
+            "(a) a [mace](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22mace%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) a [warhammer](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22warhammer%22%2C%20%22source%22%3A%20%22PHB%22%7D) (if proficient)",
+            "(a) [scale mail](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22scale%20mail%22%2C%20%22source%22%3A%20%22PHB%22%7D), (b) [leather armor](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22leather%20armor%22%2C%20%22source%22%3A%20%22PHB%22%7D), or (c) [chain mail](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22chain%20mail%22%2C%20%22source%22%3A%20%22PHB%22%7D) (if proficient)",
+            "(a) a [light crossbow](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22light%20crossbow%22%2C%20%22source%22%3A%20%22PHB%22%7D) and [Crossbow Bolts (20)](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%2220%20bolts%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) any simple weapon",
+            "(a) a [priest's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22priest%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) an [explorer's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22explorer%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
+            "A [shield](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shield%22%2C%20%22source%22%3A%20%22PHB%22%7D) and a [holy symbol](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22holy%20symbol%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
         ]
     },
     "multiclass_requirements": {
@@ -49,7 +49,7 @@
     "multiclass_armor_proficiency": [
         "light",
         "medium",
-        "shields"
+        "[shield](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shields%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
     ],
     "multiclass_weapon_proficiency": [],
     "multiclass_tool_proficiency": [],
@@ -108,7 +108,7 @@
                 "You can cast a cleric spell as a ritual if that spell has the ritual tag and you have the spell prepared.",
                 "",
                 "## Spellcasting Focus",
-                "You can use a holy symbol as a spellcasting focus for your cleric spells."
+                "You can use a [holy symbol](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22holy%20symbol%22%2C%20%22source%22%3A%20%22PHB%22%7D) as a spellcasting focus for your cleric spells."
             ]
         },
         {
@@ -2608,7 +2608,7 @@
                         "",
                         "",
                         "## Bonus Proficiency",
-                        "When you choose this domain at 1st level, you gain proficiency with heavy armor and smith's tools.",
+                        "When you choose this domain at 1st level, you gain proficiency with heavy armor and [smith's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22smith%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D).",
                         "",
                         "## Blessing of the Forge",
                         "At 1st level, you gain the ability to imbue magic into a weapon or armor. At the end of a long rest, you can touch one nonmagical object that is a suit of armor or a simple or martial weapon. Until the end of your next long rest or until you die, the object becomes a magic item, granting a +1 bonus to AC if it's armor or a +1 bonus to attack and damage rolls if it's a weapon.",
@@ -3793,12 +3793,12 @@
         "### Temple",
         "| d6 | Temple |",
         "| :---: | :---- |",
-        "| 1 | Your temple is said to be the oldest surviving structure built to honor your god. |",
-        "| 2 | Acolytes of several like-minded deities all received instruction together in your temple. |",
-        "| 3 | You come from a temple famed for the brewery it operates. Some say you smell like one of its ales. |",
-        "| 4 | Your temple is a fortress and a proving ground that trains warrior-priests. |",
-        "| 5 | Your temple is a peaceful, humble place, filled with vegetable gardens and simple priests. |",
-        "| 6 | You served in a temple in the Outer Planes. |",
+        "| 1  | Your temple is said to be the oldest surviving structure built to honor your god. |",
+        "| 2  | Acolytes of several like-minded deities all received instruction together in your temple. |",
+        "| 3  | You come from a temple famed for the brewery it operates. Some say you smell like one of its ales. |",
+        "| 4  | Your temple is a fortress and a proving ground that trains warrior-priests. |",
+        "| 5  | Your temple is a peaceful, humble place, filled with vegetable gardens and simple priests. |",
+        "| 6  | You served in a temple in the Outer Planes. |",
         "",
         "",
         "## Keepsake",
@@ -3807,12 +3807,12 @@
         "### Keepsake",
         "| d6 | Keepsake |",
         "| :---: | :---- |",
-        "| 1 | The finger bone of a saint |",
-        "| 2 | A metal-bound book that tells how to hunt and destroy infernal creatures |",
-        "| 3 | A pig's whistle that reminds you of your humble and beloved mentor |",
-        "| 4 | A braid of hair woven from the tail of a unicorn |",
-        "| 5 | A scroll that describes how best to rid the world of necromancers |",
-        "| 6 | A runestone said to be blessed by your god |",
+        "| 1  | The finger bone of a saint |",
+        "| 2  | A metal-bound book that tells how to hunt and destroy infernal creatures |",
+        "| 3  | A pig's whistle that reminds you of your humble and beloved mentor |",
+        "| 4  | A braid of hair woven from the tail of a unicorn |",
+        "| 5  | A scroll that describes how best to rid the world of necromancers |",
+        "| 6  | A runestone said to be blessed by your god |",
         "",
         "",
         "## Secret",
@@ -3822,12 +3822,12 @@
         "### Secret",
         "| d6 | Secret |",
         "| :---: | :---- |",
-        "| 1 | An imp offers you counsel. You try to ignore the creature, but sometimes its advice is helpful. |",
-        "| 2 | You believe that, in the final analysis, the gods are nothing more than ultrapowerful mortal creatures. |",
-        "| 3 | You acknowledge the power of the gods, but you think that most events are dictated by pure chance. |",
-        "| 4 | Even though you can work divine magic, you have never truly felt the presence of a divine essence within yourself. |",
-        "| 5 | You are plagued by nightmares that you believe are sent by your god as punishment for some unknown transgression. |",
-        "| 6 | In times of despair, you feel that you are but a plaything of the gods, and you resent their remoteness. |",
+        "| 1  | An imp offers you counsel. You try to ignore the creature, but sometimes its advice is helpful. |",
+        "| 2  | You believe that, in the final analysis, the gods are nothing more than ultrapowerful mortal creatures. |",
+        "| 3  | You acknowledge the power of the gods, but you think that most events are dictated by pure chance. |",
+        "| 4  | Even though you can work divine magic, you have never truly felt the presence of a divine essence within yourself. |",
+        "| 5  | You are plagued by nightmares that you believe are sent by your god as punishment for some unknown transgression. |",
+        "| 6  | In times of despair, you feel that you are but a plaything of the gods, and you resent their remoteness. |",
         "",
         "",
         "> **Serving a Pantheon, Philosophy, or Force**",

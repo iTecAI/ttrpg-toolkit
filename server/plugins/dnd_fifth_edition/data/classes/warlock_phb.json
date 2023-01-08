@@ -36,10 +36,10 @@
         "backgroundItems": true,
         "gold": "4d4 * 10",
         "items": [
-            "(a) a light crossbow and 20 bolts or (b) any simple weapon",
-            "(a) a component pouch or (b) an arcane focus",
-            "(a) a scholar's pack or (b) a dungeoneer's pack",
-            "Leather armor, any simple weapon, and two daggers"
+            "(a) a [light crossbow](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22light%20crossbow%22%2C%20%22source%22%3A%20%22PHB%22%7D) and [crossbow bolts (20)](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%2220%20bolts%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) any simple weapon",
+            "(a) a [component pouch](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22component%20pouch%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) an [arcane focus](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22arcane%20focus%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
+            "(a) a [scholar's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22scholar%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) a [dungeoneer's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22dungeoneer%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
+            "[Leather armor](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22Leather%20armor%22%2C%20%22source%22%3A%20%22PHB%22%7D), any simple weapon, and two [dagger](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22daggers%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
         ]
     },
     "multiclass_requirements": {
@@ -107,7 +107,7 @@
                 "**Spell:** ['Charisma']",
                 "",
                 "## Spellcasting Focus",
-                "You can use an arcane focus as a spellcasting focus for your warlock spells."
+                "You can use an [arcane focus](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22arcane%20focus%22%2C%20%22source%22%3A%20%22PHB%22%7D) as a spellcasting focus for your warlock spells."
             ]
         },
         {
@@ -1984,12 +1984,12 @@
         "### Patron Attitudes",
         "| d6 | Attitude |",
         "| :---: | :---- |",
-        "| 1 | Your patron has guided and helped your family for generations and is kindly toward you. |",
-        "| 2 | Each interaction with your capricious patron is a surprise, whether pleasant or painful. |",
-        "| 3 | Your patron is the spirit of a long-dead hero who sees your pact as a way for it to continue to influence the world. |",
-        "| 4 | Your patron is a strict disciplinarian but treats you with a measure of respect. |",
-        "| 5 | Your patron tricked you into a pact and treats you as a slave. |",
-        "| 6 | You are mostly left to your own devices with no interference from your patron. Sometimes you dread the demands it will make when it does appear. |",
+        "| 1  | Your patron has guided and helped your family for generations and is kindly toward you. |",
+        "| 2  | Each interaction with your capricious patron is a surprise, whether pleasant or painful. |",
+        "| 3  | Your patron is the spirit of a long-dead hero who sees your pact as a way for it to continue to influence the world. |",
+        "| 4  | Your patron is a strict disciplinarian but treats you with a measure of respect. |",
+        "| 5  | Your patron tricked you into a pact and treats you as a slave. |",
+        "| 6  | You are mostly left to your own devices with no interference from your patron. Sometimes you dread the demands it will make when it does appear. |",
         "",
         "",
         "## Special Terms of the Pact",
@@ -1999,12 +1999,12 @@
         "### Special Terms",
         "| d6 | Term |",
         "| :---: | :---- |",
-        "| 1 | When directed, you must take immediate action against a specific enemy of your patron. |",
-        "| 2 | Your pact tests your willpower; you are required to abstain from alcohol and other intoxicants. |",
-        "| 3 | At least once a day, you must inscribe or carve your patron's name or symbol on the wall of a building. |",
-        "| 4 | You must occasionally conduct bizarre rituals to maintain your pact. |",
-        "| 5 | You can never wear the same outfit twice, since your patron finds such predictability to be boring. |",
-        "| 6 | When you use an eldritch invocation, you must speak your patron's name aloud or risk incurring its displeasure. |",
+        "| 1  | When directed, you must take immediate action against a specific enemy of your patron. |",
+        "| 2  | Your pact tests your willpower; you are required to abstain from alcohol and other intoxicants. |",
+        "| 3  | At least once a day, you must inscribe or carve your patron's name or symbol on the wall of a building. |",
+        "| 4  | You must occasionally conduct bizarre rituals to maintain your pact. |",
+        "| 5  | You can never wear the same outfit twice, since your patron finds such predictability to be boring. |",
+        "| 6  | When you use an eldritch invocation, you must speak your patron's name aloud or risk incurring its displeasure. |",
         "",
         "",
         "## Binding Mark",

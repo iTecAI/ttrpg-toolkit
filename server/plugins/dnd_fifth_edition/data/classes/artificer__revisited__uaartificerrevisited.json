@@ -13,18 +13,18 @@
     "armor_proficiency": [
         "light",
         "medium",
-        "shields"
+        "[shield](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shields%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
     ],
     "weapon_proficiency": [
         "simple",
-        "hand crossbows",
-        "heavy crossbows",
+        "[hand crossbow](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22hand%20crossbows%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
+        "[heavy crossbow](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22heavy%20crossbows%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
         "firearms"
     ],
     "tool_proficiency": [
-        "thieves' tools",
-        "tinker's tools",
-        "one type of artisan's tools of your choice"
+        "[thieves' tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22thieves%27%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
+        "[tinker's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22tinker%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
+        "one type of [artisan's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22artisan%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) of your choice"
     ],
     "skill_proficiency": [
         {
@@ -46,9 +46,9 @@
         "gold": "5d4 * 10",
         "items": [
             "any two simple weapons",
-            "a light crossbow and 20 bolts",
-            "(a) studded leather armor or (b) scale mail",
-            "thieves' tools and a dungeoneer's pack"
+            "a [light crossbow](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22light%20crossbow%22%2C%20%22source%22%3A%20%22PHB%22%7D) and [crossbow bolts (20)](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%2220%20bolts%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
+            "(a) [studded leather armor](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22studded%20leather%20armor%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) [scale mail](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22scale%20mail%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
+            "[thieves' tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22thieves%27%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) and a [dungeoneer's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22dungeoneer%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
         ]
     },
     "multiclass_requirements": {
@@ -57,12 +57,12 @@
     "multiclass_armor_proficiency": [
         "light",
         "medium",
-        "shields"
+        "[shield](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shields%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
     ],
     "multiclass_weapon_proficiency": [],
     "multiclass_tool_proficiency": [
-        "thieves' tools",
-        "tinker's tools"
+        "[thieves' tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22thieves%27%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
+        "[tinker's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22tinker%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
     ],
     "multiclass_skill_proficiency": null,
     "spellcasting": {
@@ -99,7 +99,7 @@
             "source": "UAArtificerRevisited",
             "level": 1,
             "entries": [
-                "At 1st level, you learn how to invest a spark of magic in objects that would otherwise be mundane. To use this ability, you must have thieves' tools, tinker's tools, or other artisan's tools in hand. You then touch a Tiny nonmagical object as an action and give it one of the following magical properties of your choice:",
+                "At 1st level, you learn how to invest a spark of magic in objects that would otherwise be mundane. To use this ability, you must have [thieves' tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22thieves%27%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D), [tinker's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22tinker%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D), or other [artisan's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22artisan%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) in hand. You then touch a Tiny nonmagical object as an action and give it one of the following magical properties of your choice:",
                 "",
                 "The object sheds bright light in a 5-foot radius and dim light for an additional 5 feet.",
                 "Whenever tapped by a creature, the object emits a recorded message that can be heard up to 10 feet away. You utter the message when you bestow this property on the object, and the recording can be no more than 6 seconds long.",
@@ -119,7 +119,7 @@
                 "You have studied the workings of magic, how to channel it through objects, and how to awaken it within them. As a result, you have gained a limited ability to cast spells. To observers, you don't appear to be casting spells in a conventional way; you look as if you're producing wonders through various items.",
                 "",
                 "## Tools Required",
-                "You produce your artificer spell effects through your tools. You must have a spellcasting focus\u2014specifically thieves' tools or some kind of artisan's tool\u2014in hand when you cast any spell with this Spellcasting feature. You must be proficient with the tool to use it in this way. See chapter 5, \"**Equipment (phb) - Page 6**,\" in the Player's Handbook for descriptions of these tools.",
+                "You produce your artificer spell effects through your tools. You must have a spellcasting focus\u2014specifically [thieves' tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22thieves%27%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) or some kind of artisan's tool\u2014in hand when you cast any spell with this Spellcasting feature. You must be proficient with the tool to use it in this way. See chapter 5, \"**Equipment (phb) - Page 6**,\" in the Player's Handbook for descriptions of these tools.",
                 "After you gain the Infuse Item feature at 2nd level, you can also use any item bearing one of your infusions as a spellcasting focus.",
                 "",
                 "## Cantrips",
@@ -142,7 +142,7 @@
                 "",
                 "> **The Magic of Artifice**",
                 ">",
-                "> As an artificer, you use tools when you cast your spells. When describing your spellcasting, think about how you're using a tool to perform the spell effect. If you cast *cure wounds* using alchemist's supplies, you could be quickly producing a salve. If you cast it using tinker's tools, you might have a miniature mechanical spider that binds wounds. When you cast *poison spray*, you could fling foul chemicals or use a wand that spits venom. The effect of the spell is the same as for a spellcaster of any other class, but your method of spellcasting is special.",
+                "> As an artificer, you use tools when you cast your spells. When describing your spellcasting, think about how you're using a tool to perform the spell effect. If you cast *cure wounds* using [alchemist's supplies](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22alchemist%27s%20supplies%22%2C%20%22source%22%3A%20%22PHB%22%7D), you could be quickly producing a salve. If you cast it using [tinker's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22tinker%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D), you might have a miniature mechanical spider that binds wounds. When you cast *poison spray*, you could fling foul chemicals or use a wand that spits venom. The effect of the spell is the same as for a spellcaster of any other class, but your method of spellcasting is special.",
                 "> The same principle applies when you prepare your spells. As an artificer, you don't study a spellbook or pray to prepare your spells. Instead, you work with your tools and create the specialized items you'll use to produce your effects. If you replace *cure wounds* with *shocking grasp*, you might be breaking down the device you used to heal and creating an offensive item in its place\u2014perhaps a gauntlet that lets you channel a surge of energy.",
                 "> Such details don't limit you in any way or provide you with any benefit. You don't have to justify how you're using tools to cast a spell. But describing your spellcasting creatively is a fun way to distinguish yourself from other spellcasters.",
                 ""
@@ -471,7 +471,7 @@
                         "A master of engineering, you forge a firearm powered by a combination of science and magic.",
                         "",
                         "## Master Smith",
-                        "When you choose this specialization at 1st level, you gain proficiency with smith's tools, and you learn the mending cantrip.",
+                        "When you choose this specialization at 1st level, you gain proficiency with [smith's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22smith%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D), and you learn the mending cantrip.",
                         "",
                         "## Thunder Cannon",
                         "At 1st level, you forge a deadly firearm using a combination of arcane magic and your knowledge of engineering and metallurgy. This firearm is called a Thunder Cannon. It is a ferocious weapon that fires leaden bullets that can punch through armor with ease.",
@@ -547,7 +547,7 @@
                         "By the time you adopt this specialty at 3rd level, you're deeply familiar with employing its tools.",
                         "",
                         "## Proficiencies",
-                        "You gain proficiency with alchemist's supplies and the herbalism kit, assuming you don't already have them. You also gain alchemist's supplies and an herbalism kit for free\u2014the result of tinkering you've done as you've prepared for this specialization.",
+                        "You gain proficiency with [alchemist's supplies](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22alchemist%27s%20supplies%22%2C%20%22source%22%3A%20%22PHB%22%7D) and the [herbalism kit](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22herbalism%20kit%22%2C%20%22source%22%3A%20%22PHB%22%7D), assuming you don't already have them. You also gain [alchemist's supplies](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22alchemist%27s%20supplies%22%2C%20%22source%22%3A%20%22PHB%22%7D) and an [herbalism kit](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22herbalism%20kit%22%2C%20%22source%22%3A%20%22PHB%22%7D) for free\u2014the result of tinkering you've done as you've prepared for this specialization.",
                         "",
                         "## Crafting",
                         "If you craft a magic item in the potion category, it takes you a quarter of the normal time, and it costs you half as much of the usual gold.",
@@ -567,10 +567,10 @@
                         "",
                         "## Alchemical Homunculus",
                         "At 3rd level, you learn ancient methods for magically creating a special homunculus that is formed by alchemical substances.",
-                        "Whenever you finish a long rest and your alchemist's supplies are with you, you can form this homunculus in an unoccupied space within 5 feet of you. If you already have a homunculus from this feature, the first one immediately dies.",
+                        "Whenever you finish a long rest and your [alchemist's supplies](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22alchemist%27s%20supplies%22%2C%20%22source%22%3A%20%22PHB%22%7D) are with you, you can form this homunculus in an unoccupied space within 5 feet of you. If you already have a homunculus from this feature, the first one immediately dies.",
                         "The homunculus is friendly to you and your companions, and it obeys your commands. See this creature's game statistics in the **Alchemical Homunculus** stat block. You determine the homunculus's appearance, which includes wings and bits of alchemical equipment. Some alchemists prefer mechanical-looking birds, whereas others like winged vials or miniature cauldrons.",
                         "In combat, the homunculus shares your initiative count, but it takes its turn immediately after yours. The only action it takes on its turn is the **Dodge** action, unless you take a bonus action on your turn to command it to take one of the actions in its stat block or to take the **Dash**, **Disengage**, or **Help** action.",
-                        "If the *mending* spell is cast on it, it regains 2d6 hit points. If it has died within the last hour, you can use your alchemist's supplies as an action to revive it, provided you are within 5 feet of it and you expend a spell slot of 1st level or higher. The homunculus returns to life with all its hit points restored."
+                        "If the *mending* spell is cast on it, it regains 2d6 hit points. If it has died within the last hour, you can use your [alchemist's supplies](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22alchemist%27s%20supplies%22%2C%20%22source%22%3A%20%22PHB%22%7D) as an action to revive it, provided you are within 5 feet of it and you expend a spell slot of 1st level or higher. The homunculus returns to life with all its hit points restored."
                     ]
                 },
                 {
@@ -580,8 +580,8 @@
                     "source": "UAArtificerRevisited",
                     "level": 6,
                     "entries": [
-                        "At 6th level, your command of magical chemicals has become masterful, enhancing the healing and damage you create through them. When you cast a spell using your alchemist's supplies as the spellcasting focus, you gain a bonus to one roll of the spell. That roll must restore hit points or be a damage roll that deals acid or poison damage, and the bonus equals your Intelligence modifier (minimum of +1).",
-                        "In addition, you can cast *lesser restoration* without expending a spell slot, provided you use alchemist's supplies as the spellcasting focus. You can do so a number of times per day equal to your Intelligence modifier (minimum of once)."
+                        "At 6th level, your command of magical chemicals has become masterful, enhancing the healing and damage you create through them. When you cast a spell using your [alchemist's supplies](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22alchemist%27s%20supplies%22%2C%20%22source%22%3A%20%22PHB%22%7D) as the spellcasting focus, you gain a bonus to one roll of the spell. That roll must restore hit points or be a damage roll that deals acid or poison damage, and the bonus equals your Intelligence modifier (minimum of +1).",
+                        "In addition, you can cast *lesser restoration* without expending a spell slot, provided you use [alchemist's supplies](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22alchemist%27s%20supplies%22%2C%20%22source%22%3A%20%22PHB%22%7D) as the spellcasting focus. You can do so a number of times per day equal to your Intelligence modifier (minimum of once)."
                     ]
                 },
                 {
@@ -592,7 +592,7 @@
                     "level": 14,
                     "entries": [
                         "By 14th level, you have been exposed to so many chemicals and unlocked their secrets that they pose little risk to you, and you can use them to quickly end certain ailments. You gain resistance to acid damage and poison damage, and you are now immune to the *poisoned* condition.",
-                        "In addition, you can cast *greater restoration* once without expending a spell slot and without providing the material component, provided you use alchemist's supplies as the spellcasting focus. You regain the ability to do so when you finish a long rest."
+                        "In addition, you can cast *greater restoration* once without expending a spell slot and without providing the material component, provided you use [alchemist's supplies](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22alchemist%27s%20supplies%22%2C%20%22source%22%3A%20%22PHB%22%7D) as the spellcasting focus. You regain the ability to do so when you finish a long rest."
                     ]
                 }
             ]
@@ -616,7 +616,7 @@
                         "By the time you adopt this specialty at 3rd level, you're deeply familiar with employing its tools.",
                         "",
                         "## Proficiencies",
-                        "You gain proficiency with calligrapher's supplies and the forgery kit, assuming you don't already have them. You also gain calligrapher's supplies and a forgery kit for free\u2014the result of tinkering you've done as you've prepared for this specialization.",
+                        "You gain proficiency with [calligrapher's supplies](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22calligrapher%27s%20supplies%22%2C%20%22source%22%3A%20%22PHB%22%7D) and the [forgery kit](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22forgery%20kit%22%2C%20%22source%22%3A%20%22PHB%22%7D), assuming you don't already have them. You also gain [calligrapher's supplies](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22calligrapher%27s%20supplies%22%2C%20%22source%22%3A%20%22PHB%22%7D) and a [forgery kit](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22forgery%20kit%22%2C%20%22source%22%3A%20%22PHB%22%7D) for free\u2014the result of tinkering you've done as you've prepared for this specialization.",
                         "",
                         "## Crafting",
                         "If you craft a magic item in the scroll category, it takes you a quarter of the normal time, and it costs you half as much of the usual gold.",
@@ -635,7 +635,7 @@
                         "",
                         "",
                         "## Artificial Mind",
-                        "At 3rd level, you discover how to awaken a mind inside an object. Whenever you finish a long rest and your calligrapher's supplies are with you, you can magically rouse a keen mind within a Tiny, nonmagical object on which you write mystical symbols. The object is a magic item while the mind is inside it, and you can use it as a spellcasting focus. If you already have an artificial mind from this feature, the first one immediately dissipates.",
+                        "At 3rd level, you discover how to awaken a mind inside an object. Whenever you finish a long rest and your [calligrapher's supplies](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22calligrapher%27s%20supplies%22%2C%20%22source%22%3A%20%22PHB%22%7D) are with you, you can magically rouse a keen mind within a Tiny, nonmagical object on which you write mystical symbols. The object is a magic item while the mind is inside it, and you can use it as a spellcasting focus. If you already have an artificial mind from this feature, the first one immediately dissipates.",
                         "The magic item has the following properties.",
                         "",
                         "## Telepathic Advisor",
@@ -717,7 +717,7 @@
                         "By the time you adopt this specialty at 3rd level, you're deeply familiar with employing its tools.",
                         "",
                         "## Proficiencies",
-                        "You gain proficiency with smith's tools and woodcarver's tools, assuming you don't already have them. You also gain those tools for free\u2014the result of tinkering you've done as you've prepared for this specialization.",
+                        "You gain proficiency with [smith's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22smith%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) and [woodcarver's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22woodcarver%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D), assuming you don't already have them. You also gain those tools for free\u2014the result of tinkering you've done as you've prepared for this specialization.",
                         "In addition, you gain the ability to use rods, staffs, and wands as spellcasting focuses for your artificer spells. You also gain a nonmagical, wooden wand for free, which you've carved in your spare time.",
                         "",
                         "## Crafting",
@@ -737,7 +737,7 @@
                         "",
                         "",
                         "## Arcane Turret",
-                        "At 3rd level, you learn how to create a magical turret. With your smith's tools in hand, you can take an action to magically summon a Medium turret in an unoccupied space on a horizontal surface within 5 feet of you.",
+                        "At 3rd level, you learn how to create a magical turret. With your [smith's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22smith%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) in hand, you can take an action to magically summon a Medium turret in an unoccupied space on a horizontal surface within 5 feet of you.",
                         "The turret is a magical object that occupies its space and that has crablike legs. It has an AC of 18 and a number of hit points equal to five times your artificer level. It is immune to poison damage, psychic damage, and all conditions. If it is forced to make an ability check or a saving throw, treat all its ability scores as 10 (+0). If the *mending* spell is cast on it, it regains 2d6 hit points. It disappears if it is reduced to 0 hit points or after 10 minutes. You can dismiss it early as an action.",
                         "When you summon the turret, you decide which type it is, choosing from the options on the Arcane Turrets table. On each of your turns, you can take a bonus action to cause the turret to activate if you are within 60 feet of it. As part of the same action, you can direct the turret to walk or climb up to 15 feet to an unoccupied space.",
                         "You can summon a turret once for free and must finish a long rest before doing so again. You can also summon the turret by expending a spell slot of 1st level or higher. If you summon a second turret, the first turret disappears.",
@@ -759,7 +759,7 @@
                     "source": "UAArtificerRevisited",
                     "level": 6,
                     "entries": [
-                        "By 6th level, you now regularly experiment with channeling different types of magic through wands. Whenever you finish a long rest and your woodcarver's tools are with you, you can touch a nonmagical, wooden wand and turn it into a magic item. When you do so, you invest it with one artificer cantrip of your choice\u2014even one you don't know\u2014that has a casting time of 1 action. As an action, you can cause the magic wand to produce the cantrip, using your spellcasting ability modifier (other creatures are unable to use the wand's magic). The wand loses this magic when you finish your next long rest.",
+                        "By 6th level, you now regularly experiment with channeling different types of magic through wands. Whenever you finish a long rest and your [woodcarver's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22woodcarver%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) are with you, you can touch a nonmagical, wooden wand and turn it into a magic item. When you do so, you invest it with one artificer cantrip of your choice\u2014even one you don't know\u2014that has a casting time of 1 action. As an action, you can cause the magic wand to produce the cantrip, using your spellcasting ability modifier (other creatures are unable to use the wand's magic). The wand loses this magic when you finish your next long rest.",
                         "Any damage roll you make for a cantrip in the wand gains a bonus equal to your Intelligence modifier (minimum of +1).",
                         "When you reach 14th level in this class, you can invest the wand with two cantrips at the end of a long rest."
                     ]
@@ -797,7 +797,7 @@
                         "By the time you adopt this specialty at 3rd level, you're deeply familiar with employing its tools.",
                         "",
                         "## Proficiencies",
-                        "You gain proficiency with leatherworker's tools and smith's tools, assuming you don't already have them. You also gain leatherworker's tools and smith's tools for free\u2014the result of tinkering you've done as you've prepared for this specialization.",
+                        "You gain proficiency with [leatherworker's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22leatherworker%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) and [smith's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22smith%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D), assuming you don't already have them. You also gain [leatherworker's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22leatherworker%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) and [smith's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22smith%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) for free\u2014the result of tinkering you've done as you've prepared for this specialization.",
                         "",
                         "## Crafting",
                         "If you craft a magic item in the armor category, it takes you a quarter of the normal time, and it costs you half as much of the usual gold.",
@@ -824,8 +824,8 @@
                         "## Iron Defender",
                         "By 3rd level, the tinkering in your free time has borne you a faithful companion, an iron defender. This metallic creature resembles a hound, a cougar, a bear, or another four-legged creature of your choice. It is friendly to you and your companions, and it obeys your commands. See this creature's game statistics in the **iron defender** stat block.",
                         "In combat, the iron defender shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the **Dodge** action, unless you take a bonus action on your turn to command it to take one of the actions in its stat block or the **Dash**, **Disengage**, or **Help** action.",
-                        "If the *mending* spell is cast on it, it regains 2d6 hit points. If it has died within the last hour, you can use your smith's tools as an action to revive it, provided you are within 5 feet of it and you expend a spell slot of 1st level or higher. The iron defender returns to life after 1 minute with all its hit points restored.",
-                        "At the end of a long rest, you can create a new iron defender if you have your smith's tools with you. If you already have an iron defender from this feature, the first one immediately perishes."
+                        "If the *mending* spell is cast on it, it regains 2d6 hit points. If it has died within the last hour, you can use your [smith's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22smith%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) as an action to revive it, provided you are within 5 feet of it and you expend a spell slot of 1st level or higher. The iron defender returns to life after 1 minute with all its hit points restored.",
+                        "At the end of a long rest, you can create a new iron defender if you have your [smith's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22smith%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) with you. If you already have an iron defender from this feature, the first one immediately perishes."
                     ]
                 },
                 {
@@ -897,7 +897,7 @@
                         "",
                         "## Tools of the Trade",
                         "*3rd-level Armorer feature*",
-                        "You gain proficiency with heavy armor. You also gain proficiency with smith's tools. If you already have this tool proficiency, you gain proficiency with one other type of artisan's tools of your choice.",
+                        "You gain proficiency with heavy armor. You also gain proficiency with [smith's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22smith%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D). If you already have this tool proficiency, you gain proficiency with one other type of [artisan's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22artisan%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) of your choice.",
                         "",
                         "## Armorer Spells",
                         "*3rd-level Armorer feature*",
@@ -915,7 +915,7 @@
                         "",
                         "## Power Armor",
                         "*3rd-level Armorer feature*",
-                        "Your metallurgical pursuits have led to you making armor a conduit for your artificer magic. As an action, you can turn a suit of heavy armor you are wearing into power armor, provided you have smith's tools in hand.",
+                        "Your metallurgical pursuits have led to you making armor a conduit for your artificer magic. As an action, you can turn a suit of heavy armor you are wearing into power armor, provided you have [smith's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22smith%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) in hand.",
                         "You gain the following benefits while wearing the power armor:",
                         "",
                         "If the armor normally has a Strength requirement, the power armor lacks this requirement for you.",
@@ -927,7 +927,7 @@
                         "*3rd-level Armorer feature*",
                         "You can customize your power armor. When you do so, choose one of the following armor models: guardian or infiltrator. The model you choose gives you special benefits while you wear it.",
                         "Each model includes a special weapon. When you attack with that weapon, you can use your Intelligence modifier, instead of Strength or Dexterity, for the attack and damage rolls.",
-                        "You can change your power armor's model whenever you finish a short or long rest, provided you have smith's tools in hand.",
+                        "You can change your power armor's model whenever you finish a short or long rest, provided you have [smith's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22smith%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) in hand.",
                         "",
                         "## Guardian",
                         "You design your armor to be in the frontline of conflict. It has the following features:",
@@ -1022,7 +1022,7 @@
                         "An Alchemist is an expert at combining reagents to produce mystical effects. Alchemists use their creations to give life and to leech it away. Alchemy is the oldest of artificer traditions, and its versatility has long been valued during times of war and peace.",
                         "",
                         "## Tool Proficiency",
-                        "When you adopt this specialization at 3rd level, you gain proficiency with alchemist's supplies. If you already have this proficiency, you gain proficiency with one other type of artisan's tools of your choice.",
+                        "When you adopt this specialization at 3rd level, you gain proficiency with [alchemist's supplies](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22alchemist%27s%20supplies%22%2C%20%22source%22%3A%20%22PHB%22%7D). If you already have this proficiency, you gain proficiency with one other type of [artisan's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22artisan%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) of your choice.",
                         "",
                         "## Alchemist Spells",
                         "Starting at 3rd level, you always have certain spells prepared after you reach particular levels in this class, as shown in the Alchemist Spells table. These spells count as artificer spells for you, but they don't count against the number of artificer spells you prepare.",
@@ -1039,7 +1039,7 @@
                         "",
                         "## Experimental Elixir",
                         "Beginning at 3rd level, whenever you finish a long rest, you can magically produce an *experimental elixir* in an empty flask you touch. Roll on the Experimental Elixir table for the elixir's effect, which is triggered when someone drinks the elixir. As an action, a creature can drink the elixir or administer it to an *incapacitated* creature.",
-                        "Creating an *experimental elixir* requires you to have alchemist's supplies on your person, and any elixir you create with this feature lasts until it is drunk or until the end of your next long rest.",
+                        "Creating an *experimental elixir* requires you to have [alchemist's supplies](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22alchemist%27s%20supplies%22%2C%20%22source%22%3A%20%22PHB%22%7D) on your person, and any elixir you create with this feature lasts until it is drunk or until the end of your next long rest.",
                         "When you reach certain levels in this class, you can make more elixirs at the end of a long rest: two at 6th level and three at 15th level. Roll for each elixir's effect separately. Each elixir requires its own flask.",
                         "You can create additional *experimental elixirs* by expending a spell slot of 1st level or higher for each one. When you do so, you use your action to create the elixir in an empty flask you touch, and you choose the elixir's effect from the Experimental Elixir table.",
                         "",
@@ -1062,7 +1062,7 @@
                     "source": "TCE",
                     "level": 5,
                     "entries": [
-                        "At 5th level, you develop masterful command of magical chemicals, enhancing the healing and damage you create through them. Whenever you cast a spell using your alchemist's supplies as the spellcasting focus, you gain a bonus to one roll of the spell. That roll must restore hit points or be a damage roll that deals acid, fire, necrotic, or poison damage, and the bonus equals your Intelligence modifier (minimum of +1)."
+                        "At 5th level, you develop masterful command of magical chemicals, enhancing the healing and damage you create through them. Whenever you cast a spell using your [alchemist's supplies](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22alchemist%27s%20supplies%22%2C%20%22source%22%3A%20%22PHB%22%7D) as the spellcasting focus, you gain a bonus to one roll of the spell. That roll must restore hit points or be a damage roll that deals acid, fire, necrotic, or poison damage, and the bonus equals your Intelligence modifier (minimum of +1)."
                     ]
                 },
                 {
@@ -1075,7 +1075,7 @@
                         "Starting at 9th level, you can incorporate restorative reagents into some of your works:",
                         "",
                         "Whenever a creature drinks an *experimental elixir* you created, the creature gains temporary hit points equal to 2d6 + your Intelligence modifier (minimum of 1 temporary hit point).",
-                        "You can cast *lesser restoration* without expending a spell slot and without preparing the spell, provided you use alchemist's supplies as the spellcasting focus. You can do so a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses when you finish a long rest."
+                        "You can cast *lesser restoration* without expending a spell slot and without preparing the spell, provided you use [alchemist's supplies](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22alchemist%27s%20supplies%22%2C%20%22source%22%3A%20%22PHB%22%7D) as the spellcasting focus. You can do so a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses when you finish a long rest."
                     ]
                 },
                 {
@@ -1088,7 +1088,7 @@
                         "By 15th level, you have been exposed to so many chemicals that they pose little risk to you, and you can use them to quickly end certain ailments:",
                         "",
                         "You gain resistance to acid damage and poison damage, and you are immune to the *poisoned* condition.",
-                        "You can cast *greater restoration* and *heal* without expending a spell slot, without preparing the spell, and without material components, provided you use alchemist's supplies as the spellcasting focus. Once you cast either spell with this feature, you can't cast that spell with it again until you finish a long rest."
+                        "You can cast *greater restoration* and *heal* without expending a spell slot, without preparing the spell, and without material components, provided you use [alchemist's supplies](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22alchemist%27s%20supplies%22%2C%20%22source%22%3A%20%22PHB%22%7D) as the spellcasting focus. Once you cast either spell with this feature, you can't cast that spell with it again until you finish a long rest."
                     ]
                 }
             ]
@@ -1131,7 +1131,7 @@
                         "",
                         "## Tools of the Trade",
                         "*3rd-level Armorer feature*",
-                        "You gain proficiency with heavy armor. You also gain proficiency with smith's tools. If you already have this tool proficiency, you gain proficiency with one other type of artisan's tools of your choice.",
+                        "You gain proficiency with heavy armor. You also gain proficiency with [smith's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22smith%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D). If you already have this tool proficiency, you gain proficiency with one other type of [artisan's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22artisan%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) of your choice.",
                         "",
                         "## Armorer Spells",
                         "*3rd-level Armorer feature*",
@@ -1149,7 +1149,7 @@
                         "",
                         "## Arcane Armor",
                         "*3rd-level Armorer feature*",
-                        "Your metallurgical pursuits have led to you making armor a conduit for your magic. As an action, you can turn a suit of armor you are wearing into Arcane Armor, provided you have smith's tools in hand.",
+                        "Your metallurgical pursuits have led to you making armor a conduit for your magic. As an action, you can turn a suit of armor you are wearing into Arcane Armor, provided you have [smith's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22smith%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) in hand.",
                         "You gain the following benefits while wearing this armor:",
                         "",
                         "If the armor normally has a Strength requirement, the arcane armor lacks this requirement for you.",
@@ -1161,7 +1161,7 @@
                         "*3rd-level Armorer feature*",
                         "You can customize your Arcane Armor. When you do so, choose one of the following armor models: Guardian or Infiltrator. The model you choose gives you special benefits while you wear it.",
                         "Each model includes a special weapon. When you attack with that weapon, you can add your Intelligence modifier, instead of Strength or Dexterity, to the attack and damage rolls.",
-                        "You can change the armor's model whenever you finish a short or long rest, provided you have smith's tools in hand.",
+                        "You can change the armor's model whenever you finish a short or long rest, provided you have [smith's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22smith%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) in hand.",
                         "",
                         "",
                         "## Guardian",
@@ -1268,7 +1268,7 @@
                         "The gnome artificer Vi, an unlikely yet key member of House Cannith's warforged project, has been especially vocal about making things right: \"It's about time we fixed things instead of blowing them all to hell.\"",
                         "",
                         "## Tool Proficiency",
-                        "When you adopt this specialization at 3rd level, you gain proficiency with woodcarver's tools. If you already have this proficiency, you gain proficiency with one other type of artisan's tools of your choice.",
+                        "When you adopt this specialization at 3rd level, you gain proficiency with [woodcarver's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22woodcarver%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D). If you already have this proficiency, you gain proficiency with one other type of [artisan's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22artisan%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) of your choice.",
                         "",
                         "## Artillerist Spells",
                         "Starting at 3rd level, you always have certain spells prepared after you reach particular levels in this class, as shown in the Artillerist Spells table. These spells count as artificer spells for you, but they don't count against the number of artificer spells you prepare.",
@@ -1284,7 +1284,7 @@
                         "",
                         "",
                         "## Eldritch Cannon",
-                        "At 3rd level, you learn how to create a magical cannon. Using woodcarver's tools or smith's tools, you can take an action to magically create a Small or Tiny eldritch cannon in an unoccupied space on a horizontal surface within 5 feet of you. A Small eldritch cannon occupies its space, and a Tiny one can be held in one hand.",
+                        "At 3rd level, you learn how to create a magical cannon. Using [woodcarver's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22woodcarver%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) or [smith's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22smith%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D), you can take an action to magically create a Small or Tiny eldritch cannon in an unoccupied space on a horizontal surface within 5 feet of you. A Small eldritch cannon occupies its space, and a Tiny one can be held in one hand.",
                         "Once you create a cannon, you can't do so again until you finish a long rest or until you expend a spell slot of 1st level or higher. You can have only one cannon at a time and can't create one while your cannon is present.",
                         "The cannon is a magical object. Regardless of size, the cannon has an AC of 18 and a number of hit points equal to five times your artificer level. It is immune to poison damage and psychic damage, and all conditions. If it is forced to make an ability check or a saving throw, treat all its ability scores as 10 (+0). If the *mending* spell is cast on it, it regains 2d6 hit points. It disappears if it is reduced to 0 hit points or after 1 hour. You can dismiss it early as an action.",
                         "When you create the cannon, you determine its appearance and whether it has legs. You also decide which type it is, choosing from the options on the Eldritch Cannons table. On each of your turns, you can take a bonus action to cause the cannon to activate if you are within 60 feet of it. As part of the same bonus action, you can direct the cannon to walk or climb up to 15 feet to an unoccupied space, provided it has legs.",
@@ -1305,7 +1305,7 @@
                     "source": "TCE",
                     "level": 5,
                     "entries": [
-                        "At 5th level, you know how to turn a wand, staff, or rod into an arcane firearm, a conduit for your destructive spells. When you finish a long rest, you can use woodcarver's tools to carve special sigils into a wand, staff, or rod and thereby turn it into your arcane firearm. The sigils disappear from the object if you later carve them on a different item. The sigils otherwise last indefinitely.",
+                        "At 5th level, you know how to turn a wand, staff, or rod into an arcane firearm, a conduit for your destructive spells. When you finish a long rest, you can use [woodcarver's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22woodcarver%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) to carve special sigils into a wand, staff, or rod and thereby turn it into your arcane firearm. The sigils disappear from the object if you later carve them on a different item. The sigils otherwise last indefinitely.",
                         "You can use your arcane firearm as a spellcasting focus for your artificer spells. When you cast an artificer spell through the firearm, roll a **d8**, and you gain a bonus to one of the spell's damage rolls equal to the number rolled."
                     ]
                 },
@@ -1375,7 +1375,7 @@
                         "Battle Smiths played a key role in House Cannith's work on battle constructs and the original warforged, and after the Last War, these artificers led efforts to aid those who were injured in the war's horrific battles.",
                         "",
                         "## Tool Proficiency",
-                        "When you adopt this specialization at 3rd level, you gain proficiency with smith's tools. If you already have this proficiency, you gain proficiency with one other type of artisan's tools of your choice.",
+                        "When you adopt this specialization at 3rd level, you gain proficiency with [smith's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22smith%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D). If you already have this proficiency, you gain proficiency with one other type of [artisan's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22artisan%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) of your choice.",
                         "",
                         "## Battle Smith Spells",
                         "Starting at 3rd level, you always have certain spells prepared after you reach particular levels in this class, as shown in the Battle Smith Spells table. These spells count as artificer spells for you, but they don't count against the number of artificer spells you prepare.",
@@ -1399,8 +1399,8 @@
                         "## Steel Defender",
                         "By 3rd level, your tinkering has borne you a faithful companion, a **steel defender**. It is friendly to you and your companions, and it obeys your commands. See this creature's game statistics in the steel defender stat block, which uses your proficiency bonus (PB) in several places. You determine the creature's appearance and whether it has two legs or four; your choice has no effect on its game statistics.",
                         "In combat, the defender shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the **Dodge** action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are *incapacitated*, the defender can take any action of its choice, not just **Dodge**.",
-                        "If the *mending* spell is cast on it, it regains 2d6 hit points. If it has died within the last hour, you can use your smith's tools as an action to revive it, provided you are within 5 feet of it and you expend a spell slot of 1st level or higher. The steel defender returns to life after 1 minute with all its hit points restored.",
-                        "At the end of a long rest, you can create a new steel defender if you have your smith's tools with you. If you already have a steel defender from this feature, the first one immediately perishes. The defender also perishes if you die."
+                        "If the *mending* spell is cast on it, it regains 2d6 hit points. If it has died within the last hour, you can use your [smith's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22smith%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) as an action to revive it, provided you are within 5 feet of it and you expend a spell slot of 1st level or higher. The steel defender returns to life after 1 minute with all its hit points restored.",
+                        "At the end of a long rest, you can create a new steel defender if you have your [smith's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22smith%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) with you. If you already have a steel defender from this feature, the first one immediately perishes. The defender also perishes if you die."
                     ]
                 },
                 {
@@ -1449,7 +1449,7 @@
         "# Artificer",
         "*UAArtificerRevisited - 1*",
         "",
-        "Masters of unlocking magic in everyday objects, artificers are supreme inventors. They see magic as a complex system waiting to be decoded and controlled. Artificers use tools to channel arcane power, crafting temporary and permanent magical objects. To cast a spell, an artificer could use alchemist's supplies to create a potent elixir, calligrapher's supplies to inscribe a sigil of power on an ally's armor, or tinker's tools to craft a temporary charm. The magic of artificers is tied to their tools and their talents.",
+        "Masters of unlocking magic in everyday objects, artificers are supreme inventors. They see magic as a complex system waiting to be decoded and controlled. Artificers use tools to channel arcane power, crafting temporary and permanent magical objects. To cast a spell, an artificer could use [alchemist's supplies](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22alchemist%27s%20supplies%22%2C%20%22source%22%3A%20%22PHB%22%7D) to create a potent elixir, [calligrapher's supplies](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22calligrapher%27s%20supplies%22%2C%20%22source%22%3A%20%22PHB%22%7D) to inscribe a sigil of power on an ally's armor, or [tinker's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22tinker%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) to craft a temporary charm. The magic of artificers is tied to their tools and their talents.",
         "",
         "## Arcane Science",
         "In the world of Eberron, arcane magic has been harnessed as a form of science and deployed throughout society. Artificers reflect this development. Their knowledge of magical devices, and their ability to infuse mundane items with magical energy, allows the grand magical projects of Eberron to continue running. During the Last War, artificers were marshaled on a massive scale. Many lives were saved because of the inventions of brave artificers, but also countless lives were lost because of the mass destruction that artificers' creations unleashed.",
@@ -1482,7 +1482,7 @@
         "> As a multiclass character, you must have at least an Intelligence score of 13 to take a level in this class.",
         "> ",
         "> ## Proficiencies Gained",
-        "> If artificer isn't your initial class, here are the proficiencies you gain when you take your first level as an artificer: light armor, medium armor, shields, thieves' tools, tinker's tools.",
+        "> If artificer isn't your initial class, here are the proficiencies you gain when you take your first level as an artificer: light armor, medium armor, shields, [thieves' tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22thieves%27%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D), [tinker's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22tinker%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D).",
         "> ",
         "> ## Extra Attack",
         "> The Arcane Armament feature doesn't give you an additional attack if you also have the Extra Attack feature.",

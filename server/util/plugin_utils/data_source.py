@@ -3,6 +3,8 @@ from typing import Any, Dict
 from pydantic import BaseModel
 from ..orm import ORM
 from ..plugins import Plugin
+from urllib.parse import quote
+import json
 
 
 class AbstractDataSourceItem(ORM):
@@ -29,3 +31,9 @@ class AbstractDataSourceLoader:
 
 class SearchModel(BaseModel):
     fields: Dict[str, str]
+
+
+def build_data_search_url(plugin: str, category: str, fields: dict[str, Any]) -> str:
+    return "/compendium?plugin={plugin}&category={category}&fields={fields}".format(
+        plugin=plugin, category=category, fields=quote(json.dumps(fields))
+    )

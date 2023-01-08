@@ -86,7 +86,7 @@
             "",
             "***Atonement.*** You touch one willing creature whose alignment has changed, and you make a DC 20 Wisdom (Insight) check. On a success, you restore the target to its original alignment.",
             "",
-            "***Bless Water.*** You touch one vial of water and cause it to become holy water.",
+            "***Bless Water.*** You touch one [vial](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22vial%22%2C%20%22source%22%3A%20%22PHB%22%7D) of water and cause it to become [Holy Water (flask)](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22holy%20water%22%2C%20%22source%22%3A%20%22PHB%22%7D).",
             "",
             "***Coming of Age.*** You touch one humanoid old enough to be a young adult. For the next 24 hours, whenever the target makes an ability check, it can roll a d4 and add the number rolled to the ability check. A creature can benefit from this ceremony just once.",
             "",
