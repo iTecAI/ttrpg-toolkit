@@ -3,7 +3,7 @@ import logging
 
 import os
 from types import ModuleType
-from typing import Any, Dict, List, Union
+from typing import Any, Dict, List, Union, Optional
 
 from starlite import Controller, Router
 from .pip_manager import pip_install
@@ -255,7 +255,12 @@ class DataSourceLoader:
 
         return matches, nulls
 
-    def search(self, model: DataSearchModel) -> List[Any]:
+    def search(
+        self,
+        model: DataSearchModel,
+        page: Optional[int] = 0,
+        perPage: Optional[int] = -1,
+    ) -> dict:
         if not model.category in self.source["categories"].keys():
             raise ValueError("Category not found.")
 
@@ -310,8 +315,12 @@ class DataSourceLoader:
                 results.append(record)
             elif len(model.fields.keys()) == 0:
                 results.append(record)
+        if perPage < 0:
+            to_expand = results[:]
+        else:
+            to_expand = results[perPage * page : perPage * (page + 1)]
         parsed_results = []
-        for r in results:
+        for r in to_expand:
             with open(
                 os.path.join(self.plugin.plugin_directory, r["_file"]), "r"
             ) as fp:
@@ -324,7 +333,7 @@ class DataSourceLoader:
                 except:
                     pass
 
-        return parsed_results
+        return {"results": parsed_results, "page": page, "total_results": len(results)}
 
     def get_by_slug(self, category: str, slug: str) -> Any:
         if not category in self.source["categories"].keys():

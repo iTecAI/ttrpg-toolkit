@@ -10,6 +10,7 @@ import {
     MenuItem,
     Paper,
     Stack,
+    TablePagination,
     TextField,
     Tooltip,
     useTheme,
@@ -28,7 +29,7 @@ import {
 import { get, post } from "../../util/api";
 import { useSnackbar } from "notistack";
 import { useHorizontalScroll } from "../../util/hscroll";
-import { DataItem } from "../../models/compendium";
+import { DataItem, DataSearchResult } from "../../models/compendium";
 import { CompendiumItemRenderer } from "./renderers/compendiumItem";
 import { Masonry } from "@mui/lab";
 import { ModularRenderer } from "../../libs/modular-renderer";
@@ -56,6 +57,13 @@ export function Compendium() {
     const { enqueueSnackbar } = useSnackbar();
 
     const theme = useTheme();
+
+    const [resultCount, setResultCount] = useState<number>(0);
+    const [resultPage, setResultPage] = useState<number>(0);
+    const [resultsPerPage, setResultsPerPage] = useState<number>(24);
+    const [currentFields, setCurrentFields] = useState<{
+        [key: string]: DataSearchField;
+    }>({});
 
     useEffect(() => {
         if (plugin !== "") {
@@ -114,9 +122,52 @@ export function Compendium() {
         null
     );
 
+    function performSearch(
+        fields: { [key: string]: DataSearchField },
+        page: number,
+        count: number
+    ) {
+        setCurrentFields(fields);
+        if (plugin && category) {
+            setLoadingResults(true);
+            let filledFields: { [key: string]: DataSearchField } = {};
+            Object.keys(fields).forEach((k) => {
+                if (fields[k].value.length > 0) {
+                    filledFields[k] = fields[k];
+                }
+            });
+            post<DataSearchResult>(`/plugins/${plugin}/data/search`, {
+                body: {
+                    category: category,
+                    all_required: true,
+                    fields: filledFields,
+                },
+                urlParams: {
+                    page: page.toString(),
+                    count: count.toString(),
+                },
+            }).then((result) => {
+                if (result.success) {
+                    const results = result.value.results;
+                    const sortedResults = results.sort((a, b) =>
+                        a.name < b.name ? -1 : a.name === b.name ? 0 : 1
+                    );
+                    setSearchResults(sortedResults);
+                    setResultCount(result.value.total_results);
+                } else {
+                    enqueueSnackbar(result.message, {
+                        autoHideDuration: 3000,
+                    });
+                }
+                setLoadingResults(false);
+            });
+        }
+    }
+
     useEffect(() => {
-        //console.log(searchResults, currentPlugin, category);
-    }, [searchResults, currentPlugin, category]);
+        setResultPage(0);
+        performSearch({}, 0, resultsPerPage);
+    }, [currentPlugin, category]);
 
     return (
         <Box className="compendium-root">
@@ -215,40 +266,7 @@ export function Compendium() {
                 anchor={searchAnchor}
                 onClose={() => setSearchAnchor(null)}
                 onSubmit={(fields) => {
-                    //console.log(fields);
-                    if (plugin && category) {
-                        setLoadingResults(true);
-                        let filledFields: { [key: string]: DataSearchField } =
-                            {};
-                        Object.keys(fields).forEach((k) => {
-                            if (fields[k].value.length > 0) {
-                                filledFields[k] = fields[k];
-                            }
-                        });
-                        post<any[]>(`/plugins/${plugin}/data/search`, {
-                            body: {
-                                category: category,
-                                all_required: true,
-                                fields: filledFields,
-                            },
-                        }).then((result) => {
-                            if (result.success) {
-                                let sortedResults = result.value.sort((a, b) =>
-                                    a.name < b.name
-                                        ? -1
-                                        : a.name === b.name
-                                        ? 0
-                                        : 1
-                                );
-                                setSearchResults(sortedResults);
-                            } else {
-                                enqueueSnackbar(result.message, {
-                                    autoHideDuration: 3000,
-                                });
-                            }
-                            setLoadingResults(false);
-                        });
-                    }
+                    performSearch(fields, resultPage, resultsPerPage);
                 }}
             />
             {loadingResults ? (
@@ -360,6 +378,28 @@ export function Compendium() {
                     <></>
                 )}
             </Dialog>
+            <Paper className="pagination" elevation={3}>
+                <TablePagination
+                    component="div"
+                    count={resultCount}
+                    page={resultPage}
+                    rowsPerPage={resultsPerPage}
+                    onPageChange={(event, page) => {
+                        setResultPage(page);
+                        performSearch(currentFields, page, resultsPerPage);
+                    }}
+                    onRowsPerPageChange={(event) => {
+                        setResultsPerPage(parseInt(event.target.value, 10));
+                        performSearch(
+                            currentFields,
+                            resultPage,
+                            parseInt(event.target.value, 10)
+                        );
+                    }}
+                    rowsPerPageOptions={[8, 12, 16, 24, 32, 48, 64]}
+                    labelRowsPerPage={"Results Per Page:"}
+                />
+            </Paper>
         </Box>
     );
 }

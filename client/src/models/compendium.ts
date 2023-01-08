@@ -26,3 +26,9 @@ export type DataItem = {
     oid: string;
     [key: string]: any;
 };
+
+export type DataSearchResult = {
+    results: any[];
+    page: number;
+    total_results: number;
+};

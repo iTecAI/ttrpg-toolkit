@@ -200,6 +200,12 @@ class DataLoadModel(BaseModel):
     items: List[str]
 
 
+class DataSearchResultModel(BaseModel):
+    results: List[Any]
+    page: int
+    total_results: int
+
+
 class PluginDataSourceController(Controller):
     path: str = "/plugins/{plugin:str}/data"
     guards: Optional[List[Guard]] = [guard_isDataSource]
@@ -213,8 +219,12 @@ class PluginDataSourceController(Controller):
         self,
         plugin_object: Plugin,
         data: DataSearchModel,
-    ) -> List[Any]:
-        return plugin_object.data_source.search(data)
+        page: Optional[int] = None,
+        count: Optional[int] = None,
+    ) -> DataSearchResultModel:
+        return plugin_object.data_source.search(
+            data, page=page if page else 0, perPage=count if count else -1
+        )
 
     @post("/load", status_code=HTTP_200_OK)
     async def load_data(
