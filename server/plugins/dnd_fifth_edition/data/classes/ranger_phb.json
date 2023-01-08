@@ -13,7 +13,7 @@
     "armor_proficiency": [
         "light",
         "medium",
-        "[shield](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shields%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
+        "shield"
     ],
     "weapon_proficiency": [
         "simple",
@@ -40,10 +40,10 @@
         "backgroundItems": true,
         "gold": "5d4 * 10",
         "items": [
-            "(a) [scale mail](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22scale%20mail%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) [leather armor](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22leather%20armor%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
-            "(a) two [shortsword](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shortswords%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) two simple melee weapons",
-            "(a) a [dungeoneer's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22dungeoneer%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) an [explorer's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22explorer%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
-            "A [longbow](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22longbow%22%2C%20%22source%22%3A%20%22PHB%22%7D) and a [quiver](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22quiver%22%2C%20%22source%22%3A%20%22PHB%22%7D) of [arrows (20)](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%2220%20arrows%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
+            "(a) scale mail or (b) leather armor",
+            "(a) two shortsword or (b) two simple melee weapons",
+            "(a) a dungeoneer's pack or (b) an explorer's pack",
+            "A longbow and a quiver of arrows (20)"
         ]
     },
     "multiclass_requirements": {
@@ -53,7 +53,7 @@
     "multiclass_armor_proficiency": [
         "light",
         "medium",
-        "[shield](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shields%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
+        "shield"
     ],
     "multiclass_weapon_proficiency": [
         "simple",
@@ -269,7 +269,7 @@
             "level": 2,
             "entries": [
                 "*2nd-level ranger feature (enhances Spellcasting)*",
-                "You can use a [druidic focus](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22druidic%20focus%22%2C%20%22source%22%3A%20%22PHB%22%7D) as a spellcasting focus for your ranger spells. See chapter 5, \"Equipment,\" of the Player's Handbook for a list of things that count as druidic focuses."
+                "You can use a druidic focus as a spellcasting focus for your ranger spells. See chapter 5, \"Equipment,\" of the Player's Handbook for a list of things that count as druidic focuses."
             ]
         },
         {
@@ -280,7 +280,7 @@
             "level": 2,
             "entries": [
                 "*2nd-level ranger Optional class features*",
-                "You can use a [druidic focus](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22druidic%20focus%22%2C%20%22source%22%3A%20%22PHB%22%7D) as a spellcasting focus for your ranger spells. A druidic focus might be a sprig of mistletoe or holly, a wand or rod made of yew or another special wood, a staff drawn whole from a living tree, or an object incorporating feathers, fur, bones, and teeth from sacred animals."
+                "You can use a druidic focus as a spellcasting focus for your ranger spells. A druidic focus might be a sprig of mistletoe or holly, a wand or rod made of yew or another special wood, a staff drawn whole from a living tree, or an object incorporating feathers, fur, bones, and teeth from sacred animals."
             ]
         },
         {

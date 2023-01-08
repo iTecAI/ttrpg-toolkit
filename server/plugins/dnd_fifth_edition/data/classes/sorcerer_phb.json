@@ -12,11 +12,11 @@
     ],
     "armor_proficiency": [],
     "weapon_proficiency": [
-        "[dagger](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22daggers%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
-        "[dart](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22darts%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
-        "[sling](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22slings%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
-        "[quarterstaff](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22quarterstaffs%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
-        "[light crossbow](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22light%20crossbows%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
+        "dagger",
+        "dart",
+        "sling",
+        "quarterstaff",
+        "light crossbow"
     ],
     "tool_proficiency": [],
     "skill_proficiency": [
@@ -37,10 +37,10 @@
         "backgroundItems": true,
         "gold": "3d4 * 10",
         "items": [
-            "(a) a [light crossbow](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22light%20crossbow%22%2C%20%22source%22%3A%20%22PHB%22%7D) and [crossbow bolts (20)](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%2220%20bolts%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) any simple weapon",
-            "(a) a [component pouch](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22component%20pouch%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) an [arcane focus](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22arcane%20focus%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
-            "(a) a [dungeoneer's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22dungeoneer%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) an [explorer's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22explorer%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
-            "Two [dagger](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22daggers%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
+            "(a) a light crossbow and crossbow bolts (20) or (b) any simple weapon",
+            "(a) a component pouch or (b) an arcane focus",
+            "(a) a dungeoneer's pack or (b) an explorer's pack",
+            "Two dagger"
         ]
     },
     "multiclass_requirements": {
@@ -104,7 +104,7 @@
                 "**Spell:** ['Charisma']",
                 "",
                 "## Spellcasting Focus",
-                "You can use an [arcane focus](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22arcane%20focus%22%2C%20%22source%22%3A%20%22PHB%22%7D) as a spellcasting focus for your sorcerer spells."
+                "You can use an arcane focus as a spellcasting focus for your sorcerer spells."
             ]
         },
         {

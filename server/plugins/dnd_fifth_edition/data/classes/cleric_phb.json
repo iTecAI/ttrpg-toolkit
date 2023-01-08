@@ -13,7 +13,7 @@
     "armor_proficiency": [
         "light",
         "medium",
-        "[shield](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shields%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
+        "shield"
     ],
     "weapon_proficiency": [
         "simple"
@@ -36,11 +36,11 @@
         "backgroundItems": true,
         "gold": "5d4 * 10",
         "items": [
-            "(a) a [mace](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22mace%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) a [warhammer](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22warhammer%22%2C%20%22source%22%3A%20%22PHB%22%7D) (if proficient)",
-            "(a) [scale mail](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22scale%20mail%22%2C%20%22source%22%3A%20%22PHB%22%7D), (b) [leather armor](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22leather%20armor%22%2C%20%22source%22%3A%20%22PHB%22%7D), or (c) [chain mail](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22chain%20mail%22%2C%20%22source%22%3A%20%22PHB%22%7D) (if proficient)",
-            "(a) a [light crossbow](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22light%20crossbow%22%2C%20%22source%22%3A%20%22PHB%22%7D) and [Crossbow Bolts (20)](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%2220%20bolts%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) any simple weapon",
-            "(a) a [priest's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22priest%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) an [explorer's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22explorer%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
-            "A [shield](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shield%22%2C%20%22source%22%3A%20%22PHB%22%7D) and a [holy symbol](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22holy%20symbol%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
+            "(a) a mace or (b) a warhammer (if proficient)",
+            "(a) scale mail, (b) leather armor, or (c) chain mail (if proficient)",
+            "(a) a light crossbow and Crossbow Bolts (20) or (b) any simple weapon",
+            "(a) a priest's pack or (b) an explorer's pack",
+            "A shield and a holy symbol"
         ]
     },
     "multiclass_requirements": {
@@ -49,7 +49,7 @@
     "multiclass_armor_proficiency": [
         "light",
         "medium",
-        "[shield](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shields%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
+        "shield"
     ],
     "multiclass_weapon_proficiency": [],
     "multiclass_tool_proficiency": [],
@@ -108,7 +108,7 @@
                 "You can cast a cleric spell as a ritual if that spell has the ritual tag and you have the spell prepared.",
                 "",
                 "## Spellcasting Focus",
-                "You can use a [holy symbol](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22holy%20symbol%22%2C%20%22source%22%3A%20%22PHB%22%7D) as a spellcasting focus for your cleric spells."
+                "You can use a holy symbol as a spellcasting focus for your cleric spells."
             ]
         },
         {
@@ -2608,7 +2608,7 @@
                         "",
                         "",
                         "## Bonus Proficiency",
-                        "When you choose this domain at 1st level, you gain proficiency with heavy armor and [smith's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22smith%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D).",
+                        "When you choose this domain at 1st level, you gain proficiency with heavy armor and smith's tools.",
                         "",
                         "## Blessing of the Forge",
                         "At 1st level, you gain the ability to imbue magic into a weapon or armor. At the end of a long rest, you can touch one nonmagical object that is a suit of armor or a simple or martial weapon. Until the end of your next long rest or until you die, the object becomes a magic item, granting a +1 bonus to AC if it's armor or a +1 bonus to attack and damage rolls if it's a weapon.",

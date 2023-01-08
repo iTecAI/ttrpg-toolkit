@@ -14,7 +14,7 @@
         "light",
         "medium",
         "heavy",
-        "[shield](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shields%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
+        "shield"
     ],
     "weapon_proficiency": [
         "simple",
@@ -41,10 +41,10 @@
         "backgroundItems": true,
         "gold": "5d4 * 10",
         "items": [
-            "(a) [chain mail](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22chain%20mail%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) [leather armor](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22leather%20armor%22%2C%20%22source%22%3A%20%22PHB%22%7D), [longbow](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22longbow%22%2C%20%22source%22%3A%20%22PHB%22%7D), and [arrows (20)](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%2220%20arrows%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
-            "(a) a martial weapon and a [shield](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shield%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) two martial weapons",
-            "(a) a [light crossbow](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22light%20crossbow%22%2C%20%22source%22%3A%20%22PHB%22%7D) and [crossbow bolts (20)](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%2220%20bolts%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) two [handaxe](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22handaxes%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
-            "(a) a [dungeoneer's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22dungeoneer%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) an [explorer's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22explorer%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
+            "(a) chain mail or (b) leather armor, longbow, and arrows (20)",
+            "(a) a martial weapon and a shield or (b) two martial weapons",
+            "(a) a light crossbow and crossbow bolts (20) or (b) two handaxe",
+            "(a) a dungeoneer's pack or (b) an explorer's pack"
         ]
     },
     "multiclass_requirements": {
@@ -58,7 +58,7 @@
     "multiclass_armor_proficiency": [
         "light",
         "medium",
-        "[shield](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shields%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
+        "shield"
     ],
     "multiclass_weapon_proficiency": [
         "simple",
@@ -988,7 +988,7 @@
                         "The archetypal Scout excels at finding safe passage through dangerous regions. Scouts usually favor light armor and ranged weapons, but they are comfortable using heavier gear when faced with intense fighting.",
                         "",
                         "## Bonus Proficiencies",
-                        "When you choose this archetype at 3rd level, you gain proficiency in three of the following skills of your choice: Acrobatics, Athletics, Investigation, Medicine, Nature, Perception, Stealth, or Survival. You can choose to gain proficiency with [thieves' tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22thieves%27%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) in place of one skill choice.",
+                        "When you choose this archetype at 3rd level, you gain proficiency in three of the following skills of your choice: Acrobatics, Athletics, Investigation, Medicine, Nature, Perception, Stealth, or Survival. You can choose to gain proficiency with thieves' tools in place of one skill choice.",
                         "",
                         "## Combat Superiority",
                         "At 3rd level, you gain a set of abilities that are fueled by special dice called superiority dice.",
@@ -1086,7 +1086,7 @@
                         "As an archetypal Monster Hunter, you are an expert at defeating supernatural threats. Typically mentored by an older, experienced Monster Hunter, you learn to overcome a variety of unnatural defenses and attacks, including those of undead, lycanthropes, and other creatures of horror.",
                         "",
                         "## Bonus Proficiencies",
-                        "When you choose this archetype at 3rd level, you gain proficiency in two of the following skills of your choice: Arcana, History, Insight, Investigation, Nature, or Perception. You can choose to gain proficiency with [thieves' tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22thieves%27%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) in place of one skill choice.",
+                        "When you choose this archetype at 3rd level, you gain proficiency in two of the following skills of your choice: Arcana, History, Insight, Investigation, Nature, or Perception. You can choose to gain proficiency with thieves' tools in place of one skill choice.",
                         "",
                         "## Combat Superiority",
                         "At 3rd level, you gain a set of abilities that are fueled by special dice called superiority dice.",
@@ -1994,7 +1994,7 @@
                         "",
                         "## Bonus Proficiencies",
                         "*3rd-level Rune Knight feature*",
-                        "You gain proficiency with [smith's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22smith%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D), and you learn to speak, read, and write Giant.",
+                        "You gain proficiency with smith's tools, and you learn to speak, read, and write Giant.",
                         "",
                         "## Rune Magic",
                         "*3rd-level Rune Knight feature*",
@@ -2440,7 +2440,7 @@
                         "",
                         "## Bonus Proficiencies",
                         "*3rd-level Rune Knight feature*",
-                        "You gain proficiency with [smith's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22smith%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D), and you learn to speak, read, and write Giant.",
+                        "You gain proficiency with smith's tools, and you learn to speak, read, and write Giant.",
                         "",
                         "## Rune Carver",
                         "*3rd-level Rune Knight feature*",

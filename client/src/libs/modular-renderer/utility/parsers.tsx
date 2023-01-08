@@ -1,3 +1,4 @@
+import React, { ReactNode } from "react";
 import {
     GeneratorSourceItem,
     ListSourceItem,
@@ -69,7 +70,7 @@ export function parseFunction(
  * @param obj Object to search
  * @param keys Key in form "this.is.a.key" or ["this", "is", "a", "key"]
  * @param new_val (Optional) New value to set
- * @returns 
+ * @returns
  */
 export function parseNested(
     obj: any,
@@ -326,6 +327,7 @@ export function parseValueItem(
                 }
         }
     }
+
     return OUTPUT;
 }
 

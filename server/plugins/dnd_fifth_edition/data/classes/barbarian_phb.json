@@ -13,7 +13,7 @@
     "armor_proficiency": [
         "light",
         "medium",
-        "[shield](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shields%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
+        "shield"
     ],
     "weapon_proficiency": [
         "simple",
@@ -38,16 +38,16 @@
         "backgroundItems": true,
         "gold": "2d4 * 10",
         "items": [
-            "(a) a [greataxe](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22greataxe%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) any martial melee weapon",
-            "(a) two [handaxe](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22handaxes%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) any simple weapon",
-            "An [explorer's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22explorer%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D), and four [javelin](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22javelins%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
+            "(a) a greataxe or (b) any martial melee weapon",
+            "(a) two handaxe or (b) any simple weapon",
+            "An explorer's pack, and four javelin"
         ]
     },
     "multiclass_requirements": {
         "strength": 13
     },
     "multiclass_armor_proficiency": [
-        "[shield](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shields%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
+        "shield"
     ],
     "multiclass_weapon_proficiency": [
         "simple",
@@ -583,15 +583,15 @@
                     "source": "SCAG",
                     "level": 3,
                     "entries": [
-                        "Known as Kuldjargh (literally \"axe idiot\") in Dwarvish, battleragers are dwarf followers of the gods of war and take the Path of the Battlerager. They specialize in wearing bulky, [spiked armor](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22spiked%20armor%22%2C%20%22source%22%3A%20%22SCAG%22%7D) and throwing themselves into combat, striking with their body itself and giving themselves over to the fury of battle.",
+                        "Known as Kuldjargh (literally \"axe idiot\") in Dwarvish, battleragers are dwarf followers of the gods of war and take the Path of the Battlerager. They specialize in wearing bulky, spiked armor and throwing themselves into combat, striking with their body itself and giving themselves over to the fury of battle.",
                         "",
                         "## Restriction\u2014Dwarves Only",
                         "Only dwarves can follow the Path of the Battlerager. The battlerager fills a particular niche in dwarven society and culture.",
                         "Your DM can lift this restriction to better suit the campaign. The restriction exists for the Forgotten Realms. It might not apply to your DM's setting or your DM's version of the Realms.",
                         "",
                         "## Battlerager Armor",
-                        "When you choose this path at 3rd level, you gain the ability to use [spiked armor](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22spiked%20armor%22%2C%20%22source%22%3A%20%22SCAG%22%7D) as a weapon.",
-                        "While you are wearing [spiked armor](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22spiked%20armor%22%2C%20%22source%22%3A%20%22SCAG%22%7D) and are raging, you can use a bonus action to make one melee weapon attack with your armor spikes at a target within 5 feet of you. If the attack hits, the spikes deal **1d4** piercing damage. You use your Strength modifier for the attack and damage rolls.",
+                        "When you choose this path at 3rd level, you gain the ability to use spiked armor as a weapon.",
+                        "While you are wearing spiked armor and are raging, you can use a bonus action to make one melee weapon attack with your armor spikes at a target within 5 feet of you. If the attack hits, the spikes deal **1d4** piercing damage. You use your Strength modifier for the attack and damage rolls.",
                         "Additionally, when you use the **Attack** action to grapple a creature, the target takes 3 piercing damage if your grapple check succeeds."
                     ]
                 },
@@ -622,7 +622,7 @@
                     "source": "SCAG",
                     "level": 14,
                     "entries": [
-                        "Starting at 14th level, when a creature within 5 feet of you hits you with a melee attack, the attacker takes 3 piercing damage if you are raging, aren't *incapacitated*, and are wearing [spiked armor](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22spiked%20armor%22%2C%20%22source%22%3A%20%22SCAG%22%7D)."
+                        "Starting at 14th level, when a creature within 5 feet of you hits you with a melee attack, the attacker takes 3 piercing damage if you are raging, aren't *incapacitated*, and are wearing spiked armor."
                     ]
                 }
             ]

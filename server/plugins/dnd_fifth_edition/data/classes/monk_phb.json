@@ -13,10 +13,10 @@
     "armor_proficiency": [],
     "weapon_proficiency": [
         "simple",
-        "[shortsword](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shortswords%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
+        "shortsword"
     ],
     "tool_proficiency": [
-        "any one type of [artisan's tools](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22artisan%27s%20tools%22%2C%20%22source%22%3A%20%22PHB%22%7D) or any one [musical instrument](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22musical%20instrument%22%2C%20%22source%22%3A%20%22PHB%22%7D) of your choice"
+        "any one type of artisan's tools or any one musical instrument of your choice"
     ],
     "skill_proficiency": [
         {
@@ -36,9 +36,9 @@
         "backgroundItems": true,
         "gold": "5d4",
         "items": [
-            "(a) a [shortsword](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shortsword%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) any simple weapon",
-            "(a) a [dungeoneer's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22dungeoneer%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D) or (b) an [explorer's pack](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22explorer%27s%20pack%22%2C%20%22source%22%3A%20%22PHB%22%7D)",
-            "10 [dart](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22darts%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
+            "(a) a shortsword or (b) any simple weapon",
+            "(a) a dungeoneer's pack or (b) an explorer's pack",
+            "10 dart"
         ]
     },
     "multiclass_requirements": {
@@ -48,7 +48,7 @@
     "multiclass_armor_proficiency": [],
     "multiclass_weapon_proficiency": [
         "simple",
-        "[shortsword](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22shortswords%22%2C%20%22source%22%3A%20%22PHB%22%7D)"
+        "shortsword"
     ],
     "multiclass_tool_proficiency": [],
     "multiclass_skill_proficiency": null,
@@ -1058,7 +1058,7 @@
                         "A drunken master often enjoys playing the fool to bring gladness to the despondent or to demonstrate humility to the arrogant, but when battle is joined, the drunken master can be a maddening, masterful foe.",
                         "",
                         "## Bonus Proficiencies",
-                        "When you choose this tradition at 3rd level, you gain proficiency in the Performance skill if you don't already have it. Your martial arts technique mixes combat training with the precision of a dancer and the antics of a jester. You also gain proficiency with [brewer's supplies](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22brewer%27s%20supplies%22%2C%20%22source%22%3A%20%22PHB%22%7D) if you don't already have it.",
+                        "When you choose this tradition at 3rd level, you gain proficiency in the Performance skill if you don't already have it. Your martial arts technique mixes combat training with the precision of a dancer and the antics of a jester. You also gain proficiency with brewer's supplies if you don't already have it.",
                         "",
                         "## Drunken Technique",
                         "At 3rd level, you learn how to twist and turn quickly as part of your Flurry of Blows. Whenever you use Flurry of Blows, you gain the benefit of the **Disengage** action, and your walking speed increases by 10 feet until the end of the current turn."
@@ -1133,7 +1133,7 @@
                         "You can use a bonus action on your turn to make your ranged attacks with a kensei weapon more deadly. When you do so, any target you hit with a ranged attack using a kensei weapon takes an extra **1d4** damage of the weapon's type. You retain this benefit until the end of the current turn.",
                         "",
                         "## Way of the Brush",
-                        "You gain proficiency with your choice of [calligrapher's supplies](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22calligrapher%27s%20supplies%22%2C%20%22source%22%3A%20%22PHB%22%7D) or [painter's supplies](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22painter%27s%20supplies%22%2C%20%22source%22%3A%20%22PHB%22%7D)."
+                        "You gain proficiency with your choice of calligrapher's supplies or painter's supplies."
                     ]
                 },
                 {
@@ -1365,7 +1365,7 @@
                         "",
                         "## Implements of Mercy",
                         "*3rd-level Way of Mercy feature*",
-                        "You gain proficiency in the Insight or Medicine skill (your choice), and you gain proficiency with the [herbalism kit](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22herbalism%20kit%22%2C%20%22source%22%3A%20%22PHB%22%7D) and the [poisoner's kit](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22poisoner%27s%20kit%22%2C%20%22source%22%3A%20%22PHB%22%7D).",
+                        "You gain proficiency in the Insight or Medicine skill (your choice), and you gain proficiency with the herbalism kit and the poisoner's kit.",
                         "",
                         "## Hands of Healing",
                         "*3rd-level Way of Mercy feature*",
@@ -1519,7 +1519,7 @@
                         "",
                         "## Implements of Mercy",
                         "*3rd-level Way of Mercy feature*",
-                        "You gain proficiency in the Insight and Medicine skills, and you gain proficiency with the [herbalism kit](/compendium?plugin=dnd_fifth_edition&category=item&fields=%7B%22name%22%3A%20%22herbalism%20kit%22%2C%20%22source%22%3A%20%22PHB%22%7D).",
+                        "You gain proficiency in the Insight and Medicine skills, and you gain proficiency with the herbalism kit.",
                         "You also gain a special mask, which you often wear when using the features of this subclass. You determine its appearance, or generate it randomly by rolling on the Merciful Mask table.",
                         "",
                         "### Merciful Mask",
