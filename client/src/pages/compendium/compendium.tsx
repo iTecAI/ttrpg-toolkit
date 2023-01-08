@@ -36,6 +36,7 @@ import { ModularRenderer } from "../../libs/modular-renderer";
 import { AvatarItem } from "./renderers/avatar";
 import { SearchPopup } from "./searchPopup";
 import { parseValueItem } from "../../libs/modular-renderer/utility/parsers";
+import { useSearchParams } from "react-router-dom";
 
 export function Compendium() {
     const [plugin, setPlugin] = useState<string>("");
@@ -65,6 +66,51 @@ export function Compendium() {
         [key: string]: DataSearchField;
     }>({});
 
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    useEffect(() => {
+        if (
+            searchParams.get("plugin") &&
+            searchParams.get("category") &&
+            searchParams.get("fields")
+        ) {
+            const searchPlugin = searchParams.get("plugin");
+            const searchCategory = searchParams.get("category");
+            const searchQueryFields = JSON.parse(
+                searchParams.get("fields") || "{}"
+            );
+
+            setCategory(searchCategory);
+            setPlugin(searchPlugin ?? plugin);
+            setLoadingResults(true);
+
+            post<DataSearchResult>(`/plugins/${searchPlugin}/data/search`, {
+                body: {
+                    category: searchCategory,
+                    all_required: true,
+                    fields: searchQueryFields,
+                },
+            }).then((result) => {
+                if (result.success) {
+                    const results = result.value.results;
+                    const sortedResults = results.sort((a, b) =>
+                        a.name < b.name ? -1 : a.name === b.name ? 0 : 1
+                    );
+                    setSearchResults(sortedResults);
+                    setResultCount(result.value.total_results);
+                    if (sortedResults.length === 1) {
+                        setExpandedDialog(sortedResults[0]);
+                    }
+                } else {
+                    enqueueSnackbar(result.message, {
+                        autoHideDuration: 3000,
+                    });
+                }
+                setLoadingResults(false);
+            });
+        }
+    }, [searchParams]);
+
     useEffect(() => {
         if (plugin !== "") {
             return;
@@ -74,7 +120,7 @@ export function Compendium() {
         }).then((result) => {
             if (result.success) {
                 setAvailablePlugins(result.value);
-                setPlugin(result.value[0].slug);
+                setPlugin(searchParams.get("plugin") ?? result.value[0].slug);
 
                 if (plugin.length > 0) {
                     get<PluginManifest>("/plugins/" + plugin).then((result) => {
@@ -82,7 +128,9 @@ export function Compendium() {
                             setCurrentPlugin(result.value);
                             if (result.value.data_source) {
                                 setCategory(
-                                    result.value.data_source.default_category
+                                    searchParams.get("category") ??
+                                        result.value.data_source
+                                            .default_category
                                 );
                             }
                         } else {
@@ -106,7 +154,10 @@ export function Compendium() {
                 if (result.success) {
                     setCurrentPlugin(result.value);
                     if (result.value.data_source) {
-                        setCategory(result.value.data_source.default_category);
+                        setCategory(
+                            searchParams.get("category") ??
+                                result.value.data_source.default_category
+                        );
                     }
                 } else {
                     enqueueSnackbar(result.message, {

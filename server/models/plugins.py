@@ -26,4 +26,4 @@ class DataSearchFieldModel(BaseModel):
 class DataSearchModel(BaseModel):
     category: str
     all_required: bool = False
-    fields: Dict[str, DataSearchFieldModel]
+    fields: Dict[str, Union[DataSearchFieldModel, str]]

@@ -272,6 +272,12 @@ class DataSourceLoader:
 
         results = []
 
+        for k, v in model.fields.items():
+            if type(v) == str:
+                model.fields[k] = DataSearchFieldModel(
+                    field_type="string", value=v, exact=True
+                )
+
         for record in cached_data["cache"]:
             matches = 0
             nulls = 0
