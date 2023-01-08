@@ -111,7 +111,7 @@ class PluginAssetController(Controller):
     async def get_plugin_asset(self, state: State, plugin: str, asset: str) -> File:
         if plugin in state.plugins.plugins.keys():
             if (
-                "assets"
+                "asset_pack"
                 in state.plugins.plugins[plugin].manifest["plugin_data"]["tags"]
             ):
                 if asset in state.plugins.plugins[plugin].manifest["assets"].keys():
