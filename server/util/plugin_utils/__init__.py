@@ -12,5 +12,6 @@ from .data_source import (
     AbstractDataSourceLoader,
     SearchModel,
     build_data_search_url,
+    DataLocator,
 )
 from .util_types import *

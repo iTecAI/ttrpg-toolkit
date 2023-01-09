@@ -1,4 +1,4 @@
-from util.plugin_utils import AbstractCharacter, ModType
+from util.plugin_utils import AbstractCharacter, ModType, DataLocator
 from pymongo.database import Database
 from typing import TypedDict, Literal, Optional
 
@@ -103,9 +103,11 @@ class BaseCharacter5e(AbstractCharacter):
         inspiration: bool = False,
         hit_points: HitPoints = {"current": 0, "max": 0},
         languages: list[str] = [],
+        inventory: list[DataLocator] = [],
+        equipped: list[DataLocator] = [],
         **kwargs
     ):
-        super().__init__(oid, database, mods=mods**kwargs)
+        super().__init__(oid, database, mods=mods, **kwargs)
         self.player_name = player_name
         self.level = level
         self.race = race
@@ -116,3 +118,5 @@ class BaseCharacter5e(AbstractCharacter):
         self.inspiration = inspiration
         self.hit_points = hit_points
         self.languages = languages
+        self.inventory = inventory
+        self.equipped = equipped

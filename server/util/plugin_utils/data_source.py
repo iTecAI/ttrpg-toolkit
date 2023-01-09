@@ -1,4 +1,4 @@
-from typing import Any, Dict
+from typing import Any, Dict, TypedDict, Optional
 
 from pydantic import BaseModel
 from ..orm import ORM
@@ -37,3 +37,11 @@ def build_data_search_url(plugin: str, category: str, fields: dict[str, Any]) ->
     return "/compendium?plugin={plugin}&category={category}&fields={fields}".format(
         plugin=plugin, category=category, fields=quote(json.dumps(fields))
     )
+
+
+class DataLocator(TypedDict):
+    name: str
+    plugin: str
+    category: str
+    search: Optional[dict[str, Any]]
+    slug: Optional[str]
